@@ -8,6 +8,7 @@
     "WidgetRemovalMixin",
     "OverlayStackMixin",
     "SchemaFitToStructureMixin",
+    "SchemaSingleEyeOffsetMixin",
     "EmbedTransformAllPanelsMixin",
     "MenuCloseInvalidWidgetMixin",
     "MenuPanelStateMixin",

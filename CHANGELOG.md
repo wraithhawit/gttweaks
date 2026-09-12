@@ -2,7 +2,14 @@
 
 This repository begins with the existing 0.25.0 source snapshot. Earlier development happened locally; the entries below summarize the immediately preceding changes and do not imply reconstructed Git history.
 
-## 0.28.0 (candidate)
+## 0.29.0 (candidate)
+
+- Remove duplicate camera-position subtraction in schema rendering, keeping blocks, block entities, highlighting and picking on the same transform.
+- Aim the camera at the geometric block center and compensate fitted distance for the removed duplicate translation.
+- Three matrix regression tests pass alongside the five existing tests. Actual rendered behavior remains unverified; pan and zoom sensitivity may feel lower.
+- Release packaging uses the committed TestMachineCommand baseline, leaving ongoing recipe-verifier edits outside this preview build.
+
+## 0.28.0 (submenu fix confirmed in-game)
 
 - Fix child removal in ModularUI: `Widget.equals` rejects subclasses even when an object is compared with itself, making `List.remove(menu)` fail. Redirect only that list removal in `AbstractParentWidget.remove(IWidget)` to an identity lookup. Original disposal and removal callbacks still execute.
 - Reproduce failed removal with actual `Menu` objects from the exact bundled ModularUI jar, then verify identity removal, sibling preservation, and cached-menu reopening. All five tests pass; in-game application remains unverified.

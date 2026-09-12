@@ -8,7 +8,7 @@ This repository contains the Java addon. The ATM9 multiblock and recipe ports li
 
 ## Current status
 
-**0.28.0 fixes a reproduced ModularUI child-removal defect; in-game verification is pending.** Actual `Menu` objects compare unequal to themselves in this MUI snapshot, so `List.remove(menu)` fails and leaves closed submenus visible. Child removal now searches by identity while preserving MUI's disposal callbacks. The 0.27 branch-selection logic and corrected `gtceu:plascrete` lookup remain. See [submenu diagnosis](docs/SUBMENU-REMOVAL.md). The off-centre preview rotation remains unresolved.
+**0.28.0 submenu cleanup is confirmed working in-game. 0.29.0 is a rotation-pivot candidate awaiting visual verification.** It removes duplicate camera-position subtraction and aims at the geometric block center. See [pivot diagnosis and verification limits](docs/PREVIEW-PIVOT.md) and [submenu diagnosis](docs/SUBMENU-REMOVAL.md).
 
 The 0.24.0 count mixin was observed running in the ATM10 log on September 12 at 07:12:21, limiting energy inputs from three to one. This confirmed execution but did not fix glass selection or hatch placement. See [cleanroom verification notes](docs/CLEANROOM-PREVIEW.md).
 
