@@ -5,7 +5,10 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "ChemicalHelperMixin",
-    "CircuitSlotCountFixMixin"
+    "CircuitSlotCountFixMixin",
+    "RecipeCapabilityKeyMixin",
+    "RecipeSerializerCapabilityKeyMixin",
+    "KubeJSCapabilityKeyMixin"
   ],
   "client": [
     "JeiCallWrapperMixin",
