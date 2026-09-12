@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "com.wraithhawit.gttweaks.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "OverlayStackMixin",
+    "SchemaFitToStructureMixin",
+    "EmbedTransformAllPanelsMixin",
+    "MenuCloseInvalidWidgetMixin",
+    "MenuPanelStateMixin",
+    "MenuSourceAccessor",
+    "MenuButtonStateAccessor",
+    "MenuButtonSiblingScopeMixin",
+    "MenuCloseProbeMixin",
+    "PanelManagerAccessor",
+    "EmbeddedMenuDispatchMixin"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

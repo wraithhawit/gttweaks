@@ -1,0 +1,29 @@
+name: Bug report
+description: Report a GregTech Tweaks compatibility or behavior problem.
+title: "[Bug] "
+body:
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Include gttweaks, the complete GTCEu jar filename, NeoForge, EMI, and ModularUI.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include the machine and menu entry or recipe involved.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output or crash report
+      render: text

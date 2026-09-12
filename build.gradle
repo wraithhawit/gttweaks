@@ -1,0 +1,179 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.gradle.userdev' version '7.1.38'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    mavenCentral()
+}
+
+tasks.register('requireGregTechJar') {
+    group = 'build setup'
+    description = 'Fails with something readable when libs/ has no GregTech.'
+    doLast {
+        if (fileTree(dir: 'libs', include: ['gtceu-*.jar']).empty) {
+            throw new GradleException(
+                "No gtceu-*.jar in libs/, so this run would start without the mod "
+                    + "every mixin targets.\n"
+                    + "Copy gtceu-1.21.1-${gtceu_version}.jar, kubejs-neoforge-*.jar, "
+                    + "rhino-*.jar and ldlib2-*.jar out of a Minecraft instance's mods "
+                    + "folder into ${projectDir}/libs/ and try again. See SETUP.md.")
+        }
+    }
+}
+
+def stageMods(final String runName) {
+    return tasks.register("stage${runName.capitalize()}Mods", Sync) {
+        group = 'build setup'
+        description = "Puts GregTech and its KubeJS stack in the ${runName} run's mods folder."
+        dependsOn 'requireGregTechJar'
+        from fileTree(dir: 'libs', include: ['*.jar'])
+        into layout.projectDirectory.dir("run/${runName}/mods")
+    }
+}
+
+runs {
+    configureEach {
+        systemProperty 'forge.logging.markers', 'REGISTRIES'
+        systemProperty 'forge.logging.console.level', 'debug'
+        // A mixin that applies cleanly is not a mixin that runs. Export the
+        // transformed classes so the injection can be read back off disk.
+        systemProperty 'mixin.debug.export', 'true'
+        systemProperty 'mixin.debug.verbose', 'true'
+        workingDirectory project.layout.projectDirectory.dir('run').dir(name)
+        modSource project.sourceSets.main
+    }
+    client {}
+    server {
+        argument '--nogui'
+        systemProperty 'gttweaks.verifyPatterns', 'true'
+        systemProperty 'gttweaks.verifyRecipes', 'true'
+        // Matches every recipe against a synthetic machine. 'true' sweeps everything; pass a
+        // comma-separated list of recipe-type id fragments to narrow it. The gradle property must
+        // NOT start with 'run' — NeoGradle reads -Prun<X> as a run type and fails configuration
+        // with "The run type 'X' was not found", which is why it is -PrecipeSweep and not -PrunRecipes:
+        //   ./gradlew headlessCheck -PexitAfterCheck=true -PrecipeSweep=greenhouse,star_forge
+        systemProperty 'gttweaks.runRecipes', project.findProperty('recipeSweep') ?: 'true'
+        // Unset by default: an interactive runServer should stay up. The headlessCheck task
+        // turns it on so an unattended run terminates on its own.
+        systemProperty 'gttweaks.exitAfterCheck', project.findProperty('exitAfterCheck') ?: 'false'
+    }
+}
+
+['client', 'server'].each { runName ->
+    final stage = stageMods(runName)
+    tasks.matching { it.name == "run${runName.capitalize()}" }.configureEach {
+        dependsOn stage
+    }
+}
+
+dependencies {
+    implementation "net.neoforged:neoforge:${neo_version}"
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testImplementation 'org.mockito:mockito-core:5.19.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.11.4'
+}
+
+tasks.named('test', Test) {
+    useJUnitPlatform()
+}
+
+tasks.withType(ProcessResources).configureEach {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version,
+            loader_version_range   : loader_version_range,
+            gtceu_version          : gtceu_version,
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : mod_version,
+    ]
+    inputs.properties replaceProperties
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand replaceProperties
+    }
+}
+
+// Static-checks KubeJS scripts against ProbeJS types before you spend a restart on them.
+// See tools/ValidateKubeJS.java for what it catches and what it cannot.
+//   ./gradlew validateKubeJS
+//   ./gradlew validateKubeJS -Pinstance="D:/path/to/minecraft" -Pscripts="kubejs/server_scripts"
+tasks.register('validateKubeJS', Exec) {
+    group = 'verification'
+    description = 'Checks KubeJS scripts against generated ProbeJS types.'
+    final inst = project.findProperty('instance')
+            ?: 'D:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
+    final rel = project.findProperty('scripts') ?: 'kubejs/startup_scripts/gtceu'
+    commandLine 'java', file('tools/ValidateKubeJS.java').absolutePath, "${inst}/.probe", "${inst}/${rel}"
+}
+
+// Copies the ported KubeJS scripts into a run's folder so a headless server exercises the real
+// files. Script errors, registry failures and recipe-reload failures all surface here without
+// anyone launching a client.
+def stageScripts(final String runName) {
+    return tasks.register("stage${runName.capitalize()}Scripts", Sync) {
+        group = 'build setup'
+        description = "Copies the instance's GregTech KubeJS scripts into the ${runName} run."
+        final inst = project.findProperty('instance')
+                ?: 'D:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
+        from("${inst}/kubejs/startup_scripts/gtceu")
+        // Needs mods the headless run does not stage (ExtendedAE registers custom_infinity_cell).
+        exclude 'gt_infinity_cells.js'
+        into layout.projectDirectory.dir("run/${runName}/kubejs/startup_scripts/gtceu")
+    }
+}
+
+['client', 'server'].each { runName ->
+    final s = stageScripts(runName)
+    tasks.matching { it.name == "run${runName.capitalize()}" }.configureEach { dependsOn s }
+}
+
+// The recipe half of the staging above. A separate Sync because the two sets live in different
+// folders and either can be staged without the other.
+def stageRecipes(final String runName) {
+    return tasks.register("stage${runName.capitalize()}Recipes", Sync) {
+        group = 'build setup'
+        description = "Copies the instance's GregTech KubeJS recipe scripts into the ${runName} run."
+        final inst = project.findProperty('instance')
+                ?: 'D:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
+        from("${inst}/kubejs/server_scripts/mods/gtceu")
+        into layout.projectDirectory.dir("run/${runName}/kubejs/server_scripts/gtceu")
+    }
+}
+
+['client', 'server'].each { runName ->
+    final r = stageRecipes(runName)
+    tasks.matching { it.name == "run${runName.capitalize()}" }.configureEach { dependsOn r }
+}
+
+// One command for an unattended pass: stage everything, boot a server, run both verifiers, halt.
+//   ./gradlew headlessCheck
+// Read the result out of run/server/logs/latest.log:
+//   grep -E "pattern check|recipe check|recipe run|negative control|PATTERN FAILED|NO RECIPES|RECIPE FAILED" run/server/logs/latest.log
+// Read "recipe run" and "negative control" together: a pass count with no matching refusal
+// count is a harness that stopped checking, not a clean sweep.
+tasks.register('headlessCheck') {
+    group = 'verification'
+    description = 'Boots a headless server, verifies patterns, recipe counts and recipe matching, then exits.'
+    dependsOn 'runServer'
+    doFirst {
+        if (!project.hasProperty('exitAfterCheck')) {
+            throw new GradleException(
+                "Run it as ./gradlew headlessCheck -PexitAfterCheck=true — without that the "
+                    + "server stays up and the task never returns.")
+        }
+    }
+}

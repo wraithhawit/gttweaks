@@ -1,0 +1,58 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+description='''
+Java-side fixes for running GregTech CEu Modern in All the Mods 10. GregTech
+8.0.0-SNAPSHOT is the only 1.21.1 build binary-compatible with the KubeJS this
+pack ships, but on a JEI-only client it cannot finish mod loading: a recipe
+viewer icon reaches for JEI's runtime during registry init. Everything else
+about GregTech here is driven from KubeJS scripts; this mod exists only for what
+a script cannot reach. Contains no blocks or items.
+'''
+
+[[mixins]]
+config="${mod_id}.modularui.mixins.json"
+requiredMods=["modularui"]
+
+[[mixins]]
+config="${mod_id}.gtceu.mixins.json"
+requiredMods=["gtceu","jei"]
+
+[[mixins]]
+config="${mod_id}.emi.mixins.json"
+requiredMods=["emi"]
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="gtceu"
+    type="required"
+    versionRange="[${gtceu_version},)"
+    ordering="AFTER"
+    side="BOTH"
+
+# Client-only bugs, but both are the mixin targets, so they must load first.
+# GregTech jar-in-jars ModularUI.
+[[dependencies.${mod_id}]]
+    modId="modularui"
+    type="required"
+    versionRange="[3.3.1-SNAPSHOT,)"
+    ordering="AFTER"
+    side="CLIENT"
