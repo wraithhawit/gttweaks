@@ -1,6 +1,7 @@
 # Build output and local development state
 /.gradle/
 /build/
+/bin/
 /out/
 /run/
 /runs/
