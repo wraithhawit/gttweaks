@@ -1,80 +1,56 @@
-# Codex and Claude workflow
+# Claude and Codex workflow
 
-Astra (Codex) is the consulting principal and final reviewer for this repository.
-Claude drives execution by default: investigation, implementation, builds, tests, and
-iteration on its own failures. Astra's context is the scarce resource in this setup;
-Claude's is not — default to delegating whole objectives to Claude and reserve Astra
-for the moments where deep reasoning actually changes the outcome.
+Claude (Claude Code) is the lead engineer for this repository. It owns investigation,
+design, implementation, builds, tests, instance edits, and — with the user's go-ahead —
+commits and versioning.
 
-## Ownership
+Astra (Codex) is a consultant. It is called only when Claude is stuck after a genuine
+attempt, before a version is declared stable, or when the user asks for a second
+opinion. Astra's context is the scarce resource; the consult is designed to spend it
+only on moments where deep reasoning changes the outcome.
 
-Astra owns:
+## When Astra is consulted
 
-- root-causing a bug that has survived a genuine attempt, and other hard architectural calls;
-- design and risk tradeoffs, and deciding between competing fixes;
-- final review and acceptance of Claude's work;
-- anything touching the live Minecraft/ATM10 instance, external systems, versioning,
-  release notes, commits, and pushes.
-
-Claude drives (given a whole objective and acceptance criteria, not a single question):
-
-- investigation: locating call sites, decompiling named classes, comparing versions,
-  extracting failure signatures and timelines from logs;
-- implementation: mechanical edits, straightforward documentation, repetitive renames,
-  narrow test scaffolding, and full edit/build/test/iterate loops when the objective and
-  acceptance criteria are explicit;
-- iterating on its own build and test failures without checking back in after each step.
-
-Claude may propose fixes and implement routine solutions. It does not finalize major architecture, accept an in-game result as final, edit the live
-Minecraft instance, or commit/push/version/release. When Claude hits something genuinely
-hard — a real attempt has failed, not just a first pass — it escalates to Astra with
-the evidence attached rather than thrashing.
-
-## Delegation rules
-
-Run the global wrapper from the repository root:
+Claude calls Astra through the global consult script:
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\wrait\.codex\tools\claude-grunt.ps1 -Mode <Report|Edit|Work> -Task '<objective and acceptance criteria>'
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\Users\wrait\.codex\tools\ask-astra.ps1 -Question '<problem>' -Context <files>
 ```
 
-Modes:
+The consult runs read-only. When consulted, Astra should:
 
-- `Report` — read-only investigation, no file changes.
-- `Edit` — mechanical edits only, no shell/build.
-- `Work` — full loop: edit, build, test, and iterate until the stated acceptance
-  criteria are met, or until Claude can state precisely why they can't be.
+- think about the supplied problem rather than restate it, assuming the obvious things
+  have been tried;
+- give its best root-cause hypothesis with supporting evidence, the competing hypothesis
+  to rule out next and the observation that would rule it out, and a concrete next
+  diagnostic or fix;
+- for a stability check, review the changes for correctness, init/persistence/
+  item-safety/client-server risks, and anything that should block calling the version
+  stable;
+- not take over the work, redirect scope, or propose a broad redesign unless the
+  evidence forces one.
 
-Defaults are `-Model opus -Effort high`; drop to `-Model sonnet -Effort medium` for
-genuinely mechanical work. Delegate one objective per call with explicit acceptance
-criteria, and let it run — do not split an objective into a chain of single questions,
-and do not abort a run just because it has been going for a while.
+Claude treats Astra's answer as engineering input and verifies it before acting.
 
-The wrapper returns a concise `## SUMMARY` block plus a path to the full report. Read
-the summary first; open the full report only when the summary is insufficient or the
-decision is consequential.
+If the user starts a session directly in Codex, Codex may work normally, but should
+leave commits, versioning, and live-instance edits to the user's explicit instruction
+and should not re-delegate the whole objective back to Claude through
+`claude-grunt.ps1` unless the user asks.
 
-Reserve consequential design decisions, mixin safety approval, final acceptance of an in-game
-result, and editing the Minecraft instance for Astra. Do not ask Claude and
-Astra to independently redesign the same subsystem.
-
-## Verifying Claude's work
-
-Treat Claude's output as an engineering report, not a verdict, and verify
-proportionally to consequence:
+## Verification standards
 
 - Spot-check routine findings and mechanical edits: confirm the working tree and the
   build, not every cited line.
 - Verify directly before adopting anything that drives a design decision, touches
   init/persistence/item-safety/client-server boundaries, or precedes a commit or
   release.
+- Do not treat a screenshot description or an unverified numeric cost/token claim as
+  fact — re-check it directly before it drives a decision.
+- An in-game result is accepted when the user confirms it.
 
-Do not treat a screenshot description or an unverified numeric cost/token claim from a
-report as fact — re-check it directly before it drives a decision.
-
-Store transient reports outside the repository (the wrapper's default handoff
-location). Promote durable conclusions into repository documentation only after Astra
-validates them.
+Store transient reports and consult outputs outside the repository (the scripts'
+default locations). Promote durable conclusions into repository documentation once they
+are verified.
 
 ## Current project constraints
 
