@@ -8,7 +8,7 @@ This repository contains the Java addon. The ATM9 multiblock and recipe ports li
 
 ## Current status
 
-**0.27.0 is a submenu and cleanroom candidate, awaiting in-game verification.** The top-level C/M/X menus worked in 0.26.0, but submenus accumulated. The new cleanup resolves ownership from attached widget children, retains the root and active ancestors, and removes other panel children even if their buttons already say closed. The cleanroom default now uses the correct `gtceu:plascrete` registry ID. Explicit preview customizations are preserved. The off-centre preview rotation remains unresolved.
+**0.28.0 fixes a reproduced ModularUI child-removal defect; in-game verification is pending.** Actual `Menu` objects compare unequal to themselves in this MUI snapshot, so `List.remove(menu)` fails and leaves closed submenus visible. Child removal now searches by identity while preserving MUI's disposal callbacks. The 0.27 branch-selection logic and corrected `gtceu:plascrete` lookup remain. See [submenu diagnosis](docs/SUBMENU-REMOVAL.md). The off-centre preview rotation remains unresolved.
 
 The 0.24.0 count mixin was observed running in the ATM10 log on September 12 at 07:12:21, limiting energy inputs from three to one. This confirmed execution but did not fix glass selection or hatch placement. See [cleanroom verification notes](docs/CLEANROOM-PREVIEW.md).
 

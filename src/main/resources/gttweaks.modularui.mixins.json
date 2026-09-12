@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
+    "WidgetRemovalMixin",
     "OverlayStackMixin",
     "SchemaFitToStructureMixin",
     "EmbedTransformAllPanelsMixin",

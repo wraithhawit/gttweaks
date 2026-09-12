@@ -2,7 +2,12 @@
 
 This repository begins with the existing 0.25.0 source snapshot. Earlier development happened locally; the entries below summarize the immediately preceding changes and do not imply reconstructed Git history.
 
-## 0.27.0 (candidate)
+## 0.28.0 (candidate)
+
+- Fix child removal in ModularUI: `Widget.equals` rejects subclasses even when an object is compared with itself, making `List.remove(menu)` fail. Redirect only that list removal in `AbstractParentWidget.remove(IWidget)` to an identity lookup. Original disposal and removal callbacks still execute.
+- Reproduce failed removal with actual `Menu` objects from the exact bundled ModularUI jar, then verify identity removal, sibling preservation, and cached-menu reopening. All five tests pass; in-game application remains unverified.
+
+## 0.27.0 (failed in-game)
 
 - Resolve submenu ancestry from attached child trees rather than potentially invalid parent pointers; always retain the root menu, remove inactive branches using actual panel children, and clear the detached buttons' flags.
 - Log the first eight submenu cleanup decisions for runtime verification.
