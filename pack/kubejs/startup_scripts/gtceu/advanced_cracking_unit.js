@@ -1,0 +1,31 @@
+GTCEuStartupEvents.registry('gtceu:machine', allthemods => {
+    allthemods.create("advanced_cracking_unit", "multiblock")
+        .rotationState(RotationState.NON_Y_AXIS)
+        .blockEntityFactory((holder) => new CoilWorkableElectricMultiblockMachine(holder))
+        .recipeTypes(GTRecipeTypes.get('cracker'))
+        .recipeModifiers([GTRecipeModifiers.PARALLEL_HATCH, GTRecipeModifiers.BATCH_MODE, (machine, recipe) => GTRecipeModifiers.crackerOverclock(machine, recipe)])
+        .appearanceBlock(GTBlocks.CASING_STAINLESS_CLEAN)
+        .pattern(definition => FactoryBlockPattern.start(RelativeDirection.FRONT, RelativeDirection.UP, RelativeDirection.LEFT)
+            // Original pattern - no changes needed here now
+            .slice("BBBBBBB", "BCCCCCB", "BBBBBBB", "BBBBBBB", "BBBBBBB")
+            .slice("BBBBBBB", "CADAAAC", "EAAAAAE", "EADADAE", "EEBBBEE")
+            .slice("BBBBBBB", "CDFDFDC", "EADADAE", "EDFDFDE", "EEBGBEE")
+            .slice("BBBBBBB", "CADADAC", "EAAAAAE", "EADADAE", "EEBBBEE")
+            .slice("BBBBBBB", "BHHHHHB", "BHHIHHB", "BHHHHHB", "BBBBBBB")
+            .where("A", Predicates.any())
+            .where("B", Predicates.blocks("gtceu:robust_machine_casing"))
+            .where("C", Predicates.blocks("gtceu:tungstensteel_firebox_casing"))
+            .where("D", Predicates.blocks("gtceu:tungstensteel_pipe_casing"))
+            .where("E", Predicates.heatingCoils())
+            .where("F", Predicates.blocks("gtceu:hp_steam_solid_boiler"))
+            .where("G", Predicates['abilities(com.gregtechceu.gtceu.api.machine.multiblock.PartAbility)'](PartAbility.MUFFLER).setExactLimit(1))
+            .where('H', Predicates.blocks('gtceu:clean_machine_casing').setMinGlobalLimited(4) 
+                .or(Predicates['abilities(com.gregtechceu.gtceu.api.machine.multiblock.PartAbility)'](PartAbility.MAINTENANCE).setExactLimit(1))
+                .or(Predicates['abilities(com.gregtechceu.gtceu.api.machine.multiblock.PartAbility)'](PartAbility.PARALLEL_HATCH).setMaxGlobalLimited(1))
+                .or(Predicates['autoAbilities(com.gregtechceu.gtceu.api.recipe.GTRecipeType[])'](Array.from(definition.getRecipeTypes()))))
+            .where('I', Predicates.controller(Predicates.blocks(definition.get())))
+            .build())
+        .workableCasingModel("gtceu:block/casings/solid/machine_casing_clean_stainless_steel",
+            "gtceu:block/multiblock/cracking_unit");
+
+})

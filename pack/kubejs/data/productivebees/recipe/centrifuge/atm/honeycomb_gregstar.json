@@ -1,0 +1,28 @@
+{
+  "type": "productivebees:centrifuge",
+  "ingredient": {
+    "type": "productivebees:component",
+    "components": {
+      "productivebees:bee_type": "productivebees:gregstar"
+    },
+    "items": "productivebees:configurable_honeycomb"
+  },
+  "outputs": [
+    {
+      "item": {
+        "item": "kubejs:greg_star_shard"
+      },
+      "chance": 0.05
+    }
+  ],
+  "fluid": {
+    "amount": 50,
+    "fluid": "productivebees:honey"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "productivebees:bee_exists",
+      "bee": "productivebees:gregstar"
+    }
+  ]
+}
