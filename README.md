@@ -8,7 +8,7 @@ This repository contains the Java addon. The ATM9 multiblock and recipe ports li
 
 ## Current status
 
-**0.26.0 is a cleanroom preview candidate, awaiting in-game verification.** It restores the 0.24.0 menu implementation after the broken 0.25.0 input rewrite, and defaults uncustomized upright cleanrooms to Plastcrete instead of glass, with energy hatches on eligible floor blocks. Explicit preview customizations are preserved. The off-centre preview rotation remains unresolved.
+**0.27.0 is a submenu and cleanroom candidate, awaiting in-game verification.** The top-level C/M/X menus worked in 0.26.0, but submenus accumulated. The new cleanup resolves ownership from attached widget children, retains the root and active ancestors, and removes other panel children even if their buttons already say closed. The cleanroom default now uses the correct `gtceu:plascrete` registry ID. Explicit preview customizations are preserved. The off-centre preview rotation remains unresolved.
 
 The 0.24.0 count mixin was observed running in the ATM10 log on September 12 at 07:12:21, limiting energy inputs from three to one. This confirmed execution but did not fix glass selection or hatch placement. See [cleanroom verification notes](docs/CLEANROOM-PREVIEW.md).
 

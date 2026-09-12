@@ -19,6 +19,8 @@ import java.util.Collections;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
+import java.util.ArrayList;
+import com.wraithhawit.gttweaks.MenuBranchSelection;
 
 /**
  * Keeps a dropdown's sub-menus to one at a time, and forgets them when the dropdown closes.
@@ -55,6 +57,7 @@ public abstract class MenuPanelStateMixin {
     private static final Logger LOGGER = LogUtils.getLogger();
     private static boolean gttweaks$reportedExclusive;
     private static boolean gttweaks$reportedStale;
+    private static int gttweaks$branchChecks;
 
     /** The menu this panel was built around. It is the panel's reason to exist and always stays. */
     @Unique
@@ -67,14 +70,22 @@ public abstract class MenuPanelStateMixin {
 
     @Inject(method = "openSubMenu", at = @At("HEAD"))
     private void gttweaks$closeOtherSubMenus(IWidget menuList, CallbackInfo ci) {
+        final MenuPanel self = (MenuPanel) (Object) this;
+        final List<IWidget> attached = new ArrayList<>();
+        WidgetTree.foreachChild((IWidget) self, widget -> {
+            if (widget instanceof Menu<?>) attached.add(widget);
+            return true;
+        }, false);
+        final Set<IWidget> retained = MenuBranchSelection.retained(this.gttweaks$rootMenu,
+                menuList, attached, IWidget::getChildren, widget -> widget instanceof Menu<?> menu
+                        ? ((MenuSourceAccessor) (Object) menu).gttweaks$menuSource() : null);
         final Set<Object> keep = Collections.newSetFromMap(new IdentityHashMap<>());
-        keep.add(menuList);
-        if (!gttweaks$collectAncestors(menuList, keep)) {
-            // The chain runs through a widget that has been thrown away; closing anything on the
-            // strength of a half-read tree would be guessing. Leave it be.
-            return;
-        }
+        keep.addAll(retained);
         final int closed = gttweaks$detachMenusExcept(keep);
+        if (gttweaks$branchChecks++ < 8) {
+            LOGGER.info("[gttweaks] submenu branch: attached={}, retained={}, detached={}",
+                    attached.size(), retained.size(), closed);
+        }
         if (closed > 0 && !gttweaks$reportedExclusive) {
             gttweaks$reportedExclusive = true;
             LOGGER.info("[gttweaks] closed {} sub-menu(s) that were still open when another one was "
@@ -98,32 +109,6 @@ public abstract class MenuPanelStateMixin {
     }
 
     /**
-     * Walks from a menu up through the buttons and menus that own it, adding each to {@code keep}.
-     *
-     * @return false if the walk hit an invalidated widget, in which case {@code keep} is not to be
-     *         trusted — {@code getParent()} throws on those rather than ending the walk.
-     */
-    @Unique
-    private boolean gttweaks$collectAncestors(IWidget menuList, Set<Object> keep) {
-        if (!(menuList instanceof Menu<?> menu)) {
-            return false;
-        }
-        try {
-            AbstractMenuButton<?> source = ((MenuSourceAccessor) (Object) menu).gttweaks$menuSource();
-            while (source != null && source.isValid()) {
-                final Menu<?> owner = WidgetTree.findParent(source, Menu.class);
-                if (owner == null || !keep.add(owner)) {
-                    break;
-                }
-                source = ((MenuSourceAccessor) (Object) owner).gttweaks$menuSource();
-            }
-            return true;
-        } catch (Throwable t) {
-            return false;
-        }
-    }
-
-    /**
      * Detaches every menu on this panel that is not in {@code keep}, deepest first.
      *
      * <p>Order matters: removing a menu disposes the buttons inside it, so a menu opened <i>by</i>
@@ -135,26 +120,21 @@ public abstract class MenuPanelStateMixin {
     @SuppressWarnings({"rawtypes", "unchecked"})
     private int gttweaks$detachMenusExcept(Set<Object> keep) {
         final MenuPanel self = (MenuPanel) (Object) this;
-        final List<Menu> menus;
-        try {
-            menus = WidgetTree.flatListByType(self, Menu.class);
-        } catch (Throwable t) {
-            return 0;
-        }
+        // Remove the actual panel children. A tree lookup can return a nested menu which
+        // remove(menu) cannot detach from this panel, leaving its closed flag and visible UI apart.
+        final List<IWidget> children = new ArrayList<>(self.getChildren());
         int detached = 0;
-        for (int i = menus.size() - 1; i >= 0; i--) {
-            final Menu<?> menu = menus.get(i);
-            if (keep.contains(menu)) {
+        for (int i = children.size() - 1; i >= 0; i--) {
+            final IWidget child = children.get(i);
+            if (keep.stream().anyMatch(saved -> saved instanceof IWidget widget
+                    && MenuBranchSelection.contains(child, widget, IWidget::getChildren))) {
                 continue;
             }
-            gttweaks$clearFlags(menu);
-            try {
-                if (self.remove(menu)) {
-                    detached++;
-                }
-            } catch (Throwable ignored) {
-                // Already gone, which is the state we were after anyway.
-            }
+            WidgetTree.foreachChild(child, widget -> {
+                gttweaks$clearFlags(widget);
+                return true;
+            }, true);
+            if (self.remove(child)) detached++;
         }
         return detached;
     }

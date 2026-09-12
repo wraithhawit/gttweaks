@@ -33,7 +33,7 @@ public final class CleanroomPreviewDefaults {
         for (var entry : new ArrayList<>(blocks.entrySet())) {
             if (!isBlock(entry.getValue(), "gtceu:cleanroom_glass")) continue;
             MultiPredicate allowed = helper.getPredicateFromPos(pattern, entry.getKey(), front, up, flipped);
-            BlockInfo casing = candidate(allowed, "gtceu:plastcrete");
+            BlockInfo casing = candidate(allowed, "gtceu:plascrete");
             if (casing != null) {
                 blocks.put(entry.getKey(), casing);
                 replacedGlass++;
@@ -54,10 +54,10 @@ public final class CleanroomPreviewDefaults {
             BlockInfo hatch = entry.getValue();
             if (source.getY() == floorY || !offers(energy, hatch.getBlockState().getBlock())) continue;
             BlockInfo casing = candidate(helper.getPredicateFromPos(pattern, source, front, up, flipped),
-                    "gtceu:plastcrete");
+                    "gtceu:plascrete");
             if (casing == null) continue;
             for (BlockPos target : floorPositions) {
-                if (!isBlock(blocks.get(target), "gtceu:plastcrete")) continue;
+                if (!isBlock(blocks.get(target), "gtceu:plascrete")) continue;
                 if (!offers(helper.getPredicateFromPos(pattern, target, front, up, flipped),
                         hatch.getBlockState().getBlock())) continue;
                 blocks.put(source, casing);

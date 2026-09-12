@@ -1,5 +1,9 @@
 # Cleanroom preview defaults
 
+## 0.27 correction
+
+The user confirmed that 0.26 still showed glass edges. Runtime logs show the injection executed but replaced zero blocks. The candidate matcher used `gtceu:plastcrete`; GTBlocks bytecode registers the PLASTCRETE field as **`gtceu:plascrete`**. 0.27 corrects that ID at all three lookup sites. Its in-game result remains unverified.
+
 ## Evidence, September 12, 2026
 
 ATM10 latest.log identifies gttweaks 0.24.0. At 07:12:21.130 it logs `capping expandable preview fill: max 3 -> 1` for `Ability{input_energy}`. This confirms the count injection executes. The log is intentionally emitted only once per process.

@@ -2,6 +2,13 @@
 
 This repository begins with the existing 0.25.0 source snapshot. Earlier development happened locally; the entries below summarize the immediately preceding changes and do not imply reconstructed Git history.
 
+## 0.27.0 (candidate)
+
+- Resolve submenu ancestry from attached child trees rather than potentially invalid parent pointers; always retain the root menu, remove inactive branches using actual panel children, and clear the detached buttons' flags.
+- Log the first eight submenu cleanup decisions for runtime verification.
+- Correct the cleanroom casing registry ID from the nonexistent `gtceu:plastcrete` to `gtceu:plascrete`. The 0.26 injection ran but reported zero replacements.
+- Four branch-selection tests pass: sibling switching/reopening, deeper ancestors, returning to another root choice, and wrapped children. These do not test the live rendered UI.
+
 ## 0.26.0 (candidate)
 
 - Prefer Plastcrete over glass in the default upright cleanroom preview, using candidates from each position's actual pattern.
