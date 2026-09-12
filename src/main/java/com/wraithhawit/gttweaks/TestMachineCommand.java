@@ -36,6 +36,8 @@ import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -43,6 +45,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import org.slf4j.Logger;
@@ -50,6 +53,7 @@ import org.slf4j.Logger;
 import java.util.ArrayList;
 import java.lang.reflect.Field;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.LinkedHashSet;
@@ -399,12 +403,17 @@ public class TestMachineCommand {
         final List<RecipeModifier> chain = modifier instanceof RecipeModifierList list
                 ? Arrays.asList(list.getModifiers())
                 : List.of(modifier);
+        // RecipeModifierList.getModifier threads the recipe through the chain - step n is handed
+        // what step n-1 produced, never the original. Walking every step against the original finds
+        // nothing wrong in exactly the case worth catching: a step that refuses only the partially
+        // modified recipe. So carry the running recipe forward the way GregTech does.
+        GTRecipe current = recipe;
         for (int i = 0; i < chain.size(); i++) {
             final RecipeModifier step = chain.get(i);
             final String name = modifierName(step) + " (" + (i + 1) + " of " + chain.size() + ")";
             final ModifierFunction function;
             try {
-                function = step.getModifier(machine, recipe);
+                function = step.getModifier(machine, current);
             } catch (Throwable t) {
                 return name + " threw while deciding: " + t;
             }
@@ -418,7 +427,7 @@ public class TestMachineCommand {
             }
             final GTRecipe result;
             try {
-                result = function.apply(recipe);
+                result = function.apply(current);
             } catch (Throwable t) {
                 return name + " threw while applying itself to the recipe: " + t;
             }
@@ -429,9 +438,30 @@ public class TestMachineCommand {
                 return name + " produced no recipe when applied - GregTech swallowed the error inside "
                         + "applySafe" + (why.isBlank() ? "" : " (" + why + ")") + tierNote(machine, recipe);
             }
+            current = result;
         }
-        return "no single modifier refused it, yet the chain as a whole produced nothing - they "
-                + "only fail in combination" + tierNote(machine, recipe);
+        return "the whole chain accepted it [" + describeChain(chain) + "], so the null came from "
+                + "somewhere this walk does not reach - the IRecipeLogicModifierTrait stage that "
+                + "doModifyRecipe runs after the chain, or the output trimming fullModifyRecipe does "
+                + "before it" + tierNote(machine, recipe);
+    }
+
+    /**
+     * The chain in the order GregTech runs it.
+     *
+     * <p>A fallthrough used to say only "they only fail in combination", which is unfalsifiable
+     * without knowing how many steps there were - a one-step chain cannot fail in combination with
+     * anything. Naming them makes the message answerable.
+     */
+    private static String describeChain(List<RecipeModifier> chain) {
+        final StringBuilder names = new StringBuilder();
+        for (int i = 0; i < chain.size(); i++) {
+            if (i > 0) {
+                names.append(" -> ");
+            }
+            names.append(modifierName(chain.get(i)));
+        }
+        return chain.size() + (chain.size() == 1 ? " step: " : " steps: ") + names;
     }
 
     /** The constant's own name where we know it, else a trimmed class name. */
@@ -490,6 +520,20 @@ public class TestMachineCommand {
         private final List<ItemStack> circuitsBefore = new ArrayList<>();
         /** Set when a bus accepts a write and hands back nothing - the ME stocking bus signature. */
         private boolean writeRejected;
+        /**
+         * Input handlers that answer from an AE network instead of from slots we can write.
+         *
+         * <p>GregTech's ME parts expose export-only slots: {@code MEStockingBusPartMachine} hands a
+         * recipe whatever the network holds and takes nothing back, so a staged write never lands.
+         * The pack leans on them deliberately - a Greenhouse recipe parallelled to 1,310,720,000mB
+         * of Water, or 921,600 Nether Star Shards on the Micro Universe Orb, is not feedable by any
+         * bank of plain hatches - so for these the fill has to stand aside and let the network
+         * answer rather than calling the machine full.
+         */
+        private final Set<NotifiableItemStackHandler> networkItems =
+                Collections.newSetFromMap(new IdentityHashMap<>());
+        private final Set<NotifiableFluidTank> networkFluids =
+                Collections.newSetFromMap(new IdentityHashMap<>());
 
         static Buses of(IRecipeLogicMachine logic) {
             final Buses buses = new Buses();
@@ -503,6 +547,7 @@ public class TestMachineCommand {
             collect(logic, IO.BOTH, GTRecipeCapabilities.ITEM, ProgrammableCircuitSlotTrait.class, buses.circuits);
             collect(logic, IO.IN, GTRecipeCapabilities.EU, NotifiableEnergyContainer.class, buses.energy);
             collect(logic, IO.BOTH, GTRecipeCapabilities.EU, NotifiableEnergyContainer.class, buses.energy);
+            buses.detectNetworkBacked();
             return buses;
         }
 
@@ -515,8 +560,57 @@ public class TestMachineCommand {
             }
         }
 
+        /**
+         * Asks each input handler, without writing anything, whether it will take anything at all.
+         *
+         * <p>A simulated insert is the whole test: an export-only ME slot refuses every offer, a
+         * plain bus with a free slot accepts. Deliberately not an {@code instanceof} against
+         * GregTech's AE2 classes - that would make this command depend on AE2 being loaded and
+         * would miss whatever ME part the pack adds next. The cost is that a handler which is
+         * genuinely full also refuses everything and is read as network-backed, which is why
+         * {@link #summary} prints the count: buses you know you emptied, reported as ME-served,
+         * are the detection telling on itself.
+         */
+        private void detectNetworkBacked() {
+            for (NotifiableItemStackHandler handler : items) {
+                if (refusesEveryItem(handler)) {
+                    networkItems.add(handler);
+                }
+            }
+            for (NotifiableFluidTank tank : fluids) {
+                if (refusesEveryFluid(tank)) {
+                    networkFluids.add(tank);
+                }
+            }
+        }
+
+        private static boolean refusesEveryItem(NotifiableItemStackHandler handler) {
+            if (handler.getSlots() == 0) {
+                return false;
+            }
+            final ItemStack probe = new ItemStack(Items.STONE);
+            for (int slot = 0; slot < handler.getSlots(); slot++) {
+                if (handler.insertItem(slot, probe.copy(), true).getCount() < probe.getCount()) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private static boolean refusesEveryFluid(NotifiableFluidTank tank) {
+            if (tank.getTanks() == 0) {
+                return false;
+            }
+            return tank.fill(new FluidStack(Fluids.WATER, 1000), IFluidHandler.FluidAction.SIMULATE) <= 0;
+        }
+
         boolean isEmpty() {
             for (NotifiableItemStackHandler handler : items) {
+                if (networkItems.contains(handler)) {
+                    // A stocking bus holds what the network stocks it with. Asking the player to
+                    // empty that is asking them to dismantle the thing being tested.
+                    continue;
+                }
                 for (int slot = 0; slot < handler.getSlots(); slot++) {
                     if (!handler.getStackInSlot(slot).isEmpty()) {
                         return false;
@@ -531,6 +625,9 @@ public class TestMachineCommand {
                 }
             }
             for (NotifiableFluidTank tank : fluids) {
+                if (networkFluids.contains(tank)) {
+                    continue;
+                }
                 for (int index = 0; index < tank.getTanks(); index++) {
                     if (!tank.getFluidInTank(index).isEmpty()) {
                         return false;
@@ -577,6 +674,12 @@ public class TestMachineCommand {
                     final ItemStack portion = candidates[0].copy();
                     portion.setCount(Math.min(remaining, perSlot));
                     if (!place(portion)) {
+                        if (!networkItems.isEmpty()) {
+                            // What the plain slots could not take is not a shortfall when an ME bus
+                            // is present to serve it. Staging stops here and matchRecipe reads what
+                            // the network actually holds, which is the honest answer either way.
+                            break;
+                        }
                         return writeRejected
                                 ? "the input bus would not take a direct write, so this recipe cannot be "
                                         + "tested here - an ME bus serves its slots from the network. Test it "
@@ -597,7 +700,7 @@ public class TestMachineCommand {
                 }
                 final FluidStack fluid = candidates[0].copy();
                 fluid.setAmount(Math.max(sized.amount(), 1));
-                if (!place(fluid)) {
+                if (!place(fluid) && networkFluids.isEmpty()) {
                     return writeRejected
                             ? "the input hatch would not take a direct write, so this recipe cannot be "
                                     + "tested here - an ME hatch serves its tanks from the network."
@@ -620,6 +723,11 @@ public class TestMachineCommand {
          */
         private boolean place(ItemStack stack) {
             for (NotifiableItemStackHandler handler : items) {
+                if (networkItems.contains(handler)) {
+                    // Skipped rather than written to: the old loop stopped at the first empty slot
+                    // it saw, so a single ME bus hid every plain bus behind it.
+                    continue;
+                }
                 for (int slot = 0; slot < handler.getSlots(); slot++) {
                     if (handler.getStackInSlot(slot).isEmpty()) {
                         handler.setStackInSlot(slot, stack);
@@ -646,6 +754,9 @@ public class TestMachineCommand {
         private boolean place(FluidStack fluid) {
             int remaining = fluid.getAmount();
             for (NotifiableFluidTank tank : fluids) {
+                if (networkFluids.contains(tank)) {
+                    continue;
+                }
                 for (int index = 0; index < tank.getTanks() && remaining > 0; index++) {
                     if (!tank.getFluidInTank(index).isEmpty()) {
                         continue;
@@ -682,11 +793,19 @@ public class TestMachineCommand {
         void clear() {
 
             for (NotifiableItemStackHandler handler : items) {
+                if (networkItems.contains(handler)) {
+                    // Never write to an ME part. The write would not land anyway, and clearing a
+                    // stocking bus's slots is one mistyped call away from wiping its configuration.
+                    continue;
+                }
                 for (int slot = 0; slot < handler.getSlots(); slot++) {
                     handler.setStackInSlot(slot, ItemStack.EMPTY);
                 }
             }
             for (NotifiableFluidTank tank : fluids) {
+                if (networkFluids.contains(tank)) {
+                    continue;
+                }
                 for (int index = 0; index < tank.getTanks(); index++) {
                     tank.setFluidInTank(index, FluidStack.EMPTY);
                 }
@@ -719,6 +838,14 @@ public class TestMachineCommand {
                     .append(fluidCapacity()).append("mB total), ")
                     .append(tankCount(outputFluids)).append(" output tanks");
             text.append(", ").append(circuits.size()).append(" circuit slot(s)");
+            if (!networkItems.isEmpty() || !networkFluids.isEmpty()) {
+                // Said out loud because it changes what a clean sweep means: inputs these parts
+                // serve were never staged here, so the run shows the recipe would be modified and
+                // matched, not that anything could physically feed it.
+                text.append(", ").append(networkItems.size()).append(" ME bus(es) and ")
+                        .append(networkFluids.size())
+                        .append(" ME hatch(es) SERVED FROM THE NETWORK, not filled here");
+            }
             if (machine instanceof MultiblockControllerMachine controller) {
                 // Named because a parallel hatch silently multiplies every recipe, and a
                 // multiplied recipe is a different recipe than the one you are reading in EMI.
