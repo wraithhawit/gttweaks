@@ -66,6 +66,9 @@ runs {
         // Unset by default: an interactive runServer should stay up. The headlessCheck task
         // turns it on so an unattended run terminates on its own.
         systemProperty 'gttweaks.exitAfterCheck', project.findProperty('exitAfterCheck') ?: 'false'
+        // Logs PRESENT/ABSENT for each listed recipe id once the server is up; see RecipeProbe.
+        //   ./gradlew headlessCheck -PexitAfterCheck=true -PprobeRecipes=gtceu:alloy_smelter/bauxite_bee
+        systemProperty 'gttweaks.probeRecipes', project.findProperty('probeRecipes') ?: ''
     }
 }
 
