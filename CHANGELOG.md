@@ -7,7 +7,10 @@ This repository begins with the existing 0.25.0 source snapshot. Earlier develop
 - Remove duplicate camera-position subtraction in schema rendering, keeping blocks, block entities, highlighting and picking on the same transform.
 - Aim the camera at the geometric block center and compensate fitted distance for the removed duplicate translation.
 - Three matrix regression tests pass alongside the five existing tests. Actual rendered behavior remains unverified; pan and zoom sensitivity may feel lower.
-- Release packaging uses the committed TestMachineCommand baseline, leaving ongoing recipe-verifier edits outside this preview build.
+- Restore the 1.20 Assembly Line recipe page in EMI. The 8.0 snapshot still ships `assembly_line.rtui` but `loadRecipeTypeUIFromFile` throws, so a custom layout rebuilds it from that file's positions: 4x4 item grid, connector bar, four fluids, output, arrow and research slot. Confirmed in-game.
+- Put the EU "Total / Usage" lines back on that page; the custom layout skipped the builder that creates them. Confirmed in-game.
+- Fill the research slot with each research entry's data item, as 1.20 did, and drop the snapshot's separate `research_info` row on that page. The empty slot shows the data-orb icon under EMI's hover highlight (confirmed in-game); a recipe that actually needs research has not been checked yet.
+- `TestMachineCommand` now carries the modified recipe through each modifier step and lets ME stocking buses and hatches serve inputs from the network. Every 0.29.0 jar built from this point includes it.
 
 ## 0.28.0 (submenu fix confirmed in-game)
 

@@ -9,7 +9,10 @@
   ],
   "client": [
     "JeiCallWrapperMixin",
-    "ExpandablePreviewFillMixin"
+    "ExpandablePreviewFillMixin",
+    "RecipeTypeLayoutAccessor",
+    "ResearchInfoRowMixin",
+    "RecipeViewerTextCapabilitiesMixin"
   ],
   "server": [],
   "injectors": {
