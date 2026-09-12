@@ -13,9 +13,7 @@
     "MenuSourceAccessor",
     "MenuButtonStateAccessor",
     "MenuButtonSiblingScopeMixin",
-    "MenuCloseProbeMixin",
-    "PanelManagerAccessor",
-    "EmbeddedMenuDispatchMixin"
+    "MenuCloseProbeMixin"
   ],
   "server": [],
   "injectors": {

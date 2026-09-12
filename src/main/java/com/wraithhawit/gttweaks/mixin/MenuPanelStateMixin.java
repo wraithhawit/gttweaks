@@ -37,8 +37,8 @@ import java.util.Set;
  * that calls {@code getPanel()}, which throws on an invalidated widget. The walk dies part-way and
  * everything after it keeps {@code open = true} with its menu still attached to the panel.
  *
- * <p>Detach descendants before ModularUI closes the root and invalidates their source buttons.
- * The cached root remains attached so reopening starts with a usable, empty dropdown branch.
+ * <p>So: this closes the loop from the other end. Nothing here reimplements ModularUI's closing
+ * logic — it runs after ModularUI's has had its turn, and only clears what that left behind.
  *
  * <p>The exclusivity half is the same idea applied on the way in. {@code onMousePressed} already
  * closes sibling buttons, but the hover path ({@code onMouseEnterArea -> openMenu(true)}) does not:
@@ -69,7 +69,6 @@ public abstract class MenuPanelStateMixin {
     private void gttweaks$closeOtherSubMenus(IWidget menuList, CallbackInfo ci) {
         final Set<Object> keep = Collections.newSetFromMap(new IdentityHashMap<>());
         keep.add(menuList);
-        keep.add(this.gttweaks$rootMenu);
         if (!gttweaks$collectAncestors(menuList, keep)) {
             // The chain runs through a widget that has been thrown away; closing anything on the
             // strength of a half-read tree would be guessing. Leave it be.
@@ -83,7 +82,7 @@ public abstract class MenuPanelStateMixin {
         }
     }
 
-    @Inject(method = "onClose", at = @At("HEAD"))
+    @Inject(method = "onClose", at = @At("TAIL"))
     private void gttweaks$forgetSubMenus(CallbackInfo ci) {
         final Set<Object> keep = Collections.newSetFromMap(new IdentityHashMap<>());
         if (this.gttweaks$rootMenu != null) {
@@ -93,8 +92,8 @@ public abstract class MenuPanelStateMixin {
         gttweaks$clearFlags(this.gttweaks$rootMenu);
         if (stale > 0 && !gttweaks$reportedStale) {
             gttweaks$reportedStale = true;
-            LOGGER.info("[gttweaks] detached {} sub-menu(s) before closing their root; "
-                    + "the next open starts clean", stale);
+            LOGGER.info("[gttweaks] dropped {} sub-menu(s) ModularUI's own closeAllMenus left "
+                    + "attached to a closed menu panel; the next open starts clean", stale);
         }
     }
 
@@ -111,10 +110,7 @@ public abstract class MenuPanelStateMixin {
         }
         try {
             AbstractMenuButton<?> source = ((MenuSourceAccessor) (Object) menu).gttweaks$menuSource();
-            while (source != null) {
-                if (!source.isValid()) {
-                    return false;
-                }
+            while (source != null && source.isValid()) {
                 final Menu<?> owner = WidgetTree.findParent(source, Menu.class);
                 if (owner == null || !keep.add(owner)) {
                     break;

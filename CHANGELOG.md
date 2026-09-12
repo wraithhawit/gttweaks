@@ -2,6 +2,15 @@
 
 This repository begins with the existing 0.25.0 source snapshot. Earlier development happened locally; the entries below summarize the immediately preceding changes and do not imply reconstructed Git history.
 
+## 0.26.0 (candidate)
+
+- Prefer Plastcrete over glass in the default upright cleanroom preview, using candidates from each position's actual pattern.
+- Move energy input hatches to eligible Plastcrete floor positions before GT adjusts their facing.
+- Preserve explicit block, count, and position preferences by skipping normalization on customized previews.
+- Restore the 0.24.0 menu implementation; remove the 0.25.0-only mixins and their mocked routing tests. The broken experiment remains in Git history.
+
+Build succeeds against the staged GT snapshot. Runtime application and visual verification remain outstanding; compilation is not an in-game test.
+
 ## 0.25.0
 
 - Route GregTech EMI preview input using the current recipe page, replacing the global last-rendered screen reference.
