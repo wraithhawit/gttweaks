@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gtceu"
+    },
+    {
+      "type": "neoforge:item_exists",
+      "item": "gtceu:netherrack_certus_quartz_ore"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "occultism:miners/ores"
+      }
+    }
+  ],
+  "type": "occultism:miner",
+  "ingredient": {
+    "tag": "occultism:miners/ores"
+  },
+  "result": {
+    "type": "occultism:weighted_item",
+    "stack": {
+      "count": 1,
+      "id": "gtceu:netherrack_certus_quartz_ore"
+    },
+    "weight": 187
+  }
+}

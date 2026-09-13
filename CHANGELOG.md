@@ -2,6 +2,10 @@
 
 This repository begins with the existing 0.25.0 source snapshot. Earlier development happened locally; the entries below summarize the immediately preceding changes and do not imply reconstructed Git history.
 
+## Unreleased
+
+- Pack data (instance KubeJS, mirrored in `pack/kubejs/data/occultism/recipe/miner/`): port ATM9's 90 Occultism miner recipes for GregTech ores (36 deeps, 14 master, 40 ores) to Occultism 1.21 with `tools/port_occultism_miners.py`. Paths and weights are kept; the weight moves into an `occultism:weighted_item` result, and each recipe is gated on GregTech being loaded, the result item existing, and the miner tag being non-empty. Seven share a path with Occultism's own tag-based recipes (amethyst, certus quartz, electrotine, lithium, malachite, opal and topaz ore) and replace them with the exact GregTech ore, as in ATM9. Two ATM9 ids GTCEu 8 does not register are remapped: `deepslate_pollusite_ore` → `deepslate_pollucite_ore` (misspelling) and `endstone_plutonium_ore` → `endstone_plutonium_239_ore`. Headless registry dump: all 90 result items exist. ATM9's five non-GregTech miner files (ATM nuggets, an empty thorium override, tag-based uraninite) are not ported. The dev server has no Occultism, so recipe loading is not yet confirmed in game.
+
 ## 0.29.0 (stable)
 
 - Remove duplicate camera-position subtraction in schema rendering, keeping blocks, block entities, highlighting and picking on the same transform.
