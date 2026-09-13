@@ -9,7 +9,8 @@
     "RecipeCapabilityKeyMixin",
     "RecipeSerializerCapabilityKeyMixin",
     "KubeJSCapabilityKeyMixin",
-    "RecipeJsonProbeMixin"
+    "RecipeJsonProbeMixin",
+    "EnergyTransferResultCopyMixin"
   ],
   "client": [
     "JeiCallWrapperMixin",
