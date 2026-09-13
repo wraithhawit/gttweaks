@@ -61,6 +61,12 @@ UNOBTAINABLE_TASK_TITLE = "Infinite Polonium Cell (not in ATM10, check off by ha
 # Unit that replaced it does not, so those two prerequisite quests go, and the remaining one moves
 # into the gap they leave.
 REMOVED_QUESTS = {"5AAD0E516762BA53", "3673893C88EB5EDE"}
+# GTCEu 8 registers molten fluids (AlloyBlastPropertyAddition) without bucket items, so ATM9's
+# "have a molten trinaquadalloy bucket" task becomes a fluid task for the same 1000 mB, which can
+# be handed in from a tank or piped into a task screen.
+TASK_REPLACEMENTS = {
+    "747C0465749AAB2C": ("gtceu:molten_trinaquadalloy", 1000),
+}
 QUEST_POSITIONS = {"70B518EC050678AE": ("9.5d", "-6.0d")}
 # English text for quests whose items were substituted; their ATM9 translations describe the old
 # items, so those locales fall back to this text.
@@ -400,6 +406,13 @@ class Port:
         self.pop_text(task, target, f"task.{task['id']}", [("title", "title")])
         if "icon" in task:
             task["icon"] = self.convert_item(task["icon"], where + " icon")
+        if task["id"] in TASK_REPLACEMENTS:
+            fluid, amount = TASK_REPLACEMENTS[task["id"]]
+            task = {k: v for k, v in task.items() if k not in ("item", "count", "type")}
+            # the compound form FluidTask.writeData saves
+            task.update({"type": "fluid", "fluid": {"amount": Num(str(amount)), "id": fluid}})
+            self.used_fluids.add(fluid)
+            self.notes.append(f"{where}: replaced with a fluid task for {amount} mB of {fluid}")
         if task["type"] == "item":
             raw_id = task["item"] if isinstance(task["item"], str) else task["item"]["id"]
             if raw_id in UNOBTAINABLE:
@@ -409,7 +422,7 @@ class Port:
                 self.add_text(target, f"task.{task['id']}.title", UNOBTAINABLE_TASK_TITLE)
             else:
                 task["item"] = self.convert_item(task["item"], where)
-        elif task["type"] not in ("checkmark", "dimension"):
+        elif task["type"] not in ("checkmark", "dimension", "fluid"):
             self.problems.append(f"{where}: unhandled task type {task['type']}")
         return task
 

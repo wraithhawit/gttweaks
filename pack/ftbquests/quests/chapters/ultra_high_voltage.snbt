@@ -901,12 +901,12 @@
 			]
 			tasks: [
 				{
-					id: "747C0465749AAB2C"
-					item: {
-						count: 1
-						id: "gtceu:molten_trinaquadalloy_bucket"
+					fluid: {
+						amount: 1000
+						id: "gtceu:molten_trinaquadalloy"
 					}
-					type: "item"
+					id: "747C0465749AAB2C"
+					type: "fluid"
 				}
 			]
 			x: 9.0d
