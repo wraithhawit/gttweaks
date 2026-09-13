@@ -1,0 +1,2612 @@
+{
+	chapter.00E59A3B38CB7EEA.title: "Voltaje Loco"
+	chapter.220BE62A7F8EA359.title: "Modulo de Punto Zero"
+	chapter.3202C575456F57D2.title: "La GregStar"
+	chapter.37A28F4697946CB4.title: "Voltaje Bajo"
+	chapter.37A5A4A81CCB67E5.title: "Voltaje Alto"
+	chapter.403105E8F21D82C7.title: "Voltaje Ridiculo"
+	chapter.415BA265E2C00859.title: "Comienzos"
+	chapter.435C9D14D471D326.title: "Era de Vapor"
+	chapter.489F28A71282B3E7.title: "Voltaje Extremo"
+	chapter.560EF4C38DEACA03.title: "Metas"
+	chapter.574AC3A76DC03364.title: "Voltaje Medio"
+	chapter.60A9BBC993EB2FD2.title: "Voltaje Ultra Alto"
+	chapter.754B57DEA4C711A5.title: "Voltaje Definitivo"
+	chapter_group.1DA67E79B40AB130.title: "GregTech™"
+	quest.0012EC5DDAEB7D5B.quest_desc: ["Este multibloque puede que no se use tanto en cantidad como otras estructuras de multibloque, ¡pero demostrará su valor, te lo prometo!"]
+	quest.0012EC5DDAEB7D5B.quest_subtitle: "¿Puede esto hacer cerveza?"
+	quest.008DBEF8893F1B63.quest_desc: ["De todos los elementos, el helio es el más estable; no se quema ni reacciona con otros elementos. El helio tiene los puntos de fusión y ebullición más bajos. Existe como gas, excepto en condiciones extremas donde puede pasar al cuarto estado de la materia, el plasma."]
+	quest.008DBEF8893F1B63.quest_subtitle: "Plasma de Helio"
+	quest.00BF4E98A328801D.quest_desc: ["Dale a ese polvo un baño de ácido con &bÁcido Clorhídrico&r en el &eBaño Químico&r para hacer esto\\n\\nLuego tendrás que &eElectrolizarlo&r para obtener el &dTungsteno"]
+	quest.0115271C840CD387.quest_desc: ["¿Es hora de actualizar esa caldera quizás?"]
+	quest.0115271C840CD387.quest_subtitle: "Mucho Vapor"
+	quest.012366E4E4095FC4.quest_desc: [
+		"Los recintos de filtro son necesarios para filtrar las partículas nocivas del aire y hacer que la habitación esté &eLimpia"
+		""
+		"Al construir tu sala limpia, usa una &allave inglesa&r para romper estos, de lo contrario, no caerán cuando se rompan."
+		""
+		"Todo el techo debe estar compuesto por recintos de filtro, excepto uno donde va el bloque controlador de la Sala Limpia"
+	]
+	quest.01339A8C26CC6E0C.quest_desc: [
+		"Tienes a la mano una generacion de RF/FE excelente?"
+		""
+		"En ese caso, podrías hacer Convertidores de Energía para convertir ese RF en EU y cablearlo a tus máquinas"
+		""
+		"Por defecto está configurado para convertir EU a RF, así que necesitarás golpearlo con un mazo suave para cambiarlo a conversión de RF a EU"
+		""
+		"El lado rojo es el lado de EU y los lados verdes son para RF/FE. Ten en cuenta que puedes rotar el convertidor haciendo clic derecho agachado con una llave inglesa"
+		""
+		"Nota: Utiliza cortacables para habilitar y deshabilitar las conexiones de cables entre bloques y entre ellos mismos"
+	]
+	quest.01339A8C26CC6E0C.title: "Convertidores de Energía"
+	quest.01D895369791881A.quest_desc: ["Ahora tenemos 2 procesadores de Modulo de Punto Zero por cada proceso! Este es un gran avance y hará que la expansión de nuestra huella de máquina sea mucho más fácil!"]
+	quest.01D895369791881A.quest_subtitle: "Apilándolos"
+	quest.02190383FEE793ED.quest_desc: ["¡Todo lo que queda por hacer es usar una &eReacción Química&r para quitar el cloro del iridio!"]
+	quest.0251FD45582C3164.quest_subtitle: "No Huelas Esto"
+	quest.0262E0D49A12F817.quest_subtitle: "Mejoras!"
+	quest.0299E59D23F16ACB.quest_desc: [
+		"Ya sabes qué hacer, procesa algunos tungstatos o minerales de scheelita en forma de polvo"
+		""
+		"Los minerales crudos se encuentran en la &eCapa Final del Fin&r de &dLa Dimensión Minera&r, entre los niveles y -63 y 0, mezclados con litio. ¡Incluso puede haber indicadores superficiales de scheelita!"
+	]
+	quest.02CC3E13B8905603.quest_desc: [
+		"Solidificar ese Tritanium, y ahora tenemos un recurso útil para nosotros de muchas maneras."
+		""
+		"Y créeme, muchos de los componentes que vamos a fabricar necesitarán titanio."
+	]
+	quest.02CC3E13B8905603.quest_subtitle: "Solidamente Fuerte"
+	quest.033BF8D12E32A5E5.quest_desc: ["¡Toma ese polvo de Rutenio y ponlo a mezclar!"]
+	quest.033BF8D12E32A5E5.quest_subtitle: "Todo mezclado"
+	quest.0373198D54FA6B93.quest_desc: [
+		"La Estrella Base, la Estrella de Patrick, que se usó para hacer una Estrella, y ahora es la base para otra Estrella que se convertirá en una Estrella."
+		""
+		"¿Entendido? Bien. Sigamos adelante."
+	]
+	quest.0373198D54FA6B93.quest_subtitle: "La Estrella que lo empezó todo"
+	quest.037BB7C486D2D360.quest_subtitle: "En efecto"
+	quest.037BB7C486D2D360.title: "Veta de Naquadah"
+	quest.03B5D467E76C5B8A.quest_desc: [
+		"¡Espero que hayas estado al tanto de tu recolección y procesamiento de minerales!"
+		""
+		"Puedes conseguir &dPolvo de Rutilo&r de varios métodos:"
+		"&eElectolizando&r 15 Polvos de Bauxita"
+		"[ \"\", { \"text\": \"EBF \", \"color\": \"green\", \"hoverEvent\": { \"action\": \"show_text\", \"contents\": { \"text\": \"Electric Blast Furnace\" } } }, { \"text\": \"10 Ilmenite and 4 Carbon together\" }]"
+		"&6Procesa minerales&r de Ilmenita o Bauxita para obtener Rutilo de forma ocasional"
+		"Utiliza un &eBaño Quimico&r con Aluminio en &3Persulfato de Sodio&r para obtener una probabilidad más alta de Rutilo"
+		""
+		"&cRecuerda:&r Las salidas con oportunidades aumentan con el nivel de la máquina"
+	]
+	quest.03B5D467E76C5B8A.quest_subtitle: "Mejor Dicho Polvo iRutil"
+	quest.03B842E4A2A6B2C9.quest_subtitle: "Bueno para el manganeso"
+	quest.03B842E4A2A6B2C9.title: "Veta de Grossularia"
+	quest.03C756EB123CA953.quest_desc: [
+		"Utilizaremos esto para actualizar el Circuito Integrado de Potencia Media (&aCIPM&r) a la variante de Alta Potencia (&6CIPA&r), ¡permitiendo así compuertas de energía más grandes!"
+		""
+		"Esto deberá ir a tu &bSala Limpia&r para ejecutar la receta"
+	]
+	quest.0416C489903BCFFF.title: "Era del Voltaje Definitivo"
+	quest.04291652780AEE72.quest_desc: [
+		"Las Grandes Torres de Maceración serán muy importantes, ya que el procesamiento de minerales seguirá siendo crucial a medida que avancemos en los recursos a través de los niveles."
+		""
+		"Por lo tanto, tener una torre de maceración que pueda paralelizar los procesos optimizará el procesamiento de minerales que aún debe realizarse."
+	]
+	quest.04291652780AEE72.quest_subtitle: "¡Torre de Maceración!"
+	quest.04362E2A5C541EC5.quest_desc: ["16x Cables de Fosfuro de Manganeso - Cantidad 8"]
+	quest.04362E2A5C541EC5.quest_subtitle: "Superconductor LV"
+	quest.043A424FDDA71692.quest_desc: ["¡Entrada de Fluidos ME! Introduce fluidos para tus procesos en multibloques, ¡e incluso mantiene un stock en el Hatch!"]
+	quest.043A424FDDA71692.quest_subtitle: "Entrada de Fluidos ME"
+	quest.04636DE704AD7B0B.quest_desc: ["¿Alguna vez sentiste que el Autoclave no era suficiente para ti? ¡Bueno, entonces este multibloque llenará ese vacío! Esta estructura grande es un reemplazo directo del Autoclave de un solo bloque."]
+	quest.04636DE704AD7B0B.quest_subtitle: "¡Hagamos algunos cristales! LCC"
+	quest.04A371896B1E0CEC.quest_desc: [
+		"Refina el alambre una vez más, y tendremos el Alambre fino que necesitamos para el Generador de Campo ZPM."
+		""
+		"Desafortunadamente, necesitaremos bastante Alambre fino, ¡así que sigue procesando!"
+	]
+	quest.04A371896B1E0CEC.quest_subtitle: "Mejorar"
+	quest.054D2D3C20C2D32F.quest_desc: [
+		"¡Lo lograste!"
+		""
+		"¡Esto es todo! ¡El procesador de nivel más alto que puedes hacer!"
+		""
+		"Pero aún no has terminado... Este puede ser el último procesador, pero aún queda más por venir. ¡A partir de este punto, la diversión será aún mayor!"
+	]
+	quest.054D2D3C20C2D32F.quest_subtitle: "¡Gran Éxito!"
+	quest.05D6CE1B501F59B5.quest_desc: [
+		"La Clásica Estrella ATM. Seguramente ya estás familiarizado con esto, y estoy seguro de que tienes un proceso para fabricarlas de memoria."
+		""
+		"Esto es pan comido para ti."
+	]
+	quest.05D6CE1B501F59B5.quest_subtitle: "Una Estrella para el componente de una Componente de Estrellas"
+	quest.05F0FCBBEADA8489.quest_desc: ["Puedes usar un &eCalentador de Fluidos&r o un &eDestilador&r en &aPrograma 1&r para convertir el &3Acetato de Calcio Disuelto&r en &cAcetona"]
+	quest.060233F903FAE63B.quest_desc: ["Estas placas serán importantes para crear más máquinas de nivel &dLuV&r."]
+	quest.060233F903FAE63B.quest_subtitle: "¡Este es mi lenguaje de &dLuV&r!"
+	quest.060233F903FAE63B.title: "Carcasa de Máquina LuV"
+	quest.06242EEB80032F27.quest_subtitle: "Sala Limpia No. 2"
+	quest.063F5023D56CA6B1.quest_desc: ["Una vez que tengas configurado el polietileno, puedes cambiar a fabricar cascos de máquina en el Ensamblador para ahorrar en algunos materiales."]
+	quest.063F5023D56CA6B1.quest_subtitle: "¡Greggers, UNIDOS!"
+	quest.06BBD7B736C564C1.quest_desc: ["¡Esta Placa de Silicio nos permitirá hacer el Transistor! ¡Un nuevo componente eléctrico, yay!"]
+	quest.06F55064A36274D2.quest_desc: [
+		"Ahora, toma los pernos de Cuprato de Ytrio y Bario que hicimos, y el SOC de Cristal, ¡combínalos y obtendrás los procesadores de nivel IV más baratos disponibles!"
+		""
+		"Recuerda, los controladores para la mayoría de los multibloques 'grandes' de nuestras máquinas usan procesadores de nivel IV en su fabricación."
+	]
+	quest.06F55064A36274D2.quest_subtitle: "Tan baratos como pueden ser"
+	quest.06FF1116AFABE2FE.quest_desc: [
+		"Las luces negras proyectan luz en el espectro ultravioleta. La luz UV resulta ser excepcional para esterilizar de bacterias y otros contaminantes."
+		""
+		"Nuestras salas limpias deben estar impecables, sin una sola mota de polvo dentro. Pero, ¿y si necesitáramos un entorno más limpio y estéril?"
+	]
+	quest.06FF1116AFABE2FE.quest_subtitle: "¡Es Hora de Fiesta!"
+	quest.0718FA338E8BA792.quest_desc: [
+		"Una manera más barata de recubrir cables con goma!"
+		""
+		"Esta máquina es necesaria para recubrir cables de mayor nivel con goma y hacer cables"
+		""
+		"Puedes querer usar esto para crear los cascos de tus máquinas una vez que obtengamos algo de polietileno en Voltaje Medio"
+	]
+	quest.072FA02152FBC5B1.quest_desc: [
+		"Los minerales se generan en Vetas a diferentes alturas, espaciadas por cada 3 chunks"
+		""
+		"Las vetas de mineral a menudo están compuestas por 3 o más minerales diferentes"
+		""
+		"Todas las vetas de minerales de GregTech fueron movidos a La Dimension Minera (Todos los minerales del Overworld, Nether y End)"
+	]
+	quest.072FA02152FBC5B1.title: "Minerales de la capa del Overworld"
+	quest.0737D64B0CCAE334.quest_desc: ["Tener un método optimizado para fabricar estos, que tome el menor tiempo posible, te beneficiará a medida que avances."]
+	quest.0737D64B0CCAE334.quest_subtitle: "Cubiertas de Fusión... Otra vez"
+	quest.078F7CEE4CAC39D6.quest_desc: [
+		"Con la fuerza del Unobtainium, tiene sentido que la GregStar incluya algunos lingotes para su ensamblaje."
+		""
+		"No hay preocupaciones por la integridad estructural en este momento."
+	]
+	quest.078F7CEE4CAC39D6.quest_subtitle: "Unobtainium"
+	quest.07E750F8184C4362.quest_desc: [
+		"&eReaccionar Químicamente&r Hidrógeno con Gas Fluoruro para hacer esto"
+		""
+		"Más adelante también puedes configurar el reprocesamiento de &5Trifluoruro de Titanio&r con Hidrógeno en un &aEBF&r para recuperar algo de Ácido Fluorhídrico"
+	]
+	quest.07FC106AFE76E766.quest_desc: ["Necesitas el &5Electrolizador EV&r para obtener Polvo de Tungsteno a partir de Ácido Túngstico"]
+	quest.08D48D7C2C6EEF54.quest_desc: ["¿Para qué sirve el tungsteno regular? Bueno, ya que preguntas, es un componente integral de muchas Máquinas de Voltaje Loco, principalmente en forma de cables de tungsteno"]
+	quest.08F7825DA7DC2185.quest_desc: [
+		"Los aceros maraging son conocidos por poseer una resistencia y tenacidad superiores sin perder ductilidad. El envejecimiento se refiere al proceso extendido de tratamiento térmico."
+		""
+		"Estos aceros son una clase especial de aceros ultrarresistentes con muy bajo contenido de carbono que obtienen su resistencia no del carbono, sino de la precipitación de compuestos intermetálicos."
+	]
+	quest.08F7825DA7DC2185.quest_subtitle: "¡Rejuerte!"
+	quest.0907800ED4793F96.quest_desc: [
+		"¡Finalmente, has logrado el próximo nivel de vidrio, &dVidrio Laminado&r!"
+		""
+		"Este material se utiliza para hacer muchas máquinas de nivel IV y LuV"
+	]
+	quest.0911814AFFFCF885.quest_desc: ["¡4 polvos de níquel y 1 polvo de cromo en un &eMezclador&r es todo lo que necesitarás para un poco de nicromo!"]
+	quest.097735604CB11E83.quest_subtitle: "Naquadria Liquida"
+	quest.09C7343DCCD5157E.title: "Era del Modulo de Punto Zero"
+	quest.0A1BACA070EB5264.quest_desc: [
+		"¡Ahora estamos hablando!"
+		""
+		"Sí, no lo estamos utilizando directamente de inmediato. Pero configurarlo ahora para fabricar y recolectar será muy beneficioso y te ahorrará mucho tiempo."
+	]
+	quest.0A1BACA070EB5264.quest_subtitle: "Materia Estelar"
+	quest.0A2675CF16B6443B.quest_desc: [
+		"Las extrusoras fuerzan lingotes en varias formas con el uso del molde de extrusión."
+		""
+		"A menudo es más barato usar la extrusora para hacer componentes de crafteo como rotores, por ejemplo."
+	]
+	quest.0A3F4D7A15E61B43.quest_desc: [
+		"Dos Palabras. Voltaje Definitivo."
+		""
+		"Pero no te preocupes, todavía tenemos 1 nivel más después de esto. Pero poder fabricar máquinas de nivel UV realmente te ayudará a llenar tu fábrica y acelerar las líneas de proceso."
+	]
+	quest.0A3F4D7A15E61B43.quest_subtitle: "Esto ser Casco"
+	quest.0A848E0B9F485B2C.quest_desc: ["¡Con 16 de estos en tu Horno de Fusión Eléctrico puedes cocinar recetas hasta 4500 Kelvin! ¡Eso son 4227 grados Celsius o 7640 grados Fahrenheit!"]
+	quest.0A8698ACCD58FADA.quest_desc: [
+		"El Brazo Robótico UV tiene un límite muy alto para la cantidad de objetos que puede mover cuando está conectado a una máquina como cubierta."
+		""
+		"Si estás usando Brazos Robóticos como cubierta en alguna de tus máquinas, prueba esta versión. ¡No te decepcionará!"
+	]
+	quest.0A8698ACCD58FADA.quest_subtitle: "Moviendo todos los objetos!"
+	quest.0AC6B223857CAE94.quest_desc: [
+		"La única máquina de Voltaje Medio que requiere circuitos de Voltaje Alto para fabricarse."
+		""
+		"Esta máquina te permite empezar a trabajar hacia la fabricación del siguiente nivel de circuitos, ¡los &6microprocesadores!"
+	]
+	quest.0B54990168F9B136.quest_desc: [
+		"Este pequeño componente nos permitirá fabricar el circuitos de Voltaje Ultra Bajo lo más económico posible."
+		""
+		"Así es, existe un circuito de Voltaje Ultra Bajo, siendo el precursor el tubo de vacío"
+		""
+		"&eInformación Adicional&r: SoC o Sistema en un Chip es básicamente una mini computadora en un chip que maneja todas las tareas de computación"
+	]
+	quest.0BA5A0DDD4A5363C.quest_subtitle: "Cobaltita esta aqui"
+	quest.0BA5A0DDD4A5363C.title: "Veta de Garnierita"
+	quest.0BAD21557994331D.quest_desc: [
+		"El ácido clorhídrico y el polvo de hierro &ereaccionarán químicamente&r para darte cloruro férrico"
+		""
+		"Ademas tendras un poco de Hidrogeno de regreso!"
+		""
+		"No te olvides de poner la &aconfiguracion del programa&r, tiene que tener el numero 1"
+		""
+		"Se recomienda poner un &bRequester&r para esto!"
+	]
+	quest.0C3B3D7F82A6DB3D.quest_desc: [
+		"¡Hemos usado mucho del Reactor de Fusión!"
+		""
+		"Pero te dije que era una estructura importante. Si aún no lo has hecho, apilar anillos de Reactores de Fusión será de gran ayuda."
+	]
+	quest.0C3B3D7F82A6DB3D.quest_subtitle: "Sacándole provecho al Reactor de Fusión"
+	quest.0C78FB6EB275960B.title: "Veta de Sheldonita"
+	quest.0CBF5A49066468DD.quest_subtitle: "¿Necesitamos esto?"
+	quest.0CF6D11016BAF3D0.quest_desc: ["Ahora estamos produciendo algo de Naquadah complejo. Al igual que con todos los otros recursos complejos en los que estamos trabajando, este proporciona un beneficio significativo al factor."]
+	quest.0CF6D11016BAF3D0.quest_subtitle: "Naquadah Complejo"
+	quest.0D1A6B32FEB51FAD.quest_desc: [
+		"¡Convierte bloques en placas con este truco!"
+		""
+		"También es muy útil para hacer obleas de silicio y chips de obleas, de los cuales hablaremos pronto."
+	]
+	quest.0D1A6B32FEB51FAD.quest_subtitle: "La vanguardia"
+	quest.0D20644407244A60.quest_desc: ["Cada 3 chunks encontraras otra veta de minerales!"]
+	quest.0D259B9B93B39FAE.quest_desc: ["Este es un componente costoso de fabricar. Pero necesitará algunos de estos a medida que sigamos progresando. Hay unos cuantos multibloques que necesitan el Generador de Campo de Voltaje Definitivo."]
+	quest.0D259B9B93B39FAE.quest_subtitle: "Un poco caro, pero vale la pena"
+	quest.0D3DF9C8F742AE0D.quest_desc: [
+		"Todas las partes del Arbol de Caucho se pueden usar para conseguir pulpa de caucho en crudo"
+		""
+		"Tambien Bolas de Slime!"
+	]
+	quest.0D47F491C27BBD5E.title: "Veta de Minerales de Arena"
+	quest.0D573979B25FAC48.quest_desc: [
+		"Ten en cuenta que cada Esclusa de Energía puede aceptar 2 Amperes de potencia"
+		""
+		"Muchas máquinas aceptan dos (o más) Esclusas de Energía, lo que significa que puedes suministrar 4 Amperes y desbloquear el procesamiento a un nivel de voltaje superior"
+	]
+	quest.0D59094D0C23C44F.quest_desc: [
+		"Bueno, si 64 procesos paralelos no fueron suficientes, ¿qué tal 256? Porque eso es exactamente lo que hace este bloque. ¡Te permite ejecutar 256 tareas paralelas!"
+		""
+		"¡Este es el control paralelo de nivel más alto que existe!"
+	]
+	quest.0D59094D0C23C44F.quest_subtitle: "¿64 no fueron suficientes?"
+	quest.0D68FA968FD2BEF4.quest_desc: [
+		"¡Si ya has fabricado el &aReactor Químico Grande&r, puedes hacer esto en grandes cantidades!"
+		""
+		"De lo contrario, estarás usando el &eReactor Químico&r con un &6Pequeño Montón de Polvo de Cobre&r, &9Hidrógeno&r y &2Nitroclorobenceno"
+	]
+	quest.0D99638C96AB2EEA.quest_desc: ["Es necesario generar ciertos recursos de forma pasiva? por lo general van a haber ciertos recursos que vas a querer generar de forma constante sin necesidad de pedirlo como una receta, hay ciertos materiales que salen a base de %, pero haciendo esto vas a tener suficientes materiales disponibles para crear muchisimas cosas más\\n\\nConfigura la Trituradora de roca con agua a la izquierda y lava a la derecha en el mundo, luego inserta un poco de piedra labrada para hacer más piedra labrada\\n\\nEnvía la piedra labrada a un Martillo de Forja para crear grava\\n\\nEnvía la grava a otro Martillo de Forja para crear arena\\n\\nEnvía la arena a un Horno de Arco con un poco de oxígeno para hacer vidrio\\n\\nEnvía el vidrio a un Triturador para convertirlo en polvo de vidrio\\n\\nEnvía el polvo de vidrio a una Centrífugadora para obtener dióxido de silicio\\n\\nEnvía el dióxido de silicio a uns Electrolizadora y obtén polvo de silicio y oxígeno!\\n\\nSolo necesitamos un poco de oxígeno, dado a ti en forma de polvo de zafiro verde!"]
+	quest.0D99638C96AB2EEA.quest_subtitle: "Lo Necesitaras"
+	quest.0D99638C96AB2EEA.title: "Linea Pasiva de Oxígeno"
+	quest.0D9D1462C676C050.quest_subtitle: "Tiempo"
+	quest.0DA5BC8BA056B975.quest_desc: [
+		"La Maceradora es el primer paso para procesar los minerales, pero volveremos a ello despues"
+		""
+		"Por ahora, necesitamos polvo de madera, asi que pon unos cuantos troncos y deja que haga su trabajo"
+	]
+	quest.0DA5BC8BA056B975.quest_subtitle: "Triturando y Pulverizando"
+	quest.0DB21D996607BD8D.quest_desc: ["Leíste bien. Este es un Enchufe de Energía UHV de 16A. 4 veces la potencia del Enchufe de Energía de 4A."]
+	quest.0DB21D996607BD8D.quest_subtitle: "¿Enchufe de Energía de Voltaje Ultra Alto de 16A?!"
+	quest.0DB4226BA23A5C09.quest_desc: ["¡Mueve ese &bEnsamblador de Circuitos Avanzado&r a tu &eCuarto Limpio&r y bienvenido a la Era &5Voltaje Extremo&r!"]
+	quest.0DB4226BA23A5C09.quest_subtitle: "¿Puede esta supercomputadora ganar al ajedrez?"
+	quest.0DB92C70D04725BE.quest_desc: [
+		"¡Esas otras compañías de baterías no tienen nada en esto!"
+		""
+		"¡Esta es la Batería Definitiva, y es de Nivel UHV! Para todos tus dispositivos hambrientos de energía (por supuesto en nivel UHV)"
+	]
+	quest.0DB92C70D04725BE.quest_subtitle: "Duracell, te quedarás impresionado"
+	quest.0DD389A24F5F8CDD.quest_desc: ["&l&6Aqua Regia&r&r es una mezcla de Ácido Nítrico Concentrado y Ácido Clorhídrico, generalmente en una proporción de una parte a tres partes, respectivamente. La mezcla recibió su nombre (literalmente \\\"Agua Regia\\\") por los alquimistas debido a su capacidad para disolver &l&eOro&r&r."]
+	quest.0DD389A24F5F8CDD.quest_subtitle: "Soy una chica Barbie, en un mundo de Barbie... Si sabes, sabes."
+	quest.0DF9014435C8F4D2.quest_desc: [
+		"Puede que te estés preguntando por qué te obligué a usar lingotes de Ferrita de Níquel Zinc, y esta receta es exactamente la razón!"
+		""
+		"Obtienes el mayor rendimiento por tu dinero al usar Ferrita de Níquel Zinc y Cobre Recocido, ¡ambos los puedes fabricar tú mismo!"
+		""
+		"Tienes algunas opciones cuando se trata de hacer el Anillo de Ferrita de Níquel Zinc y para el cable fino, una &eExtrusora&r te dará la mayor cantidad de anillos por un lingote, y un &eMolino de Alambre&r convertirá los lingotes en alambre y luego en cable fino."
+	]
+	quest.0E4C711E77497984.quest_desc: [
+		"¡Más engranajes son buenos engranajes!"
+		""
+		"¡Sigue con el procesamiento, vamos a necesitar bastantes de estas líneas de ensamblaje mientras avanzamos a través de los niveles!"
+	]
+	quest.0E4C711E77497984.quest_subtitle: "Por supuesto que son engranajes."
+	quest.0E603F1FE596DB2A.quest_desc: [
+		"Los transistores son verdaderamente una maravilla moderna y han permitido que la era electrónica florezca."
+		""
+		"Permiten electrónicos mucho más complejos al amplificar señales y actuar como un interruptor, ¡introduciendo la capacidad para la programación lógica!"
+		""
+		"En nuestro caso, ¡nos permiten hacer el Circuito Integrado!"
+	]
+	quest.0E73B4A4A1CC6B0F.quest_desc: [
+		"Usando un Gran Reactor Químico para mezclar el Polvo de Naquadah y el Ácido Fluoroantimónico, obtendrás 3 recursos. Estamos buscando la Solución de Naquadah Enriquecida Impura"
+		""
+		"Puedes tomar el Trifluoruro de Titanio y procesarlo en un Horno de Fusión Eléctrico (EBF) para recuperar Ácido Clorhídrico y un Lingote de Titanio."
+		""
+		"Guarda la Solución Impura de Naquadah, ya que más adelante la procesaremos para obtener Solución de Naquadria/Lingotes de Naquadria"
+	]
+	quest.0E73B4A4A1CC6B0F.quest_subtitle: "Enriquecido pero Impuro"
+	quest.0E76B7095F12EF62.quest_desc: ["Completa un Horno de Aleación y ensambla la estructura de Multibloque."]
+	quest.0E76B7095F12EF62.quest_subtitle: "Tiempo de Horno de Aleación"
+	quest.0EA56C514D26BA69.quest_desc: ["Ahora que tenemos el Superconductor en forma de lingote, ¡finalmente podemos procesarlo en el cable que necesitamos!"]
+	quest.0EA56C514D26BA69.quest_subtitle: "En forma de lingote"
+	quest.0F3DF502872A308E.quest_desc: ["¡Obleas dopadas con Neutronio! ¡Silicio de grado y calidad más alta!"]
+	quest.0F3DF502872A308E.quest_subtitle: "Rebanadas"
+	quest.0F6FB959B352121D.quest_desc: [
+		"¿Has estado teniendo problemas de voltaje? ¡Bueno, este cable te ayudará!"
+		""
+		"Este cable es &3superconductor&, por lo que no pierde voltaje sin importar la distancia que recorra el cable"
+	]
+	quest.0F9829B0A5EEE67B.quest_desc: [
+		"Finalmente, el Diodo esta al alcance"
+		""
+		"Necesitarás convertir esto en pequeñas pilas de polvo de arseniuro de galio, o configurar una receta para que lo haga por ti"
+	]
+	quest.0FD475E5254E3AD2.quest_desc: [
+		"Ya es un proceso obtener Ruthenium, ¡pero vamos a procesarlo un poco más!"
+		""
+		"¡Créeme, valdrá la pena!"
+	]
+	quest.0FD475E5254E3AD2.quest_subtitle: "7 etapas después..."
+	quest.0FFF764AA07D6DFC.quest_desc: ["Un poco de &9Agua&r con el &aPrograma 1&r te dará mucho &7Vapor"]
+	quest.100ADA8508F6502A.quest_desc: ["Una Lente de Vidrio (Roja) también puede hacer esto, pero hacer lentes de vidrio es una receta HV."]
+	quest.1060C764347CC243.quest_desc: [
+		"Se necesita un catalizador para este proceso."
+		""
+		"El Catalizador garantizará que cada operación se complete correctamente. También se utilizará para el controlador del multibloque."
+	]
+	quest.1060C764347CC243.quest_subtitle: "¿Neutonio?"
+	quest.1090A47B70EBF704.quest_desc: [
+		"Aunque sí, es un poco más barato en coste, en términos de los procesadores de nivel inferior, sigue siendo un poco caro."
+		""
+		"Aún 2:1 para este nivel, pero el próximo nivel cambiará eso, ¡y el procesador LuV se volverá mucho más asequible!"
+	]
+	quest.1090A47B70EBF704.quest_subtitle: "&dVoltaje Ridículo"
+	quest.109E34AE0BE0F266.quest_subtitle: "Una fuente nutritiva de manganeso"
+	quest.109E34AE0BE0F266.title: "Veta de Grossularia"
+	quest.10DF2125B647379E.quest_desc: ["Te lo prometo, esto no es algo que quieras tocar o que te toque la piel..."]
+	quest.10DF2125B647379E.quest_subtitle: "¡No Tocar!"
+	quest.1194FF35ADAA9957.quest_desc: [
+		"Y si 256 Amperes parecen muchos, piénsalo de nuevo. Al menos con Transformadores Activos."
+		""
+		"Este es el nivel más bajo de Compuerta de Fuente de Láser en Amperios. Van desde las Compuertas de 256A hasta las de 4096A. ¡Eso es mucha potencia!"
+	]
+	quest.1194FF35ADAA9957.quest_subtitle: "Tiburones con Rashos Laser?"
+	quest.11AAA1DCB452DFFC.quest_subtitle: "De"
+	quest.11D16434F78D2C2C.quest_desc: [
+		"Puedes usar una Extractora para conseguir vidrio en un estado liquido para la creacion del diodo"
+		""
+		"Conseguiremos polyetileno mas tarde, asi que ten en cuenta que esta receta se puede mejorar!"
+	]
+	quest.11D16434F78D2C2C.quest_subtitle: "Voltaje Medio al Alcance!"
+	quest.11F7D3DDF5683EB3.quest_desc: [
+		"Usa un láser y lentes específicas para grabar diferentes patrones en las obleas."
+		""
+		"Quizás quieras hacer uno de estos por cada lente que hagamos, así no tienes que cambiar las lentes manualmente al automatizar."
+	]
+	quest.1216BAFF021FED25.quest_desc: ["La CPU de cristal ya debería estar bien establecida en tus líneas de procesamiento. ¡Este es solo un paso más para que esas CPU de cristal logren la grandeza!"]
+	quest.1216BAFF021FED25.quest_subtitle: "Chips de Cristal"
+	quest.124C2A904BF84254.quest_desc: [
+		"Usa tu Cloruro de Polivinilo en un &esolidificador de fluidos&r para obtener una lámina de él"
+		""
+		"Combina eso junto con algo de lámina de cobre y ácido sulfúrico en tu &eReactor Químico&r y obtendrás 2 placas de circuito de plástico!"
+		""
+		"Mantén los ojos bien abiertos, eventualmente actualizaremos esta receta para obtener los codiciados 8 circuitos impresos de plástico a la vez"
+	]
+	quest.12905D5778274DEE.quest_desc: [
+		"¡Finalmente, Tungstensteel, ahora puedes hacer Máquinas de Voltaje Loco"
+		""
+		" ¡Esto también permite una actualización de bobina para el EBF!"
+	]
+	quest.12B041E34F58FDD2.quest_desc: [
+		"Después de un tiempo, lo has logrado. ¡Has creado la Codiciada &l&1GregStar!&r"
+		""
+		"Una culminación de todo lo que hemos aprendido en GregTech, perfeccionando cada línea de procesamiento y consiguiendo materiales, máquinas y objetos que se hacen más difíciles con cada categoría."
+		""
+		"Pero lo lograste. ¡Lo hiciste! ¡La GregStar!"
+		""
+		"Todavía hay cosas por hacer, así que pon la cabeza en el juego otra vez y prepárate para el MAYOR desafío. Literalmente."
+	]
+	quest.12B041E34F58FDD2.quest_subtitle: "Por Fin"
+	quest.12D84337AEB56002.quest_desc: [
+		"6 polvos de estaño, 3 polvos de plomo y 1 polvo de antimonio se combinan en un &eMixer&r en &aPrograma 3&r para hacer 10 polvos de Aleación de Soldadura"
+		""
+		"Esto nos permitirá hacer circuitos con menos estaño en general, así como algunos objetos que requieren específicamente aleación de soldadura!"
+		""
+		"Puedes usar un &eExtractor&r en el polvo para obtenerlo en forma líquida"
+	]
+	quest.12F24C9C6D2AF887.quest_desc: ["Dos cubos de &bOxígeno&r más el &bPolvo de Mezcla de Ferrita&r en tu &aHorno de Fusión Eléctrico&r te dan el lingote; ¡no se necesita enfriamiento!"]
+	quest.12F916CDC2FB7A79.quest_desc: [
+		"Puedes fabricar las cosas en la mesa de trabajos, pero es un poco más sencillo automatizar estos"
+		""
+		"&5Applied Energistics&r puede manejar esto de forma correcta, solo activa la opcion de \\\"Usar Sustitos\\\" en 'Si'"
+		"&eNota:&r Si sientes que los canales son algo limitantes en lo que estamos haciendo, puedes usar los siguientes comandos para facilitarte el proceso, channelmode x4 agrega más canales a canales a nuestros controladores y cables, mientras que channelmode infinite desactiva estos (tienes que ser un moderador o admin si estas en un servidor, para un jugador tienes que tener los trucos activados)"
+		"&o/ae2 channelmode x4"
+		"&o/ae2 channelmode infinite"
+		""
+		"&bRefined Storage&r Tiene dificultades en este aspecto porque no utilizará la misma herramienta dos veces debido al NBT, pero no es imposible usar este mod con GregTech"
+		""
+		"Una alternativa aquí podría ser configurar el autocrafteo con el &aRFTools Crafter"
+		""
+		"La Automatizacion es importante con muchisimas cosas de este mod, especialmente cuando se trata de liquidos"
+		""
+		"Puedes configurar las &6Maquinas de VB+&r para que saquen los objetos de forma automatica utilizando un Proveedor de Recetas, asegurate de configurar la maquina con \\\"Allow Inputs from Output Side\\\" en el GUI de la maquina. Las Maquinas de Vapor son incapazes de sacar los objetos de forma automatica, asi que necesitaras algo para &cExtraer/Importar&r las cosas al sistema"
+	]
+	quest.130DDACA0E38A8E8.quest_desc: ["Al quemar en el Horno de Pirolisis 16 troncos de cualquier madera con el &bPrograma 3&r producira Petroleo Pesado"]
+	quest.13417E27790B9AB2.quest_desc: [
+		"Anteriormente hicimos el Gran Reactor Químico. Pero esa versión no tiene la capacidad de aceptar Hatchs de Control Paralelo."
+		""
+		"Bueno, esta versión, el Gran Reactor Químico Avanzado, puede aceptar Hatchs de Control Paralelo, y ahora puedes ejecutar múltiples procesos a la vez."
+		""
+		"¡Esto va a cambiar cómo producimos nuestras líneas químicas!"
+	]
+	quest.13417E27790B9AB2.quest_subtitle: "Conocido como el ALCR, pero lo podemos llamar El Gran Reactor Químico Avanzado"
+	quest.139EEACD64B1D85E.quest_desc: ["Estos lingotes de &9Acero Hermetico&r te permitirán fabricar los bloques necesarios para completar los siguientes Multibloques."]
+	quest.139EEACD64B1D85E.quest_subtitle: "¿El acero ya no es hermético?"
+	quest.13BAD4B9C69117C6.quest_desc: [
+		"Hay múltiples formas de hacer Fibras de Carbono Crudas"
+		""
+		"Una forma es usar &69 mB de Epoxy&r y 4 Polvo de Carbono en un &eAutoclave&r para obtener 4"
+		""
+		"Hacerlo de esta manera está bien, pero también tienes la opción de usar &d9 mB de Polibenzoimidazol&r y 8 Polvo de Carbono para obtener ¡16!"
+	]
+	quest.14276334DCF898D6.title: "Veta de Magnetita"
+	quest.142D12B41C36D68A.quest_desc: [
+		"Lo siento por el juego de palabras, pero no pude resistirme."
+		""
+		"De todos modos, el silicio dopado con Neutrónium es altamente eficiente y de grado fino, ¡lo que nos da un rendimiento masivo en 1 singular Boule!"
+	]
+	quest.142D12B41C36D68A.quest_subtitle: "Esto es un montón de Boule"
+	quest.143BF8A4944C471D.quest_desc: ["¡Finalmente, has logrado el circuito LV más económico - felicidades!"]
+	quest.143BF8A4944C471D.quest_subtitle: "¡Más barato que nunca!"
+	quest.14C017569BECA2CE.quest_desc: [
+		"El polvo de Cobaltita lo podemos conseguir procesando los minerales de cobaltita"
+		""
+		"Puedes encontrar mineral de cobaltita minando en el Overworld entre los niveles -10 y 60, debería estar mezclado con minerales de garnierita, níquel y pentlandita"
+	]
+	quest.1569CD190336F5F6.quest_desc: [
+		"¡No podemos dejar fuera al tan importante Ensamblador de Circuitos, verdad? Por supuesto que este multibloque te ayudará a asegurarte de que puedas seguir fabricando todos esos circuitos importantes."
+		""
+		"¡Así podrás continuar expandiendo tu Fábrica y llegar hasta el final!"
+	]
+	quest.1569CD190336F5F6.quest_subtitle: "¡Ensamblador pero con Circuitos!"
+	quest.15A1D6D05A785919.quest_desc: ["¿Sabías que las compuertas lógicas NOR pueden usarse para hacer cualquier otra compuerta lógica? ¡Por eso las usamos tanto para hacer circuitos!"]
+	quest.16154B77454631F4.quest_desc: ["Otro día, otro lente para la &eGrabadora láser&r."]
+	quest.16522A3A1E66C914.quest_desc: ["Una vez más, volvemos a los EBF y actualizamos las bobinas, un proceso necesario para procesar metales y aleaciones a través de los EBF."]
+	quest.16522A3A1E66C914.quest_subtitle: "Las bobinas de Trinium son geniales"
+	quest.16B44F78707E148E.quest_desc: ["Aunque no es necesario, el Macerador IV te dará un impulso de velocidad al procesar Sheldonita, ya que esta línea de procesamiento puede ser bastante &n&l&2Consumidora de Tiempo.&r&r"]
+	quest.16B44F78707E148E.quest_subtitle: "¡Ey, Macerador, Yaaah!"
+	quest.17148E654DD28A94.quest_desc: [
+		"El trióxido de Antimonio se necesita para la línea de procesamiento de Naq. "
+		""
+		"Te desafío a mantener la parte del procesamiento de Antimonio totalmente dentro de GregTech"
+	]
+	quest.17148E654DD28A94.quest_subtitle: "Anti-Monedas"
+	quest.17671346C7940CA8.quest_desc: ["La siguiente evolución de nuestros wafers de CPU. ¡Estos wafers futuristas marcan la era cuántica!"]
+	quest.17671346C7940CA8.quest_subtitle: "¿Cuántos qubits tienes?"
+	quest.176C06C7593C264E.quest_desc: ["4 Grandes Baterías de Naquadria completarán los elementos requeridos para este componente del GregStar"]
+	quest.176C06C7593C264E.quest_subtitle: "Baterías Cuádruples"
+	quest.17773F43631748A9.quest_desc: [
+		"Vamos a necesitar Disiliciro de Molibdeno para fabricar los revestimientos para el ABS."
+		""
+		"Este polvo se puede hacer fácilmente en un Mezclador EV y luego procesarlo en un EBF con EV y Bobinas de Kanthal."
+	]
+	quest.17773F43631748A9.quest_subtitle: "Molybdenum Disilicide"
+	quest.17A935989A9505E1.quest_desc: [
+		"Con nuestro Reactor Quimico si le damos agua con trióxido de azufre podremos obtener un poco ácido sulfúrico"
+		""
+		"Puede obtener agua infinita en tu sistema de almacenamiento digital conectandolo a un Kitchen Sink de Cooking for Blockheads - Asegurate de activar la opcion de Extraer en el External Storage o Storage Bus! De lo contrario, borrara los liquidos que se fabriquen"
+	]
+	quest.17A935989A9505E1.quest_subtitle: "Solo agrega un poco de agua!"
+	quest.17BA6F1E5179DB8C.quest_desc: [
+		"&aScrewdrivers&r are a crafting tool and are used in special configuration of machines and Covers"
+		""
+		"Las &aCortadoras de Alambre&r son una herramienta de fabricación y al hacer clic derecho en cables/alambres se habilitarán o deshabilitarán las conexiones a otros bloques"
+		""
+		"Los &aMorteros&r se usan para pulverizar ciertos materiales"
+		""
+		"Los &aCuchillos&r tambien se usan en crafteos..."
+		""
+		"Los &eMazos Blandos&r pausará y reanudará el funcionamiento de las máquinas con un clic derecho"
+		""
+		"Las &eBarretas&r o Palancas pueden usarse para quitar las cubiertas de las máquinas de Gregtech con clic derecho"
+		""
+		"Las &eGuadañas&r pueden romper y replantar cultivos automáticamente en un área y también sirve como arma"
+		""
+		"Los &eDesatascadores&r pueden desatorar liquidos en las maquinas &c&l[No Implementado... Aun...]&r"
+		""
+		"Los &eCuchillos de Carniceria&r tienen saqueo III implícitamente, muy util para conseguir cuero facil!"
+	]
+	quest.17BA6F1E5179DB8C.quest_subtitle: "Eventualmente los necesitaras"
+	quest.17BA6F1E5179DB8C.title: "Todas Las Herramientas!"
+	quest.17C2D1915C2D0B4C.quest_desc: [
+		"&eReacciona Químicamente&r ese &dConcentrado de Indio&r con &bPolvo de Aluminio&r para obtener &3Pequeña Pila de Polvo de Indio"
+		""
+		"Luego puedes manualmente crear 4 de esos en un &3Polvo de Indio&r o automatizarlo con un &eEmpaquetador&r en el &aPrograma 1"
+	]
+	quest.1809493D8765E67A.quest_desc: ["No olvides que una vez que hayas hecho estos, puedes actualizar esas antiguas recetas de circuitos que usaban Transistores regulares para usar el Transistor Avanzado"]
+	quest.1812BF72305CFFCF.quest_desc: ["¡Coloca polvo de aluminio, polvo de hierro y polvo de cromo juntos en un &emezclador&r y mira cómo se mezclan!"]
+	quest.1828A4A9FE5EE87F.title: "Voltaje Definitivo / UV"
+	quest.187281092C0BC9CE.quest_desc: ["Los Wafers y las Boules de Silicio necesitan ser cortados. Este cortador, junto con el láser de grabado, se asegurará de mantener nuestro stock de Chips."]
+	quest.187281092C0BC9CE.quest_subtitle: "Gofres y Boules"
+	quest.1896B90F5FD66AFA.quest_desc: [
+		"Vamos a &eReaccionar Químicamente&r las &0Fibras de Carbono Crudas&r con &6Luminiscencia Líquida&r y una &bPastilla de CPU&r para hacer la &3Pastilla de CPU Nano"
+		""
+		"El polvo de luminiscencia a través de un &eExtractor&r produce luminiscencia líquida"
+	]
+	quest.1906C5D1C80035E4.quest_desc: [
+		"Con esta máquina puedes convertir un lingote en una placa sin complicaciones"
+		""
+		"El procesamiento adicional de las placas las convertirá en láminas"
+	]
+	quest.1906C5D1C80035E4.quest_subtitle: "Placas Baratas"
+	quest.1957A39483E15508.quest_desc: [
+		"Saltándome cómo hacer etileno porque ya cubrimos eso anteriormente"
+		""
+		"Combinemos etileno con cloro en el &eReactor Químico&r y obtengamos Cloruro de Vinilo"
+	]
+	quest.19B70E2F329AED83.title: "Voltaje Ridiculo / LUV"
+	quest.19BA973FECFA3B06.quest_desc: [
+		"Hay dos formas principales de adquirir &dGas de Radón"
+		""
+		"La mejor opción (debido a las otras salidas) es usar un &6Recolector de Gas&r &eHV&r en la dimensión &bEl Fin&r, &aCongelar al Vacío&r el &eAire de Ender&r recolectado en &9Aire de Ender Líquido&r a &1IV&r, y luego pasar eso por una &aTorre de Destilación&r a IV para recibir Gas de Radón"
+		""
+		"La alternativa es crear el &aReactor Químico Grande&r y simplemente reaccionar &3Aire&r con un poco de Polvo de Uranio e Ingot de Plutonio; ¡incluso obtienes el plutonio de vuelta!"
+	]
+	quest.19CD3E69746F2849.quest_desc: ["¡Circuitos de Voltaje Extremo más baratos! ¡No olvides actualizar tus recetas!"]
+	quest.19DB4970B3D11C1B.quest_desc: [
+		"¡El circuito de &bVoltaje Medio&r, en su forma final!"
+		""
+		"&eNota:&r Aún no podrás hacer la receta más barata para estos, eso viene en IV."
+	]
+	quest.1A000021C07943C4.quest_desc: ["Transforma este vapor en energía!"]
+	quest.1A000021C07943C4.quest_subtitle: "No Energía? No Problema"
+	quest.1A73520CB284217F.quest_desc: [
+		"Finalmente, el último de los Componentes SMD Avanzados"
+		""
+		"Asegúrate de usar en adelante recetas que utilicen los Componentes SMD Avanzados porque son más baratos"
+	]
+	quest.1AB86FD8776634D0.quest_desc: [
+		"¡Así es, dos mejoras de bobinas de &eEBF&r en un solo capítulo!"
+		""
+		"Tendrás que hacer estas bobinas para fundir las variantes de acero de alta velocidad S y E para los Componentes SMD Avanzados."
+		""
+		"&l&eNota:&r&r Hacer los Componentes SMD Avanzados no es estrictamente necesario para hacer los Nanoprocesadores."
+	]
+	quest.1ACD6672F72664D6.quest_desc: ["Usa el cortador con un bloque de esmeralda para obtener placas de esmeralda."]
+	quest.1AE7E363AFDC976B.quest_desc: ["At some point you will probably want to switch off of steam to producing Benzene or High Octane Gasoline and gas or combustion generators"]
+	quest.1AF005E292E409D1.quest_desc: ["De vuelta al &eTorno&r para convertir esa placa en un lente."]
+	quest.1B64314492605E47.quest_desc: [
+		"¡64! ¡Escuchaste bien, 64!"
+		""
+		"¡Este hatch te permite ejecutar 64 procesos paralelos en tus estructuras multibloque!"
+		""
+		"Si creías que los overclocks eran asombrosos, ¡espera a instalar este malote en tus multibloques!"
+	]
+	quest.1B64314492605E47.quest_subtitle: "Mundos Paralelos"
+	quest.1B691393463D3E0E.quest_desc: ["Varillas Largas de Samario, magnetizadas. ¡Agrega algunos cables finos y tendrás progreso asegurado!"]
+	quest.1B691393463D3E0E.quest_subtitle: "Varillas largas. Bonitas."
+	quest.1BB1E43FFE3FD451.quest_desc: [
+		"Vas a necesitar bastante de esto como catalizador en la Forja Estelar para fabricar la GregStar."
+		""
+		"Asegúrate de tener disponibles 10 cubos."
+	]
+	quest.1BB1E43FFE3FD451.quest_subtitle: "Precursor"
+	quest.1BD5B25B80EC0F97.quest_desc: ["¡También fabrica esas barras de hierro magnético con solo algo de energía - guarda tu polvo de piedra!"]
+	quest.1BD5B25B80EC0F97.quest_subtitle: "¡Magnetización!"
+	quest.1BE2CB4684AF7DFB.quest_subtitle: "Pueden haber diamantes escondidos..."
+	quest.1BE2CB4684AF7DFB.title: "Veta de Grafito"
+	quest.1C1802ABF3EE3120.quest_desc: [
+		"¡Puedes encontrar aluminio crudo en el End, y aluminio crudo casi en todas partes!"
+		""
+		"Alternativamente, puedes obtener aluminio procesando una variedad de elementos como la bauxita en un electrolizador, por ejemplo."
+		""
+		"También podemos generar aluminio de forma pasiva en el proceso de la línea de arcilla."
+	]
+	quest.1C1802ABF3EE3120.quest_subtitle: "¿Aluminio eres tú?"
+	quest.1C19DD6B3E34012E.quest_desc: ["&3Cloro&r y &cMetano&r juntos en un &eReactor Químico&r en el &aPrograma 1&r hacen &5Cloroformo"]
+	quest.1D0B60026346A844.quest_desc: ["¡Mezcla Iridio y Osmio juntos para obtener este Lingote! Tenemos bastantes usos para este nuevo recurso. ¡Tener un montón en reserva puede resultar útil!"]
+	quest.1D0B60026346A844.quest_subtitle: "Convirtiendo al Osmio"
+	quest.1D9194E89D14BA85.quest_desc: [
+		"El polibenzimidazol es un tipo de plástico conocido por su resistencia al calor"
+		""
+		"Lo usarás para muchas aplicaciones a medida que progreses, especialmente en Modulo de Punto Zero y superiores, ¡pero su uso principal será la fabricación de componentes de circuitos avanzados!"
+	]
+	quest.1D9194E89D14BA85.quest_subtitle: "PBI por fin"
+	quest.1DBF5A76DCDF5E49.quest_desc: ["Vas a necesitar bastante Ruridita. Activa tus líneas para mantener un suministro constante."]
+	quest.1DBF5A76DCDF5E49.quest_subtitle: "Tengo un mal presentimiento sobre esto."
+	quest.1DDA5ADA11DF868F.quest_desc: ["¡Ahora podemos mejorar los Niveles de nuestras estructuras de Multibloque! EBF's, VF's, Crackers, LFD y más. ¡Pueden procesar más rápido y manejar materiales de nivel &dLuV&r! ¡Vamos!"]
+	quest.1DDA5ADA11DF868F.quest_subtitle: "¡Finalmente, Esclusas de Energía de Voltaje Ridículo!"
+	quest.1DF42E30A24A9DEC.quest_desc: [
+		"Cubre un marco de acero con láminas de plástico y luego cúbrelas con concreto y deja que se endurezca para obtener &bPlascrete"
+		""
+		"Los bordes y el piso del Cuarto Limpio deben ser de Plascrete"
+	]
+	quest.1DFD4712153C1A55.title: "Veta de Cuarzo de Certus"
+	quest.1E811D532BC593F2.quest_desc: ["Y aquí pensé que estaríamos usando placas de pruebas"]
+	quest.1E8BE8BDE142941D.quest_desc: ["Entrada de Ítems ME, al igual que una interfaz. Hay 2 filas para que utilices y enlaces ítems a tu multibloque."]
+	quest.1E8BE8BDE142941D.quest_subtitle: "Entrada de Ítems ME"
+	quest.1E8D496B1CC4F69B.quest_desc: [
+		"Dentro del &eReactor Quimico&r pon un poco de polvo de sodio y polvo de potasio juntos para obtener... sodio potasio"
+		""
+		"El polvo de &bPotasio&r se puede obtener haciendo &bPilas de Polvo Pequeño&r de la sustancia de &bAgua Salada&r con &bLagrimas de Ghast&r en una receta del &eReactor Químico"
+	]
+	quest.1F0A68DFAA19D5C7.quest_desc: ["Algunas de las Grandes Estructuras Multibloque no dependen del Alloy Blast Smelter para crear recursos para sus bloques. Los bloques para las estructuras multibloque grandes mencionadas son algunos de esos que no dependen del Alloy Blast Smelter."]
+	quest.1F0A68DFAA19D5C7.quest_subtitle: "Derrapando sin ABS"
+	quest.1F442C8E82FB9EB8.quest_desc: ["En genética, un mutágeno es un agente físico o químico que cambia permanentemente el material genético, generalmente ADN, en un organismo y así aumenta la frecuencia de mutaciones por encima del nivel natural de fondo."]
+	quest.1F442C8E82FB9EB8.quest_subtitle: "TMNT, ¡seguro!"
+	quest.1F733319E9F4DFE5.quest_desc: ["16x Cable de Diboruro de Magnesio - Cantidad 8"]
+	quest.1F733319E9F4DFE5.quest_subtitle: "Superconductor MV"
+	quest.1F92F7314DF3C3E2.quest_desc: [
+		"Inserta una placa de gema y obtén una lente de gema."
+		""
+		"¡Todavía hace barras también!"
+	]
+	quest.1FEB1ECDDDD8AD0E.quest_desc: ["El Plasma de Hierro Líquido puede parecer un recurso extraño, pero es necesario para lo que vas a hacer."]
+	quest.1FEB1ECDDDD8AD0E.quest_subtitle: "Todo"
+	quest.1FFAF26888F6EF00.quest_desc: [
+		"Estas carcasas se utilizarán para formar la estructura multibloque del Gran Horno de Arco."
+		""
+		"Afortunadamente, estas carcasas están hechas de un material que no requiere el Alloy Blast Smelter para crearlas. ¡Navegación sin problemas!"
+	]
+	quest.1FFAF26888F6EF00.quest_subtitle: "Carcasas de Alta Temperatura... ¿Harán salchichas?"
+	quest.2036ED4A823C1456.quest_desc: [
+		"No es suficiente... Necesitamos MÁS Naquadah. "
+		""
+		"Afortunadamente podemos poner en marcha nuestras Bobinas de Naquadah, y asi ayudar a nuestra EBF a procesar más metales!"
+	]
+	quest.2036ED4A823C1456.quest_subtitle: "Vamos a necesitar más Naq"
+	quest.204D670BDAB0496A.title: "Modulo de Punto Zero / ZPM"
+	quest.204EDA5F8B1C7580.quest_desc: [
+		"La línea de ensamblaje es necesaria para fabricar ciertas partes de los niveles superiores. Probablemente harás bastantes líneas de ensamblaje, ¡y tal vez incluso las ejecutes en paralelo!"
+		""
+		"¡Tu fábrica realmente va a empezar a llenarse hacia adelante!"
+	]
+	quest.204EDA5F8B1C7580.quest_subtitle: "GregTech'ers... Unidos!!"
+	quest.20A01B6A6B1177CB.quest_desc: [
+		"Un paso más arriba, otro impulso al tiempo de procesamiento. Pero de nuevo, no hay tiempo para estar cómodo. Los nuevos recursos que procesaremos necesitarán avances adicionales para reducir esos tiempos de procesamiento. ¡Así que sigue así!"
+		""
+		"¡Lo estás haciendo genial!"
+	]
+	quest.20A01B6A6B1177CB.quest_subtitle: "Me haces dar vueltas... Oh, vamos, sabías que venía..."
+	quest.20A0A574F51EEF74.quest_desc: [
+		"Sigue los mismos pasos que con la lente de esmeralda/rubí para hacer la &9lente de zafiro&r."
+		""
+		"{\"clickEvent\": {\"action\": \"change_page\", \"value\": \"4DD7F3508B757EF0\"}, \"text\": \"How to make the gem plate\", \"color\": \"green\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here for a reminder\" } }}"
+		""
+		"{\"clickEvent\": {\"action\": \"change_page\", \"value\": \"26004F997C758011\"}, \"text\": \"How to make the gem lens\", \"color\": \"yellow\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here for a reminder\" } }}"
+	]
+	quest.217FA79B7D4C56CD.quest_desc: ["Esto es bastante Neutonio. Pero mira a tu alrededor. Puede haber otras formas de crear este material."]
+	quest.217FA79B7D4C56CD.quest_subtitle: "Mucho Neutonio"
+	quest.219C80DAFBAB36B8.quest_desc: [
+		"Todas las Maquinas de Voltaje Bajo necesitan estos circuitos, no puedes progresar sin uno de estos!"
+		""
+		"Es recomendable no guardar las maquinas de vapor, estas pueden ser muy utiles en el proximo capitulo"
+		""
+		"Por que esto necesita 32 circuitos para completarlo? Bueno, esto se debe a un concepto llamado 'Elaboración por lotes' - En lugar de simplemente crear uno, a menudo es mejor crear muchos más que eso para prepararse para los proximos crafteos."
+		""
+		"Si haz estado automatizando todo desde que empezaste, te felicito! Inclusive puedes utilizar un ME Requester/Requester de AE2/RS para tener cierta cantidad de items en especifico dentro del sistema - Yo recomiendo que lo hagamos con materiales como; (ejemplo . cuacho y resina pegajosa) y poder añadir más a medida que avances en los capítulos"
+	]
+	quest.219C80DAFBAB36B8.quest_subtitle: "El jefe final del VAPOR"
+	quest.225F77308C834EA8.quest_desc: [
+		"¿Has estado &eElectrolizando&r &9Agua Salada&r? Es una gran fuente de Gas Cloro, que es especialmente útil para hacer Diclorobenceno, y como subproducto obtendrás este &3Polvo de Hidróxido de Sodio"
+		""
+		"Luego puedes &eReaccionar Químicamente&r el Polvo de Hidróxido de Sodio con tu Diclorobenceno para crear &6Fenol"
+	]
+	quest.228D1C880563CCBB.quest_desc: [
+		"Ah, esto me trae recuerdos, casi como si estuviéramos de vuelta en la Era del Vapor"
+		""
+		"Esto nos da más vapor que aquellas calderas"
+	]
+	quest.22AC248B6BB88486.quest_desc: [
+		"Destila compuestos en otras sustancias - nota la configuración de circuito programada para las recetas disponibles."
+		""
+		"Hay una Torre de Destilación, pero hablaremos de eso más adelante."
+	]
+	quest.22DB72BE40115A95.quest_desc: [
+		"La estructura de multibloque del Gran Horno de Arco. Esta estructura es la versión grande del Horno de Arco que hemos estado usando para objetos como el Cobre Recocido y el Vidrio Templado, así como para la recuperación de recursos de máquinas que ya no necesitamos."
+		""
+		"Ahora podemos añadir un bloque de paralelización y ejecutar muchas recetas en paralelo, ¡acelerando los tiempos de proceso!"
+	]
+	quest.22DB72BE40115A95.quest_subtitle: "¡Asegúrate de usar el LAF con frecuencia!"
+	quest.2341D611975C58AF.quest_desc: [
+		"¡Nuestra primera cubierta! Las cubiertas alteran el comportamiento de las máquinas de diversas formas, pero este no es el lugar para entrar en todos esos detalles."
+		""
+		"La cubierta de &rbrazo robótico&r te permitirá exportar (por defecto) o importar objetos en una máquina. En este caso, usando ese cofre/barril buffer de antes, puedes importar específicamente polvo de diorita."
+		""
+		"¿Por qué es LV cuando estamos en MV? Bueno, porque es más barato de hacer y las cubiertas no explotan a pesar de la diferencia de voltaje."
+	]
+	quest.2341D611975C58AF.quest_subtitle: "¿Importación automática? ¡Sí, por favor!"
+	quest.238CC42F61006CE9.quest_desc: ["Ahora podemos crear un Super Conductor, Lingotes Aleacion de Naquadah, Lingotes de Trinio, y Lingotes de Europio!"]
+	quest.238CC42F61006CE9.quest_subtitle: "Necesimatos CALOR!"
+	quest.239E32216382AA5D.quest_desc: [
+		"¡Finalmente, esto desbloquea el circuito HV en el nivel del Nanoprocesador!"
+		""
+		"Bueno, técnicamente podrías haberlo hecho sin usar los componentes SMD Avanzados, pero ¿dónde está la diversión en eso?"
+	]
+	quest.23B55A8C7D6482FF.quest_desc: [
+		"Agarra tus herramientas y abre la interfaz de tu esclusa de mantenimiento, hay problemas que arreglar!"
+		""
+		"Con las herramientas adecuadas, puedes hacer clic en la esclusa de mantenimiento para rectificar cualquier problema"
+		""
+		"Cuales herramientas te preguntaras? Cuando abras la interfaz gráfica de la Escotilla de Mantenimiento deberías ver un pequeño ícono de llave inglesa flotando a la derecha, pasa el ratón sobre él y te dirá qué hacer"
+		""
+		"Una vez terminando con esto, tu nueva EBF esta lista para trabajar!"
+		""
+		"Ten en cuenta, que pueden llegar a surgir problemas, no ocurren tan seguido y son faciles de arreglar"
+	]
+	quest.23B55A8C7D6482FF.quest_subtitle: "En efecto, no sirve..."
+	quest.23B9FE196A09B587.quest_desc: [
+		"Hemos estado esperando mucho por este."
+		""
+		"Pero eso hace que el Ensamblador de Circuitos de Nivel LuV sea aún más valioso."
+		""
+		"¡Y ahora podemos utilizarlo para hacer nuestro próximo nivel de circuitos! ¿Alguien dijo... ¡Progreso?"
+	]
+	quest.23B9FE196A09B587.quest_subtitle: "¡Circuitos a Montones!"
+	quest.244220A5D9F4C702.quest_desc: ["3 chunks separados, Por si no lo sabías ya"]
+	quest.2462AE2029F3C8E8.quest_desc: [
+		"Desplazando el Trióxido a Trifluoruro"
+		""
+		"Nos estamos acercando al catalizador que necesitamos para la NaqLine"
+	]
+	quest.2462AE2029F3C8E8.quest_subtitle: "Tres fluoruros"
+	quest.246882DD125868EC.quest_desc: [
+		"Lo sé, esta es una máquina LV en la era MV, pero créeme, vale la pena los circuitos MV que se necesitan para elaborar esto."
+		""
+		"Los circuitos se vuelven más baratos de elaborar con el Ensamblador de Circuitos, y necesitarás muchos circuitos."
+	]
+	quest.246882DD125868EC.quest_subtitle: "¡Circuitos más baratos!"
+	quest.246DC099F4457712.quest_subtitle: "Encuentra estos con un poco lapis"
+	quest.246DC099F4457712.title: "Veta de Lazurita"
+	quest.2483DD28AC6E7EA2.quest_desc: [
+		"&eReacciona Químicamente&r el Clorobenceno con la Mezcla de Nitración para hacer &2Nitroclorobenceno"
+		""
+		"También obtendrás &6Ácido Sulfúrico Diluido&r, que puedes &eDestilar&r de nuevo para obtener Ácido Sulfúrico a plena fuerza"
+	]
+	quest.24E3CB198F73524A.quest_desc: [
+		"Un poco de oxígeno y algo de electricidad y puedes recocer cobre."
+		""
+		"Esto también te permitirá descomponer viejas máquinas en forma de lingote en lugar de polvo como en el triturador."
+	]
+	quest.24E3CB198F73524A.quest_subtitle: "¡Electricidad arqueante!"
+	quest.2555BA914C466B5C.quest_desc: ["Estoy seguro de que ahora ves por qué estas placas serán vitales. Pero como ya sabes, proporcionarán un gran beneficio."]
+	quest.2555BA914C466B5C.quest_subtitle: "El Mejor Casing"
+	quest.2586C2C9D1EFB2DC.quest_desc: [
+		"Conectar todos tus multibloques a tu sistema ME consume muchas interfaces. Si agregas el hecho de que necesitas coberturas para manipular los recursos, puede volverse tedioso."
+		""
+		"Bueno, no temas. ¡Estas Esclusas y Buses te ayudarán a optimizar todos tus multibloques de una manera que nunca hubieras imaginado! ¡Imagina tener capacidades ME integradas!"
+		""
+		"¡Eso es lo que tenemos aquí! ¡Y son herramientas increíbles para que tus multibloques las utilicen! ¡Incluso tienen chips programables, para que puedas designar un Hatch/Bus ME para una línea de proceso específica!"
+	]
+	quest.2586C2C9D1EFB2DC.quest_subtitle: "Esclusas ME para Multibloques"
+	quest.2586C2C9D1EFB2DC.title: "Buses y Esclusas ME"
+	quest.25DBFE887B041E94.quest_desc: [
+		"Pulverizadora -> Lavadora de Minerales -> Centrifugadora Termica -> Pulverizadora"
+		""
+		"Esta es una configuración para el procesamiento de minerales; ¡puedes consultar JEI para otras configuraciones posibles"
+		""
+		"Una vez que tengas esta configuración construida a Voltaje Alto, obtendrás muchos subproductos"
+		""
+		"Los subproductos a menudo se usan en recetas más avanzadas, así que asegúrate de revisar esto en Voltaje Alto!"
+		""
+		"Hay muchas formas de automatizar esta configuración, así que se deja como ejercicio para el lector"
+		""
+		"[ \"\", { \"text\": \"Note: \", \"color\":\"#FFFF55\", \"bold\":\"true\" }, { \"text\": \"The Ore Washer requires \" }, { \"text\": \"water\", \"color\":\"#5555FF\" }, { \"text\": \" and a \" }, { \"text\":\"Programmed Circuit\", \"color\":\"#FFAA00\", \"clickEvent\": { \"action\":\"change_page\", \"value\":\"4875FB6628C1FCDC\" }, \"underlined\":\"true\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here for a reminder\" } } }, { \"text\":\" setting to run\" } ]"
+	]
+	quest.25DBFE887B041E94.quest_subtitle: "Los Basicos"
+	quest.25DBFE887B041E94.title: "Procesamiento de Minerales"
+	quest.26004F997C758011.quest_desc: ["Una placa de rubí en el Torno hará una Lente de Rubí."]
+	quest.262AE37765B139BE.quest_desc: [
+		"Recuerda: Overclocking hace que una receta se ejecute el doble de rápido pero consume cuatro veces más energía."
+		""
+		"Al empezar a reemplazar máquinas, puedes poner las viejas en un macerador para recuperar algunos de los ingredientes utilizados en su fabricación."
+	]
+	quest.262AE37765B139BE.quest_subtitle: "Bienvenido a &bVoltaje Medio"
+	quest.26D1F1ECF66194E6.quest_desc: [
+		"&e32x Polvo de Silicio&r y una &aPequeña Pila de Polvo de Arseniuro de Galio&r en &bPrograma 2&r te dará uno de estos."
+		""
+		"Podría valer la pena hacer un nuevo EBF, uno solo para recetas del Programa 1."
+	]
+	quest.273DC98BA2785BD6.quest_desc: ["¡Dos de estos pueden llevar tus multibloques hasta IV!"]
+	quest.277464BE6F96C082.quest_desc: [
+		"La paralelización de las trampillas va a ser increíblemente importante, especialmente avanzando con estructuras grandes y multibloque."
+		""
+		"El primer nivel de esta trampilla permite ejecutar 4 procesos al mismo tiempo. ¡Pero a medida que avanzamos en los niveles, eventualmente puedes ejecutar 256 procesos simultáneamente!"
+		""
+		"Esto es mucho más que la Matriz de Procesamiento, y como tal, da más valor a estos multibloques sobre las máquinas de bloques individuales."
+		""
+		"&l&eNota:&r&r Esta trampilla en realidad no es necesaria para construir ninguna de esas máquinas multibloque."
+	]
+	quest.277464BE6F96C082.quest_subtitle: "Procesos Paralelos"
+	quest.278252472B5B94D4.quest_desc: [
+		"&3Transformadores activos&r son la manera más eficiente de transmitir EU a través de la infraestructura basada en Gregtech."
+		""
+		"Existen algunas reglas para asegurarse de que funcionen correctamente."
+		"1.) Los tubos/láser solo pueden viajar en líneas rectas. Puedes usar otro &3Transformador activo&r para desviar el láser en una dirección diferente."
+		"2.) Los tubos &0&lDEBEN&r&r tener un color para funcionar. Esto se logra utilizando la Lata de Aerosol de Gregtech."
+	]
+	quest.278252472B5B94D4.quest_subtitle: "¡Malditos láseres!"
+	quest.279BC6FAF7827738.quest_desc: ["Por ahora obtenemos 2 de estos, ¡pero con algunos avances en el próximo nivel, podemos obtener 4 procesadores de Voltaje Loco por juego de objetos de elaboración! ¡Vale la pena!"]
+	quest.279BC6FAF7827738.quest_subtitle: "Voltaje Loco"
+	quest.27E9F48972741701.title: "Veta de Magnetita"
+	quest.288DFEBCEFC6EEC6.title: "Voltaje Alto / HV"
+	quest.28B1787B61BB214B.quest_desc: ["¡Tomemos el epoxy de la categoría IV y hagamos refuerzos para nuestros procesadores de la próxima categoría!"]
+	quest.28B1787B61BB214B.quest_subtitle: "¡Tantas aplicaciones para el epoxy!"
+	quest.28EB26056EF18C5F.quest_desc: [
+		"Con un nombre como Duranio, esperaría que este elemento sea Duradero."
+		""
+		"De todos modos, necesitamos mezclar esto con Titanio. ¡El material resultante será MUY resistente!"
+	]
+	quest.28EB26056EF18C5F.quest_subtitle: "¿Duradero?"
+	quest.28F49121DEB0000A.quest_desc: ["Este es un elemento peculiar. Es extremadamente resistente a la corrosión en climas secos, pero no lo es en climas húmedos."]
+	quest.28F49121DEB0000A.quest_subtitle: "Lutecio líquido"
+	quest.29417616D8F673D5.quest_desc: ["De aquí en adelante, se necesitará hacer muchos metales y aleaciones mixtas en el Horno de Aleación. Como líquidos, se empujan a través de un Congelador al Vacío con un Molde de Lingote para hacer los lingotes. Las estructuras de Multibloque mencionadas en las siguientes misiones tienen bloques de soporte que utilizan metales que deben ser hechos en el Horno de Aleación. Hacer al menos 1 Horno de Aleación ahora será beneficioso."]
+	quest.29417616D8F673D5.quest_subtitle: "¡El Sistema de Frenos Antibloqueo está listo!"
+	quest.2943989C642F93AE.quest_desc: ["¡Finalmente! Ahora tenemos una receta de elaboración que nos da 2 procesadores de Voltaje Ridiculo por cada elaboración. ¡Vamos!"]
+	quest.2943989C642F93AE.quest_subtitle: "&dVoltaje Ridículo"
+	quest.29706E3681616E41.quest_desc: [
+		"Las opciones de cables para el Voltaje Ridiculo no son excelentes, en terminos de perdida de Amperaje."
+		""
+		"Por esa razón, se recomienda usar el cable superconductor, que no necesita estar cubierto de goma y tampoco tiene pérdida de amperaje"
+	]
+	quest.29706E3681616E41.quest_subtitle: "Esos son Muchos Polvos Diferentes!"
+	quest.29BDF6CA8FAAC390.quest_desc: ["Oh vamos, sabías que iba a añadir un texto diciendo \"You spin me Right Round...\" para la centrifugadora. ¡¿Quién no lo haría?!"]
+	quest.29BDF6CA8FAAC390.quest_subtitle: "Me giras justo en el centro, cariño..."
+	quest.29CD5C0A253425D5.quest_desc: ["Acabamos de hacer que nuestras Estructuras de Multibloque puedan usar energía de Nivel &dLuV&r. ¿Pero qué tal si vamos un paso más allá y les damos energía de nivel &4ZPM&r?"]
+	quest.29CD5C0A253425D5.quest_subtitle: "¿Qué tal una Esclusa de Energía &dLuV&r, pero 4 veces más potente?"
+	quest.2A26032DC9C8CFD6.quest_desc: [
+		"Con una Laminadora de cables puedes convertir un lingote en dos cables de 1x."
+		""
+		"Esto también desbloquea recetas más baratas de cables finos"
+	]
+	quest.2A26032DC9C8CFD6.quest_subtitle: "Cables baratos"
+	quest.2A2ED3B4BE8C7E67.title: "Veta de Tetrahedrita"
+	quest.2A32CA82627E5FA7.quest_desc: [
+		"&2Glicerol&r + &7Ácido Clorhídrico&r en el &eReactor Químico&r hacen &cEpoxiclorohidrina"
+		""
+		"Hay una receta alternativa que utiliza Cloruro de Alilo y Ácido Hipocloroso, si decides seguir ese camino"
+	]
+	quest.2A54256CA9A23BB3.quest_subtitle: "Util para crear lubricante"
+	quest.2A54256CA9A23BB3.title: "Veta de Esteatita"
+	quest.2AB457E29360E3B8.quest_desc: [
+		"¡Pon esos polvos que acabamos de hacer en tu horno eléctrico de alto rendimiento y obtén algo de silicio caliente!"
+		""
+		"Sostener un lingote caliente te dañará, pero debes hacerlo para esta misión porque soy un poco malvado."
+		""
+		"Deberás enfriarlo, en este caso con un baño químico."
+	]
+	quest.2AB457E29360E3B8.quest_subtitle: "Patata caliente"
+	quest.2ACB94B77EF072EB.quest_desc: ["Finalmente, la era del Voltaje Ridiculo o &dLuV&r ha llegado - felicidades!"]
+	quest.2AEDB489A017AAF9.quest_desc: ["¡Esto utiliza aún más vapor! Podría ser el momento de construir otra caldera."]
+	quest.2AEDB489A017AAF9.quest_subtitle: "¡A toda máquina!"
+	quest.2B5733BDAF83B2D4.title: "Veta de Cuarcita"
+	quest.2B8E66760514BE77.quest_desc: [
+		"¡Ahora tenemos el Cable Superconductor Voltaje Definitivo! Se utiliza para fabricar muchos componentes diferentes, algunos de los cuales son necesarios para que podamos proceder."
+		""
+		"Más cables... ¡Yay!"
+	]
+	quest.2B8E66760514BE77.quest_subtitle: "Superconductor UV"
+	quest.2B9BA85662BF637C.quest_desc: ["Las obleas grabadas deben ser cortadas al tamaño adecuado, así que volvamos al Cortador."]
+	quest.2BE364CCE684AD45.quest_desc: ["¡Una parada para alimentar tus multibloques en IV!"]
+	quest.2BE4B6F1CCAA36AC.quest_desc: ["La Mezcladora toma múltiples materiales y los mezcla para crear un material nuevo, muy utíl para aceros de alta calidad y mezclas de metales"]
+	quest.2BE754C8D2C0C76E.quest_desc: [
+		"La forma final de los circuitos de Alto Voltaje, pero aún no la más eficiente en costos"
+		""
+		"Por ahora los usarás para fabricar circuitos de niveles superiores, ¡hasta el Voltaje Ridiculo!"
+	]
+	quest.2C28217E1131A63A.quest_desc: [
+		"¡Felicidades!"
+		""
+		"Con el Circuito Integrado Avanzado, ¡has llegado con éxito a Alto Voltaje!"
+		""
+		"Puedes desechar esas viejas recetas de Circuitos Electrónicos Básicos y Circuitos Electrónicos Buenos y reemplazarlas con sus versiones Integradas."
+	]
+	quest.2C28217E1131A63A.quest_subtitle: "Una nueva era"
+	quest.2C28217E1131A63A.title: "Circuito Integrado Avanzado"
+	quest.2C9DDB3AAA30E02A.quest_desc: [
+		"En la siguiente sección vamos a necesitar hacer un montón de Catalizadores de Micro Universo."
+		""
+		"Este componente utiliza Plasma de Materia Estelar para hacer los catalizadores."
+		""
+		"Aunque no necesitas hacerlo ahora, ciertamente sería muy útil, ya que vamos a necesitar mucho Plasma de Materia Estelar para hacer los catalizadores 16x."
+	]
+	quest.2C9DDB3AAA30E02A.quest_subtitle: "Comienza Ahora"
+	quest.2CC2E23077A0509F.quest_desc: [
+		"Antes podías hacer 32 Resistores SMD a la vez, y ahora son solo 16 Resistores SMD Avanzados"
+		""
+		"¿Es realmente un aumento? ¡Sí! Principalmente porque usas menos de los Resistores SMD Avanzados, pero también porque los de tipo regular no serán útiles para siempre..."
+	]
+	quest.2CC82170BCE61940.quest_desc: ["Asegúrate de que &l&n&cno&r&r&r tengas el &aEBF&r configurado en &bPrograma 1&r, o de lo contrario podría comenzar a convertir el polvo de silicio en lingotes"]
+	quest.2D3A6B7907FDB9B1.quest_desc: ["Esta es la última &eReacción Química&r en esta cadena, finalmente para el codiciado &dVidrio Laminado"]
+	quest.2D65DC315CCC60C8.quest_desc: [
+		"El Sulfuro de Trinio es un subproducto de nuestro procesamiento de la línea de Naq, pero es un subproducto muy necesario que se usará en grandes cantidades"
+		""
+		"As previously stated, you should really figure out how to passive the processing line. To be fair, at this point, everything should be passived."
+	]
+	quest.2D65DC315CCC60C8.quest_subtitle: "Sub Productos"
+	quest.2DDA8AC73C2D50B4.quest_desc: [
+		"Estireno + Butadieno + Oxígeno o Aire en un Reactor Químico te da el polvo crudo del caucho de más alto nivel disponible"
+		""
+		"Se recomienda usar Oxígeno en lugar de Aire aquí, ya que obtienes más de esa manera"
+	]
+	quest.2E2B6921723681C7.quest_desc: [
+		"Si tienes suerte, puedes encontrar rejalgar, que puede convertirse en arsénico directamente en una centrífugadora"
+		""
+		"La cobaltita se puede electrolizar directamente para obtener arsénico, pero eso es en Voltaje Medio. Además, obtendrás más arsénico de tu cobaltita al fabricar polvo de trióxido de arsénico y electrolizarlo"
+	]
+	quest.2E47C92E3E8D826A.quest_desc: [
+		"&c&lPara! No pases adelante! No recolectes $200!&r"
+		""
+		"Antes de continuar, terminaste todas la misiones de este capitulo?"
+		""
+		"Espera? Lo hiciste?"
+		""
+		"Excelente Trabajo, entonces puedes continuar!"
+	]
+	quest.2E47C92E3E8D826A.quest_subtitle: "En Camino al Voltaje Loco!"
+	quest.2E5EF984B9CE0CB9.quest_desc: ["El todo en uno, bateria grande, buscador de rango alto para minerales/liquidos"]
+	quest.2E7E1278D9796141.quest_desc: ["Placas de circuito reforzadas con fibra, lo suficientemente fuertes para soportar procesadores cuánticos y el calor que producen esos qubits."]
+	quest.2E7E1278D9796141.quest_subtitle: "¡Esa es una placa de circuito fuerte!"
+	quest.2EA74A823D55D472.quest_subtitle: "¿Dónde está el Main Frame?"
+	quest.2EE52FD7129D3D87.quest_desc: [
+		"El mineral de iridio es realmente bastante raro, así que no me sorprendería si no has encontrado ninguno."
+		""
+		"Por lo tanto, podemos trabajar más en la &6Línea de Platino™&r para obtener iridio."
+	]
+	quest.2EEEA951011D523D.title: "Veta de Bentonita"
+	quest.2F1DF3971B75E63C.quest_desc: ["&l&6Recuerda&r: ¡Cada uno de estos puede aceptar 2 Amperios, así que si tienes dos de estas Esclusas de Energía en un multibloque, puedes alcanzar la categoría &dLuV&r!"]
+	quest.2F2B9938B63A7029.quest_desc: ["Una vez que tengas algunos chips de cristal crudo, pásalos por una EBF con placas de esmeralda, ¡y podrás obtener tus CPUs de cristal!"]
+	quest.2F2B9938B63A7029.quest_subtitle: "Hora de añadir Calor"
+	quest.2F4258088CBFC399.quest_subtitle: "¡Tienes que conseguirte un Sr. Fusión!"
+	quest.2FDACD6F153D5B64.quest_desc: ["Procesar Sheldonita y purificarla te permitirá obtener el mayor rendimiento de Lodo de Grupo de Platino. Este lodo contiene recursos que necesitas para progresar."]
+	quest.2FDACD6F153D5B64.quest_subtitle: "Mi amigo Sheldon fue a un club por la noche."
+	quest.303A3AFA49DAC64F.quest_desc: ["¡Ahora podemos llevar un nuevo nivel de potencia a nuestros multibloques!"]
+	quest.303A3AFA49DAC64F.quest_subtitle: "¡Más Potencia!"
+	quest.305696A8BCB74EB0.title: "Era del Voltaje Bajo"
+	quest.307F92868E0F4EB3.quest_desc: ["La biomasa es útil para muchas cosas como la producción de etanol y metanol."]
+	quest.308D5AC7562E09BA.quest_desc: [
+		"Zeron 100 es un acero inoxidable superduplex desarrollado por Rolled Alloys (anteriormente Weir Materials). La aleación tiene excelente resistencia a la corrosión combinada con alta resistencia."
+		""
+		"Típicamente contiene un 25% de cromo, 7% de níquel, 3.6% de molibdeno junto con adiciones de cobre y tungsteno. Zeron 100 tiene una estructura austenítica-ferrítica de 50-50."
+		""
+		"También tiene una mayor resistencia a la corrosión por picaduras de cloruro, corrosión por resquicio y agrietamiento por corrosión bajo tensión que los aceros inoxidables estándar de la serie 300."
+	]
+	quest.308D5AC7562E09BA.quest_subtitle: "Acero Resistente"
+	quest.30954ADF34DB05A7.quest_desc: [
+		"Una vez más visitamos una aleación muy compleja."
+		""
+		"Pero como hemos visto con otras aleaciones complejas, siempre son extremadamente beneficiosas para nosotros, aunque complicadas. Esta no es diferente."
+	]
+	quest.30954ADF34DB05A7.quest_subtitle: "Aleación Compleja"
+	quest.30DA40DA0CEB05A0.quest_desc: ["La maceración de troncos de madera proporciona una buena cantidad de polvo de madera por tronco"]
+	quest.30F16A6BD3C7F4FC.title: "Veta de Casiterita"
+	quest.313AA0A45CD2BBB9.quest_desc: ["Para hacer Hierro Forjado, vas poner pepitas de hierro en cualquier horno para así conseguir nuestra pepita de hierro forjado"]
+	quest.318B71954A49DC27.quest_desc: [
+		"La &l&1Categoría IV&r&r nos ha llevado a una nueva era. A medida que avanzamos, nuestros procesos se vuelven más profundos y múltiples. Por lo tanto, existe una versión de multibloque de todas las máquinas principales que has utilizado en categorías anteriores."
+		""
+		"&e&lNota:&r&r Aunque no es inmediatamente necesario, te convendría considerar el uso de algunos de estos multibloques en el futuro, ya que mejorará la velocidad de tus procesos actuales."
+	]
+	quest.318B71954A49DC27.quest_subtitle: "Escalando"
+	quest.318B71954A49DC27.title: "Multibloques Grandes"
+	quest.319D3A14D62225BC.quest_desc: [
+		"El HASTELLOY C276 es una aleación forjada de níquel-cromo-molibdeno considerada la aleación más versátil y resistente a la corrosión disponible."
+		""
+		"Esta aleación es resistente a la formación de precipitados en los límites de grano en la zona afectada por el calor de la soldadura, lo que la hace adecuada para la mayoría de las aplicaciones de procesos químicos en condiciones soldadas."
+		""
+		"La aleación C-276 también tiene una excelente resistencia al picado, a la corrosión por tensiones y a atmósferas oxidantes de hasta 1900 °F, y tiene una resistencia excepcional a una amplia variedad de entornos químicos."
+	]
+	quest.319D3A14D62225BC.quest_subtitle: "¡Resistencia a la Corrosión Increíble!"
+	quest.320A70BC50ED456F.quest_desc: [
+		"Deberías tener mucho Tierras Raras de tu línea de procesamiento para tu Neodimio. Esto asegurará que podamos obtener Samario."
+		""
+		"Si no has activado tu producción de Neodimio, realmente deberías hacerlo. Una vez que veas la cantidad de Samario que obtenemos por Tierra Rara, reforzará esa afirmación."
+	]
+	quest.320A70BC50ED456F.quest_subtitle: "La Tierra es bastante Rara"
+	quest.322FD8BB46FB653C.quest_desc: [
+		"¡Por supuesto que necesitamos una manera en formato grande de hacer todas esas varillas magnéticas que usamos para todas nuestras recetas!"
+		""
+		"¡Deja que esta máquina se encargue de todo eso!"
+	]
+	quest.322FD8BB46FB653C.quest_subtitle: "¡Zap Brannigan!"
+	quest.329916B2CB8342B2.quest_desc: [
+		"&eReacciona químicamente&r el &aTetrafluoroetileno&r con un poco de aire o, mejor aún, &bGas Oxígeno&r, ¡para recibir el producto final de &6Politetrafluoroetileno&r!"
+		""
+		"¡Finalmente, PTFE! Este forma la base para fabricar Cápsulas Químicamente Inertes, que usaremos pronto para hacer el &aReactor Químico Grande"
+		""
+		"Una vez que tengas el &aRCG&r, también podrás producir más PTFE a la vez añadiendo algo de &cTetracloreto de Titanio"
+	]
+	quest.32E356FC9E63F63B.quest_desc: ["Procesa las Tierras Raras para obtener Pequeñas Pilas de Samario, luego comprime las piezas juntas para obtener una pieza completa de Polvo."]
+	quest.32E356FC9E63F63B.quest_subtitle: "Samario fue a la escuela en el Samario"
+	quest.32E9B33C9D7981ED.quest_desc: [
+		"Bueno, sí, podrías haber hecho Glicerol&r sin el &aReactor Químico Grande&r, ¡pero entonces no podrías hacerlo en grandes cantidades!"
+		""
+		"Un Polvo de Hidróxido de Sodio con &654 Cubos de Aceite de Pescado&r y &c9 Cubos de Etanol&r es mi método para obtener &d9 Cubos de Glicerol"
+		""
+		"Esto también produce mucho Biodiésel, que puede ser una fuente de combustible fantástica, especialmente si lo haces con Cetano Mejorado"
+	]
+	quest.32FE0C0475BB45C6.quest_desc: ["Tomemos el Osmiridio que hiciste y procesémoslo en algunos Cables Finos. ¡Esto junto con las Varillas Largas de Samario Magnetizado nos dará un progreso importante!"]
+	quest.32FE0C0475BB45C6.quest_subtitle: "Rayos, el Osmiridium se ve muy fino"
+	quest.3302A9306CAD659A.quest_desc: ["Un &6Lingote de Cobre&r y cuatro &cPolvos de Redstone&r en el &eHorno de Aleaciónes&r crean este bello lingote"]
+	quest.333D2A9F20B2E738.title: "Veta de Azufre"
+	quest.33590A79C5C554C8.quest_desc: [
+		"Podras haber notado que 4A de Voltaje Bajo (32 EU/t/A) serían 128 EU/t"
+		""
+		"1A de Voltaje Medio tambien son 128 EU/t"
+		""
+		"¿Se pueden cambiar? Algo así!"
+		""
+		"El Alto Horno Electrico o mejor conocido como la (Electric Blast Furnace - EBF) es un claro ejemplo - dos esclusas de energía de Voltaje Bajo pueden aceptar 2A of Voltaje Bajo, lo que da lugar a que la EBF pueda procesar recetas de Voltaje Medio! Este es un aspecto clave para progresar en los niveles de voltaje en Gregtech."
+		""
+		"Alternativamente, seria hacer un Transformador de Voltaje"
+	]
+	quest.337B492F974628A4.quest_desc: [
+		"¡Genial! Ahora podemos fabricar el casco UHV."
+		""
+		"Pero no parece haber máquinas UHV. ¿Por qué necesitamos este casco? ¡Pues para las escotillas y autobuses, por supuesto!"
+	]
+	quest.337B492F974628A4.quest_subtitle: "¿Dónde están las Máquinas?"
+	quest.33B8FDDBE3E95108.quest_desc: ["Solo necesitamos procesar el líquido hasta obtener un lingote. Pero ahora que estamos en el nivel UV, ¡tenemos la velocidad y potencia para hacerlo rápidamente!"]
+	quest.33B8FDDBE3E95108.quest_subtitle: "¿El Darmstadtio tiene lingotes?"
+	quest.33DAA602B385A55D.quest_desc: ["¡Un lingote muy caliente! ¡Este requiere Bloques de Bobina de Nichromo en tu EBF para procesar!"]
+	quest.3406646DF9585AB8.quest_desc: ["Polvo de silicio, agua, metano y cloro se combinan en tu Reactor Químico en el Programa 2 para hacer esto"]
+	quest.3406646DF9585AB8.quest_subtitle: "Intenta decir esto tres veces seguidas rápido"
+	quest.346A926E23840EF7.quest_desc: [
+		"Las opciones para los cables de nivel de Modulo de Punto Zero no son las mejores cuando se trata de la perdida de Amperaje."
+		""
+		"Pero con el Cable Super conductor, no tendrás que preocuparte por la pérdida de energía de tus maquinad Modulo de Punto Zero y Multibloques!"
+	]
+	quest.34C931DFFBF608DB.quest_desc: [
+		"Las aleaciones Stellite son una gama de aleaciones de cobalto-cromo diseñadas para resistencia al desgaste."
+		""
+		"Las aleaciones Stellite incluyen una gama de aleaciones a base de cobalto, con proporciones significativas de cromo (hasta un 33%) y tungsteno (hasta un 18%). Algunas de las aleaciones también contienen níquel o molibdeno. La mayoría de ellas tienen un contenido de carbono bastante alto en comparación con los aceros al carbono."
+	]
+	quest.34C931DFFBF608DB.quest_subtitle: "Acero Carbonatado. LUL"
+	quest.34E8D3AD37BB76C5.title: "Veta de Topacio"
+	quest.34EE220F1C2AC5EF.quest_desc: ["Nuestro siguiente nivel de procesadores depende en gran medida de los chips. Como tal, el multibloque del Láser de Grabado trabajará horas extras para asegurarse de que los SOC, CPU y RAM estén en abundante suministro. ¡Esta máquina está aquí para ayudar y asegurar que nos mantengamos por delante de la curva!"]
+	quest.34EE220F1C2AC5EF.quest_subtitle: "¡Componentes Vitales!"
+	quest.350B4AC4ADF7F84B.quest_desc: [
+		"Con los requisitos de potencia de la estructura, se necesita algo para garantizar que la energía se pueda transmitir adecuadamente."
+		""
+		"Estos Transmisores de Energía harán el truco."
+	]
+	quest.350B4AC4ADF7F84B.quest_subtitle: "Utilizando la potencia"
+	quest.354012CD62D346E5.quest_subtitle: "5x de redstone por cada mineral en bruto de redstone!"
+	quest.354012CD62D346E5.title: "Veta de Redstone"
+	quest.358706CA93DC2A9C.quest_desc: ["Cocina el polvo en el &aEBF&r y enfríalo en el &ebaño químico&r."]
+	quest.35A014F1B4506CCA.title: "Voltaje Bajo / LV"
+	quest.35FF7974C6DD1D9F.quest_desc: [
+		"El Núcleo Demonio fue un objeto que fue el epicentro de uno de los accidentes nucleares más rápidos (en tiempo de reacción) que ocurrió. El Núcleo Demonio fue fabricado por el Proyecto Manhattan durante la Segunda Guerra Mundial y la intención era utilizarlo para aprender más sobre la radiación nuclear y la moderación"
+		""
+		"El núcleo en sí estaba hecho de plutonio, pero las dos hemisferas que rodeaban el núcleo estaban hechas de un moderador de neutrones, berilio. El berilio es un material atractivo para los neutrones y reduce la energía de los mismos."
+	]
+	quest.35FF7974C6DD1D9F.quest_subtitle: "El Nucleo del Demonio"
+	quest.3619CD5AAD5E3691.quest_desc: ["&aDestila&r tu &eNafta Ligeramente Vaporizada&r para obtener &6Butadieno"]
+	quest.3673893C88EB5EDE.quest_desc: ["Usa otros 3 cristales para elaborar este cristal."]
+	quest.3673893C88EB5EDE.quest_subtitle: "Afrontando la tormenta"
+	quest.3762F8137BFD5A74.quest_desc: ["La &aCraqueadora&r no te da aceite, pero permite procesar los subproductos de manera más eficiente!"]
+	quest.37A1137A59A2086B.quest_desc: [
+		"Este bobinado superconductor tiene muchos usos en muchos multibloques diferentes y en muchas recetas diferentes. También hay 3 recetas diferentes para él"
+		""
+		"En este caso de uso, vamos a utilizar el nivel más bajo, que tiene el costo de recursos más alto, pero es el formato más fácil para nosotros en este momento"
+	]
+	quest.37A1137A59A2086B.quest_subtitle: "Super Conductores!"
+	quest.3863B33438AB5BBD.quest_desc: ["Necesitamos mezclar algo de HSLA para hacer placas para las paredes del Horno de Aleación."]
+	quest.3863B33438AB5BBD.quest_subtitle: "Polvo de HSLA"
+	quest.38BD153513DC2334.quest_desc: [
+		"Puedes optar por adquirir &3Naftaleno&r o &2Dimetilbenceno,&r ambos tienen sus méritos"
+		""
+		"Una ruta que evita el &aHorno de Pirólisis&r podría ser usar &0Carbón&r con un &eExtractor&r para hacer &8Alquitrán de Madera&r y &aDestilar&r eso en &2Dimetilbenceno"
+		""
+		"Pero realmente sería mejor hacer el &aHorno de Pirólisis&r y quemar troncos o carbón y &aDestilar&r los productos"
+	]
+	quest.38C0D3A240E43A23.quest_desc: [
+		"Vas a necesitar una cantidad de 4 para proceder. En función, estos transformarán la energía de UV a UHV, pero no los necesitamos para conversión de energía."
+		""
+		"Se utilizarán como componente de elaboración."
+	]
+	quest.38C0D3A240E43A23.quest_subtitle: "Transformers Robots en Disfraz"
+	quest.39615B8E568E0380.quest_desc: ["Toma el Yttrium Barrium Cuprate y haz alambres."]
+	quest.39615B8E568E0380.quest_subtitle: "¿Yit-Trium? ¿la Y es silenciosa?"
+	quest.39ACF4D6503067F3.quest_desc: ["&Corta& ese componente Microelectrónico en un chip adecuado"]
+	quest.39B625FA20EAA025.quest_desc: [
+		"Vas a necesitar o bien &9Amoníaco&r y un &aReactor Químico Grande&r o mucho &bDióxido de Nitrógeno"
+		""
+		"Afortunadamente, el Dióxido de Nitrógeno es fácil de obtener, todo lo que necesitas es un &6Colector de Gas HV&r en &3El Fin&r en &2Programa 3&r, un &aCongelador al Vacío&r en IV y una &aTorre de Destilación&r también en IV"
+	]
+	quest.39CD35C91F07258C.quest_desc: [
+		"Sí. Tenemos Reactores de Fusión Mk.I, Mk.II y Mk.III. Ahora existe el Mega Reactor de Fusión."
+		""
+		"Todos tienen sus propios roles, y todos son vitales para que avancemos. Así que, una vez más, ponte a ello y hazte con el Mega Reactor de Fusión."
+	]
+	quest.39CD35C91F07258C.quest_subtitle: "Mega Reactor de Fusión"
+	quest.39D7F47A8C44D5AF.quest_desc: [
+		"Otro tipo de Aleacion para otra categoria de Super conductores!"
+		""
+		"Recuerda, los Super conductores tienen 0A de perdida al transmitir EU o energia, lo que los convierte en el cableado más buscado para tu gran fábrica!"
+		""
+		"You'll need a Mixer running at least &cZPM&r tier recipes to make this dust"
+	]
+	quest.39D7F47A8C44D5AF.quest_subtitle: "Más Superconductores"
+	quest.3A27B65A0B4FFB5B.quest_desc: ["¡Salida de Ítems ME! Haz que el ítem resultante regrese directamente a tu sistema ME."]
+	quest.3A27B65A0B4FFB5B.quest_subtitle: "Salida de Ítems ME"
+	quest.3A8BF9BE08F54513.quest_desc: ["El Berilio se puede obtener de muchas maneras. Algunos de ustedes pueden tener un buen stock de berilio procesando polvo de perla de Ender en un electrolizador. "]
+	quest.3A8BF9BE08F54513.quest_subtitle: "\\\"Por el Martillo de Grabthar's...!\\\""
+	quest.3AA49DDE45705233.quest_desc: [
+		"Realmente debes tener cuidado con este cubo."
+		""
+		"Estoy seguro de que no quieres infectarte con él."
+	]
+	quest.3AA49DDE45705233.quest_subtitle: "Infeccioso"
+	quest.3B0BC233A6C81B73.quest_desc: [
+		"Tu primer Chip de Cristal Crudo puede llevar varios intentos hasta que lo obtengas"
+		""
+		"Pero una vez que lo obtengas, puedes duplicarlos de manera confiable usando un simple ciclo de fabricación de un Chip de Cristal Crudo, martillándolo en el Martillo Forjado para obtener partes de Chips de Cristal Crudo, luego procesando esos componentes en más Chips de Cristal Crudo, y repitiendo el proceso"
+	]
+	quest.3B0BC233A6C81B73.quest_subtitle: "Bajas Probabilidades"
+	quest.3B1268D75B34A0F6.quest_desc: [
+		"¡Ahora estamos hablando! Nuestras máquinas tienen algo de potencia detrás de ellas. Sin embargo, aunque parezca ridículo, ¡vamos a necesitar más!"
+		""
+		"Pero esto servirá por ahora."
+	]
+	quest.3B1268D75B34A0F6.quest_subtitle: "El hidrógeno dijo que se siente positivo hoy, probablemente porque perdió un electrón."
+	quest.3B4F326D72E794D3.quest_desc: [
+		"Aquí es donde el &aCraqueador&r es útil, ya que no pierde nada de tu Naftha ganado con esfuerzo al craquear"
+		""
+		"Una alternativa es usar un Reactor Químico, ¡pero eso pierde la mitad de la Naftha!"
+		""
+		"Probablemente quieras hacer otra Torre de Destilación para destilar esto"
+	]
+	quest.3BD5C517AD024A45.quest_desc: ["El último superconductor que hicimos fue hace un tiempo. Pero ahora el superconductor de cada nivel será más importante, ya que nos permitirá tener cables sin pérdida de amperaje."]
+	quest.3BD5C517AD024A45.quest_subtitle: "Recuerda"
+	quest.3BEDF19CD79D53D5.quest_desc: [
+		"La &aTorre de Destilación&r sirve como la base para el &dProcesamiento de Aceite&r, el cual puede convertir el aceite en muchas formas más útiles"
+		""
+		"Al construir la Torre, necesitarás que tenga al menos &c1 + Salidas de Fluido de altura&r para procesar las recetas correctamente"
+		""
+		"&ePor ejemplo&r, si la receta que quieres ejecutar produce 5 fluidos, entonces tu torre debe tener al menos 6 de altura con 5 compuertas de salida"
+		""
+		"El tamaño maximo del multibloque es 3x3x13"
+		""
+		"&bRecuerda:&r Para aprender cómo construir multibloques, consulta el uso del controlador de multibloques en JEI en la página de &3Información de Multibloque&"
+		""
+		"¡Cómo obtengas el petróleo depende de ti! Algunas opciones están descritas en las misiones a continuación"
+	]
+	quest.3BEDF19CD79D53D5.quest_subtitle: "Ah, finalmente, procesamiento de fluidos real."
+	quest.3BF90C250AC1ADF3.quest_desc: [
+		"Vamos a añadir algunos Controladores de Agujero de Gusano de Industrial Foregoing, por si acaso."
+		""
+		"De esta manera, aseguraremos que esta nueva estrella creada pueda ser controlada y que su inmenso poder no se nos escape de las manos."
+	]
+	quest.3BF90C250AC1ADF3.quest_subtitle: "Controlador de Agujero de Gusano"
+	quest.3C9E93426D6412E0.quest_desc: [
+		"Ahora tenemos Ácido Fluoroantimónico. Este es el catalizador hacia el que estábamos procesando para nuestra línea de procesamiento de Naq.."
+		""
+		"Asegúrate de generar esto de manera pasiva, ya que necesitaremos mantener en funcionamiento la línea de procesamiento de Naq"
+	]
+	quest.3C9E93426D6412E0.quest_subtitle: "Convirtiendolo en Liquido"
+	quest.3CA2D15D1EC4D852.quest_desc: [
+		"¡Otro lente para la colección!"
+		""
+		"SoC significa Sistema en Chip"
+	]
+	quest.3CA2D15D1EC4D852.title: "Sistema en Chip"
+	quest.3D40D91D7D948714.quest_desc: ["Habrá una gran demanda de estas placas. Descubrir cómo abastecerte de un montón de estas placas puede ser un desafío, pero valdrá la pena."]
+	quest.3D40D91D7D948714.quest_subtitle: "Importa el Plating de platos"
+	quest.3D59BC5C2F5A073C.quest_desc: ["El Motor es un componente base muy importante para el resto de los componentes y cubiertas de la máquina UV."]
+	quest.3D59BC5C2F5A073C.quest_subtitle: "¡Más potencia!"
+	quest.3D89F65537D7CA1E.quest_desc: [
+		"El Generador de Campo UV es el último generador de campo que construirás."
+		""
+		"Planifica en consecuencia para fabricar una buena cantidad de estos."
+	]
+	quest.3D89F65537D7CA1E.quest_subtitle: "Último Generador de Campo"
+	quest.3D9B7855B5616DCE.quest_subtitle: "Circuito"
+	quest.3DCCEDC5A817EBEB.quest_desc: [
+		"Puedes usar un Ensamblador GT o una cuadrícula de crafteo regular para hacer esto. Dado que el espacio de patrones es valioso, especialmente para el Ensamblador GT, tal vez un Crafter o Ensamblador Molecular pueda encargarse de armarlo."
+		""
+		"¡Cambia los Compartimentos de Energía LV en tu &eHorno de Blast Eléctrico&r por estos y tu EBF ahora puede procesar recetas &6HV&r!"
+		""
+		"¡Asegúrate de actualizar tu fuente de energía también!"
+	]
+	quest.3DCCEDC5A817EBEB.quest_subtitle: "Mejoras para la EBF"
+	quest.3E7EE5FC7863B0B2.quest_desc: ["16x Cable de Óxido de Arsénico Hierro Samario - Cantidad 8"]
+	quest.3E7EE5FC7863B0B2.quest_subtitle: "Superconductor IV"
+	quest.3F064B466CC4914B.title: "Veta de Salitre"
+	quest.3F0C949C8F243AFD.quest_desc: ["Haz un Calentador de Fluidos de nivel IV o superior para poder procesar ese Medio de Crecimiento crudo que hicimos."]
+	quest.3F0C949C8F243AFD.quest_subtitle: "Calentadores de Fluidos"
+	quest.3F3F70FEEE8AFEEA.quest_desc: ["Simplemente preparando un stock de HASOCs, para que una vez que desbloqueemos las máquinas adecuadas, ¡podamos comenzar a fabricar un montón de procesadores!"]
+	quest.3F69CB46311A37C8.title: "Veta de Pechblenda"
+	quest.3F810160E8B58BD2.quest_desc: ["La gelatina es una proteína hecha de colágeno animal, generalmente de vacas y cerdos."]
+	quest.3F810160E8B58BD2.quest_subtitle: "G E L A T I N A... espera... algo no cuadra..."
+	quest.3FCF444190D02ADF.quest_desc: ["El Galio se escapó, así que nos quedamos solo con Arsénico, ¡pero está bien, porque solo necesitamos Arsénico!"]
+	quest.3FCF444190D02ADF.quest_subtitle: "¡El regreso del Arsénico!"
+	quest.3FDC2A2BBAC0EF1B.quest_desc: [
+		"Síp, otro lente añadido a la colección para la &eGrabadora láser&r... Si aún no lo has hecho, tal vez deberías hacer algunos más de esos."
+		""
+		"Como recordatorio, la &eGrabadora Laser&r fabrica los Microelectrónicos y la &eCortadora&r fabrica el chip."
+	]
+	quest.3FDC2A2BBAC0EF1B.title: "Chip de CPU"
+	quest.3FE956C2968896DC.quest_desc: [
+		"La Forja de Martillo puede convertir varillas en varillas largas o lingotes en placas, junto con otras cosas"
+		""
+		"Existen otras maquinas que pueden crear placas y varillas con un coste menor, pero esos vienen despues"
+	]
+	quest.3FE956C2968896DC.quest_subtitle: "Muy util para presionar unas cosas"
+	quest.400E51BB469CB023.quest_desc: [
+		"Todavía estamos en 2 por 1 con Modulo de Punto Zero, pero estamos progresando."
+		""
+		"¡Pronto estaremos en el próximo nivel y obtendremos un retorno mucho mejor en nuestras elaboraciones!"
+	]
+	quest.400E51BB469CB023.quest_subtitle: "Modulo de Punto Zero"
+	quest.40249CD28957E7EB.quest_desc: ["Ahora que tenemos rutenio puro, ¡podemos ensuciarlo de nuevo! ¡Jaja! Usa un mezclador para convertir esto en Ruridit. ¡Necesitaremos bastante Ruridit para otros procesos e ítems, incluida la Línea de Ensamblaje!"]
+	quest.40249CD28957E7EB.quest_subtitle: "Limpiado el polvo"
+	quest.402B0C7242A00309.quest_desc: [
+		"Tienes que empezar a fabricar persulfato de sodio para ponerlo en un baño químico, reemplazando el lavador de minerales en una configuración de procesamiento de minerales separada para tener una oportunidad de obtener polvo de galio al procesar bauxita"
+		""
+		"En HV+ o Voltaje Alto+ puedes Procesar los Minerales de Bauxita or Sphalerita como otro metodo para conseguir Galio"
+	]
+	quest.4059373B88845C6F.quest_desc: ["The &eChemical Bath&r is used in &aOre Processing&r lines to get certain &dbyproducts&r by washing crushed ores in mercury or sodium persulfate"]
+	quest.406C924820DE5473.quest_desc: [
+		"Esta placa de circuito impresa de Wetware ha completado la línea de placas de circuito que haremos para nuestros procesadores."
+		""
+		"¡Este es uno de los componentes más vitales en nuestro nivel más alto de procesadores!"
+	]
+	quest.406C924820DE5473.quest_subtitle: "Último Baile"
+	quest.411759CC8C320C19.title: "Veta de Galena"
+	quest.41752862D7B29F80.title: "Era del Voltaje Alto"
+	quest.418E02FFE241A734.quest_desc: ["Plasma de Helio Líquido. Asegúrate de que tus líneas de procesamiento estén produciendo suficiente Helio."]
+	quest.418E02FFE241A734.quest_subtitle: "El"
+	quest.41AE8AEA3EB144F3.quest_desc: [
+		"Estamos casi ahí!"
+		""
+		"Ahora tenemos nuestras Placas de Circuito Impreso Reforzadas con Fibra de Varias Capas y podemos usarlas directamente en nuestro próximo nivel de procesadores!"
+	]
+	quest.41AE8AEA3EB144F3.quest_subtitle: "¡Terminalos!"
+	quest.41EE8B40BA43DADE.quest_desc: ["El primer nivel de &3Acero de Alta Velocidad (HSS)&r, acabarás haciendo mucho de este material ya que sirve de base para otras variantes de polvos de HSS"]
+	quest.41F04EF882EF31E1.quest_desc: [
+		"Nos encontramos de nuevo. El Ensamblador de Circuitos."
+		""
+		"Sí, esto se puede hacer antes de que se complete este capítulo. Pero todo en este capítulo es necesario para asegurar un funcionamiento suave en el nivel ZPM."
+		""
+		"Se sugiere encarecidamente completar este nivel y obtener los recursos y componentes mencionados, ya que hará que tu viaje en el próximo nivel sea mucho más fluido."
+	]
+	quest.41F04EF882EF31E1.quest_subtitle: "¡Finalmente!"
+	quest.41FCD7F5B7E6E261.quest_desc: ["Finalmente, es hora de electrólizar el polvo de arcilla y obtener ese dulce polvo de aluminio."]
+	quest.41FCD7F5B7E6E261.quest_subtitle: "¡También una buena fuente de silicio!"
+	quest.423B9571668C3953.title: "Voltaje Extreme / EV"
+	quest.428C034C78923B6C.quest_desc: ["¡Al alimentar múltiples máquinas, ten en cuenta la pérdida de cable!"]
+	quest.428C034C78923B6C.title: "Convertidores de Energía MV"
+	quest.42FD79CEB3426861.quest_desc: [
+		"Hay muchas formas de hacer lubricante."
+		""
+		"Una forma que te sugeriría es extraer aceite de pescado de los peces y luego destilarlo en lubricante."
+		""
+		"El lubricante es muy útil con un cortador porque las recetas que lo usan son mucho más rápidas en comparación con el agua, por ejemplo."
+	]
+	quest.4300938A4E8AF937.title: "Veta de Eschelita"
+	quest.4321E32D0EA3367C.quest_desc: ["Actualizar esta máquina a &5EV&r desbloquea recetas necesarias para eventualmente hacer &bTungsteno"]
+	quest.439556C571592D81.quest_desc: ["Ahora que hemos descompuesto la mezcla de metal inerte, tenemos 2 nuevos recursos, ¡ambos extremadamente valiosos para nosotros en el nivel &dLuv&r! Asegúrate de iniciar una línea pasiva para que tengamos un suministro constante de estos recursos fluyendo."]
+	quest.439556C571592D81.quest_subtitle: "¡2 por 1! ¡Qué oferta!"
+	quest.439C8AEBE9E1C666.quest_desc: [
+		"Espero que todavia tengas esa Fundidora de Aleaciones a la mano!"
+		""
+		"El cobre y el níquel juntos en una fundidora de aleaciones hacen cuproníquel, que necesitarás para crear las bobinas para nuestro Alto Horno Electrico o Electric Blast Furnace"
+	]
+	quest.43D3E61FA314E3C3.quest_desc: ["Intercambiar calor en cualquier caso suele ser muy costoso en términos de energía. En este caso, algunos bobinas de Tritainium, bobinas de Voltaje Último y Baterías Grandes de Naquadria harán el truco."]
+	quest.43D3E61FA314E3C3.quest_subtitle: "Intercambio Térmico"
+	quest.43EBA1D735267C85.quest_desc: ["¿Mi fuente favorita de Gas Fluoruro? Fácil, &eElectrolizar&r &2Polvo de Fluorita"]
+	quest.44454B2637069C9F.title: "Voltaje Loco / IV"
+	quest.44BE268EC7D2689D.quest_desc: [
+		"Bueno, técnicamente son más. Ya las hemos usado anteriormente."
+		""
+		"Al menos no son tan complicadas de hacer."
+	]
+	quest.44BE268EC7D2689D.quest_subtitle: "¿MÁS Bobinas?!"
+	quest.44EE336BC265D21C.quest_desc: [
+		"Estas bobinas monstruosas son el fin de la línea para las bobinas."
+		""
+		"¡Con estas bobinas ahora podemos procesar los Superconductores UHV y finalmente convertirlos en lingotes!"
+	]
+	quest.44EE336BC265D21C.quest_subtitle: "Bobinas de Tritanio"
+	quest.450B3C0520D6B2BB.quest_desc: [
+		"¡Coloca uno de estos y comienza a perforar! Esto desenterrará los aceites antiguos debajo de la corteza de la roca madre"
+		""
+		"La mayoría de lo que encontrarás con esto es &eAceite Crudo&r, ¡pero también puedes encontrar Gas Natural y otras variantes de aceite! Puedes usar el &6Prospector de Voltaje Alto&r en &bModo de Liquidos&r para determinar lo que hay debajo"
+		""
+		"Ten en cuenta que los aceites en el área se agotarán con el tiempo, así que deberás mover ocasionalmente la Plataforma de Perforación de Fluidos"
+	]
+	quest.452B3207B6C3A5D7.quest_desc: ["Uranio líquido 235. Vamos a usar este líquido para unir los otros componentes y fabricar la Placa de Reacción Absoluta"]
+	quest.452B3207B6C3A5D7.quest_subtitle: "U235"
+	quest.454F2BF7F2E25D83.quest_desc: [
+		"Aunque este sea uno de los oficios más complejos, con una vida útil de fabricación que abarca numerosos niveles, es un elemento necesario."
+		""
+		"Sí, hay mucho que entra en la fabricación de uno de estos, pero intenta optimizar la ruta de fabricación. Confía en mí, darás gracias después."
+	]
+	quest.454F2BF7F2E25D83.quest_subtitle: "Energía Compleja"
+	quest.459787E9F1029CC6.quest_desc: [
+		"Los cables y alambres son imperfectos y pierden un poco de la energia que transportan en forma de calor"
+		""
+		"Puede mitigar parte de esta pérdida cubriendo los cables con caucho para hacer cables"
+		""
+		"Una excepción aqui serian los Superconductores! No tienen ningun tipo de perdida"
+	]
+	quest.459787E9F1029CC6.quest_subtitle: "Un Metro = Un Bloque"
+	quest.45D9E32D75F5ACAE.quest_desc: [
+		"¿Ya es hora de una mejora? Bueno, sí resulta serlo"
+		""
+		"Necesitamos el &eEnsamblador&r en el nivel &1IV&r para fabricar cualquier &dDispositivo de Montaje en Superficie Avanzado&r (SMD)"
+	]
+	quest.4632DA3CE9D95064.quest_desc: ["El Lodo de Grupo de Platino se procesará en una variedad de recursos excelentes que te ayudarán a avanzar."]
+	quest.4632DA3CE9D95064.quest_subtitle: "¡Dinero! *Don Cangrejo*"
+	quest.464110726B823072.quest_desc: [
+		"¿Cansado de buscar minerales y esperar tener suerte? ¿Buscas el petróleo que se esconde debajo? ¡Necesitas el &6Prospector&r de &bVoltaje Alto&r!"
+		""
+		"Esta herramienta escaneará el área a tu alrededor en un radio de 4 bloques y te indicará dónde encontrar el mineral que estás buscando"
+		""
+		"Además, puedes agacharte y hacer clic derecho para cambiar al modo de detección de líquidos y encontrar pozos de petróleo que se encuentran bajo la roca madre; ¡todo lo que necesitas es una &ePlataforma de Perforación de Fluidos&r para acceder a todo ese petróleo!"
+	]
+	quest.46542F4A273E64EB.quest_desc: ["Otra receta del &eReactor Químico&r, esta vez usando &6Lámina de Electrum&r y ya sea &9Persulfato de Sodio&r o &0Cloruro Férrico"]
+	quest.465F4502C4D5DCFE.quest_desc: [
+		"3 polvos de Vanadio + 1 polvo de Galio en &aPrograma 1&r hacen esta sustancia"
+		""
+		"Necesitarás mucho de esto más adelante, pero por ahora se usa para fabricar dispositivos avanzados de montaje superficial"
+		""
+		"El Vanadio lo puedes obtener &eCentrifugando&r Polvo de Magnetita de Vanadio, que puedes encontrar en &6El Fin&r o en &3El Mundo Superior"
+		""
+		"Alternativamente, podrías &eCentrifugar&r los lodos de &cRubí&r o &9Zafiro"
+	]
+	quest.46F1A93B071CD980.quest_desc: ["Combina Benceno y Etileno en un &eReactor Químico&r para obtener &bEstireno"]
+	quest.46F5DC6A7FF02DF2.quest_desc: [
+		"Plata y 4 polvos de electrotina en una &eMezcladora&r en el &aPrograma 2&r crearán &bPolvo de Aleación Azul"
+		""
+		"Puedes simplemente fundir este polvo en un horno para obtener el lingote"
+	]
+	quest.4720F9EDF894330C.quest_desc: [
+		"Honestamente no sé qué significan las letras E, G o S... ¡pero esto sigue siendo Acero de Alta Velocidad!"
+		""
+		"Debes fundir esto y luego convertirlo en &bAnillos&r para el &dInductor SMD Avanzado"
+	]
+	quest.476B99789CA7BD96.quest_desc: [
+		"Estos son componentes complejos de fabricar. Hacer uno de ellos es toda una tarea, involucrando muchos materiales y líneas de procesamiento."
+		""
+		"Ahora necesitamos 16 de ellos para proceder. Pero estoy seguro de que estás a la altura de la tarea."
+	]
+	quest.476B99789CA7BD96.quest_subtitle: "No Es Un Pedido Pequeño"
+	quest.47871110028991D3.quest_desc: [
+		"Al hacer esto, ten en cuenta que las recetas del Reactor Químico se pueden generalizar a &d3 Entradas&r, &53 Salidas&r, &e1 Bus de Entrada&r y &61 Bus de Salida"
+		""
+		"Después de hacer mucho PTFE, ¡finalmente, el &aReactor Químico Grande&r está listo para funcionar!"
+		""
+		"Descubrirás que algunas reacciones químicas solo se pueden realizar en un &aLCR&r, específicamente las sustancias químicas necesarias para hacer &3Polibenzimidazol&r (PBI para abreviar)"
+	]
+	quest.47932104E994DBE9.quest_desc: ["Las placas para los cascos se vuelven más complicadas en cada nivel. Pero es un proceso necesario. ¡Intenta automatizar este proceso para llenar tu fábrica con máquinas UV!"]
+	quest.47932104E994DBE9.quest_subtitle: "¡Este Darmstadtium es demasiado grande!"
+	quest.47D201ED115F6D6D.quest_desc: ["16x Cable de Duranuro de Europio Naquadah Enriquecido - Cantidad 8"]
+	quest.47D201ED115F6D6D.quest_subtitle: "Superconductor UV"
+	quest.4835BE1596B65206.quest_desc: ["Con Sal y un poco de Ácido Sulfurico en el Programa 1 creara Bisulfato de sodio"]
+	quest.4838AD09C9590D2F.quest_desc: ["Esta oblea sirve como base para todas las obleas de PIC de mayor nivel, harás muchas de estas con el tiempo"]
+	quest.485117517649336C.quest_desc: ["El Gran Conjunto Solidificador es un reemplazo directo de los solidificadores de fluidos más pequeños de un solo bloque con los que te has familiarizado."]
+	quest.485117517649336C.quest_subtitle: "A veces solo necesitas solidificarlo. LSA"
+	quest.48576E17428906E7.quest_desc: ["Producir Antimateria siempre es un desafío. Líneas de procesamiento, tiempo de procesamiento y potencia. Esto marcará uno de esos elementos que ya no será una preocupación."]
+	quest.48576E17428906E7.quest_subtitle: "Químicos creativos"
+	quest.48600733998CA349.quest_desc: [
+		"Esta maquina convertira los lingotes en sus versiones liquidas"
+		""
+		"También puede procesar algunos objetos en pulpa, como la resina pegajosa en pulpa de caucho crudo"
+	]
+	quest.48600733998CA349.quest_subtitle: "Liquidos y Más"
+	quest.4875FB6628C1FCDC.quest_desc: [
+		"Muchas máquinas utilizan un ajuste de circuito programado para determinar qué recetas pueden procesarse"
+		""
+		"Encontrarás la opción para cambiar el ajuste del circuito programado en la interfaz gráfica de la máquina. Simplemente selecciona el programa que corresponda a la receta que estás ejecutando y comenzará a funcionar"
+		""
+		"No necesitas fabricar un circuito programado"
+		""
+		"A menudo es más fácil dedicar una máquina a un ajuste de programa específico y hacer una nueva en lugar de cambiar los ajustes del programa manualmente para diferentes recetas de elaboración"
+	]
+	quest.489B77B85B000B39.quest_desc: [
+		"Configurar esta máquina con lava en un lado y agua en el otro te permite crear cualquiera de los dos piedra o piedra labrada"
+		""
+		"En niveles avanzados, puedes crear cualquier variante de piedra, incluyendo obsidiana en Voltaje Alto!"
+	]
+	quest.49109192F6D95AB4.quest_desc: [
+		"¡Para todas tus necesidades de procesamiento en el nivel UV!"
+		""
+		"¡Ahora podemos mejorar nuestros multibloques para que funcionen a velocidades de procesamiento UV! ¡Vamos!"
+	]
+	quest.49109192F6D95AB4.quest_subtitle: "¡Hatch de Energía UV!"
+	quest.492386DF6CA892BD.quest_subtitle: "No ese tipo de cervecería"
+	quest.49262C7C4E9EF712.quest_desc: ["¡Finalmente tenemos los medios para fabricar nuestra próxima bobina de voltaje para las compuertas de energía, así como los motores ZPM para otras cubiertas de nivel ZPM!"]
+	quest.49262C7C4E9EF712.quest_subtitle: "Alambre Fino Super Raro"
+	quest.492D28D6B81CAEE0.quest_desc: ["El Módulo de Extracción Grande funciona igual que el Extractor de un solo bloque que hemos utilizado una y otra vez. Ahora puedes procesar mucho más en este multibloque grande e incluso paralelizar la máquina. (Después de todo, la paralelización de máquinas es el tema)"]
+	quest.492D28D6B81CAEE0.quest_subtitle: "Ahora que tenemos un LEM, ¡vamos a la Luna!"
+	quest.497028C92F886AE0.quest_desc: ["Necesitarás estos para los Motores Eléctricos MV, un componente para muchas máquinas MV."]
+	quest.4993431DBE076E1B.quest_desc: [
+		"El Ensamblador de Circuitos EV, el siguiente paso importante para fabricar circuitos de niveles superiores y hacer que los circuitos de niveles inferiores sean aún más baratos"
+		""
+		"Aún te queda un camino por recorrer con los fluidos antes de llegar al nivel de circuitos de Nanoprocesador"
+	]
+	quest.49D740C5B5EB593C.quest_desc: ["El cable de Aleacion Roja es vital para poder craftear nuestros &bCircuitos de Voltaje Bajo&r y con esos circuitos podremos salir de la Era del Vapor"]
+	quest.49E2D3DF6A9A5716.quest_desc: ["El agar es una sustancia gelatinosa que consiste en polisacáridos."]
+	quest.49E2D3DF6A9A5716.quest_subtitle: "Agar-Agar"
+	quest.49E5EB071E740C87.title: "Era del Voltaje Ultra Alto"
+	quest.4AA6D19469FB306F.quest_desc: [
+		"&aProcesamiento de Minerales&r Pyrochlore, Pyrolusite y Tantalite dan Niobio como subproductos"
+		""
+		"¡También podrías &eElectrolizar&r el Pyrochlore para obtener Niobio garantizado!"
+		""
+		"Asegúrate de almacenar mucho de esto, lo usarás mucho en formas de &dLáminas&r y &2Alambre Fino&r a medida que progresas"
+	]
+	quest.4AAF27F0C27FBDB3.quest_desc: [
+		"El hidrógeno, al igual que el cloro, puede provenir de muchas fuentes"
+		""
+		"Por ejemplo, podrías intentar &centrifugar&r polvo de goethita o limonita amarilla, o quizás &electrolizar&r sea más de tu agrado"
+		""
+		"Tanto el agua como el agua salada son buenas fuentes de hidrógeno, y el agua salada tiene el beneficio adicional de darte cloro también"
+	]
+	quest.4AE05E80142C12A6.quest_desc: [
+		"¿Todavía estás fabricando resistores en una cuadrícula de crafteo?"
+		""
+		"Toma ese cobre recocido, conviértelo en alambre fino, luego agrega un poco de pegamento y carbono para hacer 4 resistores a la vez en tu Ensamblador."
+		""
+		"¡Hablemos de una mejora en la receta!"
+	]
+	quest.4AE05E80142C12A6.title: "Resistores Revisitados"
+	quest.4AE3A2326EA07B7A.quest_desc: ["Obtendrás la mitad del &6Fenol&r cuando lo conviertas en &3Polibenzimidazol"]
+	quest.4AE3A2326EA07B7A.quest_subtitle: "¿Cómo se pronuncia esto?"
+	quest.4B7E8D7D89977348.quest_desc: [
+		"Cada columna corresponde al nivel de voltaje"
+		""
+		"Cada fila corresponde al nivel de voltaje en el que se puede fabricar el circuito"
+		""
+		"Información adicional en la parte inferior!"
+	]
+	quest.4B985901F63570C3.quest_desc: [
+		"Uno de mis bloques favoritos al principio en GregTech es la Wiremill. Reduce el costo de producción de cables y realmente te ayuda en la elaboración en lotes del juego inicial."
+		""
+		"Siendo tan valioso, ¿por qué no podría ser igual de útil más adelante? ¡Bueno, este multibloque está aquí precisamente para eso!"
+	]
+	quest.4B985901F63570C3.quest_subtitle: "¡Haciendo Todos los Cables!"
+	quest.4BACAC18E4B982DA.title: "Veta de Cinabrio"
+	quest.4C33366BAD0256CF.quest_desc: [
+		"Decir que esta es una estructura multibloque masiva es quedarse corto."
+		""
+		"Requiere 3213 Cajas Atómicas, demasiadas para caber en tu inventario, por lo que esa parte se dejó en 1 en la misión."
+		""
+		"Pero los beneficios son asombrosos. Así que inténtalo. Funciona tanto como generador de recursos como generador de energía. Los números de generación de energía son impresionantes."
+	]
+	quest.4C33366BAD0256CF.quest_subtitle: "Multibloque Masivo"
+	quest.4C83B804A6AEB033.quest_desc: [
+		"&eElectroliza&r Propano para adquirir &6Propeno"
+		""
+		"&aDestila&r &bNafta Severamente Craqueada al Vapor&r para obtener Propeno"
+		""
+		"&9Monóxido de Carbono&r puede obtenerse mediante &aDestilación&r de &cAire Nether Líquido&r si prefieres una fuente prácticamente infinita de este material"
+	]
+	quest.4D6885EFA4EE272F.quest_desc: [
+		"¿Te has estado acordando de hacer lotes de cosas, verdad?"
+		""
+		"Esta vez te daré un pase y asumiré que sí lo has hecho"
+	]
+	quest.4D6885EFA4EE272F.quest_subtitle: "¡Avancemos hacia Voltaje Medio!"
+	quest.4DA2B92417DD41F8.quest_desc: [
+		"Quizás te estés preguntando, ¿por qué molestarse en hacer un chip LV? ¿No estamos en &6HV&r?"
+		""
+		"Bueno, sí, pero ¿qué tal si quisieras una nueva máquina LV? ¿No preferirías obtenerla con menos recursos que antes?"
+		""
+		"Operar 40 máquinas LV es 4 veces más eficiente energéticamente que operar 10 máquinas HV, siempre y cuando la receta se ejecute en LV."
+	]
+	quest.4DB3A860A30D7BF5.quest_desc: ["¿Qué, los Hatch de Energía UV no fueron suficientes?"]
+	quest.4DB3A860A30D7BF5.quest_subtitle: "¿Necesitas más?"
+	quest.4DD7F3508B757EF0.quest_desc: ["Inserta un bloque de rubí en tu cortador para obtener nueve placas de rubí."]
+	quest.4DDFD3BAA86DC342.quest_desc: ["El chip UHPIC una vez que la oblea se descomponga en chips mediante una máquina de corte."]
+	quest.4DDFD3BAA86DC342.quest_subtitle: "¡Los semiconductores son divertidos!"
+	quest.4DE719FC2E4C69AB.quest_desc: [
+		"Bienvenidx a La Era del Vapor! Las maquinas de vapor pueden procesar cualquier receta en JEI con un &e&lUso de: 32 EU/t (LV/VB)&r"
+		""
+		"Con estas maquinas hay dos variantes, Presion Alta y Presion Baja. Las maquinas de presion baja tomaran el doble de tiempo en procesar las cosas a un menor coste de vapor."
+		""
+		"&l&4NOTA:&r&r Despues de cada proceso, &n&6las maquinas de vapor necesitan ventilar el vapor usado&r "
+		""
+		"Las maquinas de vapor suelen tener el puerto de ventilacion en la parte de atras, pero con tu fantabulosa &bllave inglesa&r puedes cambiar el lado del puerto de ventilacion de lugar! "
+		""
+		"Si el puerto de ventilacion esta bloqueado, la maquina dejara de funcionar."
+	]
+	quest.4DE719FC2E4C69AB.quest_subtitle: "Y así comienza"
+	quest.4DE719FC2E4C69AB.title: "La Era del Vapor"
+	quest.4E1D5EC061A4AE55.quest_desc: ["Un lingote de cobre y 63mB de oxígeno en tu horno de arco crearán un lingote de cobre recocido."]
+	quest.4E384F9FEF629386.quest_desc: [
+		"¡Qué líquido tan fuerte es este!"
+		""
+		"Me pregunto si el titanio líquido brillaría con iridiscencia como el metal cuando se expone al calor..."
+	]
+	quest.4E384F9FEF629386.quest_subtitle: "¡Oh tan fuerte!"
+	quest.4E55A1169742B901.quest_desc: ["Eventualmente querrás más vapor del que pueden proporcionar las calderas de un solo bloque. ¡Cuando eso suceda, abre paso a la Caldera Grande de Bronce!"]
+	quest.4E55A1169742B901.quest_subtitle: "Multibloque productor de vapor"
+	quest.4E5FE40373675AED.quest_desc: ["¡De vuelta al &ecortador&r!"]
+	quest.4EEFECB9D741B371.quest_desc: [
+		"Como se mencionó anteriormente, las aleaciones seguirán aumentando en complejidad, como debería esperarse."
+		""
+		"¡Pero con esta aleación específicamente podemos hacer algunos componentes importantes!"
+	]
+	quest.4EEFECB9D741B371.quest_subtitle: "Aleaciones más complejas"
+	quest.4EF3FD6C59413C49.quest_desc: [
+		"Podrías mezclar el viejo y regular &3Aire&r con &eAcetato de Vinilo&r y obtener una proporción de 1:1 de &6Poliacetato de Vinilo&r, pero ¿por qué hacer eso cuando usar &bOxígeno&r aumentará la producción a 3:2?"
+		""
+		"¡Pero por qué conformarse solo con usar Oxígeno! ¡Agregar una pizca de &dCloruro de Titanio&r aumenta la proporción a 2:1!"
+		""
+		"Independientemente del enfoque que elijas, asegúrate de conocer qué &aCircuito Programado&r se requiere para ejecutar la receta"
+	]
+	quest.4F086B3CF27D5C1A.quest_desc: [
+		"La energía en Gregtech se mide en Energy Units (EU) o Unidades de Energía (UE)"
+		""
+		"La utilización de la energía se mide en EU/t"
+		""
+		"Puedes crear tu propia energia con Gregtech la cual genera EU de forma predefinida, o puedes optar por hacer energía con otro mods como Powah y convertir el FE en EU (Más adelante hablaremos de ello)"
+	]
+	quest.4F086B3CF27D5C1A.quest_subtitle: "Por su seguridad, porfavor lea esto"
+	quest.4F086B3CF27D5C1A.title: "Energía"
+	quest.4F2BBB75E5B5EAD8.title: "Veta de Sales"
+	quest.4F8C6F49F9D7EE4D.quest_desc: ["¡Actualizando el CIPM para alcanzar incluso mayores niveles de potencia!"]
+	quest.4F8E090CB349A681.title: "Veta de Bastnasita"
+	quest.4FD6092D9C2A485C.quest_desc: [
+		"Puedes hacer esto con una combinación de polvos de hierro, níquel o invar, manganeso y cromo en una &bMezcladora Avanzada&r con un ajuste de &aCircuito del Programa"
+		""
+		"&eEl polvo de manganeso&r es un subproducto del procesamiento de minerales como el tungstato, espersartina, olivino, tantalita, pirolusita, wulfenita o scheelita"
+		""
+		"&cMirando hacia adelante&r, recomendaría procesar tantalita y tungstato"
+		""
+		"&dEl polvo de cromo&r se puede obtener procesando mineral de cromita o rubí, los cuales también pueden ser procesados en un electrolizador para obtener más cromo"
+	]
+	quest.4FFD94248EDBE5FA.quest_desc: ["El Ensamblador de Circuitos de nivel ZPM nos permitirá fabricar la colección final de Procesadores, excepto el Mainframe."]
+	quest.4FFD94248EDBE5FA.quest_subtitle: "Penúltimo"
+	quest.502FF1A93E06073C.quest_desc: [
+		"Antes de poder ensamblar la GregStar con todos los componentes de esta página, necesitas fabricar la base sobre la cual se construirá la estrella."
+		""
+		"La Vivienda Estelar Robusta es lo suficientemente fuerte como para resistir las fuerzas ejercidas en la forja estelar y soportar los componentes que componen la GregStar."
+	]
+	quest.502FF1A93E06073C.quest_subtitle: "¿Eh?"
+	quest.503E5B82A6C89278.quest_desc: [
+		"Un poco de oxígeno con tu cloruro de vinilo te dará Cloruro de Polivinilo"
+		""
+		"&e&lConsejo:&r&r ¡Vale la pena configurar un &bRequester&r para esto!"
+	]
+	quest.5041EDE3E75E1EDF.quest_desc: ["Un medio de crecimiento o medio de cultivo es sólido, líquido o semi-sólido diseñado para apoyar el crecimiento de una población de microorganismos o células mediante el proceso de proliferación celular o plantas pequeñas como el musgo Physcomitrella patens."]
+	quest.5041EDE3E75E1EDF.quest_subtitle: "Cultivo de Orgánicos"
+	quest.504DEE88DFDBD380.quest_desc: [
+		"Muy similar a La Era de Vapor, esto convertira los metales en liquidos"
+		""
+		"Además, esto te dará la pulpa de caucho crudo necesaria para el siguiente paso del proceso"
+	]
+	quest.504DEE88DFDBD380.quest_subtitle: "Liquidando tus activos"
+	quest.506360EEA2268E82.quest_desc: ["¿Alguien se acuerda ya de esos viejos televisores CRT? Esos usaban válvulas, pero tambien se le conocen como bulbos"]
+	quest.511FB322F176D88C.quest_desc: [
+		"Finalmente, el caucho de más alto nivel, &dCaucho Estireno Butadieno"
+		""
+		"Puedes recubrir cables usando muy poco de esto, y te será útil más adelante al hacer módulos transportadores de niveles superiores"
+	]
+	quest.512BD9BCA43AEE83.quest_desc: [
+		"El electrolizador separará los compuestos en sus compuestos constituyentes según su carga eléctrica"
+		""
+		"En nuestro caso, esta separará &dTrióxido de Arsénico&r en &eArsenico&r y &bOxígeno"
+	]
+	quest.512BD9BCA43AEE83.quest_subtitle: "Dame una descarga como una anguila eléctrica"
+	quest.5143E0F48520D41B.quest_desc: [
+		"Con el Reactor Quimico, reacciona químicamente el dióxido de azufre con más oxígeno para producir trióxido de azufre"
+		""
+		"El oxígeno es muy importante, es posible que quieras dar unos pasos atras y dedicar una configuración completa para producirlo de manera pasiva si aún no lo has hecho"
+	]
+	quest.51494B3023705E54.title: "Veta de Garnet"
+	quest.515D958C0F436BE8.quest_desc: [
+		"¡Este será el último Bobinado que tendremos que fabricar para nuestros Energy Hatches!"
+		""
+		"Todavía hay 1 nivel más después de este, ¡pero en términos de los Bobinados utilizados para Energy Hatches, este es el último nivel que requiere uno como componente de fabricación!"
+	]
+	quest.515D958C0F436BE8.quest_subtitle: "Voltaje Último"
+	quest.51A567FB870F026E.title: "Era del Vapor"
+	quest.51DB667E991E51F0.quest_desc: [
+		"¡Un nuevo montaje para el procesamiento de minerales!"
+		""
+		"[ \"\", { \"text\": \"The \" }, { \"text\": \"Sifter \", \"color\":\"yellow\" }, { \"text\": \"replaces the Thermal Centrifuge and 2nd Macerator in the \" }, { \"text\":\"Ore Processing Setup\", \"color\":\"gold\", \"clickEvent\": { \"action\":\"change_page\", \"value\":\"25DBFE887B041E94\" }, \"underlined\":\"true\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here for a reminder\" } } } ]"
+		""
+		"No necesitas construir un nuevo montaje solo para esto si eres astuto con los filtros y el flujo de tus objetos, pero un nuevo montaje probablemente sea menos trabajo."
+	]
+	quest.5241693278027FFD.quest_desc: [
+		"Fingiremos que está bien"
+		""
+		"En &5Voltaje Extremo&r lidiaremos con más de 1000 Voltios! Prácticamente somos linieros eléctricos, pero porfarvor no intentes esto en casa..."
+	]
+	quest.5241693278027FFD.quest_subtitle: "Todo esta bien, absolutamente todo esta bien... &5VE&rrdad?"
+	quest.52F81AFDE2DC39EF.quest_desc: ["16x Cable de Cuprato de Titanio Bario Estaño Indio - Cantidad 8"]
+	quest.52F81AFDE2DC39EF.quest_subtitle: "Superconductor LuV"
+	quest.533DB1666B11489A.quest_desc: [
+		"Si no hiciste el &5Ensamblador EV&r antes, ¡ahora es el momento de hacerlo!"
+		""
+		"Utilizarás esto para hacer el &9Bobinado de Tungstensteel&r para tu &aEBF"
+	]
+	quest.5357A140DD05654A.quest_desc: ["16x Cable de Triplatino de Uranio - Cantidad 8"]
+	quest.5357A140DD05654A.quest_subtitle: "Superconductor EV"
+	quest.539D5084283C6219.quest_desc: ["El argón es un elemento químico, tiene el símbolo Ar y el número atómico 18. Está en el grupo 18 de la tabla periódica y es un gas noble. El argón es el tercer gas más abundante en la atmósfera de la Tierra, con un 0,934% (9340 ppmv)."]
+	quest.539D5084283C6219.quest_subtitle: "Plasma de Argón"
+	quest.53AF056139DAACDB.quest_desc: [
+		"Macerar esas bolas de planta y hacer algo de biopolvo."
+		""
+		"Al automatizar esto, asegúrate de configurar la salida solo a 2 biopolvo y no a 4. Las salidas de chance pueden confundir la configuración de autocrafting de lo contrario."
+	]
+	quest.53B44E24BB111D24.quest_desc: ["¿También más barato el nivel IV? ¡Esto sigue mejorando!"]
+	quest.53B44E24BB111D24.quest_subtitle: "Voltaje Loco"
+	quest.53BBE717148C0B18.quest_subtitle: "Muchisimo Hierro en estos minerales"
+	quest.53BBE717148C0B18.title: "Veta de Goetita"
+	quest.53C5CE6433E201BD.quest_desc: [
+		"Estas obleas crean el chip de semiconductores tradicional de más alto nivel, el UHPIC o Circuito Integrado de Ultra Alta Potencia."
+		""
+		"Habrá una gran demanda de estos chips para muchas de las máquinas que crearemos a partir de ahora."
+	]
+	quest.53C5CE6433E201BD.quest_subtitle: "Circuito Integrado de Ultra Alta Potencia"
+	quest.540B4CE165EE4D5B.quest_desc: [
+		"Principalmente, usaremos este polvo para hacer &dTungstensteel&r mezclándolo con polvo de acero"
+		""
+		"A veces, sin embargo, necesitaremos tirar este polvo al &eEBF&r en &aPrograma 1&r para obtener el lingote caliente, luego enfriarlo en el &eCongelador al Vacío&r para adquirir el &3Lingote de Tungsteno"
+	]
+	quest.54118BE76738EB6D.quest_desc: ["Junta una docena de Esmeraldas Exquisitas, ya que nos ayudaran bastante con los proximos pasos."]
+	quest.54118BE76738EB6D.quest_subtitle: "Podria decirse que esto es Exquisito?"
+	quest.545959C8C28C6F2B.quest_desc: ["¡Procesa una de esas placas de esmeralda en un Torno para obtener tu Lente de Esmeralda!"]
+	quest.546100C879F45BB1.quest_desc: ["Nadie quiere ensuciarse con el tamizado manual de todo. ¡Deja que este multibloque maneje todas tus necesidades de tamizado y obtén esos cristales que necesitamos mientras avanzamos hacia el final!"]
+	quest.546100C879F45BB1.quest_subtitle: "¿Quién quiere ensuciarse con el tamizado manual?"
+	quest.546F6933699B9BF3.quest_desc: [
+		"El &dMineral de Paladio&r es bastante raro; algunos métodos alternativos para obtenerlo podrían ser darle un &eBaño Químico&r a &bPlatino Triturado&r o a &6Mineral de Sheldonita Triturado&r en &cMercurio"
+		""
+		"Puedes obtener Mercurio fácilmente al &eCentrifugar&r Polvo de Piedra Roja"
+	]
+	quest.54A164C737660C4E.quest_desc: [
+		"Esto se usa típicamente en líneas de procesamiento de minerales para obtener subproductos alternativos lavando mineral triturado en mercurio o persulfato de sodio."
+		""
+		"En este caso, sin embargo, también se puede usar para enfriar lingotes de silicio caliente."
+	]
+	quest.54BEC01D84237DBC.quest_desc: ["Un poco de hidrógeno y cloro juntos en un &eReactor Químico&r resultará en un poco de HCl (Ácido Clorhídrico)"]
+	quest.54EB576C8EAF2C28.quest_desc: ["Hastelloy X es una aleación base de níquel forjada con excelente resistencia a altas temperaturas y resistencia a la oxidación. Todas las formas del producto son excelentes en términos de conformación y soldadura."]
+	quest.54EB576C8EAF2C28.quest_subtitle: "¿Hierro Forjado? No. Níquel Forjado."
+	quest.54EDFCD65E088296.quest_desc: [
+		"¡Ahora puedes usar esto en lugar del tubo de vacío en las recetas que lo requerían!"
+		""
+		"&eConsejo:&r Puedes buscar todos los diferentes circuitos en JEI escribiendo &b$circuits&r o incluso circuitos específicos por niveles con &b$circuits/ulv"
+	]
+	quest.54EDFCD65E088296.quest_subtitle: "ULV económico"
+	quest.5500BDFA7A5D04EB.quest_desc: [
+		"Otra mejora para la &aEBF&r? Chi Cheñol! "
+		""
+		"Esto nos permitirá fundir lingotes de nivel superior, ¡como metal superconductor de Voltaje Alto!"
+	]
+	quest.5520FCC832251168.quest_desc: [
+		"Los Reactores de Fusión requieren materiales fuertes para contener el inmenso calor y las reacciones que ocurren en su interior."
+		""
+		"Por eso son un material increíblemente adecuado para usar en la fabricación de la GregStar, asegurando fuerza y durabilidad de la estrella."
+	]
+	quest.5520FCC832251168.quest_subtitle: "Placas Estelares"
+	quest.55328778D7078E24.title: "Era del Voltaje Medio"
+	quest.554389C781241743.title: "Veta de Molibdeno"
+	quest.5561EB1E3DD77EC5.quest_desc: [
+		"Escotilla de Energía UHV. ¡Finalmente hemos alcanzado la Cima de las Escotillas de Energía!"
+		""
+		"¡Ahora podemos configurar nuestros multibloques para poder procesar cualquier nivel de requisitos de energía!"
+	]
+	quest.5561EB1E3DD77EC5.quest_subtitle: "Finalmente en la Cima"
+	quest.559DB570A9152259.quest_desc: ["Tengo la sensación de que vamos a necesitar MUCHO de esto..."]
+	quest.559DB570A9152259.quest_subtitle: "¿Tienes Rodio?"
+	quest.55ACA94C7837FF5E.quest_desc: [
+		"Llegado a este punto, has aprendido mucho en cada categoría. ¡Serás recompensadx con algo para mostrar tu conocimiento!"
+		""
+		"En este caso, este certificado será más que suficiente. ¡Oficialmente, ya no eres un novato!"
+	]
+	quest.55ACA94C7837FF5E.quest_subtitle: "¡Certificados!"
+	quest.55C47B868C5ECF54.quest_desc: ["Necesitas ayuda buscando minerales? Create uno de estos y cargalo de energía colocandolo en el puerto de energía de cualquier maquina"]
+	quest.55F0472830CC6BF6.quest_desc: ["En busca de liquidos para desenterrar? Este prospector tiene un modo de liquidos para ayudar con esa tarea específica!"]
+	quest.560D95D4C404A164.title: "Era del Voltaje Extremo"
+	quest.56B7CC072B8E9B48.quest_desc: [
+		"¡El Polvo de Hidróxido de Sodio es útil una vez más! &eReacciona Químicamente&r con el Epoxiclorohidrino y el Bisfenol A para hacer Epoxy líquido"
+		""
+		"Luego puedes &eSolidificar el Fluid&r de Epoxy directamente en placas"
+		""
+		"Usaremos estas placas como base para los circuitos de la &bNanoprocesadora"
+	]
+	quest.574019B5B7CA43E0.quest_desc: ["¡El Inductor Avanzado! Sigue actualizando esas recetas antiguas"]
+	quest.574E65B7954A13D0.quest_desc: ["Un componente necesario para que podamos fabricar nuestro próximo nivel de esclusas de energía"]
+	quest.574E65B7954A13D0.quest_subtitle: "Zero Puntos!"
+	quest.57630D2B5150F714.quest_desc: ["El Pistón UV es un componente necesario de las máquinas UV y del Brazo Robótico UV."]
+	quest.57630D2B5150F714.quest_subtitle: "El Mejor Pistón"
+	quest.579A41570D610B07.quest_desc: [
+		"Esta máquina va a ver mucho uso; vale la pena mejorarla para mantener el procesamiento rápido de recetas."
+		""
+		"Considera hacer múltiples de estas para ayudar a procesar recetas en paralelo."
+	]
+	quest.579A41570D610B07.quest_subtitle: "¿Dónde está tu bata de laboratorio?"
+	quest.57B4881AA36A1D76.quest_desc: ["Comprime el polvo de madera en forma de placa"]
+	quest.57B4881AA36A1D76.quest_subtitle: "¿Es esto madera contrachapada?"
+	quest.57B5100C11F76EE9.quest_desc: [
+		"Ahora que estamos en la Era Cuántica, ¡nuestras máquinas están volando!"
+		""
+		"Pero con un mayor procesamiento vienen más complicaciones. Energía, recursos y líneas de procesamiento. ¡Pero eso no nos detiene! ¡Exactamente por eso estamos aquí!"
+	]
+	quest.57B5100C11F76EE9.quest_subtitle: "¿Qué viene después de Cuántico?"
+	quest.57D12E37E980FDBB.quest_desc: [
+		"La Aleacion de Naquadah es muy importante para poder fabricar componentes para multibloques y otras máquinas"
+		""
+		"Necesitamos bastante de esta Aleacion de Naq, que con este nuevo metal podemos fabricar todos los Marcos de Aleación de Naq necesarios para el Horno Rotatorio."
+	]
+	quest.57D12E37E980FDBB.quest_subtitle: "Esta es la Aleacion de Naq que estabamos buscando!"
+	quest.57F1B60DEA622275.quest_desc: ["Ahora esa oblea necesita ser cortada en chips, así que volvemos al Cortador con estos."]
+	quest.57F6323716A0ED24.quest_desc: [
+		"¿Estamos tratando de crear criaturas mutadas del alcantarillado?"
+		""
+		"Tengo que contarle esto a Maestro Splinter..."
+	]
+	quest.57F6323716A0ED24.quest_subtitle: "TMNT"
+	quest.583F0F3C00D211BE.quest_desc: ["¿Sabías que el plasma se considera el cuarto estado de la materia después de sólido, líquido y gaseoso?"]
+	quest.583F0F3C00D211BE.quest_subtitle: "Plasma de Nitrógeno"
+	quest.587B4048E0BCEB27.quest_desc: [
+		"Un rápido baño químico de tus Ojos de Ender en Radón te dará estos &dOjos Cuánticos"
+		""
+		"No te preocupes por hacer un montón de estos a menos que quieras actualizar todos tus &eGrabadores Láser&r a EV (IV es la mejor actualización sin embargo)"
+	]
+	quest.589F47DE51213920.quest_desc: [
+		"Usa un &aMortero&r en algo de carbón para obtener polvo de carbón."
+		""
+		"Pasa tu polvo de carbón por la &eCentrífuga&r para obtener polvo de carbono."
+		""
+		"Usa esa Centrífuga de nuevo, esta vez con polvo de vidrio, para obtener polvo de dióxido de silicio."
+	]
+	quest.589F47DE51213920.title: "Ingredientes de silicio"
+	quest.58F378384CEFCEF2.title: "Era del Voltaje Loco"
+	quest.592113082337004B.quest_desc: ["¡Circuitos de Voltaje Loco más fáciles, pero no te detengas aquí! ¡Avanza y alcanzarás los codiciados circuitos de Voltaje Ridículo!"]
+	quest.59908911C4FFF223.quest_desc: [
+		"Esto puede tener mucha amperaje, pero no estamos interesados en la entrega de energía."
+		""
+		"Necesitamos esto para elaborar un componente. Estoy seguro de que puedes con este también."
+	]
+	quest.59908911C4FFF223.quest_subtitle: "16 Amperios"
+	quest.599BABC83E76A711.quest_desc: [
+		"Fundirás esto y lo aplanarás en &bLáminas&r para hacer las capas delicadas que componen el &dCondensador SMD Avanzado"
+		""
+		"Si tienes dificultades para encontrar &aMineral de Iridio&r, entonces puedes trabajar hacia la &5Abeja de Iridio&r o comenzar a procesar la &eMezcla de Metales Más Raros&r de &6PlatLine™"
+		""
+		"{\"clickEvent\": {\"action\": \"change_page\", \"value\": \"2EE52FD7129D3D87\"}, \"text\": \"How to: Rarest Metal Mixture\", \"color\": \"yellow\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here to open the quest!\" } }}"
+	]
+	quest.59A7880359BB5698.quest_desc: ["Hay que tener algunos tornillos para asegurar el Doble Revestimiento de Tungsteno. Estoy seguro de que esto hará las cosas muy seguras."]
+	quest.59A7880359BB5698.quest_subtitle: "Tornillos para Placas"
+	quest.5A3FF46A2B275049.quest_desc: ["Estamos en el borde de la tecnología, ¡y ahora necesitamos utilizar Chips de Cristal para fabricar algunos nuevos procesadores!"]
+	quest.5A3FF46A2B275049.quest_subtitle: "Cristal Brillante"
+	quest.5A658F239928850E.quest_desc: ["¡Entrando en LuV! ¡Continuemos la progresión y descubramos de qué se trata &cZPM&7!"]
+	quest.5A658F239928850E.quest_subtitle: "¡Haz &dAmor&r, no la Guerra!"
+	quest.5A658F239928850E.title: "Yo &7Amo&r la progresion &dRidicula"
+	quest.5AAD0E516762BA53.quest_desc: ["¿Ya sientes que estás levitando? Podría ser todo ese shulker del Vial de Alma."]
+	quest.5AAD0E516762BA53.quest_subtitle: "Cristal Presciente"
+	quest.5AD33290313151D6.quest_desc: [
+		"El Americio se utiliza típicamente como detector de partículas en detectores de humo."
+		""
+		"La cantidad es increíblemente pequeña e inofensiva para las personas, pero es muy efectiva para detectar humo, por eso se utiliza."
+	]
+	quest.5AD33290313151D6.quest_subtitle: "Americio Liquido"
+	quest.5B1C5C9F9CCC51EB.quest_desc: [
+		"Un poco de ácido sulfúrico con tinte cian y 2 polvos de sal creará el tinte cian líquido"
+		""
+		"No te preocupes, no te haré agarrar un cubo de eso"
+	]
+	quest.5B64384E4CE27851.quest_subtitle: "Veta de hierro bandeado"
+	quest.5B64384E4CE27851.title: "Veta de Goetita"
+	quest.5B92DA55541B168B.quest_desc: ["Así es, otra receta de &eGrabador láser&r... estas misiones se están volviendo no lineales."]
+	quest.5C1BB559DD83E88F.quest_desc: ["Actualizar tus máquinas te dará acceso a nuevas recetas y aumentará su velocidad de procesamiento\\n\\nEsto se llama overclock y se puede configurar en la GUI de la máquina si no quieres hacer overclock (para conservar energía, por ejemplo)\\n\\nHacer overclock en una receta hace que se procese el doble de rápido pero usa cuatro veces más energía, lo que significa que en general se usa el doble de energía"]
+	quest.5C1BB559DD83E88F.quest_subtitle: "Bienvenidx a Voltaje Bajo o LV"
+	quest.5C38DAD6BA43A7F1.quest_desc: ["Toma ese Ácido Acético y añade más Etileno y Oxígeno, esta vez en &aPrograma 3&r en un &eReactor Químico"]
+	quest.5C6F8FE4BA28807E.quest_desc: ["Un material difícil de conseguir."]
+	quest.5C6F8FE4BA28807E.quest_subtitle: "Computadora Avanzada"
+	quest.5D1B9EACB654BDF8.quest_desc: [
+		"Por fin logramos crear los Procesadores de Cristal, y ahora tenemos procesadores de nivel de Voltaje Definitivo!"
+		""
+		"Hemos hecho muchisimo progreso, pero aun no hemos terminado. Sigue Adelante!"
+	]
+	quest.5D1B9EACB654BDF8.quest_subtitle: "Swarovski"
+	quest.5D3C8198D9756004.quest_desc: [
+		"Las &aLlaves Inglesas&r son unas herramientas de fabricación, claro, ¡pero también es una herramienta de minería para máquinas de Gregtech! Al hacer clic derecho se establece el lado de salida de las máquinas de Gregtech y al hacer clic derecho mientras te agachas las puedes rotar"
+		""
+		"Las &aLimas&r son herramientas para crafteos, nada mas... Por lo que más quieras no las uses para tus uñas!"
+		""
+		"Las &aSierras&r son herramientas para crafteos, pero nos pueden dar 6 tablones de madera por cada tronco 1 = 6!"
+	]
+	quest.5D3C8198D9756004.title: "Herramientas Utiles"
+	quest.5D58E5CB4F4BDAD5.quest_desc: ["Agrega otro lente a la colección. Hay bastantes Grabadores Láser si has estado haciendo uno por cada lente"]
+	quest.5D58E5CB4F4BDAD5.title: "Chip Integrado de Bajo Consumo"
+	quest.5DFE866011AB92DD.quest_desc: ["¡Ahora estás un paso más cerca de poder fabricar máquinas de nivel &dLuV&r!"]
+	quest.5DFE866011AB92DD.quest_subtitle: "¿Cansado de los juegos de palabras con &dLuV &7?"
+	quest.5DFE866011AB92DD.title: "Carcasa de Máquina LuV"
+	quest.5E1FA88B5AC652DC.title: "Veta de Apatita"
+	quest.5E56B9758F8365B4.title: "Veta de Arena de Garnet"
+	quest.5E62E6F314843E1D.quest_desc: [
+		"El Reactor de Fusión MkII acelera la capacidad de procesamiento del Reactor de Fusión."
+		""
+		"Si bien el Reactor de Fusión MkII menciona 16 Hatch de Energía y 16 Hatch de entrada/salida, no es estrictamente necesario. Puedes formar el multibloque con menos Hatch. Dicho esto, es más económico agregar muchos Hatch, en lugar de fabricar más Cáscaras de Reactor de Fusión MkII."
+	]
+	quest.5E62E6F314843E1D.quest_subtitle: "Reactor de Fusión MkII"
+	quest.5E90EF7FF530C477.quest_desc: [
+		"Etanol + Ácido Sulfúrico en un &eReactor Químico&r produce Etileno."
+		""
+		"Hay otros métodos, por supuesto, pero esos implican petroquímica, de lo cual no estamos hablando aún."
+	]
+	quest.5F18FC7AE321677D.quest_desc: ["No necesitaremos toneladas de estas, pero será un componente vital de otras partes y esencial para construir algunas estructuras de multibloque."]
+	quest.5F18FC7AE321677D.quest_subtitle: "¿Estrella del Nether del próximo nivel?"
+	quest.5F270891C953486E.quest_desc: [
+		"¡Más obleas por bulo y chips de nivel superior son posibles con esto!"
+		""
+		"¿Es hora de actualizar esas antiguas recetas de obleas de bulo de silicio? ¡Creo que sí!"
+	]
+	quest.5F3BF06A1DA8AB8D.quest_desc: ["Toma ese Wafer de Neutrónium, y ponlo en el Grabador láser con una lente negra, y obtendremos el HASOC, que nos ayudará inmensamente mientras continuamos avanzando."]
+	quest.5F3BF06A1DA8AB8D.quest_subtitle: "¡Usando láseres!"
+	quest.5F7F05E4C3310724.quest_desc: [
+		"Este es el primero de nuestros últimos conjuntos de procesadores!"
+		""
+		"Aunque todavía no podemos utilizar la mejor receta para este procesador (la cual devuelve 4 procesadores), pronto podremos hacerlo una vez que desbloqueemos el Ensamblador de Circuitos UV en la siguiente sección"
+	]
+	quest.5F7F05E4C3310724.quest_subtitle: "El Principio del Final..."
+	quest.5FAA73C52082DC48.quest_desc: [
+		"En tu práctico &eReactor Químico&r inserta la Placa de Circuito de Plástico, un poco de lámina de cobre y el Cloruro de Hierro III que hiciste para obtener la Placa de Circuito Impresa de Plástico"
+		""
+		"Esto sirve como una base para todos nuestros circuitos de microprocesadores"
+	]
+	quest.5FE8521046CA1C8D.quest_desc: ["El revestimiento doble de Tungsteno-Acero hará que la Estrella sea muy duradera. Quizás aquí es donde obtiene su robustez."]
+	quest.5FE8521046CA1C8D.quest_subtitle: "Duplícalo"
+	quest.60069A897F2B0F78.quest_desc: [
+		"Encuentra y cosecha unos cuantos Arboles de Caucho, ya que necesitaremos un poco de Resina Pegajosa"
+		""
+		"Una alternativa, es cocinar bolas de slime en un horno para conseguir un poco de Resina Pegajosa"
+	]
+	quest.60069A897F2B0F78.quest_subtitle: "Granja de Slime?"
+	quest.60175A8E3A67F51C.quest_desc: ["Los Emisores y Sensores para cada nivel siempre parecen ser los componentes más difíciles de hacer. Pero siempre terminan ayudándonos al final con las máquinas que construyen. Así que vale la pena al final."]
+	quest.60175A8E3A67F51C.quest_subtitle: "Estoy sintiendo que estás emitiendo."
+	quest.601DA80C08C3F9AC.quest_desc: ["Para todas esas varillas que necesitas crear!"]
+	quest.601DA80C08C3F9AC.quest_subtitle: "La buena Varilla"
+	quest.603ABA13788E2216.quest_desc: ["Ahora que tenemos una versión solidificada de nuestro Europio, podemos procesarlo aún más en componentes para nuestras máquinas y multibloques!"]
+	quest.603ABA13788E2216.quest_subtitle: "Este es el Conteo Final!"
+	quest.60736D37F7705B39.quest_desc: [
+		"¡Ese es un lingote muy caliente! Enfríalo en tu &aCongelador al Vacío"
+		""
+		"Requiere esos Bloques de Bobinas de Kanthal en tu &aEBF"
+	]
+	quest.60CD82B8DE0D0CFE.quest_desc: [
+		"Esta maquina comprime objetos"
+		""
+		"Puedes convertir la materia vegetal en bolas vegetales, estos nos pueden ayudar más tarde"
+		""
+		"También puede tomar polvo de madera y comprimirlo en placas de madera"
+	]
+	quest.60CD82B8DE0D0CFE.quest_subtitle: "Presiona Bien!"
+	quest.61262BC1C525E6F1.quest_desc: ["¡Finalmente, con acero inoxidable podemos comenzar a fabricar máquinas &6HV&r!"]
+	quest.61428FAD831DC213.quest_desc: ["Hacer 16 bobinas puede ser un gran desafío. ¡Pero es necesario para el GregStar!"]
+	quest.61428FAD831DC213.quest_subtitle: "16 Bobinas"
+	quest.61B3730E93DD24DB.title: "Veta de Berilio"
+	quest.61BC5BBD1657D409.quest_desc: ["Optimiza tu NaqLine, ya que vas a necesitar bastantes placas de Naquadah para los cascos de Modulo de Punto Zero"]
+	quest.61BC5BBD1657D409.quest_subtitle: "Placas de Naq de Sobra"
+	quest.61D9E67FFA14A8F8.quest_desc: ["Hemos visto muchos líquidos que son el resultado del procesamiento por el Reactor de Fusión."]
+	quest.61D9E67FFA14A8F8.quest_subtitle: "Plasma de Oxígeno"
+	quest.6206EE9A045553CC.quest_desc: ["Usa la Centrífugadora para separar el &cSulfuro de Trinio&r de la &2Solución de Naquadah Enriquecida Impura"]
+	quest.6206EE9A045553CC.quest_subtitle: "Incrementando las RPM"
+	quest.620C406CC24F179C.quest_desc: [
+		"¡Este chico malo desbloquea una receta más barata para fabricar goma!"
+		""
+		"Por 1 polvo de azufre y 9 pulpas de goma cruda obtendrás el equivalente a 9 lingotes de goma en forma líquida"
+	]
+	quest.620C406CC24F179C.quest_subtitle: "Más goma, más mejor"
+	quest.62161044F3F3AB87.quest_desc: ["Esa tintura líquida &bcian&r más la lente de vidrio en esta máquina la teñirá en una &bLente de Vidrio (Cian)"]
+	quest.625B5E3CDDAECFFD.quest_desc: [
+		"Estoy seguro de que has fabricado un montón de EBF's durante tu viaje para llegar hasta aquí."
+		""
+		"Aún falta mucho más por hacer. Pero ahora puedes hacerte un Horno de Lecho Rotativo y ¡poner en marcha algunas tareas paralelas! ¡Vamos a acelerar ese procesamiento!"
+	]
+	quest.625B5E3CDDAECFFD.quest_subtitle: "EBF Masivo!"
+	quest.6275C90E5890C1E4.quest_desc: ["Pon agua a la izquierda y lava a la derecha de tu &etrituradora de rocas&r, en el mundo, luego inserta un solo bloque de diorita en la trituradora de rocas, y mira cómo crea más diorita para ti."]
+	quest.6275C90E5890C1E4.quest_subtitle: "Aluminio pasivo"
+	quest.6275C90E5890C1E4.title: "La línea de arcilla"
+	quest.629DC8DED0F6B578.quest_desc: ["Destilar biomasa resulta en etanol, que es alcohol, pero no le digas a nadie que te lo dije."]
+	quest.629DC8DED0F6B578.quest_subtitle: "No para beber"
+	quest.62BBF61C9849CA26.quest_desc: [
+		"El tamaño mínimo es de 5x5x5 y el máximo es de 15x15x15, ¡y cualquier tamaño intermedio es válido!"
+		""
+		"El multibloque &aCuarto Limpio&r es hueco porque colocas máquinas en él para ejecutar cualquier receta que requiera un Cuarto Limpio, por ejemplo, el &5Circuito EV&r requiere el &bEnsamblador de Circuitos&r &ndentro&r del Cuarto Limpio."
+		""
+		"¡No te olvides del &eAlimentador de Energía&r, el &eAlimentador de Mantenimiento&r y la &ePuerta de Hierro&r!"
+		""
+		"No &dnecesitas&r &6Alimentadores de Passthrough&r si puedes descifrar la transferencia inalámbrica."
+		""
+		"Los &3Diodos&r son necesarios si estás usando &9Generadores&r para tus necesidades de EU porque un Generador es demasiado sucio para entrar en un Cuarto Limpio."
+		""
+		"No necesitas diodos si usas &cConvertidores de Energia&r porque el Convertidor de Energia esta... ¿limpio?"
+	]
+	quest.62BBF61C9849CA26.quest_subtitle: "Impecablemente Limpio"
+	quest.62E7B8817D22678F.quest_desc: [
+		"Así es, otra receta para el &eReactor Químico"
+		""
+		"500 mB de Ácido Sulfúrico + 8 Láminas de Oro + Lámina de Epoxy = 1 Placa de Circuito de Epoxy"
+	]
+	quest.62F4355AE3E08FD9.quest_desc: ["Ya sabes cómo va esto, vamos a &eReaccionar Químicamente&r el &3Ácido Fluorhídrico&r con el &5Cloroformo&r y hacer &dTetrafluoroetileno"]
+	quest.6300791605A757B0.quest_desc: [
+		"Ocho plantas en un Compresor crearán una bola de planta."
+		""
+		"También puedes obtenerlas como una salida de chance de la centrífuga al hacer pegamento."
+	]
+	quest.6300791605A757B0.quest_subtitle: "Materia vegetal comprimida"
+	quest.6335DC1E7517E940.quest_desc: ["¡Integrar orgánicos en nuestros componentes no orgánicos, en la configuración adecuada con los orgánicos adecuados, nos permitirá tener una capacidad de procesamiento infinita!"]
+	quest.6335DC1E7517E940.quest_subtitle: "Semi-Orgánicos"
+	quest.6338544F8530118F.quest_desc: [
+		"¡El caucho de nivel intermedio! Probablemente no lo usarás para esto, ya que tienes acceso al caucho de más alto nivel"
+		""
+		"Algunas recetas en el futuro requieren específicamente &9Caucho de Silicona&r, por eso lo hicimos"
+	]
+	quest.63621F0189B6EB1B.quest_desc: ["¡La fabricación de &bpolvo de acero de vanadio&r es una receta MV en el mezclador, así que es hora de una mejora!"]
+	quest.639B1F99D7271C07.quest_desc: ["Ahora que tenemos Rodio, podemos mezclarlo con Paladio para obtener Paladio bañado en Rodio, y procesar esos en lingotes, luego placas, ¡y luego podemos hacer Cascarones de nivel &dLuV&r, lo que significa ¡máquinas de nivel &dLuV&r!"]
+	quest.639B1F99D7271C07.quest_subtitle: "Cuando se asentó el polvo, ¿vi Rhodium?"
+	quest.63AEFB3C1395BBBA.quest_desc: [
+		"Todos hemos enfrentado este problema antes, y todos lo odiamos. Pero es un mal necesario."
+		""
+		"Llega un momento con la configuración de GT de todos (para mí son muchas veces), en el que tenemos que desmantelar lo que hemos construido, reorganizar nuestras máquinas para optimizar procesos, o crear nuevos procesos que aún no tenemos configurados. No te preocupes por hacer esto. Sé que puede parecer un fastidio, pero estarás contento de haberlo hecho en el futuro. Especialmente cuando te muevas hacia el uso de Grandes Multibloques en lugar de máquinas individuales para tus procesos."
+		""
+		"Lo principal que debes recordar es que tu Fábrica de GregTech se verá increíble mientras la reconfiguras con estos multibloques."
+	]
+	quest.63AEFB3C1395BBBA.quest_subtitle: "¡Lo juro, no soy un acumulador! ¡Solo me gusta coleccionar cosas!"
+	quest.63BFEE8B17688712.quest_desc: ["¡El &6Gran Baño Químico&r puede hacer que el procesamiento de grandes lotes de recursos sea pan comido! Estoy seguro de que tendrás algunos de estos configurados en tu base para los recursos venideros."]
+	quest.63BFEE8B17688712.quest_subtitle: "¿Estás con el GCB? ¡Sí, me conoces!"
+	quest.63E4149FF75592C8.quest_desc: [
+		"Finalmente, en &6Voltaje Alto&r tienes acceso a los &dSubproductos&r de la &eMaceradora"
+		""
+		"Estos subproductos son a menudo increíblemente útiles y te serán útiles múltiples veces a medida que progreses"
+	]
+	quest.63E4149FF75592C8.title: "Actualización con el Procesamiento de Mineral"
+	quest.64314EEB9916CAB1.quest_desc: [
+		"Polvo de oxígeno y azufre en el &eReactor Quimico&r con el &aprograma 2&r hará un poco de dióxido de azufre"
+		""
+		"Si tienes problemas para cumplir con los requisitos de azufre, podrías centrifugar 2 polvos de blaze para hacer polvo de azufre"
+	]
+	quest.643E6B22C8B376BA.quest_desc: ["¡Ahora que hemos combinado los materiales anteriores, tenemos una Bobina de Voltaje Ridiculo! ¡Nuestras estructuras de multibloque nos lo agradecerán con lo que vamos a fabricar!"]
+	quest.643E6B22C8B376BA.quest_subtitle: "¡Este voltaje es Ridiculo!"
+	quest.6445DEC19DD55A34.quest_subtitle: "Receta"
+	quest.644B16B9618B41BE.quest_desc: [
+		"Procesa &aEsmeraldas crudas&r o &aMenas de Esmeralda del Nether&r tocadas con seda a través de un Triturador, luego Lava Minera el mineral triturado, después comienza a &ecernir&r el mineral purificado en busca de gemas &bExquisitas&r o &bImpecables&r."
+		""
+		"Tiene que ser la mena de esmeralda de GregTech; no puedes usar menas de esmeralda tocadas con seda normales para esto."
+		""
+		"&e&lPista:&r Para encontrar esmeraldas de GregTech™, busca &dbeirilio&r en el Nether &centre y=5 y y=30&r, ¡o puedes verificar la Dimensión de Minería en la capa de roca ígnea!"
+	]
+	quest.64E271AA238B131F.quest_desc: ["Se requieren placas de Carburo de Tantalio para fabricar el Controlador del Horno de Aleación."]
+	quest.64E271AA238B131F.quest_subtitle: "Tantalio de Alta Resistencia"
+	quest.64F77D41B2D057B8.quest_desc: ["Allí estaba yo, hasta las rodillas en salsa y cubierto de aceite de motor\\n\\nDe todos modos, ¡espero que estés listo para hacer mucho trabajo con fluidos!"]
+	quest.64F77D41B2D057B8.quest_subtitle: "Es hora de adentrarse en las profundidades del &1Voltaje Loco&r..."
+	quest.64FD043694770843.quest_desc: [
+		"A estas alturas, no somos ajenos a los Fragmentos de Antimateria."
+		""
+		"Solo necesitamos unos cuantos para la GregStar. Bastantes de estos."
+	]
+	quest.64FD043694770843.quest_subtitle: "¿Más Antimateria?"
+	quest.6517B8748E3A6831.quest_desc: [
+		"[ \"You'll need \", { \"text\": \"Laminated Glass\", \"color\": \"green\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"0907800ED4793F96\" } }, \" to make this\" ]"
+		""
+		"¡Una vez que tengas el &eMixer&r, es hora de hacer algunas variantes de &dAcero de Alta Velocidad (HSS)&r!"
+	]
+	quest.653260450BEDB6AB.quest_desc: ["¿Por qué tener 2 Esclusas de Energía cuando una sola es suficiente? ¡Esta esclusa de energía acepta 4 Amperios de IV por sí sola!"]
+	quest.65A075160D46BEF7.quest_desc: [
+		"Se trata de una máquina potente y de gran precisión, conocida por procesar conjuntos masivos de datos y cálculos complejos a altas velocidades."
+		""
+		"Nuestros ultimos niveles de Super Computadoras!"
+		""
+		"Espera... Donde esta el Núcleo Principal??"
+	]
+	quest.65A075160D46BEF7.quest_subtitle: "La Mejor Super Computadora"
+	quest.65A966D22EC7F9AA.quest_desc: [
+		"El Orbe del Micro Universo requiere mucha potencia para funcionar. Esta potencia debe concentrarse para utilizarla mejor en las operaciones."
+		""
+		"Para lograrlo, la estructura necesita Lentes de Enfoque."
+	]
+	quest.65A966D22EC7F9AA.quest_subtitle: "Energía enfocada"
+	quest.65B40CBB9C6AD5DF.quest_desc: ["16x Cable de Dinaquaduro de Rodio Uranio - Cantidad 8"]
+	quest.65B40CBB9C6AD5DF.quest_subtitle: "Superconductor ZPM"
+	quest.662E0A84D755064F.quest_desc: ["Una vez enfriado, podemos empezar a dar forma al lingote en materiales más útiles."]
+	quest.6635E4C76260C4CB.quest_desc: [
+		"Los amperes son como paquetes de energía (EU/t) y puede venir en diferentes niveles de voltaje (Voltaje Bajo, Voltaje Medio, Voltaje Alto, etc)"
+		""
+		"Las maquinas que reciban más amperes del mismo tipo de voltaje no explotan"
+		""
+		"Los cables/alambres se quemaran si les damos más amperes del que pueden manejar (un cable/alambre de 16A no puede soportar 32A), para ello tendriamos que usar o mejorar esos cables/alambres"
+	]
+	quest.663DA87FDB10E2B8.quest_desc: ["¡Bienvenidos a la Era Cuántica! ¡Procesadores ZPM y nuevos Multibloques nos esperan!"]
+	quest.663DA87FDB10E2B8.quest_subtitle: "¡QuantumMan!"
+	quest.663DA87FDB10E2B8.title: "&7Stargate nos dio &cZPM"
+	quest.66D86E1EDEBF542B.quest_desc: [
+		"Machines and cables/wires are rated for operating at &lspecific Voltage tiers&l"
+		""
+		"Si le das demasiado voltaje a una maquina, esta puede llegar a &c&lexplotar!&r"
+		""
+		"Si le das demasiado voltaje a un alambre o cable se puede llegar a quemar"
+		""
+		"LV/VB son 32 Volts (32 EU/t/A)"
+		"MV/VM son 128 V"
+		"HV/VA son 512 V"
+		"y así sucesivamente"
+	]
+	quest.672B308FD1DC0F45.quest_desc: [
+		"Suministra un poco &bagua&r a la &eCaldera&r, cualquier &6fuente de combustible&r, mira como empieza a calentarse, y empezara a crear &7vapor&r!"
+		""
+		"Puedes usar cualquier fuente de agua infinita, como el &dSink&r de Cooking for Blockheads conectado a un &aFluid Pipe&r de Pipez!"
+		""
+		"Es importante que suministremos agua antes de usar la caldera, si colocamos agua a una caldera ya caliente esta &c&lexplotara&r"
+		""
+		"Hay 2 tipos de calderas que aceptan distintos tipos de combustible, la caldera de solidos acepta combustibles como carbon mientras que la caldera de liquidos acepta lava como combustible."
+	]
+	quest.672B308FD1DC0F45.quest_subtitle: "Poniéndose Humeantes"
+	quest.672B308FD1DC0F45.title: "Caldera de Vapor"
+	quest.677B8753B7904E95.quest_desc: [
+		"&bEsfalerita Purificada&r y &5Galena Purificada&r &eMezcladas&r con &6Ácido Sulfúrico&r te darán el comienzo de uno de los recursos más codiciados, &dConcentrado de Indio"
+		""
+		"Este material es lo suficientemente importante como para justificar una configuración de &aProcesamiento de Minerales&r separada"
+	]
+	quest.6786C701B7C4980B.quest_desc: ["El Gravistar es otro componente muy importante para nuestras máquinas de alto nivel que vamos a fabricar."]
+	quest.6786C701B7C4980B.quest_subtitle: "Las estrellas tienen mucha gravedad"
+	quest.678BA300CED48E5E.quest_desc: ["Hagamos un montón de estos pernos de Cuprato de Ytrio y Bario, ¡ya que podemos utilizarlos para reducir significativamente el costo de nuestros procesadores de nivel IV!"]
+	quest.678BA300CED48E5E.quest_subtitle: "Reducción de costes"
+	quest.67AA17BCDE37DFAB.quest_desc: [
+		"Ahora, con todas esas tareas de procesamiento que realiza tu nuevo Horno de Lecho Rotativo, vas a necesitar un multibloque que pueda mantenerse al día enfriando tus lingotes."
+		""
+		"¡Ahí es donde entra en juego el Enfriador de Explosión a Granel!"
+	]
+	quest.67AA17BCDE37DFAB.quest_subtitle: "Combina bien con el RHF"
+	quest.67C9D2712EA1F637.title: "Voltaje Ultra Bajo / ULV"
+	quest.6805CC8AD6010F33.quest_desc: [
+		"Esto desbloquea una sola receta para nosotros, ¡el Circuito de &1Voltaje Loco&r!"
+		""
+		"No te apresures y simplemente fabrica esto y el circuito pensando que puedes saltarte esta era"
+	]
+	quest.6805E4C7F6FBAC77.quest_desc: ["Destilar &bAceite Crudo&r resulta en la mayoría de la &eNaftha Sulfúrica&r, pero también puedes obtenerla de otros tipos de aceite"]
+	quest.681110DE6B4E6ED8.quest_desc: [
+		"[ \"\", { \"text\": \"If you made the \" }, { \"text\":\"Clay Processing Line\", \"color\":\"aqua\", \"clickEvent\": { \"action\":\"change_page\", \"value\":\"6275C90E5890C1E4\" }, \"underlined\":\"true\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here for a reminder\" } } }, { \"text\":\" earlier, you can simply pause the \" }, { \"text\":\"Electrolyzer\", \"color\":\"yellow\" }, { \"text\":\" briefly to acquire clay dust to mix with your stone dust\" } ]"
+		""
+		"Al menos hacer esto no arruina el cubo o la mezcladora"
+	]
+	quest.6829D2769ACC1BDB.quest_desc: ["¡Salida de Fluidos ME! Lleva los fluidos resultantes o subproductos directamente de vuelta al sistema ME. ¡Totalmente optimizado!"]
+	quest.6829D2769ACC1BDB.quest_subtitle: "Salida de Fluidos ME"
+	quest.68526BA198AADD8E.quest_desc: ["Si no puedes encontrar &bElectrotine&r en el Nether, puedes crearlo mezclando electro y redstone en una &eMezcladora&r con el &aPrograma 1"]
+	quest.688AFF76CF5E599A.quest_desc: [
+		"El cortador hará rápido trabajo del boule y lo convertirá en 16 obleas."
+		""
+		"También puedes usar estas obleas para hacer diodos más baratos. ¡Es hora de mejorar esa receta!"
+	]
+	quest.68B46D9369D9809B.title: "Voltaje Medio / MV"
+	quest.68B6B946B6BA24CB.quest_subtitle: "Aluminio estuvo aquí"
+	quest.68B6B946B6BA24CB.title: "Veta de Bauxita"
+	quest.692C9BA71EA0F0A7.quest_desc: ["Necesitas este nivel de Mezclador para hacer Polvo de &3Acero de Tungsteno&r así como Polvo de &dVanadio Galio"]
+	quest.692C9BA71EA0F0A7.quest_subtitle: "¿Dónde está el gancho para la masa?"
+	quest.695E846B663EC185.quest_subtitle: "Neutronio!!!"
+	quest.6A0D1E9D534958B8.title: "Veta de Calcopirita"
+	quest.6A243EDB2A99C76D.quest_desc: [
+		"Vuelve a esa &bMezcladora Avanzada&r pero en un ajuste diferente de &aCircuito del Programa&r. Como recordatorio, podrías hacer una nueva solo para recetas de &dPrograma 2"
+		""
+		"Esta vez necesitarás polvos de hierro, níquel y zinc"
+	]
+	quest.6A2D7380E340B77D.quest_desc: [
+		"¡El cloro proviene de muchas fuentes! Para nombrar algunas, podrías &eelectrolizar&r sodalita, sal de roca, polvo de sal, polvo de apatita o simplemente agua salada"
+		""
+		"Si optas por el agua salada, es posible que te preguntes cómo obtenerla; ¡no busques más! Si tienes un suministro constante de &llágrimas de ghast&r, lo puedes &ereaccionar químicamente&r con agua"
+		""
+		"Alternativamente, una &eMezcladora&r con polvo de sal y agua también producirá agua salada, pero en ese momento también podrías electrolizar el polvo de sal"
+	]
+	quest.6A54E73E212BB1AF.quest_desc: [
+		"El &6Gas Sulfúrico&r de la &aDestilación de Petróleo&r se puede convertir &7Gas de Refinería"
+		""
+		"El Gas de Refinería luego se puede &aCraquear&r en una forma diferente según lo que desees destilar de él"
+		""
+		"&3¡El Gas Craqueado Ligero de Hidrocarburos&r es una gran fuente de &dMetano&r e Hidrogeno!"
+		""
+		"Una ruta alternativa pero más lenta podría ser &eCentrifugar&r setas o &eDestilar&r Biomasa Fermentada"
+	]
+	quest.6A82827978D3483B.quest_desc: [
+		"El etileno con aún más oxígeno te dará polietileno."
+		""
+		"Ten en cuenta que necesitas usar el &ePrograma 1&r para esta receta."
+		""
+		"Podrías usar aire en lugar de oxígeno, pero obtendrás menos polietileno."
+		""
+		"Este material es muy versátil, vamos a usar mucho de él, así que asegúrate de hacer mucho o mejor aún, hacerlo de manera pasiva."
+	]
+	quest.6A82827978D3483B.quest_subtitle: "Aún más oxígeno"
+	quest.6A86F8FB2B3A3425.quest_desc: [
+		"&aProcesa el mineral&r &cEstibina&r para tener una oportunidad de obtener antimonio"
+		""
+		"Pasa el polvo de estibina por una &eCentrifugadora&r para obtener antimonio garantizado"
+		""
+		"El antimonio se vuelve increíblemente importante más adelante, así que asegúrate de abastecerte y no convertirlo todo en aleación de soldadura!"
+	]
+	quest.6AD5F24DA80B93A8.quest_desc: ["¿Te estás quedando sin &0Benceno&r? Una buena fuente puede provenir de &aDestilar&r &6Combustible Pesado Severamente Craqueado"]
+	quest.6BE928FE24539D4B.quest_desc: [
+		"¿Procesadores EV más baratos? ¡Claro, tomaré eso!"
+		""
+		"¡El progreso es algo bueno!"
+	]
+	quest.6BE928FE24539D4B.quest_subtitle: "Voltaje Extremo"
+	quest.6C30EEA91FB21A3B.quest_desc: ["Esta será la placa de circuito final que necesitamos para construir nuestra Tercera y Última Categoría de procesadores."]
+	quest.6C30EEA91FB21A3B.quest_subtitle: "Los últimos circuitos"
+	quest.6CE157D05F59A994.quest_desc: [
+		"Dos lingotes de caucho y el molde de fundición en la fundidora de aleaciónes harán láminas de caucho"
+		""
+		"Estos serán útiles cuando necesite comenzar a recubrir los cables con caucho para hacer cables"
+	]
+	quest.6D082AE4CF9A56DC.quest_desc: [
+		"Una vez que comiences a fundir lingotes a temperaturas superiores a &c1800K&r, se vuelven demasiado calientes para ser enfriados en un baño simple"
+		""
+		"¿Tienes calor? entra en el &eCongelador al Vacío&r, ¡para todas tus necesidades de enfriamiento! (tambien ayuda a calmar el estres)"
+		""
+		"Esta máquina es excelente para enfriar lingotes calientes e incluso puede convertir muchos gases en líquidos"
+	]
+	quest.6D6AA1A0D8AB01DE.quest_desc: [
+		"Hablando de máquinas que necesitan Vidrio Laminado... ¡Esta es la primera que vamos a hacer!"
+		""
+		"Necesitas un cortador de mayor nivel para cortar los chips de mayor nivel y así lograr mayores niveles de potencia"
+	]
+	quest.6DA0ABBC89711536.quest_desc: [
+		"El reflector de neutrones es vital para las operaciones de cualquier reactor. En este caso, estaremos utilizando iridio como material para nuestro reflector de neutrones."
+		""
+		"Estos reflectores mantienen los neutrones dentro del campo de reacción, lo que permite que la cadena continúe."
+	]
+	quest.6DA0ABBC89711536.quest_subtitle: "Reflectores de Neutrones?? Esto se esta poniendo serio..."
+	quest.6E18951E41103391.quest_desc: [
+		"El Reactor de Fusión Mk. III. Estoy seguro de que ya has visto lo que está por venir. Así que entiendes que partes de esto son necesarias."
+		""
+		"Aunque eso es cierto para lo que está por venir, eso no significa que el Mk.III no tenga valor para nosotros en su uso previsto."
+		""
+		"Haz al menos 1 Reactor Mk.III. Te servirá bien."
+	]
+	quest.6E18951E41103391.quest_subtitle: "Mk. III"
+	quest.6E2F24117ACF3694.quest_desc: [
+		"Reúne los materiales listados y luego consulta la página de Información de Multibloques en JEI para ver cómo construirlo"
+		""
+		"Cada Puerto de Energía de Voltaje Bajo acepta 2 Amperes de Voltaje Bajo. Juntos suman 4 Amperes de Voltaje Medio, lo que en este caso permitirá al Horno de Fusión Eléctrico procesar recetas de Voltaje Medio como si estuviera alimentado por 1 Amper de Voltaje Medio!"
+		""
+		"La página de Información de Multibloques muestra una configuración posible del multibloque, pero a menudo no es la configuración deseada. Asegúrate de verificar qué bloques son válidos en las diversas posiciones"
+		""
+		"Sabrás que está formado cuando los bloques de entrada y salida cambien de color para que coincidan con el controlador y los revestimientos"
+	]
+	quest.6E2F24117ACF3694.quest_subtitle: "El Primer Multibloque"
+	quest.6E6D9527AC093199.quest_desc: [
+		"Este paso es fácil, simplemente &ecentrifugamos&r nuestro Residuo y nos quedamos con Cloruro de Iridio y algo de lodo."
+		""
+		"Puedes procesar aún más ese lodo si quieres, pero no es necesario para obtener el codiciado iridio."
+	]
+	quest.6E9126ECA080E725.quest_desc: [
+		"¡Muele esa diorita en polvo de diorita! También tendrás una pequeña probabilidad de obtener polvo de piedra, lo cual debes tener en cuenta."
+		""
+		"Se recomienda configurar la salida automática hacia un cofre/barril buffer y simplemente desechar el polvo de piedra."
+	]
+	quest.6ECBB6F5D0D99DEE.quest_desc: [
+		"La fundidora de aleaciones te permite hacer aleaciones de varios materiales"
+		""
+		"La máquina también puede usar moldes de fundición para dar forma a los materiales, por ejemplo convierte el polvo de cristal en tubos de cristal"
+		""
+		"Los moldes de fundición se pueden reutilizar y cambiar según lo que estés fabricando."
+		""
+		"Al automatizar, asegúrate de quitar el molde de fundición de tu receta, además puede ser útil hacer varios de estos para no tener que cambiar los moldes manualmente."
+	]
+	quest.6EF5C5FFF6BC26B7.quest_desc: [
+		"La Gran Destilería de Fraccionamiento es como la Torre de Destilación, pero en esteroides. En lugar de tener que agregar múltiples LFD para procesar un fluido, puedes utilizar las compuertas de paralelización."
+		""
+		"Esto efectivamente convierte a la Gran Destilería de Fraccionamiento en múltiples estructuras de multibloques, aunque ese es el caso con cualquier multibloque con una compuerta de paralelización."
+	]
+	quest.6EF5C5FFF6BC26B7.quest_subtitle: "LFD"
+	quest.6EF6D11ABBA34AE3.quest_desc: [
+		"¡No confundas este multibloque con la Línea de Ensamblaje! Este multibloque es un ensamblador y realizará recetas de ensamblaje, pero no es la línea de ensamblaje. El ensamblador realiza un proceso diferente y tiene recetas diferentes a esta máquina."
+		""
+		"¡Dicho esto, este multibloque sigue siendo increíble! ¡Una vez más, múltiples Circuitos Programados!"
+	]
+	quest.6EF6D11ABBA34AE3.quest_subtitle: "¡Esto NO es la Línea de Ensamblaje!"
+	quest.6F0AD70D3748D8D2.quest_desc: ["Lo necesitarás para muchas cosas una vez que llegues a &cZPM&r, pero por ahora lo usaremos para hacer los &dTransistores SMD Avanzados&r y las &6Obleas de CIPA"]
+	quest.6F15619C8A07E78A.quest_desc: ["Este chico malo es solo un horno que funciona con vapor"]
+	quest.6F15619C8A07E78A.quest_subtitle: "Hornos para todo tipo de ocaciones"
+	quest.6F49C691CF79D4B8.quest_desc: ["El vidrio para Cuarto Limpio puede usarse en lugar del Plascrete para las paredes, pero no para los bordes ni el piso"]
+	quest.6F8E58FF4D96C4BC.quest_desc: ["Aunque la Escotilla de Energía UHV es la Cima de la Entrega de Energía, todavía tenemos la Escotilla de Energía UHV de 4A."]
+	quest.6F8E58FF4D96C4BC.quest_subtitle: "Espera... ¿Pensé que estábamos en la cima?"
+	quest.6F8E6D84D31651D5.quest_desc: [
+		"El Cloro y el Benceno en un &eReactor Químico&r en &aPrograma 1&r te darán &2Clorobenceno"
+		""
+		"¿Necesitas más &0Benceno&r? Podrías intentar &aDestilar&r &6Combustible Pesado Severamente Craqueado"
+	]
+	quest.702CE73E39E4D4BD.quest_desc: [
+		"Este es un lingote complejo. Tenemos muchos metales diferentes mezclados en esta aleación. Pero por una buena razón."
+		""
+		"Con este lingote, ahora podemos hacer algunos componentes de alto nivel."
+	]
+	quest.702CE73E39E4D4BD.quest_subtitle: "Esto se está poniendo complicado..."
+	quest.707EBA5717938515.quest_desc: ["Un componente necesario para el &bCortador MV&r."]
+	quest.70C952B8FF3418F6.quest_desc: [
+		"¡Bienvenido a Voltaje Alto! ¡Las cosas están empezando a emocionarse por aquí!"
+		""
+		"Primero lo primero, trabajemos para hacer acero inoxidable para poder fabricar máquinas HV"
+	]
+	quest.70C952B8FF3418F6.quest_subtitle: "Prepárate para el &6Voltaje Alto"
+	quest.71941882F9E2ADAC.quest_desc: ["Necesitamos un Medio de Crecimiento para ayudarnos en esta línea de procesamiento, pero aún no tenemos el Medio de Crecimiento final. Esto es solo la versión cruda."]
+	quest.71941882F9E2ADAC.quest_subtitle: "Pruebas de Laboratorio"
+	quest.71B1416A45FBBE40.quest_desc: [
+		"Puedes encontrar mineral de azufre en el nether y cocinarlo para conseguir un poco de este material. Tambien hay Abejas y Semillas!"
+		""
+		"Coloca la pulpa de caucho crudo y polvo de azufre en una fundidora de aleaciones y así obtendremos nuestro primer lingote de caucho"
+	]
+	quest.71B1416A45FBBE40.title: "Caucho"
+	quest.71D4B261AF487062.quest_desc: [
+		"Al actualizar tu &eEnsambladora&r significa que podrás fabricar Dispositivos Montados en Superficie, o &bDMS&r en resumen. ¡Estos permiten componentes de circuitos más económicos!"
+		""
+		"Además, esto desbloquea compuertas de energía de nivel superior, ¡es hora de mejorar tus multibloques!"
+	]
+	quest.72082D70F5D22632.quest_desc: ["¡Esto es el futuro! ¡Estamos progresando y avanzando hacia lo desconocido!"]
+	quest.72082D70F5D22632.quest_subtitle: "¡Marco Principal de Cristal!"
+	quest.7220835BD1F8EBA7.quest_desc: [
+		"El &dPolvo de Bario&r lo puedes conseguir usando la &eElectrolizadora&r con &bPolvo de Barita"
+		""
+		"El &dMercurio&r se puede conseguir al &eCentrifugar&r Polvo de Redstone o Polvo de Cinabrio"
+		""
+		"¿Necesitas &dPolvo de Calcio&r? ¡Siempre puedes &eElectrolizar&r huesos molidos!"
+	]
+	quest.7244FA69157727AF.quest_desc: ["Toma el Sulfuro de Trinio que obtuvimos en la última misión y colócalo en un Horno de Fusión Eléctrico (EBF) con Zinc, y obtendrás un Lingote de Trinio Caliente. Enfríalo y ya tendremos el Trinio que buscamos"]
+	quest.7244FA69157727AF.quest_subtitle: "Trinio Fundido"
+	quest.7255B9A6E1319DCA.quest_subtitle: "Safiros"
+	quest.7255B9A6E1319DCA.title: "Veta de Almandine"
+	quest.72DACA35906D7E5B.quest_desc: [
+		"Centrifuga el polvo de diorita para obtener polvo de arcilla y polvo de mirabilita."
+		""
+		"La mirabilita se puede guardar para procesarla más tarde, si lo prefieres."
+		""
+		"El siguiente paso solo utiliza polvo de arcilla, así que tendrás que hacer algo con ese polvo de mirabilita."
+	]
+	quest.72DC025BC059DF96.quest_desc: ["Mezclar &6Ácido Nítrico&r con &cÁcido Sulfúrico&r produce una &eMezcla de Nitración"]
+	quest.72E5439299E957A8.quest_desc: [
+		"Utiliza ese &eExtractor&r para obtener tu cobre en estado líquido."
+		""
+		"&eCorta el cable&r de los lingotes de Kanthal."
+		""
+		"&eDobla&r ese aluminio."
+		""
+		"¡Luego ponlo todo junto en tu &eensamblador&r!"
+		""
+		"Reemplaza las bobinas de cuproníquel en tu &aEBF&r con este material."
+	]
+	quest.72FA90C181139957.quest_desc: [
+		"Esta es la razón por la cual el Transformador Activo es el mejor método de transmisión de EU utilizando la infraestructura de GregTech."
+		""
+		"Su capacidad para transmitir amperaje &nMASIVO&r es incomparable."
+	]
+	quest.72FA90C181139957.quest_subtitle: "Eso es bastante Energia!"
+	quest.732D201794C228DD.quest_desc: [
+		"¡Actualizando nuestra receta de circuito &6Voltaje Alto&r!"
+		""
+		"¿Realmente es más barato que antes? ¡Sí! Puedes comparar las recetas si no me crees."
+	]
+	quest.7353DB3A9820C92F.quest_desc: ["El polvo de Carburo de Titanio para las placas de Carburo de Titanio es el segundo elemento necesario para las paredes del Horno de Aleación."]
+	quest.7353DB3A9820C92F.quest_subtitle: "Titanio de Alta Resistencia"
+	quest.7382C366A1ABAAE3.quest_desc: ["¡CPU cuánticos procesando todos los qubits!"]
+	quest.7382C366A1ABAAE3.quest_subtitle: "¿Cuántos qubits en un Ghz?"
+	quest.73E639487E878948.quest_desc: ["La GregStar puede ser pulverizada para obtener fragmentos. Podemos usar esos fragmentos para obtener uno de los objetos más poderosos o avanzados."]
+	quest.73E639487E878948.quest_subtitle: "Fragmento de la GregStar"
+	quest.73FC1166FBD6C30D.quest_desc: ["No te preocupes, no tienes que crear resistores con resistencias diferentes"]
+	quest.73FC1166FBD6C30D.quest_subtitle: "Ohmmmm"
+	quest.743B72CC181776EC.quest_desc: ["El carburo de titanio y tungsteno es un aditivo ultra puro para herramientas de corte y partes resistentes al desgaste. Esta aleación contiene un alto nivel de dureza y resistencia a altas temperaturas, lo que la hace increíblemente fuerte y duradera."]
+	quest.743B72CC181776EC.quest_subtitle: "¡Aleaciones de Alta Durabilidad Pura! ¡Increíble!"
+	quest.74510B6C9C16A628.quest_desc: [
+		"Ahora que tenemos en funcionando el Reactor de Fusión Mk1, podemos obtener recursos raros que son necesarios para avanzar aún más en los próximos niveles.!"
+		""
+		"En este caso, contamos con Europio, el cual se usará con frecuencia mientras continuamos avanzando por los niveles, e incluso es un componente del GregStar.!"
+	]
+	quest.74510B6C9C16A628.quest_subtitle: "Consiguiendo Elementos Super Raros!"
+	quest.74726A2DD4BBDA7B.quest_desc: [
+		"Titanio mezclado con Duranio."
+		""
+		"¡Ahora tenemos un material que será increíblemente resistente al calor y fuerte para la bobina EBF!"
+		""
+		"Pero eso llegará un poco más tarde. Todavía no estamos ahí."
+	]
+	quest.74726A2DD4BBDA7B.quest_subtitle: "Ahora eso es Juerte"
+	quest.74D47A8DF93294E4.quest_desc: [
+		"Ahora necesitas ese &aReactor Químico Grande&r para hacer esto"
+		""
+		"Ten en cuenta que el Polvo de Zinc no se &c&lconsume&r, lo que significa que no debes incluirlo en la receta para autocraftearlo; en su lugar, pon uno en tu Bus de Entrada y déjalo allí"
+		""
+		"El &3Amoníaco&r puede obtenerse reaccionando &eQuímicamente&r &9Hidrógeno&r con &bGas de Nitrógeno&r, que puedes obtener de un &eColector de Gas&r en el &2Mundo Superior&r, alimentando un &aCongelador al Vacío&r y luego un &aTorre de Destilación"
+	]
+	quest.74EE98F95F483C37.quest_desc: [
+		"Coloca ese polvo de cobaltita con 3 cubos de oxígeno en tu Horno de Fusión Eléctrico para adquirir polvo de trióxido de arsénico"
+		""
+		"Esto también produce óxido de cobalto y algo de dióxido de azufre, los cuales se pueden procesar aún más para recuperar parte de ese oxígeno"
+	]
+	quest.754229E1F1D2DA8A.quest_desc: [
+		"Más Bobinas. Esta vez las usaremos como un componente, no para un multibloque."
+		""
+		"Te recomendaría encontrar una forma de generar esto de manera pasiva..."
+	]
+	quest.754229E1F1D2DA8A.quest_subtitle: "Personalmente prefiero un asiento con ventana"
+	quest.759446116655756C.quest_desc: [
+		"Los productos Incoloy están principalmente basados en cromo y níquel, diseñados para resistencia a la corrosión y resistencia a altas temperaturas."
+		""
+		"Las aleaciones Incoloy pertenecen a la categoría de aceros inoxidables superausteníticos. Una ventaja es que las aleaciones Incoloy no necesitan ser tratadas térmicamente después de la soldadura para restaurar la resistencia a la corrosión."
+	]
+	quest.759446116655756C.quest_subtitle: "¡Es un pájaro! ¡Es un avión! ¡No, es Super Acero!"
+	quest.762BD49C9589EB3F.quest_desc: ["La necesidad de bobinas es interminable. Aunque no las estemos utilizando en un multibloque, puedes estar seguro de que se destinan a una buena fuente."]
+	quest.762BD49C9589EB3F.quest_subtitle: "¿Más Bobinas?"
+	quest.768951FBE8A5C934.quest_desc: [
+		"Si necesitáramos algo que asegure la transmisión de cada nivel con el máximo nivel de eficiencia, ¿qué obtendríamos?"
+		""
+		"¡Quizás combinar todos los Superconductores disponibles en un solo cable sea la solución!"
+	]
+	quest.768951FBE8A5C934.quest_subtitle: "Hiperconductividad"
+	quest.76ECB0EF7A5E410A.quest_desc: [
+		"Los Electrolizadores son importantes, pero también son pequeños, y los usamos para varias líneas de procesamiento."
+		""
+		"¿Por qué no dejar que este multibloque maneje todas esas necesidades en adelante y paralelizarlo para poder ejecutar más procesos en una máquina?"
+	]
+	quest.76ECB0EF7A5E410A.quest_subtitle: "¿Usar agua como combustible en los coches?"
+	quest.770ED8E5FEC6D59A.quest_desc: ["Estos bloques son a prueba de corrosión, lo cual es bueno, ya que se utilizarán para hacer el Gran Tanque de Fermentación."]
+	quest.770ED8E5FEC6D59A.quest_subtitle: "¿Materiales corrosivos? No gracias."
+	quest.773543FFEF631C5E.quest_desc: ["Las células madre son los materiales básicos del cuerpo: células a partir de las cuales se generan todas las demás células con funciones especializadas."]
+	quest.773543FFEF631C5E.quest_subtitle: "Bloques de construcción básicos"
+	quest.7759519157B8C1D8.quest_desc: [
+		"El acero de baja aleación y alta resistencia (HSLA) es un tipo de acero aleado que proporciona mejores propiedades mecánicas o mayor resistencia a la corrosión que el acero al carbono."
+		""
+		"Los aceros HSLA difieren de otros aceros en que no están diseñados para cumplir con una composición química específica sino propiedades mecánicas específicas."
+	]
+	quest.7759519157B8C1D8.quest_subtitle: "Acero Antiácido"
+	quest.77A12A37D5A9B3A4.quest_desc: ["El colágeno es el principal bloque de construcción de la piel, músculos, huesos, tendones y ligamentos de tu cuerpo, así como otros tejidos conectivos."]
+	quest.77A12A37D5A9B3A4.quest_subtitle: "¡Trabajando con Orgánicos!"
+	quest.77AAC2F643E92A88.quest_desc: ["¡Añade otro Grabador Láser al conjunto, esta vez para el chip NAND! Útil para el almacenamiento de datos y el Supercomputador de Procesador de Cristal, ¡más sobre eso más adelante!"]
+	quest.785CB375F25F0715.quest_desc: ["¡Estamos casi allí, a una placa de circuito completada lo suficientemente fuerte para nuestros procesadores cuánticos!"]
+	quest.785CB375F25F0715.quest_subtitle: "¡El cobre recocido vuelve con fuerza!"
+	quest.78A295D4D1A21BCA.quest_desc: [
+		"Un poco de polvo de &dmagnesio&r con tu tetracloruro de titanio dentro del &aHorno de Fusión Eléctrico&r te dará un lingote muy &lcaliente"
+		""
+		"El magnesio se puede obtener de muchas cosas en el &6procesamiento de minerales&r, pero mi favorito personal es con &eLa Electrólisadorag&r con un poco de polvo de obsidiana"
+		""
+		"Puedes recuperar ese magnesio y cloro mediante la &eelectrólisis&r del cloruro de magnesio que conseguiste"
+		""
+		"Necesitarás enfriar el lingote en el &aCongelador al Vacío&r antes de poder usarlo para cualquier cosa"
+		""
+		"&l&eNota:&r&r Un pequeño recordatorio para verificar el requisito de temperatura de las recetas de lingotes; este requiere algo mejor que bobinas de cuproníquel, como las bobinas de &bKanthal"
+	]
+	quest.78C51E9B7B8315F6.quest_desc: ["Esta máquina también utiliza moldes de fundición para dar forma a los fluidos en diferentes formas"]
+	quest.78C51E9B7B8315F6.quest_subtitle: "Necesitas que ese fluido sea sólido?"
+	quest.78CDA5B4A52FF5D8.quest_desc: ["Como es el tema con estos multibloques, ¡tener una máquina que pueda procesar todos los circuitos programados en una sola máquina?! Estas máquinas realmente son un verdadero avance para ayudar a progresar hacia el final."]
+	quest.78CDA5B4A52FF5D8.quest_subtitle: "¡Dobladora, más doblado!"
+	quest.78DC12C2EB504E56.quest_desc: [
+		"Hay varias formas de hacer esto, elige la que mejor funcione para ti"
+		""
+		"&Extraer&r vidrio en forma líquida y luego &eSolidificarlo en forma de líquido&r en una placa."
+		""
+		"&Macerar&r vidrio en polvo de vidrio y luego &fundir aleación&r ese polvo en una placa"
+		""
+		"Usando una &bCortadora&r para convertir el vidrio directamente en una placa de vidrio."
+	]
+	quest.790F509BAA15A68E.quest_desc: [
+		"Las Herramientas pueden ser de CUALQUIER material, pero podriamos empezar con las herramientas de hierro!"
+		""
+		"Podemos reparar nuestras herrmientas en un yunque usando el mismo material con el mismo material que usamos para crearla, como cualquier herramienta vanilla"
+		""
+		"El &aMartillo&r se usa para craftear placas de forma manual, las cuales van a ser necesarias para crear otras herramientas!"
+	]
+	quest.790F509BAA15A68E.quest_subtitle: "Una Introduccion"
+	quest.790F509BAA15A68E.title: "Herramientas"
+	quest.791E5CB36B5C1E73.quest_desc: [
+		"Necesitarás láminas delgadas y láminas para hacer esto, ambas se pueden hacer en una &ePlegadora&r."
+		""
+		"Podrías solidificar tu polietileno en láminas directamente con la &eSolidificadora de Fluidos&, o tal vez solidificarlo en lingotes para hacer bloques y luego cortarlos en 9 láminas a la vez con una &eCortadora&."
+		""
+		"Hasta ahora has visto que hay muchas formas de llegar al mismo resultado final, así que siéntete libre de experimentar y hacer las cosas de diferentes maneras!"
+	]
+	quest.7936FF3ED75DCA59.quest_desc: [
+		"Ahora que podemos fabricar Carcasas de Nivel ZPM, podemos prepararnos para obtener máquinas increíblemente poderosas. "
+		""
+		"Aún no estamos en el nivel superior, pero notarás que estas máquinas ejecutan procesos de niveles anteriores a velocidades increíbles."
+	]
+	quest.7936FF3ED75DCA59.quest_subtitle: "Nuevo Nivel, Nuevas Maquinas!"
+	quest.7963008B930D84BB.quest_desc: [
+		"Esta máquina es muy útil para adquirir &dpolvo de cromo&r, que necesitaremos para hacer &bpolvo de acero inoxidable&r y &bpolvo de acero de vanadio&r."
+		""
+		"Podrías procesar polvo de piedra roja para obtener polvo de rubí y luego &eelectrolizarlo&r para obtener &dpolvo de cromo&r."
+	]
+	quest.7985FD6195CF45FD.quest_desc: [
+		"El &cPolvo de Energium&r dentro de un &6Autoclave HV&r producirá una &bBatería de Energium&r."
+		""
+		"Las baterías de Energium pueden almacenar hasta &a10 minutos&r de energía de alta tensión (Voltaje Alto)"
+	]
+	quest.79E29CFE2399AE96.quest_desc: ["Plasma de Oxígeno Líquido. Hemos utilizado toneladas de oxígeno hasta ahora, ¡pero todavía tenemos más por usar!"]
+	quest.79E29CFE2399AE96.quest_subtitle: "Plasma"
+	quest.79E97623309DEF84.quest_desc: [
+		"Un ingrediente clave para hacer &6Epoxy"
+		""
+		"Acetona, Fenol y Ácido Clorhídrico se combinan en el &eReactor Químico&r en el &aPrograma 1&r para hacer esto"
+	]
+	quest.7A0A7DC1C2655EA6.quest_desc: ["Usa el &eReactor Químico&r con &6Naftha Sulfúrica&r con &9Hidrogeno&r para eliminar el azufre"]
+	quest.7A22E94DD83B12AE.quest_desc: ["The Bacterial Sludge was added as an option. It's not necessary, as once you have Europium you don't need to use the Bacterial Sludge."]
+	quest.7A22E94DD83B12AE.quest_subtitle: "Es una opcion"
+	quest.7A22F294077F6520.title: "Era del Voltaje Ridiculo"
+	quest.7A62C1B9385DF643.quest_desc: [
+		"Rompe un poco de vidrio con un martillo y funde el polvo en una fundidora de aleaciones con un molde de fundición para hacer un tubo de cristal"
+		""
+		"Puedes cocinar Lingotes de Acero con Polvo de Acero, solo necesitamos mezclar polvo de carbon y hierro para obtener el polvo de acero"
+	]
+	quest.7A62C1B9385DF643.title: "Tubo de Cristal"
+	quest.7A8242E6D0BC6294.quest_desc: ["La Centrifugadora te permite separar componentes a sus materiales correspondientes girando muy rapido"]
+	quest.7A8242E6D0BC6294.quest_subtitle: "Giro Como Loco!"
+	quest.7ACC4E777A75E043.quest_desc: [
+		"Electroliza el polvo de tantalita para obtener polvo de tantalio"
+		""
+		"También se obtiene como subproducto del procesamiento de mineral de tantalita."
+	]
+	quest.7AD22973EDC05877.quest_desc: ["¡Añade bloques de entrega de energía UV, una Estrella ATM y BAM! Ahora tenemos un Módulo de Compresión de Estrellas."]
+	quest.7AD22973EDC05877.quest_subtitle: "Compresión Estelar"
+	quest.7AE6AF0B5D3390E7.quest_desc: ["Gran parte del trabajo que se ha hecho fue directamente para poder construir el &n&l&5Star Forge!&r&r"]
+	quest.7AE6AF0B5D3390E7.quest_subtitle: "Fabricando el Cosmos"
+	quest.7AFEEC895FB293D6.title: "Veta de Cianita"
+	quest.7B27B87A520E38B0.quest_desc: ["Necesitarás un &6Reactor Quimico de Voltaje Alto&r con un poco de Cloro, Polvo de Carbono, y tu Polvo de Rutilo para crear esto"]
+	quest.7C134F7838C23059.quest_desc: ["La línea &dPlatLine™&r es algo en lo que nos adentraremos más adelante; por ahora, agradece que el platino es abundante"]
+	quest.7C9D8120B5C5BD9B.quest_desc: [
+		"¡Solo el &eReactor Químico Grande&r puede manejar esta reacción!"
+		""
+		"No utilizaremos la Solución de Osmio Ácido porque el osmio es abundante."
+	]
+	quest.7CC3BD5F3D66A637.quest_desc: [
+		"¡Esto no estará inerte por mucho tiempo! Una vez procesado, tendrás un MONTÓN de nuevos recursos en tus manos, ¡que pueden procesarse aún más en materiales muy útiles!"
+		""
+		"Asegúrate de iniciar una línea de procesamiento pasiva de esto, ya que necesitarás bastantes de los recursos resultantes."
+	]
+	quest.7CC3BD5F3D66A637.quest_subtitle: "Una nube de radón entra en un café. El camarero dice: \\\"no servimos gases inertes aquí\\\". No hubo reacción del radón."
+	quest.7D5F805A6F2551F0.quest_desc: [
+		"Es recomendable crear oxígeno de forma pasiva desde el inicio, este elemento se usa bastante"
+		""
+		"Hay multiples formas de generarlo, when looking in JEI make sure the recipe states Usage: LV or Usage: ULV"
+		""
+		"El polvo de goetita se puede centrifugar para obtener oxígeno, o quizás prefieras electrolizar polvo de zafiro"
+		""
+		"Como alternativa, podrías construir un Recolector de Gas Básico y usarlo para recoger aire, el cual luego centrifugarías para obtener oxígeno. El agua también se puede electrolizar para obtener oxígeno, pero ten en cuenta que estos métodos son bastante lentos"
+	]
+	quest.7D6AC042FFD0B6D6.quest_desc: ["&aDestila&r tu &eNafta Ligeramente Vaporizada&r para obtener &0Benceno"]
+	quest.7D972F334DCE5626.quest_desc: [
+		"La Naquadah será un componente extremadamente vital de este nivel y de niveles futuros."
+		""
+		"Naquadah, abreviado como Naq, se utiliza en sus diversas formas desde el Modulo de Punto Zero en adelante. Si conoces los orígenes del Naquadah, entonces todas estas referencias cobran sentido."
+	]
+	quest.7D972F334DCE5626.quest_subtitle: "Más. Naq. Hacer. Tú. Necesitas!"
+	quest.7DDF87A5856F9FE3.quest_desc: ["16x Cable de Cuprato de Mercurio Bario Calcio - Cantidad 8"]
+	quest.7DDF87A5856F9FE3.quest_subtitle: "Superconductor HV"
+	quest.7DF972754C48E22B.quest_desc: ["Ahora, teniendo un multibloque, podemos establecer \\\"Buses Distintos\\\" y configurar cada uno para hacer un molde específico y/o circuito programado. ¡Ahora tenemos una máquina todo en uno!"]
+	quest.7DF972754C48E22B.quest_subtitle: "La Extrusión Ahorra Materiales"
+	quest.7E407CDBFD85E65F.quest_desc: ["Oxígeno + Etileno en &aPrograma 2&r en tu &eReactor Químico&r es una forma de hacer Ácido Acético"]
+	quest.7E697FE6A6C8B4EE.quest_desc: ["Estos lingotes superconductores de Voltaje Ridiculo nos servirán bien para fabricar cables superconductores y cable fino.."]
+	quest.7E697FE6A6C8B4EE.quest_subtitle: "Con estos lingotes tenemos opciones!"
+	quest.7E7FAA72581D2186.quest_desc: [
+		"&eMezcla&r tus polvos de &dIndio&r, &bGalio&r y &6Fósforo&r en el &aPrograma 1"
+		""
+		"Este material reemplazará al Arsenuro de Galio para el &3Diodo SMD Avanzado&r y también se usará extensivamente para mejorar los &cWafers MPIC&r a los niveles de voltaje más altos"
+	]
+	quest.7E8C36302FDD93C8.title: "Voltaje Ultra Alto / UHV"
+	quest.7EE14ED04C64E2AA.quest_desc: ["Si tomamos las Placas de Circuito Impreso Reforzadas con Fibra que hicimos en el nivel LuV y cambiamos un poco la receta, podemos crear una Placa de Circuito Impreso Reforzada con Fibra de Varias Capas"]
+	quest.7EE14ED04C64E2AA.quest_subtitle: "Cambio arriba"
+	quest.7EFA4F2C0A895502.quest_desc: ["Una Lente de Vidrio (Verde) también puede hacer esto, pero hacer las lentes de vidrio coloreado es una receta HV."]
+	quest.7F2D4C5BEFE3DDD3.quest_desc: [
+		"Estos son los tubos para el Transformador Activo."
+		""
+		"Otra vez, es &0&lIMPORTANTE&r&r que tengan colores asignados para poder funcionar, y no pueden dar vueltas. Necesitarás más Transformadores Activos para cambiar la dirección del láser."
+	]
+	quest.7F2D4C5BEFE3DDD3.quest_subtitle: "¡Más tubos!"
+	quest.7F5DAB3EDB6E9592.quest_desc: [
+		"Se va a hacer mucho Trinaquah."
+		""
+		"Probablemente sea necesario optimizar el proceso para velocidad y eficiencia."
+	]
+	quest.7F5DAB3EDB6E9592.quest_subtitle: "Aleaciones de Refrigeración"
+	quest.7F64202F2C0BAD2A.quest_desc: [
+		"Ten muy cuenta el tipo de conversion de &e4 RF : 1 EU&r! Estamos a 512 EU en Voltaje Alto, asi que son 2048 RF"
+		""
+		"Algunas recetas usarán toda esa energía por tick para procesar, así que asegúrate de que tu producción de energía pueda mantenerse al día!"
+	]
+	quest.7F64202F2C0BAD2A.quest_subtitle: "Tienes Energía?"
+	quest.7F9131107E7F9AC8.quest_desc: [
+		"Ahora que tenemos un poco de vapór, necesitas algo para poder moverlo a otros lugares!"
+		""
+		"Al colocar estos te permitirá transferir vapor de tu caldera a una máquina"
+		""
+		"Usa la &bllave inglesa&r para añadir o quitar conexiones según sea necesario"
+	]
+	quest.7FA79ED5DABCF998.quest_desc: ["¡El Vaso de Mezcla es increíblemente importante, especialmente para todas las aleaciones que se fabrican actualmente, y para todas las que están por venir!"]
+	quest.7FA79ED5DABCF998.quest_subtitle: "¡Mezcla todo!"
+	task.00648047034C9531.title: "Trituradora de Rocas"
+	task.015B712B90E69E36.title: "Minerales Validos"
+	task.016BA8271625AE36.title: "Pulverizadora / Maceradora"
+	task.0362C10508FC4615.title: "Mantenimiento"
+	task.0430C905BE3CA0CF.title: "Minerales Validos"
+	task.044F6F66134EEFAB.title: "Minerales Validos"
+	task.047722F89EBCC4DE.title: "Minerales Validos"
+	task.083DE18D8C046344.title: "Minerales Validos"
+	task.0AABC07011A622BB.title: "Minerales Validos"
+	task.0B298C73448F3DA6.title: "Lingote de Titanio"
+	task.0CD83CD8CF777CB9.title: "Minerales Validos"
+	task.0D18011DF2D3F338.title: "Minerales Validos"
+	task.0E28075B4E87FE2E.title: "Lingote de Bronze"
+	task.0ED34925D7A494BF.title: "Cernidor"
+	task.0F0F3C716F921B64.title: "Voltaje"
+	task.107ADEF19CD50661.title: "Placa de Bronze"
+	task.125DE9E99E5DC392.title: "Minerales Validos"
+	task.12A161B884B5653F.title: "Plataforma de Perforación de Fluidos"
+	task.15389D4D64D19ACA.title: "Destornillador (Gregtech)"
+	task.15DC25BCFCE78DE2.title: "Lingote de Aluminio"
+	task.1791DBA7A318DE68.title: "Minerales Validos"
+	task.187F7B08BCC7202F.title: "Horno de Aleación"
+	task.18CA627A460E3E4E.title: "Minerales Validos"
+	task.1A89CC99F53A629F.title: "Reorganización"
+	task.1B670B474AD80852.title: "Barreta (Gregtech)"
+	task.1B94E7A224A87F29.title: "Minerales Validos"
+	task.1C193E204C8A2270.title: "Procesadores IV más baratos"
+	task.1CAC89F6DFC2AB72.title: "Multibloques sin ABS"
+	task.1CC0983CB7DBE526.title: "Lingote de Galio"
+	task.25E539125A1C5D69.title: "Desatascador (Gregtech)"
+	task.282B4264413EFB2D.title: "Lingote de Platino"
+	task.2D783271D8830D0E.title: "Cualquier Caldera de Vapor"
+	task.2D9B8AF6C76D9CEA.title: "Lingote de Tungsteno"
+	task.2E62FDEF3A6A88B8.title: "Minerales Validos"
+	task.30443BA4C089AA8B.title: "Cualquier Martillo de GregTech"
+	task.309F610CA713BB20.title: "Polvo de Tantalio"
+	task.30ECDAAF21DA2EA9.title: "Cualquier Convertidor de Energia de Voltaje Alto"
+	task.3165B02F2BFFEDDA.title: "Reactor Químico"
+	task.31A7661D828CB33C.title: "Minerales Validos"
+	task.33B208F02F05BF09.title: "Cuchillo (Gregtech)"
+	task.341403FEFBFC92C0.title: "Tinte Cian"
+	task.36397CBA6D39DC0D.title: "Lingote de Tungsteno"
+	task.3A308744C31E3ED4.title: "Minerales Validos"
+	task.3A75356E8DE59132.title: "Minerales Validos"
+	task.3AC1607997CAAAAC.title: "Minerales Validos"
+	task.3AC5F6DC531CCE3D.title: "Cualquier Calentador de Liquidos"
+	task.3B9FECB49AF6F450.title: "Cortadores de Alambre (Gregtech)"
+	task.3CEA3285F2CD5680.title: "Limas (Gregtech)"
+	task.427138127BEBAEAF.title: "Polvo de Carbono"
+	task.443C9F78D6B49249.title: "Ensambladora de Voltaje Alto o Voltaje Extremo"
+	task.465C43AE595A1A9F.title: "Cuchillo de Carniceria (Gregtech)"
+	task.4730AB96AAD93282.title: "Minerales Validos"
+	task.47A9907066F31663.title: "Una cervecería"
+	task.47D34EA29A06AACD.title: "Entendiendo esta pagina"
+	task.48C19477CB216AD4.title: "Polvo de Azufre"
+	task.491DC7AF3356B0AE.title: "Llave Inglesa (GregTech)"
+	task.4BE4C9994786C1D0.title: "Conversion de Voltaje"
+	task.4BF92CAB53EAFC26.title: "Polvo de Sal"
+	task.4CC5C3088A4F5C7D.title: "Perdida de Voltaje"
+	task.4E3E4CA01C64C9E2.title: "Esclusas ME"
+	task.4EEBD6ABA3D55379.title: "Mortero (Gregtech)"
+	task.508A2B09B32E5244.title: "Minerales Validos"
+	task.5270CD1653E1BAC6.title: "Sierras (Gregtech)"
+	task.529FF9EA2C01FB6E.title: "Minerales Validos"
+	task.52AFA2CE57617039.title: "Cualquier convertidor de energía de LV/VB"
+	task.54231849B7094A32.title: "Polvo de Tungstato o Scheelita"
+	task.556A070D9E9A67E5.title: "Minerales Validos"
+	task.558C014604ECC490.title: "Minerales Validos"
+	task.5685DB13CE250DBA.title: "Cortadora de Voltaje Alto o Volatje Extremo"
+	task.5711092D4CD64197.title: "Minerales Validos"
+	task.589F9B25E0FC4A24.title: "Minerales Validos"
+	task.58DC240BC9900646.title: "Amperaje"
+	task.5C915E839949FED6.title: "Lingote de Platino"
+	task.5DED626D70F7EE98.title: "Minerales Validos"
+	task.5F8C9C7E6DFA0E6C.title: "Guadaña (Gregtech)"
+	task.5FF14D712FF20F3A.title: "Minerales Validos"
+	task.6029CFFA9BD91661.title: "Minerales Validos"
+	task.64A8B8EDC7F58D0D.title: "Polvo de Paladio"
+	task.65A04FD7D3F264DD.title: "Mazo (Gregtech)"
+	task.6962BAEF473C8C18.title: "Minerales Validos"
+	task.69ED2BD3D6D30648.title: "Minerales Validos"
+	task.6A623C45C3A556B6.title: "Minerales Validos"
+	task.6C841FAADFD094AC.title: "Automatizacion"
+	task.6D9C084B63F0AE29.title: "Martillos de Forja"
+	task.6E16C4B0E9B4CEC0.title: "Minerales Validos"
+	task.6F07606E3F7BE160.title: "Inicio Rápido"
+	task.70DEDB210CBD79D9.title: "Minerales Validos"
+	task.71567A9437A86C2F.title: "Cualquier Convertidor de Energía MV"
+	task.71AF3878DBC0AB29.title: "Circuitos de Programacion"
+	task.71DDF8155FD8FCAA.title: "Minerales Validos"
+	task.740E35A5781E43A7.title: "Lingote de Acero"
+	task.778C0EDD0752F465.title: "Minerales Validos"
+	task.77EF6FE6C54C104A.title: "Horno de Arco"
+	task.783B177BEB5F921E.title: "Grabador Láser HV o EV o IV"
+	task.7AB26B5B4167E5EC.title: "Lingote de Titanio"
+	task.7B1C0F47F1D43B20.title: "Conceptos de Energía"
+	task.7B46FA23AF26BF76.title: "Lingote de Aluminio"
+	task.7B87E500C6FB74B3.title: "Minerales Validos"
+	task.7BEB4A258BB8C759.title: "Bateria de HV/VA"
+	task.7F7725AF8B2A5B13.title: "Minerales Validos"
+	task.7FA60EE3F8F0C57B.title: "Minerales Validos"
+}

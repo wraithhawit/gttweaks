@@ -1,0 +1,126 @@
+{
+	id: "108FD0EDFB76E717"
+	loot_size: 1
+	order_index: 45
+	rewards: [
+		{
+			count: 2
+			id: "658D37F8FABE964D"
+			item: {
+				count: 1
+				id: "gtceu:atomic_casing"
+			}
+			random_bonus: 4
+		}
+		{
+			count: 4
+			id: "62C6BE6F12405F5F"
+			item: {
+				count: 1
+				id: "gtceu:enriched_naquadah_trinium_europium_duranide_hex_wire"
+			}
+			random_bonus: 4
+			weight: 8.0f
+		}
+		{
+			id: "3FA254A8F4506308"
+			item: {
+				count: 1
+				id: "gtceu:max_battery"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "316A860CE20F0CDD"
+			item: {
+				count: 1
+				id: "gtceu:uv_parallel_hatch"
+			}
+			weight: 6.0f
+		}
+		{
+			id: "30382C1D696F6881"
+			item: {
+				count: 1
+				id: "gtceu:uhv_energy_input_hatch"
+			}
+			weight: 8.0f
+		}
+		{
+			count: 4
+			id: "436A601B9C927B63"
+			item: {
+				count: 1
+				id: "gtceu:trinaquadalloy_ingot"
+			}
+			random_bonus: 4
+			weight: 6.0f
+		}
+		{
+			count: 4
+			id: "7B685EC1F5BE856B"
+			item: {
+				count: 1
+				id: "gtceu:europium_ingot"
+			}
+			random_bonus: 8
+			weight: 10.0f
+		}
+		{
+			count: 2
+			id: "10EDA48C401B87BD"
+			item: {
+				count: 1
+				id: "gtceu:superconducting_coil"
+			}
+			random_bonus: 2
+			weight: 10.0f
+		}
+		{
+			count: 8
+			id: "3A02BCFF58C61ED4"
+			item: {
+				count: 1
+				id: "gtceu:uhpic_wafer"
+			}
+			random_bonus: 8
+			weight: 12.0f
+		}
+		{
+			count: 8
+			id: "3A5F9DE878EDB815"
+			item: {
+				count: 1
+				id: "gtceu:highly_advanced_soc_wafer"
+			}
+			random_bonus: 8
+			weight: 12.0f
+		}
+		{
+			id: "36864F10FC61218F"
+			item: {
+				count: 1
+				id: "gtceu:uv_field_generator"
+			}
+			weight: 8.0f
+		}
+		{
+			count: 2
+			id: "740AFB05BA21FDBC"
+			item: {
+				count: 1
+				id: "gtceu:neutronium_block"
+			}
+			random_bonus: 2
+			weight: 6.0f
+		}
+		{
+			id: "0B21B399072E1D3C"
+			item: {
+				count: 1
+				id: "gtceu:uv_energy_input_hatch_16a"
+			}
+			weight: 8.0f
+		}
+	]
+}

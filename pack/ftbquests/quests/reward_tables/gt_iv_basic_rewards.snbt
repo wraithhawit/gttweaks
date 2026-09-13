@@ -1,0 +1,270 @@
+{
+	id: "5611EEDC12552B9E"
+	loot_size: 1
+	order_index: 60
+	rewards: [
+		{
+			id: "29865271D5AFFD5F"
+			item: {
+				count: 1
+				id: "gtceu:micro_processor_mainframe"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "305D007D59B5E9CC"
+			item: {
+				count: 1
+				id: "gtceu:iv_robot_arm"
+			}
+			weight: 3.0f
+		}
+		{
+			count: 4
+			id: "199A892171AE3508"
+			item: {
+				count: 1
+				id: "gtceu:smd_capacitor"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			count: 4
+			id: "47F4720F137A6756"
+			item: {
+				count: 1
+				id: "gtceu:smd_inductor"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			count: 4
+			id: "0E459B88FC356796"
+			item: {
+				count: 1
+				id: "gtceu:plastic_printed_circuit_board"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			id: "475C74743E4CF30A"
+			item: {
+				count: 1
+				id: "gtceu:iv_electric_pump"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "29E3A10C0A072199"
+			item: {
+				count: 1
+				id: "gtceu:iv_electric_piston"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "52C786CF16A45DB4"
+			item: {
+				count: 1
+				id: "gtceu:iv_conveyor_module"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "75DC1841EF9E6ACA"
+			item: {
+				count: 1
+				id: "gtceu:micro_processor_computer"
+			}
+			random_bonus: 1
+			weight: 4.0f
+		}
+		{
+			id: "5C32BE4CA44C0037"
+			item: {
+				count: 1
+				id: "gtceu:iv_electric_motor"
+			}
+			weight: 4.0f
+		}
+		{
+			count: 12
+			id: "5891B7144B661401"
+			item: {
+				count: 1
+				id: "gtceu:ram_chip"
+			}
+			random_bonus: 12
+			weight: 5.0f
+		}
+		{
+			count: 2
+			id: "2A99F73B7520D99E"
+			item: {
+				count: 1
+				id: "gtceu:ram_wafer"
+			}
+			random_bonus: 2
+			weight: 5.0f
+		}
+		{
+			count: 2
+			id: "44DFF1836A34CE6B"
+			item: {
+				count: 1
+				id: "gtceu:gallium_arsenide_dust"
+			}
+			random_bonus: 2
+			weight: 6.0f
+		}
+		{
+			count: 2
+			id: "3E3A1141DC1E1EC5"
+			item: {
+				count: 1
+				id: "gtceu:micro_processor_assembly"
+			}
+			random_bonus: 2
+			weight: 6.0f
+		}
+		{
+			count: 4
+			id: "3363DF043C6BED84"
+			item: {
+				count: 1
+				id: "gtceu:smd_transistor"
+			}
+			random_bonus: 4
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "1EF0D2419005785F"
+			item: {
+				count: 1
+				id: "gtceu:smd_diode"
+			}
+			random_bonus: 6
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "14A0C5B76E1BA08E"
+			item: {
+				count: 1
+				id: "gtceu:smd_resistor"
+			}
+			random_bonus: 6
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "51556B70251F39E9"
+			item: {
+				count: 1
+				id: "gtceu:silicon_wafer"
+			}
+			random_bonus: 6
+			weight: 10.0f
+		}
+		{
+			id: "04419E263F98269C"
+			item: {
+				count: 1
+				id: "gtceu:iv_machine_hull"
+			}
+			weight: 10.0f
+		}
+		{
+			count: 12
+			id: "447ECA45E0D69D18"
+			item: {
+				count: 1
+				id: "gtceu:tungsten_steel_ingot"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "75915F2215FD04CE"
+			item: {
+				count: 1
+				id: "gtceu:cpu_chip"
+			}
+			random_bonus: 6
+			weight: 10.0f
+		}
+		{
+			count: 3
+			id: "471A447AE2767377"
+			item: {
+				count: 1
+				id: "gtceu:cpu_wafer"
+			}
+			random_bonus: 3
+			weight: 10.0f
+		}
+		{
+			count: 12
+			id: "42024C7F9A071DC4"
+			item: {
+				count: 1
+				id: "gtceu:tungsten_steel_plate"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			count: 16
+			id: "409A11ACB12E359C"
+			item: {
+				count: 1
+				id: "gtceu:raw_tungstate"
+			}
+			random_bonus: 16
+			weight: 12.0f
+		}
+		{
+			count: 16
+			id: "442E0FBB168CB384"
+			item: {
+				count: 1
+				id: "gtceu:raw_scheelite"
+			}
+			random_bonus: 16
+			weight: 12.0f
+		}
+		{
+			id: "733A7A2E24F4AF5F"
+			item: {
+				count: 1
+				id: "gtceu:iv_machine_casing"
+			}
+			weight: 12.0f
+		}
+		{
+			count: 16
+			id: "4C544F44287E37C3"
+			item: {
+				count: 1
+				id: "gtceu:raw_neodymium"
+			}
+			random_bonus: 16
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "171EA34590D45713"
+			item: {
+				count: 1
+				id: "gtceu:graphene_dust"
+			}
+			random_bonus: 6
+			weight: 10.0f
+		}
+	]
+}

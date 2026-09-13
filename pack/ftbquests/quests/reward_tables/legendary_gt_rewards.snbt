@@ -1,0 +1,133 @@
+{
+	id: "79DE06142BA2001E"
+	loot_size: 1
+	order_index: 48
+	rewards: [
+		{
+			id: "01A2776155351B91"
+			item: {
+				count: 1
+				id: "gtceu:wetware_processor_mainframe"
+			}
+		}
+		{
+			id: "16BF53378A14D7CE"
+			item: {
+				count: 1
+				id: "gtceu:wetware_processor_computer"
+			}
+		}
+		{
+			id: "0C2826083DAF7943"
+			item: {
+				count: 1
+				id: "gtceu:wetware_processor_assembly"
+			}
+		}
+		{
+			id: "6DFCAAA3B708E0B8"
+			item: {
+				count: 1
+				id: "gtceu:wetware_processor"
+			}
+		}
+		{
+			id: "0A87DA4769CAF7A5"
+			item: {
+				count: 1
+				id: "gtceu:uv_energy_input_hatch"
+			}
+		}
+		{
+			id: "56C9D0AD49C9738A"
+			item: {
+				count: 1
+				id: "gtceu:energy_cluster"
+			}
+		}
+		{
+			id: "60C1C52FFE76CDD3"
+			item: {
+				count: 1
+				id: "gtceu:highly_advanced_soc_wafer"
+			}
+		}
+		{
+			id: "4405D57D33AE55F0"
+			item: {
+				count: 1
+				id: "gtceu:ruthenium_trinium_americium_neutronate_ingot"
+			}
+		}
+		{
+			id: "673003A9103ED21B"
+			item: {
+				count: 1
+				id: "gtceu:enriched_naquadah_trinium_europium_duranide_ingot"
+			}
+		}
+		{
+			id: "1EBBBF36C4289BAB"
+			item: {
+				count: 1
+				id: "gtceu:crystal_soc"
+			}
+		}
+		{
+			id: "4CDA2314EE7E0684"
+			item: {
+				count: 1
+				id: "gtceu:uv_field_generator"
+			}
+		}
+		{
+			id: "2B9F28F6CA9414EE"
+			item: {
+				count: 1
+				id: "gtceu:tritanium_coil_block"
+			}
+		}
+		{
+			id: "2381F4FD0010D465"
+			item: {
+				count: 1
+				id: "gtceu:fusion_coil"
+			}
+		}
+		{
+			id: "23F54DD9EB536A5D"
+			item: {
+				count: 1
+				id: "gtceu:zpm_parallel_hatch"
+			}
+		}
+		{
+			id: "4965CBDE43B9058A"
+			item: {
+				count: 1
+				id: "gtceu:uv_input_bus"
+			}
+		}
+		{
+			id: "0F3BDB23A79E21AE"
+			item: {
+				count: 1
+				id: "gtceu:uv_output_bus"
+			}
+		}
+		{
+			id: "20297CAA5E993EDE"
+			item: {
+				count: 1
+				id: "gtceu:uv_input_hatch"
+			}
+		}
+		{
+			id: "72953D008BCB08E8"
+			item: {
+				count: 1
+				id: "gtceu:uv_output_hatch"
+			}
+		}
+	]
+}

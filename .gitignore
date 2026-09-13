@@ -11,6 +11,7 @@
 /.idea/
 /.vscode/
 *.iml
+__pycache__/
 .classpath
 .project
 .settings/

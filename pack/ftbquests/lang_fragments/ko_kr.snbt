@@ -1,0 +1,2611 @@
+{
+	chapter.00E59A3B38CB7EEA.title: "광기의 전압"
+	chapter.220BE62A7F8EA359.title: "제로 포인트 모듈"
+	chapter.3202C575456F57D2.title: "그렉스타"
+	chapter.37A28F4697946CB4.title: "저전압"
+	chapter.37A5A4A81CCB67E5.title: "고전압"
+	chapter.403105E8F21D82C7.title: "극한의 전압"
+	chapter.415BA265E2C00859.title: "시작 가이드"
+	chapter.435C9D14D471D326.title: "증기 시대"
+	chapter.489F28A71282B3E7.title: "초고전압"
+	chapter.560EF4C38DEACA03.title: "마일스톤"
+	chapter.574AC3A76DC03364.title: "중전압"
+	chapter.60A9BBC993EB2FD2.title: "초월 전압"
+	chapter.754B57DEA4C711A5.title: "궁극의 전압"
+	chapter_group.1DA67E79B40AB130.title: "GregTech™"
+	quest.0012EC5DDAEB7D5B.quest_desc: ["이 &d멀티블록&r은 다른 &d멀티블록 구조&r만큼 많이 사용되지 않지만, 그 가치를 증명할 거예요. 약속해요!"]
+	quest.0012EC5DDAEB7D5B.quest_subtitle: "이걸로 맥주를 만들 수 있나요?"
+	quest.008DBEF8893F1B63.quest_desc: ["모든 원소 중 &b헬륨&r이 가장 안정적입니다. 다른 원소와 반응하거나 연소하지 않습니다. &b헬륨&r은 가장 낮은 융점과 끓는점을 가집니다. 극한 조건이 아니면 기체로 존재하며, 제4의 물질 상태인 &d플라즈마&r로 변할 수 있습니다."]
+	quest.008DBEF8893F1B63.quest_subtitle: "&b헬륨 플라즈마&r"
+	quest.00BF4E98A328801D.quest_desc: ["Give that dust an acid bath with &bHydrochloric Acid&r in the &eChemical Bath&r to make this\\n\\nYou'll then need to &eElectrolyze&r it to get the &dTungsten&r out"]
+	quest.0115271C840CD387.quest_desc: ["보일러 업그레이드 시간일까요?"]
+	quest.0115271C840CD387.quest_subtitle: "증기가 많이 있어요"
+	quest.012366E4E4095FC4.quest_desc: [
+		"필터 케이싱은 공기 중의 나쁜 입자를 실제로 걸러내어 방을 &e깨끗하게&r 만드는 데 필요합니다"
+		""
+		"클린룸을 건설할 때 이것들을 부술 때는 &a렌치&r를 사용하세요. 그렇지 않으면 부서질 때 드롭되지 않습니다"
+		""
+		"천장은 클린룸 컨트롤러 블록이 들어갈 자리 하나를 제외하고 모두 필터 케이싱이어야 합니다"
+	]
+	quest.01339A8C26CC6E0C.quest_desc: [
+		"이미 RF/FE 전력 생성 설정을 가지고 있나요?"
+		""
+		"그렇다면 에너지 변환기를 만들어 그 RF를 EU로 변환하고 기계에 배선할 수 있습니다"
+		""
+		"기본적으로 EU에서 RF로의 변환으로 설정되어 있으므로 RF에서 EU로의 변환으로 변경하려면 소프트 망치로 두드려야 합니다"
+		""
+		"빨간 쪽이 EU 쪽이고, 녹색 쪽이 RF/FE용입니다. 렌치로 쪼그리고 우클릭하여 변환기를 회전시킬 수 있음을 기억하세요"
+		""
+		"주의: 와이어 커터를 사용하여 블록이나 서로의 와이어 연결을 활성화/비활성화할 수 있습니다"
+	]
+	quest.01339A8C26CC6E0C.title: "에너지 변환기"
+	quest.01D895369791881A.quest_desc: ["이제 한 번의 크래프팅으로 2개의 &bZPM 프로세서&r를 얻을 수 있습니다! 이는 엄청난 돌파구이며 기계의 발자국을 확장하는 데 도움이 될 것입니다!"]
+	quest.01D895369791881A.quest_subtitle: "&b쌓아올리기&r"
+	quest.02190383FEE793ED.quest_desc: ["남은 건 &e화학 반응&r을 사용해 이리듐에서 염소를 제거하는 것뿐입니다!"]
+	quest.0251FD45582C3164.quest_subtitle: "이것을 들이마시지 마세요"
+	quest.0262E0D49A12F817.quest_subtitle: "업그레이드!"
+	quest.0299E59D23F16ACB.quest_desc: [
+		"You know what to do, &aOre Process&r some tungstate or some scheelite ore down into dust form"
+		""
+		"The raw ores are found in &eThe End Layer&r of &dThe Mining Dimension&r, between y levels -63 and 0, mixed in with Lithium. There may even be scheelite surface indicators!"
+	]
+	quest.02CC3E13B8905603.quest_desc: [
+		"그 트리타늄을 고체화해서 이제 우리가 많은 방법으로 사용할 수 있는 자원을 얻었어요."
+		""
+		"믿어보세요, 우리가 만들 많은 컴포넌트에 이 티타늄이 필요할 거예요."
+	]
+	quest.02CC3E13B8905603.quest_subtitle: "단단하게 강해요"
+	quest.033BF8D12E32A5E5.quest_desc: ["그 루테늄 가루를 가져와서 섞기 시작해요!"]
+	quest.033BF8D12E32A5E5.quest_subtitle: "모두 섞여"
+	quest.0373198D54FA6B93.quest_desc: [
+		"&6베이스 스타&r, &d패트릭 스타&r는 &6스타&r를 만드는 데 사용되었고, 지금은 다른 &6스타&r를 만들기 위한 기초가 되고 있습니다."
+		""
+		"이해하셨나요? &eOK&r, 계속 진행합시다."
+	]
+	quest.0373198D54FA6B93.quest_subtitle: "&6모든 것을 시작한 스타&r"
+	quest.037BB7C486D2D360.quest_subtitle: "그렇습니다"
+	quest.037BB7C486D2D360.title: "나쿠아다 광맥"
+	quest.03B5D467E76C5B8A.quest_desc: [
+		"광석 수집과 처리를 계속하고 계시길 바랍니다!"
+		""
+		"&d루틸 가루&r는 여러 가지 방법으로 얻을 수 있습니다:"
+		"&e보크사이트 가루 15개를 전기분해&r"
+		"[ \"\", { \"text\": \"EBF \", \"color\": \"green\", \"hoverEvent\": { \"action\": \"show_text\", \"contents\": { \"text\": \"Electric Blast Furnace\" } } }, { \"text\": \"10 Ilmenite and 4 Carbon together\" }]"
+		"&6광석 처리&r로 일메나이트나 보크사이트를 처리하여 확률적으로 출력"
+		"&e화학 배스&r에서 알루미늄을 &3과황산 나트륨&r으로 처리하여 더 높은 확률로 출력"
+		""
+		"&c기억하세요:&r 확률적 출력은 기계의 티어에 따라 증가합니다"
+	]
+	quest.03B5D467E76C5B8A.quest_subtitle: "무용한 가루라기보다는"
+	quest.03B842E4A2A6B2C9.quest_subtitle: "망간에 좋습니다"
+	quest.03B842E4A2A6B2C9.title: "그로슐러 광맥"
+	quest.03C756EB123CA953.quest_desc: [
+		"이 업그레이드를 사용하여 중전력 집적회로(&aMPIC&r) 웨이퍼를 고전력(&6HPIC&r) 변형으로 변경하고, 더 큰 에너지 해치를 가능하게 합니다!"
+		""
+		"이 레시피를 실행하려면 &b클린룸&r이 필요합니다"
+	]
+	quest.0416C489903BCFFF.title: "궁극의 전압 시대"
+	quest.04291652780AEE72.quest_desc: [
+		"&b대형 분쇄 타워&r는 매우 중요해질 거예요. 왜냐하면 광석 처리는 새로운 자원으로 진행함에 따라 매우 중요해지기 때문이에요."
+		""
+		"그래서 프로세스를 병렬화할 수 있는 &b분쇄 타워&r를 갖는 것은 여전히 필요한 광석 처리를 최적화할 거예요."
+	]
+	quest.04291652780AEE72.quest_subtitle: "&b분쇄 타워&r!"
+	quest.04362E2A5C541EC5.quest_desc: ["16x 망간 인화물 와이어 - 수량 8"]
+	quest.04362E2A5C541EC5.quest_subtitle: "LV 초전도체"
+	quest.043A424FDDA71692.quest_desc: ["ME 유체 입력! 멀티블록의 프로세스에 유체를 입력하고 해치 자체에 재고를 유지합니다!"]
+	quest.043A424FDDA71692.quest_subtitle: "ME 유체 입력"
+	quest.04636DE704AD7B0B.quest_desc: ["오토클레이브만으로는 부족하다고 느낀 적 있나요? 이 &d멀티블록&r이 그 공백을 채워줄 거예요! 이 큰 구조는 싱글 블록 오토클레이브의 직접적인 대체품이에요!"]
+	quest.04636DE704AD7B0B.quest_subtitle: "크리스탈을 만들어요! LCC"
+	quest.04A371896B1E0CEC.quest_desc: [
+		"와이어를 한 번 더 정제하여 ZPM 필드 생성기에 필요한 미세 와이어를 얻읍시다."
+		""
+		"안타깝게도 상당한 양의 미세 와이어가 필요하므로 계속 처리해야 합니다!"
+	]
+	quest.04A371896B1E0CEC.quest_subtitle: "강화"
+	quest.054D2D3C20C2D32F.quest_desc: [
+		"해냈습니다!"
+		""
+		"이것이 바로 그것입니다! 만들 수 있는 최고 티어의 프로세서입니다!"
+		""
+		"하지만 아직 끝나지 않았습니다... 이것이 마지막 프로세서일 수 있지만, 이제부터가 더 재미있어집니다!"
+	]
+	quest.054D2D3C20C2D32F.quest_subtitle: "대성공!!!"
+	quest.05D6CE1B501F59B5.quest_desc: [
+		"고전적인 &6ATM 스타&r입니다. 이미 이것에 익숙해져 있을 것이고, 그것을 만드는 과정도 완벽하게 파악하고 있을 겁니다."
+		""
+		"이것은 당신에게 &b쉬운&r 일입니다."
+	]
+	quest.05D6CE1B501F59B5.quest_subtitle: "&6스타 구성 요소를 위한 스타&r"
+	quest.05F0FCBBEADA8489.quest_desc: ["You can use a &eFluid Heater&r or a &eDistillery&r on &aProgram 1&r to turn the &3Dissolved Calcium Acetate&r into &cAcetone&r"]
+	quest.060233F903FAE63B.quest_desc: ["이 플레이트들은 &dLuV&r 티어 기계를 만드는 데 중요해요."]
+	quest.060233F903FAE63B.quest_subtitle: "이게 바로 제 &dLuV&r 언어예요!"
+	quest.060233F903FAE63B.title: "LuV 기계 케이싱"
+	quest.06242EEB80032F27.quest_subtitle: "클린룸 2호"
+	quest.063F5023D56CA6B1.quest_desc: ["&b폴리에틸렌&r 설정이 완료되면, &b어셈블러&r로 &b기계 선체&r를 만드는 것으로 전환하여 몇 가지 재료를 절약할 수 있습니다"]
+	quest.063F5023D56CA6B1.quest_subtitle: "그레거스들, 모이세요!"
+	quest.06BBD7B736C564C1.quest_desc: ["이 &f실리콘 판&r으로 &b트랜지스터&r를 만들 수 있어요! 새로운 전자 부품, 야호!"]
+	quest.06F55064A36274D2.quest_desc: [
+		"만든 &b이트륨 바륨 구리 산화물 볼트&r와 &b크리스탈 SOC&r를 결합하여 가장 저렴한 &bIV 티어 프로세서&r를 얻으세요!"
+		""
+		"대부분의 '대형' 멀티블록 기계의 컨트롤러에는 &bIV 프로세서&r가 제조에 사용된다는 것을 기억하세요."
+	]
+	quest.06F55064A36274D2.quest_subtitle: "저렴한 것이 좋다"
+	quest.06FF1116AFABE2FE.quest_desc: [
+		"블랙라이트는 자외선 스펙트럼의 빛을 투사합니다. 자외선은 박테리아와 기타 오염물질을 살균하는 데 매우 효과적입니다."
+		""
+		"클린룸은 완전히 먼지가 없어야 합니다. 하지만 더 깨끗하고 무균 환경이 필요하다면 어떨까요?"
+	]
+	quest.06FF1116AFABE2FE.quest_subtitle: "파티 타임이에요!"
+	quest.0718FA338E8BA792.quest_desc: [
+		"와이어를 고무로 코팅하는 더 저렴한 방법!"
+		""
+		"이 기계는 더 높은 티어의 와이어를 고무로 코팅하여 케이블을 만드는 데 필요합니다"
+		""
+		"MV에서 폴리에틸렌을 얻으면 이 기계를 사용하여 기계 선체를 만드는 것을 고려해볼 수 있습니다"
+	]
+	quest.072FA02152FBC5B1.quest_desc: [
+		"광석은 다양한 높이에서 광맥으로 생성되며, 3청크마다 간격을 두고 배치됩니다"
+		""
+		"광맥은 종종 3개 이상의 다른 광석으로 구성되어 있습니다"
+		""
+		"모든 GT 광맥은 다른 차원에서 채굴 차원으로 이동되었습니다"
+	]
+	quest.072FA02152FBC5B1.title: "오버월드 층의 광석"
+	quest.0737D64B0CCAE334.quest_desc: ["최소한의 시간으로 이것들을 만드는 &b최적화된 방법&r을 갖고 있다면, 전진함에 따라 이익을 얻을 것입니다."]
+	quest.0737D64B0CCAE334.quest_subtitle: "&c또 핵융합 케이싱&r"
+	quest.078F7CEE4CAC39D6.quest_desc: [
+		"&d언옵테니움&r의 강도를 가지고 있어서, &6GregStar&r의 구축에 포함시키는 것이 합리적입니다."
+		""
+		"이 시점에서 구조적 강도에 대해 걱정할 필요는 없습니다."
+	]
+	quest.078F7CEE4CAC39D6.quest_subtitle: "&d언옵테니움&r"
+	quest.07E750F8184C4362.quest_desc: [
+		"&e화학 반응&r으로 수소와 플루오린 가스를 반응시켜 이것을 만듭니다"
+		""
+		"나중에, &5티타늄 삼플루오린화물&r을 수소와 &aEBF&r에서 재처리하여 플루오린화 수소산을 회수하는 설비도 마련할 수 있습니다"
+	]
+	quest.07FC106AFE76E766.quest_desc: ["&5EV 전기분해기&r가 필요합니다. 이것을 사용하여 텅스텐 가루를 텅스텐산에서 얻습니다"]
+	quest.08D48D7C2C6EEF54.quest_desc: ["일반 텅스텐의 좋은 점이 뭔가요? 물어봐 주셔서 감사합니다, 그것은 많은 IV 기계의 주요 부품이며, 주로 텅스텐 케이블 형태로 사용됩니다"]
+	quest.08F7825DA7DC2185.quest_desc: [
+		"&b마레이징 강&r은 연성을 잃지 않고 우수한 강도와 인성을 가진 것으로 알려진 강철입니다. 에이징은 확장된 열처리 과정을 의미합니다."
+		""
+		"이 강철들은 탄소가 아닌 금속간 화합물의 석출로부터 강도를 얻는 매우 낮은 탄소 초고강도 강철의 특별한 클래스입니다."
+	]
+	quest.08F7825DA7DC2185.quest_subtitle: "강력해!"
+	quest.0907800ED4793F96.quest_desc: [
+		"드디어 다음 티어의 유리, &d라미네이트 유리&r를 얻었습니다!"
+		""
+		"이 유리는 많은 IV 및 LuV 기계 제조에 사용됩니다"
+	]
+	quest.0911814AFFFCF885.quest_desc: ["니켈 가루 4개와 크롬 가루 1개를 &e믹서&r에서 섞기만 하면 니크롬이 생성됩니다!"]
+	quest.097735604CB11E83.quest_subtitle: "액체 나쿠아드리아"
+	quest.09C7343DCCD5157E.title: "제로 포인트 모듈 시대"
+	quest.0A1BACA070EB5264.quest_desc: [
+		"이제 제대로 됐습니다!"
+		""
+		"네, 곧바로 직접 사용하지는 않을 겁니다. 하지만 지금 설정하고 크래프팅과 수집을 시작하는 것은 매우 유익하며 많은 시간을 절약할 수 있습니다!"
+	]
+	quest.0A1BACA070EB5264.quest_subtitle: "스타 매터"
+	quest.0A2675CF16B6443B.quest_desc: [
+		"&b압출기&r는 &b압출기 형판&r을 사용하여 인곳을 다양한 형태로 강제 변형합니다"
+		""
+		"예를 들어 &b회전자&r 같은 크래프팅 컴포넌트를 만들 때는 &b압출기&r를 사용하는 것이 종종 더 저렴합니다"
+	]
+	quest.0A3F4D7A15E61B43.quest_desc: [
+		"두 단어. &b궁극 전압&r."
+		""
+		"하지만 걱정하지 마세요, 이것 다음에 또 하나의 티어가 있습니다. 그러나 &bUV 티어&r의 기계를 만들 수 있게 되면 공장을 충실하게 하고 프로세스 라인을 가속화하는 데 정말 도움이 될 것입니다."
+	]
+	quest.0A3F4D7A15E61B43.quest_subtitle: "&b테세우스의 선체&r"
+	quest.0A848E0B9F485B2C.quest_desc: ["&e전기 용광로&r에 이것을 16개 장착하면 &c4500 켈빈&r까지의 레시피를 조리할 수 있습니다! 그것은 4227 섭씨 또는 7640 화씨입니다!"]
+	quest.0A8698ACCD58FADA.quest_desc: [
+		"&bUV 로봇 팔&r은 기계에 커버로 부착되었을 때 이동할 수 있는 아이템의 수에 매우 큰 제한이 있습니다."
+		""
+		"기계에 &b로봇 팔&r을 커버로 사용하고 있다면 이 버전을 시도해 보세요. 실망하지 않을 거예요!"
+	]
+	quest.0A8698ACCD58FADA.quest_subtitle: "모든 아이템 이동!"
+	quest.0AC6B223857CAE94.quest_desc: [
+		"이 MV 기계는 제작에 HV 회로가 필요합니다"
+		""
+		"이 기계를 사용하여 다음 티어의 회로인 &6 마이크로프로세서 &r 제작을 시작할 수 있습니다!"
+	]
+	quest.0B54990168F9B136.quest_desc: [
+		"이 작은 것이 가능한 한 저렴하게 ULV 회로를 만들 수 있게 해줍니다"
+		""
+		"그렇습니다, ULV 회로가 있습니다. 그 전신은 진공관입니다"
+		""
+		"&e추가 정보&r: SoC 또는 시스템 온 칩은 기본적으로 칩 위의 미니 컴퓨터로, 모든 계산 작업을 처리합니다"
+	]
+	quest.0BA5A0DDD4A5363C.quest_subtitle: "여기에 코발트가 있습니다"
+	quest.0BA5A0DDD4A5363C.title: "가니어라이트 광맥"
+	quest.0BAD21557994331D.quest_desc: [
+		"&b염산&r과 &b철 가루&r가 &e화학 반응&r하여 &b염화철(III)&r을 생성합니다"
+		""
+		"또한, &b수소&r가 돌아옵니다!"
+		""
+		"&a프로그램 설정&r을 잊지 마세요, 이것에는 &11&r이 필요합니다"
+		""
+		"이것에는 &b리퀘스터&r를 설정하는 것이 좋습니다"
+	]
+	quest.0C3B3D7F82A6DB3D.quest_desc: [
+		"&b퓨전 리액터&r를 많이 사용해 왔습니다!"
+		""
+		"하지만 중요한 구조물이라고 말씀드렸죠. 아직 하지 않았다면, &b퓨전 리액터&r의 링을 쌓는 것이 크게 도움이 될 것입니다."
+	]
+	quest.0C3B3D7F82A6DB3D.quest_subtitle: "&b퓨전 리액터&r 활용하기"
+	quest.0C78FB6EB275960B.title: "셸도나이트 광맥"
+	quest.0CBF5A49066468DD.quest_subtitle: "이게 필요한가요?"
+	quest.0CF6D11016BAF3D0.quest_desc: ["이제 우리는 복잡한 나쿠아다를 생산하고 있습니다. 다른 복잡한 자원들과 마찬가지로 이 자원도 공장에 큰 이익을 가져다 줄 것입니다."]
+	quest.0CF6D11016BAF3D0.quest_subtitle: "복잡한 나쿠아다"
+	quest.0D1A6B32FEB51FAD.quest_desc: [
+		"이 원트릭으로 블록을 판으로 바꿉니다!"
+		""
+		"&b실리콘 웨이퍼&r나 &b웨이퍼 칩&r을 만드는 데도 매우 유용합니다. 이에 대해서는 곧 자세히 설명하겠습니다"
+	]
+	quest.0D1A6B32FEB51FAD.quest_subtitle: "최첨단"
+	quest.0D20644407244A60.quest_desc: ["3청크마다 다른 광맥을 찾을 수 있습니다!"]
+	quest.0D259B9B93B39FAE.quest_desc: ["이것은 만들기에 비용이 많이 드는 컴포넌트입니다. 하지만 진행하면서 몇 개가 필요할 것입니다. &bZPM 필드 생성기&r에 의존하는 몇몇 멀티블록이 있습니다."]
+	quest.0D259B9B93B39FAE.quest_subtitle: "&6비싸지만 가치 있음&r"
+	quest.0D3DF9C8F742AE0D.quest_desc: [
+		"고무나무의 모든 부분을 원료 고무 펄프로 추출할 수 있습니다"
+		""
+		"슬라임볼도 마찬가지입니다!"
+	]
+	quest.0D47F491C27BBD5E.title: "광물 모래 광맥"
+	quest.0D573979B25FAC48.quest_desc: [
+		"각 에너지 해치는 2 암페어의 전력을 받아들일 수 있다는 것을 기억하세요"
+		""
+		"많은 기계들은 2개 이상의 에너지 해치를 받아들일 수 있으며, 이를 통해 4 암페어를 공급하여 더 높은 전압 티어에서의 처리를 해제할 수 있습니다!"
+	]
+	quest.0D59094D0C23C44F.quest_desc: [
+		"64개의 병렬 프로세스로 충분하지 않다면 256은 어떨까요? 이 블록은 바로 그것을 가능하게 합니다. 256개의 병렬 작업을 실행할 수 있습니다!"
+		""
+		"이것은 최고 티어의 병렬 제어 해치입니다!"
+	]
+	quest.0D59094D0C23C44F.quest_subtitle: "64개로는 충분하지 않았나요?"
+	quest.0D68FA968FD2BEF4.quest_desc: [
+		"If you've already made the &aLarge Chemical Reactor&r you can make this stuff in bulk!"
+		""
+		"Otherwise, you're stuck using the &eChemical Reactor&r with a &6Tiny Pile of Copper Dust&r, &9Hydrogen&r, and &2Nitrochlorobenzene&r"
+	]
+	quest.0D99638C96AB2EEA.quest_desc: ["왜 임의의 자원을 수동적으로 생성하나요? 일반적인 자원을 필요할 때마다 주문하는 것보다 수동적으로 생성하는 것이 더 좋은 아이디어이기 때문입니다. 그러면 필요할 때 필요한 것이 손에 있습니다\\n\\n세계의 왼쪽에 물, 오른쪽에 용암을 설치한 암석 분쇄기를 설정하고 거기에 조약돌을 넣어 조약돌을 만듭니다\\n\\n조약돌을 단조 망치로 출력하여 자갈을 만듭니다\\n\\n자갈을 다른 단조 망치로 출력하여 모래를 만듭니다\\n\\n모래를 산소와 함께 아크로에 출력하여 유리를 만듭니다\\n\\n유리를 분쇄기에 출력하여 유리 가루로 만듭니다\\n\\n유리 가루를 원심분리기에 출력하여 이산화규소를 얻습니다\\n\\n이산화규소를 전해조에 출력하여 규소 가루와 산소를 얻습니다!\\n\\n시작하는 데 필요한 것은 약간의 산소뿐입니다. 그것은 녹색 사파이어 가루 형태로 제공됩니다!"]
+	quest.0D99638C96AB2EEA.quest_subtitle: "필요합니다"
+	quest.0D99638C96AB2EEA.title: "수동적 산소 라인"
+	quest.0D9D1462C676C050.quest_subtitle: "시간"
+	quest.0DA5BC8BA056B975.quest_desc: [
+		"분쇄기는 광석 처리의 첫 단계지만, 그것에 대해서는 나중에 설명하겠습니다"
+		""
+		"지금은 나무 가루가 필요하니, 여기에 나무를 넣고 분쇄해 보세요"
+	]
+	quest.0DA5BC8BA056B975.quest_subtitle: "부수고 갈기"
+	quest.0DB21D996607BD8D.quest_desc: ["맞습니다. 이것은 16A UHV 에너지 해치입니다. 4A 에너지 해치의 4배 능력입니다."]
+	quest.0DB21D996607BD8D.quest_subtitle: "16A UHV 에너지 해치?!"
+	quest.0DB4226BA23A5C09.quest_desc: ["&b고급 회로 조립기&r를 &e클린룸&r으로 옮겨 &5EV&r 시대를 맞이해 봅시다!"]
+	quest.0DB4226BA23A5C09.quest_subtitle: "이 슈퍼컴퓨터가 체스에서 이길 수 있을까요?"
+	quest.0DB92C70D04725BE.quest_desc: [
+		"다른 배터리 회사들은 이것에 미치지 못합니다!"
+		""
+		"이것은 얼티밋 배터리로, UHV 티어입니다! 물론 UHV 티어의 전력을 필요로 하는 모든 장치용입니다."
+	]
+	quest.0DB92C70D04725BE.quest_subtitle: "듀라셀, 먹어라"
+	quest.0DD389A24F5F8CDD.quest_desc: ["&l&6왕수&r&r는 진한 질산과 염산의 혼합물로, 보통 1대 3의 비율입니다. 이 혼합물은 연금술사들에 의해 그 이름(문자 그대로 '왕의 물')이 붙여졌습니다. &l&e금&r&r을 녹일 수 있기 때문이죠."]
+	quest.0DD389A24F5F8CDD.quest_subtitle: "바비 걸의 세계에 오신 것을 환영합니다... 아는 사람은 알죠."
+	quest.0DF9014435C8F4D2.quest_desc: [
+		"왜 니켈 아연 페라이트 인곳을 강제했는지 궁금하셨을 텐데, 이 레시피가 그 이유입니다!"
+		""
+		"니켈 아연 페라이트와 어닐링 구리를 사용하면 가장 비용 효율적입니다. 둘 다 만들 수 있어요!"
+		""
+		"NZF 링이나 세선을 만드는 방법에는 몇 가지 선택지가 있습니다. &e압출기&r를 사용하면 하나의 인곳에서 가장 많은 링을 얻을 수 있고, &e와이어밀&r은 인곳을 와이어로, 그리고 세선으로 바꿉니다."
+	]
+	quest.0E4C711E77497984.quest_desc: [
+		"기어는 많으면 많을수록 좋아요!"
+		""
+		"가공을 계속하세요. 티어를 올릴수록 많은 어셈블리 라인이 필요할 거예요!"
+	]
+	quest.0E4C711E77497984.quest_subtitle: "물론 기어죠."
+	quest.0E603F1FE596DB2A.quest_desc: [
+		"&b트랜지스터&r는 정말 현대의 경이로움이며, 전자 시대를 폭발적으로 확장시켰습니다"
+		""
+		"신호를 증폭하고 스위치로 작동함으로써 더 복잡한 전자 기기를 가능하게 하고 로직 프로그래밍의 능력을 도입합니다!"
+		""
+		"우리의 경우, &b통합 회로&r를 만들 수 있습니다!"
+	]
+	quest.0E73B4A4A1CC6B0F.quest_desc: [
+		"대형 화학 반응기를 사용하여 나쿠아다 가루와 플루오로안티모닉산을 혼합하면 세 가지 자원이 생성됩니다. 우리가 원하는 것은 불순한 농축 나쿠아다 용액입니다."
+		""
+		"티타늄 삼플루오린화물을 EBF에서 처리하여 염산과 티타늄 인곳을 회수할 수 있습니다."
+		""
+		"불순한 나쿠아다 용액을 보관해 두세요. 나중에 나쿠아드리아 용액/나쿠아드리아 인곳으로 더 처리할 것입니다."
+	]
+	quest.0E73B4A4A1CC6B0F.quest_subtitle: "불순해도 농축"
+	quest.0E76B7095F12EF62.quest_desc: ["합금 용광로를 완성하고 멀티블록 구조를 조립해 봅시다."]
+	quest.0E76B7095F12EF62.quest_subtitle: "&eABS&r의 시간이다"
+	quest.0EA56C514D26BA69.quest_desc: ["이제 &b초전도체&r를 인곳 형태로 만들었으니 마침내 필요한 와이어로 가공할 수 있습니다!"]
+	quest.0EA56C514D26BA69.quest_subtitle: "&b인곳 형태&r"
+	quest.0F3DF502872A308E.quest_desc: ["네트륨 도핑 웨이퍼. 최고 품질의 실리콘이에요!"]
+	quest.0F3DF502872A308E.quest_subtitle: "슬라이스"
+	quest.0F6FB959B352121D.quest_desc: [
+		"전압 문제가 있었나요? 이 와이어가 도움이 될 거예요!"
+		""
+		"이 와이어는 &3초전도&r로, 와이어가 얼마나 멀리 뻗어있든 전압 손실이 없습니다"
+	]
+	quest.0F9829B0A5EEE67B.quest_desc: [
+		"마침내 다이오드가 손에 닿는 곳에"
+		""
+		"이것을 작은 갈륨 비소 가루 더미로 바꿔야 하거나, 그를 위한 레시피를 설정합니다"
+	]
+	quest.0FD475E5254E3AD2.quest_desc: [
+		"&b루테늄&r을 얻는 것은 힘들었지만, 더 처리해 봅시다!"
+		""
+		"믿으세요, 이것은 가치가 있습니다!"
+	]
+	quest.0FD475E5254E3AD2.quest_subtitle: "7단계 후..."
+	quest.0FFF764AA07D6DFC.quest_desc: ["여기에 약간의 &9물&r을 &a프로그램 1&r로 사용하면 많은 &7증기&r를 얻을 수 있습니다"]
+	quest.100ADA8508F6502A.quest_desc: ["&c빨간색&r 유리 렌즈도 이것을 만들 수 있지만, 유리 렌즈를 만드는 것은 &bHV&r 레시피입니다"]
+	quest.1060C764347CC243.quest_desc: [
+		"이 과정에는 &6촉매&r가 필요합니다."
+		""
+		"&6촉매&r는 각 작업이 적절히 완료되도록 보장합니다. 또한, &b다중 블록의 컨트롤러&r 제작에도 사용됩니다."
+	]
+	quest.1060C764347CC243.quest_subtitle: "&c고양이가 필요합니다&r"
+	quest.1090A47B70EBF704.quest_desc: [
+		"확실히 비용이 조금 저렴해졌지만, 저티어 프로세서에 비하면 아직 약간 비싸네요."
+		""
+		"이 티어에서는 아직 2:1이지만, 다음 티어에서는 변화가 있을 거예요. &dLuV 프로세서&r가 더 저렴해질 거예요!"
+	]
+	quest.1090A47B70EBF704.quest_subtitle: "&dLuV"
+	quest.109E34AE0BE0F266.quest_subtitle: "망간의 영양 공급원"
+	quest.109E34AE0BE0F266.title: "그로슐러 광맥"
+	quest.10DF2125B647379E.quest_desc: ["약속하지만, 이건 만지거나 피부에 닿게 하고 싶지 않은 거예요..."]
+	quest.10DF2125B647379E.quest_subtitle: "만지지 마세요!"
+	quest.1194FF35ADAA9957.quest_desc: [
+		"그리고 256 암페어가 많다고 생각한다면, 액티브 트랜스포머로 다시 생각해 보세요."
+		""
+		"이것은 암페어 수로 최저 등급의 레이저 소스 해치입니다. 4096A 해치까지 있습니다. 그건 상당한 전력입니다!"
+	]
+	quest.1194FF35ADAA9957.quest_subtitle: "레이저를 가진 상어?"
+	quest.11AAA1DCB452DFFC.quest_subtitle: "대상"
+	quest.11D16434F78D2C2C.quest_desc: [
+		"추출기를 사용하면 다이오드를 만들기 위해 유리를 액체 상태로 얻을 수 있습니다"
+		""
+		"나중에 폴리에틸렌에 대해 다룰 것이므로 이 레시피를 업그레이드할 수 있음을 기억하세요!"
+	]
+	quest.11D16434F78D2C2C.quest_subtitle: "MV가 바로 코앞입니다!"
+	quest.11F7D3DDF5683EB3.quest_desc: [
+		"&b레이저&r와 특정 &b렌즈&r를 사용하여 &b웨이퍼&r에 다른 패턴을 새깁니다"
+		""
+		"자동화할 때 &b렌즈&r를 수동으로 교체할 필요가 없도록, 이것을 만드는 &b렌즈&r마다 하나씩 만드는 것을 추천합니다"
+	]
+	quest.1216BAFF021FED25.quest_desc: ["&b크리스탈 CPU&r는 이미 여러분의 처리 라인에서 잘 확립되어 있어야 합니다. 이것은 &b크리스탈 CPU&r가 위대함을 달성하기 위한 단 하나의 단계입니다!"]
+	quest.1216BAFF021FED25.quest_subtitle: "&b크리스탈 칩&r"
+	quest.124C2A904BF84254.quest_desc: [
+		"폴리염화비닐을 &e액체 고체화기&r로 시트로 만드세요"
+		""
+		"여기에 구리 포일과 황산을 추가하고 &e화학 반응기&r에서 반응시키면 플라스틱 회로기판 2개를 얻을 수 있습니다!"
+		""
+		"주의하세요, 이 레시피는 앞으로 한 번에 8개의 플라스틱 회로기판을 얻을 수 있도록 업그레이드될 예정입니다"
+	]
+	quest.12905D5778274DEE.quest_desc: [
+		"마침내 텅스텐강을 얻었습니다, 이제 IV 기계를 만들 수 있습니다!"
+		""
+		"이를 통해 EBF의 코일 업그레이드가 가능해집니다!"
+	]
+	quest.12B041E34F58FDD2.quest_desc: [
+		"드디어 목적지에 도달했군요. 당신은 염원하던 &l&1GregStar&r&r를 만들어냈습니다!"
+		""
+		"GregTech의 각 티어를 통해, 각 처리 라인을 마스터하고, 재료, 기계, 아이템을 획득한 성과의 집대성입니다."
+		""
+		"하지만, 해냈군요. GregStar를 만들어냈습니다!"
+		""
+		"아직 할 일이 많습니다. 마음을 다잡고, 지금까지 중 가장 큰 도전에 대비합시다! 말 그대로요."
+	]
+	quest.12B041E34F58FDD2.quest_subtitle: "마침내"
+	quest.12D84337AEB56002.quest_desc: [
+		"6 Tin dust, 3 Lead dust, and 1 Antimony dust all combine in a &eMixer&r on &aProgram 3&r to make 10 Soldering Alloy Dust"
+		""
+		"This will allow us to make circuits for less tin overall, as well as some items that require specifically soldering alloy!"
+		""
+		"You can use an &eExtractor&r on the dust to get it in liquid form"
+	]
+	quest.12F24C9C6D2AF887.quest_desc: ["&b산소&r 2 양동이와 &b페라이트 혼합 가루&r를 &e전기 용광로&r에서 반응시키면 냉각이 필요 없는 인곳이 생성됩니다!"]
+	quest.12F916CDC2FB7A79.quest_desc: [
+		"판이나 와이어를 만들기 위해 제작 그리드에서 생활하는 것보다 이들을 자동화하는 것이 더 좋습니다"
+		""
+		"&5Applied Energistics&r가 '대체품 사용'을 '네'로 설정하면 잘 처리할 수 있습니다"
+		"&e주의:&r 채널이 제한되어 있는 경우 다음 명령어로 채널 모드를 4배 또는 무한으로 설정하는 것을 고려해보세요 (서버에서 OP 권한이 필요하거나 싱글플레이어에서 치트가 활성화되어 있어야 합니다)"
+		"&o/ae2 channelmode x4&r"
+		"&o/ae2 channelmode infinite&r"
+		""
+		"&b리파인드 스토리지&r는 NBT 때문에 같은 도구를 두 번 사용하지 않아 이 점에서 어려움을 겪습니다"
+		""
+		"여기서의 대안으로, &aRFTools Crafter&r로 자동 제작을 설정할 수 있습니다"
+		""
+		"특히 유체를 다루기 시작할 때, 자동화는 매우 권장됩니다"
+		""
+		"&6LV+ 기계&r를 설정하여 패턴 제공자에 자동으로 출력할 수 있지만, GUI에서 '출력 면에서의 입력 허용' 설정을 전환하는 것을 잊지 마세요. 스팀 기계는 자동 출력이 불가능하므로, 시스템으로 돌려보내기 위해 무언가를 &c가져와야&r 합니다"
+	]
+	quest.130DDACA0E38A8E8.quest_desc: ["&b프로그램 3&r으로 통나무 16개를 태우면 중유가 생성됩니다"]
+	quest.13417E27790B9AB2.quest_desc: [
+		"이전에 대형 화학 반응기를 만들었지만, 그 버전은 병렬 제어 해치를 받아들일 수 있는 능력이 없었습니다."
+		""
+		"하지만 이 버전인 고급 대형 화학 반응기는 병렬 제어 해치를 받아들일 수 있고 여러 프로세스를 동시에 실행할 수 있습니다."
+		""
+		"이것은 화학 라인의 생산 방식을 바꿀 것입니다!"
+	]
+	quest.13417E27790B9AB2.quest_subtitle: "ALCR"
+	quest.139EEACD64B1D85E.quest_desc: ["이 &9방수 강철&r 인곳들은 다음 &b멀티블록&r을 완성하는 데 필요한 블록을 만들 수 있게 해줘요."]
+	quest.139EEACD64B1D85E.quest_subtitle: "강철이 원래 방수 아닌가요?"
+	quest.13BAD4B9C69117C6.quest_desc: [
+		"&0생 탄소 섬유&r를 만드는 방법은 여러 가지가 있습니다"
+		""
+		"한 가지 방법은 &69mB 에폭시&r와 4개의 &0탄소 가루&r를 &e오토클레이브&r로 처리하여 4개의 &0생 탄소 섬유&r를 얻는 것입니다"
+		""
+		"이 방법도 좋지만, &d9mB 폴리벤즈이미다졸&r과 8개의 &0탄소 가루&r를 사용하면 &216개&r나 얻을 수 있습니다!"
+	]
+	quest.14276334DCF898D6.title: "자철광 광맥"
+	quest.142D12B41C36D68A.quest_desc: [
+		"죄송합니다, 농담을 참을 수 없었어요."
+		""
+		"어쨌든, &b네트륨&r으로 도핑된 &b실리콘&r은 매우 효율적이고 고품질이며, 하나의 부울에서 많은 수확을 얻을 수 있습니다!"
+	]
+	quest.142D12B41C36D68A.quest_subtitle: "이것은 부울의 산이에요"
+	quest.143BF8A4944C471D.quest_desc: ["이제 가장 저렴한 LV 회로를 달성했습니다 - 축하합니다!"]
+	quest.143BF8A4944C471D.quest_subtitle: "그 어느 때보다 저렴합니다!"
+	quest.14C017569BECA2CE.quest_desc: [
+		"코발트 광석 가루는 코발트 광석 처리에서 얻을 수 있습니다"
+		""
+		"코발트 광석은 오버월드에서 -10에서 60 사이에서 채굴할 수 있습니다. 가르니어라이트, 니켈, 펜틀란다이트 광석과 섞여 있을 것입니다"
+	]
+	quest.1569CD190336F5F6.quest_desc: [
+		"중요한 &b회로 조립기&r를 잊을 수 없죠? 물론 이 &b멀티블록&r은 중요한 회로를 계속 만들 수 있도록 도와줄 거예요."
+		""
+		"이를 통해 공장을 계속 확장하고 후반부에 도달할 수 있어요!"
+	]
+	quest.1569CD190336F5F6.quest_subtitle: "&b어셈블러&r, 하지만 회로 포함!"
+	quest.15A1D6D05A785919.quest_desc: ["NOR &6논리 게이트&r를 사용하면 다른 모든 &6논리 게이트&r를 만들 수 있다는 걸 알고 계셨나요? 그래서 회로 제작에 많이 사용되는 거예요!"]
+	quest.16154B77454631F4.quest_desc: ["또 다른 날, &e레이저 조각기&r용 또 다른 렌즈"]
+	quest.16522A3A1E66C914.quest_desc: ["다시 한 번, &bEBF&r를 살펴보고 코일을 업그레이드합니다. 이는 &bEBF&r를 통해 금속과 합금을 처리하는 데 필요한 과정입니다."]
+	quest.16522A3A1E66C914.quest_subtitle: "&b트리늄 코일이 훌륭해요&r"
+	quest.16B44F78707E148E.quest_desc: ["필수는 아니지만, IV 분쇄기를 사용하면 셸도나이트 처리 속도가 빨라집니다. 이 처리 라인은 꽤 &n&l&2시간이 걸리기&r&r&r 때문이죠"]
+	quest.16B44F78707E148E.quest_subtitle: "광석이 늘어납니다! 야호! 분쇄기!"
+	quest.17148E654DD28A94.quest_desc: [
+		"안티모니 삼산화물은 나크 처리 라인에 필요합니다!"
+		""
+		"안티모니 처리 라인을 모두 GregTech 내에 구현하는 데 도전해보세요."
+	]
+	quest.17148E654DD28A94.quest_subtitle: "안티머니"
+	quest.17671346C7940CA8.quest_desc: ["차세대 CPU 웨이퍼예요. 이 미래적인 웨이퍼가 양자 시대를 열어갈 거예요!"]
+	quest.17671346C7940CA8.quest_subtitle: "당신은 큐비트를 몇 개 가지고 있나요?"
+	quest.176C06C7593C264E.quest_desc: ["4개의 대형 나쿠아드리아 배터리가 이 그렉스타 구성 요소에 필요한 아이템을 완성합니다"]
+	quest.176C06C7593C264E.quest_subtitle: "쿼드 배터리"
+	quest.17773F43631748A9.quest_desc: [
+		"ABS의 케이싱을 만들기 위해 몰리브덴 실리사이드가 필요할 거예요."
+		""
+		"이 가루는 EV 믹서로 쉽게 만들 수 있고, 그 후 EV와 칸탈 코일로 EBF에서 처리할 수 있어요."
+	]
+	quest.17773F43631748A9.quest_subtitle: "몰리브덴 실리사이드"
+	quest.17A935989A9505E1.quest_desc: [
+		"물과 삼산화황을 화학적으로 반응시켜 황산을 만듭니다"
+		""
+		"주방 싱크에 연결하여 디지털 저장 시스템에 무한한 물을 얻을 수 있습니다. 단, 추출만 설정하세요. 그렇지 않으면 삽입 시 유체가 무효화됩니다"
+	]
+	quest.17A935989A9505E1.quest_subtitle: "물만 추가하세요!"
+	quest.17BA6F1E5179DB8C.quest_desc: [
+		"&a드라이버&r는 제작 도구로, 기계나 커버의 특별한 설정에 사용됩니다"
+		""
+		"&a와이어 커터&r는 제작 도구로, 와이어나 케이블을 우클릭하면 다른 블록으로의 연결을 활성화하거나 비활성화할 수 있습니다"
+		""
+		"&a막자사발&r은 제작 도구로, 물건을 가루로 갈기 위해 사용됩니다"
+		""
+		"&a나이프&r도 제작 도구입니다..."
+		""
+		"&e소프트 망치&r는 우클릭으로 기계의 작동을 일시 정지하고 재개합니다"
+		""
+		"&e크로우바&r는 GT 기계에서 커버를 제거하는 데 사용할 수 있습니다"
+		""
+		"&e낫&r은 자동으로 작물을 파괴하고 재심을 할 수 있으며, 멋진 무기로도 사용할 수 있습니다!"
+		""
+		"&e플런저&r는 GT 기계에서 막힌 액체를 제거할 수 있습니다 &c&l[NYI]&r&r"
+		""
+		"&e해체 나이프&r는 암묵적으로 약탈 III을 가지고 있어, 초기 가죽에 유용합니다!"
+	]
+	quest.17BA6F1E5179DB8C.quest_subtitle: "결국에는 이것들이 무언가에 필요할 것입니다"
+	quest.17BA6F1E5179DB8C.title: "모든 도구!"
+	quest.17C2D1915C2D0B4C.quest_desc: [
+		"&e화학 반응&r으로 &d인듐 농축물&r과 &b알루미늄 가루&r를 반응시켜 &3인듐 가루의 작은 더미&r를 얻습니다"
+		""
+		"그 후, 수동으로 4개를 1개의 &3인듐 가루&r로 가공하거나, &e패커&r를 사용하여 &a프로그램 1&r로 자동화할 수 있습니다"
+	]
+	quest.1809493D8765E67A.quest_desc: ["이것들을 만들었다면, 이전 회로 레시피를 업데이트하여 일반 트랜지스터 대신 &e고급 트랜지스터&r를 사용하는 것을 잊지 마세요"]
+	quest.1812BF72305CFFCF.quest_desc: ["&e믹서&r에 알루미늄 가루, 철 가루, 크롬 가루를 함께 넣고 섞어봅시다!"]
+	quest.1828A4A9FE5EE87F.title: "UV 티어"
+	quest.187281092C0BC9CE.quest_desc: ["웨이퍼나 실리콘 블록은 잘라야 해요. 이 커터는 &d인그레이빙 레이저&r와 결합해 칩 재고를 유지해요!"]
+	quest.187281092C0BC9CE.quest_subtitle: "와플과 보울"
+	quest.1896B90F5FD66AFA.quest_desc: [
+		"&0생 탄소 섬유&r와 &6액체 글로우스톤&r, &bCPU 웨이퍼&r를 &e화학 반응&r시켜 &3나노 CPU 웨이퍼&r를 만드세요"
+		""
+		"&6글로우스톤 가루&r를 &e추출기&r로 처리하면 &6액체 글로우스톤&r이 만들어집니다"
+	]
+	quest.1906C5D1C80035E4.quest_desc: [
+		"이 기계를 사용하면 인곳을 쉽게 1장의 판으로 변환할 수 있습니다"
+		""
+		"판을 더 가공하여 포일로 변환할 수 있습니다"
+	]
+	quest.1906C5D1C80035E4.quest_subtitle: "더 저렴한 판"
+	quest.1957A39483E15508.quest_desc: [
+		"이전에 에틸렌 만드는 법을 다뤘으니 건너뛰겠습니다"
+		""
+		"에틸렌과 염소를 &e화학 반응기&r에서 결합하여 염화비닐을 만듭시다"
+	]
+	quest.19B70E2F329AED83.title: "LuV 티어"
+	quest.19BA973FECFA3B06.quest_desc: [
+		"&d라돈 가스&r를 얻는 주요 방법은 두 가지입니다"
+		""
+		"가장 좋은 방법(다른 생성물도 얻을 수 있기 때문에)은 &b더 엔드&r에서 &6HV&r &e가스 수집기&r를 사용하여 수집한 &e엔더 에어&r를 &a진공 냉동기&r로 &9액체 엔더 에어&r로 변환하고, &1IV&r &a증류탑&r으로 처리하여 라돈 가스를 얻는 것입니다"
+		""
+		"다른 방법은 &a대형 화학 반응기&r를 만들어 일반 &3공기&r와 우라늄 가루, 플루토늄 인곳을 반응시키는 것입니다 - 플루토늄은 회수할 수 있습니다!"
+	]
+	quest.19CD3E69746F2849.quest_desc: ["더 저렴한 EV 회로! 레시피 업데이트를 잊지 마세요!"]
+	quest.19DB4970B3D11C1B.quest_desc: [
+		"&bMV&r 회로, 최종 형태입니다!"
+		""
+		"&e주의:&r 이 가장 저렴한 레시피들은 아직 만들 수 없지만, IV에서 가능해집니다."
+	]
+	quest.1A000021C07943C4.quest_desc: ["만들어온 증기를 가져와서 EU로 변환합시다!"]
+	quest.1A000021C07943C4.quest_subtitle: "에너지가 없어도 괜찮아요"
+	quest.1A73520CB284217F.quest_desc: [
+		"드디어, &d고급 SMD 컴포넌트&r의 마지막 단계입니다"
+		""
+		"이제부터는 고급 SMD 컴포넌트를 사용하여 레시피를 만들어주세요. 더 비용 효율적이기 때문입니다"
+	]
+	quest.1AB86FD8776634D0.quest_desc: [
+		"맞아요, 이 장에서 &eEBF&r 코일 업그레이드가 두 개 있습니다!"
+		""
+		"이 코일들을 만들어 고속도강 S와 E 변형을 녹이고, 고급 SMD 컴포넌트를 만듭니다"
+		""
+		"&l&e주의:&r&r 고급 SMD 컴포넌트를 만드는 것은 나노프로세서를 만들기 위해 필수는 아닙니다"
+	]
+	quest.1ACD6672F72664D6.quest_desc: ["&b커터&r로 &b에메랄드 블록&r을 사용하여 &b에메랄드 판&r을 얻습니다"]
+	quest.1AE7E363AFDC976B.quest_desc: ["결국에는 증기에서 벤젠이나 고옥탄 가솔린을 생산하여 가스나 연소 발전기로 전환하고 싶어질 수 있습니다"]
+	quest.1AF005E292E409D1.quest_desc: ["그 판을 렌즈로 만들기 위해 &e선반&r으로 돌아갑니다"]
+	quest.1B64314492605E47.quest_desc: [
+		"&b64! 네, 64!&r"
+		""
+		"이 해치를 사용하면 멀티블록 구조에서 &b64&r개의 병렬 프로세스를 실행할 수 있습니다!"
+		""
+		"오버클로킹이 대단하다고 생각했다면, 이 멋진 것을 멀티블록에 부착해 보세요!"
+	]
+	quest.1B64314492605E47.quest_subtitle: "&b병렬 세계&r"
+	quest.1B691393463D3E0E.quest_desc: ["자화된 사마륨 긴 막대를 만들어요. 가는 와이어를 추가하면 진전이 보일 거예요!"]
+	quest.1B691393463D3E0E.quest_subtitle: "긴 막대, 좋아 보이네요."
+	quest.1BB1E43FFE3FD451.quest_desc: [
+		"이 &d촉매&r는 &6스타 포지&r에서 &6그렉스타&r를 만들기 위해 많이 필요할 것입니다."
+		""
+		"&b10 양동이&r를 준비해 주세요."
+	]
+	quest.1BB1E43FFE3FD451.quest_subtitle: "전조"
+	quest.1BD5B25B80EC0F97.quest_desc: ["에너지를 사용하여 &b자기 철봉&r도 만들 수 있습니다 - &c레드스톤&r을 절약하세요!"]
+	quest.1BD5B25B80EC0F97.quest_subtitle: "&b자화!&r"
+	quest.1BE2CB4684AF7DFB.quest_subtitle: "여기에는 다이아몬드가 숨겨져 있을 수 있습니다"
+	quest.1BE2CB4684AF7DFB.title: "흑연 광맥"
+	quest.1C1802ABF3EE3120.quest_desc: [
+		"엔더에서 원 알루미늄을 찾을 수 있고, 거의 모든 곳에서 원 알루미늄을 얻을 수 있어요!"
+		""
+		"대신에, 예를 들어 &6보크사이트&r를 &b전해조&r로 처리하여 알루미늄을 얻을 수도 있습니다"
+		""
+		"또한, 점토 라인 프로세스로 알루미늄을 수동적으로 생성할 수도 있습니다"
+	]
+	quest.1C1802ABF3EE3120.quest_subtitle: "그게 당신인가요, 알루미늄?"
+	quest.1C19DD6B3E34012E.quest_desc: ["&3염소&r와 &c메탄&r을 &a프로그램 1&r의 &e화학 반응기&r에서 반응시키면 &5클로로폼&r이 됩니다"]
+	quest.1D0B60026346A844.quest_desc: ["이리듐과 오스뮴을 섞으면 이 인곳이 만들어져요! 이 새로운 자원에는 많은 용도가 있어요. 여분을 가지고 있으면 편리할 거예요!"]
+	quest.1D0B60026346A844.quest_subtitle: "오스뮴을 강력하게 만들기"
+	quest.1D9194E89D14BA85.quest_desc: [
+		"폴리벤즈이미다졸은 내열성이 뛰어난 플라스틱의 일종입니다"
+		""
+		"ZPM 이상의 티어로 진행함에 따라 많은 용도로 사용하지만, 주요 용도는 고급 회로 부품 제조입니다!"
+	]
+	quest.1D9194E89D14BA85.quest_subtitle: "마침내 PBI"
+	quest.1DBF5A76DCDF5E49.quest_desc: ["상당한 양의 루리딧이 필요할 거예요. 라인을 수동적으로 만들어 안정적인 공급을 유지해요."]
+	quest.1DBF5A76DCDF5E49.quest_subtitle: "왠지 나쁜 예감이 들어요."
+	quest.1DDA5ADA11DF868F.quest_desc: ["이제 멀티블록 구조의 티어를 업그레이드할 수 있어요! EBF, VF, 크래커, LFD 등! 이것들은 더 빠르게 처리할 수 있고, &dLuV&r 티어 재료를 처리할 수 있어요! 자, 가봅시다!"]
+	quest.1DDA5ADA11DF868F.quest_subtitle: "드디어 LuV 에너지 해치가 등장했어요!"
+	quest.1DF42E30A24A9DEC.quest_desc: [
+		"강철 프레임을 플라스틱 시트로 덮고 콘크리트로 채워 굳히면 &b플라스크리트&r가 됩니다"
+		""
+		"클린룸의 모서리와 바닥은 &b플라스크리트&r여야 합니다"
+	]
+	quest.1DFD4712153C1A55.title: "서터스 석영 광맥"
+	quest.1E811D532BC593F2.quest_desc: ["브레드보드를 사용할 거라고 생각했습니다"]
+	quest.1E8BE8BDE142941D.quest_desc: ["ME 아이템 입력은 인터페이스와 비슷합니다. 멀티블록에 아이템을 연결하여 사용할 수 있는 2개의 라인이 있습니다."]
+	quest.1E8BE8BDE142941D.quest_subtitle: "ME 아이템 입력"
+	quest.1E8D496B1CC4F69B.quest_desc: [
+		"&e화학 반응&r으로 나트륨 가루와 칼륨 가루를 함께 넣어... 나트륨-칼륨을 얻으세요"
+		""
+		"&b칼륨 가루&r는 소금물에서 가스트의 눈물로 &e화학 반응기&r 레시피를 사용해 작은 더미를 만들어 얻을 수 있습니다"
+	]
+	quest.1F0A68DFAA19D5C7.quest_desc: ["일부 &b대형 멀티블록&r 구조는 그 블록을 만들기 위해 합금 블라스트 스멜터에 의존하지 않습니다. 위의 &b대형 멀티블록&r 구조의 블록들은 합금 블라스트 스멜터에 의존하지 않는 기계의 일부입니다."]
+	quest.1F0A68DFAA19D5C7.quest_subtitle: "ABS 없이 미끄러지기"
+	quest.1F442C8E82FB9EB8.quest_desc: ["유전학에서 &b돌연변이원&r은 보통 &bDNA&r이며, 생물의 유전 물질을 영구적으로 변경하는 물리적 또는 화학적 물질로, 자연적 배경 수준 이상의 빈도로 돌연변이를 증가시킵니다"]
+	quest.1F442C8E82FB9EB8.quest_subtitle: "&b확실히 TMNT...&r"
+	quest.1F733319E9F4DFE5.quest_desc: ["16x 마그네슘 디보라이드 와이어 - 수량 8"]
+	quest.1F733319E9F4DFE5.quest_subtitle: "MV 초전도체"
+	quest.1F92F7314DF3C3E2.quest_desc: [
+		"&b보석 판&r을 넣어 &b보석 렌즈&r를 얻으세요"
+		""
+		"아직 &b막대&r도 만듭니다!"
+	]
+	quest.1FEB1ECDDDD8AD0E.quest_desc: ["액체 철 플라즈마는 이상한 자원처럼 보일 수 있지만, 당신이 만들 것에는 필요합니다."]
+	quest.1FEB1ECDDDD8AD0E.quest_subtitle: "모든"
+	quest.1FFAF26888F6EF00.quest_desc: [
+		"이 케이싱들은 &b대형 아크로 멀티블록&r 구조를 형성하는 데 사용돼요."
+		""
+		"다행히도 이 케이싱들은 합금 블라스트 스멜터가 필요 없이 만들 수 있는 재료로 만들어져요. 순조로운 항해예요!"
+	]
+	quest.1FFAF26888F6EF00.quest_subtitle: "고온 케이싱... 소시지가 될까요?"
+	quest.2036ED4A823C1456.quest_desc: [
+		"더 필요합니다. 많은 나쿠아다가 필요합니다."
+		""
+		"적어도 나쿠아다 코일을 가동하여 EBF에서 더 많은 금속을 처리하는 데 도움이 될 것입니다!"
+	]
+	quest.2036ED4A823C1456.quest_subtitle: "더 많은 나쿠아다가 필요해요"
+	quest.204D670BDAB0496A.title: "ZPM 티어"
+	quest.204EDA5F8B1C7580.quest_desc: [
+		"어셈블리 라인은 상위 티어의 특정 부품을 만들기 위해 필요해요. 몇 개의 어셈블리 라인을 만들어 병렬로 작동시킬 수도 있을 거예요."
+		""
+		"이제부터 공장이 점점 더 충실해질 거예요!"
+	]
+	quest.204EDA5F8B1C7580.quest_subtitle: "GregTech 여러분, 모이세요!!"
+	quest.20A01B6A6B1177CB.quest_desc: [
+		"티어가 올라갈 때마다 처리 시간이 줄어듭니다. 하지만 안심할 시간은 없습니다. 새로운 자원을 처리하려면 더 많은 발전이 필요합니다. 계속 노력해 주세요!"
+		""
+		"여러분은 훌륭한 일을 하고 있습니다!!"
+	]
+	quest.20A01B6A6B1177CB.quest_subtitle: "넌 날 돌려... 그래, 올 줄 알았지..."
+	quest.20A0A574F51EEF74.quest_desc: [
+		"에메랄드/루비 렌즈와 같은 과정으로 &9사파이어 렌즈&r를 만드세요"
+		""
+		"{\"clickEvent\": {\"action\": \"change_page\", \"value\": \"4DD7F3508B757EF0\"}, \"text\": \"How to make the gem plate\", \"color\": \"green\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here for a reminder\" } }}"
+		""
+		"{\"clickEvent\": {\"action\": \"change_page\", \"value\": \"26004F997C758011\"}, \"text\": \"How to make the gem lens\", \"color\": \"yellow\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here for a reminder\" } }}"
+	]
+	quest.217FA79B7D4C56CD.quest_desc: ["이것은 상당한 양의 &6뉴토늄&r이지만, 다른 방법으로 합성할 수 있을지도 모릅니다."]
+	quest.217FA79B7D4C56CD.quest_subtitle: "&c대량의 뉴트로늄&r"
+	quest.219C80DAFBAB36B8.quest_desc: [
+		"모든 LV 기계는 이 회로 다음에 있습니다"
+		""
+		"다음 장에서도 유용하므로 스팀 기계를 가까이 두는 것이 좋습니다"
+		""
+		"왜 이 퀘스트가 32개의 회로를 필요로 하는지 궁금하신가요? 이는 배치 제작이라는 개념 때문입니다 - 하나만 만드는 것보다 한 번에 많이 만드는 것이 앞으로의 제작을 위해 더 좋습니다"
+		""
+		"진행하면서 자동화하고 있다면 잘하고 있습니다! ME 리퀘스터/AE2용 리퀘스터/RS와 같은 것을 사용하여 시스템 내에 지정된 수의 아이템을 유지할 수 있습니다 - 고무나 점착성 수지 등 다양한 제작 구성 요소에 대해 이를 수행하고 장을 진행하면서 추가하는 것이 좋습니다"
+	]
+	quest.219C80DAFBAB36B8.quest_subtitle: "스팀의 최종 보스"
+	quest.225F77308C834EA8.quest_desc: [
+		"Have you been &eElectrolyzing&r &9Salt Water&r? It is a great source of Chlorine Gas, which comes in handy especially with making Dichlorobenzene, and as a byproduct you'll get this &3Sodium Hydroxide Dust&r"
+		""
+		"You can then &eChemical React&r the Sodium Hydroxide Dust with your Dichlorobenzene to create &6Phenol&r!"
+	]
+	quest.228D1C880563CCBB.quest_desc: [
+		"아, 이것은 저를 옛날로 돌아가게 하네요, 마치 우리가 증기 시대로 돌아간 것 같아요"
+		""
+		"이것은 그 보일러보다 더 많은 증기를 얻을 수 있습니다"
+	]
+	quest.22AC248B6BB88486.quest_desc: [
+		"화합물을 다른 물질로 증류합니다 - 사용 가능한 레시피에는 프로그램된 &b회로 설정&r에 주의하세요"
+		""
+		"&b증류탑&r도 있지만, 그것에 대해서는 나중에 자세히 설명하겠습니다"
+	]
+	quest.22DB72BE40115A95.quest_desc: [
+		"&d대형 아크로 멀티블록 구조&r. 이 구조는 어닐링 구리나 강화 유리 제조, 또는 더 이상 필요 없는 기계에서 자원 회수 등에 사용하던 아크로의 대형 버전이에요."
+		""
+		"이제 &b병렬화 블록&r을 추가할 수 있고, 많은 레시피를 병렬로 실행해 처리 시간을 단축할 수 있어요!"
+	]
+	quest.22DB72BE40115A95.quest_subtitle: "&bLAF&r를 자주 사용해요!"
+	quest.2341D611975C58AF.quest_desc: [
+		"우리의 첫 번째 &b커버&r입니다! &b커버&r는 기계의 동작을 다양한 방식으로 변경하지만, 그 모든 것에 대해 설명하기에는 이곳이 적절하지 않습니다"
+		""
+		"&a로봇 팔&r &b커버&r를 사용하면 기본적으로 아이템을 기계로 내보내거나(또는 가져올 수) 있습니다. 이 경우, 이전의 버퍼 상자/통을 사용하여 특히 &b섬록암 가루&r를 가져올 수 있습니다"
+		""
+		"왜 이것이 &bLV&r인데 &bMV&r 시기에 있는 걸까요? 그것은 만들기가 저렴하기 때문이며, &b커버&r는 전압 차이에도 불구하고 폭발하지 않습니다"
+	]
+	quest.2341D611975C58AF.quest_subtitle: "&b자동 가져오기&r? 네, 부탁드립니다"
+	quest.238CC42F61006CE9.quest_desc: ["이제 초전도체, 나쿠아다 합금, 트리늄, 유로퓸의 인곳을 만들 수 있습니다!"]
+	quest.238CC42F61006CE9.quest_subtitle: "더 많은 열이 필요해요!"
+	quest.239E32216382AA5D.quest_desc: [
+		"드디어 &b나노프로세서 레벨&r에서 &bHV 회로&r가 해제됩니다!"
+		""
+		"물론, 기술적으로는 고급 SMD 컴포넌트를 사용하지 않고도 만들 수 있었지만, 그렇게 하면 재미가 없겠죠?"
+	]
+	quest.23B55A8C7D6482FF.quest_desc: [
+		"도구를 가지고 유지보수 해치를 열어 문제를 해결합시다!"
+		""
+		"적절한 도구를 사용하여 유지보수 해치를 클릭하면 모든 문제를 해결할 수 있습니다"
+		""
+		"어떤 도구를 사용해야 하는지는 유지보수 해치의 GUI를 열면 오른쪽에 작은 렌치 아이콘이 떠 있습니다. 그것에 마우스를 올리면 알려줍니다"
+		""
+		"이것이 완료되면 새로운 EBF를 사용할 수 있게 됩니다!"
+		""
+		"문제가 다시 발생할 수 있지만 자주 발생하지 않으며 수정은 쉽습니다"
+	]
+	quest.23B55A8C7D6482FF.quest_subtitle: "네, 그것은 고장났습니다"
+	quest.23B9FE196A09B587.quest_desc: [
+		"이것을 기다리던 순간이 있었습니다."
+		""
+		"하지만 이것으로 LuV 티어의 회로 조립기가 더욱 가치있게 됩니다!"
+		""
+		"그리고 이제 다음 티어의 회로를 만들 수 있습니다! 진보라고 할 수 있겠죠?"
+	]
+	quest.23B9FE196A09B587.quest_subtitle: "회로가 넘쳐납니다!"
+	quest.244220A5D9F4C702.quest_desc: ["혹시 모르니까, 3청크 간격입니다"]
+	quest.2462AE2029F3C8E8.quest_desc: [
+		"삼산화물을 삼플루오린화물로 변환합니다."
+		""
+		"나크 라인에 필요한 촉매제에 가까워지고 있습니다."
+	]
+	quest.2462AE2029F3C8E8.quest_subtitle: "삼플루오린화물"
+	quest.246882DD125868EC.quest_desc: [
+		"이것은 &bMV&r 시대의 &bLV&r 기계지만, 믿으세요, 이것은 &bMV&r 회로를 만들 가치가 있습니다"
+		""
+		"&b회로 조립기&r로 회로를 만들면 더 저렴해지고, 많은 회로가 필요할 거예요"
+	]
+	quest.246882DD125868EC.quest_subtitle: "더 저렴한 회로!"
+	quest.246DC099F4457712.quest_subtitle: "청금석과 함께 이것들을 찾아보세요"
+	quest.246DC099F4457712.title: "청금석 광맥"
+	quest.2483DD28AC6E7EA2.quest_desc: [
+		"&eChemical React&r Chlorobenzene with the Nitration Mixture to make &2Nitrochlorobenzene&r"
+		""
+		"You'll also get &6Diluted Sulfuric Acid&r, which you can &eDistill&r back into full strength Sulfuric Acid"
+	]
+	quest.24E3CB198F73524A.quest_desc: [
+		"약간의 산소와 전기로 구리를 어닐링할 수 있습니다"
+		""
+		"이를 통해 오래된 기계를 가루가 아닌 인곳 형태로 분해할 수도 있습니다"
+	]
+	quest.24E3CB198F73524A.quest_subtitle: "아크 전기!"
+	quest.2555BA914C466B5C.quest_desc: ["이 판들이 얼마나 중요한지 이미 아실 겁니다. 하지만 아시다시피, 큰 이익을 가져다줍니다."]
+	quest.2555BA914C466B5C.quest_subtitle: "최고의 케이싱"
+	quest.2586C2C9D1EFB2DC.quest_desc: [
+		"모든 멀티블록을 ME 시스템에 연결하려면 많은 인터페이스가 필요합니다. 자원을 조작하기 위한 커버가 필요하고, 그것이 복잡해질 수 있습니다."
+		""
+		"하지만 걱정하지 마세요. 이 해치와 버스들이 상상도 못한 방식으로 멀티블록을 효율화하는 데 도움이 될 거예요! ME 기능이 통합된 것을 상상해 보세요!"
+		""
+		"바로 여기 있습니다! 그리고 그것들은 멀티블록이 활용할 수 있는 놀라운 도구입니다! 프로그래밍 가능한 칩도 있어서 특정 프로세스 라인을 위해 ME 해치/버스를 지정할 수 있습니다!"
+	]
+	quest.2586C2C9D1EFB2DC.quest_subtitle: "멀티블록용 ME 해치"
+	quest.2586C2C9D1EFB2DC.title: "ME 버스와 해치"
+	quest.25DBFE887B041E94.quest_desc: [
+		"분쇄기 -> 광석 세척기 -> 열 원심분리기 -> 분쇄기"
+		""
+		"이것은 광석 처리의 한 가지 설정입니다. 다른 가능한 설정은 JEI에서 확인할 수 있습니다!"
+		""
+		"이 설정을 HV로 구축하면 많은 부산물을 얻을 수 있습니다"
+		""
+		"부산물은 후반 레시피에서 자주 사용되므로 HV에서 다시 방문하여 저장해 두는 것을 잊지 마세요!"
+		""
+		"이 설정을 자동화하는 방법은 많으므로 독자의 과제로 남겨두겠습니다"
+		""
+		"[ \"\", { \"text\": \"Note: \", \"color\":\"#FFFF55\", \"bold\":\"true\" }, { \"text\": \"The Ore Washer requires \" }, { \"text\": \"water\", \"color\":\"#5555FF\" }, { \"text\": \" and a \" }, { \"text\":\"Programmed Circuit\", \"color\":\"#FFAA00\", \"clickEvent\": { \"action\":\"change_page\", \"value\":\"4875FB6628C1FCDC\" }, \"underlined\":\"true\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here for a reminder\" } } }, { \"text\":\" setting to run\" } ]"
+	]
+	quest.25DBFE887B041E94.quest_subtitle: "기초"
+	quest.25DBFE887B041E94.title: "광석 처리"
+	quest.26004F997C758011.quest_desc: ["&b선반&r으로 &b루비 판&r 1개를 가공하면 &b루비 렌즈&r가 만들어집니다"]
+	quest.262AE37765B139BE.quest_desc: [
+		"기억하세요: 오버클로킹하면 레시피 처리 속도가 2배가 되지만, 전력 소비는 4배가 돼요"
+		""
+		"기계를 교체하기 시작하면 오래된 기계를 분쇄기에 넣어 크래프팅에 사용한 재료의 일부를 회수할 수 있어요"
+	]
+	quest.262AE37765B139BE.quest_subtitle: "&bMV&r에 오신 것을 환영합니다!"
+	quest.26D1F1ECF66194E6.quest_desc: [
+		"&e32x 실리콘 가루&r와 &a작은 갈륨 비소 가루 더미&r를 &b프로그램 2&r로 섞으면 이것이 만들어집니다"
+		""
+		"&b프로그램 1&r의 레시피 전용 새로운 &bEBF&r를 만드는 것이 가치가 있을 수 있습니다"
+	]
+	quest.273DC98BA2785BD6.quest_desc: ["이 두 가지로 멀티블록을 IV까지 업그레이드할 수 있습니다!"]
+	quest.277464BE6F96C082.quest_desc: [
+		"병렬 해치는 특히 대규모 멀티블록 구조를 진행하는 데 매우 중요해질 거예요!"
+		""
+		"첫 번째 티어에서는 4개의 프로세스를 동시에 실행할 수 있지만, 티어를 올리면 결국 256개의 프로세스를 동시에 실행할 수 있게 돼요!!"
+		""
+		"이는 프로세싱 어레이보다 훨씬 더 많은 가치를 제공하며, 단일 블록 기계보다 이러한 멀티블록에 가치를 부여합니다!"
+		""
+		"&l&e주의:&r&r 이 해치는 이러한 멀티블록 기계를 구축하는 데 실제로 필요하지 않습니다"
+	]
+	quest.277464BE6F96C082.quest_subtitle: "병렬 프로세스 만세"
+	quest.278252472B5B94D4.quest_desc: [
+		"&3액티브 트랜스포머&r는 그레그테크 기반 인프라에서 EU를 전송하는 가장 효율적인 방법입니다."
+		""
+		"작동하기 위한 몇 가지 규칙이 있습니다."
+		"1.) 파이프/레이저는 직선으로만 이동할 수 있습니다. 다른 &3액티브 트랜스포머&r를 사용하여 레이저를 다른 방향으로 굴절시킬 수 있습니다."
+		"2.) 파이프는 &0&l작동하기 위해 색칠되어야 합니다&r&r. 이는 그레그테크의 스프레이 캔을 사용하여 달성됩니다."
+	]
+	quest.278252472B5B94D4.quest_subtitle: "프리킨 레이저"
+	quest.279BC6FAF7827738.quest_desc: ["이제 이것들을 2개씩 얻지만, 다음 티어에서 조금 더 진보하면 크래프팅 아이템 세트마다 4개의 IV 프로세서를 얻을 수 있습니다! 가치가 있죠!"]
+	quest.279BC6FAF7827738.quest_subtitle: "&1IV"
+	quest.27E9F48972741701.title: "자철광 광맥"
+	quest.288DFEBCEFC6EEC6.title: "HV 티어"
+	quest.28B1787B61BB214B.quest_desc: ["IV 티어의 에폭시를 사용해서 다음 티어의 프로세서를 강화해요!"]
+	quest.28B1787B61BB214B.quest_subtitle: "에폭시의 용도가 많아요!"
+	quest.28EB26056EF18C5F.quest_desc: [
+		"듀라늄이라는 이름에서 알 수 있듯이, 이 원소가 내구성이 있기를 기대합니다."
+		""
+		"어쨌든, 이것을 티타늄과 섞어야 해요. 그 결과 얻어지는 재료는 매우 강력할 거예요!"
+	]
+	quest.28EB26056EF18C5F.quest_subtitle: "내구성?"
+	quest.28F49121DEB0000A.quest_desc: ["이 원소는 이상합니다. 건조한 기후에서는 부식에 매우 저항적이지만 습한 기후에서는 그렇지 않습니다."]
+	quest.28F49121DEB0000A.quest_subtitle: "액체 루테튬"
+	quest.29417616D8F673D5.quest_desc: ["앞으로는 많은 혼합 금속과 합금을 ABS로 만들어야 해요. 액체 상태로 진공 냉동기를 통과시켜 인곳 형태로 인곳을 만들어요. 다음 퀘스트에서 언급되는 멀티블록 구조는 모두 ABS로 만들어야 하는 금속을 이용하는 지원 블록을 가지고 있어요. 지금 최소한 하나의 합금 용광로를 만드는 것이 유리할 거예요."]
+	quest.29417616D8F673D5.quest_subtitle: "안티락 브레이크 시스템, 시작!"
+	quest.2943989C642F93AE.quest_desc: ["마침내! 한 번의 크래프팅으로 2개의 LuV 프로세서를 만드는 레시피가 생겼습니다! 가봅시다!"]
+	quest.2943989C642F93AE.quest_subtitle: "&dLuV"
+	quest.29706E3681616E41.quest_desc: [
+		"LuV 티어의 와이어 선택지는 암페어 손실 측면에서 좋지 않습니다."
+		""
+		"따라서 고무로 덮을 필요가 없고 암페어 손실도 없는 초전도 케이블을 사용하는 것이 좋습니다."
+	]
+	quest.29706E3681616E41.quest_subtitle: "많은 다양한 가루입니다!"
+	quest.29BDF6CA8FAAC390.quest_desc: ["아, 이런 말이 나올 줄 알았어요. 물론 &b원심분리기&r에 대해 '&d당신은 나를 빙글빙글 돌려...&r'라는 문구를 추가할 거예요! 누가 그러지 않겠어요?!?!"]
+	quest.29BDF6CA8FAAC390.quest_subtitle: "빙글빙글 돌아요~ 베이비..."
+	quest.29CD5C0A253425D5.quest_desc: ["멀티블록 구조가 &dLuV&r 티어의 에너지를 사용할 수 있게 되었어요. 하지만 한 걸음 더 나아가 &4ZPM&r 티어의 파워를 주는 건 어떨까요?"]
+	quest.29CD5C0A253425D5.quest_subtitle: "어떠세요, &dLuV&r 에너지 해치를 4배로 해볼까요?"
+	quest.2A26032DC9C8CFD6.quest_desc: [
+		"와이어밀을 사용하면 인곳을 2개의 1x 와이어로 변환할 수 있습니다"
+		""
+		"이를 통해 더 저렴한 가는 와이어 레시피가 해제됩니다"
+	]
+	quest.2A26032DC9C8CFD6.quest_subtitle: "더 저렴한 와이어"
+	quest.2A2ED3B4BE8C7E67.title: "사면구리 광맥"
+	quest.2A32CA82627E5FA7.quest_desc: [
+		"&2글리세롤&r과 &7염산&r을 &e화학 반응기&r에서 반응시키면 &c에피클로로히드린&r이 만들어집니다"
+		""
+		"알릴 염화물과 차아염소산을 사용한 대체 레시피도 있으니, 그 방법을 선택할 수도 있습니다"
+	]
+	quest.2A54256CA9A23BB3.quest_subtitle: "윤활유를 만드는 데 도움이 됩니다"
+	quest.2A54256CA9A23BB3.title: "활석 광맥"
+	quest.2AB457E29360E3B8.quest_desc: [
+		"방금 만든 그 &b가루&r를 &b전기 용광로&r에 넣어 &b뜨거운 실리콘&r을 얻으세요!"
+		""
+		"&b뜨거운 인곳&r을 들면 데미지를 입지만, 이 퀘스트를 위해서는 들어야 합니다. 제가 약간 나쁘기 때문이죠"
+		""
+		"이 경우, &b화학 배스&r로 냉각해야 합니다"
+	]
+	quest.2AB457E29360E3B8.quest_subtitle: "뜨거운 감자"
+	quest.2ACB94B77EF072EB.quest_desc: ["마침내 &dLuV&r의 시대가 왔습니다 - 축하합니다!"]
+	quest.2AEDB489A017AAF9.quest_desc: ["이것에는 더 많은 증기가 필요합니다! 이제 새로운 보일러를 만들 때가 된 것 같네요"]
+	quest.2AEDB489A017AAF9.quest_subtitle: "전속력 전진!"
+	quest.2B5733BDAF83B2D4.title: "규암 광맥"
+	quest.2B8E66760514BE77.quest_desc: [
+		"UV 초전도체 와이어가 완성되었습니다! 많은 다른 컴포넌트를 만드는 데 사용되지만, 진행하기 위해서는 필요합니다."
+		""
+		"더 많은 와이어... 좋아요."
+	]
+	quest.2B8E66760514BE77.quest_subtitle: "UV 초전도체"
+	quest.2B9BA85662BF637C.quest_desc: ["조각된 &b웨이퍼&r는 적절한 크기로 잘라야 하므로 다시 &b커터&r로 돌아갑니다!"]
+	quest.2BE364CCE684AD45.quest_desc: ["멀티블록을 IV로 가동하기 위한 원스톱 솔루션입니다!"]
+	quest.2BE4B6F1CCAA36AC.quest_desc: ["믹서는 여러 재료를 가져와 새로운 재료로 섞습니다. 이는 고품질 강철이나 금속 혼합물에 매우 유용합니다"]
+	quest.2BE754C8D2C0C76E.quest_desc: [
+		"HV 회로의 최종 형태이지만 아직 비용 효율성이 최고는 아닙니다"
+		""
+		"지금은 이것들을 사용하여 LuV까지의 상위 회로를 만듭니다!"
+	]
+	quest.2C28217E1131A63A.quest_desc: [
+		"축하합니다!"
+		""
+		"고급 &b통합 회로&r를 사용하여 &6고전압&r에 성공적으로 도달했습니다!"
+		""
+		"기본 &b전자 회로&r나 양호한 &b전자 회로&r의 오래된 레시피를 버리고 그것들의 통합 버전으로 대체할 수 있습니다"
+	]
+	quest.2C28217E1131A63A.quest_subtitle: "새로운 시대"
+	quest.2C28217E1131A63A.title: "고급 &b통합 회로&r"
+	quest.2C9DDB3AAA30E02A.quest_desc: [
+		"다음 섹션에서는 많은 마이크로유니버스 촉매제를 만들어야 합니다."
+		""
+		"이 컴포넌트는 스타 매터 플라즈마를 사용하여 촉매제를 만듭니다."
+		""
+		"지금 당장 만들 필요는 없지만, 16배의 촉매제를 만들기 위해 많은 스타 매터 플라즈마가 필요하므로 매우 유용할 것입니다."
+	]
+	quest.2C9DDB3AAA30E02A.quest_subtitle: "지금 시작하세요"
+	quest.2CC2E23077A0509F.quest_desc: [
+		"이전에는 한 번에 &c32개의 SMD 저항&r을 만들 수 있었지만, 이제는 &c16개의 고급 SMD 저항&r으로 줄어들었습니다"
+		""
+		"이것이 정말로 향상된 것일까요? &a네!&r 주로 고급 SMD 저항을 더 적게 사용하기 위해서입니다. 하지만 일반 저항을 영원히 사용할 수는 없겠죠..."
+	]
+	quest.2CC82170BCE61940.quest_desc: ["&eEBF&r를 &a프로그램 1&r로 설정하지 않았는지 다시 확인해주세요. 그렇지 않으면 &b실리콘 가루&r가 인곳으로 조리되기 시작할 수 있습니다"]
+	quest.2D3A6B7907FDB9B1.quest_desc: ["이 연쇄 반응의 마지막 &e화학 반응&r으로 염원하던 &d라미네이트 유리&r를 얻을 수 있습니다"]
+	quest.2D65DC315CCC60C8.quest_desc: [
+		"트리늄 황화물은 Naq 라인 처리의 부산물이지만, 매우 필요한 부산물이며 대량으로 사용됩니다."
+		""
+		"이전에 언급했듯이, 처리 라인을 수동화하는 방법을 찾아야 합니다. 솔직히 이 단계에서는 모든 것이 수동화되어야 합니다."
+	]
+	quest.2D65DC315CCC60C8.quest_subtitle: "부산물"
+	quest.2DDA8AC73C2D50B4.quest_desc: [
+		"스티렌 + 부타디엔 + 산소 또는 공기를 &e화학 반응기&r에서 반응시켜 최고급 고무의 원료 가루를 얻으세요"
+		""
+		"여기서는 공기보다 산소를 사용하는 것이 좋습니다. 그렇게 하면 더 많이 얻을 수 있습니다"
+	]
+	quest.2E2B6921723681C7.quest_desc: [
+		"운이 좋다면 원심분리기로 직접 비소로 변환할 수 있는 레알가를 찾을 수 있을 것입니다"
+		""
+		"코발트 광석은 MV에서 직접 전기분해하여 비소를 얻을 수 있지만, 삼산화비소 가루를 만들어 그것을 전기분해하는 것이 코발트 광석에서 더 많은 비소를 얻을 수 있습니다"
+	]
+	quest.2E47C92E3E8D826A.quest_desc: [
+		"&c&l멈추세요! 계속 진행하지 마세요! $200을 받지 마세요!&r&r"
+		""
+		"이 장의 다른 퀘스트를 모두 완료하셨나요?"
+		""
+		"아, 완료하셨나요?"
+		""
+		"잘 하셨습니다, 그럼 계속 진행하세요!"
+	]
+	quest.2E47C92E3E8D826A.quest_subtitle: "IV로 나아가자!"
+	quest.2E5EF984B9CE0CB9.quest_desc: ["올인원, 대용량 배터리, 넓은 범위의 광석/유체 탐색기"]
+	quest.2E7E1278D9796141.quest_desc: ["섬유 강화 회로 기판은 양자 프로세서와 그 열을 지탱할 만큼 강력해요!"]
+	quest.2E7E1278D9796141.quest_subtitle: "이게 바로 강력한 회로 기판이에요!"
+	quest.2EA74A823D55D472.quest_subtitle: "메인프레임은 어디에 있나요?"
+	quest.2EE52FD7129D3D87.quest_desc: [
+		"이리듐 광석은 정말 매우 희귀해서 아직 발견하지 못했다고 해도 놀랍지 않습니다"
+		""
+		"그래서 &6PlatLine™&r을 사용해 이리듐을 얻는 작업에 착수해 봅시다"
+	]
+	quest.2EEEA951011D523D.title: "벤토나이트 광맥"
+	quest.2F1DF3971B75E63C.quest_desc: ["&l&6주의&r: 각 에너지 해치는 2암페어를 받아들일 수 있습니다. 따라서 멀티블록에 두 개의 에너지 해치를 설치하면 &dLuV&r까지 티어업이 가능합니다!"]
+	quest.2F2B9938B63A7029.quest_desc: ["몇 개의 원시 크리스탈 칩을 얻었다면, 그것을 EBF에서 에메랄드 플레이트와 함께 실행하여 크리스탈 CPU를 얻으세요!"]
+	quest.2F2B9938B63A7029.quest_subtitle: "열을 가할 시간"
+	quest.2F4258088CBFC399.quest_subtitle: "미스터 퓨전을 얻자!"
+	quest.2FDACD6F153D5B64.quest_desc: ["셸도나이트를 처리하고 정화하면 백금족 슬러지를 최대한 얻을 수 있습니다. 이 슬러지에는 진행에 필요한 자원이 포함되어 있습니다."]
+	quest.2FDACD6F153D5B64.quest_subtitle: "셸든 친구가 밤에 클럽에 갔어요."
+	quest.303A3AFA49DAC64F.quest_desc: ["이제 우리의 멀티블록에 새로운 티어의 파워를 가져올 수 있습니다!"]
+	quest.303A3AFA49DAC64F.quest_subtitle: "더 많은 파워!"
+	quest.305696A8BCB74EB0.title: "저전압 시대"
+	quest.307F92868E0F4EB3.quest_desc: ["&a바이오매스&r는 &e에탄올&r이나 &e메탄올&r 생산 등 많은 용도에 유용합니다"]
+	quest.308D5AC7562E09BA.quest_desc: [
+		"&bZeron 100&r은 롤드 얼로이즈(이전의 위어 머티리얼즈)에 의해 개발된 초이중상 스테인리스강이에요. 이 합금은 우수한 내식성과 높은 강도를 겸비하고 있어요."
+		""
+		"보통 25%의 크롬과 7%의 니켈, 3.6%의 몰리브덴을 포함하며, 구리와 텅스텐의 첨가물이 있어요. &bZeron 100&r은 50-50의 오스테나이트-페라이트 구조를 가지고 있어요."
+		""
+		"또한, 표준 300 시리즈 스테인리스강보다 염소 피팅, 틈새 부식, 응력 부식 균열에 대한 저항성이 높아요."
+	]
+	quest.308D5AC7562E09BA.quest_subtitle: "저항성 있는 스테인리스강"
+	quest.30954ADF34DB05A7.quest_desc: [
+		"다시 한 번 매우 복잡한 합금을 방문합니다."
+		""
+		"다른 복잡한 합금들과 마찬가지로 이것도 매우 유익하지만 복잡합니다. 이 합금도 예외는 아닙니다."
+	]
+	quest.30954ADF34DB05A7.quest_subtitle: "복잡한 합금"
+	quest.30DA40DA0CEB05A0.quest_desc: ["나무 통나무를 분쇄하면 통나무 하나당 많은 나무 가루를 얻을 수 있습니다"]
+	quest.30F16A6BD3C7F4FC.title: "주석석 광맥"
+	quest.313AA0A45CD2BBB9.quest_desc: ["단조 철을 만들려면 철 덩어리를 단조 철 덩어리로 용해해야 합니다"]
+	quest.318B71954A49DC27.quest_desc: [
+		"&l&1IV 티어&r&r는 새로운 시대를 열었어요. 이제부터의 프로세스는 깊이와 다양성이 증가하고, 이전 티어에서 사용하던 주요 기계의 멀티블록 버전이 존재해요."
+		""
+		"&e&l주의:&r&r 당장은 필요하지 않지만, 이 멀티블록들을 활용하는 것을 고려하면 현재의 처리 속도가 향상될 거예요."
+	]
+	quest.318B71954A49DC27.quest_subtitle: "규모 확대"
+	quest.318B71954A49DC27.title: "대형 멀티블록"
+	quest.319D3A14D62225BC.quest_desc: [
+		"&bHASTELLOY C276&r은 가장 다목적인 내식성 합금으로 여겨지는 니켈-크롬-몰리브덴 단조 합금입니다."
+		""
+		"이 합금은 용접 열영향부에서 입계 석출물 형성에 대한 내성이 있어 대부분의 화학 공정 응용 분야에서 용접 상태로 사용하기에 적합합니다."
+		""
+		"C-276 합금은 또한 1900°F까지의 산화 환경에 대해 우수한 내성을 가지며 광범위한 화학 환경에 대해 예외적인 내성을 가집니다."
+	]
+	quest.319D3A14D62225BC.quest_subtitle: "미친 내식성!"
+	quest.320A70BC50ED456F.quest_desc: [
+		"네오디뮴을 위해 처리 라인에서 많은 희토류를 가지고 있을 거예요. 이걸로 사마륨을 얻을 수 있어요."
+		""
+		"만약 네오디뮴 생산을 자동화하지 않았다면, 지금 당장 시작해야 해요. 희토류에서 얻을 수 있는 사마륨의 양을 보면 그 중요성을 알 수 있을 거예요."
+	]
+	quest.320A70BC50ED456F.quest_subtitle: "희토류는 정말 귀중해요"
+	quest.322FD8BB46FB653C.quest_desc: [
+		"물론, 우리가 모든 레시피에서 사용하는 그 &b자기 막대&r를 대량으로 만들기 위한 대형 방식이 필요해요!"
+		""
+		"이 기계에 모든 걸 맡겨요!"
+	]
+	quest.322FD8BB46FB653C.quest_subtitle: "&b잽 브래니건&r!"
+	quest.329916B2CB8342B2.quest_desc: [
+		"약간의 공기, 또는 더 좋은 것은 산소 가스를 테트라플루오로에틸렌과 화학 반응시켜 최종 제품인 폴리테트라플루오로에틸렌을 얻으세요!"
+		""
+		"드디어 PTFE가 완성되었습니다! 이것은 화학적으로 불활성인 케이싱을 만드는 기초가 되며, 곧 대형 화학 반응기 제조에 사용될 것입니다."
+		""
+		"대형 화학 반응기를 얻으면 티타늄 테트라클로라이드를 추가하여 한 번에 더 많은 PTFE를 제조할 수 있습니다."
+	]
+	quest.32E356FC9E63F63B.quest_desc: ["희토류를 처리해서 작은 사마륨 더미를 만들고, 그것을 압축해서 완전한 가루로 만들어요."]
+	quest.32E356FC9E63F63B.quest_subtitle: "사무라이는 사마륨으로 학교에 갔어요"
+	quest.32E9B33C9D7981ED.quest_desc: [
+		"물론, 대형 화학 반응기(LCR) 없이도 글리세롤을 만들 수 있지만, 대량 생산에 적합하지 않습니다!"
+		""
+		"&e수산화 나트륨&r 1개에 &b어유&r 54 양동이와 &d에탄올&r 9 양동이를 사용하면, &a글리세롤&r 9 양동이가 만들어집니다. 이것이 제가 추천하는 방법입니다."
+		""
+		"이 방법으로는 바이오디젤도 대량 생성되며, 특히 세탄 부스트 디젤로 만들면 훌륭한 연료원이 됩니다."
+	]
+	quest.32FE0C0475BB45C6.quest_desc: ["만든 오스미리듐을 가는 와이어로 가공해요. 이것과 자화된 사마륨 긴 막대를 결합하면 큰 진전을 얻을 수 있어요!"]
+	quest.32FE0C0475BB45C6.quest_subtitle: "오스미리듐, 멋져요"
+	quest.3302A9306CAD659A.quest_desc: ["하나의 &6구리 인곳&r과 네 개의 &c레드스톤 가루&r를 &e합금 제조기&r에 넣어 이 멋진 인곳을 만듭니다"]
+	quest.333D2A9F20B2E738.title: "황 광맥"
+	quest.33590A79C5C554C8.quest_desc: [
+		"4A의 LV(32 EU/t/A)가 128 EU/t가 된다는 것을 알아차렸을 수도 있습니다"
+		""
+		"1A의 MV도 128 EU/t입니다"
+		""
+		"교환할 수 있나요? 어떤 의미에서는 그렇습니다!"
+		""
+		"전기 블라스트 퍼니스(EBF)가 이의 한 예입니다 - 두 개의 LV 에너지 해치가 각각 2A의 LV를 받아들일 수 있어, EBF가 MV 레시피를 처리할 수 있게 됩니다! 이는 GT에서 전압 티어를 진행하는 데 중요한 측면입니다."
+		""
+		"아니면 전압 변환기를 만들어야 합니다"
+	]
+	quest.337B492F974628A4.quest_desc: [
+		"훌륭합니다! 이제 UHV 선체를 만들 수 있습니다."
+		""
+		"하지만 UHV 기계는 보이지 않네요. 왜 이 선체가 필요한 걸까요? 물론 해치와 버스를 위해서죠!"
+	]
+	quest.337B492F974628A4.quest_subtitle: "기계는 어디 있나요?"
+	quest.33B8FDDBE3E95108.quest_desc: ["액체를 인곳으로 가공하는 것뿐이지만, &bUV 티어&r에 있는 지금, 빠르고 강력하게 할 수 있습니다!"]
+	quest.33B8FDDBE3E95108.quest_subtitle: "&b다름슈타티움에 인곳이 있나요?&r"
+	quest.33DAA602B385A55D.quest_desc: ["매우 뜨거운 인곳이군요! 이것을 처리하려면 &aEBF&r에 &b니크롬 코일 블록&r이 필요합니다!"]
+	quest.3406646DF9585AB8.quest_desc: ["실리콘 가루, 물, 메탄, 염소를 &e화학 반응기&r에서 &a프로그램 2&r로 결합하여 이것을 만듭니다"]
+	quest.3406646DF9585AB8.quest_subtitle: "이것을 빨리 3번 말해보세요"
+	quest.346A926E23840EF7.quest_desc: [
+		"&bZPM 티어&r의 케이블 선택은 암페어 손실 면에서 최상은 아닙니다."
+		""
+		"하지만 &b초전도체 와이어&r를 사용하면 &bZPM 기계&r나 &b멀티블록&r의 전력 손실을 걱정할 필요가 없습니다!"
+	]
+	quest.34C931DFFBF608DB.quest_desc: [
+		"&b스텔라이트 합금&r은 내마모성을 목적으로 하는 코발트 크롬 합금의 범위예요."
+		""
+		"&b스텔라이트 합금&r에는 크롬(최대 33%)과 텅스텐(최대 18%)의 큰 비율을 포함하는 코발트 기반 합금이 포함돼요. 이 합금 중 일부에는 니켈이나 몰리브덴도 포함돼요. 대부분의 합금은 탄소강과 비교하면 상당히 높은 탄소 함량을 가지고 있어요."
+	]
+	quest.34C931DFFBF608DB.quest_subtitle: "탄산 강철. LUL"
+	quest.34E8D3AD37BB76C5.title: "토파즈 광맥"
+	quest.34EE220F1C2AC5EF.quest_desc: ["다음 단계의 프로세서는 칩에 크게 의존해요. 그래서 &d인그레이빙 레이저 멀티블록&r은 SOC, CPU, RAM이 풍부하게 공급되도록 초과 근무를 하게 될 거예요. 이 기계는 우리가 앞서 나가는 것을 돕고 확실히 하기 위해 여기 있어요!"]
+	quest.34EE220F1C2AC5EF.quest_subtitle: "중요한 컴포넌트예요!"
+	quest.350B4AC4ADF7F84B.quest_desc: [
+		"구조의 전력 요구사항을 고려하면, 에너지를 적절히 전송하기 위해 무언가가 필요합니다."
+		""
+		"이 에너지 송신기들이 도움이 될 것입니다."
+	]
+	quest.350B4AC4ADF7F84B.quest_subtitle: "&b파워 활용하기&r"
+	quest.354012CD62D346E5.quest_subtitle: "하나의 원광석에서 5배의 레드스톤!"
+	quest.354012CD62D346E5.title: "레드스톤 광맥"
+	quest.358706CA93DC2A9C.quest_desc: ["&aEBF&r에서 가루를 구워내고, &e화학 배스&r에서 식힙니다"]
+	quest.35A014F1B4506CCA.title: "LV 티어"
+	quest.35FF7974C6DD1D9F.quest_desc: [
+		"데몬 코어는 가장 빠른 반응 시간을 가진 핵사고 중 하나의 중심이었던 아이템이었습니다. 데몬 코어는 제2차 세계대전 중 맨해튼 프로젝트에 의해 제조되었으며, 핵방사선과 완화에 대해 배우기 위해 사용될 예정이었습니다."
+		""
+		"코어 자체는 플루토늄으로 만들어졌지만, 코어를 둘러싼 두 개의 반구는 중성자 감속재인 베릴륨으로 만들어졌습니다. 베릴륨은 중성자에게 매력적인 재료이며 중성자의 에너지를 감소시킵니다."
+	]
+	quest.35FF7974C6DD1D9F.quest_subtitle: "데몬 코어"
+	quest.3619CD5AAD5E3691.quest_desc: ["&a증류&r하여 &e약간 증기 크래킹된 나프타&r에서 &6부타디엔&r을 얻으세요"]
+	quest.3673893C88EB5EDE.quest_desc: ["이 크리스탈을 만들기 위해 다른 3개의 크리스탈을 사용하세요."]
+	quest.3673893C88EB5EDE.quest_subtitle: "&b폭풍을 견디며&r"
+	quest.3762F8137BFD5A74.quest_desc: ["&a크래커&r는 석유를 얻는 것이 아니라 부산물을 더 효율적으로 처리할 수 있게 해줍니다!"]
+	quest.37A1137A59A2086B.quest_desc: [
+		"이 초전도체 코일은 많은 다른 멀티블록과 많은 다른 레시피에서 다양한 용도가 있습니다! 3가지 다른 레시피가 있습니다."
+		""
+		"이 사용 예에서는 자원 비용이 가장 높은 최저 티어를 활용하지만, 지금으로서는 우리에게 가장 쉬운 형태입니다."
+	]
+	quest.37A1137A59A2086B.quest_subtitle: "초전도체!"
+	quest.3863B33438AB5BBD.quest_desc: ["고장력 저합금강(줄여서 &6HSLA&r). 합금 용광로의 벽을 만들기 위해 &6HSLA 강&r을 섞어 플레이트를 만들어야 해요."]
+	quest.3863B33438AB5BBD.quest_subtitle: "&6HSLA 가루"
+	quest.38BD153513DC2334.quest_desc: [
+		"&3나프탈렌&r이나 &2디메틸벤젠&r을 얻는 방법이 있습니다. 둘 다 각각의 장점이 있죠"
+		""
+		"&0목탄&r을 &e추출기&r로 처리하여 &8목타르&r를 만들고, 그것을 &a증류&r하여 &2디메틸벤젠&r을 얻는 방법도 있습니다"
+		""
+		"하지만 &a파이롤리시스 오븐&r을 만들어 통나무나 석탄을 태워 나온 것을 &a증류&r하는 것이 더 효율적입니다"
+	]
+	quest.38C0D3A240E43A23.quest_desc: [
+		"진행하려면 &64개&r가 필요합니다. 이것들은 &bUV에서 UHV 전력&r으로 변환하는 기능을 가지고 있지만, 전력 변환에는 사용하지 않습니다."
+		""
+		"이것은 &6제작 구성 요소&r로 사용됩니다."
+	]
+	quest.38C0D3A240E43A23.quest_subtitle: "트랜스포머 로봇"
+	quest.39615B8E568E0380.quest_desc: ["&b이트륨 바륨 구리 산화물&r을 사용하여 와이어를 만듭니다."]
+	quest.39615B8E568E0380.quest_subtitle: "&b이트륨? Y는 무음인가요?&r"
+	quest.39ACF4D6503067F3.quest_desc: ["&e잘라&r 그 웨이퍼를 적절한 칩으로"]
+	quest.39B625FA20EAA025.quest_desc: [
+		"You're going to need either &9Ammonia&r and a &aLarge Chemical Reactor&r or a lot of &bNitrogen Dioxide&r"
+		""
+		"Thankfully, Nitrogen Dioxide is easy to come by, all you need is an &6HV&r &eGas Collector&r in &3The End&r on &2Program 3&r, a &aVacuum Freezer&r at IV, and a &aDistillation Tower&r also at IV"
+	]
+	quest.39CD35C91F07258C.quest_desc: [
+		"네. 우리는 퓨전 리액터 Mk.I, Mk.II, Mk.III를 가지고 있습니다. 그리고 이제 메가 퓨전 리액터가 있습니다."
+		""
+		"각각은 고유한 역할을 하며 우리가 전진하는 데 필수적입니다. 그러니 다시 작업하여 메가 퓨전 리액터를 직접 만들어보세요."
+	]
+	quest.39CD35C91F07258C.quest_subtitle: "메가 퓨전 리액터"
+	quest.39D7F47A8C44D5AF.quest_desc: [
+		"또 다른 티어의 &b초전도체&r를 위한 또 다른 합금입니다!"
+		""
+		"기억하세요, &b초전도체&r는 거리를 통해 EU를 전송할 때 0A의 손실이 있으며, 공장 배선에 가장 필요합니다."
+		""
+		"You'll need a Mixer running at least &cZPM&r tier recipes to make this dust"
+	]
+	quest.39D7F47A8C44D5AF.quest_subtitle: "&b더 많은 초전도체&r"
+	quest.3A27B65A0B4FFB5B.quest_desc: ["ME 아이템 출력! 생성된 아이템을 ME 시스템으로 직접 돌려보냅니다."]
+	quest.3A27B65A0B4FFB5B.quest_subtitle: "ME 아이템 출력"
+	quest.3A8BF9BE08F54513.quest_desc: ["베릴륨은 많은 방법으로 얻을 수 있습니다. 엔더 진주 가루를 전기분해기로 처리하고 있는 분들도 많을 겁니다. 그곳에서 &2베릴륨&r을 꽤 많이 축적하고 있을 수 있습니다."]
+	quest.3A8BF9BE08F54513.quest_subtitle: "그랍다르의 망치로..!"
+	quest.3AA49DDE45705233.quest_desc: [
+		"이 양동이는 정말 조심해야 합니다."
+		""
+		"감염되고 싶지 않겠죠?"
+	]
+	quest.3AA49DDE45705233.quest_subtitle: "&c감염성&r"
+	quest.3B0BC233A6C81B73.quest_desc: [
+		"첫 번째 원시 크리스탈 칩을 얻는 데 몇 번의 시도가 필요할 수 있습니다."
+		""
+		"하지만 한 번 얻으면, 원시 크리스탈 칩을 만들기 위해 단조 망치로 두드려 원시 크리스탈 칩 부품으로 가공하고, 그것을 다시 원시 크리스탈 칩으로 가공하는 간단한 루프를 사용하여 안정적으로 복제할 수 있습니다."
+	]
+	quest.3B0BC233A6C81B73.quest_subtitle: "낮은 확률"
+	quest.3B1268D75B34A0F6.quest_desc: [
+		"이제 일이 진행되는군요! 우리 기계에는 마력이 있어요. 하지만 더 필요할 수도 있겠죠!"
+		""
+		"하지만 지금은 이걸로 충분해요."
+	]
+	quest.3B1268D75B34A0F6.quest_subtitle: "수소가 오늘 긍정적인 기분이라고 말했어요. 아마도 전자를 잃어서 그런 거겠죠."
+	quest.3B4F326D72E794D3.quest_desc: [
+		"여기서 &a크래커&r가 유용합니다. 나프타를 크래킹할 때 얻은 나프타를 잃지 않습니다"
+		""
+		"대신 &e화학 반응기&r를 사용할 수도 있지만, 그 경우 나프타의 절반을 잃게 됩니다!"
+		""
+		"이를 증류하기 위해 별도의 &a증류탑&r을 만드는 것이 좋습니다"
+	]
+	quest.3BD5C517AD024A45.quest_desc: ["마지막으로 만든 초전도체는 꽤 오래 전 일입니다. 하지만 이제부터 각 티어의 초전도체가 더 중요해지며, 암페어 손실이 없는 케이블을 가능하게 합니다!"]
+	quest.3BD5C517AD024A45.quest_subtitle: "리콜"
+	quest.3BEDF19CD79D53D5.quest_desc: [
+		"&a증류탑&r은 석유를 많은 유용한 형태로 변환할 수 있는 &d석유 처리&r의 기반 역할을 합니다"
+		""
+		"타워를 건설할 때는 레시피를 올바르게 처리하기 위해 &c1 + 액체 출력 수만큼의 높이가 필요합니다&r"
+		""
+		"&e예를 들어&r, 실행하려는 레시피가 5개의 액체를 출력한다면, 타워는 최소 6개의 높이와 5개의 출력 해치가 필요합니다"
+		""
+		"최대 크기는 3x3x13 구조입니다"
+		""
+		"&b기억하세요:&r 멀티블록 구축 방법에 대해서는 JEI에서 멀티블록 컨트롤러의 용도를 보고 &3멀티블록 정보&r 페이지를 참조하세요"
+		""
+		"석유를 얻는 방법은 여러분에게 달려있습니다! 아래 퀘스트에서 몇 가지 옵션이 설명되어 있습니다"
+	]
+	quest.3BEDF19CD79D53D5.quest_subtitle: "드디어 진정한 유체 처리"
+	quest.3BF90C250AC1ADF3.quest_desc: [
+		"만일을 위해 &bIndustrial Foregoing Black Hole Controllers&r를 추가합시다."
+		""
+		"이로써 생성된 &6스타&r가 제어되고, 그 엄청난 힘이 폭주하지 않도록 확인할 수 있습니다."
+	]
+	quest.3BF90C250AC1ADF3.quest_subtitle: "&8블랙홀 컨트롤러&r"
+	quest.3C9E93426D6412E0.quest_desc: [
+		"이제 플루오로안티모닉산을 얻었습니다! 이는 나크 처리 라인을 위해 진행하던 촉매제입니다."
+		""
+		"나크 처리 라인을 계속 가동하기 위해 이를 재생 가능한 방법으로 확보하세요."
+	]
+	quest.3C9E93426D6412E0.quest_subtitle: "액체로 변환"
+	quest.3CA2D15D1EC4D852.quest_desc: [
+		"컬렉션에 또 하나의 &d렌즈&r를 추가하세요!"
+		""
+		"&eSoC&r는 &e시스템 온 칩&r의 약자입니다"
+	]
+	quest.3CA2D15D1EC4D852.title: "시스템 온 칩"
+	quest.3D40D91D7D948714.quest_desc: ["이 판들에 대한 수요가 높습니다. 많은 판을 스스로 공급할 방법을 생각하는 것이 어려울 수 있지만, 그만한 가치가 있습니다."]
+	quest.3D40D91D7D948714.quest_subtitle: "접시 도금이 중요합니다"
+	quest.3D59BC5C2F5A073C.quest_desc: ["모터는 &bUV 기계 컴포넌트&r와 커버의 나머지 부분에 매우 중요한 기본 컴포넌트입니다."]
+	quest.3D59BC5C2F5A073C.quest_subtitle: "더 많은 마력!"
+	quest.3D89F65537D7CA1E.quest_desc: [
+		"UV 필드 생성기는 당신이 만들 마지막 필드 생성기입니다."
+		""
+		"이것들을 적절한 양으로 만들 계획을 세우세요."
+	]
+	quest.3D89F65537D7CA1E.quest_subtitle: "마지막 필드 생성기"
+	quest.3D9B7855B5616DCE.quest_subtitle: "회로"
+	quest.3DCCEDC5A817EBEB.quest_desc: [
+		"이것을 만들기 위해 &bGT 어셈블러&r 또는 일반 크래프팅 그리드를 사용할 수 있습니다. 패턴 공간은 특히 &bGT 어셈블러&r에게 귀중하므로, 크래프터나 분자 어셈블러가 조립을 처리할 수 있을 것입니다"
+		""
+		"당신의 &e전기 용광로&r의 &bLV 에너지 해치&r를 이것들로 교체하여 &bEBF&r가 &6HV&r 레시피를 처리할 수 있게 하세요!"
+		""
+		"전원도 업그레이드하세요!"
+	]
+	quest.3DCCEDC5A817EBEB.quest_subtitle: "&bEBF 업그레이드&r"
+	quest.3E7EE5FC7863B0B2.quest_desc: ["사마륨 철 비소 산화물 와이어 - 수량 8 x 16"]
+	quest.3E7EE5FC7863B0B2.quest_subtitle: "&bIV 초전도체&r"
+	quest.3F064B466CC4914B.title: "질산칼륨 광맥"
+	quest.3F0C949C8F243AFD.quest_desc: ["만든 &b원료 성장 배지&r를 처리하기 위해 &6IV 티어&r 이상의 &b유체 가열기&r를 만들어 봅시다."]
+	quest.3F0C949C8F243AFD.quest_subtitle: "&b유체 가열기&r"
+	quest.3F3F70FEEE8AFEEA.quest_desc: ["적절한 기계를 해제하면 많은 프로세서를 제조할 수 있도록 &bHASOC&r의 백스톡을 준비하고 있습니다."]
+	quest.3F69CB46311A37C8.title: "피치블렌드 광맥"
+	quest.3F810160E8B58BD2.quest_desc: ["&b젤라틴&r은 보통 소나 돼지에서 얻은 동물성 콜라겐으로 만든 단백질입니다."]
+	quest.3F810160E8B58BD2.quest_subtitle: "&bG E L L O... 잠깐만... 뭔가 이상해...&r"
+	quest.3FCF444190D02ADF.quest_desc: ["&b갈륨&r이 도망갔지만, &b비소&r만으로도 충분합니다!"]
+	quest.3FCF444190D02ADF.quest_subtitle: "&b비소&r의 귀환!"
+	quest.3FDC2A2BBAC0EF1B.quest_desc: [
+		"네, 또 다른 렌즈가 &e레이저 조각기&r 컬렉션에 추가되었습니다... 아직 만들지 않았다면 몇 개 만들어보는 것이 어떨까요."
+		""
+		"다시 한 번 말씀드리자면, &e조각기&r는 웨이퍼를 만들고, &e커터&r는 칩을 만듭니다."
+	]
+	quest.3FDC2A2BBAC0EF1B.title: "CPU 칩"
+	quest.3FE956C2968896DC.quest_desc: [
+		"단조 망치는 막대를 긴 막대로 바꾸거나, 인곳을 판으로 바꿀 수 있습니다"
+		""
+		"긴 막대나 판을 만드는 다른 저렴한 방법도 있지만, 그것은 나중에 나옵니다"
+	]
+	quest.3FE956C2968896DC.quest_subtitle: "물건을 짓누르는 데 유용합니다"
+	quest.400E51BB469CB023.quest_desc: [
+		"ZPM에서는 아직 2:1이지만, 진보하고 있습니다."
+		""
+		"곧 다음 티어로 진행하고 크래프팅의 리턴이 크게 좋아질 것입니다!"
+	]
+	quest.400E51BB469CB023.quest_subtitle: "ZPM"
+	quest.40249CD28957E7EB.quest_desc: ["순수한 루테늄을 얻었으니 다시 더럽혀 봅시다! 하하! 믹서를 사용해 이것을 루리딧으로 바꿉니다. 어셈블리 라인을 포함한 다른 프로세스와 아이템을 위해 꽤 많은 양의 루리딧이 필요합니다!"]
+	quest.40249CD28957E7EB.quest_subtitle: "가루를 깨끗이 닦았습니다"
+	quest.402B0C7242A00309.quest_desc: [
+		"보크사이트를 처리할 때 갈륨 가루의 확률을 얻기 위해 광석 세척기 대신 다른 광석 처리 설정에서 화학 배스에 넣기 위해 과황산 나트륨 제조를 시작해야 합니다"
+		""
+		"HV+ 에서 보크사이트나 스팔레라이트를 광석 처리하는 것은 갈륨을 얻는 또 다른 방법입니다"
+	]
+	quest.4059373B88845C6F.quest_desc: ["화학 배스는 수은이나 과황산 나트륨으로 분쇄된 광석을 세척하여 특정 부산물을 얻기 위해 광석 처리 라인에서 사용됩니다"]
+	quest.406C924820DE5473.quest_desc: [
+		"이 &b웨트웨어 인쇄회로기판&r으로 프로세서용 기판 라인을 완성했습니다."
+		""
+		"이는 우리의 최고 티어 프로세서에 가장 중요한 컴포넌트 중 하나입니다!"
+	]
+	quest.406C924820DE5473.quest_subtitle: "&b마지막 댄스&r"
+	quest.411759CC8C320C19.title: "방연광 광맥"
+	quest.41752862D7B29F80.title: "고전압 시대"
+	quest.418E02FFE241A734.quest_desc: ["액체 헬륨 플라즈마. 처리 라인이 충분한 헬륨을 생성하고 있는지 확인하세요"]
+	quest.418E02FFE241A734.quest_subtitle: "그"
+	quest.41AE8AEA3EB144F3.quest_desc: [
+		"거의 다 왔습니다!"
+		""
+		"이제 우리는 다층 섬유 강화 인쇄회로기판을 얻었고, 다음 티어의 프로세서에 직접 사용할 수 있습니다!"
+	]
+	quest.41AE8AEA3EB144F3.quest_subtitle: "완성!"
+	quest.41EE8B40BA43DADE.quest_desc: ["고속도강의 첫 번째 티어입니다. 이 재료를 많이 만들게 될 것입니다. 다른 HSS 가루 변형의 기반으로 기능합니다"]
+	quest.41F04EF882EF31E1.quest_desc: [
+		"또 만났군요, 회로 조립기."
+		""
+		"네, 이 장이 끝나기 전에 이걸 만들 수 있어요. 하지만 이 장의 모든 것이 원활한 ZPM 티어 진행을 위해 필요해요."
+		""
+		"이 티어를 완료하고 나열된 자원과 컴포넌트를 얻는 것을 강력히 추천합니다. 다음 티어로의 여정이 훨씬 더 순조로워질 거예요."
+	]
+	quest.41F04EF882EF31E1.quest_subtitle: "드디어!"
+	quest.41FCD7F5B7E6E261.quest_desc: ["드디어 &b점토 가루&r를 전기분해하여 그 달콤한 &b알루미늄 가루&r를 얻을 때가 왔습니다"]
+	quest.41FCD7F5B7E6E261.quest_subtitle: "&b실리콘&r의 좋은 공급원도 됩니다"
+	quest.423B9571668C3953.title: "EV 티어"
+	quest.428C034C78923B6C.quest_desc: ["여러 기계에 전력을 공급할 때는 케이블 손실에 주의하세요!"]
+	quest.428C034C78923B6C.title: "MV 에너지 변환기"
+	quest.42FD79CEB3426861.quest_desc: [
+		"&b윤활유&r를 만드는 방법은 많이 있습니다"
+		""
+		"제가 제안하는 방법 중 하나는 &b물고기&r에서 &b어유&r를 추출하여 그것을 &b윤활유&r로 증류하는 것입니다"
+		""
+		"&b윤활유&r는 &b커터&r에서 매우 유용합니다. 예를 들어, &b물&r을 사용하는 경우와 비교하여 레시피가 훨씬 빨라집니다"
+	]
+	quest.4300938A4E8AF937.title: "회중석 광맥"
+	quest.4321E32D0EA3367C.quest_desc: ["이 기계를 &5EV&r로 업그레이드하면 최종적으로 &b텅스텐&r을 만드는 데 필요한 레시피가 해금됩니다"]
+	quest.439556C571592D81.quest_desc: ["불활성 금속 혼합물을 분해했으니 새로운 두 가지 자원이 생겼습니다. 둘 다 &dLuv&r 티어에서 매우 귀중합니다! 이 자원들이 계속 공급되도록 수동 라인을 확보하세요!"]
+	quest.439556C571592D81.quest_subtitle: "둘이 하나로! 이거 얼마나 좋아!"
+	quest.439C8AEBE9E1C666.quest_desc: [
+		"아직 그 합금 제련기를 가지고 있기를 바랍니다!"
+		""
+		"합금 제련기에서 구리와 니켈을 함께 넣으면 전기 용광로의 코일을 만드는 데 필요한 큐프로니켈이 만들어집니다"
+	]
+	quest.43D3E61FA314E3C3.quest_desc: ["어떤 경우든, &c열 교환&r은 보통 에너지 비용이 매우 높습니다. 이 경우, &b트리타늄 코일&r, &b궁극 전압 코일&r, &b대형 나쿠아드리아 배터리&r가 도움이 됩니다."]
+	quest.43D3E61FA314E3C3.quest_subtitle: "&c열 교환&r"
+	quest.43EBA1D735267C85.quest_desc: ["제가 추천하는 플루오린 가스 획득 방법은? 간단합니다, &e형석 가루&r를 &e전기분해&r하면 됩니다."]
+	quest.44454B2637069C9F.title: "IV 티어"
+	quest.44BE268EC7D2689D.quest_desc: [
+		"기술적으로는 더 많습니다. 이것들은 이전에도 사용했습니다."
+		""
+		"최소한 그렇게 &c어렵지는&r 않습니다."
+	]
+	quest.44BE268EC7D2689D.quest_subtitle: "&c더 많은 코일?&r"
+	quest.44EE336BC265D21C.quest_desc: [
+		"이 몬스터 코일들은 코일의 최종 라인입니다."
+		""
+		"이 코일들을 사용하면 UHV 초전도체를 처리하고 마침내 인곳으로 만들 수 있습니다!"
+	]
+	quest.44EE336BC265D21C.quest_subtitle: "트리타늄 코일"
+	quest.450B3C0520D6B2BB.quest_desc: [
+		"이것을 설치하고 시추를 시작하세요! 이를 통해 지하의 고대 석유가 퍼올려집니다"
+		""
+		"이것으로 주로 찾을 수 있는 것은 &e원유&r지만, 천연가스나 다른 석유 변종도 발견될 수 있습니다! &b액체 모드&r에서 &6HV 프로스펙터&r를 사용하여 지하에 무엇이 있는지 확인할 수 있습니다"
+		""
+		"지역의 석유는 시간이 지나면 고갈되므로 정기적으로 유체 시추 장비를 이동해야 합니다"
+	]
+	quest.452B3207B6C3A5D7.quest_desc: ["&6액체 우라늄 235&r를 사용하여 다른 구성 요소들을 결합하고, &b절대 반응 플레이트&r를 만들어 봅시다"]
+	quest.452B3207B6C3A5D7.quest_subtitle: "&6U235&r"
+	quest.454F2BF7F2E25D83.quest_desc: [
+		"이것은 꽤 복잡한 크래프팅일 수 있지만, 많은 티어에 걸쳐 크래프팅 수명을 가지고 있으며 필요한 아이템입니다."
+		""
+		"이것을 만드는 데 많은 것이 포함되어 있지만, 크래프팅 경로를 최적화해 보세요. 나중에 감사할 거예요."
+	]
+	quest.454F2BF7F2E25D83.quest_subtitle: "복잡한 에너지"
+	quest.459787E9F1029CC6.quest_desc: [
+		"와이어나 케이블은 불완전하여, 운반하는 에너지의 일부를 열로 손실합니다"
+		""
+		"고무로 와이어를 덮으면 이 손실을 어느 정도 줄일 수 있습니다"
+		""
+		"여기서 예외는 초전도체입니다! 그들은 에너지 손실이 없습니다"
+	]
+	quest.459787E9F1029CC6.quest_subtitle: "미터 = 1블록"
+	quest.45D9E32D75F5ACAE.quest_desc: [
+		"이제 업그레이드 할 때인가요? 그런 것 같네요"
+		""
+		"&e어셈블러&r를 &1IV&r로 업그레이드하지 않으면 &d고급 표면실장 디바이스&r(SMD)를 만들 수 없습니다"
+	]
+	quest.4632DA3CE9D95064.quest_desc: ["백금족 슬러지를 처리하면 진행에 도움이 되는 훌륭한 자원이 많이 나옵니다."]
+	quest.4632DA3CE9D95064.quest_subtitle: "돈을 찾았어요! 집게사장님!"
+	quest.464110726B823072.quest_desc: [
+		"광석을 찾아 돌아다니며 대박을 노리는 데 지치셨나요? 지하에 숨겨진 석유를 찾고 계신가요? 그렇다면 &6HV&r &b프로스펙터&r를 소개합니다!"
+		""
+		"이 도구는 주변 4청크 범위를 스캔하여 찾고 있는 광석의 위치를 알려줍니다"
+		""
+		"게다가, 웅크리기+우클릭으로 유체 감지 모드로 전환하여 기반암 아래에 있는 석유 풀을 찾을 수 있습니다. 석유를 추출하려면 &e유체 시추기&r가 필요합니다!"
+	]
+	quest.46542F4A273E64EB.quest_desc: ["이번에도 &e화학 반응기&r를 사용한 레시피입니다. 사용할 재료는 &6일렉트럼 포일&r과, &9과황산 나트륨&r 또는 &0염화철(III)&r입니다"]
+	quest.465F4502C4D5DCFE.quest_desc: [
+		"바나듐 가루 3개와 갈륨 가루 1개를 &a프로그램 1&r로 섞으면 이 재료가 만들어집니다"
+		""
+		"나중에 대량으로 필요하게 되지만, 현 단계에서는 고급 표면실장 디바이스 제조에 사용됩니다"
+		""
+		"바나듐은 &e원심분리&r를 통해 &2바나듐 자철광 가루&r에서 얻을 수 있으며, 이는 &6엔드&r 또는 &3오버월드&r에서 발견됩니다"
+		""
+		"또는 &c루비&r나 &9사파이어&r 슬러리를 &e원심분리&r하는 방법도 있습니다"
+	]
+	quest.46F1A93B071CD980.quest_desc: ["벤젠 + 에틸렌을 &e화학 반응기&r에서 반응시켜 &b스티렌&r을 얻으세요"]
+	quest.46F5DC6A7FF02DF2.quest_desc: [
+		"은과 일렉트로틴 가루 4개를 &e믹서&r의 &a프로그램 2&r로 섞으면 &b청색 합금 가루&r가 만들어집니다"
+		""
+		"이 가루를 용광로에서 녹이기만 하면 인곳이 됩니다"
+	]
+	quest.4720F9EDF894330C.quest_desc: [
+		"E, G, S 문자의 의미는 솔직히 모르겠지만, 이것은 고속도강입니다!"
+		""
+		"이것을 용해한 다음, &d고급 SMD 인덕터&r용 &b링&r으로 가공해야 합니다"
+	]
+	quest.476B99789CA7BD96.quest_desc: [
+		"이것들은 만들기 &c복잡한&r 구성 요소입니다. 하나를 만드는 것은 많은 재료와 많은 공정 라인을 포함하는 힘든 작업입니다."
+		""
+		"하지만, 진행하려면 &616개&r가 필요합니다. 그래도, 당신은 할 수 있을 겁니다."
+	]
+	quest.476B99789CA7BD96.quest_subtitle: "&c작은 주문이 아닙니다&r"
+	quest.47871110028991D3.quest_desc: [
+		"화학 반응기를 만들 때는 일반적으로 &d3개의 입력 해치&r, &53개의 출력 해치&r, &e1개의 입력 버스&r, 그리고 &61개의 출력 버스&r가 필요하다는 것을 기억하세요"
+		""
+		"대량의 PTFE를 만든 후, 드디어 &a대형 화학 반응기&r 가동 준비가 완료됩니다!"
+		""
+		"&aLCR&r에서만 할 수 있는 화학 반응이 몇 가지 있습니다. 특히 &3폴리벤즈이미다졸&r(약칭 PBI) 제조에 필요한 화학물질이 그에 해당합니다"
+	]
+	quest.47932104E994DBE9.quest_desc: ["&b선체 판&r은 각 티어마다 더 복잡해지지만, 필요한 과정입니다. 이 과정을 수동화하고 공장을 &bUV 기계&r로 채우세요!"]
+	quest.47932104E994DBE9.quest_subtitle: "&b이 다름슈타티움은 너무 크다!&r"
+	quest.47D201ED115F6D6D.quest_desc: ["16x 농축 나쿠아다 트리늄 유로퓸 듀라나이드 와이어 - 수량 8"]
+	quest.47D201ED115F6D6D.quest_subtitle: "UV 초전도체"
+	quest.4835BE1596B65206.quest_desc: ["소금과 황산으로 프로그램 1을 사용하면 중황산 나트륨이 생성됩니다"]
+	quest.4838AD09C9590D2F.quest_desc: ["이 웨이퍼는 모든 고급 PIC 웨이퍼의 기초가 됩니다. 앞으로 대량 생산하게 될 것입니다"]
+	quest.485117517649336C.quest_desc: ["대형 고체화 어레이는 지금까지 사용해온 소형 단일 블록 유체 고체화 장치의 직접적인 대체품이에요."]
+	quest.485117517649336C.quest_subtitle: "때로는 고체화가 필요해요. LSA"
+	quest.48576E17428906E7.quest_desc: ["반물질을 만드는 것은 항상 도전입니다. 프로세스 라인, 처리 시간, 그리고 전력. 이것으로 걱정거리 하나가 줄어듭니다."]
+	quest.48576E17428906E7.quest_subtitle: "&b크리에이티브 화학&r"
+	quest.48600733998CA349.quest_desc: [
+		"이 기계는 인곳을 그 유체 형태로 변환합니다"
+		""
+		"점착성 수지를 원료 고무 펄프로 가공하는 등, 몇몇 아이템을 펄프로 가공할 수도 있습니다"
+	]
+	quest.48600733998CA349.quest_subtitle: "유체와 그 외"
+	quest.4875FB6628C1FCDC.quest_desc: [
+		"많은 기계는 프로그래밍된 회로 설정을 사용하여 처리할 수 있는 레시피를 결정합니다"
+		""
+		"기계의 GUI에서 프로그래밍된 회로 설정을 변경하는 옵션을 찾을 수 있습니다. 실행할 레시피에 해당하는 프로그램을 선택하면 처리가 시작됩니다"
+		""
+		"프로그래밍된 회로를 만들 필요는 없습니다"
+		""
+		"다른 크래프팅 레시피를 위해 프로그램 설정을 수동으로 변경하는 것보다 특정 프로그램 설정에 전용 기계를 만드는 것이 더 쉬운 경우가 많습니다"
+	]
+	quest.489B77B85B000B39.quest_desc: [
+		"이 기계를 한쪽에 용암, 다른 쪽에 물을 설치하여 돌이나 조약돌을 만들 수 있습니다"
+		""
+		"후반 단계에서는 어떤 돌의 변형도 만들 수 있으며, HV에서는 옵시디언도 만들 수 있습니다!"
+	]
+	quest.49109192F6D95AB4.quest_desc: [
+		"&bUV 티어&r의 처리 요구를 충족시킵니다!"
+		""
+		"이제 멀티블록을 &bUV&r 처리 속도로 구동할 수 있습니다! 자, 가봅시다!"
+	]
+	quest.49109192F6D95AB4.quest_subtitle: "&bUV 에너지 해치!&r"
+	quest.492386DF6CA892BD.quest_subtitle: "그런 종류의 &6양조장&r이 아닙니다"
+	quest.49262C7C4E9EF712.quest_desc: ["마침내 다음 전압 코일을 만들 수 있는 수단을 얻었습니다. 이는 에너지 해치나 ZPM 모터 등 다른 ZPM 티어 커버에도 사용됩니다!"]
+	quest.49262C7C4E9EF712.quest_subtitle: "초희귀 세선"
+	quest.492D28D6B81CAEE0.quest_desc: ["대형 추출 모듈은 지금까지 여러 번 사용해온 단일 블록 추출기와 같은 방식으로 작동해요. 이제 이 대형 멀티블록을 사용해 많은 처리를 수행하고 기계를 병렬화할 수도 있어요. (기계의 병렬화가 테마니까요)"]
+	quest.492D28D6B81CAEE0.quest_subtitle: "LEM이 만들어졌으니 달에 가봐요!"
+	quest.497028C92F886AE0.quest_desc: ["이것들은 &bMV 전기 모터&r에 필요하며, 많은 &bMV 기계&r의 컴포넌트입니다"]
+	quest.4993431DBE076E1B.quest_desc: [
+		"EV 회로 조립기는 상위 티어의 회로를 만들기 위한 다음 큰 단계이며, 하위 티어의 회로를 더 저렴하게 만들 수 있습니다!"
+		""
+		"아직 액체를 사용한 작업이 많이 남아 있지만, &3나노프로세서&r 티어의 회로를 만들기 전에"
+	]
+	quest.49D740C5B5EB593C.quest_desc: ["레드 합금 케이블은 &bLV 회로&r를 만들고 증기 시대를 벗어나기 위한 중요한 부품입니다"]
+	quest.49E2D3DF6A9A5716.quest_desc: ["&b한천&r은 다당류로 구성된 젤리 같은 물질입니다."]
+	quest.49E2D3DF6A9A5716.quest_subtitle: "&b한천한천&r"
+	quest.49E5EB071E740C87.title: "초고전압 시대"
+	quest.4AA6D19469FB306F.quest_desc: [
+		"파이로클로어, 파이롤루사이트, 탄탈라이트에서 니오븀이 부산물로 얻어집니다."
+		""
+		"파이로클로어를 전기분해하면 확실하게 니오븀을 얻을 수 있습니다!"
+		""
+		"이 재료는 진행에 따라 포일이나 얇은 와이어 형태로 대량 사용되므로, 잘 비축해 두세요."
+	]
+	quest.4AAF27F0C27FBDB3.quest_desc: [
+		"염소와 마찬가지로 수소도 많은 소스에서 얻을 수 있습니다"
+		""
+		"예를 들어, 괴타이트나 황색 리모나이트 가루를 &e원심분리&r하거나, 아니면 &e전기분해&r가 더 좋을 수도 있습니다."
+		""
+		"물과 소금물은 수소의 좋은 공급원이며, 소금물은 염소도 얻을 수 있다는 추가적인 이점이 있습니다!"
+	]
+	quest.4AE05E80142C12A6.quest_desc: [
+		"아직도 &b크래프팅 그리드&r에서 저항기를 만들고 계신가요?"
+		""
+		"어닐링된 구리를 가는 와이어로 만들고, 약간의 &b접착제&r와 &b탄소&r를 추가하여 &b어셈블러&r에서 한 번에 4개의 저항기를 만들어 봅시다"
+		""
+		"레시피가 업그레이드되었네요!"
+	]
+	quest.4AE05E80142C12A6.title: "저항기 재방문"
+	quest.4AE3A2326EA07B7A.quest_desc: ["You'll get half the &6Phenol&r back when you turn this into &3Polybenzimidazole&r"]
+	quest.4AE3A2326EA07B7A.quest_subtitle: "How do you pronounce this?"
+	quest.4B7E8D7D89977348.quest_desc: [
+		"각 열은 전압 티어에 해당합니다"
+		""
+		"각 행은 회로가 제작 가능한 전압 티어에 해당합니다"
+		""
+		"하단에 추가 정보가 있습니다!"
+	]
+	quest.4B985901F63570C3.quest_desc: [
+		"Gregtech의 초기에 가장 좋아하는 블록 중 하나는 와이어밀이에요. 와이어 생산 비용을 줄이고 초기 배치 크래프팅에 정말 도움이 돼요."
+		""
+		"이렇게 가치가 있다면 후반에도 유용할 거예요. 이 멀티블록이 그 역할을 해낼 거예요!"
+	]
+	quest.4B985901F63570C3.quest_subtitle: "모든 와이어를 만들어요!"
+	quest.4BACAC18E4B982DA.title: "진사 광맥"
+	quest.4C33366BAD0256CF.quest_desc: [
+		"이것을 &6거대한 다중 블록 구조&r라고 말하는 것은 절제된 표현입니다."
+		""
+		"실제로는 &63213개의 원자 케이싱&r이 필요하지만, 인벤토리에 다 들어가지 않기 때문에 퀘스트에서는 &61개&r가 됩니다."
+		""
+		"하지만, 그 이점은 &c놀라울 정도&r입니다. 한번 시도해 보세요. &a자원 생성기&r로도, &b전력 생성기&r로도 작동합니다. 발전량은 &d믿을 수 없을 정도&r입니다."
+	]
+	quest.4C33366BAD0256CF.quest_subtitle: "&6거대한 다중 블록&r"
+	quest.4C83B804A6AEB033.quest_desc: [
+		"프로판을 &e전기분해&r하여 &6프로필렌&r을 얻으세요"
+		""
+		"&a증류&r로 &b고도 증기 크래킹 나프타&r에서 프로필렌을 얻을 수 있습니다"
+		""
+		"&9일산화탄소&r는 &c액체 네더 에어&r를 &a증류&r하여 거의 무한히 얻을 수 있습니다"
+	]
+	quest.4D6885EFA4EE272F.quest_desc: [
+		"물건을 일괄적으로 만드는 것을 기억하시나요?"
+		""
+		"이번에는 넘어가겠지만, 하고 있다고 가정하겠습니다"
+	]
+	quest.4D6885EFA4EE272F.quest_subtitle: "MV로 나아갑시다!"
+	quest.4DA2B92417DD41F8.quest_desc: [
+		"왜 LV 칩을 만드는지 궁금하실 수 있겠네요? 이건 &6HV&r가 아닌가요?"
+		""
+		"네, 맞아요. 하지만 새로운 LV 기계가 필요하다면 이전보다 적은 자원으로 얻고 싶지 않나요?"
+		""
+		"레시피가 LV에서 작동하는 한, 40대의 LV 기계를 작동시키는 것이 10대의 HV 기계를 작동시키는 것보다 4배 더 에너지 효율적입니다."
+	]
+	quest.4DB3A860A30D7BF5.quest_desc: ["&bUV 에너지 해치&r만으로는 부족한가요?"]
+	quest.4DB3A860A30D7BF5.quest_subtitle: "더 필요한가요?"
+	quest.4DD7F3508B757EF0.quest_desc: ["&b커터&r에 &b루비 블록&r을 넣어 9개의 &b루비 판&r을 얻습니다"]
+	quest.4DDFD3BAA86DC342.quest_desc: ["웨이퍼가 커팅 기계에서 칩으로 분해된 후의 UHPIC 칩입니다."]
+	quest.4DDFD3BAA86DC342.quest_subtitle: "반도체는 재미있어요!"
+	quest.4DE719FC2E4C69AB.quest_desc: [
+		"증기 시대에 오신 것을 환영합니다! 스팀 기계는 JEI에서 32 EU/t(LV)까지의 레시피를 처리할 수 있습니다"
+		""
+		"고압과 저압 기계의 변형이 있습니다. 저압 기계는 레시피를 처리하는 데 시간이 2배 걸리지만, 스팀 소비가 적어집니다."
+		""
+		"레시피마다 스팀 기계가 사용한 스팀을 배출해야 합니다"
+		""
+		"기본적으로 배기구는 뒷면에 있지만, 편리한 렌치를 사용하여 배기구의 방향을 바꿀 수 있습니다!"
+		""
+		"배기구가 막혀 있으면 기계는 배출에 실패하고 작동을 멈춥니다."
+	]
+	quest.4DE719FC2E4C69AB.quest_subtitle: "시작입니다"
+	quest.4DE719FC2E4C69AB.title: "증기 시대"
+	quest.4E1D5EC061A4AE55.quest_desc: ["구리 인곳과 63mB의 산소를 아크로에 넣으면 어닐링된 구리 인곳이 만들어집니다"]
+	quest.4E384F9FEF629386.quest_desc: [
+		"이건 매우 강력한 액체예요!"
+		""
+		"액체 티타늄이 열을 가하면 금속처럼 무지개 빛으로 빛나는지 궁금하네요..."
+	]
+	quest.4E384F9FEF629386.quest_subtitle: "매우 강해요!"
+	quest.4E55A1169742B901.quest_desc: ["언젠가는 단일 블록 보일러로는 증기가 부족해질 것입니다. 그때가 바로 대형 청동 보일러의 차례입니다!"]
+	quest.4E55A1169742B901.quest_subtitle: "증기를 생성하는 멀티블록"
+	quest.4E5FE40373675AED.quest_desc: ["&e커터&r로 돌아갑니다!"]
+	quest.4EEFECB9D741B371.quest_desc: [
+		"이전에 말씀드린 대로, 합금은 점점 더 복잡해질 것으로 예상됩니다."
+		""
+		"하지만 이 합금으로 중요한 컴포넌트를 만들 수 있습니다!"
+	]
+	quest.4EEFECB9D741B371.quest_subtitle: "더 복잡한 합금"
+	quest.4EF3FD6C59413C49.quest_desc: [
+		"일반 &3공기&r와 &e비닐 아세테이트&r를 1:1 비율로 섞어 &6폴리비닐 아세테이트&r를 만들 수도 있지만, &b산소&r를 사용하면 출력이 3:2로 증가합니다"
+		""
+		"하지만 왜 산소만 사용하나요? 소량의 &d티타늄 테트라클로라이드&r를 추가하면 비율이 2:1까지 향상됩니다!"
+		""
+		"어떤 방법을 선택하든, 레시피를 실행하는 데 필요한 &a프로그램된 회로&r를 잊지 마세요"
+	]
+	quest.4F086B3CF27D5C1A.quest_desc: [
+		"GT의 에너지는 에너지 유닛(EU)으로 측정됩니다"
+		""
+		"에너지 사용량은 EU/t로 측정됩니다"
+		""
+		"GT에서 에너지를 생산할 수 있으며 자연스럽게 EU로 이루어지지만, Powah와 같은 다른 MOD에서 에너지를 만들고 그것을 EU로 변환할 수도 있습니다(나중에 자세히 설명하겠습니다)"
+	]
+	quest.4F086B3CF27D5C1A.quest_subtitle: "안전을 위해 꼭 읽어주세요"
+	quest.4F086B3CF27D5C1A.title: "에너지"
+	quest.4F2BBB75E5B5EAD8.title: "소금 광맥"
+	quest.4F8E090CB349A681.title: "바스트네사이트 광맥"
+	quest.4FD6092D9C2A485C.quest_desc: [
+		"철, 니켈 또는 인바, 망간, 크롬 가루를 &b고급 믹서&r에서 &a프로그램 회로&r 설정으로 만들 수 있습니다"
+		""
+		"&e망간 가루&r는 텅스텐, 스페살틴, 올리빈, 탄탈, 파이롤루사이트, 울페나이트, 셰라이트의 광석 처리 부산물입니다"
+		""
+		"&c앞을 내다보며&r, 탄탈과 텅스텐 처리를 추천합니다"
+		""
+		"&d크롬 가루&r는 크로마이트나 루비 광석 처리에서 얻을 수 있으며, 이들은 추가로 전기분해기에서 처리하여 더 많은 크롬을 얻을 수 있습니다!"
+	]
+	quest.4FFD94248EDBE5FA.quest_desc: ["&bZPM 티어&r의 서킷 어셈블러는 메인프레임을 제외한 최종 컬렉션의 프로세서를 만들 수 있게 합니다."]
+	quest.4FFD94248EDBE5FA.quest_subtitle: "마지막에서 두 번째"
+	quest.502FF1A93E06073C.quest_desc: [
+		"GregStar를 이 페이지의 모든 구성 요소로 조립하기 전에, 먼저 그 기반을 만들어야 합니다."
+		""
+		"견고한 스타 하우징은 스타 단조에 가해지는 힘을 견디고, GregStar를 구성하는 요소들을 지지하기에 충분한 강도를 가지고 있습니다."
+	]
+	quest.502FF1A93E06073C.quest_subtitle: "&e엥?&r"
+	quest.503E5B82A6C89278.quest_desc: [
+		"염화비닐에 소량의 산소를 추가하면 폴리염화비닐이 생성됩니다"
+		""
+		"&e&l힌트:&r&r &b리퀘스터&r를 설정하는 것이 좋습니다!"
+	]
+	quest.5041EDE3E75E1EDF.quest_desc: ["성장 배지 또는 배양 배지는 미생물이나 세포 집단의 성장을 지원하기 위해 설계된 고체, 액체, 또는 반고체입니다."]
+	quest.5041EDE3E75E1EDF.quest_subtitle: "&b유기물 성장&r"
+	quest.504DEE88DFDBD380.quest_desc: [
+		"증기 시대와 마찬가지로 이것은 고체 금속을 그 액체 형태로 변환합니다"
+		""
+		"또한 이를 통해 원료 고무 펄프를 얻을 수 있습니다"
+	]
+	quest.504DEE88DFDBD380.quest_subtitle: "액체 자산"
+	quest.506360EEA2268E82.quest_desc: ["누군가 옛날 CRT 텔레비전을 기억하나요? 그것들은 진공관을 사용했습니다"]
+	quest.511FB322F176D88C.quest_desc: [
+		"마지막으로, 최고급 고무인 &d스티렌 부타디엔 고무&r"
+		""
+		"이 고무를 사용하여 와이어를 코팅할 수 있으며, 나중에 고급 컨베이어 모듈을 만들 때 유용할 것입니다"
+	]
+	quest.512BD9BCA43AEE83.quest_desc: [
+		"전해조는 전하에 기반하여 화합물을 구성 화합물로 분리합니다"
+		""
+		"이 경우, &d삼산화비소&r를 &e비소&r와 &b산소&r로 분리합니다"
+	]
+	quest.512BD9BCA43AEE83.quest_subtitle: "전기뱀장어처럼 충격을 줍니다"
+	quest.5143E0F48520D41B.quest_desc: [
+		"화학적으로 이산화황과 더 많은 산소를 반응시켜 삼산화황을 만듭니다"
+		""
+		"산소는 매우 중요합니다. 아직 전용 설정을 수동적으로 생성하지 않았다면 돌아가서 설정하는 것을 추천합니다"
+	]
+	quest.51494B3023705E54.title: "가넷 광맥"
+	quest.515D958C0F436BE8.quest_desc: [
+		"이것이 우리의 에너지 해치를 위해 만들 마지막 코일이 될 것입니다!"
+		""
+		"아직 한 티어가 더 있지만, 에너지 해치용 코일로는 이것이 마지막 티어입니다!"
+	]
+	quest.515D958C0F436BE8.quest_subtitle: "궁극의 전압"
+	quest.51A567FB870F026E.title: "증기 시대"
+	quest.51DB667E991E51F0.quest_desc: [
+		"광석 처리의 새로운 설정!"
+		""
+		"[ \"\", { \"text\": \"The \" }, { \"text\": \"Sifter \", \"color\":\"yellow\" }, { \"text\": \"replaces the Thermal Centrifuge and 2nd Macerator in the \" }, { \"text\":\"Ore Processing Setup\", \"color\":\"gold\", \"clickEvent\": { \"action\":\"change_page\", \"value\":\"25DBFE887B041E94\" }, \"underlined\":\"true\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here for a reminder\" } } } ]"
+		""
+		"아이템 흐름과 필터를 잘 사용하면 새로운 설정을 구축할 필요가 없지만, 새로운 설정이 작업이 더 적을 것입니다"
+	]
+	quest.5241693278027FFD.quest_desc: [
+		"음, 괜찮을 거라고 생각해봅시다"
+		""
+		"&5EV&r에서는 1000볼트 이상을 다룹니다! 마치 전기 기술자 같지만, 절대로 집에서 시도하지 마세요"
+	]
+	quest.5241693278027FFD.quest_subtitle: "괜찮아요, &5EV&r 모든 게 괜찮아요"
+	quest.52F81AFDE2DC39EF.quest_desc: ["16x 인듐 주석 바륨 티타늄 큐프레이트 와이어 - 수량 8"]
+	quest.52F81AFDE2DC39EF.quest_subtitle: "LuV 초전도체"
+	quest.533DB1666B11489A.quest_desc: [
+		"아직 EV 어셈블러를 만들지 않았다면, 지금이 그 때입니다!"
+		""
+		"이것을 사용하여 EBF용 텅스텐강 코일을 만들 것입니다"
+	]
+	quest.5357A140DD05654A.quest_desc: ["우라늄 트리플라티늄 와이어 - 수량 8 x 16"]
+	quest.5357A140DD05654A.quest_subtitle: "EV 초전도체"
+	quest.539D5084283C6219.quest_desc: ["&b아르곤&r은 화학 원소로, 기호는 &bAr&r, 원자 번호는 &b18&r입니다. 주기율표의 18족에 속하며, 희가스입니다. &b아르곤&r은 지구 대기 중 세 번째로 풍부한 가스로, &b0.934%(9340 ppmv)&r입니다."]
+	quest.539D5084283C6219.quest_subtitle: "&b아르곤 플라즈마&r"
+	quest.53AF056139DAACDB.quest_desc: [
+		"식물 공을 분쇄하여 &b바이오 체프&r를 만듭니다"
+		""
+		"이것을 자동화할 경우, 출력을 &b바이오 체프&r 2개로 설정하고 4개로 하지 않도록 주의하세요. 우발적인 출력이 자동 크래프팅 설정을 혼란스럽게 할 수 있습니다"
+	]
+	quest.53B44E24BB111D24.quest_desc: ["&1IV 티어&r도 더 저렴해진다고요?! 점점 더 좋아지고 있어요!"]
+	quest.53B44E24BB111D24.quest_subtitle: "&1IV"
+	quest.53BBE717148C0B18.quest_subtitle: "이 광석들에는 철이 많이 포함되어 있습니다"
+	quest.53BBE717148C0B18.title: "침철광 광맥"
+	quest.53C5CE6433E201BD.quest_desc: [
+		"이 웨이퍼들은 최고 티어의 전통적인 반도체 칩, UHPIC 또는 울트라 하이파워 IC(집적 회로)를 만듭니다."
+		""
+		"앞으로 만들 많은 기계에 이 칩들이 대량으로 필요할 것입니다."
+	]
+	quest.53C5CE6433E201BD.quest_subtitle: "울트라 하이파워 집적 회로"
+	quest.540B4CE165EE4D5B.quest_desc: [
+		"Primarily, we'll use this dust to make &dTungstensteel&r by &eMixing&r it with steel dust"
+		""
+		"Sometimes though, we'll need to throw this dust into the &eEBF&r on &aProgram 1&r to get the hot ingot, then cool it off in the &eVacuum Freezer&r to acquire the &3Tungsten Ingot&r"
+	]
+	quest.54118BE76738EB6D.quest_desc: ["이 훌륭한 에메랄드를 십여 개 모으세요. 다음 몇 단계에서 큰 도움이 될 것입니다."]
+	quest.54118BE76738EB6D.quest_subtitle: "훌륭하다고 말할 수 있겠네요?"
+	quest.545959C8C28C6F2B.quest_desc: ["그 &b에메랄드 판&r을 &b선반&r으로 가공하여 &b에메랄드 렌즈&r를 얻으세요!"]
+	quest.546100C879F45BB1.quest_desc: ["모든 걸 수동으로 체질해서 더러워지고 싶은 사람은 없겠죠. 이 &d멀티블록&r에 모든 체질을 맡기고, 후반부를 위해 필요한 보석을 얻어요!"]
+	quest.546100C879F45BB1.quest_subtitle: "수동 체질로 먼지투성이가 되고 싶은 사람?"
+	quest.546F6933699B9BF3.quest_desc: [
+		"&6팔라듐 광석&r은 꽤 희귀하지만, 대안으로 &6플래티넘&r을 분쇄하거나 &6셸도나이트 광석&r을 분쇄한 것을 &7수은&r으로 화학 배스하는 방법이 있습니다"
+		""
+		"&7수은&r은 &c레드스톤 가루&r를 원심분리기로 쉽게 얻을 수 있습니다"
+	]
+	quest.54A164C737660C4E.quest_desc: [
+		"이것은 보통 &b수은&r 또는 &b과황산 나트륨&r으로 분쇄된 광석을 세척하여 대체 부산물을 얻기 위해 광석 처리 라인에서 사용됩니다"
+		""
+		"하지만 이 경우, 그것은 또한 &b뜨거운 실리콘 인곳&r을 냉각하는 데 사용될 수 있습니다"
+	]
+	quest.54BEC01D84237DBC.quest_desc: ["소량의 수소와 염소를 &e화학 반응기&r에서 함께 반응시키면 HCl이 생성됩니다"]
+	quest.54EB576C8EAF2C28.quest_desc: ["&bHastelloy X&r는 우수한 고온 강도와 산화 저항성을 가진 단조 니켈 기반 합금이에요. 모든 제품 형태가 성형과 용접에 우수해요."]
+	quest.54EB576C8EAF2C28.quest_subtitle: "단철? 아니요. &b단조 니켈&r이에요."
+	quest.54EDFCD65E088296.quest_desc: [
+		"지금까지 진공관을 사용했던 레시피는 이제 이 새로운 방법을 사용하세요!"
+		""
+		"&e메모:&r JEI에서 &b$circuits&r를 입력하면 다양한 회로를 검색할 수 있습니다. 특정 티어의 회로를 검색하려면 &b$circuits/ulv&r를 입력하세요."
+	]
+	quest.54EDFCD65E088296.quest_subtitle: "저렴한 ULV"
+	quest.5500BDFA7A5D04EB.quest_desc: [
+		"또 다른 &aEBF&r 업그레이드인가요? 네!"
+		""
+		"이를 통해 HV 초전도 금속과 같은 고티어 인곳을 용해할 수 있게 됩니다!"
+	]
+	quest.5520FCC832251168.quest_desc: [
+		"핵융합 반응로는 내부에서 발생하는 엄청난 열과 반응을 억제하기 위해 강력한 재료가 필요합니다."
+		""
+		"그래서 GregStar의 강도와 내구성을 확보하기 위해 이 재료들이 매우 적합합니다!"
+	]
+	quest.5520FCC832251168.quest_subtitle: "&6스타 도금&r"
+	quest.55328778D7078E24.title: "중전압 시대"
+	quest.554389C781241743.title: "몰리브덴 광맥"
+	quest.5561EB1E3DD77EC5.quest_desc: [
+		"UHV 에너지 해치. 우리는 마침내 에너지 해치의 정점에 도달했습니다!"
+		""
+		"이제 어떤 티어의 전력 요구사항도 처리할 수 있도록 멀티블록을 설정할 수 있습니다!"
+	]
+	quest.5561EB1E3DD77EC5.quest_subtitle: "마침내 정점에"
+	quest.559DB570A9152259.quest_desc: ["이게 대량으로 필요할 것 같은 예감이 드네요..."]
+	quest.559DB570A9152259.quest_subtitle: "로듐, 구했어요?"
+	quest.55ACA94C7837FF5E.quest_desc: [
+		"이 시점에서, 각 티어를 통해 많은 것을 배웠군요. 그 지식을 보여주는 무언가를 얻어야 합니다!"
+		""
+		"이 경우, 이 증명서로 충분합니다. 당신은 더 이상 초보자가 아닙니다!"
+	]
+	quest.55ACA94C7837FF5E.quest_subtitle: "인증!"
+	quest.55C47B868C5ECF54.quest_desc: ["광석을 찾는 데 어려움을 겪고 있나요? 이것을 만들어 어떤 기계의 에너지 슬롯에 넣어 충전하세요"]
+	quest.55F0472830CC6BF6.quest_desc: ["파내야 할 유체를 찾고 있나요? 이 탐색기에는 유체 모드가 있어 그런 작업에 도움이 됩니다!"]
+	quest.560D95D4C404A164.title: "극한 전압 시대"
+	quest.56B7CC072B8E9B48.quest_desc: [
+		"수산화 나트륨 가루가 다시 도움이 됩니다! 에피클로로히드린과 비스페놀 A와 &e화학 반응&r시켜 액체 에폭시를 만듭니다"
+		""
+		"그 후, 에폭시를 직접 플레이트로 &e고체화&r할 수 있습니다"
+		""
+		"이것들을 나노프로세서 회로기판의 기반으로 사용합니다"
+	]
+	quest.574019B5B7CA43E0.quest_desc: ["&d고급 인덕터!&r 계속해서 이전 레시피를 업데이트해 주세요"]
+	quest.574E65B7954A13D0.quest_desc: ["다음 티어의 에너지 해치를 만들기 위해 필요한 컴포넌트입니다!"]
+	quest.574E65B7954A13D0.quest_subtitle: "제로 포인트!"
+	quest.57630D2B5150F714.quest_desc: ["UV 피스톤은 UV 기계와 UV 로봇 팔의 필수 컴포넌트입니다."]
+	quest.57630D2B5150F714.quest_subtitle: "최고의 피스톤"
+	quest.579A41570D610B07.quest_desc: [
+		"이 기계는 많이 사용될 것이므로, 처리 레시피를 빠르게 유지하기 위해 업그레이드할 가치가 있습니다"
+		""
+		"레시피를 병렬로 처리하기 위해 이것들을 여러 개 만드는 것을 고려하세요"
+	]
+	quest.579A41570D610B07.quest_subtitle: "당신의 &b실험실 가운&r은 어디 있나요?"
+	quest.57B4881AA36A1D76.quest_desc: ["나무 가루를 판자로 압축하기"]
+	quest.57B4881AA36A1D76.quest_subtitle: "이게 합판인가요?"
+	quest.57B5100C11F76EE9.quest_desc: [
+		"퀀텀 시대에 들어선 지금, 우리의 기계들은 하늘을 날고 있습니다!"
+		""
+		"하지만 더 큰 처리 능력에는 더 많은 복잡성이 따릅니다. 전력, 자원, 처리 라인. 하지만 그게 우리가 여기 있는 이유 아닙니까!"
+	]
+	quest.57B5100C11F76EE9.quest_subtitle: "퀀텀 이후에는 무엇이 올까요?"
+	quest.57D12E37E980FDBB.quest_desc: [
+		"나쿠아다 합금은 멀티블록이나 다른 기계의 컴포넌트를 만드는 데 매우 중요합니다."
+		""
+		"로터리 하스에 필요한 나쿠아다 합금 프레임을 모두 만들기 위해 많은 나쿠아다 합금이 필요할 것입니다."
+	]
+	quest.57D12E37E980FDBB.quest_subtitle: "이것이 당신이 찾던 나크 합금입니다"
+	quest.57F1B60DEA622275.quest_desc: ["그 &b웨이퍼&r는 이제 칩으로 잘라야 하므로 이것들을 가지고 &b커터&r로 돌아갑니다"]
+	quest.57F6323716A0ED24.quest_desc: [
+		"변이된 하수 생물을 만들려고 하시나요?"
+		""
+		"이 사실을 마스터 스플린터에게 알려야겠어요..."
+	]
+	quest.57F6323716A0ED24.quest_subtitle: "TMNT"
+	quest.583F0F3C00D211BE.quest_desc: ["&d플라즈마&r는 고체, 액체, 기체 다음으로 생각되는 물질의 제4의 상태입니다."]
+	quest.583F0F3C00D211BE.quest_subtitle: "&b질소 플라즈마&r"
+	quest.587B4048E0BCEB27.quest_desc: [
+		"엔더 눈을 라돈으로 화학 배스하면, 이 &d퀀텀 아이즈&r를 얻을 수 있습니다"
+		""
+		"모든 &e레이저 인그레이버&r를 EV로 업그레이드하고 싶은 경우를 제외하고는 대량 생산할 필요가 없습니다(IV로 업그레이드하는 것이 더 좋습니다)"
+	]
+	quest.589F47DE51213920.quest_desc: [
+		"&8석탄&r에 &a막자사발&r을 사용하여 &8석탄 가루&r를 얻습니다"
+		""
+		"&8석탄 가루&r를 &e원심분리기&r로 처리하여 &8탄소 가루&r를 얻습니다"
+		""
+		"다시 &e원심분리기&r를 사용하고, 이번에는 &f유리 가루&r로 &f실리콘 이산화물 가루&r를 얻습니다"
+	]
+	quest.589F47DE51213920.title: "&f실리콘&r의 재료"
+	quest.58F378384CEFCEF2.title: "광기의 전압 시대"
+	quest.592113082337004B.quest_desc: ["더 쉬운 IV 회로이지만 여기서 멈추지 마세요! 더 나아가면 꿈꾸던 루디크러스 볼티지 회로를 얻을 수 있습니다!"]
+	quest.59908911C4FFF223.quest_desc: [
+		"이것은 많은 암페어를 가지고 있지만, 전력 공급에는 관심이 없습니다."
+		""
+		"이것은 구성 요소를 만들기 위해 필요합니다. 이것도 분명 할 수 있을 겁니다."
+	]
+	quest.59908911C4FFF223.quest_subtitle: "16 암페어"
+	quest.599BABC83E76A711.quest_desc: [
+		"이것을 녹여 평평하게 하고, 섬세한 층을 형성하기 위한 포일을 만들어 고급 SMD 커패시터를 만듭니다"
+		""
+		"이리듐 광석을 찾기 어려운 경우 이리듐 꿀벌 작업을 시작하거나 플랫라인™에서 가장 희귀한 금속 혼합물의 처리를 시작할 수 있습니다"
+		""
+		"{\"clickEvent\": {\"action\": \"change_page\", \"value\": \"2EE52FD7129D3D87\"}, \"text\": \"How to: Rarest Metal Mixture\", \"color\": \"yellow\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here to open the quest!\" } }}"
+	]
+	quest.59A7880359BB5698.quest_desc: ["&b이중 텅스텐강 플레이트&r를 고정하기 위해서는 &b나사&r가 필요합니다. 이로써 상당히 안전해질 것입니다."]
+	quest.59A7880359BB5698.quest_subtitle: "&b플레이트용 나사&r"
+	quest.5A3FF46A2B275049.quest_desc: ["기술의 최전선에 서서 새로운 프로세서를 만들기 위해 크리스탈 칩을 사용해야 합니다!"]
+	quest.5A3FF46A2B275049.quest_subtitle: "빛나는 크리스탈"
+	quest.5A658F239928850E.quest_desc: ["LuV의 세계로 진입했습니다! 계속 진행해서 &cZPM&7이 무엇인지 알아봅시다!"]
+	quest.5A658F239928850E.quest_subtitle: "전쟁이 아닌, &dLuV&r를 만들자!"
+	quest.5A658F239928850E.title: "나는 &dLuV&7의 진행을 사랑해"
+	quest.5AAD0E516762BA53.quest_desc: ["아직도 떠있는 느낌인가요? 그건 그 소울 바이알에서 나온 셜커 때문일 수 있어요."]
+	quest.5AAD0E516762BA53.quest_subtitle: "&b선견 크리스탈&r"
+	quest.5AD33290313151D6.quest_desc: [
+		"아메리슘은 일반적으로 연기 감지기의 입자 감지기로 사용됩니다."
+		""
+		"그 양이 매우 적어 사람에게 무해하지만 연기를 감지하는 데 매우 효과적이기 때문에 사용됩니다."
+	]
+	quest.5AD33290313151D6.quest_subtitle: "액체 아메리슘"
+	quest.5B1C5C9F9CCC51EB.quest_desc: [
+		"소량의 황산과 청색 염료, 그리고 소금 가루 2개로 액체 청색 염료를 만들 수 있습니다"
+		""
+		"걱정하지 마세요, 그걸 양동이로 담을 필요는 없습니다"
+	]
+	quest.5B64384E4CE27851.quest_subtitle: "줄무늬 철광석 광맥"
+	quest.5B64384E4CE27851.title: "침철광 광맥"
+	quest.5B92DA55541B168B.quest_desc: ["네, 또 &e레이저 조각기&r 레시피입니다... 이 퀘스트들이 비선형적으로 되고 있습니다"]
+	quest.5C1BB559DD83E88F.quest_desc: ["기계를 업그레이드하면 새로운 레시피에 접근할 수 있고 처리 속도가 향상됩니다\\n\\n이를 오버클로킹이라고 하며, 기계의 GUI에서 설정할 수 있습니다(예를 들어, 전력을 절약하기 위해 오버클로킹을 하지 않으려는 경우)\\n\\n레시피의 오버클로킹은 처리 속도를 2배로 만들지만, 전력 소비는 4배가 됩니다 - 전체적으로 에너지 소비는 2배가 됩니다"]
+	quest.5C1BB559DD83E88F.quest_subtitle: "LV에 오신 것을 환영합니다"
+	quest.5C38DAD6BA43A7F1.quest_desc: ["아세트산에 에틸렌과 산소를 추가하여 이번에는 &e화학 반응기&r의 &a프로그램 3&r으로 처리하세요"]
+	quest.5C6F8FE4BA28807E.quest_desc: ["몇 개의 &b고급 컴퓨터&r."]
+	quest.5C6F8FE4BA28807E.quest_subtitle: "&b고급 컴퓨터&r"
+	quest.5D1B9EACB654BDF8.quest_desc: [
+		"크리스탈 프로세서에 도달하여 &bUV 티어&r의 프로세서를 가지고 있습니다!"
+		""
+		"많은 진전이 있었지만, 아직 끝나지 않았습니다. 계속 나아갑시다!"
+	]
+	quest.5D1B9EACB654BDF8.quest_subtitle: "&b스와로브스키&r"
+	quest.5D3C8198D9756004.quest_desc: [
+		"렌치는 제작 도구이며, 확실히 그렇지만 GT 기계의 채굴 도구이기도 합니다! 우클릭하면 GT 기계의 출력 면이 설정되고, 웅크리고 우클릭하면 회전합니다"
+		""
+		"파일은 제작 도구이며, 그게 전부입니다"
+		""
+		"톱 또한 제작 도구이지만, 하나의 통나무에서 6개의 판자를 얻을 수도 있습니다!"
+	]
+	quest.5D3C8198D9756004.title: "편리한 도구"
+	quest.5D58E5CB4F4BDAD5.quest_desc: ["컬렉션에 또 다른 렌즈를 추가하세요! 렌즈마다 레이저 조각기를 만들었다면 레이저 조각기가 풍부할 것입니다"]
+	quest.5D58E5CB4F4BDAD5.title: "저전력 집적 칩"
+	quest.5DFE866011AB92DD.quest_desc: ["이제 &dLuV&r 티어 기계를 만들 한 발짝 앞이에요!"]
+	quest.5DFE866011AB92DD.quest_subtitle: "&dLuV&r 말장난에 지치셨나요?"
+	quest.5DFE866011AB92DD.title: "LuV 기계 선체"
+	quest.5E1FA88B5AC652DC.title: "인회석 광맥"
+	quest.5E56B9758F8365B4.title: "가넷 모래 광맥"
+	quest.5E62E6F314843E1D.quest_desc: [
+		"&bMkII 퓨전 리액터&r는 퓨전 리액터의 처리 능력을 가속화합니다."
+		""
+		"&b퓨전 리액터 MkII&r는 16개의 에너지 해치와 16개의 입출력 해치를 나열하고 있지만, 직접적으로 필요하지는 않습니다. 해치가 더 적어도 멀티블록을 형성할 수 있습니다. 그럼에도 불구하고, &b퓨전 리액터 Mk.II 케이싱&r을 더 많이 만드는 것보다 많은 해치를 추가하는 것이 더 저렴합니다."
+	]
+	quest.5E62E6F314843E1D.quest_subtitle: "&b퓨전 리액터 MkII&r"
+	quest.5E90EF7FF530C477.quest_desc: [
+		"&e에탄올&r + &e황산&r로 &e화학 반응기&r에서 에틸렌을 만듭니다"
+		""
+		"물론 다른 방법도 있지만, 그것들은 아직 다루지 않은 석유화학과 관련이 있습니다"
+	]
+	quest.5F18FC7AE321677D.quest_desc: ["대량으로 필요하지는 않지만, 다른 부품이나 멀티블록 구조를 만들기 위해 중요한 컴포넌트예요."]
+	quest.5F18FC7AE321677D.quest_subtitle: "다음 티어의 네더 스타?"
+	quest.5F270891C953486E.quest_desc: [
+		"이 업그레이드로 &b웨이퍼&r의 수가 증가하여 더 높은 티어의 칩이 가능해집니다!"
+		""
+		"이제 &b실리콘 블록 웨이퍼 레시피&r를 업그레이드할 때가 된 것 같지 않나요? 그렇게 생각합니다!"
+	]
+	quest.5F3BF06A1DA8AB8D.quest_desc: ["그 &b네트륨 웨이퍼&r를 &b레이저 조각기&r에 검은 렌즈와 함께 넣어 &bHASOC&r를 얻으세요. 이것은 앞으로도 크게 도움이 될 것입니다."]
+	quest.5F3BF06A1DA8AB8D.quest_subtitle: "&b레이저 조각&r"
+	quest.5F7F05E4C3310724.quest_desc: [
+		"이것이 최종 세트 프로세서의 첫 번째 중 하나입니다!"
+		""
+		"아직 이 프로세서의 최상의 레시피(최상의 것은 4개의 프로세서를 반환합니다)를 이용할 수 없지만, 다음 섹션에서 &bUV 서킷 어셈블러&r를 해제하면 곧 사용할 수 있게 될 것입니다."
+	]
+	quest.5F7F05E4C3310724.quest_subtitle: "&c끝의 시작&r"
+	quest.5FAA73C52082DC48.quest_desc: [
+		"편리한 &e화학 반응기&r에 &b플라스틱 회로기판&r, &b구리 포일&r, 그리고 만든 &b염화철(III)&r을 넣어 &b플라스틱 인쇄회로기판&r을 얻습니다"
+		""
+		"이것은 모든 &b마이크로프로세서 회로&r의 기반으로 사용됩니다"
+	]
+	quest.5FE8521046CA1C8D.quest_desc: ["&b이중 텅스텐강 플레이트&r는 매우 내구성 있는 &6스타&r를 만듭니다. 아마도 이것이 그 견고함의 원천일 것입니다."]
+	quest.5FE8521046CA1C8D.quest_subtitle: "&6두 배로 늘리기&r"
+	quest.60069A897F2B0F78.quest_desc: [
+		"고무나무를 찾아 재배하여 점착성 수지를 얻으세요"
+		""
+		"대신에 슬라임볼을 용광로에서 녹이면 고무를 얻을 수 있습니다"
+	]
+	quest.60069A897F2B0F78.quest_subtitle: "슬라임 농장?"
+	quest.60175A8E3A67F51C.quest_desc: ["각 티어의 에미터와 센서는 항상 만들기 가장 어려운 컴포넌트예요. 하지만 결국에는 만든 기계에서 유용하게 쓰이니까 만들 가치가 있어요."]
+	quest.60175A8E3A67F51C.quest_subtitle: "당신이 방출하고 있는 걸 감지해요."
+	quest.601DA80C08C3F9AC.quest_desc: ["모든 로드 제조 요구에 대해!"]
+	quest.601DA80C08C3F9AC.quest_subtitle: "좋은 옛 로드"
+	quest.603ABA13788E2216.quest_desc: ["유로퓸의 고체화 버전을 얻었으니 이를 더 가공하여 기계나 멀티블록의 컴포넌트로 만들 수 있습니다!"]
+	quest.603ABA13788E2216.quest_subtitle: "마지막 카운트다운입니다!"
+	quest.60736D37F7705B39.quest_desc: [
+		"그건 매우 뜨거운 인곳입니다! &a진공 냉동기&r로 식히세요"
+		""
+		"&aEBF&r에는 칸탈 코일 블록이 필요합니다"
+	]
+	quest.60CD82B8DE0D0CFE.quest_desc: [
+		"이 기계는 물건을 압축합니다"
+		""
+		"식물 물질을 식물 볼로 바꿀 수 있으며, 나중에 유용할 수 있습니다"
+		""
+		"나무 가루도 압축하여 나무 판자로 만들 수 있습니다"
+	]
+	quest.60CD82B8DE0D0CFE.quest_subtitle: "제대로 압축하세요"
+	quest.61262BC1C525E6F1.quest_desc: ["마지막으로, 스테인리스강으로 &6HV&r 기계 제조를 시작할 수 있습니다!"]
+	quest.61428FAD831DC213.quest_desc: ["16개의 코일을 만드는 것은 힘들 수 있지만, 필요한 작업입니다. 그렉스타를 위해서요!"]
+	quest.61428FAD831DC213.quest_subtitle: "16 코일"
+	quest.61B3730E93DD24DB.title: "베릴륨 광맥"
+	quest.61BC5BBD1657D409.quest_desc: ["Naq 라인을 최적화하세요. ZPM 기계 선체에는 상당한 양의 나쿠아다 플레이트가 필요할 것입니다."]
+	quest.61BC5BBD1657D409.quest_subtitle: "나쿠아다 플레이트가 많이 필요합니다"
+	quest.61D9E67FFA14A8F8.quest_desc: ["&6핵융합 반응로&r에 의한 처리 결과로 많은 액체가 보입니다."]
+	quest.61D9E67FFA14A8F8.quest_subtitle: "&b산소 플라즈마&r"
+	quest.6206EE9A045553CC.quest_desc: ["원심분리기를 사용하여 &c트리늄 황화물&r을 &2불순한 농축 나쿠아다 용액&r에서 분리합니다."]
+	quest.6206EE9A045553CC.quest_subtitle: "RPM 증가"
+	quest.620C406CC24F179C.quest_desc: [
+		"이 녀석이 더 저렴한 고무 제조 레시피를 해제합니다!"
+		""
+		"황 가루 1개와 생고무 펄프 9개로 액체 형태의 고무 인곳 9개에 해당하는 것을 만듭니다"
+	]
+	quest.620C406CC24F179C.quest_subtitle: "고무가 많을수록 좋습니다"
+	quest.62161044F3F3AB87.quest_desc: ["그 액체 &b청색 염료&r와 이 기계의 유리 렌즈를 결합하면 &b유리 렌즈 (청색)&r으로 염색할 수 있습니다"]
+	quest.625B5E3CDDAECFFD.quest_desc: [
+		"여기까지 오는 동안 많은 EBF를 만들었을 겁니다."
+		""
+		"아직 끝나지 않았습니다. 하지만 이제 로터리 하스 용광로를 만들어 병렬 작업을 실행해 봅시다! 처리 속도를 높입시다!"
+	]
+	quest.625B5E3CDDAECFFD.quest_subtitle: "거대한 EBF!"
+	quest.6275C90E5890C1E4.quest_desc: ["&e암석 분쇄기&r의 세계에서 왼쪽에 &b물&r을, 오른쪽에 &c용암&r을 놓고, &e암석 분쇄기&r에 &b섬록암&r 블록 하나를 넣어 그것이 &b섬록암&r을 어떻게 증가시키는지 보세요"]
+	quest.6275C90E5890C1E4.quest_subtitle: "수동적 &b알루미늄&r"
+	quest.6275C90E5890C1E4.title: "&b점토 라인&r"
+	quest.629DC8DED0F6B578.quest_desc: ["바이오매스를 증류하면 &e에탄올&r이 만들어집니다. 이것은 알코올이지만, 아무에게도 말하지 마세요"]
+	quest.629DC8DED0F6B578.quest_subtitle: "음용 불가"
+	quest.62BBF61C9849CA26.quest_desc: [
+		"최소 크기는 5x5x5이고, 최대 크기는 15x15x15입니다. 그 사이의 어떤 크기도 유효합니다!"
+		""
+		"&a 클린룸 &r 멀티블록은 내부가 비어 있습니다. 클린룸이 필요한 레시피를 실행하기 위한 기계를 내부에 설치하기 때문입니다. 예를 들어, &5 EV 회로 &r는 클린룸 내부의 &b 서킷 어셈블러 &r가 필요합니다"
+		""
+		"&e 에너지 해치 &r, &e 유지보수 해치 &r, 그리고 &e 철문 &r을 잊지 마세요!"
+		""
+		"무선 전송을 이해할 수 있다면, &6 패스스루 해치 &r는 필요하지 않습니다"
+		""
+		"&9 발전기 &r를 사용하여 EU를 공급하는 경우, 발전기는 클린룸에 넣기에는 너무 더럽기 때문에 &3 다이오드 &r가 필요합니다"
+		""
+		"&c 에너지 변환기 &r를 사용하는 경우, 에너지 변환기는 깨끗하므로 다이오드가 필요하지 않습니다"
+	]
+	quest.62BBF61C9849CA26.quest_subtitle: "깨끗하게"
+	quest.62E7B8817D22678F.quest_desc: [
+		"그렇습니다, &e화학 반응기&r용 또 다른 레시피입니다"
+		""
+		"황산 500mB + 금 포일 8개 + 에폭시 시트 = 에폭시 회로 기판 1개"
+	]
+	quest.62F4355AE3E08FD9.quest_desc: ["익숙한 절차지만, &3플루오린화 수소산&r과 &5클로로폼&r을 &e화학 반응&r시켜 &d테트라플루오로에틸렌&r을 만듭니다"]
+	quest.6300791605A757B0.quest_desc: [
+		"압축기에 식물 8개를 넣으면 식물 공을 만들 수 있습니다"
+		""
+		"또한, 접착제를 만들 때 원심분리기에서 부산물로 얻을 수도 있습니다"
+	]
+	quest.6300791605A757B0.quest_subtitle: "압축된 식물 물질"
+	quest.6335DC1E7517E940.quest_desc: ["유기물을 비유기 컴포넌트와 통합하고, 적절한 구성과 적절한 유기물을 사용함으로써 무한한 처리 능력을 얻을 수 있습니다!"]
+	quest.6335DC1E7517E940.quest_subtitle: "&b반유기물&r"
+	quest.6338544F8530118F.quest_desc: [
+		"중급 고무입니다! 이것을 사용하지 않을 수도 있지만, 최고급 고무에 접근할 수 있습니다"
+		""
+		"미래에는 &9실리콘 고무&r가 구체적으로 필요한 레시피가 있어서 이것을 만들었습니다"
+	]
+	quest.63621F0189B6EB1B.quest_desc: ["&b바나듐강 가루&r는 믹서에서의 MV 레시피이므로 업그레이드할 때입니다!"]
+	quest.639B1F99D7271C07.quest_desc: ["로듐을 얻었으니 팔라듐과 섞어 로듐 도금 팔라듐을 만들고, 그것을 인곳으로 가공한 다음 플레이트로 만들어 &dLuV&r 티어의 선체를 만들 수 있어요. 즉, &dLuV&r 티어의 기계를 만들 수 있다는 거죠!"]
+	quest.639B1F99D7271C07.quest_subtitle: "먼지가 가라앉았을 때, 나는 보았다...로듐??"
+	quest.63AEFB3C1395BBBA.quest_desc: [
+		"우리 모두 이 문제에 직면하고 있고, 모두가 싫어합니다. 하지만 이것은 필요한 악입니다."
+		""
+		"GT 설정을 가진 모든 사람에게, 우리가 구축한 것을 해체하고 프로세스를 최적화하거나 아직 설정하지 않은 새로운 프로세스를 만들기 위해 기계를 재구성할 때가 옵니다. 이를 두려워하지 마세요. 고통스럽게 느껴질 수 있지만, 나중에 그렇게 해서 다행이라고 생각할 것입니다. 특히 프로세스를 위해 단일 기계 대신 대형 멀티블록을 사용하도록 전환할 때 말이죠."
+		""
+		"기억해야 할 주요 사항은 이러한 멀티블록으로 재구성할 때 여러분의 그레그테크 공장이 멋지게 보일 것이라는 점입니다!"
+	]
+	quest.63AEFB3C1395BBBA.quest_subtitle: "나는 수집광이 아니라고 맹세합니다! 단지 물건을 모으는 걸 좋아할 뿐이에요!"
+	quest.63BFEE8B17688712.quest_desc: ["&6대형 화학 배스&r는 자원의 대량 처리를 쉽게 만들어요! 당신의 기지에 몇 개 설치될 거예요."]
+	quest.63BFEE8B17688712.quest_subtitle: "&l&bLCB&r 알아요? 응, 나도 알아!"
+	quest.63E4149FF75592C8.quest_desc: [
+		"마침내 &6HV&r에서 &e분쇄기&r의 &d부산물&r에 접근할 수 있게 되었습니다"
+		""
+		"이 부산물들은 매우 유용하며, 진행 과정에서 여러 번 도움이 될 것입니다"
+	]
+	quest.63E4149FF75592C8.title: "광석 처리 업그레이드"
+	quest.64314EEB9916CAB1.quest_desc: [
+		"산소와 황 가루를 &e화학 반응기&r의 &a프로그램 2&r로 반응시키면 이산화황이 만들어집니다"
+		""
+		"황의 수요를 따라잡기 어려운 경우 블레이즈 가루 2개를 원심분리하여 황 가루를 만들기 시작할 수 있습니다"
+	]
+	quest.643E6B22C8B376BA.quest_desc: ["이제 이전 재료들을 결합해서 루디크러스 전압 코일을 만들었어요! 이 코일로 멀티블록 구조를 만들면 감사의 말을 들을 거예요!"]
+	quest.643E6B22C8B376BA.quest_subtitle: "이 전압은 대단해요!"
+	quest.6445DEC19DD55A34.quest_subtitle: "레시피"
+	quest.644B16B9618B41BE.quest_desc: [
+		"분쇄기로 &a원 에메랄드&r 또는 실크터치된 &a네더 에메랄드 광석&r을 처리하고, 그 후 광석 세척기로 세척하고, 정제된 광석을 &e체질&r하여 &b특급&r 또는 &b완벽한&r 보석을 얻습니다"
+		""
+		"GregTech의 에메랄드 광석이어야 합니다. 일반적인 실크터치된 에메랄드 광석은 사용할 수 없습니다"
+		""
+		"&e&l힌트:&r GregTech™의 에메랄드를 찾으려면 네더에서 &dy=5에서 y=30&r 사이의 &d베릴륨&r을 찾거나 네더랙 층의 채굴 차원을 확인하세요!"
+	]
+	quest.64E271AA238B131F.quest_desc: ["합금 용광로의 컨트롤러를 만들려면 &8탄탈륨 카바이드 플레이트&r가 필요해요."]
+	quest.64E271AA238B131F.quest_subtitle: "&8고강도 탄탈륨"
+	quest.64F77D41B2D057B8.quest_desc: ["거기 있던 나는 살사에 무릎까지 잠기고 모터 오일로 뒤덮여 있었습니다\\n\\n어쨌든, 액체를 사용한 많은 작업을 할 준비를 하세요!"]
+	quest.64F77D41B2D057B8.quest_subtitle: "깊이 &1다이브&r하세요"
+	quest.64FD043694770843.quest_desc: [
+		"이 시점에서, &d반물질 펠릿&r에는 이미 익숙해졌겠죠."
+		""
+		"&6GregStar&r를 위해 더 많이 필요합니다. &c엄청나게&r."
+	]
+	quest.64FD043694770843.quest_subtitle: "&c더 많은 반물질?&r"
+	quest.6517B8748E3A6831.quest_desc: [
+		"[ \"You'll need \", { \"text\": \"Laminated Glass\", \"color\": \"green\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"0907800ED4793F96\" } }, \" to make this\" ]"
+		""
+		"믹서를 가지고 있다면, 고속도강(HSS) 변형을 만들 때가 왔습니다!"
+	]
+	quest.653260450BEDB6AB.quest_desc: ["왜 두 개의 에너지 해치를 사용하나요? 이 에너지 해치 하나로 IV의 4암페어를 혼자서 받아들일 수 있습니다!"]
+	quest.65A075160D46BEF7.quest_desc: [
+		"이것은 대량의 데이터셋과 복잡한 계산을 고속으로 처리하는 것으로 알려진 강력하고 정밀한 기계입니다."
+		""
+		"슈퍼컴퓨터의 최종 티어에 도달했습니다!"
+		""
+		"하지만 잠깐... &b메인프레임&r은 어디 있나요?"
+	]
+	quest.65A075160D46BEF7.quest_subtitle: "&b최고의 슈퍼컴퓨터&r"
+	quest.65A966D22EC7F9AA.quest_desc: [
+		"&b마이크로유니버스 오븐&r은 많은 전력을 필요로 합니다. 이 전력을 조작에 최적으로 사용하려면 집중시켜야 합니다."
+		""
+		"이를 위해 구조에는 포커스 렌즈가 필요합니다."
+	]
+	quest.65A966D22EC7F9AA.quest_subtitle: "&b집중된 에너지&r"
+	quest.65B40CBB9C6AD5DF.quest_desc: ["우라늄 로듐 다이나쿠아지드 와이어 - 수량 8 x 16"]
+	quest.65B40CBB9C6AD5DF.quest_subtitle: "ZPM 초전도체"
+	quest.662E0A84D755064F.quest_desc: ["냉각되면 &b인곳&r을 더 편리한 재료로 성형할 수 있습니다"]
+	quest.6635E4C76260C4CB.quest_desc: [
+		"암페어는 전력(EU/t)의 패킷과 같은 것으로, 다른 전압 티어(LV, MV, HV 등)로 올 수 있습니다"
+		""
+		"여분의 암페어를 받는 기계는 폭발하지 않습니다"
+		""
+		"정격 이상의 암페어를 받은 케이블이나 와이어는 타버립니다"
+	]
+	quest.663DA87FDB10E2B8.quest_desc: ["양자 시대에 오신 것을 환영합니다! ZPM 프로세서와 새로운 멀티블록이 기다리고 있어요!"]
+	quest.663DA87FDB10E2B8.quest_subtitle: "퀀텀맨!"
+	quest.663DA87FDB10E2B8.title: "&7스타게이트가 우리에게 &cZPM을 줬어"
+	quest.66D86E1EDEBF542B.quest_desc: [
+		"기계와 케이블/와이어는 특정 전압 티어에서 작동하도록 평가됩니다"
+		""
+		"기계에 과도한 전압을 공급하면 폭발합니다"
+		""
+		"와이어나 케이블에 과도한 전압을 공급하면 타버립니다"
+		""
+		"LV는 32볼트(32 EU/t/A)입니다"
+		"MV는 128볼트입니다"
+		"HV는 512볼트입니다"
+		"등"
+	]
+	quest.672B308FD1DC0F45.quest_desc: [
+		"보일러에 물과 연료를 넣고, 가열을 지켜보면 스팀 생성이 시작됩니다!"
+		""
+		"파이프즈의 액체 파이프로 연결된 싱크와 같은 임의의 물 공급원을 사용할 수 있습니다!"
+		""
+		"매우 중요하지만, 이미 뜨거워진 보일러에 물을 넣으면 보일러가 폭발합니다"
+		""
+		"고체 보일러는 석탄과 같은 고체 연료를 사용하고, 액체 보일러는 용암과 같은 액체 연료를 사용합니다."
+	]
+	quest.672B308FD1DC0F45.quest_subtitle: "스팀 올리기"
+	quest.672B308FD1DC0F45.title: "스팀 보일러"
+	quest.677B8753B7904E95.quest_desc: [
+		"&b정제된 섬아연광&r과 &5정제된 방연광&r을 &6황산&r과 &e혼합&r하면, 매우 가치 있는 자원 중 하나인 &d인듐 농축물&r의 제조가 시작됩니다"
+		""
+		"이 재료는 중요하므로, 별도의 &a광석 처리&r 설비를 마련할 가치가 있습니다"
+	]
+	quest.6786C701B7C4980B.quest_desc: ["그라비스타는 앞으로 만들 고티어 기계에도 매우 중요한 컴포넌트입니다."]
+	quest.6786C701B7C4980B.quest_subtitle: "별들은 중력이 많아요"
+	quest.678BA300CED48E5E.quest_desc: ["이 &b이트륨 바륨 구리 산화물 볼트&r를 많이 만들어 &bIV 프로세서&r의 비용을 크게 줄이세요!"]
+	quest.678BA300CED48E5E.quest_subtitle: "비용 절감"
+	quest.67AA17BCDE37DFAB.quest_desc: [
+		"새로운 로터리 하스 용광로로 처리 작업을 하는 동안, 인곳을 냉각하기 위해 따라잡을 수 있는 멀티블록이 필요할 것입니다."
+		""
+		"여기서 벌크 블라스트 칠러가 등장합니다!"
+	]
+	quest.67AA17BCDE37DFAB.quest_subtitle: "RHF와 잘 어울립니다"
+	quest.67C9D2712EA1F637.title: "ULV 티어"
+	quest.6805CC8AD6010F33.quest_desc: [
+		"이를 통해 &1IV&r 회로의 단일 레시피가 해제됩니다!"
+		""
+		"이 시대를 건너뛰고 이 회로를 그냥 만들지 않도록 주의하세요"
+	]
+	quest.6805E4C7F6FBAC77.quest_desc: ["&b원유&r를 증류하면 가장 많은 &e황산 나프타&r를 얻을 수 있지만, 다른 석유 유형에서도 얻을 수 있습니다"]
+	quest.681110DE6B4E6ED8.quest_desc: [
+		"[ \"\", { \"text\": \"If you made the \" }, { \"text\":\"Clay Processing Line\", \"color\":\"aqua\", \"clickEvent\": { \"action\":\"change_page\", \"value\":\"6275C90E5890C1E4\" }, \"underlined\":\"true\", \"hoverEvent\": { \"action\":\"show_text\", \"contents\": { \"text\":\"Click here for a reminder\" } } }, { \"text\":\" earlier, you can simply pause the \" }, { \"text\":\"Electrolyzer\", \"color\":\"yellow\" }, { \"text\":\" briefly to acquire clay dust to mix with your stone dust\" } ]"
+		""
+		"적어도 이 재료를 만드는 것으로 양동이나 믹서가 망가지지는 않을 겁니다"
+	]
+	quest.6829D2769ACC1BDB.quest_desc: ["ME 유체 출력! 생성된 유체나 부산물 유체를 ME 시스템으로 직접 돌려보냅니다! 확실히 효율적이죠!"]
+	quest.6829D2769ACC1BDB.quest_subtitle: "ME 유체 출력"
+	quest.68526BA198AADD8E.quest_desc: ["네더에서 &b일렉트로틴&r을 찾을 수 없다면, 일렉트럼과 레드스톤을 &e믹서&r의 &a프로그램 1&r로 섞어 만들 수 있습니다"]
+	quest.688AFF76CF5E599A.quest_desc: [
+		"&b커터&r는 &b부울&r을 빠르게 처리하여 16개의 &b웨이퍼&r로 만듭니다"
+		""
+		"이 웨이퍼들을 사용하여 더 저렴한 다이오드를 만들 수도 있습니다 - 레시피를 업그레이드할 시간입니다!"
+	]
+	quest.68B46D9369D9809B.title: "MV 티어"
+	quest.68B6B946B6BA24CB.quest_subtitle: "여기에 알루미늄이 있습니다"
+	quest.68B6B946B6BA24CB.title: "보크사이트 광맥"
+	quest.692C9BA71EA0F0A7.quest_desc: ["이 레벨의 믹서가 필요합니다. 이것을 사용하여 &3텅스텐강 가루&r나 &d바나듐 갈륨 가루&r를 만들 수 있습니다"]
+	quest.692C9BA71EA0F0A7.quest_subtitle: "반죽 갈고리는 어디 있나요?"
+	quest.695E846B663EC185.quest_subtitle: "중성자늄!!!"
+	quest.6A0D1E9D534958B8.title: "황동광 광맥"
+	quest.6A243EDB2A99C76D.quest_desc: [
+		"다른 &a프로그램 회로&r 설정으로 &b고급 믹서&r로 돌아갑니다. 리마인더로, &d프로그램 2&r의 레시피 전용으로 새로운 것을 만들 수도 있습니다"
+		""
+		"이번에는 철, 니켈, 아연 가루가 필요합니다"
+	]
+	quest.6A2D7380E340B77D.quest_desc: [
+		"염소는 다양한 소스에서 얻을 수 있습니다! 예를 들어, 소달라이트, 암염, 소금 가루, 인회석 가루를 전기분해하거나 일반 바닷물을 전기분해하면 됩니다."
+		""
+		"바닷물을 사용하는 경우, 어떻게 바닷물을 얻는지 궁금할 수 있습니다. 걱정 마세요! 가스트의 눈물이 많이 있다면 그것을 물과 화학 반응시켜 만들 수 있습니다."
+		""
+		"또한 소금 가루와 물을 믹서에서 섞어 바닷물을 만들 수 있지만, 그 경우에는 그냥 소금 가루를 전기분해하는 것이 더 좋을 것입니다."
+	]
+	quest.6A54E73E212BB1AF.quest_desc: [
+		"&6황 가스&r는 &a석유 증류&r에서 &7정제소 가스&r로 변환될 수 있습니다"
+		""
+		"정제소 가스는 무엇을 증류하고 싶은지에 따라 다른 형태로 &a크래킹&r됩니다"
+		""
+		"&3라이트 하이드로크래킹 가스&r는 &d메탄&r과 수소의 훌륭한 공급원입니다!"
+		""
+		"대안 경로로, 버섯을 &e원심분리&r하거나 발효된 바이오매스를 &e증류&r하는 방법도 있지만 더 느립니다"
+	]
+	quest.6A82827978D3483B.quest_desc: [
+		"더 많은 &b산소&r를 가진 &b에틸렌&r은 &b폴리에틸렌&r을 만듭니다"
+		""
+		"이 레시피에는 &e프로그램 1&r을 사용해야 합니다"
+		""
+		"&b산소&r 대신 &b공기&r를 사용할 수도 있지만, 얻는 &b폴리에틸렌&r은 적어집니다"
+		""
+		"이 재료는 매우 다용도이고 많이 사용할 것이므로, 많이 만들거나 더 좋은 것은 수동적으로 만들도록 하세요"
+	]
+	quest.6A82827978D3483B.quest_subtitle: "더 많은 &b산소&r"
+	quest.6A86F8FB2B3A3425.quest_desc: [
+		"&aOre Process&r &cStibnite&r for a chance at Antimony"
+		""
+		"Put Stibnite dust through a &eCentrifuge&r for guaranteed Antimony"
+		""
+		"Antimony becomes incredibly important later on, so be sure to stock up and don't turn it all into soldering alloy!"
+	]
+	quest.6AD5F24DA80B93A8.quest_desc: ["Running low on &0Benzene&r? A good source can come from &aDistilling&r &6Severely Steam Cracked Heavy Fuel&r"]
+	quest.6BE928FE24539D4B.quest_desc: [
+		"&eEV 프로세서&r가 더 저렴해진다고요? 그거 좋네요!"
+		""
+		"발전은 좋은 거죠!"
+	]
+	quest.6BE928FE24539D4B.quest_subtitle: "&eEV"
+	quest.6C30EEA91FB21A3B.quest_desc: ["이것이 최종 티어의 프로세서를 만드는 데 필요한 마지막 기판입니다."]
+	quest.6C30EEA91FB21A3B.quest_subtitle: "&b마지막 회로&r"
+	quest.6CE157D05F59A994.quest_desc: [
+		"합금 제조기에 고무 인곳 2개와 주조 틀을 넣으면 고무 시트를 만들 수 있습니다"
+		""
+		"케이블을 만들 때 고무로 와이어를 코팅해야 할 때 유용합니다"
+	]
+	quest.6D082AE4CF9A56DC.quest_desc: [
+		"&c1800K&r 이상의 온도에서 인곳을 폭발시키면 단순한 배스로 냉각하기에는 너무 뜨겁습니다"
+		""
+		"여기서 &e진공 냉동기&r가 등장합니다. 냉각 요구사항을 충족시킵니다!"
+		""
+		"이 기계는 뜨거운 인곳을 냉각하는 데 탁월하며, 많은 가스를 액체로 변환할 수 있습니다"
+	]
+	quest.6D6AA1A0D8AB01DE.quest_desc: [
+		"라미네이트 유리가 필요한 첫 번째 기계를 만들어봅시다!"
+		""
+		"더 높은 티어의 칩을 자르려면 더 높은 티어의 커터가 필요합니다"
+	]
+	quest.6DA0ABBC89711536.quest_desc: [
+		"중성자 반사체는 모든 리액터의 운영에 필수적입니다. 이 경우 우리는 중성자 반사체의 재료로 이리듐을 사용합니다."
+		""
+		"이 반사체들은 중성자를 반응 영역 내에 유지하여 연쇄 반응을 계속합니다."
+	]
+	quest.6DA0ABBC89711536.quest_subtitle: "중성자 반사체? 심각해지는군요..."
+	quest.6E18951E41103391.quest_desc: [
+		"퓨전 리액터 Mk. III. 이미 앞으로 올 것을 보고 계실 겁니다. 그래서 이 부분이 필요하다는 것을 이해하실 겁니다."
+		""
+		"앞으로 올 것들에 대해서는 사실이지만, 그렇다고 Mk.III가 원래 용도로 우리에게 가치가 없다는 뜻은 아닙니다."
+		""
+		"적어도 하나의 Mk.III 리액터를 만들어보세요. 당신에게 이로울 것입니다."
+	]
+	quest.6E18951E41103391.quest_subtitle: "Mk. III"
+	quest.6E2F24117ACF3694.quest_desc: [
+		"나열된 재료를 모아 JEI의 멀티블록 정보 페이지를 확인하고 만드는 방법을 살펴보세요"
+		""
+		"각 LV 에너지 해치는 2암페어의 LV를 받아들입니다. 이를 통해 총 4암페어의 LV가 되어 이 경우 EBF는 1암페어의 MV로 작동하는 것처럼 MV 레시피를 처리할 수 있습니다!"
+		""
+		"멀티블록 정보 페이지에는 한 가지 가능한 구성이 표시되지만 반드시 원하는 구성은 아닙니다. 각 위치에 유효한 블록을 확인하세요"
+		""
+		"입력과 출력 블록의 색이 컨트롤러와 케이싱과 일치하도록 변하면 형성된 것을 알 수 있습니다"
+	]
+	quest.6E2F24117ACF3694.quest_subtitle: "첫 번째 멀티블록"
+	quest.6E6D9527AC093199.quest_desc: [
+		"이 단계는 간단합니다. 잔류물을 &e원심분리&r하기만 하면 이리듐 염화물과 약간의 슬러지가 남습니다"
+		""
+		"그 슬러지를 더 처리할 수도 있지만, 귀중한 이리듐을 얻기 위해서는 필요하지 않습니다"
+	]
+	quest.6E9126ECA080E725.quest_desc: [
+		"&b섬록암&r을 &b섬록암 가루&r로 갈아요! &b돌 가루&r도 조금 얻게 되는데, 그것을 고려해야 합니다"
+		""
+		"버퍼 상자/통에 자동으로 출력하는 것을 추천하며, &b돌 가루&r는 버리세요"
+	]
+	quest.6ECBB6F5D0D99DEE.quest_desc: [
+		"합금 제련로를 사용하면 다양한 재료의 합금을 만들 수 있습니다"
+		""
+		"주조 틀을 사용하여 재료를 특정 형태로 만들 수도 있습니다. 예를 들어, 유리 가루를 유리 튜브로 만듭니다"
+		""
+		"주조 틀은 재사용 가능하며, 만들 물건에 따라 교체할 수 있습니다"
+		""
+		"자동화할 때는 패턴에서 주조 틀을 제거하는 것을 잊지 마세요. 또한, 수동으로 틀을 교체할 필요가 없도록 이것을 여러 개 만드는 것이 편리합니다"
+	]
+	quest.6EF5C5FFF6BC26B7.quest_desc: [
+		"대형 분별 증류기는 증류탑과 같지만 스테로이드를 사용해요. 여러 개의 LFD를 추가해 유체를 처리하는 대신 병렬화 해치를 활용할 수 있어요."
+		""
+		"이로 인해 대형 분별 증류기는 여러 개의 멀티블록 구조가 되지만, 병렬화 해치를 가진 모든 멀티블록도 마찬가지예요."
+	]
+	quest.6EF5C5FFF6BC26B7.quest_subtitle: "LFD"
+	quest.6EF6D11ABBA34AE3.quest_desc: [
+		"이 &b멀티블록&r을 &b어셈블리 라인&r과 혼동하지 마세요! 이 &b멀티블록&r은 &b어셈블러&r이고 &b어셈블러&r의 레시피를 실행하지만, &b어셈블러&r는 아니에요. &b어셈블러&r는 다른 프로세스를 수행하고 이 기계와는 다른 레시피를 가지고 있어요."
+		""
+		"그건 그렇고, 이 &b멀티블록&r은 여전히 멋져요! 다시 말하지만, 여러 개의 프로그램된 회로예요!"
+	]
+	quest.6EF6D11ABBA34AE3.quest_subtitle: "이건 &b어셈블리 라인&r이 아니에요!"
+	quest.6F0AD70D3748D8D2.quest_desc: ["&cZPM&r에 도달할 때까지 많은 것들에 필요하지만, 현 시점에서는 이것을 사용하여 &d고급 SMD 트랜지스터&r와 &6HPIC 웨이퍼&r를 제조합니다"]
+	quest.6F15619C8A07E78A.quest_desc: ["이 나쁜 녀석은 스팀으로 작동하는 그저 용광로입니다"]
+	quest.6F15619C8A07E78A.quest_subtitle: "모든 상황을 위한 용광로"
+	quest.6F49C691CF79D4B8.quest_desc: ["클린룸의 벽에는 &b플라스크리트&r 대신 &b클린룸 유리&r를 사용할 수 있지만, 모서리나 바닥에는 사용할 수 없습니다"]
+	quest.6F8E58FF4D96C4BC.quest_desc: ["UHV 에너지 해치가 에너지 공급의 정점이지만, 4A UHV 에너지 해치도 여전히 있습니다."]
+	quest.6F8E58FF4D96C4BC.quest_subtitle: "잠깐... 우리는 이미 정점에 있지 않았나요?"
+	quest.6F8E6D84D31651D5.quest_desc: [
+		"Chlorine and Benzene in a &eChemical Reactor&r on &aProgram 1&r will make you &2Chlorobenzene&r"
+		""
+		"Do you need more &0Benzene&r? You might try &aDistilling&r &6Severely-Steam Cracked Heavy Fuel&r"
+	]
+	quest.702CE73E39E4D4BD.quest_desc: [
+		"이것은 복잡한 인곳입니다. 이 합금에는 많은 다른 금속이 혼합되어 있지만, 그만한 이유가 있습니다."
+		""
+		"이 인곳으로 이제 고티어 컴포넌트를 만들 수 있습니다!"
+	]
+	quest.702CE73E39E4D4BD.quest_subtitle: "복잡한 것들..."
+	quest.707EBA5717938515.quest_desc: ["&bMV 커터&r에 필요한 컴포넌트"]
+	quest.70C952B8FF3418F6.quest_desc: [
+		"&6HV&r에 오신 것을 환영합니다! 여기서부터 정말 흥미진진해집니다!"
+		""
+		"먼저, 스테인리스강을 만들어 &bHV 기계&r를 만들어 봅시다"
+	]
+	quest.70C952B8FF3418F6.quest_subtitle: "&6HV&r를 위한 벨트 매기"
+	quest.71941882F9E2ADAC.quest_desc: ["이 처리 라인을 돕기 위해 성장 배지가 필요하지만, 아직 최종 성장 배지는 없습니다. 이것은 단지 원료 버전입니다."]
+	quest.71941882F9E2ADAC.quest_subtitle: "&b실험실 테스트&r"
+	quest.71B1416A45FBBE40.quest_desc: [
+		"네더에서 황 광석을 찾아 그것을 녹여 황 가루를 얻으세요. 또한 벌도 있습니다!"
+		""
+		"원료 고무 펄프와 황 가루를 합금 제련로에 넣어 첫 번째 고무를 얻으세요"
+	]
+	quest.71B1416A45FBBE40.title: "고무"
+	quest.71D4B261AF487062.quest_desc: [
+		"&e어셈블러&r를 업그레이드하면 표면 실장 디바이스, 줄여서 &bSMD&r를 만들 수 있습니다. 이를 통해 회로 부품이 더 저렴해집니다!"
+		""
+		"또한, 더 높은 티어의 에너지 해치를 해제하므로 멀티블록을 업그레이드할 때가 왔습니다!"
+	]
+	quest.72082D70F5D22632.quest_desc: ["이것이 미래입니다! 우리는 진보를 이루었고 미지의 영역으로 나아가고 있습니다!"]
+	quest.72082D70F5D22632.quest_subtitle: "크리스탈 메인프레임!"
+	quest.7220835BD1F8EBA7.quest_desc: [
+		"&d바륨 가루&r는 &b바라이트 가루&r를 &e전기분해&r하여 얻을 수 있습니다"
+		""
+		"&d수은&r은 레드스톤 가루나 신나바 가루를 &e원심분리&r하여 얻을 수 있습니다"
+		""
+		"&d칼슘 가루&r가 필요하다면 뼛가루를 &e전기분해&r할 수도 있습니다!"
+	]
+	quest.7244FA69157727AF.quest_desc: ["이전 퀘스트에서 얻은 트리늄 황화물을 EBF에 아연과 함께 넣으면 뜨거운 트리늄 인곳이 나옵니다. 이를 식히면 원하던 트리늄을 얻을 수 있습니다."]
+	quest.7244FA69157727AF.quest_subtitle: "용해된 트리늄"
+	quest.7255B9A6E1319DCA.quest_subtitle: "사파이어"
+	quest.7255B9A6E1319DCA.title: "알만딘 광맥"
+	quest.72DACA35906D7E5B.quest_desc: [
+		"&b섬록암 가루&r를 원심분리하여 &b점토 가루&r와 &b미라빌라이트 가루&r를 얻습니다"
+		""
+		"&b미라빌라이트&r는 나중에 처리하기 위해 저장해도 됩니다"
+		""
+		"다음 단계에서는 &b점토 가루&r만 사용하므로, 그 &b미라빌라이트 가루&r를 어떻게 해야 합니다"
+	]
+	quest.72DC025BC059DF96.quest_desc: ["Mixing &6Nitric Acid&r with &cSulfuric Acid&r makes a &eNitration Mixture&r"]
+	quest.72E5439299E957A8.quest_desc: [
+		"그 &e추출기&r를 사용하여 구리를 액체 상태로 만듭니다"
+		""
+		"&e와이어 커터&r로 칸탈 인곳을 자릅니다"
+		""
+		"&e구부리기&r로 그 알루미늄을 구부립니다"
+		""
+		"그리고 모두 &e어셈블러&r에서 조립하세요!"
+		""
+		"당신의 &aEBF&r의 큐프로니켈 코일을 이것으로 교체하세요"
+	]
+	quest.72FA90C181139957.quest_desc: [
+		"이것이 액티브 트랜스포머가 GT 인프라를 사용하여 EU를 전송하는 최고의 방법인 이유입니다."
+		""
+		"그 엄청난 암페어를 주변에 전송하는 능력은 비할 데 없습니다."
+	]
+	quest.72FA90C181139957.quest_subtitle: "그건 엄청난 전력이에요!"
+	quest.732D201794C228DD.quest_desc: [
+		"&6HV&r 회로 레시피의 업그레이드!"
+		""
+		"실제로 이전보다 더 저렴해졌나요? 네! 믿기지 않으면 레시피를 비교해 보세요."
+	]
+	quest.7353DB3A9820C92F.quest_desc: ["&b티타늄 카바이드 플레이트&r를 만들기 위한 &b티타늄 카바이드 가루&r가 합금 용광로의 벽에 필요한 두 번째 아이템이에요."]
+	quest.7353DB3A9820C92F.quest_subtitle: "&b고강도 티타늄"
+	quest.7382C366A1ABAAE3.quest_desc: ["양자 CPU가 모든 큐비트를 처리해요!"]
+	quest.7382C366A1ABAAE3.quest_subtitle: "1GHz에 큐비트가 몇 개나 들어갈까요?"
+	quest.73E639487E878948.quest_desc: ["&6그렉스타&r는 샤드로 분할할 수 있습니다. 그런 다음, 이 샤드들을 사용하여 가장 &c과도하게 강력한 아이템&r 중 하나를 만들 수 있습니다!"]
+	quest.73E639487E878948.quest_subtitle: "&6그렉스타 샤드&r"
+	quest.73FC1166FBD6C30D.quest_desc: ["다른 저항값의 저항기를 만들 필요는 없습니다"]
+	quest.73FC1166FBD6C30D.quest_subtitle: "옴"
+	quest.743B72CC181776EC.quest_desc: ["&b티타늄 텅스텐 카바이드&r는 절삭 공구와 내마모 부품 제품을 위한 초고순도 혼합 카바이드 첨가제예요. 이 합금은 높은 경도와 HT 강도를 포함하며, 매우 강하고 내구성 있는 합금이에요."]
+	quest.743B72CC181776EC.quest_subtitle: "순수한 고내구성 합금! 미쳤어!!"
+	quest.74510B6C9C16A628.quest_desc: [
+		"핵융합 리액터 Mk1이 가동 중이므로 다음 티어로 진행하는 데 필요한 희귀 자원을 얻을 수 있습니다!"
+		""
+		"이 경우 유로퓸이 자주 사용됩니다. 티어가 올라갈수록, 그리고 그레그스타의 컴포넌트로도 사용됩니다!"
+	]
+	quest.74510B6C9C16A628.quest_subtitle: "초희귀 원소를 얻자!"
+	quest.74726A2DD4BBDA7B.quest_desc: [
+		"티타늄과 듀라늄을 섞습니다."
+		""
+		"이제 EBF 코일용으로 매우 강하고 내열성이 있는 재료가 생겼습니다!"
+		""
+		"하지만 그건 조금 나중 얘기예요. 아직 거기까지 도달하지 않았어요."
+	]
+	quest.74726A2DD4BBDA7B.quest_subtitle: "그건 강력해요"
+	quest.74D47A8DF93294E4.quest_desc: [
+		"Now you need that &aLarge Chemical Reactor&r to make this"
+		""
+		"Note that the Zinc Dust is &c&lNot Consumed&r, meaning you should not include it in the recipe for autocrafting this - instead put one in your Input Bus and leave it there"
+		""
+		"&3Ammonia&r can come from &eChemical Reacting&r &9Hydrogen&r with &bNitrogen Gas&r which you can get from a &eGas Collector&r in the &2Overworld&r, feeding a &aVacuum Freezer&r, feeding a &aDistillation Tower&r"
+	]
+	quest.74EE98F95F483C37.quest_desc: [
+		"코발트 광석 가루와 산소 3양동이를 전기 용광로에 넣어 삼산화비소 가루를 얻으세요"
+		""
+		"이를 통해 산화코발트와 이산화황도 생성되며, 추가 처리하여 일부 산소를 회수할 수 있습니다"
+	]
+	quest.754229E1F1D2DA8A.quest_desc: [
+		"더 많은 &b핵융합 유리&r가 필요합니다. 이번에는 &b다중 블록용&r이 아니라, &6구성 요소&r를 만들기 위해 필요합니다."
+		""
+		"이것들을 &b수동적으로 생산&r하는 방법을 고려해볼 수 있습니다."
+	]
+	quest.754229E1F1D2DA8A.quest_subtitle: "&e창가 자리가 좋습니다&r"
+	quest.759446116655756C.quest_desc: [
+		"&b인콜로이&r 제품은 주로 크롬 기반, 니켈 기반으로 내식성과 고온 강도를 위해 설계되었어요."
+		""
+		"&b인콜로이&r 합금은 초오스테나이트계 스테인리스강 카테고리에 속해요. 한 가지 장점은 용접 후 내식성을 회복하기 위해 열처리가 필요하지 않다는 거예요."
+	]
+	quest.759446116655756C.quest_subtitle: "새인가요? 비행기인가요? 아니요, &b슈퍼 스틸&r이에요!"
+	quest.762BD49C9589EB3F.quest_desc: ["코일의 필요성은 끝나지 않습니다. 이것들이 다중 블록에서 사용되지 않더라도, 좋은 용도로 사용될 것을 보장합니다."]
+	quest.762BD49C9589EB3F.quest_subtitle: "더 많은 코일?"
+	quest.768951FBE8A5C934.quest_desc: [
+		"모든 계층에서 &b최고 수준의 효율&r로 전송을 보장하는 것이 필요한 경우, 무엇을 얻게 될까요?"
+		""
+		"사용 가능한 모든 &b초전도체&r를 하나의 케이블로 결합하면 잘 작동할 수 있습니다!"
+	]
+	quest.768951FBE8A5C934.quest_subtitle: "&b초전도성&r"
+	quest.76ECB0EF7A5E410A.quest_desc: [
+		"&b전기분해기&r는 중요하지만, 작고 많은 처리 라인에서 사용돼요."
+		""
+		"왜 이 &b멀티블록&r에 이 모든 요구사항을 맡기고 1대의 기계에서 더 많은 프로세스를 병렬로 실행하지 않나요?"
+	]
+	quest.76ECB0EF7A5E410A.quest_subtitle: "차에서 물을 연료로 사용해요?"
+	quest.770ED8E5FEC6D59A.quest_desc: ["이 블록들은 내식성이 있어 좋습니다. 대형 양조통을 만드는 데 사용되기 때문이죠."]
+	quest.770ED8E5FEC6D59A.quest_subtitle: "부식성 재료? 아니요, 괜찮습니다."
+	quest.773543FFEF631C5E.quest_desc: ["줄기세포는 신체의 원재료이며, 특수한 기능을 가진 다른 모든 세포가 생성되는 세포입니다."]
+	quest.773543FFEF631C5E.quest_subtitle: "&b기본 구성 요소&r"
+	quest.7759519157B8C1D8.quest_desc: [
+		"고강도 저합금(&bHSLA&r) 강은 일반적인 탄소강보다 우수한 기계적 특성이나 내식성을 제공하는 합금강의 한 종류예요."
+		""
+		"&bHSLA&r 강은 특정 화학 조성을 만족시키기 위해 만들어지는 것이 아니라 특정 기계적 특성을 만족시키기 위해 만들어진다는 점에서 다른 강과 다릅니다."
+	]
+	quest.7759519157B8C1D8.quest_subtitle: "내산성 강철"
+	quest.77A12A37D5A9B3A4.quest_desc: ["&b콜라겐&r은 당신 몸의 피부, 근육, 뼈, 힘줄, 인대 및 기타 결합 조직의 주요 구성 요소입니다."]
+	quest.77A12A37D5A9B3A4.quest_subtitle: "&b유기물로 작업하기!&r"
+	quest.77AAC2F643E92A88.quest_desc: ["&6레이저 인그레이버&r를 하나 더 추가하여 이번에는 &6NAND 칩&r용으로 사용해 봅시다! 데이터 저장소나 &6크리스탈 프로세서 슈퍼컴퓨터&r에 유용할 거예요 - 나중에 자세히 설명할게요!"]
+	quest.785CB375F25F0715.quest_desc: ["조금만 더 하면 양자 프로세서를 견딜 수 있는 회로 기판이 완성돼요!"]
+	quest.785CB375F25F0715.quest_subtitle: "어닐링 구리가 다시 등장!"
+	quest.78A295D4D1A21BCA.quest_desc: [
+		"&d마그네슘 가루&r와 티타늄 사염화물을 &a전기로&r에 넣으면 매우 &l뜨거운&r 인곳이 생성됩니다"
+		""
+		"마그네슘은 여러 광석 처리에서 얻을 수 있지만, 제가 가장 좋아하는 방법은 흑요석 가루를 &e전기분해&r하는 것입니다."
+		""
+		"얻은 염화 마그네슘을 &e전기분해&r하면 마그네슘과 염소를 재사용할 수 있습니다."
+		""
+		"인곳을 무언가에 사용하기 전에 &a진공 냉동기&r로 식혀야 합니다."
+		""
+		"&l&e주의:&r&r 인곳 레시피의 온도 요구사항을 다시 확인하세요. 이 레시피에는 큐프로니켈 코일보다 더 좋은 &b칸탈 코일&r이 필요합니다."
+	]
+	quest.78C51E9B7B8315F6.quest_desc: ["이 기계는 주조 몰드를 사용하여 액체를 다른 형태로 성형합니다"]
+	quest.78C51E9B7B8315F6.quest_subtitle: "그 액체를 고체로 만들어야 하나요?"
+	quest.78CDA5B4A52FF5D8.quest_desc: ["이 &d멀티블록&r들의 테마로, 모든 프로그램된 회로를 하나의 기계에서 처리할 수 있는 기계가 있다니 어때요? 이 기계들은 정말 후반부로 진행하는 데 도움이 되는 진정한 진보예요!"]
+	quest.78CDA5B4A52FF5D8.quest_subtitle: "벤더, 더 구부려요!"
+	quest.78DC12C2EB504E56.quest_desc: [
+		"이것을 만드는 방법은 여러 가지가 있습니다. 당신에게 가장 적합한 방법을 선택하세요!"
+		""
+		"&e추출&r 유리를 액체로 만들고, 그 다음 &e유체 고체화&r하여 판으로 만들기"
+		""
+		"&a분쇄&r 유리를 유리 가루로 만들고, 그 다음 &a합금 제련&r하여 판으로 만들기"
+		""
+		"&b커터&r를 사용하여 유리를 직접 유리 판으로 변환하기"
+	]
+	quest.790F509BAA15A68E.quest_desc: [
+		"도구는 많은 재료로 만들 수 있으며, 첫 번째 재료는 철일 수 있습니다!"
+		""
+		"도구는 모루에서 같은 재료를 사용하여 수리할 수도 있습니다. 바닐라 도구와 마찬가지입니다"
+		""
+		"망치는 수동으로 플레이트를 만드는 데 사용되지만, 다음 도구에는 필요합니다!"
+	]
+	quest.790F509BAA15A68E.quest_subtitle: "소개"
+	quest.790F509BAA15A68E.title: "도구"
+	quest.791E5CB36B5C1E73.quest_desc: [
+		"이 제품을 만들려면 얇은 시트와 포일이 필요합니다. 둘 다 &e벤더&r로 만들 수 있습니다."
+		""
+		"폴리에틸렌을 직접 시트로 &e유체 고체화&r하거나, 인곳으로 고체화한 다음 블록을 만들어 &e커터&r로 한 번에 9개의 시트로 자를 수 있습니다."
+		""
+		"지금까지 같은 결과를 얻는 여러 가지 방법이 있었음을 보셨을 겁니다. 다양한 방법을 시도해보고 자신만의 제품을 만들어보세요!"
+	]
+	quest.7936FF3ED75DCA59.quest_desc: [
+		"ZPM 티어의 선체를 만들 수 있게 되었으니 매우 강력한 기계를 준비할 수 있습니다."
+		""
+		"아직 최상위 티어에 도달하지 않았지만, 이 기계들이 이전 티어의 프로세스를 믿을 수 없는 속도로 실행하는 것을 보면 그 차이를 알 수 있을 것입니다!"
+	]
+	quest.7936FF3ED75DCA59.quest_subtitle: "새로운 티어, 새로운 기계!"
+	quest.7963008B930D84BB.quest_desc: [
+		"이 기계는 &d크롬 가루&r를 얻는 데 매우 유용하며, &b스테인리스강 가루&r와 &b바나듐강 가루&r 제조에 필요합니다"
+		""
+		"레드스톤 가루를 루비 가루로 연쇄 처리한 다음, &e전기분해&r하여 &d크롬 가루&r를 얻을 수 있습니다"
+	]
+	quest.7985FD6195CF45FD.quest_desc: [
+		"&c에네르기움 가루&r를 &6HV 오토클레이브&r에 넣으면 &b에네르기움 배터리&r를 만들 수 있습니다"
+		""
+		"에네르기움 배터리는 최대 &a10분&r의 HV 전력을 보유할 수 있습니다"
+	]
+	quest.79E29CFE2399AE96.quest_desc: ["액체 산소 플라즈마. 지금까지 많은 산소를 사용해 왔지만, 아직 사용할 것이 남아있습니다!"]
+	quest.79E29CFE2399AE96.quest_subtitle: "플라즈마"
+	quest.79E97623309DEF84.quest_desc: [
+		"&6에폭시&r를 만들기 위한 중요한 재료입니다"
+		""
+		"아세톤, 페놀, 염산을 &a프로그램 1&r로 &e화학 반응기&r에 넣으면 이것이 만들어집니다"
+	]
+	quest.7A0A7DC1C2655EA6.quest_desc: ["&e화학 반응&r으로 &6황산 나프타&r와 &9수소&r를 반응시켜 황을 제거하세요"]
+	quest.7A22E94DD83B12AE.quest_desc: ["박테리아 슬러지는 선택 사항으로 추가되었습니다. 유로퓸을 얻었다면 박테리아 슬러지를 사용할 필요가 없습니다."]
+	quest.7A22E94DD83B12AE.quest_subtitle: "그저 선택사항일 뿐"
+	quest.7A22F294077F6520.title: "터무니없는 전압 시대"
+	quest.7A62C1B9385DF643.quest_desc: [
+		"망치로 유리를 분쇄하고, 합금 제련로에서 주조 틀과 함께 가루를 녹여 유리 튜브를 만듭니다"
+		""
+		"철 가루와 석탄을 섞어 만든 강철 가루를 녹여 강철 인곳을 얻을 수 있습니다"
+	]
+	quest.7A62C1B9385DF643.title: "유리 튜브"
+	quest.7A8242E6D0BC6294.quest_desc: ["원심분리기를 사용하면 매우 빠른 속도로 회전시켜 화합물을 각 재료로 분리할 수 있습니다"]
+	quest.7A8242E6D0BC6294.quest_subtitle: "당신은 나를 빙글빙글 돌리네요"
+	quest.7ACC4E777A75E043.quest_desc: [
+		"&e전기분해&r하여 &b탄탈륨 가루&r를 얻으세요"
+		""
+		"탄탈 광석 처리의 부산물로도 얻을 수 있습니다!"
+	]
+	quest.7AD22973EDC05877.quest_desc: ["&bUV 파워 전달 블록&r과 &6ATM 스타&r를 추가하고, &e짜잔!&r 이제 &6스타 압축 모듈&r이 완성되었습니다."]
+	quest.7AD22973EDC05877.quest_subtitle: "&6스타 압축&r"
+	quest.7AE6AF0B5D3390E7.quest_desc: ["지금까지의 모든 노력은 이 &n&l&5스타 포지&r를 만들기 위한 것이었습니다!"]
+	quest.7AE6AF0B5D3390E7.quest_subtitle: "우주 제작"
+	quest.7AFEEC895FB293D6.title: "남정석 광맥"
+	quest.7B27B87A520E38B0.quest_desc: ["&6HV 화학 반응기&r가 필요하며, 여기에 염소, 탄소 가루, 그리고 루틸 가루를 사용하여 이것을 만듭니다"]
+	quest.7C134F7838C23059.quest_desc: ["&d플랫라인™&r은 나중에 자세히 설명하겠지만, 일단은 플래티넘이 풍부하다는 것에 감사합시다"]
+	quest.7C9D8120B5C5BD9B.quest_desc: [
+		"이 반응을 처리할 수 있는 건 &e대형 화학 반응기&r뿐입니다!"
+		""
+		"오스뮴은 풍부하므로 산성 오스뮴 용액은 사용하지 않습니다"
+	]
+	quest.7CC3BD5F3D66A637.quest_desc: [
+		"이대로는 오래 가지 않을 거예요! 처리를 마치면 많은 새로운 자원이 생길 테니, 그것들을 더 유용한 재료로 가공해 봅시다!"
+		""
+		"이 자원을 많이 필요로 할 테니, 수동적 처리 라인을 구축해 두세요."
+	]
+	quest.7CC3BD5F3D66A637.quest_subtitle: "라돈 구름이 카페에 둥둥 떠서 들어왔어요. 웨이터가 말했죠, '여기서는 비활성 기체를 제공하지 않습니다'. 라돈에서는 아무 반응도 없었어요."
+	quest.7D5F805A6F2551F0.quest_desc: [
+		"산소를 많이 사용하므로 일찍 수동적으로 생성하는 것을 강력히 추천합니다"
+		""
+		"산소를 얻는 방법은 많습니다. JEI에서 레시피를 확인할 때 Usage: LV 또는 Usage: ULV라고 표시된 것을 확인하세요"
+		""
+		"괴타이트 가루를 원심분리하여 산소를 얻거나, 사파이어 가루를 전기분해하는 것도 좋습니다"
+		""
+		"또는 기본 가스 수집기를 만들어 공기를 모으고 그것을 원심분리하여 산소를 얻을 수 있습니다. 물을 전기분해하여 산소를 얻을 수도 있지만, 이런 방법들은 꽤 느리므로 주의가 필요합니다"
+	]
+	quest.7D6AC042FFD0B6D6.quest_desc: ["&a증류&r하여 &e약간 증기 크래킹된 나프타&r에서 &0벤젠&r을 얻으세요"]
+	quest.7D972F334DCE5626.quest_desc: [
+		"나쿠아다는 이 티어뿐만 아니라 앞으로의 티어에서도 매우 중요한 컴포넌트가 될 것입니다."
+		""
+		"나쿠아다, 줄여서 나크는 ZPM 이후의 많은 형태로 사용됩니다. 나쿠아다의 기원을 알고 있다면 이러한 참조를 이해할 수 있을 겁니다."
+	]
+	quest.7D972F334DCE5626.quest_subtitle: "더 많은 나크를!"
+	quest.7DDF87A5856F9FE3.quest_desc: ["16x 수은 바륨 칼슘 큐프레이트 와이어 - 수량 8"]
+	quest.7DDF87A5856F9FE3.quest_subtitle: "HV 초전도체"
+	quest.7DF972754C48E22B.quest_desc: ["이제 멀티블록을 가지고 있으니 '구별된 버스'를 설정하고 각각에 특정 몰드나 프로그램된 회로를 설정할 수 있어요! 이제 올인원 기계가 완성됐어요!"]
+	quest.7DF972754C48E22B.quest_subtitle: "압출로 재료를 절약해요"
+	quest.7E407CDBFD85E65F.quest_desc: ["산소와 에틸렌을 &e화학 반응기&r의 &a프로그램 2&r로 반응시키면 아세트산이 만들어집니다"]
+	quest.7E697FE6A6C8B4EE.quest_desc: ["이 LuV 티어의 초전도체 인곳은 초전도체 와이어나 세선을 만드는 데 도움이 될 것입니다."]
+	quest.7E697FE6A6C8B4EE.quest_subtitle: "인곳이 있으면 선택지가 있습니다!"
+	quest.7E7FAA72581D2186.quest_desc: [
+		"&e혼합&r 당신의 &d인듐&r, &b갈륨&r, 그리고 &6인&r 가루를 &a프로그램 1&r로"
+		""
+		"이 재료는 &3고급 SMD 다이오드&r의 갈륨 비소를 대체할 뿐만 아니라, &cMPIC 웨이퍼&r를 더 높은 전압 계층으로 업그레이드할 때도 널리 사용됩니다"
+	]
+	quest.7E8C36302FDD93C8.title: "UHV 티어"
+	quest.7EE14ED04C64E2AA.quest_desc: ["LuV 티어에서 만든 섬유 강화 회로기판을 가져와 레시피를 약간 변경하면 다층 섬유 강화 회로기판을 만들 수 있습니다"]
+	quest.7EE14ED04C64E2AA.quest_subtitle: "변화"
+	quest.7EFA4F2C0A895502.quest_desc: ["&a녹색&r 유리 렌즈도 이것을 만들 수 있지만, 컬러 유리 렌즈를 만드는 것은 &bHV&r 레시피입니다"]
+	quest.7F2D4C5BEFE3DDD3.quest_desc: [
+		"이것들은 액티브 트랜스포머를 위한 파이프입니다."
+		""
+		"다시 말하지만, 이들은 작동하기 위해 색칠되어야 하며 구부릴 수 없습니다. 레이저의 방향을 바꾸려면 더 많은 액티브 트랜스포머가 필요합니다."
+	]
+	quest.7F2D4C5BEFE3DDD3.quest_subtitle: "더 많은 파이프"
+	quest.7F5DAB3EDB6E9592.quest_desc: [
+		"트리나쿠아를 많이 만들게 될 겁니다."
+		""
+		"속도와 효율성을 최적화하는 방법을 생각해봐야 할 것 같습니다."
+	]
+	quest.7F5DAB3EDB6E9592.quest_subtitle: "냉각 합금"
+	quest.7F64202F2C0BAD2A.quest_desc: [
+		"&e4 RF : 1 EU&r의 변환 비율을 잊지 마세요! HV에서 512 EU이므로 2048 RF입니다"
+		""
+		"일부 레시피는 처리마다 이 모든 것을 사용하므로 에너지 생산이 따라갈 수 있도록 하세요!"
+	]
+	quest.7F64202F2C0BAD2A.quest_subtitle: "전력은 괜찮나요?"
+	quest.7F9131107E7F9AC8.quest_desc: [
+		"스팀을 생성했으니, 이제 그것을 운반할 방법이 필요합니다!"
+		""
+		"이것을 설치하면 보일러에서 기계로 스팀을 전송할 수 있습니다"
+		""
+		"필요에 따라 연결을 추가하거나 제거하기 위해 렌치를 사용하세요"
+	]
+	quest.7FA79ED5DABCF998.quest_desc: ["&b믹싱 베슬&r은 현재 만들어지는 모든 합금뿐만 아니라 앞으로 만들어질 합금에도 매우 중요해요!"]
+	quest.7FA79ED5DABCF998.quest_subtitle: "섞어봐요!"
+	task.00648047034C9531.title: "암석 분쇄기"
+	task.015B712B90E69E36.title: "유효한 광석"
+	task.016BA8271625AE36.title: "분쇄기"
+	task.0362C10508FC4615.title: "유지보수"
+	task.0430C905BE3CA0CF.title: "유효한 광석"
+	task.044F6F66134EEFAB.title: "유효한 광석"
+	task.047722F89EBCC4DE.title: "유효한 광석"
+	task.083DE18D8C046344.title: "유효한 광석"
+	task.0AABC07011A622BB.title: "유효한 광석"
+	task.0B298C73448F3DA6.title: "티타늄 인곳"
+	task.0CD83CD8CF777CB9.title: "유효한 광석"
+	task.0D18011DF2D3F338.title: "유효한 광석"
+	task.0E28075B4E87FE2E.title: "청동 인곳"
+	task.0ED34925D7A494BF.title: "&b체&r"
+	task.0F0F3C716F921B64.title: "전압"
+	task.107ADEF19CD50661.title: "청동 판"
+	task.125DE9E99E5DC392.title: "유효한 광석"
+	task.12A161B884B5653F.title: "유체 시추 장비"
+	task.15389D4D64D19ACA.title: "GT 드라이버"
+	task.15DC25BCFCE78DE2.title: "알루미늄 인곳"
+	task.1791DBA7A318DE68.title: "유효한 광석"
+	task.187F7B08BCC7202F.title: "합금 용광로"
+	task.18CA627A460E3E4E.title: "유효한 광석"
+	task.1A89CC99F53A629F.title: "재구성"
+	task.1B670B474AD80852.title: "GT 크로우바"
+	task.1B94E7A224A87F29.title: "유효한 광석"
+	task.1C193E204C8A2270.title: "가장 저렴한 &bIV 프로세서&r"
+	task.1CAC89F6DFC2AB72.title: "비ABS 멀티블록"
+	task.1CC0983CB7DBE526.title: "갈륨 인곳"
+	task.25E539125A1C5D69.title: "GT 플런저"
+	task.282B4264413EFB2D.title: "플래티넘 인곳"
+	task.2D783271D8830D0E.title: "아무 스팀 보일러"
+	task.2D9B8AF6C76D9CEA.title: "텅스텐 인곳"
+	task.2E62FDEF3A6A88B8.title: "유효한 광석"
+	task.30443BA4C089AA8B.title: "아무 GT 망치"
+	task.309F610CA713BB20.title: "탄탈륨 가루"
+	task.30ECDAAF21DA2EA9.title: "아무 HV 에너지 변환기"
+	task.3165B02F2BFFEDDA.title: "&b화학 반응기&r"
+	task.31A7661D828CB33C.title: "유효한 광석"
+	task.33B208F02F05BF09.title: "GT 나이프"
+	task.341403FEFBFC92C0.title: "청색 염료"
+	task.36397CBA6D39DC0D.title: "텅스텐 인곳"
+	task.3A308744C31E3ED4.title: "유효한 광석"
+	task.3A75356E8DE59132.title: "유효한 광석"
+	task.3AC1607997CAAAAC.title: "유효한 광석"
+	task.3AC5F6DC531CCE3D.title: "어떤 유체 히터든"
+	task.3B9FECB49AF6F450.title: "GT 와이어 커터"
+	task.3CEA3285F2CD5680.title: "GT 파일"
+	task.427138127BEBAEAF.title: "&b탄소 가루&r"
+	task.443C9F78D6B49249.title: "HV 또는 EV 어셈블러"
+	task.465C43AE595A1A9F.title: "GT 해체 나이프"
+	task.4730AB96AAD93282.title: "유효한 광석"
+	task.47A9907066F31663.title: "&6양조장&r"
+	task.47D34EA29A06AACD.title: "이 페이지 이해하기"
+	task.48C19477CB216AD4.title: "황 가루"
+	task.491DC7AF3356B0AE.title: "GT 렌치"
+	task.4BE4C9994786C1D0.title: "전압 변환"
+	task.4BF92CAB53EAFC26.title: "소금 가루"
+	task.4CC5C3088A4F5C7D.title: "전압 손실"
+	task.4E3E4CA01C64C9E2.title: "ME 해치"
+	task.4EEBD6ABA3D55379.title: "GT 막자사발"
+	task.508A2B09B32E5244.title: "유효한 광석"
+	task.5270CD1653E1BAC6.title: "GT 톱"
+	task.529FF9EA2C01FB6E.title: "유효한 광석"
+	task.52AFA2CE57617039.title: "아무 LV 에너지 변환기"
+	task.54231849B7094A32.title: "Tungstate or Scheelite Dust"
+	task.556A070D9E9A67E5.title: "유효한 광석"
+	task.558C014604ECC490.title: "유효한 광석"
+	task.5685DB13CE250DBA.title: "HV 또는 EV 커터"
+	task.5711092D4CD64197.title: "유효한 광석"
+	task.589F9B25E0FC4A24.title: "유효한 광석"
+	task.58DC240BC9900646.title: "암페어"
+	task.5C915E839949FED6.title: "플래티넘 인곳"
+	task.5DED626D70F7EE98.title: "유효한 광석"
+	task.5F8C9C7E6DFA0E6C.title: "GT 낫"
+	task.5FF14D712FF20F3A.title: "유효한 광석"
+	task.6029CFFA9BD91661.title: "유효한 광석"
+	task.64A8B8EDC7F58D0D.title: "&6팔라듐 가루&r"
+	task.65A04FD7D3F264DD.title: "GT 망치"
+	task.6962BAEF473C8C18.title: "유효한 광석"
+	task.69ED2BD3D6D30648.title: "유효한 광석"
+	task.6A623C45C3A556B6.title: "유효한 광석"
+	task.6C841FAADFD094AC.title: "자동화"
+	task.6D9C084B63F0AE29.title: "단조 망치"
+	task.6E16C4B0E9B4CEC0.title: "유효한 광석"
+	task.6F07606E3F7BE160.title: "점프 스타트"
+	task.70DEDB210CBD79D9.title: "유효한 광석"
+	task.71567A9437A86C2F.title: "어떤 MV 에너지 변환기든"
+	task.71AF3878DBC0AB29.title: "프로그래밍된 회로"
+	task.71DDF8155FD8FCAA.title: "유효한 광석"
+	task.740E35A5781E43A7.title: "강철 인곳"
+	task.778C0EDD0752F465.title: "유효한 광석"
+	task.77EF6FE6C54C104A.title: "&b아크로&r"
+	task.783B177BEB5F921E.title: "&bHV&r 또는 &bEV&r 또는 &bIV 레이저 인그레이버&r"
+	task.7AB26B5B4167E5EC.title: "티타늄 인곳"
+	task.7B1C0F47F1D43B20.title: "에너지 개념"
+	task.7B46FA23AF26BF76.title: "&b알루미늄 인곳&r"
+	task.7B87E500C6FB74B3.title: "유효한 광석"
+	task.7BEB4A258BB8C759.title: "HV 배터리"
+	task.7F7725AF8B2A5B13.title: "유효한 광석"
+	task.7FA60EE3F8F0C57B.title: "유효한 광석"
+}

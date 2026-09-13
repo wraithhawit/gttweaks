@@ -1,0 +1,2183 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "ultimate_voltage"
+	group: "1DA67E79B40AB130"
+	icon: {
+		count: 1
+		id: "gtceu:crystal_processor_mainframe"
+	}
+	id: "754B57DEA4C711A5"
+	images: [
+		{
+			height: 3.0d
+			id: "282887C534D2C9B3"
+			image: "gtceu:item/uv_solar_panel"
+			rotation: 0.0d
+			width: 3.0d
+			x: 5.5d
+			y: -8.5d
+		}
+		{
+			height: 3.0d
+			id: "6018953A68A851FA"
+			image: "gtceu:item/uv_electric_motor"
+			rotation: 0.0d
+			width: 3.0d
+			x: 9.5d
+			y: 1.5d
+		}
+		{
+			height: 3.0d
+			id: "541609825E15D3F6"
+			image: "gtceu:item/uv_sensor"
+			rotation: 0.0d
+			width: 3.0d
+			x: 1.0d
+			y: 1.5d
+		}
+		{
+			height: 3.0d
+			id: "495E79B050A41DEC"
+			image: "gtceu:item/uv_emitter"
+			rotation: 0.0d
+			width: 3.0d
+			x: -3.5d
+			y: 1.5d
+		}
+		{
+			height: 3.0d
+			id: "19EABA48476FCF14"
+			image: "gtceu:item/uv_voltage_coil"
+			rotation: 0.0d
+			width: 3.0d
+			x: 5.0d
+			y: 1.5d
+		}
+	]
+	order_index: 9
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			id: "5D1B9EACB654BDF8"
+			rewards: [
+				{
+					id: "7C3A3BB1E3F90D18"
+					type: "xp"
+					xp: 1000
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [
+				{
+					id: "2D7446E656151002"
+					item: {
+						count: 1
+						id: "gtceu:crystal_processor_mainframe"
+					}
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"47932104E994DBE9"
+				"39615B8E568E0380"
+			]
+			id: "0A3F4D7A15E61B43"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "5E29138ECD0EA5AE"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "37AB8A72600C0C72"
+					item: {
+						count: 1
+						id: "gtceu:uv_machine_hull"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"406C924820DE5473"
+				"01D895369791881A"
+			]
+			id: "65A075160D46BEF7"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "6BF32EF707257907"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [
+				{
+					id: "5D545D872BD5DC3B"
+					item: {
+						count: 1
+						id: "gtceu:wetware_processor_computer"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"406C924820DE5473"
+				"5F7F05E4C3310724"
+			]
+			id: "01D895369791881A"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "6D17392565F396EB"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "635887CB234211A8"
+					item: {
+						count: 1
+						id: "gtceu:wetware_processor_assembly"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"6335DC1E7517E940"
+				"4FFD94248EDBE5FA"
+			]
+			id: "5F7F05E4C3310724"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "66FCEA1D3183EE2B"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "0DCE137263BB781D"
+					item: {
+						count: 1
+						id: "gtceu:wetware_processor"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["04A371896B1E0CEC"]
+			id: "0D259B9B93B39FAE"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "10C11563C6E2EC52"
+					table_id: 5732951907492768982L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "4987C63F3B87D1E6"
+					item: {
+						count: 1
+						id: "gtceu:zpm_field_generator"
+					}
+					type: "item"
+				}
+			]
+			x: -6.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["0EA56C514D26BA69"]
+			id: "346A926E23840EF7"
+			rewards: [
+				{
+					count: 8
+					id: "5D266CC95D2D322A"
+					item: {
+						count: 1
+						id: "gtceu:uranium_rhodium_dinaquadide_single_wire"
+					}
+					random_bonus: 4
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "73A806A2C50F9EB2"
+					item: {
+						count: 1
+						id: "gtceu:uranium_rhodium_dinaquadide_single_wire"
+					}
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: -7.5d
+		}
+		{
+			id: "39D7F47A8C44D5AF"
+			rewards: [
+				{
+					count: 6
+					id: "2AFE0E431E6CD680"
+					item: {
+						count: 1
+						id: "gtceu:uranium_rhodium_dinaquadide_dust"
+					}
+					random_bonus: 6
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "7F73948EAC24D937"
+					item: {
+						count: 1
+						id: "gtceu:uranium_rhodium_dinaquadide_dust"
+					}
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["5D1B9EACB654BDF8"]
+			id: "16522A3A1E66C914"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "27AD25E82DD54F1F"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "6F0C524BD6D013D1"
+					item: {
+						count: 1
+						id: "gtceu:trinium_coil_block"
+					}
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"39D7F47A8C44D5AF"
+				"16522A3A1E66C914"
+			]
+			id: "0EA56C514D26BA69"
+			rewards: [
+				{
+					count: 4
+					id: "15A1112A2B7B648E"
+					item: {
+						count: 1
+						id: "gtceu:uranium_rhodium_dinaquadide_ingot"
+					}
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "75E52BC18CCD5CAA"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "39D1F52918EB7CF8"
+					item: {
+						count: 1
+						id: "gtceu:uranium_rhodium_dinaquadide_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["6C30EEA91FB21A3B"]
+			id: "406C924820DE5473"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "1302BAF34B2A6BF5"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "0C0CB7B75FB75A98"
+					item: {
+						count: 1
+						id: "gtceu:wetware_printed_circuit_board"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5041EDE3E75E1EDF"]
+			id: "6C30EEA91FB21A3B"
+			rewards: [
+				{
+					count: 2
+					id: "43F1AB345AC5B209"
+					item: {
+						count: 1
+						id: "gtceu:wetware_circuit_board"
+					}
+					random_bonus: 2
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "280DD834BBF2E057"
+					item: {
+						count: 1
+						id: "gtceu:wetware_circuit_board"
+					}
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"406C924820DE5473"
+				"773543FFEF631C5E"
+				"5041EDE3E75E1EDF"
+			]
+			id: "6335DC1E7517E940"
+			rewards: [
+				{
+					count: 4
+					id: "795B6E4161F757B5"
+					item: {
+						count: 1
+						id: "gtceu:neuro_processing_unit"
+					}
+					random_bonus: 4
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "0E3259E08D4F3BEF"
+					item: {
+						count: 1
+						id: "gtceu:neuro_processing_unit"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3AA49DDE45705233"]
+			id: "773543FFEF631C5E"
+			rewards: [
+				{
+					count: 4
+					id: "0B703691F3393181"
+					item: {
+						count: 1
+						id: "gtceu:stem_cells"
+					}
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "25F1C01FA6CF8743"
+					item: {
+						count: 1
+						id: "gtceu:stem_cells"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["06242EEB80032F27"]
+			id: "3AA49DDE45705233"
+			rewards: [
+				{
+					id: "7232D203497DBE97"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:bacteria"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "758A46679EEA2C0B"
+					item: {
+						count: 1
+						id: "gtceu:bacteria_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3F0C949C8F243AFD"]
+			id: "5041EDE3E75E1EDF"
+			rewards: [
+				{
+					id: "5C9C341847D2CC3F"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:sterilized_growth_medium"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "0139D419A28AFB0C"
+					item: {
+						count: 1
+						id: "gtceu:sterilized_growth_medium_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"49E2D3DF6A9A5716"
+				"1F442C8E82FB9EB8"
+			]
+			id: "71941882F9E2ADAC"
+			rewards: [
+				{
+					id: "16FC77E719CEF0F4"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:raw_growth_medium"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "2C6EEA1EA636A1B6"
+					item: {
+						count: 1
+						id: "gtceu:raw_growth_medium_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["71941882F9E2ADAC"]
+			id: "3F0C949C8F243AFD"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "71BB60012EB5F292"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "525F7E756598E2C5"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:iv_fluid_heater)item(gtceu:luv_fluid_heater)item(gtceu:zpm_fluid_heater))"
+							"minecraft:custom_name": "{\"text\":\"Any Fluid Heater IV And Up\"}"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["57F6323716A0ED24"]
+			id: "1F442C8E82FB9EB8"
+			rewards: [
+				{
+					id: "4E413FE2B9D92D10"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:mutagen"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "33A9425D8B0E0F7E"
+					item: {
+						count: 1
+						id: "gtceu:mutagen_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 5.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["3F810160E8B58BD2"]
+			id: "49E2D3DF6A9A5716"
+			rewards: [
+				{
+					count: 4
+					id: "363B76EA748784C2"
+					item: {
+						count: 1
+						id: "gtceu:agar_dust"
+					}
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "0D320F34CBBAD9E1"
+					item: {
+						count: 1
+						id: "gtceu:agar_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["77A12A37D5A9B3A4"]
+			id: "3F810160E8B58BD2"
+			rewards: [
+				{
+					id: "6310C9D5F146814D"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:gelatin_mixture"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "7DF5163094EE01BE"
+					item: {
+						count: 1
+						id: "gtceu:gelatin_mixture_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 5.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["06242EEB80032F27"]
+			id: "77A12A37D5A9B3A4"
+			rewards: [
+				{
+					count: 4
+					id: "790F3F53067EDCEC"
+					item: {
+						count: 1
+						id: "gtceu:collagen_dust"
+					}
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "54CD766F95D8BEB7"
+					item: {
+						count: 1
+						id: "gtceu:collagen_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["33B8FDDBE3E95108"]
+			id: "47932104E994DBE9"
+			rewards: [
+				{
+					count: 8
+					id: "31B7BF0FE120B1C6"
+					item: {
+						count: 1
+						id: "gtceu:darmstadtium_plate"
+					}
+					random_bonus: 16
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "67AFFB65A14B7EB3"
+					item: {
+						count: 1
+						id: "gtceu:darmstadtium_plate"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -7.0d
+		}
+		{
+			dependencies: ["4EEFECB9D741B371"]
+			id: "39615B8E568E0380"
+			rewards: [
+				{
+					count: 8
+					id: "5A2107F598E16D92"
+					item: {
+						count: 1
+						id: "gtceu:yttrium_barium_cuprate_single_wire"
+					}
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "073DE59F75353E8B"
+					item: {
+						count: 1
+						id: "gtceu:yttrium_barium_cuprate_single_wire"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["0C3B3D7F82A6DB3D"]
+			id: "33B8FDDBE3E95108"
+			rewards: [
+				{
+					count: 4
+					id: "0E5B1E1BED18930F"
+					item: {
+						count: 1
+						id: "gtceu:darmstadtium_ingot"
+					}
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "pentagon"
+			tasks: [
+				{
+					id: "137A99CC72FCDED4"
+					item: {
+						count: 1
+						id: "gtceu:darmstadtium_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -8.0d
+		}
+		{
+			dependencies: [
+				"515D958C0F436BE8"
+				"39615B8E568E0380"
+				"54FEF677CA5E1C54"
+				"2EDEBC5A44D8E531"
+			]
+			id: "49109192F6D95AB4"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "454F4BA3717F2C9D"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "6D19FDF5AACD74FD"
+					item: {
+						count: 1
+						id: "gtceu:uv_energy_input_hatch"
+					}
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["49109192F6D95AB4"]
+			id: "4DB3A860A30D7BF5"
+			optional: true
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "43F02BCFF646B3AE"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "3CCC1ED871A58DCC"
+					item: {
+						count: 1
+						id: "gtceu:uv_energy_input_hatch_4a"
+					}
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"39615B8E568E0380"
+				"59F96E1680617EF0"
+			]
+			id: "3D59BC5C2F5A073C"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "45B22C21A1BB8073"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "371494C22E66ED90"
+					item: {
+						count: 1
+						id: "gtceu:uv_electric_motor"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"3D59BC5C2F5A073C"
+				"57630D2B5150F714"
+			]
+			hide_dependent_lines: true
+			id: "0A8698ACCD58FADA"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "75BFDF94F9491096"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "1B7904560D4DBB3C"
+					item: {
+						count: 1
+						id: "gtceu:uv_robot_arm"
+					}
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"346A926E23840EF7"
+				"2CB735807E38903F"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:zpm_fusion_reactor"
+			}
+			id: "5E62E6F314843E1D"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "080CC7CCD3172258"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			shape: "gear"
+			size: 1.5d
+			tasks: [
+				{
+					id: "467C52E14DB0DF89"
+					item: {
+						count: 1
+						id: "gtceu:zpm_fusion_reactor"
+					}
+					type: "item"
+				}
+				{
+					count: 48L
+					id: "5114D966C1029C52"
+					item: {
+						count: 1
+						id: "gtceu:fusion_casing_mk2"
+					}
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "6EBAB4D8602B463A"
+					item: {
+						count: 1
+						id: "gtceu:fusion_coil"
+					}
+					type: "item"
+				}
+				{
+					count: 31L
+					id: "6A4AB07796B318E1"
+					item: {
+						count: 31
+						id: "gtceu:fusion_glass"
+					}
+					type: "item"
+				}
+			]
+			x: -7.999999999999998d
+			y: -9.75d
+		}
+		{
+			dependencies: ["5D1B9EACB654BDF8"]
+			id: "4FFD94248EDBE5FA"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "44FF645D738A7987"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "3A14FDEFAC495032"
+					item: {
+						count: 1
+						id: "gtceu:zpm_circuit_assembler"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["5D1B9EACB654BDF8"]
+			id: "1B64314492605E47"
+			optional: true
+			rewards: [
+				{
+					id: "5A647E62180767FE"
+					item: {
+						count: 1
+						id: "gtceu:zpm_parallel_hatch"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "4A3081071239F769"
+					item: {
+						count: 1
+						id: "gtceu:zpm_parallel_hatch"
+					}
+					type: "item"
+				}
+			]
+			x: -9.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"0FD475E5254E3AD2"
+				"3FCF444190D02ADF"
+				"5E62E6F314843E1D"
+			]
+			id: "0C3B3D7F82A6DB3D"
+			rewards: [
+				{
+					id: "3971ED2DC7E4D1C9"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:darmstadtium"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "75F57FA0810D5D71"
+					item: {
+						count: 1
+						id: "gtceu:darmstadtium_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -9.0d
+		}
+		{
+			id: "0FD475E5254E3AD2"
+			rewards: [
+				{
+					id: "3DD67AA679D3594E"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:ruthenium"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "07322A70E68867E2"
+					item: {
+						count: 1
+						id: "gtceu:ruthenium_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: -3.5d
+			y: -8.5d
+		}
+		{
+			id: "3FCF444190D02ADF"
+			rewards: [
+				{
+					id: "0EEBC6191B9920A4"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:arsenic"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "14B3DB906EC6A871"
+					item: {
+						count: 1
+						id: "gtceu:arsenic_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: -8.5d
+		}
+		{
+			dependencies: ["5D1B9EACB654BDF8"]
+			hide_dependency_lines: true
+			id: "1216BAFF021FED25"
+			rewards: [
+				{
+					count: 4
+					id: "48B5917B5BE832FE"
+					item: {
+						count: 1
+						id: "gtceu:crystal_soc"
+					}
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "5BFADD171B16EBCC"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "786A3FCF60B70292"
+					item: {
+						count: 1
+						id: "gtceu:crystal_soc"
+					}
+					type: "item"
+				}
+			]
+			x: -3.5d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"678BA300CED48E5E"
+				"1216BAFF021FED25"
+			]
+			id: "06F55064A36274D2"
+			rewards: [
+				{
+					id: "1CD4A6F85E058DD0"
+					type: "xp"
+					xp: 1000
+				}
+			]
+			tasks: [
+				{
+					id: "1C193E204C8A2270"
+					type: "checkmark"
+				}
+			]
+			x: -4.0d
+			y: -7.0d
+		}
+		{
+			dependencies: ["4EEFECB9D741B371"]
+			id: "678BA300CED48E5E"
+			rewards: [
+				{
+					count: 6
+					id: "12D8045E4A45329F"
+					item: {
+						count: 1
+						id: "gtceu:yttrium_barium_cuprate_bolt"
+					}
+					random_bonus: 12
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "59E57E67ABB107DF"
+					item: {
+						count: 1
+						id: "gtceu:yttrium_barium_cuprate_bolt"
+					}
+					type: "item"
+				}
+			]
+			x: -4.5d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"02CC3E13B8905603"
+				"04508F8403F319D1"
+			]
+			id: "515D958C0F436BE8"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "7B94C6B0D0BA4841"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "3028B3756C1D05D5"
+					item: {
+						count: 1
+						id: "gtceu:uv_voltage_coil"
+					}
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: -8.0d
+		}
+		{
+			dependencies: ["346A926E23840EF7"]
+			id: "04A371896B1E0CEC"
+			rewards: [
+				{
+					count: 6
+					id: "34217503990BB714"
+					item: {
+						count: 1
+						id: "gtceu:fine_uranium_rhodium_dinaquadide_wire"
+					}
+					random_bonus: 12
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "54B52A773F2CD6EC"
+					item: {
+						count: 1
+						id: "gtceu:fine_uranium_rhodium_dinaquadide_wire"
+					}
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: -7.5d
+		}
+		{
+			dependencies: [
+				"4E384F9FEF629386"
+				"28EB26056EF18C5F"
+				"5E62E6F314843E1D"
+			]
+			id: "74726A2DD4BBDA7B"
+			rewards: [
+				{
+					id: "688D18E862547180"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:tritanium"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "7A649562119111CF"
+					item: {
+						count: 1
+						id: "gtceu:tritanium_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: -9.700000000000001d
+		}
+		{
+			id: "28EB26056EF18C5F"
+			rewards: [
+				{
+					id: "4B93A5DEE035FD01"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:duranium"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "4227BFF6CC54F6F4"
+					item: {
+						count: 1
+						id: "gtceu:duranium_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 3.5d
+			y: -10.5d
+		}
+		{
+			id: "4E384F9FEF629386"
+			rewards: [
+				{
+					id: "6F1C23A533A3C505"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:titanium"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "3AE5FFBDA9846579"
+					item: {
+						count: 1
+						id: "gtceu:titanium_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: -10.5d
+		}
+		{
+			dependencies: ["74726A2DD4BBDA7B"]
+			id: "02CC3E13B8905603"
+			rewards: [
+				{
+					count: 4
+					id: "7838ED6234554DDD"
+					item: {
+						count: 1
+						id: "gtceu:tritanium_ingot"
+					}
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "pentagon"
+			tasks: [
+				{
+					id: "53CA597D2FC28F8C"
+					item: {
+						count: 1
+						id: "gtceu:tritanium_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: -8.700000000000001d
+		}
+		{
+			dependencies: ["10DF2125B647379E"]
+			id: "57F6323716A0ED24"
+			rewards: [
+				{
+					id: "29EB06A6002C1F12"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:enriched_bacterial_sludge"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "1A846F6C83B83EA7"
+					item: {
+						count: 1
+						id: "gtceu:enriched_bacterial_sludge_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: 5.5d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"3AA49DDE45705233"
+				"06242EEB80032F27"
+			]
+			id: "10DF2125B647379E"
+			rewards: [
+				{
+					id: "28EF601D8BC715F4"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:bacterial_sludge"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "58184E4DD25CA47F"
+					item: {
+						count: 1
+						id: "gtceu:bacterial_sludge_bucket"
+					}
+					type: "item"
+				}
+				{
+					id: "19AE1A9761C20844"
+					item: {
+						count: 1
+						id: "alltheores:uranium_dust"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"06FF1116AFABE2FE"
+				"02CC3E13B8905603"
+			]
+			icon: {
+				count: 1
+				id: "gtceu:sterilizing_filter_casing"
+			}
+			id: "06242EEB80032F27"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "4A3ECA6F42BB924D"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			shape: "gear"
+			size: 1.0d
+			tasks: [
+				{
+					id: "5F34E42659E76FA1"
+					item: {
+						count: 1
+						id: "gtceu:sterilizing_filter_casing"
+					}
+					type: "item"
+				}
+				{
+					id: "4AF85FA060CCDAD4"
+					item: {
+						count: 1
+						id: "gtceu:cleanroom"
+					}
+					type: "item"
+				}
+				{
+					id: "429197E4705F8C59"
+					item: {
+						count: 1
+						id: "gtceu:plascrete"
+					}
+					type: "item"
+				}
+				{
+					id: "41315A48588AB4A2"
+					item: {
+						count: 1
+						id: "gtceu:cleanroom_glass"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["5D1B9EACB654BDF8"]
+			hide_dependency_lines: true
+			id: "06FF1116AFABE2FE"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "1A92DD0B57233908"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "197856700ACC3967"
+					item: {
+						count: 1
+						id: "gtceu:blacklight"
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["3D59BC5C2F5A073C"]
+			id: "57630D2B5150F714"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "2E61E90EFC3053FF"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "6F1E32A141D99E03"
+					item: {
+						count: 1
+						id: "gtceu:uv_electric_piston"
+					}
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["2586C2C9D1EFB2DC"]
+			id: "1E8BE8BDE142941D"
+			optional: true
+			rewards: [
+				{
+					id: "139463DEBD01A30F"
+					item: {
+						count: 1
+						id: "gtceu:me_input_bus"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "359A810F8A1FE7D7"
+					item: {
+						count: 1
+						id: "gtceu:me_input_bus"
+					}
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["2586C2C9D1EFB2DC"]
+			id: "3A27B65A0B4FFB5B"
+			optional: true
+			rewards: [
+				{
+					id: "45DFB07959C24CFC"
+					item: {
+						count: 1
+						id: "gtceu:me_output_bus"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "547CEDD62A451075"
+					item: {
+						count: 1
+						id: "gtceu:me_output_bus"
+					}
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["2586C2C9D1EFB2DC"]
+			id: "043A424FDDA71692"
+			optional: true
+			rewards: [
+				{
+					id: "1966812A4729EA10"
+					item: {
+						count: 1
+						id: "gtceu:me_input_hatch"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "67DFF0D9CD927DBC"
+					item: {
+						count: 1
+						id: "gtceu:me_input_hatch"
+					}
+					type: "item"
+				}
+			]
+			x: -6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["2586C2C9D1EFB2DC"]
+			id: "6829D2769ACC1BDB"
+			optional: true
+			rewards: [
+				{
+					id: "3CAB3AB9AA4216FB"
+					item: {
+						count: 1
+						id: "gtceu:me_output_hatch"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "3A03D598E1B6007E"
+					item: {
+						count: 1
+						id: "gtceu:me_output_hatch"
+					}
+					type: "item"
+				}
+			]
+			x: -6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5D1B9EACB654BDF8"]
+			id: "2586C2C9D1EFB2DC"
+			rewards: [
+				{
+					id: "2F807BA8758A4ED5"
+					type: "xp"
+					xp: 1000
+				}
+			]
+			tasks: [
+				{
+					id: "4E3E4CA01C64C9E2"
+					type: "checkmark"
+				}
+			]
+			x: -7.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["1B64314492605E47"]
+			icon: {
+				count: 1
+				id: "gtceu:advanced_large_chemical_reactor"
+			}
+			id: "13417E27790B9AB2"
+			optional: true
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "67893AFA75DB6DB9"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			shape: "gear"
+			tasks: [
+				{
+					id: "2EF9FCC2A1E61FC7"
+					item: {
+						count: 1
+						id: "gtceu:advanced_large_chemical_reactor"
+					}
+					type: "item"
+				}
+				{
+					count: 12L
+					id: "60A9E200F4F324EA"
+					item: {
+						count: 1
+						id: "gtceu:rtm_alloy_coil_block"
+					}
+					type: "item"
+				}
+				{
+					count: 15L
+					id: "154AEA7A726F6D6F"
+					item: {
+						count: 1
+						id: "gtceu:ptfe_pipe_casing"
+					}
+					type: "item"
+				}
+				{
+					count: 62L
+					id: "0395D55EFEBE8005"
+					item: {
+						count: 1
+						id: "gtceu:inert_machine_casing"
+					}
+					type: "item"
+				}
+				{
+					id: "3178FDFBEA274B84"
+					item: {
+						count: 1
+						id: "gtceu:zpm_parallel_hatch"
+					}
+					type: "item"
+				}
+			]
+			x: -9.0d
+			y: 3.0d
+		}
+		{
+			id: "4EEFECB9D741B371"
+			rewards: [
+				{
+					count: 4
+					id: "17CCDD1027ED3B23"
+					item: {
+						count: 1
+						id: "gtceu:yttrium_barium_cuprate_ingot"
+					}
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "6D6CAEC798AB5C3B"
+					item: {
+						count: 1
+						id: "gtceu:yttrium_barium_cuprate_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: -5.0d
+		}
+		{
+			can_repeat: false
+			disable_toast: true
+			hide_details_until_startable: true
+			hide_until_deps_visible: true
+			icon: {
+				components: {
+					"ftbquests:icon": "minecraft:item/barrier"
+				}
+				count: 1
+				id: "ftbquests:custom_icon"
+			}
+			id: "5CCB34969AF38175"
+			invisible: true
+			optional: true
+			shape: "octagon"
+			tasks: [
+				{
+					disable_toast: true
+					id: "0B8410A78CA31E87"
+					type: "checkmark"
+				}
+				{
+					id: "3E3975575FE59087"
+					type: "checkmark"
+				}
+			]
+			x: -9.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"5D0FA7878B033938"
+				"16522A3A1E66C914"
+			]
+			id: "2CB735807E38903F"
+			rewards: [
+				{
+					count: 8
+					id: "368A24C1EBC28E65"
+					item: {
+						count: 1
+						id: "gtceu:naquadria_ingot"
+					}
+					random_bonus: 16
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "614A3FD46B1297E5"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "4872647CCF87A557"
+					item: {
+						count: 1
+						id: "gtceu:naquadria_ingot"
+					}
+					type: "item"
+				}
+			]
+			x: -9.5d
+			y: -7.5d
+		}
+		{
+			dependencies: ["4BC7E522FF98B292"]
+			id: "5D0FA7878B033938"
+			rewards: [
+				{
+					count: 30
+					id: "1624A34BA1C1EAE9"
+					item: {
+						count: 1
+						id: "gtceu:naquadria_sulfate_dust"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 6L
+					id: "42E495DA47D6FB62"
+					item: {
+						count: 1
+						id: "gtceu:naquadria_sulfate_dust"
+					}
+					type: "item"
+				}
+			]
+			x: -10.5d
+			y: -7.0d
+		}
+		{
+			dependencies: ["618D703190FAEC6D"]
+			id: "4BC7E522FF98B292"
+			rewards: [
+				{
+					id: "03CB835E108C7879"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:acidic_naquadria_solution"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "492D659AE35EFB93"
+					item: {
+						count: 1
+						id: "gtceu:acidic_naquadria_solution_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: -10.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["134536FFE3E9C6E7"]
+			id: "618D703190FAEC6D"
+			rewards: [
+				{
+					id: "6CFB0B527E679D51"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:naquadria_solution"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "6FA2C2317D635F04"
+					item: {
+						count: 1
+						id: "gtceu:naquadria_solution_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: -9.5d
+			y: -5.0d
+		}
+		{
+			id: "134536FFE3E9C6E7"
+			rewards: [
+				{
+					id: "159EE3A0F3DF834A"
+					item: {
+						components: {
+							"cyclopscore:capacity": 16000
+							"cyclopscore:fluid_content": {
+								amount: 16000
+								id: "gtceu:impure_naquadria_solution"
+							}
+						}
+						count: 1
+						id: "evilcraft:dark_tank"
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "611A678ABFE17EA6"
+					item: {
+						count: 1
+						id: "gtceu:impure_naquadria_solution_bucket"
+					}
+					type: "item"
+				}
+			]
+			x: -9.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["59F96E1680617EF0"]
+			icon: {
+				count: 1
+				id: "gtceu:network_switch"
+			}
+			id: "54FEF677CA5E1C54"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "4AE197A6DF4177E7"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "19D1C2DFDB18DB4E"
+					item: {
+						count: 1
+						id: "gtceu:network_switch"
+					}
+					type: "item"
+				}
+				{
+					count: 7L
+					id: "58B40CD10A8BA973"
+					item: {
+						count: 7
+						id: "gtceu:computer_casing"
+					}
+					type: "item"
+				}
+				{
+					id: "1CE228529968F01E"
+					item: {
+						count: 1
+						id: "gtceu:advanced_computer_casing"
+					}
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "04D8194AE9277D88"
+					item: {
+						count: 2
+						id: "gtceu:computation_receiver_hatch"
+					}
+					type: "item"
+				}
+				{
+					id: "1D61129C818AC555"
+					item: {
+						count: 1
+						id: "gtceu:computation_transmitter_hatch"
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["54FEF677CA5E1C54"]
+			id: "38DA9B7E6BD18CCA"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "6A482B47F61E32C6"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "40C8852CA1B85078"
+					item: {
+						count: 1
+						id: "gtceu:hpca_bridge_component"
+					}
+					type: "item"
+				}
+			]
+			x: -0.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"5D1B9EACB654BDF8"
+				"0D259B9B93B39FAE"
+			]
+			id: "59F96E1680617EF0"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "6DF364F9EB7C41CC"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "092CA789AFE254B1"
+					item: {
+						count: 1
+						id: "gtceu:hpca_advanced_computation_component"
+					}
+					type: "item"
+				}
+			]
+			x: -6.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"0A3F4D7A15E61B43"
+				"0A8698ACCD58FADA"
+			]
+			id: "04508F8403F319D1"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "4215DF48488C1181"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "0C97AC2B5CFB18A7"
+					item: {
+						count: 1
+						id: "gtceu:uv_assembler"
+					}
+					type: "item"
+				}
+			]
+			x: -0.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["4DB3A860A30D7BF5"]
+			id: "5F3113B405B48849"
+			optional: true
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "2D7C54A7ED517761"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "51E20B36C11B6582"
+					item: {
+						count: 1
+						id: "gtceu:uv_energy_input_hatch_16a"
+					}
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["406C924820DE5473"]
+			hide_dependent_lines: true
+			id: "2EDEBC5A44D8E531"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "5FB19F977F0F3E12"
+					table_id: 1818042308417101752L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "25AA82A5DC763402"
+					item: {
+						count: 1
+						id: "gtceu:data_module"
+					}
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5E62E6F314843E1D"]
+			id: "5D08AFFAA4A85E39"
+			rewards: [
+				{
+					id: "7367679FA8D65D16"
+					type: "xp"
+					xp: 1000
+				}
+			]
+			tasks: [
+				{
+					id: "1393164467061CC0"
+					type: "checkmark"
+				}
+			]
+			x: -6.5d
+			y: -8.5d
+		}
+	]
+}

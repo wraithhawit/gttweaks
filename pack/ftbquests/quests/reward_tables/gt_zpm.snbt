@@ -1,0 +1,287 @@
+{
+	id: "4F8F8962A8812CD6"
+	loot_size: 1
+	order_index: 70
+	rewards: [
+		{
+			id: "5142DAEFD497C26E"
+			item: {
+				count: 1
+				id: "gtceu:quantum_processor_mainframe"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "1BF8433D0F031CCE"
+			item: {
+				count: 1
+				id: "gtceu:zpm_robot_arm"
+			}
+			weight: 3.0f
+		}
+		{
+			count: 4
+			id: "1F74F63684391E32"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_capacitor"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			count: 4
+			id: "5135B8691A88784F"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_inductor"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			count: 4
+			id: "0368AB7454375071"
+			item: {
+				count: 1
+				id: "gtceu:fiber_reinforced_printed_circuit_board"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			id: "0F7308F24318022D"
+			item: {
+				count: 1
+				id: "gtceu:zpm_electric_pump"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "140C8E88A0F5C88D"
+			item: {
+				count: 1
+				id: "gtceu:zpm_electric_piston"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "3ABF20FF05E943D6"
+			item: {
+				count: 1
+				id: "gtceu:zpm_conveyor_module"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "37428B9EE6C2429A"
+			item: {
+				count: 1
+				id: "gtceu:quantum_processor_computer"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "71D0605920E91D2A"
+			item: {
+				count: 1
+				id: "gtceu:zpm_electric_motor"
+			}
+			weight: 4.0f
+		}
+		{
+			count: 12
+			id: "72BF7201F29421D7"
+			item: {
+				count: 1
+				id: "gtceu:uhpic_chip"
+			}
+			random_bonus: 24
+			weight: 5.0f
+		}
+		{
+			count: 12
+			id: "4A518A44971FF630"
+			item: {
+				count: 1
+				id: "gtceu:uhpic_wafer"
+			}
+			random_bonus: 24
+			weight: 5.0f
+		}
+		{
+			count: 6
+			id: "7D35A1BFECA1DF2C"
+			item: {
+				count: 1
+				id: "gtceu:antimony_trifluoride_dust"
+			}
+			random_bonus: 12
+			weight: 6.0f
+		}
+		{
+			id: "5BBAE476D9EBEF57"
+			item: {
+				count: 1
+				id: "gtceu:quantum_processor_assembly"
+			}
+			weight: 6.0f
+		}
+		{
+			count: 4
+			id: "7A4C591DE2AEA1CE"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_transistor"
+			}
+			random_bonus: 10
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "2A49C766B2477C4F"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_diode"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "2C5CEEF19739E1DF"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_resistor"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "388899A23D7003F0"
+			item: {
+				count: 1
+				id: "gtceu:naquadah_wafer"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			id: "43B7E225AC329D25"
+			item: {
+				count: 1
+				id: "gtceu:zpm_machine_hull"
+			}
+			weight: 10.0f
+		}
+		{
+			count: 8
+			id: "7269F8A7BEDD210B"
+			item: {
+				count: 1
+				id: "gtceu:trinium_ingot"
+			}
+			random_bonus: 16
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "085EC6F16A22521F"
+			item: {
+				count: 1
+				id: "gtceu:qbit_cpu_chip"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			count: 3
+			id: "713222CBD897BC71"
+			item: {
+				count: 1
+				id: "gtceu:qbit_cpu_wafer"
+			}
+			random_bonus: 6
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "69B33E6364DE1524"
+			item: {
+				count: 1
+				id: "gtceu:naquadah_plate"
+			}
+			random_bonus: 18
+			weight: 10.0f
+		}
+		{
+			count: 16
+			id: "1BBF195055F7F97D"
+			item: {
+				count: 1
+				id: "gtceu:trinium_dust"
+			}
+			random_bonus: 32
+			weight: 12.0f
+		}
+		{
+			count: 16
+			id: "35BFB62E5CF809E1"
+			item: {
+				count: 1
+				id: "gtceu:raw_naquadah"
+			}
+			random_bonus: 32
+			weight: 12.0f
+		}
+		{
+			id: "2D0B372C052C4C4A"
+			item: {
+				count: 1
+				id: "gtceu:zpm_machine_casing"
+			}
+			weight: 12.0f
+		}
+		{
+			count: 16
+			id: "788DBEE5C9984DE3"
+			item: {
+				count: 1
+				id: "gtceu:raw_beryllium"
+			}
+			random_bonus: 32
+			weight: 10.0f
+		}
+		{
+			count: 8
+			id: "63AA0C722A69EFBE"
+			item: {
+				count: 1
+				id: "gtceu:crystal_cpu"
+			}
+			random_bonus: 8
+			weight: 10.0f
+		}
+		{
+			count: 12
+			id: "7BF80672D6B32465"
+			item: {
+				count: 1
+				id: "gtceu:naquadah_alloy_ingot"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "31745AA8669D6782"
+			item: {
+				count: 1
+				id: "gtceu:europium_ingot"
+			}
+			random_bonus: 6
+			weight: 8.0f
+		}
+	]
+}

@@ -1,0 +1,1664 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "an_introduction"
+	group: "1DA67E79B40AB130"
+	icon: {
+		count: 1
+		id: "gtceu:iron_hammer"
+	}
+	id: "415BA265E2C00859"
+	images: [
+		{
+			alpha: 150
+			height: 5.0d
+			id: "28369C4A5F1F2C63"
+			image: "gtceu:textures/gui/icon/gregtech_logo.png"
+			rotation: 0.0d
+			width: 5.0d
+			x: 0.1071428571428541d
+			y: 0.6607142857142847d
+		}
+	]
+	order_index: 0
+	progression_mode: "flexible"
+	quest_links: [ ]
+	quests: [
+		{
+			id: "4F086B3CF27D5C1A"
+			rewards: [
+				{
+					id: "1DE4C6A260259E85"
+					type: "xp"
+					xp: 10
+				}
+			]
+			size: 1.5d
+			tasks: [
+				{
+					id: "7B1C0F47F1D43B20"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 0.55d
+		}
+		{
+			dependencies: ["4F086B3CF27D5C1A"]
+			id: "66D86E1EDEBF542B"
+			rewards: [
+				{
+					id: "43A69E40F972B3FA"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "0F0F3C716F921B64"
+					type: "checkmark"
+				}
+			]
+			x: -1.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["4F086B3CF27D5C1A"]
+			id: "6635E4C76260C4CB"
+			rewards: [
+				{
+					id: "285CB9EE3130A1B3"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "58DC240BC9900646"
+					type: "checkmark"
+				}
+			]
+			x: 1.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"66D86E1EDEBF542B"
+				"6635E4C76260C4CB"
+			]
+			id: "459787E9F1029CC6"
+			rewards: [
+				{
+					id: "7F31B0D07E8F2421"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "4CC5C3088A4F5C7D"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["66D86E1EDEBF542B"]
+			id: "33590A79C5C554C8"
+			rewards: [
+				{
+					id: "0145C8D4665C08CA"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "4BE4C9994786C1D0"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"66D86E1EDEBF542B"
+				"4F086B3CF27D5C1A"
+				"6635E4C76260C4CB"
+				"459787E9F1029CC6"
+				"33590A79C5C554C8"
+			]
+			hide_dependency_lines: true
+			id: "790F509BAA15A68E"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "1C46CF2729A805AC"
+					table_id: 487623848494439020L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "30443BA4C089AA8B"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/hammer)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["790F509BAA15A68E"]
+			id: "5D3C8198D9756004"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "5FD9DE6BC79E6ADB"
+					table_id: 487623848494439020L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "491DC7AF3356B0AE"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/wrench)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "3CEA3285F2CD5680"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/file)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "5270CD1653E1BAC6"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/saw)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["5D3C8198D9756004"]
+			id: "17BA6F1E5179DB8C"
+			min_width: 400
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "50B36A2E833872D2"
+					table_id: 487623848494439020L
+					type: "loot"
+				}
+			]
+			tasks: [
+				{
+					id: "15389D4D64D19ACA"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/screwdriver)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "3B9FECB49AF6F450"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/wire_cutter)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "4EEBD6ABA3D55379"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/mortar)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "33B208F02F05BF09"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/knife)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "65A04FD7D3F264DD"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/mallet)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "1B670B474AD80852"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/crowbar)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "5F8C9C7E6DFA0E6C"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/scythe)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "25E539125A1C5D69"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/plunger)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+				{
+					id: "465C43AE595A1A9F"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "item_tag(c:tools/butchery_knife)"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: -4.5d
+		}
+		{
+			disable_toast: true
+			icon: {
+				count: 1
+				id: "minecraft:grass_block"
+			}
+			id: "072FA02152FBC5B1"
+			invisible_until_tasks: 5
+			rewards: [
+				{
+					id: "45B4971B15822AF8"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					dimension: "allthemodium:mining"
+					id: "5E966121508B53EA"
+					type: "dimension"
+				}
+			]
+			x: -5.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["244220A5D9F4C702"]
+			icon: {
+				count: 1
+				id: "gtceu:endstone_bauxite_ore"
+			}
+			id: "68B6B946B6BA24CB"
+			rewards: [
+				{
+					id: "1ECD3CFE7C276679"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "5FF14D712FF20F3A"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:endstone_bauxite_ore)item(gtceu:raw_bauxite)item(gtceu:endstone_ilmenite_ore)item(gtceu:raw_ilmenite)item(gtceu:endstone_aluminium_ore)item(gtceu:raw_aluminium))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["244220A5D9F4C702"]
+			icon: {
+				count: 1
+				id: "gtceu:endstone_magnetite_ore"
+			}
+			id: "27E9F48972741701"
+			rewards: [
+				{
+					id: "35A7B740B8F8F0E9"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "18CA627A460E3E4E"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:endstone_magnetite_ore)item(gtceu:raw_magnetite)item(gtceu:endstone_vanadium_magnetite_ore)item(gtceu:raw_vanadium_magnetite)item(gtceu:endstone_chromite_ore)item(gtceu:raw_chromite)item(gtceu:endstone_gold_ore)item(minecraft:raw_gold))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["244220A5D9F4C702"]
+			icon: {
+				count: 1
+				id: "gtceu:endstone_naquadah_ore"
+			}
+			id: "037BB7C486D2D360"
+			rewards: [
+				{
+					id: "3CB43D21AEDA9957"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "71DDF8155FD8FCAA"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:endstone_naquadah_ore)item(gtceu:raw_naquadah)item(gtceu:endstone_plutonium_239_ore)item(gtceu:raw_plutonium_239))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["244220A5D9F4C702"]
+			icon: {
+				count: 1
+				id: "gtceu:endstone_pitchblende_ore"
+			}
+			id: "3F69CB46311A37C8"
+			rewards: [
+				{
+					id: "3FE3E20D6B31A717"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "125DE9E99E5DC392"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:endstone_pitchblende_ore)item(gtceu:raw_pitchblende)item(gtceu:endstone_uraninite_ore)item(gtceu:raw_uraninite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["244220A5D9F4C702"]
+			icon: {
+				count: 1
+				id: "gtceu:endstone_scheelite_ore"
+			}
+			id: "4300938A4E8AF937"
+			rewards: [
+				{
+					id: "43B051AAEBD24976"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "70DEDB210CBD79D9"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:endstone_scheelite_ore)item(gtceu:raw_scheelite)item(gtceu:endstone_tungstate_ore)item(gtceu:raw_tungstate)item(gtceu:endstone_lithium_ore)item(gtceu:raw_lithium))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["244220A5D9F4C702"]
+			icon: {
+				count: 1
+				id: "gtceu:endstone_cooperite_ore"
+			}
+			id: "0C78FB6EB275960B"
+			rewards: [
+				{
+					id: "350EF34944578879"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "508A2B09B32E5244"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:endstone_bornite_ore)item(gtceu:raw_bornite)item(gtceu:endstone_cooperite_ore)item(gtceu:raw_cooperite)item(gtceu:endstone_platinum_ore)item(gtceu:raw_platinum)item(gtceu:endstone_palladium_ore)item(gtceu:raw_palladium))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_goethite_ore"
+			}
+			id: "5B64384E4CE27851"
+			rewards: [
+				{
+					id: "12AC8012CA8B498E"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "7FA60EE3F8F0C57B"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_goethite_ore)item(gtceu:raw_goethite)item(gtceu:netherrack_yellow_limonite_ore)item(gtceu:raw_yellow_limonite)item(gtceu:netherrack_hematite_ore)item(gtceu:raw_hematite)item(gtceu:netherrack_gold_ore))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_beryllium_ore"
+			}
+			id: "61B3730E93DD24DB"
+			rewards: [
+				{
+					id: "68084D26CC1A15E5"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "083DE18D8C046344"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_beryllium_ore)item(gtceu:raw_beryllium)item(gtceu:netherrack_emerald_ore))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_certus_quartz_ore"
+			}
+			id: "1DFD4712153C1A55"
+			rewards: [
+				{
+					id: "1F6361DEF1584BE6"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "3AC1607997CAAAAC"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_certus_quartz_ore)item(gtceu:certus_quartz_gem)item(gtceu:netherrack_barite_ore)item(gtceu:raw_barite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_grossular_ore"
+			}
+			id: "109E34AE0BE0F266"
+			rewards: [
+				{
+					id: "10C50F3500300270"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "047722F89EBCC4DE"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_grossular_ore)item(gtceu:grossular_gem)item(gtceu:netherrack_pyrolusite_ore)item(gtceu:raw_pyrolusite)item(gtceu:netherrack_tantalite_ore)item(gtceu:raw_tantalite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_molybdenum_ore"
+			}
+			id: "554389C781241743"
+			rewards: [
+				{
+					id: "24E1D9FCDCD56E06"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "589F9B25E0FC4A24"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_wulfenite_ore)item(gtceu:raw_wulfenite)item(gtceu:netherrack_molybdenite_ore)item(gtceu:raw_molybdenite)item(gtceu:netherrack_molybdenum_ore)item(gtceu:raw_molybdenum)item(gtceu:netherrack_powellite_ore)item(gtceu:raw_powellite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_bastnasite_ore"
+			}
+			id: "4F8E090CB349A681"
+			rewards: [
+				{
+					id: "2D703261DBD7DAB0"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "5711092D4CD64197"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_bastnasite_ore)item(gtceu:raw_bastnasite)item(gtceu:netherrack_neodymium_ore)item(gtceu:raw_neodymium))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_quartzite_ore"
+			}
+			id: "2B5733BDAF83B2D4"
+			rewards: [
+				{
+					id: "7FA4B674422ACD63"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "1791DBA7A318DE68"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_quartzite_ore)item(gtceu:quartzite_gem))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_redstone_ore"
+			}
+			id: "354012CD62D346E5"
+			rewards: [
+				{
+					id: "3967B8EC8A32C7FC"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "778C0EDD0752F465"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_redstone_ore)item(gtceu:raw_redstone)item(gtceu:netherrack_ruby_ore)item(gtceu:ruby_gem)item(gtceu:netherrack_cinnabar_ore)item(gtceu:cinnabar_gem))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_saltpeter_ore"
+			}
+			id: "3F064B466CC4914B"
+			rewards: [
+				{
+					id: "572A0B6B80423FD0"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "6A623C45C3A556B6"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_saltpeter_ore)item(gtceu:raw_saltpeter)item(gtceu:netherrack_diatomite_ore)item(gtceu:raw_diatomite)item(gtceu:netherrack_electrotine_ore)item(gtceu:raw_electrotine)item(gtceu:netherrack_alunite_ore)item(gtceu:raw_alunite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_sulfur_ore"
+			}
+			id: "333D2A9F20B2E738"
+			rewards: [
+				{
+					id: "54F48572B72DA35A"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "3A75356E8DE59132"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_sulfur_ore)item(gtceu:raw_sulfur)item(gtceu:netherrack_pyrite_ore)item(gtceu:raw_pyrite)item(gtceu:netherrack_sphalerite_ore)item(gtceu:raw_sphalerite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_tetrahedrite_ore"
+			}
+			id: "2A2ED3B4BE8C7E67"
+			rewards: [
+				{
+					id: "0B829C830AD45B69"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "5DED626D70F7EE98"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_tetrahedrite_ore)item(gtceu:raw_tetrahedrite)item(gtceu:netherrack_stibnite_ore)item(gtceu:raw_stibnite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D20644407244A60"]
+			icon: {
+				count: 1
+				id: "gtceu:netherrack_topaz_ore"
+			}
+			id: "34E8D3AD37BB76C5"
+			rewards: [
+				{
+					id: "736FC97FBC6CAC2D"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "556A070D9E9A67E5"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:netherrack_topaz_ore)item(gtceu:topaz_gem)item(gtceu:netherrack_blue_topaz_ore)item(gtceu:blue_topaz_gem)item(gtceu:netherrack_chalcocite_ore)item(gtceu:raw_chalcocite)item(gtceu:netherrack_bornite_ore))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:apatite_ore"
+			}
+			id: "5E1FA88B5AC652DC"
+			rewards: [
+				{
+					id: "05C9FCF2AF25361B"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "044F6F66134EEFAB"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:apatite_ore)item(gtceu:apatite_gem)item(gtceu:tricalcium_phosphate_ore)item(gtceu:raw_tricalcium_phosphate)item(gtceu:pyrochlore_ore)item(gtceu:raw_pyrochlore))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -7.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:cassiterite_ore"
+			}
+			id: "30F16A6BD3C7F4FC"
+			rewards: [
+				{
+					id: "26B09100349E2906"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "015B712B90E69E36"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:cassiterite_ore)item(gtceu:raw_cassiterite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:chalcopyrite_ore"
+			}
+			id: "6A0D1E9D534958B8"
+			rewards: [
+				{
+					count: 2
+					id: "3041712FFF09D1EF"
+					item: {
+						count: 1
+						id: "gtceu:realgar_gem"
+					}
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "36A950CF20366A71"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "0D18011DF2D3F338"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:chalcopyrite_ore)item(gtceu:raw_chalcopyrite)item(gtceu:zeolite_ore)item(gtceu:raw_zeolite)item(gtceu:realgar_ore)item(gtceu:realgar_gem))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:galena_ore"
+			}
+			id: "411759CC8C320C19"
+			rewards: [
+				{
+					id: "0FCD9C5303E23494"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "1B94E7A224A87F29"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:galena_ore)item(gtceu:raw_galena)item(gtceu:silver_ore)item(gtceu:raw_silver)item(gtceu:lead_ore)item(gtceu:raw_lead))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:garnet_sand_ore"
+			}
+			id: "5E56B9758F8365B4"
+			rewards: [
+				{
+					id: "0833FE78D518B0A7"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "6E16C4B0E9B4CEC0"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:garnet_sand_ore)item(gtceu:raw_garnet_sand)item(gtceu:asbestos_ore)item(gtceu:raw_asbestos)item(gtceu:diatomite_ore)item(gtceu:raw_diatomite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:red_garnet_ore"
+			}
+			id: "51494B3023705E54"
+			rewards: [
+				{
+					id: "1191D5C5A66B7E83"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "2E62FDEF3A6A88B8"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:red_garnet_ore)item(gtceu:red_garnet_gem)item(gtceu:yellow_garnet_ore)item(gtceu:yellow_garnet_gem)item(gtceu:amethyst_ore)item(gtceu:opal_ore)item(gtceu:opal_gem))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:goethite_ore"
+			}
+			id: "53BBE717148C0B18"
+			rewards: [
+				{
+					id: "156232EA5EF66602"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "6029CFFA9BD91661"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:goethite_ore)item(gtceu:raw_goethite)item(gtceu:yellow_limonite_ore)item(gtceu:raw_yellow_limonite)item(gtceu:hematite_ore)item(gtceu:raw_hematite)item(gtceu:malachite_ore)item(gtceu:malachite_gem))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:soapstone_ore"
+			}
+			id: "2A54256CA9A23BB3"
+			rewards: [
+				{
+					id: "77541746B5FBDE66"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "0AABC07011A622BB"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:soapstone_ore)item(gtceu:raw_soapstone)item(gtceu:talc_ore)item(gtceu:raw_talc)item(gtceu:glauconite_sand_ore)item(gtceu:raw_glauconite_sand)item(gtceu:pentlandite_ore)item(gtceu:raw_pentlandite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:magnetite_ore"
+			}
+			id: "14276334DCF898D6"
+			rewards: [
+				{
+					id: "4BB5AFDD639063BF"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "31A7661D828CB33C"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:magnetite_ore)item(gtceu:raw_magnetite)item(gtceu:vanadium_magnetite_ore)item(gtceu:raw_vanadium_magnetite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -3.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:basaltic_mineral_sand_ore"
+			}
+			id: "0D47F491C27BBD5E"
+			rewards: [
+				{
+					id: "4C16A3B319CCCB78"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "4730AB96AAD93282"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:basaltic_mineral_sand_ore)item(gtceu:raw_basaltic_mineral_sand)item(gtceu:granitic_mineral_sand_ore)item(gtceu:raw_granitic_mineral_sand)item(gtceu:fullers_earth_ore)item(gtceu:raw_fullers_earth)item(gtceu:gypsum_ore)item(gtceu:raw_gypsum))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:garnierite_ore"
+			}
+			id: "0BA5A0DDD4A5363C"
+			rewards: [
+				{
+					id: "37391F97F144C822"
+					item: {
+						count: 1
+						id: "gtceu:cobaltite_ore"
+					}
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "56FE674314510718"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "0430C905BE3CA0CF"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:garnierite_ore)item(gtceu:raw_garnierite)item(gtceu:cobaltite_ore)item(gtceu:raw_cobaltite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -3.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:rock_salt_ore"
+			}
+			id: "4F2BBB75E5B5EAD8"
+			rewards: [
+				{
+					id: "636D84C117F69866"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "6962BAEF473C8C18"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:rock_salt_ore)item(gtceu:rock_salt_gem)item(gtceu:salt_ore)item(gtceu:salt_gem)item(gtceu:lepidolite_ore)item(gtceu:raw_lepidolite)item(gtceu:spodumene_ore)item(gtceu:raw_spodumene))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:graphite_ore"
+			}
+			id: "1BE2CB4684AF7DFB"
+			rewards: [
+				{
+					count: 2
+					id: "28E95708986F70B6"
+					item: {
+						count: 1
+						id: "minecraft:diamond"
+					}
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "73372AD360DA6C63"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "7B87E500C6FB74B3"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:graphite_ore)item(gtceu:raw_graphite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -4.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:lazurite_ore"
+			}
+			id: "246DC099F4457712"
+			rewards: [
+				{
+					id: "0E0F8446337E8132"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "3A308744C31E3ED4"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:lazurite_ore)item(gtceu:lazurite_gem)item(gtceu:sodalite_ore)item(gtceu:sodalite_gem)item(gtceu:calcite_ore)item(gtceu:raw_calcite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -7.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:kyanite_ore"
+			}
+			id: "7AFEEC895FB293D6"
+			rewards: [
+				{
+					id: "09CF1C0670D4F1DE"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "529FF9EA2C01FB6E"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:kyanite_ore)item(gtceu:raw_kyanite)item(gtceu:mica_ore)item(gtceu:raw_mica)item(gtceu:bauxite_ore)item(gtceu:raw_bauxite)item(gtceu:pollucite_ore)item(gtceu:raw_pollucite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -5.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:grossular_ore"
+			}
+			id: "03B842E4A2A6B2C9"
+			rewards: [
+				{
+					id: "0677B3A82EDD9DF9"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "0CD83CD8CF777CB9"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:grossular_ore)item(gtceu:grossular_gem)item(gtceu:spessartine_ore)item(gtceu:spessartine_gem)item(gtceu:pyrolusite_ore)item(gtceu:raw_pyrolusite)item(gtceu:tantalite_ore)item(gtceu:raw_tantalite))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -6.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:bentonite_ore"
+			}
+			id: "2EEEA951011D523D"
+			rewards: [
+				{
+					id: "10A9046D2C389088"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "69ED2BD3D6D30648"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:bentonite_ore)item(gtceu:raw_bentonite)item(gtceu:olivine_ore)item(gtceu:olivine_gem))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -3.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:cinnabar_ore"
+			}
+			id: "4BACAC18E4B982DA"
+			rewards: [
+				{
+					id: "424E53C9A54EEE1B"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "7F7725AF8B2A5B13"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(gtceu:cinnabar_gem)item(alltheores:ruby)item(gtceu:cinnabar_ore)item(alltheores:ruby_ore))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["072FA02152FBC5B1"]
+			icon: {
+				count: 1
+				id: "gtceu:almandine_ore"
+			}
+			id: "7255B9A6E1319DCA"
+			rewards: [
+				{
+					id: "7CDE77676C561B5D"
+					item: {
+						count: 1
+						id: "gtceu:green_sapphire_ore"
+					}
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "4C675CC7CFBF1E94"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					id: "558C014604ECC490"
+					item: {
+						components: {
+							"ftbfiltersystem:filter": "or(item(alltheores:sapphire)item(gtceu:pyrope_gem)item(gtceu:green_sapphire_gem)item(gtceu:almandine_gem)item(alltheores:sapphire_ore)item(gtceu:pyrope_ore)item(gtceu:green_sapphire_ore)item(gtceu:almandine_ore))"
+						}
+						count: 1
+						id: "ftbfiltersystem:smart_filter"
+					}
+					type: "item"
+				}
+			]
+			x: -5.5d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"66D86E1EDEBF542B"
+				"4F086B3CF27D5C1A"
+				"6635E4C76260C4CB"
+				"459787E9F1029CC6"
+				"33590A79C5C554C8"
+			]
+			hide_dependency_lines: true
+			id: "55C47B868C5ECF54"
+			rewards: [
+				{
+					count: 2
+					id: "222FD5D0F6323720"
+					item: {
+						count: 1
+						id: "gtceu:realgar_gem"
+					}
+					random_bonus: 2
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "6F29F3E1EB2B25FD"
+					item: {
+						count: 1
+						id: "gtceu:prospector.lv"
+					}
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["55C47B868C5ECF54"]
+			id: "55F0472830CC6BF6"
+			rewards: [
+				{
+					id: "6ECEEE679E6910B8"
+					item: {
+						count: 1
+						id: "gtceu:polyethylene_bucket"
+					}
+					random_bonus: 2
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "683EF14A8FA0F178"
+					item: {
+						count: 1
+						id: "gtceu:prospector.hv"
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["55F0472830CC6BF6"]
+			id: "2E5EF984B9CE0CB9"
+			rewards: [
+				{
+					count: 8
+					id: "3D56EC2CF0D1E941"
+					item: {
+						count: 1
+						id: "gtceu:rhodium_dust"
+					}
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "559399984984CE67"
+					item: {
+						count: 1
+						id: "gtceu:prospector.luv"
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 5.5d
+		}
+		{
+			icon: {
+				count: 1
+				id: "minecraft:netherrack"
+			}
+			id: "0D20644407244A60"
+			rewards: [
+				{
+					id: "0A80DD25662434D8"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					dimension: "allthemodium:mining"
+					id: "500548E772861A58"
+					type: "dimension"
+				}
+			]
+			x: 6.0d
+			y: 3.5d
+		}
+		{
+			icon: {
+				count: 1
+				id: "minecraft:end_stone"
+			}
+			id: "244220A5D9F4C702"
+			rewards: [
+				{
+					id: "056FC6F179E3B43C"
+					type: "xp"
+					xp: 10
+				}
+			]
+			tasks: [
+				{
+					dimension: "allthemodium:mining"
+					id: "540231448A4DE43B"
+					type: "dimension"
+				}
+			]
+			x: 6.0d
+			y: -2.5d
+		}
+		{
+			can_repeat: false
+			disable_toast: true
+			hide_details_until_startable: true
+			hide_until_deps_visible: true
+			icon: {
+				components: {
+					"ftbquests:icon": "minecraft:item/barrier"
+				}
+				count: 1
+				id: "ftbquests:custom_icon"
+			}
+			id: "1C9F143427D1E68C"
+			invisible: true
+			optional: true
+			shape: "octagon"
+			tasks: [
+				{
+					disable_toast: true
+					id: "67C278CBE8BD4F0C"
+					type: "checkmark"
+				}
+				{
+					id: "405256482E90B52E"
+					type: "checkmark"
+				}
+			]
+			x: 0.0d
+			y: 5.5d
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+  "forge:tools/butchery_knives": "c:tools/butchery_knife",
+  "forge:tools/crowbars": "c:tools/crowbar",
+  "forge:tools/files": "c:tools/file",
+  "forge:tools/hammers": "c:tools/hammer",
+  "forge:tools/knives": "c:tools/knife",
+  "forge:tools/mallets": "c:tools/mallet",
+  "forge:tools/mortars": "c:tools/mortar",
+  "forge:tools/plungers": "c:tools/plunger",
+  "forge:tools/saws": "c:tools/saw",
+  "forge:tools/screwdrivers": "c:tools/screwdriver",
+  "forge:tools/scythes": "c:tools/scythe",
+  "forge:tools/wire_cutters": "c:tools/wire_cutter",
+  "forge:tools/wrenches": "c:tools/wrench"
+}

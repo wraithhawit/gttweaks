@@ -1,0 +1,249 @@
+{
+	id: "499D88D44DAF4820"
+	loot_size: 1
+	order_index: 59
+	rewards: [
+		{
+			count: 4
+			id: "2C0581681CF01D2E"
+			item: {
+				count: 1
+				id: "gtceu:capacitor"
+			}
+			random_bonus: 4
+			weight: 5.0f
+		}
+		{
+			count: 4
+			id: "48ED3DAA477873AE"
+			item: {
+				count: 1
+				id: "gtceu:inductor"
+			}
+			random_bonus: 4
+			weight: 5.0f
+		}
+		{
+			id: "67B9A87DE743390D"
+			item: {
+				count: 1
+				id: "gtceu:ev_robot_arm"
+			}
+			weight: 4.0f
+		}
+		{
+			count: 4
+			id: "7592334BDED8E664"
+			item: {
+				count: 1
+				id: "gtceu:silicon_wafer"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+		{
+			count: 2
+			id: "4ADE7F84AB550D56"
+			item: {
+				count: 1
+				id: "gtceu:plastic_printed_circuit_board"
+			}
+			random_bonus: 2
+			weight: 5.0f
+		}
+		{
+			count: 4
+			id: "25C8EAD9D70FBBEA"
+			item: {
+				count: 1
+				id: "gtceu:transistor"
+			}
+			random_bonus: 4
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "7B025A3685F7E66B"
+			item: {
+				count: 1
+				id: "gtceu:ram_chip"
+			}
+			random_bonus: 6
+			weight: 6.0f
+		}
+		{
+			id: "416A2D4F686DD050"
+			item: {
+				count: 1
+				id: "gtceu:ram_wafer"
+			}
+			random_bonus: 2
+			weight: 6.0f
+		}
+		{
+			id: "217C81FA3BBFF44D"
+			item: {
+				count: 1
+				id: "gtceu:ev_electric_pump"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "71026EC2555445D0"
+			item: {
+				count: 1
+				id: "gtceu:ev_electric_piston"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "39E5968801E3130D"
+			item: {
+				count: 1
+				id: "gtceu:ev_conveyor_module"
+			}
+			weight: 5.0f
+		}
+		{
+			count: 4
+			id: "7BC35C9644BB715C"
+			item: {
+				count: 1
+				id: "gtceu:small_gallium_arsenide_dust"
+			}
+			random_bonus: 4
+			weight: 7.0f
+		}
+		{
+			count: 2
+			id: "5C15CAC8DDA099DC"
+			item: {
+				count: 1
+				id: "gtceu:plastic_circuit_board"
+			}
+			random_bonus: 2
+			weight: 7.0f
+		}
+		{
+			count: 2
+			id: "0DEB43DA0226D60E"
+			item: {
+				count: 1
+				id: "gtceu:micro_processor"
+			}
+			random_bonus: 2
+			weight: 7.0f
+		}
+		{
+			id: "5B31E238D944BE7D"
+			item: {
+				count: 1
+				id: "gtceu:micro_processor_assembly"
+			}
+			random_bonus: 2
+			weight: 5.0f
+		}
+		{
+			id: "0CF5280A52B65BE9"
+			item: {
+				count: 1
+				id: "gtceu:micro_processor_computer"
+			}
+			weight: 3.0f
+		}
+		{
+			count: 6
+			id: "275FE9CF6C9FAE02"
+			item: {
+				count: 1
+				id: "gtceu:diode"
+			}
+			random_bonus: 6
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "79DD100869FA9F43"
+			item: {
+				count: 1
+				id: "gtceu:resistor"
+			}
+			random_bonus: 6
+			weight: 8.0f
+		}
+		{
+			id: "75087A43D218A3A0"
+			item: {
+				count: 1
+				id: "gtceu:ev_electric_motor"
+			}
+			weight: 5.0f
+		}
+		{
+			count: 12
+			id: "6259250CDCA7F521"
+			item: {
+				count: 1
+				id: "gtceu:rutile_dust"
+			}
+			random_bonus: 12
+			weight: 12.0f
+		}
+		{
+			id: "2EB71F261BFB6398"
+			item: {
+				count: 1
+				id: "gtceu:ev_machine_hull"
+			}
+			weight: 10.0f
+		}
+		{
+			id: "2C61211E5AF70973"
+			item: {
+				count: 1
+				id: "gtceu:ev_machine_casing"
+			}
+			weight: 12.0f
+		}
+		{
+			count: 12
+			id: "248BE2AB43F0EFA1"
+			item: {
+				count: 1
+				id: "gtceu:titanium_ingot"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			count: 4
+			id: "4034EBF4616B8C56"
+			item: {
+				count: 1
+				id: "gtceu:cpu_chip"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+		{
+			count: 2
+			id: "6C1E8732B671F636"
+			item: {
+				count: 1
+				id: "gtceu:cpu_wafer"
+			}
+			random_bonus: 2
+			weight: 10.0f
+		}
+		{
+			count: 12
+			id: "126C307C7C91D290"
+			item: {
+				count: 1
+				id: "gtceu:titanium_plate"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+	]
+}
