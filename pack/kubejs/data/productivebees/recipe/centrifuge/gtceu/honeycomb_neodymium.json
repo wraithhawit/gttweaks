@@ -15,7 +15,7 @@
     },
     {
       "item": {
-        "tag": "c:raw_materials/neodymium"
+        "item": "gtceu:raw_neodymium"
       },
       "chance": 0.8
     }
@@ -30,15 +30,8 @@
       "modid": "gtceu"
     },
     {
-      "type": "neoforge:not",
-      "value": {
-        "type": "neoforge:tag_empty",
-        "tag": "c:raw_materials/neodymium"
-      }
-    },
-    {
-      "type": "productivebees:bee_exists",
-      "bee": "productivebees:neodymium"
+      "type": "neoforge:item_exists",
+      "item": "gtceu:raw_neodymium"
     }
   ]
 }

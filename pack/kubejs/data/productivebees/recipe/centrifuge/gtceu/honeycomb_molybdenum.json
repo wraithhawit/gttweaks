@@ -15,7 +15,7 @@
     },
     {
       "item": {
-        "tag": "c:raw_materials/molybdenum"
+        "item": "gtceu:raw_molybdenum"
       },
       "chance": 0.8
     }
@@ -30,15 +30,8 @@
       "modid": "gtceu"
     },
     {
-      "type": "neoforge:not",
-      "value": {
-        "type": "neoforge:tag_empty",
-        "tag": "c:raw_materials/molybdenum"
-      }
-    },
-    {
-      "type": "productivebees:bee_exists",
-      "bee": "productivebees:molybdenum"
+      "type": "neoforge:item_exists",
+      "item": "gtceu:raw_molybdenum"
     }
   ]
 }
