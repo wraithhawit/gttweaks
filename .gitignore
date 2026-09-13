@@ -2,6 +2,7 @@
 /.gradle/
 /build/
 /bin/
+/logs/
 /out/
 /run/
 /runs/
