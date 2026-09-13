@@ -1,0 +1,7 @@
+{
+  "gttweaks.configuration.title": "GregTech Tweaks Configuration",
+  "gttweaks.configuration.section.gttweaks.client.toml": "Client Settings",
+  "gttweaks.configuration.section.gttweaks.client.toml.title": "Client Settings",
+  "gttweaks.configuration.previewZoomSpeed": "Preview Zoom Speed",
+  "gttweaks.configuration.previewZoomSpeed.tooltip": "Scroll-wheel zoom speed in multiblock previews, as a multiple of ModularUI's own step (1/12 block per notch). 1.0 is ModularUI's speed; the default is 10.0."
+}

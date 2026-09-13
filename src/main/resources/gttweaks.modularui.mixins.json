@@ -9,6 +9,7 @@
     "OverlayStackMixin",
     "SchemaFitToStructureMixin",
     "SchemaSingleEyeOffsetMixin",
+    "SchemaScrollZoomSpeedMixin",
     "EmbedTransformAllPanelsMixin",
     "MenuCloseInvalidWidgetMixin",
     "MenuPanelStateMixin",

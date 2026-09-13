@@ -43,6 +43,17 @@ public final class SchemaView {
         return (min + max + 1) / 2.0F;
     }
 
+    /**
+     * ModularUI's scroll-zoom step multiplied by the configured speed. A multiplier that is not a
+     * positive finite number leaves ModularUI's step unchanged rather than freezing or flipping zoom.
+     */
+    public static float scrollZoomStep(float stockStep, double multiplier) {
+        if (!(multiplier > 0.0D) || Double.isInfinite(multiplier)) {
+            return stockStep;
+        }
+        return (float) (stockStep * multiplier);
+    }
+
     /** Camera distance for a structure whose largest dimension is {@code largest} blocks. */
     public static float fitDistance(int largest) {
         // Sub-linear on purpose: apparent size goes as L/d, so d = L^0.875 gives big structures a
