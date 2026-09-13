@@ -48,8 +48,8 @@ ID_REMAP = {
     "exchangers:eio_exchanger_core_tier3": "pocketstorage:psu_3",
     # starforge_recipes.js: the gregstar recipe's 8x end steel exchanger became 8x psu_4
     "exchangers:end_steel_exchanger": "pocketstorage:psu_4",
-    # GTCEu 8 has no coins; the "GregStar Champion" reward stays a named trophy
-    "gtceu:doge_coin": "allthetweaks:trophy_atm",
+    # GTCEu 8 dropped the coin; pack/kubejs/startup_scripts/gttweaks/doge_coin.js registers it again
+    "gtceu:doge_coin": "kubejs:doge_coin",
 }
 # starforge_recipes.js dropped infinite_polonium: no chemical infinity cell exists in ATM10.
 UNOBTAINABLE = {"expatternprovider:infinity_cell"}

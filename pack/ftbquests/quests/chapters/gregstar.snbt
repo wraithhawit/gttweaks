@@ -65,7 +65,7 @@
 							"minecraft:custom_name": "{\"text\":\"GregStar Champion\"}"
 						}
 						count: 1
-						id: "allthetweaks:trophy_atm"
+						id: "kubejs:doge_coin"
 					}
 					type: "item"
 				}
