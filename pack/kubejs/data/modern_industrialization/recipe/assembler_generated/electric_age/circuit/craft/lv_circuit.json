@@ -1,0 +1,16 @@
+{
+  "type": "modern_industrialization:assembler",
+  "duration": 200,
+  "eu": 8,
+  "item_inputs": [
+    { "amount": 1, "item": "modern_industrialization:inductor" },
+    { "amount": 2, "item": "modern_industrialization:copper_wire" },
+    { "amount": 1, "tag": "gtceu:circuits/lv" },
+    { "amount": 2, "item": "modern_industrialization:resistor" },
+    { "amount": 2, "item": "modern_industrialization:capacitor" },
+    { "amount": 1, "item": "modern_industrialization:analog_circuit_board" }
+  ],
+  "item_outputs": [
+    { "amount": 1, "item": "modern_industrialization:analog_circuit" }
+  ]
+}
