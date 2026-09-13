@@ -5,6 +5,7 @@ import brachy.modularui.drawable.schema.ISchema;
 import brachy.modularui.screen.viewport.ModularGuiContext;
 import brachy.modularui.theme.WidgetThemeEntry;
 import brachy.modularui.widgets.SchemaWidget;
+import com.wraithhawit.gttweaks.SchemaView;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
@@ -86,21 +87,19 @@ public abstract class SchemaFitToStructureMixin {
         }
 
         final int largest = Math.max(maxX - minX + 1, Math.max(maxY - minY + 1, maxZ - minZ + 1));
-        // Sub-linear on purpose. A distance proportional to size renders every structure at the
-        // same apparent size, which is why the Coke Oven looked right while the Micro Universe Orb
-        // - thirteen times larger - looked no bigger. Apparent size goes as L/d, so with
-        // d = L^0.875 it goes as L^0.125: a 53-block structure gets about 1.4x the screen of a
-        // 4-block one, while the small machines keep the framing that already looked correct.
-        // The floor keeps a one-block schema from putting the camera inside itself.
-        final float distance = (float) Math.max(3.3D, Math.pow(largest, 0.875D));
+        // Doubled relative to 0.16.2 because SchemaSingleEyeOffsetMixin removes ModularUI's second
+        // eye subtraction, which had been viewing everything from twice this distance.
+        final float distance = SchemaView.fitDistance(largest);
 
-        // The pivot half. The camera aims at getFocus() PLUS this widget's offset, so where the
-        // focus is wrong the offset is the public way to correct it. Centre is (min + max) / 2 to
-        // match BlockPosUtil.getCenterF, which returned (1.0, 1.5, 1.0) for a box of 0,0,0..2,3,2.
+        // The pivot half. The camera aims at getFocus() PLUS this widget's offset, so the offset is
+        // the public way to aim it. BlockPosUtil.getCenterF returns (min + max) / 2 - (1.0, 1.5, 1.0)
+        // for 0,0,0..2,3,2 - which is half a block short of the geometric centre, since block p
+        // spans [p, p + 1]. The focus is recomputed on schema refresh with the same formula, so this
+        // offset stays valid when the sliders change the bounds.
         final Vector3fc focus = schema.getFocus();
-        final float centreX = (minX + maxX) / 2.0F;
-        final float centreY = (minY + maxY) / 2.0F;
-        final float centreZ = (minZ + maxZ) / 2.0F;
+        final float centreX = SchemaView.geometricCentre(minX, maxX);
+        final float centreY = SchemaView.geometricCentre(minY, maxY);
+        final float centreZ = SchemaView.geometricCentre(minZ, maxZ);
         final float offsetX = centreX - focus.x();
         final float offsetY = centreY - focus.y();
         final float offsetZ = centreZ - focus.z();

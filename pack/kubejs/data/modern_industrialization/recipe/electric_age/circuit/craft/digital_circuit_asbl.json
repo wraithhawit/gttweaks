@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "cOc",
+    "NbN",
+    "GAG"
+  ],
+  "key": {
+    "O": { "item": "modern_industrialization:or_gate" },
+    "c": { "item": "modern_industrialization:electronic_circuit" },
+    "N": { "item": "modern_industrialization:not_gate" },
+    "A": { "item": "modern_industrialization:and_gate" },
+    "b": { "item": "modern_industrialization:digital_circuit_board" },
+    "G": { "tag": "gtceu:circuits/ev" }
+  },
+  "result": {
+    "id": "modern_industrialization:digital_circuit"
+  }
+}

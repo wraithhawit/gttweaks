@@ -1,0 +1,116 @@
+{
+	id: "3DAEBCB8606C6C4A"
+	loot_size: 1
+	order_index: 38
+	rewards: [
+		{
+			count: 8
+			id: "5012168FB00E87D5"
+			item: {
+				count: 1
+				id: "alltheores:bronze_plate"
+			}
+			random_bonus: 8
+			weight: 10.0f
+		}
+		{
+			count: 3
+			id: "0211CF9F6DD5C85F"
+			item: {
+				count: 1
+				id: "gtceu:bronze_small_fluid_pipe"
+			}
+			random_bonus: 2
+			weight: 10.0f
+		}
+		{
+			count: 3
+			id: "2019D61C1060B08B"
+			item: {
+				count: 1
+				id: "gtceu:bronze_normal_fluid_pipe"
+			}
+			random_bonus: 2
+			weight: 4.0f
+		}
+		{
+			count: 3
+			id: "0E65656A1013041D"
+			item: {
+				count: 1
+				id: "gtceu:sulfur_dust"
+			}
+			random_bonus: 6
+			weight: 6.0f
+		}
+		{
+			count: 2
+			id: "3BE5E32DCAACFBEC"
+			item: {
+				count: 1
+				id: "gtceu:rubber_ingot"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			count: 3
+			id: "29C06AD60EFE14D3"
+			item: {
+				count: 1
+				id: "gtceu:sticky_resin"
+			}
+			random_bonus: 6
+			weight: 6.0f
+		}
+		{
+			id: "794CB78FABB098D2"
+			item: {
+				count: 1
+				id: "gtceu:resistor"
+			}
+			random_bonus: 2
+		}
+		{
+			count: 2
+			id: "54CE35BBE070BA4F"
+			item: {
+				count: 1
+				id: "gtceu:vacuum_tube"
+			}
+			random_bonus: 2
+			weight: 2.0f
+		}
+		{
+			count: 2
+			id: "5D99FD4E10447811"
+			item: {
+				count: 1
+				id: "gtceu:glass_tube"
+			}
+			random_bonus: 2
+			weight: 2.0f
+		}
+		{
+			count: 3
+			id: "6F695B9ED8A45178"
+			item: {
+				count: 1
+				id: "gtceu:wood_plate"
+			}
+			random_bonus: 6
+			weight: 4.0f
+		}
+		{
+			count: 8
+			id: "57D126F8359AA535"
+			item: {
+				count: 1
+				id: "gtceu:raw_rubber_dust"
+			}
+			random_bonus: 8
+			weight: 8.0f
+		}
+	]
+	use_title: true
+}

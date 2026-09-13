@@ -5,17 +5,18 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
+    "WidgetRemovalMixin",
     "OverlayStackMixin",
     "SchemaFitToStructureMixin",
+    "SchemaSingleEyeOffsetMixin",
+    "SchemaScrollZoomSpeedMixin",
     "EmbedTransformAllPanelsMixin",
     "MenuCloseInvalidWidgetMixin",
     "MenuPanelStateMixin",
     "MenuSourceAccessor",
     "MenuButtonStateAccessor",
     "MenuButtonSiblingScopeMixin",
-    "MenuCloseProbeMixin",
-    "PanelManagerAccessor",
-    "EmbeddedMenuDispatchMixin"
+    "MenuCloseProbeMixin"
   ],
   "server": [],
   "injectors": {

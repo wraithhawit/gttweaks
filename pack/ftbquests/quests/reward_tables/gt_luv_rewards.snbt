@@ -1,0 +1,267 @@
+{
+	id: "61B798ABAE5A10A4"
+	loot_size: 1
+	order_index: 69
+	rewards: [
+		{
+			id: "03CC9C7E85BF0C67"
+			item: {
+				count: 1
+				id: "gtceu:nano_processor_mainframe"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "219E819B16790D4B"
+			item: {
+				count: 1
+				id: "gtceu:luv_robot_arm"
+			}
+			weight: 3.0f
+		}
+		{
+			count: 4
+			id: "6AF10D885F207E35"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_capacitor"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			count: 4
+			id: "2B8AD69A9A132634"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_inductor"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			count: 4
+			id: "021BECED1759B959"
+			item: {
+				count: 1
+				id: "gtceu:epoxy_printed_circuit_board"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			id: "042588918A1DB16E"
+			item: {
+				count: 1
+				id: "gtceu:luv_electric_pump"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "5E8B18609927C3D1"
+			item: {
+				count: 1
+				id: "gtceu:luv_electric_piston"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "703563B42D64E737"
+			item: {
+				count: 1
+				id: "gtceu:luv_conveyor_module"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "7A4C9DB996D7DA58"
+			item: {
+				count: 1
+				id: "gtceu:nano_processor_computer"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "284584D0031994C3"
+			item: {
+				count: 1
+				id: "gtceu:luv_electric_motor"
+			}
+			weight: 4.0f
+		}
+		{
+			count: 12
+			id: "768B318379057FF6"
+			item: {
+				count: 1
+				id: "gtceu:hpic_chip"
+			}
+			random_bonus: 24
+			weight: 5.0f
+		}
+		{
+			count: 12
+			id: "0D7BB3F558E7D3D9"
+			item: {
+				count: 1
+				id: "gtceu:hpic_wafer"
+			}
+			random_bonus: 24
+			weight: 5.0f
+		}
+		{
+			count: 6
+			id: "6CC87DB417CED951"
+			item: {
+				count: 1
+				id: "gtceu:palladium_dust"
+			}
+			random_bonus: 12
+			weight: 6.0f
+		}
+		{
+			id: "0B31C1CA44B7E9FB"
+			item: {
+				count: 1
+				id: "gtceu:nano_processor_assembly"
+			}
+			weight: 6.0f
+		}
+		{
+			count: 4
+			id: "3404689A0332449B"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_transistor"
+			}
+			random_bonus: 10
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "1C0E7B8B9001A2B2"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_diode"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "26E834ED8933A098"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_resistor"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "2EC827866AC02759"
+			item: {
+				count: 1
+				id: "gtceu:phosphorus_wafer"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			id: "4FC377678443ACE4"
+			item: {
+				count: 1
+				id: "gtceu:luv_machine_hull"
+			}
+			weight: 10.0f
+		}
+		{
+			count: 8
+			id: "4E7665139D3E23E2"
+			item: {
+				count: 1
+				id: "gtceu:rhodium_plated_palladium_ingot"
+			}
+			random_bonus: 16
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "055AC795E4A1ED88"
+			item: {
+				count: 1
+				id: "gtceu:nano_cpu_chip"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			count: 3
+			id: "457C126357A8F9CB"
+			item: {
+				count: 1
+				id: "gtceu:nano_cpu_wafer"
+			}
+			random_bonus: 6
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "2842BAE6C5B4E3F5"
+			item: {
+				count: 1
+				id: "gtceu:rhodium_plated_palladium_plate"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			count: 16
+			id: "0514A76EE676BE3A"
+			item: {
+				count: 1
+				id: "gtceu:raw_pentlandite"
+			}
+			random_bonus: 32
+			weight: 12.0f
+		}
+		{
+			count: 16
+			id: "1957DC698E395E05"
+			item: {
+				count: 1
+				id: "gtceu:raw_cooperite"
+			}
+			random_bonus: 32
+			weight: 12.0f
+		}
+		{
+			id: "137948D754E0B270"
+			item: {
+				count: 1
+				id: "gtceu:luv_machine_casing"
+			}
+			weight: 12.0f
+		}
+		{
+			count: 16
+			id: "47B13CAF27482C98"
+			item: {
+				count: 1
+				id: "gtceu:rare_earth_dust"
+			}
+			random_bonus: 32
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "16E622641CE2DA0F"
+			item: {
+				count: 1
+				id: "gtceu:ruridit_dust"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+	]
+}

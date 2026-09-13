@@ -1,0 +1,261 @@
+{
+	id: "0B695E09579F170F"
+	loot_size: 1
+	order_index: 46
+	rewards: [
+		{
+			id: "46339FCA19658F38"
+			item: {
+				count: 1
+				id: "gtceu:hv_machine_casing"
+			}
+			weight: 12.0f
+		}
+		{
+			id: "6750030E3B4AFAF3"
+			item: {
+				count: 1
+				id: "gtceu:hv_machine_hull"
+			}
+			weight: 10.0f
+		}
+		{
+			count: 4
+			id: "2E1E727AD4CA68A7"
+			item: {
+				count: 1
+				id: "gtceu:stainless_steel_ingot"
+			}
+			random_bonus: 4
+			weight: 12.0f
+		}
+		{
+			count: 2
+			id: "2C93A438C7C2A004"
+			item: {
+				count: 1
+				id: "gtceu:good_integrated_circuit"
+			}
+			random_bonus: 2
+			weight: 8.0f
+		}
+		{
+			id: "67D7110FE64E3270"
+			item: {
+				count: 1
+				id: "gtceu:advanced_integrated_circuit"
+			}
+			random_bonus: 1
+			weight: 6.0f
+		}
+		{
+			count: 8
+			id: "1CFCFC8506534F34"
+			item: {
+				count: 1
+				id: "gtceu:gold_single_wire"
+			}
+			random_bonus: 8
+			weight: 12.0f
+		}
+		{
+			count: 8
+			id: "735878B11209808A"
+			item: {
+				count: 1
+				id: "gtceu:stainless_steel_plate"
+			}
+			random_bonus: 4
+			weight: 12.0f
+		}
+		{
+			count: 3
+			id: "556F2222F7A3F997"
+			item: {
+				count: 1
+				id: "gtceu:diode"
+			}
+			random_bonus: 3
+			weight: 8.0f
+		}
+		{
+			count: 3
+			id: "5F08E050034958E0"
+			item: {
+				count: 1
+				id: "gtceu:resistor"
+			}
+			random_bonus: 3
+			weight: 8.0f
+		}
+		{
+			count: 2
+			id: "184E3BD2A14060D7"
+			item: {
+				count: 1
+				id: "gtceu:transistor"
+			}
+			random_bonus: 2
+			weight: 4.0f
+		}
+		{
+			count: 2
+			id: "15ECC43210A6F914"
+			item: {
+				count: 1
+				id: "gtceu:capacitor"
+			}
+			random_bonus: 2
+			weight: 2.0f
+		}
+		{
+			count: 2
+			id: "7979B4E386D8EAF4"
+			item: {
+				count: 1
+				id: "gtceu:inductor"
+			}
+			random_bonus: 2
+			weight: 2.0f
+		}
+		{
+			id: "185E1E90A5DAB6D5"
+			item: {
+				count: 1
+				id: "gtceu:hv_electric_motor"
+			}
+			weight: 8.0f
+		}
+		{
+			id: "4FDCB7D11C6ED6B5"
+			item: {
+				count: 1
+				id: "gtceu:hv_electric_pump"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "00EDCCFAFF4EDB9D"
+			item: {
+				count: 1
+				id: "gtceu:hv_electric_piston"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "74B4A137FCCD2304"
+			item: {
+				count: 1
+				id: "gtceu:hv_conveyor_module"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "05D7416B2C6061B9"
+			item: {
+				count: 1
+				id: "gtceu:hv_robot_arm"
+			}
+			weight: 3.0f
+		}
+		{
+			count: 4
+			id: "6F336277E7C2C4D8"
+			item: {
+				count: 1
+				id: "gtceu:silicon_dust"
+			}
+			random_bonus: 4
+			weight: 8.0f
+		}
+		{
+			count: 2
+			id: "5F026700456059FF"
+			item: {
+				count: 1
+				id: "gtceu:silicon_ingot"
+			}
+			random_bonus: 2
+			weight: 8.0f
+		}
+		{
+			count: 2
+			id: "04C787DB84747E83"
+			item: {
+				count: 1
+				id: "gtceu:small_gallium_arsenide_dust"
+			}
+			random_bonus: 2
+			weight: 5.0f
+		}
+		{
+			count: 2
+			id: "5B4C01AEA8AC34A3"
+			item: {
+				count: 1
+				id: "gtceu:silicon_wafer"
+			}
+			random_bonus: 2
+			weight: 3.0f
+		}
+		{
+			id: "16ABFA2FAB606A0B"
+			item: {
+				count: 1
+				id: "gtceu:plastic_printed_circuit_board"
+			}
+			random_bonus: 2
+			weight: 3.0f
+		}
+		{
+			id: "568819A6FFCC54E4"
+			item: {
+				count: 1
+				id: "gtceu:plastic_circuit_board"
+			}
+			random_bonus: 2
+			weight: 5.0f
+		}
+		{
+			count: 4
+			id: "17445B53871710D1"
+			item: {
+				count: 1
+				id: "gtceu:fine_electrum_wire"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			count: 2
+			id: "2A5C20642A1947F9"
+			item: {
+				count: 1
+				id: "gtceu:fine_red_alloy_wire"
+			}
+			random_bonus: 4
+			weight: 6.0f
+		}
+		{
+			count: 2
+			id: "58DCA288D4BEFAD4"
+			item: {
+				count: 1
+				id: "gtceu:blue_alloy_bolt"
+			}
+			random_bonus: 5
+			weight: 6.0f
+		}
+		{
+			count: 4
+			id: "2DC2D3695D84D5F0"
+			item: {
+				count: 1
+				id: "gtceu:polyethylene_plate"
+			}
+			random_bonus: 4
+			weight: 7.0f
+		}
+	]
+	use_title: true
+}

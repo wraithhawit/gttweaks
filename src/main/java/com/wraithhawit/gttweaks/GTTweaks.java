@@ -6,6 +6,8 @@ import com.wraithhawit.gttweaks.ingredient.GTTweaksIngredients;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.registries.RegisterEvent;
 
@@ -37,7 +39,8 @@ public class GTTweaks {
     public static final String MOD_ID = "gttweaks";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public GTTweaks(IEventBus modBus) {
+    public GTTweaks(IEventBus modBus, ModContainer container) {
+        container.registerConfig(ModConfig.Type.CLIENT, GTTweaksConfig.CLIENT_SPEC);
         GTTweaksIngredients.REGISTRY.register(modBus);
         modBus.addListener(EventPriority.HIGHEST, RegisterEvent.class, GTTweaks::probeRegistryDispatch);
     }

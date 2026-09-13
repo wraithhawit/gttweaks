@@ -1,0 +1,209 @@
+{
+	id: "42AB780FB10EA8B3"
+	loot_size: 1
+	order_index: 40
+	rewards: [
+		{
+			count: 3
+			id: "7F4D298FAB9381B1"
+			item: {
+				count: 1
+				id: "gtceu:resistor"
+			}
+			random_bonus: 2
+			weight: 6.0f
+		}
+		{
+			count: 4
+			id: "027226DDF973EA88"
+			item: {
+				count: 1
+				id: "gtceu:wrought_iron_plate"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+		{
+			id: "63556EE911C54A10"
+			item: {
+				count: 1
+				id: "gtceu:lv_machine_hull"
+			}
+			random_bonus: 1
+			weight: 6.0f
+		}
+		{
+			count: 8
+			id: "364E10ED2CD0B463"
+			item: {
+				count: 1
+				id: "gtceu:sticky_resin"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+		{
+			id: "750AB3BE9164C038"
+			item: {
+				count: 1
+				id: "gtceu:diode"
+			}
+			random_bonus: 1
+		}
+		{
+			id: "61184B76CBB6E3B0"
+			item: {
+				count: 1
+				id: "gtceu:basic_electronic_circuit"
+			}
+			random_bonus: 2
+			weight: 2.0f
+		}
+		{
+			count: 2
+			id: "160E659738AD3A90"
+			item: {
+				count: 1
+				id: "gtceu:rubber_plate"
+			}
+			random_bonus: 4
+			weight: 8.0f
+		}
+		{
+			count: 8
+			id: "524D50B810F7A02D"
+			item: {
+				count: 1
+				id: "gtceu:rubber_ingot"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+		{
+			id: "7402A22A6E7C4AAD"
+			item: {
+				count: 1
+				id: "gtceu:lv_electric_piston"
+			}
+			random_bonus: 2
+			weight: 6.0f
+		}
+		{
+			id: "68DE5785A6F060B6"
+			item: {
+				count: 1
+				id: "gtceu:lv_electric_motor"
+			}
+			random_bonus: 2
+			weight: 6.0f
+		}
+		{
+			count: 8
+			id: "66E0F7DE78C09AFD"
+			item: {
+				count: 1
+				id: "minecraft:diamond"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+		{
+			count: 8
+			id: "73D6CD35567E24D0"
+			item: {
+				count: 1
+				id: "minecraft:sticky_piston"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+		{
+			count: 8
+			id: "0755C18095C5207D"
+			item: {
+				count: 1
+				id: "gtceu:tin_single_cable"
+			}
+			random_bonus: 8
+			weight: 8.0f
+		}
+		{
+			count: 8
+			id: "2C8E792347C9F37C"
+			item: {
+				count: 1
+				id: "gtceu:tin_single_wire"
+			}
+			random_bonus: 8
+			weight: 10.0f
+		}
+		{
+			id: "4723BB12139FA342"
+			item: {
+				count: 1
+				id: "gtceu:arsenic_dust"
+			}
+			random_bonus: 1
+			weight: 2.0f
+		}
+		{
+			id: "338599E9BBF95E65"
+			item: {
+				count: 1
+				id: "gtceu:gallium_dust"
+			}
+			random_bonus: 1
+			weight: 2.0f
+		}
+		{
+			count: 3
+			id: "2EFE33CFEFD629B2"
+			item: {
+				count: 1
+				id: "gtceu:cobaltite_dust"
+			}
+			random_bonus: 2
+			weight: 5.0f
+		}
+		{
+			count: 8
+			id: "7CA8AFB6C6CE5648"
+			item: {
+				count: 1
+				id: "gtceu:copper_single_wire"
+			}
+			random_bonus: 8
+			weight: 10.0f
+		}
+		{
+			id: "06C530FCF1E3DC20"
+			item: {
+				count: 1
+				id: "gtceu:lv_machine_casing"
+			}
+			random_bonus: 1
+			weight: 8.0f
+		}
+		{
+			count: 8
+			id: "5877DF2C7F756385"
+			item: {
+				count: 1
+				id: "alltheores:steel_plate"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+		{
+			count: 2
+			id: "38089FB2D570ACDC"
+			item: {
+				count: 1
+				id: "gtceu:vacuum_tube"
+			}
+			random_bonus: 2
+			weight: 6.0f
+		}
+	]
+	use_title: true
+}

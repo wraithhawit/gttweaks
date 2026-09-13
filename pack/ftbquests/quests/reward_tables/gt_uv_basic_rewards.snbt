@@ -1,0 +1,285 @@
+{
+	id: "193AFBD8DBD51FB8"
+	loot_size: 1
+	order_index: 71
+	rewards: [
+		{
+			id: "20CDB137DBDF8CF0"
+			item: {
+				count: 1
+				id: "gtceu:crystal_processor_mainframe"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "2182101C4E010B55"
+			item: {
+				count: 1
+				id: "gtceu:uv_robot_arm"
+			}
+			weight: 3.0f
+		}
+		{
+			count: 4
+			id: "0846B43EADF8CD21"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_capacitor"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			count: 4
+			id: "1BEE8F9BAEC102AD"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_transistor"
+			}
+			random_bonus: 4
+			weight: 4.0f
+		}
+		{
+			id: "33F15EAA760B8E1B"
+			item: {
+				count: 1
+				id: "gtceu:multilayer_fiber_reinforced_printed_circuit_board"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "7BD42B35514E3388"
+			item: {
+				count: 1
+				id: "gtceu:uv_electric_pump"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "0363D300D85B138D"
+			item: {
+				count: 1
+				id: "gtceu:uv_electric_piston"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "27225BDA894AE45A"
+			item: {
+				count: 1
+				id: "gtceu:uv_conveyor_module"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "6810B179EED01C38"
+			item: {
+				count: 1
+				id: "gtceu:crystal_processor_computer"
+			}
+			weight: 4.0f
+		}
+		{
+			id: "135846F0C399C7DC"
+			item: {
+				count: 1
+				id: "gtceu:uv_electric_motor"
+			}
+			weight: 4.0f
+		}
+		{
+			count: 12
+			id: "242576A2C4E2B2EA"
+			item: {
+				count: 1
+				id: "gtceu:highly_advanced_soc"
+			}
+			random_bonus: 24
+			weight: 5.0f
+		}
+		{
+			count: 12
+			id: "138E3D2E2E97A938"
+			item: {
+				count: 1
+				id: "gtceu:highly_advanced_soc_wafer"
+			}
+			random_bonus: 24
+			weight: 5.0f
+		}
+		{
+			count: 6
+			id: "1AFED2081ADCBB85"
+			item: {
+				count: 1
+				id: "gtceu:agar_dust"
+			}
+			random_bonus: 18
+			weight: 6.0f
+		}
+		{
+			id: "3C1A5736E86FEAC8"
+			item: {
+				count: 1
+				id: "gtceu:crystal_processor_assembly"
+			}
+			weight: 6.0f
+		}
+		{
+			count: 6
+			id: "33E84DA1CAB6F2EC"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_inductor"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "13BB9DE96539FD5D"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_diode"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "23C91B80DE3B7EEF"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_resistor"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "11E024BB5DE931B8"
+			item: {
+				count: 1
+				id: "gtceu:nand_memory_chip"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "32BE675050D187B5"
+			item: {
+				count: 1
+				id: "gtceu:nor_memory_chip"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 8
+			id: "5029E26FF134F009"
+			item: {
+				count: 1
+				id: "gtceu:neutronium_wafer"
+			}
+			random_bonus: 8
+			weight: 10.0f
+		}
+		{
+			id: "4AA78CB20EBDCE73"
+			item: {
+				count: 1
+				id: "gtceu:uv_machine_hull"
+			}
+			weight: 10.0f
+		}
+		{
+			count: 8
+			id: "78635AB969CB3CB8"
+			item: {
+				count: 1
+				id: "gtceu:tritanium_ingot"
+			}
+			random_bonus: 16
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "5086A73B32288B0B"
+			item: {
+				count: 1
+				id: "gtceu:crystal_soc"
+			}
+			random_bonus: 6
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "341A70998A244001"
+			item: {
+				count: 1
+				id: "gtceu:stem_cells"
+			}
+			random_bonus: 6
+			weight: 10.0f
+		}
+		{
+			count: 8
+			id: "55AA3F79C2ECD9F0"
+			item: {
+				count: 1
+				id: "gtceu:darmstadtium_plate"
+			}
+			random_bonus: 16
+			weight: 10.0f
+		}
+		{
+			count: 8
+			id: "26C05475A28527D3"
+			item: {
+				count: 1
+				id: "gtceu:yttrium_dust"
+			}
+			random_bonus: 16
+			weight: 12.0f
+		}
+		{
+			count: 6
+			id: "73A429DB4DB4CDAE"
+			item: {
+				count: 1
+				id: "gtceu:neutronium_dust"
+			}
+			random_bonus: 12
+			weight: 12.0f
+		}
+		{
+			id: "6EB0CD31258648DE"
+			item: {
+				count: 1
+				id: "gtceu:uv_machine_casing"
+			}
+			weight: 12.0f
+		}
+		{
+			count: 6
+			id: "49710E038FDF40C3"
+			item: {
+				count: 1
+				id: "gtceu:rhodium_dust"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			count: 4
+			id: "0F3A3D3DA2EA85E1"
+			item: {
+				count: 1
+				id: "gtceu:neuro_processing_unit"
+			}
+			random_bonus: 8
+			weight: 10.0f
+		}
+	]
+}

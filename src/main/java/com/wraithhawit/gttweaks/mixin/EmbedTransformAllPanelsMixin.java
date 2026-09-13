@@ -4,6 +4,7 @@ import brachy.modularui.screen.EmbedHandler;
 import brachy.modularui.screen.ModularPanel;
 import brachy.modularui.screen.ModularScreen;
 import brachy.modularui.widget.Widget;
+import com.wraithhawit.gttweaks.EmbeddedScreens;
 
 import com.mojang.logging.LogUtils;
 
@@ -59,6 +60,9 @@ public abstract class EmbedTransformAllPanelsMixin {
         if (screen == null) {
             return result;
         }
+        // Remembered so EmiMenuOutsideClickMixin can hand this screen the clicks that land
+        // outside EMI's widget bounds - the ones a dropdown needs in order to close.
+        EmbeddedScreens.drawing(screen);
         int moved = 0;
         for (Object open : screen.getPanelManager().getOpenPanels()) {
             if (open instanceof ModularPanel panel && panel != mainPanel) {

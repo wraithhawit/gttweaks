@@ -17,6 +17,14 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import com.wraithhawit.gttweaks.CleanroomPreviewDefaults;
+import com.gregtechceu.gtceu.api.multiblock.pattern.IBlockPattern;
+import com.gregtechceu.gtceu.api.multiblock.util.BlockInfo;
+import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import java.util.Map;
 
 /**
  * Stops an expandable multiblock's preview from building every optional part to its maximum.
@@ -83,6 +91,16 @@ public abstract class ExpandablePreviewFillMixin {
     @Shadow
     @Final
     protected HashBasedTable<MultiPredicate, BasePredicate, IntIntPair> minMaxPreferences;
+
+    // Run after generation, before GT adjusts hatch facings for their final positions.
+    @Inject(method = "populate", at = @At(value = "INVOKE", target =
+            "Lcom/gregtechceu/gtceu/api/multiblock/util/AbstractStructureHelper;fixRotationsAndFacing(Ljava/util/Map;Lnet/minecraft/core/Direction;Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/Block;)V"))
+    private void gttweaks$cleanroomDefaults(Map<BlockPos, BlockInfo> blocks, IBlockPattern pattern,
+            Long2ObjectMap<BlockInfo> userBlocks, Direction front, Direction up, boolean flipped, CallbackInfo ci) {
+        if (!(((Object) this) instanceof ExpandablePatternHelper)
+                || (userBlocks != null && !userBlocks.isEmpty())) return;
+        CleanroomPreviewDefaults.apply((AbstractStructureHelper) (Object) this, blocks, pattern, front, up, flipped);
+    }
 
     @Inject(method = "getMaxCount", at = @At("RETURN"), cancellable = true)
     private void gttweaks$capPreviewFill(MultiPredicate predicate, BasePredicate basePredicate,

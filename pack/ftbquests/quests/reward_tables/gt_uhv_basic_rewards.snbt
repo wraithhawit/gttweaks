@@ -1,0 +1,227 @@
+{
+	id: "04BED724266A250F"
+	loot_size: 1
+	order_index: 42
+	rewards: [
+		{
+			id: "5167B97CC58FEF5A"
+			item: {
+				count: 1
+				id: "gtceu:wetware_processor_mainframe"
+			}
+			weight: 3.0f
+		}
+		{
+			id: "2BE97B3C6A155F9A"
+			item: {
+				count: 1
+				id: "gtceu:uv_robot_arm"
+			}
+			weight: 3.0f
+		}
+		{
+			count: 4
+			id: "73ED4BCA4D3AA327"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_capacitor"
+			}
+			random_bonus: 8
+			weight: 4.0f
+		}
+		{
+			count: 4
+			id: "13D9218ECA7B348A"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_transistor"
+			}
+			random_bonus: 8
+			weight: 4.0f
+		}
+		{
+			count: 4
+			id: "482E36D3BA54C7F7"
+			item: {
+				count: 1
+				id: "gtceu:wetware_printed_circuit_board"
+			}
+			random_bonus: 8
+			weight: 4.0f
+		}
+		{
+			id: "3739A0CEA1A1B02A"
+			item: {
+				count: 1
+				id: "gtceu:uv_electric_pump"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "4B18F96F2C9D70DB"
+			item: {
+				count: 1
+				id: "gtceu:uv_electric_piston"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "61740609B0AB9F38"
+			item: {
+				count: 1
+				id: "gtceu:uv_conveyor_module"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "41DAB77727A598BB"
+			item: {
+				count: 1
+				id: "gtceu:wetware_processor_computer"
+			}
+			weight: 5.0f
+		}
+		{
+			id: "728E706234779944"
+			item: {
+				count: 1
+				id: "gtceu:uv_electric_motor"
+			}
+			weight: 5.0f
+		}
+		{
+			count: 6
+			id: "5B17EEC53B88FB41"
+			item: {
+				count: 1
+				id: "gtceu:highly_advanced_soc"
+			}
+			random_bonus: 12
+			weight: 6.0f
+		}
+		{
+			count: 4
+			id: "0ADDF39A62EFE4CD"
+			item: {
+				count: 1
+				id: "gtceu:highly_advanced_soc_wafer"
+			}
+			random_bonus: 8
+			weight: 6.0f
+		}
+		{
+			count: 4
+			id: "1B680C5615C9E580"
+			item: {
+				count: 1
+				id: "gtceu:neutronium_dust"
+			}
+			random_bonus: 8
+			weight: 6.0f
+		}
+		{
+			id: "69D0682608E0F122"
+			item: {
+				count: 1
+				id: "gtceu:wetware_processor_assembly"
+			}
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "5E5DDEEBC6EBAB67"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_inductor"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "7B5391311F7D9AF6"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_diode"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 6
+			id: "56207F7A62A81113"
+			item: {
+				count: 1
+				id: "gtceu:advanced_smd_resistor"
+			}
+			random_bonus: 12
+			weight: 8.0f
+		}
+		{
+			count: 4
+			id: "54D6A0C498E59146"
+			item: {
+				count: 1
+				id: "gtceu:crystal_soc"
+			}
+			random_bonus: 8
+			weight: 8.0f
+		}
+		{
+			count: 4
+			id: "7949A2C8D538E2E2"
+			item: {
+				count: 1
+				id: "gtceu:neutronium_wafer"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+		{
+			id: "085CBA178F0AB83D"
+			item: {
+				count: 1
+				id: "gtceu:uhv_machine_hull"
+			}
+			weight: 10.0f
+		}
+		{
+			count: 6
+			id: "56DB969C6C6FB4C7"
+			item: {
+				count: 1
+				id: "gtceu:tritanium_ingot"
+			}
+			random_bonus: 12
+			weight: 10.0f
+		}
+		{
+			count: 4
+			id: "307C7CE4A565C6F6"
+			item: {
+				count: 1
+				id: "gtceu:neutronium_ingot"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+		{
+			id: "7B08649346DEA46A"
+			item: {
+				count: 1
+				id: "gtceu:uhv_machine_casing"
+			}
+			weight: 12.0f
+		}
+		{
+			count: 4
+			id: "292BA12EA8EC739F"
+			item: {
+				count: 1
+				id: "gtceu:neuro_processing_unit"
+			}
+			random_bonus: 4
+			weight: 10.0f
+		}
+	]
+}
