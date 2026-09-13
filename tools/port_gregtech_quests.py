@@ -65,7 +65,7 @@ REMOVED_QUESTS = {"5AAD0E516762BA53", "3673893C88EB5EDE"}
 # "have a molten trinaquadalloy bucket" task becomes a fluid task for the same 1000 mB, which can
 # be handed in from a tank or piped into a task screen.
 TASK_REPLACEMENTS = {
-    "747C0465749AAB2C": ("gtceu:molten_trinaquadalloy", 1000),
+    "747C0465749AAB2C": ("gtceu:trinaquadalloy", 1000),
 }
 QUEST_POSITIONS = {"70B518EC050678AE": ("9.5d", "-6.0d")}
 # English text for quests whose items were substituted; their ATM9 translations describe the old

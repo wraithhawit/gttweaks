@@ -903,7 +903,7 @@
 				{
 					fluid: {
 						amount: 1000
-						id: "gtceu:molten_trinaquadalloy"
+						id: "gtceu:trinaquadalloy"
 					}
 					id: "747C0465749AAB2C"
 					type: "fluid"
