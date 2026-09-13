@@ -53,6 +53,8 @@ ID_REMAP = {
     "exchangers:end_steel_exchanger": "pocketstorage:psu_4",
     # GTCEu 8 dropped the coin; pack/kubejs/startup_scripts/gttweaks/doge_coin.js registers it again
     "gtceu:doge_coin": "kubejs:doge_coin",
+    # GTCEu 8 names the bucket after the fluid, which lost its molten_ prefix.
+    "gtceu:molten_trinaquadalloy_bucket": "gtceu:trinaquadalloy_bucket",
 }
 # starforge_recipes.js dropped infinite_polonium: no chemical infinity cell exists in ATM10.
 UNOBTAINABLE = {"expatternprovider:infinity_cell"}
@@ -61,12 +63,8 @@ UNOBTAINABLE_TASK_TITLE = "Infinite Polonium Cell (not in ATM10, check off by ha
 # Unit that replaced it does not, so those two prerequisite quests go, and the remaining one moves
 # into the gap they leave.
 REMOVED_QUESTS = {"5AAD0E516762BA53", "3673893C88EB5EDE"}
-# GTCEu 8 registers molten fluids (AlloyBlastPropertyAddition) without bucket items, so ATM9's
-# "have a molten trinaquadalloy bucket" task becomes a fluid task for the same 1000 mB, which can
-# be handed in from a tank or piped into a task screen.
-TASK_REPLACEMENTS = {
-    "747C0465749AAB2C": ("gtceu:trinaquadalloy", 1000),
-}
+# Task ids whose item task becomes a fluid task: (fluid id, amount in mB).
+TASK_REPLACEMENTS = {}
 QUEST_POSITIONS = {"70B518EC050678AE": ("9.5d", "-6.0d")}
 # English text for quests whose items were substituted; their ATM9 translations describe the old
 # items, so those locales fall back to this text.

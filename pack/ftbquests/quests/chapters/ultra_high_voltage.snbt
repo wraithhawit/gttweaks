@@ -901,12 +901,12 @@
 			]
 			tasks: [
 				{
-					fluid: {
-						amount: 1000
-						id: "gtceu:trinaquadalloy"
-					}
 					id: "747C0465749AAB2C"
-					type: "fluid"
+					item: {
+						count: 1
+						id: "gtceu:trinaquadalloy_bucket"
+					}
+					type: "item"
 				}
 			]
 			x: 9.0d
