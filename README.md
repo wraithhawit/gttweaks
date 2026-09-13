@@ -4,7 +4,7 @@ NeoForge 1.21.1 addon supporting GregTech CEu Modern's integration into All the 
 
 The project started with compatibility fixes and now includes ModularUI/EMI menu fixes, multiblock preview adjustments, circuit-panel fixes, a partial data-component ingredient, and recipe/multiblock diagnostics.
 
-This repository contains the Java addon. The ATM9 multiblock and recipe ports run from the Minecraft instance's KubeJS folder; `pack/kubejs/` mirrors the GregTech-related parts of it (`startup_scripts/gtceu`, `server_scripts/mods/gtceu`, `server_scripts/mods/AllTheTweaks`, `server_scripts/gtceu_output_unification.js`, the patched `server_scripts/mods/Modern Industrialization/Aluminum.js`, `data/gtceu`, `data/productivebees`) so they are versioned here. The instance copy is the live one — edit it there and copy changes back. GregTech and other dependency jars are not redistributed in this repository.
+This repository contains the Java addon. The ATM9 multiblock and recipe ports run from the Minecraft instance's KubeJS folder; `pack/kubejs/` mirrors the GregTech-related parts of it (`startup_scripts/gtceu`, `server_scripts/mods/gtceu`, `server_scripts/mods/AllTheTweaks`, `server_scripts/gtceu_output_unification.js`, the patched `server_scripts/mods/Modern Industrialization/Aluminum.js`, gttweaks' own `server_scripts/gttweaks/`, `data/gtceu`, `data/productivebees`) so they are versioned here. The instance copy is the live one — edit it there and copy changes back. GregTech and other dependency jars are not redistributed in this repository.
 
 ## Current status
 
