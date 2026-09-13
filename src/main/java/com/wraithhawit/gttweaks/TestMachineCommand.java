@@ -36,8 +36,6 @@ import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -45,7 +43,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
 import org.slf4j.Logger;
@@ -561,47 +558,27 @@ public class TestMachineCommand {
         }
 
         /**
-         * Asks each input handler, without writing anything, whether it will take anything at all.
+         * Marks the input handlers owned by GregTech's AE2 parts, which answer from the network.
          *
-         * <p>A simulated insert is the whole test: an export-only ME slot refuses every offer, a
-         * plain bus with a free slot accepts. Deliberately not an {@code instanceof} against
-         * GregTech's AE2 classes - that would make this command depend on AE2 being loaded and
-         * would miss whatever ME part the pack adds next. The cost is that a handler which is
-         * genuinely full also refuses everything and is read as network-backed, which is why
-         * {@link #summary} prints the count: buses you know you emptied, reported as ME-served,
-         * are the detection telling on itself.
+         * <p>Identified by the part that owns the handler, through {@link NetworkParts}, which
+         * matches GregTech's {@code IGridConnectedMachine} by name so this command still loads without
+         * AE2. An earlier version inferred ME parts from a refused simulated insert of stone or water;
+         * a full plain bus, a bus filtered against stone, or a hatch holding another fluid refuses that
+         * too, so it was read as network-backed, skipped by {@link #isEmpty} and reported as ME-served.
+         * Every handler not owned by a grid-connected part now goes through the ordinary emptiness
+         * check, staging and clearing.
          */
         private void detectNetworkBacked() {
             for (NotifiableItemStackHandler handler : items) {
-                if (refusesEveryItem(handler)) {
+                if (NetworkParts.isGridConnected(handler.getMachine())) {
                     networkItems.add(handler);
                 }
             }
             for (NotifiableFluidTank tank : fluids) {
-                if (refusesEveryFluid(tank)) {
+                if (NetworkParts.isGridConnected(tank.getMachine())) {
                     networkFluids.add(tank);
                 }
             }
-        }
-
-        private static boolean refusesEveryItem(NotifiableItemStackHandler handler) {
-            if (handler.getSlots() == 0) {
-                return false;
-            }
-            final ItemStack probe = new ItemStack(Items.STONE);
-            for (int slot = 0; slot < handler.getSlots(); slot++) {
-                if (handler.insertItem(slot, probe.copy(), true).getCount() < probe.getCount()) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private static boolean refusesEveryFluid(NotifiableFluidTank tank) {
-            if (tank.getTanks() == 0) {
-                return false;
-            }
-            return tank.fill(new FluidStack(Fluids.WATER, 1000), IFluidHandler.FluidAction.SIMULATE) <= 0;
         }
 
         boolean isEmpty() {
