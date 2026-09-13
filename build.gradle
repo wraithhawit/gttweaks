@@ -118,7 +118,7 @@ tasks.register('validateKubeJS', Exec) {
     group = 'verification'
     description = 'Checks KubeJS scripts against generated ProbeJS types.'
     final inst = project.findProperty('instance')
-            ?: 'D:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
+            ?: 'F:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
     final rel = project.findProperty('scripts') ?: 'kubejs/startup_scripts/gtceu'
     commandLine 'java', file('tools/ValidateKubeJS.java').absolutePath, "${inst}/.probe", "${inst}/${rel}"
 }
@@ -131,7 +131,7 @@ def stageScripts(final String runName) {
         group = 'build setup'
         description = "Copies the instance's GregTech KubeJS scripts into the ${runName} run."
         final inst = project.findProperty('instance')
-                ?: 'D:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
+                ?: 'F:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
         from("${inst}/kubejs/startup_scripts/gtceu")
         // Needs mods the headless run does not stage (ExtendedAE registers custom_infinity_cell).
         exclude 'gt_infinity_cells.js'
@@ -151,7 +151,7 @@ def stageRecipes(final String runName) {
         group = 'build setup'
         description = "Copies the instance's GregTech KubeJS recipe scripts into the ${runName} run."
         final inst = project.findProperty('instance')
-                ?: 'D:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
+                ?: 'F:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
         from("${inst}/kubejs/server_scripts/mods/gtceu")
         into layout.projectDirectory.dir("run/${runName}/kubejs/server_scripts/gtceu")
     }
