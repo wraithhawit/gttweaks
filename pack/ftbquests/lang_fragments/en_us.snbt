@@ -1166,8 +1166,6 @@
 	quest.3619CD5AAD5E3691.quest_desc: ["&aDistill&r your &eLightly Steam Cracked Naphtha&r to acquire &6Butadiene"]
 	quest.3639A936B5930517.quest_desc: ["Insert one Data Stick and one IV Energy Hatch to make the necessary instruction set for the LuV Energy Hatch.\\n\\nDon't worry, the programmed Data Stick does not get consumed when making an LuV Energy Hatch."]
 	quest.3639A936B5930517.quest_subtitle: "The other machine"
-	quest.3673893C88EB5EDE.quest_desc: ["Use 3 other crystals to craft this crystal."]
-	quest.3673893C88EB5EDE.quest_subtitle: "Weathering the Storm"
 	quest.3762F8137BFD5A74.quest_desc: ["The &aCracker&r doesn't get you oil, but it does allow for processing the byproducts more efficiently! "]
 	quest.37A1137A59A2086B.quest_desc: [
 		"This superconducting coil has many uses with many different multiblocks, and within many different recipes! There are 3 different recipes for it as well."
@@ -1263,11 +1261,11 @@
 	]
 	quest.3BEDF19CD79D53D5.quest_subtitle: "Ah finally, real fluid processing"
 	quest.3BF90C250AC1ADF3.quest_desc: [
-		"Lets add in some Industrial Foregoing Black Hole Controllers, just for good measure."
+		"Lets add in some Modern Industrialization Quantum Barrels, just for good measure."
 		""
-		"This way, we know that the resulting Star can be controlled, and its immense power wont run rampantly out of control."
+		"This way, we know that the resulting Star can be contained, and its immense power wont run rampantly out of control."
 	]
-	quest.3BF90C250AC1ADF3.quest_subtitle: "Black Hole Controller"
+	quest.3BF90C250AC1ADF3.quest_subtitle: "Quantum Barrel"
 	quest.3C9E93426D6412E0.quest_desc: [
 		"Now we have Fluoroantimonic Acid. This is the catalyst that we were processing towards for our Naq processing line."
 		""
@@ -1912,8 +1910,6 @@
 	quest.5A658F239928850E.quest_desc: ["Breaking into LuV! Lets continue progression and find out what &cZPM&r is all about!"]
 	quest.5A658F239928850E.quest_subtitle: "Make &dLuV&r, not War!"
 	quest.5A658F239928850E.title: "I &dLuV&r Progression"
-	quest.5AAD0E516762BA53.quest_desc: ["Do you feel like you are levitating yet? Might be all that shulker from that Soul Vial."]
-	quest.5AAD0E516762BA53.quest_subtitle: "Prescient Crystal"
 	quest.5AD33290313151D6.quest_desc: [
 		"Americium is typically used as a particle detector in Smoke Detectors."
 		""

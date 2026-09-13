@@ -404,7 +404,7 @@
 		{
 			icon: {
 				count: 1
-				id: "industrialforegoing:black_hole_controller"
+				id: "modern_industrialization:quantum_barrel"
 			}
 			id: "3BF90C250AC1ADF3"
 			rewards: [
@@ -437,7 +437,7 @@
 					id: "2F81C3902406C1AE"
 					item: {
 						count: 1
-						id: "industrialforegoing:black_hole_controller"
+						id: "modern_industrialization:quantum_barrel"
 					}
 					type: "item"
 				}
@@ -558,11 +558,7 @@
 			y: -2.25d
 		}
 		{
-			dependencies: [
-				"5AAD0E516762BA53"
-				"3673893C88EB5EDE"
-				"70B518EC050678AE"
-			]
+			dependencies: ["70B518EC050678AE"]
 			icon: {
 				count: 1
 				id: "pocketstorage:psu_4"
@@ -1511,52 +1507,6 @@
 			y: 9.5d
 		}
 		{
-			id: "5AAD0E516762BA53"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "78E707F77E0FDC15"
-					table_id: 7025454341029952768L
-					type: "loot"
-				}
-			]
-			tasks: [
-				{
-					id: "470B547A16790A4F"
-					item: {
-						count: 1
-						id: "enderio:prescient_crystal"
-					}
-					type: "item"
-				}
-			]
-			x: 9.5d
-			y: -6.5d
-		}
-		{
-			id: "3673893C88EB5EDE"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "3EAD198D95EDDECA"
-					table_id: 7025454341029952768L
-					type: "loot"
-				}
-			]
-			tasks: [
-				{
-					id: "218BDC8B0562A54A"
-					item: {
-						count: 1
-						id: "enderio:weather_crystal"
-					}
-					type: "item"
-				}
-			]
-			x: 9.5d
-			y: -5.5d
-		}
-		{
 			id: "70B518EC050678AE"
 			rewards: [
 				{
@@ -1576,7 +1526,7 @@
 					type: "item"
 				}
 			]
-			x: 10.5d
+			x: 9.5d
 			y: -6.0d
 		}
 		{

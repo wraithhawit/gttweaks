@@ -1075,8 +1075,6 @@
 	]
 	quest.35FF7974C6DD1D9F.quest_subtitle: "El Nucleo del Demonio"
 	quest.3619CD5AAD5E3691.quest_desc: ["&aDestila&r tu &eNafta Ligeramente Vaporizada&r para obtener &6Butadieno"]
-	quest.3673893C88EB5EDE.quest_desc: ["Usa otros 3 cristales para elaborar este cristal."]
-	quest.3673893C88EB5EDE.quest_subtitle: "Afrontando la tormenta"
 	quest.3762F8137BFD5A74.quest_desc: ["La &aCraqueadora&r no te da aceite, pero permite procesar los subproductos de manera más eficiente!"]
 	quest.37A1137A59A2086B.quest_desc: [
 		"Este bobinado superconductor tiene muchos usos en muchos multibloques diferentes y en muchas recetas diferentes. También hay 3 recetas diferentes para él"
@@ -1166,12 +1164,6 @@
 		"¡Cómo obtengas el petróleo depende de ti! Algunas opciones están descritas en las misiones a continuación"
 	]
 	quest.3BEDF19CD79D53D5.quest_subtitle: "Ah, finalmente, procesamiento de fluidos real."
-	quest.3BF90C250AC1ADF3.quest_desc: [
-		"Vamos a añadir algunos Controladores de Agujero de Gusano de Industrial Foregoing, por si acaso."
-		""
-		"De esta manera, aseguraremos que esta nueva estrella creada pueda ser controlada y que su inmenso poder no se nos escape de las manos."
-	]
-	quest.3BF90C250AC1ADF3.quest_subtitle: "Controlador de Agujero de Gusano"
 	quest.3C9E93426D6412E0.quest_desc: [
 		"Ahora tenemos Ácido Fluoroantimónico. Este es el catalizador hacia el que estábamos procesando para nuestra línea de procesamiento de Naq.."
 		""
@@ -1772,8 +1764,6 @@
 	quest.5A658F239928850E.quest_desc: ["¡Entrando en LuV! ¡Continuemos la progresión y descubramos de qué se trata &cZPM&7!"]
 	quest.5A658F239928850E.quest_subtitle: "¡Haz &dAmor&r, no la Guerra!"
 	quest.5A658F239928850E.title: "Yo &7Amo&r la progresion &dRidicula"
-	quest.5AAD0E516762BA53.quest_desc: ["¿Ya sientes que estás levitando? Podría ser todo ese shulker del Vial de Alma."]
-	quest.5AAD0E516762BA53.quest_subtitle: "Cristal Presciente"
 	quest.5AD33290313151D6.quest_desc: [
 		"El Americio se utiliza típicamente como detector de partículas en detectores de humo."
 		""

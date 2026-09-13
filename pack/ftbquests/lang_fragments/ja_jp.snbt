@@ -1075,8 +1075,6 @@
 	]
 	quest.35FF7974C6DD1D9F.quest_subtitle: "デーモンコア"
 	quest.3619CD5AAD5E3691.quest_desc: ["&a蒸留&rして&e軽く蒸気クラックされたナフサ&rから&6ブタジエン&rを取得します"]
-	quest.3673893C88EB5EDE.quest_desc: ["このクリスタルを作るために他の3つのクリスタルを使用してください。"]
-	quest.3673893C88EB5EDE.quest_subtitle: "&b嵐を乗り越える"
 	quest.3762F8137BFD5A74.quest_desc: ["&aクラッカー&rはオイルを得るものではありませんが、副産物をより効率的に処理することができます！"]
 	quest.37A1137A59A2086B.quest_desc: [
 		"この超伝導コイルは、多くの異なるマルチブロックや多くの異なるレシピで多くの用途があります！それには3つの異なるレシピがあります。"
@@ -1166,12 +1164,6 @@
 		"オイルの入手方法はあなた次第です！ 下のクエストでいくつかのオプションが説明されています"
 	]
 	quest.3BEDF19CD79D53D5.quest_subtitle: "ついに本格的な液体処理"
-	quest.3BF90C250AC1ADF3.quest_desc: [
-		"念のために&bIndustrial Foregoing Black Hole Controllers&rを追加しましょう。"
-		""
-		"これで、生成された&6スター&rが制御され、その巨大な力が暴走しないことを確認できます。"
-	]
-	quest.3BF90C250AC1ADF3.quest_subtitle: "&8ブラックホールコントローラー"
 	quest.3C9E93426D6412E0.quest_desc: [
 		"これでフルオロアンチモン酸を手に入れたのだ！これはナク処理ラインのために進めていた触媒なのだ。"
 		""
@@ -1771,8 +1763,6 @@
 	quest.5A658F239928850E.quest_desc: ["LuVの世界に突入だ！進行を続けて、&cZPM&7が何なのかを探ろう！"]
 	quest.5A658F239928850E.quest_subtitle: "戦争ではなく、&dLuV&rを育もう！"
 	quest.5A658F239928850E.title: "私は&dLuV&7の進行を愛している"
-	quest.5AAD0E516762BA53.quest_desc: ["まだ浮遊している感じがしますか？それはそのソウルバイアルからのシュルカーかもしれません。"]
-	quest.5AAD0E516762BA53.quest_subtitle: "&b予知クリスタル"
 	quest.5AD33290313151D6.quest_desc: [
 		"アメリシウムは通常、煙探知器の粒子検出器として使用されます。"
 		""

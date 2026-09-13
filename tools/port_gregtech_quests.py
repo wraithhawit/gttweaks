@@ -46,6 +46,9 @@ ID_REMAP = {
     "gtceu:raw_trinium": "gtceu:trinium_dust",
     # the exchanger chain the GregStar needed is Pocket Storage Units in ATM10
     "exchangers:eio_exchanger_core_tier3": "pocketstorage:psu_3",
+    # Industrial Foregoing registers no black holes on 1.21 (only models/lang remain); the gregstar
+    # recipe takes 8x quantum barrels instead
+    "industrialforegoing:black_hole_controller": "modern_industrialization:quantum_barrel",
     # starforge_recipes.js: the gregstar recipe's 8x end steel exchanger became 8x psu_4
     "exchangers:end_steel_exchanger": "pocketstorage:psu_4",
     # GTCEu 8 dropped the coin; pack/kubejs/startup_scripts/gttweaks/doge_coin.js registers it again
@@ -54,6 +57,11 @@ ID_REMAP = {
 # starforge_recipes.js dropped infinite_polonium: no chemical infinity cell exists in ATM10.
 UNOBTAINABLE = {"expatternprovider:infinity_cell"}
 UNOBTAINABLE_TASK_TITLE = "Infinite Polonium Cell (not in ATM10, check off by hand)"
+# The End Steel Exchanger also needed EnderIO's prescient and weather crystals; the Pocket Storage
+# Unit that replaced it does not, so those two prerequisite quests go, and the remaining one moves
+# into the gap they leave.
+REMOVED_QUESTS = {"5AAD0E516762BA53", "3673893C88EB5EDE"}
+QUEST_POSITIONS = {"70B518EC050678AE": ("9.5d", "-6.0d")}
 # English text for quests whose items were substituted; their ATM9 translations describe the old
 # items, so those locales fall back to this text.
 TEXT_OVERRIDES = {
@@ -64,6 +72,11 @@ TEXT_OVERRIDES = {
     "quest.70B518EC050678AE.quest_subtitle": "Tier 3 Storage Unit",
     "quest.70B518EC050678AE.quest_desc": [
         "A Tier 3 Pocket Storage Unit, one step below the Tier 4 units the GregStar needs."],
+    "quest.3BF90C250AC1ADF3.quest_subtitle": "Quantum Barrel",
+    "quest.3BF90C250AC1ADF3.quest_desc": [
+        "Lets add in some Modern Industrialization Quantum Barrels, just for good measure.",
+        "",
+        "This way, we know that the resulting Star can be contained, and its immense power wont run rampantly out of control."],
 }
 
 
@@ -229,9 +242,17 @@ class Port:
         self.table_refs = set()
         self.page_links = set()
         self.existing_ids = set()
+        own_tables = {f"{name}.snbt" for name in REWARD_TABLES}
         for p in self.q10.rglob("*.snbt"):
-            if "lang" not in p.parts:
-                self.existing_ids.update(re.findall(r'"([0-9A-F]{16})"', p.read_text(encoding="utf-8")))
+            if "lang" in p.parts:
+                continue
+            text = p.read_text(encoding="utf-8")
+            # re-running against an instance that already has the port: its own files are not a clash,
+            # and leaving them out keeps generated image/reward ids stable between runs
+            if (p.parent.name == "chapters" and f'group: "{GROUP_ID}"' in text) or \
+                    (p.parent.name == "reward_tables" and p.name in own_tables):
+                continue
+            self.existing_ids.update(re.findall(r'"([0-9A-F]{16})"', text))
         self.new_ids = set()
         # Every id the ported group owns. ATM10's lang files still carry stale entries under some of
         # these (ATM9 quest ids reused for other text, e.g. chapter.415BA265E2C00859 = "Getting Started").
@@ -429,6 +450,17 @@ class Port:
             if "hover" in image:
                 image["hover"] = [self.lang9["en_us"].get(h, None) or (self.resolve(h, "en_us") or h).replace("\\n", "\n")
                                   for h in image["hover"]]
+        removed = [q["id"] for q in chapter.get("quests", []) if q["id"] in REMOVED_QUESTS]
+        if removed:
+            chapter["quests"] = [q for q in chapter["quests"] if q["id"] not in REMOVED_QUESTS]
+            self.notes.append(f"{name}: removed quests {removed}")
+        for quest in chapter.get("quests", []):
+            if "dependencies" in quest:
+                quest["dependencies"] = [d for d in quest["dependencies"] if d not in REMOVED_QUESTS]
+                if not quest["dependencies"]:
+                    del quest["dependencies"]
+            if quest["id"] in QUEST_POSITIONS:
+                quest["x"], quest["y"] = (Num(v) for v in QUEST_POSITIONS[quest["id"]])
         for quest in chapter.get("quests", []):
             qid = quest["id"]
             where = f"{name} quest {qid}"
@@ -527,23 +559,24 @@ class Port:
 
         for name, chapter in chapters.items():
             dest = self.out / f"chapters/{name}.snbt"
-            if (self.q10 / f"chapters/{name}.snbt").exists():
-                raise ValueError(f"ATM10 already has chapters/{name}.snbt")
+            existing = self.q10 / f"chapters/{name}.snbt"
+            if existing.exists() and read_snbt(existing).get("id") != chapter["id"]:
+                raise ValueError(f"ATM10 has a different chapter at chapters/{name}.snbt")
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_text(write(chapter) + "\n", encoding="utf-8", newline="\r\n")  # ATM10's files are CRLF
         for name, table in tables.items():
             dest = self.out / f"reward_tables/{name}.snbt"
-            if (self.q10 / f"reward_tables/{name}.snbt").exists():
-                raise ValueError(f"ATM10 already has reward_tables/{name}.snbt")
+            existing = self.q10 / f"reward_tables/{name}.snbt"
+            if existing.exists() and read_snbt(existing).get("id") != table["id"]:
+                raise ValueError(f"ATM10 has a different reward table at reward_tables/{name}.snbt")
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_text(write(table) + "\n", encoding="utf-8", newline="\r\n")
 
         groups = (self.q10 / "chapter_groups.snbt").read_bytes().decode("utf-8")
-        if GROUP_ID in groups:
-            raise ValueError("chapter group already present")
-        line = next(l for l in groups.splitlines(keepends=True) if GROUP_AFTER in l)
-        groups = groups.replace(line, line + line.replace(GROUP_AFTER, GROUP_ID), 1)
-        (self.out / "chapter_groups.snbt").write_text(groups, encoding="utf-8", newline="")
+        if GROUP_ID not in groups:  # already listed when re-running against an installed port
+            line = next(l for l in groups.splitlines(keepends=True) if GROUP_AFTER in l)
+            groups = groups.replace(line, line + line.replace(GROUP_AFTER, GROUP_ID), 1)
+            (self.out / "chapter_groups.snbt").write_text(groups, encoding="utf-8", newline="")
 
         fragments = {}
         lang_root = self.q10 / "lang"

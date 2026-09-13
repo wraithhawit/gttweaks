@@ -1075,8 +1075,6 @@
 	]
 	quest.35FF7974C6DD1D9F.quest_subtitle: "데몬 코어"
 	quest.3619CD5AAD5E3691.quest_desc: ["&a증류&r하여 &e약간 증기 크래킹된 나프타&r에서 &6부타디엔&r을 얻으세요"]
-	quest.3673893C88EB5EDE.quest_desc: ["이 크리스탈을 만들기 위해 다른 3개의 크리스탈을 사용하세요."]
-	quest.3673893C88EB5EDE.quest_subtitle: "&b폭풍을 견디며&r"
 	quest.3762F8137BFD5A74.quest_desc: ["&a크래커&r는 석유를 얻는 것이 아니라 부산물을 더 효율적으로 처리할 수 있게 해줍니다!"]
 	quest.37A1137A59A2086B.quest_desc: [
 		"이 초전도체 코일은 많은 다른 멀티블록과 많은 다른 레시피에서 다양한 용도가 있습니다! 3가지 다른 레시피가 있습니다."
@@ -1166,12 +1164,6 @@
 		"석유를 얻는 방법은 여러분에게 달려있습니다! 아래 퀘스트에서 몇 가지 옵션이 설명되어 있습니다"
 	]
 	quest.3BEDF19CD79D53D5.quest_subtitle: "드디어 진정한 유체 처리"
-	quest.3BF90C250AC1ADF3.quest_desc: [
-		"만일을 위해 &bIndustrial Foregoing Black Hole Controllers&r를 추가합시다."
-		""
-		"이로써 생성된 &6스타&r가 제어되고, 그 엄청난 힘이 폭주하지 않도록 확인할 수 있습니다."
-	]
-	quest.3BF90C250AC1ADF3.quest_subtitle: "&8블랙홀 컨트롤러&r"
 	quest.3C9E93426D6412E0.quest_desc: [
 		"이제 플루오로안티모닉산을 얻었습니다! 이는 나크 처리 라인을 위해 진행하던 촉매제입니다."
 		""
@@ -1771,8 +1763,6 @@
 	quest.5A658F239928850E.quest_desc: ["LuV의 세계로 진입했습니다! 계속 진행해서 &cZPM&7이 무엇인지 알아봅시다!"]
 	quest.5A658F239928850E.quest_subtitle: "전쟁이 아닌, &dLuV&r를 만들자!"
 	quest.5A658F239928850E.title: "나는 &dLuV&7의 진행을 사랑해"
-	quest.5AAD0E516762BA53.quest_desc: ["아직도 떠있는 느낌인가요? 그건 그 소울 바이알에서 나온 셜커 때문일 수 있어요."]
-	quest.5AAD0E516762BA53.quest_subtitle: "&b선견 크리스탈&r"
 	quest.5AD33290313151D6.quest_desc: [
 		"아메리슘은 일반적으로 연기 감지기의 입자 감지기로 사용됩니다."
 		""

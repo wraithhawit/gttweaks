@@ -807,8 +807,6 @@
 	quest.3619CD5AAD5E3691.quest_desc: ["&aDestile&r sua &eNafta Levemente Craqueada a Vapor&r para adquirir &6Butadieno"]
 	quest.3639A936B5930517.quest_desc: ["Insira um Bastão de Dados e uma Entrada de Energia IV para fazer o conjunto de instruções necessário para a Entrada de Energia LuV.\\n\\nNão se preocupe, o Bastão de Dados programado não é consumido ao fazer uma Entrada de Energia LuV."]
 	quest.3639A936B5930517.quest_subtitle: "A outra máquina"
-	quest.3673893C88EB5EDE.quest_desc: ["Use 3 outros cristais para criar este cristal."]
-	quest.3673893C88EB5EDE.quest_subtitle: "Enfrentando a Tempestade"
 	quest.3762F8137BFD5A74.quest_desc: ["O &aCracker&r não lhe dá óleo, mas permite processar os subprodutos de forma mais eficiente!"]
 	quest.37A1137A59A2086B.quest_desc: [
 		"Esta bobina supercondutora tem muitos usos com muitos multiblocos diferentes, e em muitas receitas diferentes! Existem 3 receitas diferentes para ela também."
@@ -903,12 +901,6 @@
 		"Como você obtém o petróleo fica a seu critério! Algumas opções são descritas nas missões abaixo"
 	]
 	quest.3BEDF19CD79D53D5.quest_subtitle: "Ah, finalmente, processamento de fluidos de verdade"
-	quest.3BF90C250AC1ADF3.quest_desc: [
-		"Vamos adicionar alguns Controladores de Buraco Negro do Industrial Foregoing, só por segurança."
-		""
-		"Desta forma, sabemos que a Estrela resultante pode ser controlada, e seu imenso poder não sairá rampantemente do controle."
-	]
-	quest.3BF90C250AC1ADF3.quest_subtitle: "Controlador de Buraco Negro"
 	quest.3C9E93426D6412E0.quest_desc: [
 		"Agora temos Ácido Fluoroantimônico. Este é o catalisador para o qual estávamos processando para nossa linha de processamento de Naq."
 		""
@@ -1376,8 +1368,6 @@
 	quest.5A658F239928850E.quest_desc: ["Entrando no LuV! Vamos continuar a progressão e descobrir do que se trata o &cZPM&r!"]
 	quest.5A658F239928850E.quest_subtitle: "Faça &dLuV&r, não Guerra!"
 	quest.5A658F239928850E.title: "Eu &dLuV&r a Progressão"
-	quest.5AAD0E516762BA53.quest_desc: ["Você já sente que está levitando? Pode ser todo aquele shulker daquele Frasco de Alma."]
-	quest.5AAD0E516762BA53.quest_subtitle: "Cristal Presciente"
 	quest.5AD33290313151D6.quest_desc: [
 		"O Amerício é normalmente usado como um detector de partículas em Detectores de Fumaça."
 		""
