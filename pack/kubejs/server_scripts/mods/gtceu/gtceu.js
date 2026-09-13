@@ -48,25 +48,10 @@ ServerEvents.recipes(allthemods => {
         .duration(6)
         .EUt(GTValues.VA[GTValues.EV])
 
-    allthemods.recipes.gtceu.arc_furnace('nan/its_a_joke')
-        // 1.21 data components: ATM9's {EntityTag:{type:...}} NBT became a
-        // productivebees:bee_type component, and matching it needs the mod's own
-        // component ingredient type — a plain stack would match ANY honeycomb.
-        // 1.21 data components: ATM9's {EntityTag:{type:...}} NBT became a
-        // productivebees:bee_type component. Ingredient.withData is KubeJS 2101's
-        // component-matching form — a plain stack would match ANY honeycomb, and a
-        // hand-written {type: productivebees:component, ...} object is NOT accepted.
-        .itemInputs(Ingredient.withData(
-            'productivebees:configurable_honeycomb',
-            { 'productivebees:bee_type': 'productivebees:neutronium' }
-        ))
-        .inputFluids(Fluid.of('gtceu:oxygen_plasma', 100))
-        .chancedOutput('2x gtceu:neutronium_nugget', 200)
-        .chancedOutput('gtceu:neutronium_nugget', 50)
-        .chancedOutput('gtceu:neutronium_nugget', 50)
-        .chancedOutput('gtceu:neutronium_nugget', 50)
-        .duration(25600)
-        .EUt(GTValues.VA[GTValues.ULV])
+    // gttweaks: removed ATM's arc furnace recipe 'nan/its_a_joke' (neutronium honeycomb + oxygen
+    // plasma -> neutronium nuggets). The neutronium bee stays so the GregStar bee assembly line
+    // recipe can use its spawn eggs, but its comb no longer yields neutronium - see also the
+    // centrifuge override kubejs/data/productivebees/recipe/centrifuge/gtceu/honeycomb_neutronium.json.
 
     // added rotor holder tiers
     allthemods.shaped('gtceu:uhv_uhv_rotor_holder', ['ABA', 'BCB', 'ABA'], {
