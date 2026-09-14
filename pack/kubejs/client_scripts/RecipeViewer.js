@@ -146,6 +146,15 @@ RecipeViewerEvents.removeEntries('item', allthemods => {
         allthemods.remove("hyperbox:hyperbox")
     }
 
+    // gttweaks: GregTech's blocks of these materials are no longer made; every recipe now gives the
+    // AllTheTweaks, All the Compressed or AE2 block (server_scripts/gttweaks/duplicate_recipes.js).
+    allthemods.remove([
+        "gtceu:nether_star_block",
+        "gtceu:ender_pearl_block",
+        "gtceu:flint_block",
+        "gtceu:certus_quartz_block"
+    ])
+
     allthemods.remove(stack => {
         if (stack.id == "evilcraft:dark_tank") {
             // console.log("stack is: " + stack.id)
