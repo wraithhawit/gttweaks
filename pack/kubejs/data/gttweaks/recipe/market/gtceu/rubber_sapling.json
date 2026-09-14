@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gtceu"
+    }
+  ],
+  "type": "farmingforblockheads:market",
+  "category": "farmingforblockheads:saplings",
+  "icon": {
+    "count": 1,
+    "id": "gtceu:rubber_sapling"
+  },
+  "preset": "minecraft:saplings",
+  "result": {
+    "count": 1,
+    "item": "gtceu:rubber_sapling"
+  },
+  "sortIndex": 0
+}
