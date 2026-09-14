@@ -1,7 +1,8 @@
-// gttweaks: GregTech recipes that duplicate another mod's recipe for the same inputs, ported from
-// ATM9's kubejs/server_scripts/conflicts.js. They exist because gtceu.yaml has
-// disableManualCompression: false (as in ATM9), which brings back GregTech's 3x3 compression.
-// Every id below was confirmed loading on the ATM10(3) test server with the recipe probe.
+// gttweaks: recipes that duplicate another mod's recipe for the same inputs. Where an All the Mods
+// mod (AllTheTweaks, All the Compressed, AllTheOres) has a recipe for the input, its version stays.
+// The GregTech ones are ported from ATM9's kubejs/server_scripts/conflicts.js; they exist because
+// gtceu.yaml has disableManualCompression: false (as in ATM9), which brings back GregTech's 3x3
+// compression. Check a grid with /gttweaks recipematch crafting <grid> on the test server.
 
 ServerEvents.recipes(event => {
     // 3x3 compression that All the Compressed's chain already covers: 9 nether stars / ender pearls
@@ -15,6 +16,10 @@ ServerEvents.recipes(event => {
     // Let GregTech certus gems still make the AE2 block, as AE2's 2x2 does for its own crystal.
     event.shaped('ae2:quartz_block', ['CC', 'CC'], { C: 'gtceu:certus_quartz_gem' })
         .id('gttweaks:ae2/quartz_block_from_gt_certus')
+
+    // 9 flint also matched Supplementaries' flint block; All the Compressed's flint_block is the base of
+    // its flint chain, so that one stays. Supplementaries' block -> 9 flint recipe is left in place.
+    event.remove({ id: 'supplementaries:flint_block' })
 
     // Hand-mixed brass dust, the same 3 copper + 1 zinc -> 4 as AllTheOres'
     // crafting/brass/alloy_blending_from_dust. (GregTech's bronze version already does not load.)
