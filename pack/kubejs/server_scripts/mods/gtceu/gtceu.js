@@ -9,10 +9,8 @@
 //       No GregTech version binds bare voltage names as globals, ATM9's included, so these were
 //       likely already broken there. Numeric .EUt(24) / .EUt(2) calls are left exactly as-is.
 //
-// REMOVED: the three "Ad Astra Plates" Bender recipes (desh, ostrum, calorite ingot -> plate).
-// Ad Astra is not in ATM10; both the input AND output of each were Ad Astra items and nothing
-// downstream consumes those plates, so they are deleted rather than re-targeted. Decision made
-// with the pack owner 2026-08-26.
+// The three "Ad Astra Plates" Bender recipes (desh, ostrum, calorite ingot -> plate) were removed on
+// 2026-08-26 while Ad Astra was not in ATM10, and restored on 2026-09-14 once it was added to the pack.
 
 // This File has been authored by AllTheMods Staff, or a Community contributor for use in AllTheMods - AllTheMods 9.
 // As all AllTheMods packs are licensed under All Rights Reserved, this file is not allowed to be used in any public packs not released by the AllTheMods Team, without explicit permission.
@@ -184,6 +182,28 @@ ServerEvents.recipes(allthemods => {
         .itemOutputs('allthemodium:vibranium_allthemodium_alloy_block')
         .duration(63180000)
         .EUt(GTValues.VA[GTValues.LV])
+
+    // Ad Astra Plates
+    allthemods.recipes.gtceu.bender('desh_plate')
+        .itemInputs('ad_astra:desh_ingot')
+        .circuit(1)
+        .itemOutputs('ad_astra:desh_plate')
+        .duration(100)
+        .EUt(24)
+
+    allthemods.recipes.gtceu.bender('ostrum_plate')
+        .itemInputs('ad_astra:ostrum_ingot')
+        .circuit(1)
+        .itemOutputs('ad_astra:ostrum_plate')
+        .duration(100)
+        .EUt(24)
+
+    allthemods.recipes.gtceu.bender('calorite_plate')
+        .itemInputs('ad_astra:calorite_ingot')
+        .circuit(1)
+        .itemOutputs('ad_astra:calorite_plate')
+        .duration(100)
+        .EUt(24)
 
     // Rock Breaker recipes for End Stone and Netherrack
     allthemods.recipes.gtceu.rock_breaker('netherrack')

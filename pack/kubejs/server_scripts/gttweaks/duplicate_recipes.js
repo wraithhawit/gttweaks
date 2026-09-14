@@ -13,6 +13,18 @@ ServerEvents.recipes(event => {
     event.remove({ id: 'gtceu:shaped/block_compress_ender_pearl' })
     event.remove({ id: 'gtceu:shaped/block_compress_flint' })
     event.remove({ id: 'gtceu:shaped/block_compress_certus_quartz' })
+    // GregTech machines (compressor, fluid solidifier, ...) still make its own blocks of these; point
+    // every recipe that outputs one at the block the crafting grid gives instead.
+    const blockOutputs = {
+        'gtceu:nether_star_block': 'allthetweaks:nether_star_block',
+        'gtceu:ender_pearl_block': 'allthetweaks:ender_pearl_block',
+        'gtceu:flint_block': 'allthecompressed:flint_block',
+        'gtceu:certus_quartz_block': 'ae2:quartz_block'
+    }
+    Object.keys(blockOutputs).forEach(from => {
+        event.replaceOutput({ output: from }, from, blockOutputs[from])
+    })
+
     // Let GregTech certus gems still make the AE2 block, as AE2's 2x2 does for its own crystal.
     event.shaped('ae2:quartz_block', ['CC', 'CC'], { C: 'gtceu:certus_quartz_gem' })
         .id('gttweaks:ae2/quartz_block_from_gt_certus')

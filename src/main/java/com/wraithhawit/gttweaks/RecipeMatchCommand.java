@@ -1,5 +1,9 @@
 package com.wraithhawit.gttweaks;
 
+import com.gregtechceu.gtceu.api.recipe.GTRecipe;
+import com.gregtechceu.gtceu.api.recipe.content.Content;
+import com.gregtechceu.gtceu.common.data.GTRecipeCapabilities;
+
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.logging.LogUtils;
@@ -16,11 +20,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 
 import org.slf4j.Logger;
@@ -30,23 +37,35 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * {@code /gttweaks recipematch <crafting|smelting|blasting> <input>}: lists every loaded recipe that
- * accepts an input, with the item each one gives.
+ * {@code /gttweaks recipematch}: asks the loaded recipe manager which recipes accept or produce an
+ * item, for checking duplicate recipes without a player.
  *
- * <p>For checking duplicate recipes without a player. The recipe probe only says whether an id
- * loaded; this asks the recipe manager what a real grid matches, after KubeJS, AlmostUnified and
- * conditions have all had their say, so two recipes fighting over one grid show up as two lines.
- *
- * <p>Crafting input is rows separated by {@code /} and cells by {@code ,}; {@code -} is an empty
- * cell and {@code id*n} repeats a cell n times, so a full grid of nether stars is
+ * <ul>
+ * <li>{@code crafting <grid>} — every crafting recipe a grid matches, with its result. Rows are
+ * separated by {@code /} and cells by {@code ,}; {@code -} is an empty cell and {@code id*n} repeats
+ * a cell n times, so a full grid of nether stars is
  * {@code minecraft:nether_star*3/minecraft:nether_star*3/minecraft:nether_star*3}. Short rows are
- * padded with empty cells. Smelting and blasting take a single item id. Output goes to the command
- * source (RCON included) and the log.
+ * padded with empty cells.</li>
+ * <li>{@code smelting <item>} / {@code blasting <item>} — every furnace recipe that takes the item.</li>
+ * <li>{@code output <item>} / {@code input <item>} — every recipe of any type, GregTech machines
+ * included, that produces or consumes the item.</li>
+ * </ul>
+ *
+ * <p>The recipe probe only says whether an id loaded; this runs after KubeJS, AlmostUnified and
+ * conditions have all had their say, so two recipes fighting over one input show up as two lines.
+ *
+ * <p>For {@code output} and {@code input}, a GregTech recipe is read from its item contents (the
+ * items an output hands out, or whether an input ingredient accepts the item), and any other recipe
+ * from {@code getResultItem} and {@code getIngredients}. Recipes whose result depends on the input
+ * (a few special crafting recipes) report an empty result and are missed. At most {@link #MAX_LINES}
+ * lines are sent; the count covers them all. Output goes to the command source (RCON included) and
+ * the log.
  */
 @EventBusSubscriber(modid = GTTweaks.MOD_ID)
 public class RecipeMatchCommand {
 
     private static final Logger LOGGER = LogUtils.getLogger();
+    private static final int MAX_LINES = 60;
 
     @SubscribeEvent
     public static void onRegisterCommands(RegisterCommandsEvent event) {
@@ -64,7 +83,47 @@ public class RecipeMatchCommand {
                         .then(Commands.literal("blasting")
                                 .then(Commands.argument("item", StringArgumentType.greedyString())
                                         .executes(context -> cooking(context, RecipeType.BLASTING,
-                                                StringArgumentType.getString(context, "item")))))));
+                                                StringArgumentType.getString(context, "item")))))
+                        .then(Commands.literal("output")
+                                .then(Commands.argument("item", StringArgumentType.greedyString())
+                                        .executes(context -> uses(context, true,
+                                                StringArgumentType.getString(context, "item")))))
+                        .then(Commands.literal("input")
+                                .then(Commands.argument("item", StringArgumentType.greedyString())
+                                        .executes(context -> uses(context, false,
+                                                StringArgumentType.getString(context, "item")))))
+                        .then(Commands.literal("tags")
+                                .then(Commands.literal("item")
+                                        .then(Commands.argument("id", StringArgumentType.greedyString())
+                                                .executes(context -> tags(context, false,
+                                                        StringArgumentType.getString(context, "id")))))
+                                .then(Commands.literal("fluid")
+                                        .then(Commands.argument("id", StringArgumentType.greedyString())
+                                                .executes(context -> tags(context, true,
+                                                        StringArgumentType.getString(context, "id"))))))));
+    }
+
+    /** {@code tags <item|fluid> <id>}: the tags an item or fluid is in right now, runtime tags included. */
+    private static int tags(CommandContext<CommandSourceStack> context, boolean fluid, String id) {
+        final CommandSourceStack source = context.getSource();
+        final ResourceLocation location = ResourceLocation.tryParse(id.trim());
+        final List<String> lines = new ArrayList<>();
+        if (fluid) {
+            final var entry = location == null ? Optional.<net.minecraft.world.level.material.Fluid>empty()
+                    : BuiltInRegistries.FLUID.getOptional(location);
+            if (entry.isEmpty()) {
+                return fail(source, "unknown fluid '" + id.trim() + "'");
+            }
+            entry.get().builtInRegistryHolder().tags().forEach(tag -> lines.add("#" + tag.location()));
+        } else {
+            final Optional<Item> entry = location == null ? Optional.empty() : item(id.trim());
+            if (entry.isEmpty()) {
+                return fail(source, "unknown item '" + id.trim() + "'");
+            }
+            entry.get().builtInRegistryHolder().tags().forEach(tag -> lines.add("#" + tag.location()));
+        }
+        lines.sort(String::compareTo);
+        return report(source, "tags " + (fluid ? "fluid " : "item ") + id.trim(), lines);
     }
 
     private static int crafting(CommandContext<CommandSourceStack> context, String grid) {
@@ -143,6 +202,58 @@ public class RecipeMatchCommand {
         return report(source, BuiltInRegistries.RECIPE_TYPE.getKey(type) + " " + id.trim(), lines);
     }
 
+    /** Every recipe, of any type, that produces ({@code output}) or consumes the item. */
+    private static int uses(CommandContext<CommandSourceStack> context, boolean output, String id) {
+        final CommandSourceStack source = context.getSource();
+        final Optional<Item> item = item(id.trim());
+        if (item.isEmpty()) {
+            return fail(source, "unknown item '" + id.trim() + "'");
+        }
+        final ItemStack stack = new ItemStack(item.get());
+        final MinecraftServer server = source.getServer();
+        final List<String> lines = new ArrayList<>();
+        for (RecipeHolder<?> holder : server.getRecipeManager().getRecipes()) {
+            final Recipe<?> recipe = holder.value();
+            final String type = String.valueOf(BuiltInRegistries.RECIPE_TYPE.getKey(recipe.getType()));
+            if (recipe instanceof GTRecipe gt) {
+                final List<Content> contents = output
+                        ? gt.getOutputContents(GTRecipeCapabilities.ITEM)
+                        : gt.getInputContents(GTRecipeCapabilities.ITEM);
+                for (Content content : contents) {
+                    if (!(content.content() instanceof SizedIngredient sized)) {
+                        continue;
+                    }
+                    if (output ? producesItem(sized, item.get()) : sized.ingredient().test(stack)) {
+                        lines.add(type + " " + holder.id() + (output ? " -> " : " <- ") + sized.count() + "x");
+                        break;
+                    }
+                }
+            } else if (output) {
+                final ItemStack result = recipe.getResultItem(server.registryAccess());
+                if (!result.isEmpty() && result.is(item.get())) {
+                    lines.add(type + " " + holder.id() + " -> " + result.getCount() + "x");
+                }
+            } else {
+                for (Ingredient ingredient : recipe.getIngredients()) {
+                    if (!ingredient.isEmpty() && ingredient.test(stack)) {
+                        lines.add(type + " " + holder.id());
+                        break;
+                    }
+                }
+            }
+        }
+        return report(source, (output ? "output " : "input ") + id.trim(), lines);
+    }
+
+    private static boolean producesItem(SizedIngredient sized, Item item) {
+        for (ItemStack produced : sized.getItems()) {
+            if (produced.is(item)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private static Optional<Item> item(String id) {
         final ResourceLocation location = ResourceLocation.tryParse(id);
         return location == null ? Optional.empty() : BuiltInRegistries.ITEM.getOptional(location);
@@ -156,9 +267,16 @@ public class RecipeMatchCommand {
         final String header = "[gttweaks] recipematch " + what + ": " + lines.size() + " match(es)";
         LOGGER.info(header);
         source.sendSuccess(() -> Component.literal(header), false);
-        for (String line : lines) {
+        for (int i = 0; i < lines.size(); i++) {
+            final String line = lines.get(i);
             LOGGER.info("[gttweaks]   {}", line);
-            source.sendSuccess(() -> Component.literal("  " + line).withStyle(ChatFormatting.GRAY), false);
+            if (i < MAX_LINES) {
+                source.sendSuccess(() -> Component.literal("  " + line).withStyle(ChatFormatting.GRAY), false);
+            }
+        }
+        if (lines.size() > MAX_LINES) {
+            source.sendSuccess(() -> Component.literal("  ... " + (lines.size() - MAX_LINES)
+                    + " more in the server log").withStyle(ChatFormatting.GRAY), false);
         }
         return lines.size();
     }
