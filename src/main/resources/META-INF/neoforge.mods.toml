@@ -19,8 +19,14 @@ a script cannot reach. Contains no blocks or items.
 config="${mod_id}.modularui.mixins.json"
 requiredMods=["modularui"]
 
+# Only the JEI call wrapper needs JEI. The common GregTech fixes (recipe parsing, circuit
+# selection, energy transfer) must still apply on a server or client without it.
 [[mixins]]
 config="${mod_id}.gtceu.mixins.json"
+requiredMods=["gtceu"]
+
+[[mixins]]
+config="${mod_id}.jei.mixins.json"
 requiredMods=["gtceu","jei"]
 
 [[mixins]]

@@ -87,7 +87,18 @@ const CP_MAX_MULT = 40960
 
 ServerEvents.recipes(allthemods => {
 
-    const beeData = global.readJsonFolderFromMod('data', 'productivebees', 'productivebees')
+    // The effective bee definitions, not the jar's: ATM10 overrides some in kubejs/data (the four
+    // Ars Nouveau essence bees want essence blocks, not loose essence), and the machines must ask
+    // for what the bees themselves do. The jar read is only a fallback.
+    const beeOverrides = []
+    const beeData = allthemods.resourceManager
+        ? global.readJsonFolderFromPacks(allthemods.resourceManager, 'data', 'productivebees',
+            'productivebees', beeOverrides)
+        : global.readJsonFolderFromMod('data', 'productivebees', 'productivebees')
+    if (!allthemods.resourceManager) {
+        console.warn('[apiary] no resource manager on the recipes event; reading bee definitions '
+            + 'from the Productive Bees jar, so pack overrides are ignored')
+    }
     const beeDataKeys = Object.keys(beeData)
 
     let apiaryI = 0
@@ -165,7 +176,7 @@ ServerEvents.recipes(allthemods => {
             'productivebees:configurable_comb', { 'productivebees:bee_type': beeId }), count)
     }
 
-    // The bee's flower, out of Productive Bees' own bee definition, with ATM9's overrides.
+    // The bee's flower, out of its effective bee definition, with ATM9's overrides.
     // Returns { kind: 'item'|'tag'|'fluid', value } or null.
     function findFlower(beeType) {
         // ATM9's six kubejs:bee/<type>/flowers tags were all #minecraft:flowers.
@@ -514,8 +525,12 @@ ServerEvents.recipes(allthemods => {
 
     // --- what actually got built -------------------------------------------------------------
     if (beeDataKeys.length == 0) {
-        console.error('[apiary] read no bee definitions from the Productive Bees jar - every '
-            + 'flower lookup will fail. Check _read_json_from_mod.js.')
+        console.error('[apiary] read no bee definitions - every flower lookup will fail. '
+            + 'Check _read_json_from_mod.js.')
+    }
+    if (beeOverrides.length > 0) {
+        console.info('[apiary] ' + beeOverrides.length + ' bee definition(s) taken from a pack '
+            + 'override: ' + beeOverrides.join(', '))
     }
     console.info('[apiary] ' + apiaryI + ' Apiary I, ' + apiaryII + ' Apiary II and '
         + combRecipes + ' Comb Processor recipes from ' + beeDataKeys.length + ' bee definitions'

@@ -14,7 +14,6 @@
     "EnergyTransferChargeKeyMixin"
   ],
   "client": [
-    "JeiCallWrapperMixin",
     "ExpandablePreviewFillMixin",
     "RecipeTypeLayoutAccessor",
     "ResearchInfoRowMixin",
