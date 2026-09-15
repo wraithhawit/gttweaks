@@ -120,49 +120,109 @@ ServerEvents.recipes(allthemods => {
 	
 	allthemods.recipes.gtceu.star_forge('infinite_chlorine')
 		.inputFluids(Fluid.of('gtceu:chlorine', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:chlorine	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:chlorine_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_sulfuric_acid')
 		.inputFluids(Fluid.of('gtceu:sulfuric_acid', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:sulfuric_acid	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:sulfuric_acid_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_hydrogen')
 		.inputFluids(Fluid.of('gtceu:hydrogen', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:hydrogen	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:hydrogen_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_oxygen')
 		.inputFluids(Fluid.of('gtceu:oxygen', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:oxygen	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:oxygen_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_styrene')
 		.inputFluids(Fluid.of('gtceu:styrene_butadiene_rubber', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:styrene_butadiene_rubber	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:styrene_butadiene_rubber_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_lava')
 		.inputFluids(Fluid.of('minecraft:lava', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])minecraft:lava	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:lava_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_ptfe')
 		.inputFluids(Fluid.of('gtceu:polytetrafluoroethylene', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:polytetrafluoroethylene	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:polytetrafluoroethylene_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_pbi')
 		.inputFluids(Fluid.of('gtceu:polybenzimidazole', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:polybenzimidazole	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:polybenzimidazole_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_ethylene')
 		.inputFluids(Fluid.of('gtceu:ethylene', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:ethylene	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:ethylene_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_lubricant')
 		.inputFluids(Fluid.of('gtceu:lubricant', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:lubricant	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:lubricant_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_air')
 		.inputFluids(Fluid.of('gtceu:air', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:air	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:air_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_nether_air')
 		.inputFluids(Fluid.of('gtceu:nether_air', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:nether_air	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:nether_air_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_end_air')
 		.inputFluids(Fluid.of('gtceu:ender_air', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:ender_air	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:ender_air_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_fluorine')
 		.inputFluids(Fluid.of('gtceu:fluorine', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:fluorine	
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:fluorine_cell')
+		.duration(4000)
+		.EUt(ZPM)
+	
 	allthemods.recipes.gtceu.star_forge('infinite_solder')
 		.inputFluids(Fluid.of('gtceu:soldering_alloy', 10000000))
-		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])gtceu:soldering_alloy
+		.itemInputs(['2x kubejs:greg_star_shard', 'ae2:fluid_cell_housing'])
+		.itemOutputs('kubejs:soldering_alloy_cell')
+		.duration(4000)
+		.EUt(ZPM)
+
 	// Refined Storage equivalents of the infinity cells above: Refined Storage - Additional Disks
 	// infinite disks (startup_scripts/gtceu/gt_infinite_disks.js). The AE2 cells take a fluid cell
 	// housing and the disks a storage housing, so the two recipes for one fluid never share inputs.
