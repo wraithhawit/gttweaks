@@ -2,9 +2,9 @@
 // infinity cell recipes make, registered with the 'infinite_disk' item type from the Refined Storage -
 // Additional Disks mod. Each disk supplies its fluid endlessly from a Refined Storage disk drive.
 //
-// Art follows the cells: Refined Storage's 64B fluid disk and its drive texture with the teal fluid
-// pixels recoloured to the same fluid colours gt_infinity_cells.js uses (lava uses ATM10's lava cell
-// colour), and the creative disk's tier pixel.
+// Item icons follow the cells: Refined Storage's 64B fluid disk with the teal fluid pixels recoloured
+// to the same fluid colours gt_infinity_cells.js uses (lava uses ATM10's lava cell colour), and the
+// creative disk's tier pixel. In a disk drive they use Refined Storage's own fluid disk model.
 
 if (Platform.isLoaded('rsadditionaldisks')) {
     StartupEvents.registry('item', event => {
@@ -30,7 +30,6 @@ if (Platform.isLoaded('rsadditionaldisks')) {
             event.create(`${name}_disk`, 'infinite_disk')
                 .fluidType(disks[name])
                 .texture(`kubejs:item/${name}_disk`)
-                .diskModel(`kubejs:block/disk/${name}_disk`)
         })
     })
 }
