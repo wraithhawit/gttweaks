@@ -14,7 +14,6 @@ if (Platform.isLoaded('rsadditionaldisks')) {
             hydrogen: 'gtceu:hydrogen',
             oxygen: 'gtceu:oxygen',
             styrene_butadiene_rubber: 'gtceu:styrene_butadiene_rubber',
-            lava: 'minecraft:lava',
             polytetrafluoroethylene: 'gtceu:polytetrafluoroethylene',
             polybenzimidazole: 'gtceu:polybenzimidazole',
             ethylene: 'gtceu:ethylene',
