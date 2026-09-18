@@ -1,0 +1,73 @@
+package com.wraithhawit.gttweaks.rs;
+
+import com.gregtechceu.gtceu.GTCEu;
+import com.gregtechceu.gtceu.api.GTValues;
+import com.gregtechceu.gtceu.api.data.RotationState;
+import com.gregtechceu.gtceu.api.machine.MachineDefinition;
+import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
+
+import com.wraithhawit.gttweaks.rs.machine.RSInputBusPartMachine;
+
+import net.minecraft.network.chat.Component;
+
+import java.util.Objects;
+
+/**
+ * The Refined Storage multiblock parts.
+ *
+ * <p>Registered the way GregTech registers its own ME parts, through a {@code GTRegistrate} machine
+ * builder, which is what gives them a block, an item, a block entity type and a place in the
+ * multiblock structure predicates for free.
+ *
+ * <p>Class-loading this class <em>is</em> the registration — the definitions are static fields — so
+ * it must not be touched unless Refined Storage is present, and must be touched before the registry
+ * events fire. {@link #init()} exists to make that moment explicit rather than accidental.
+ *
+ * <p>The models point at GregTech's Applied Energistics overlay textures. That is a placeholder and
+ * it will look like it: an AE2-styled part on a Refined Storage network. Own textures are a separate
+ * piece of work, and a wrong-looking part that exists beats a right-looking one that does not.
+ */
+public final class RSMachines {
+
+    public static final MachineDefinition RS_INPUT_BUS = GTTweaksRegistrate.REGISTRATE
+            .machine("rs_input_bus", RSInputBusPartMachine::new)
+            .langValue("RS Input Bus")
+            .tier(GTValues.EV)
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.IMPORT_ITEMS)
+            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_input_bus"))
+            .tooltips(
+                    Component.translatable("gtceu.machine.item_bus.import.tooltip"),
+                    Component.translatable("gttweaks.machine.rs.item_import.tooltip"),
+                    Component.translatable("gtceu.part_sharing.enabled"))
+            .register();
+
+    private static boolean built;
+
+    private RSMachines() {
+    }
+
+    /**
+     * Builds the definitions above, the first time a registry is dispatched.
+     *
+     * <p>The timing is not a preference. Building a machine class-loads GregTech's
+     * {@code GTMachineModels}, whose static initialiser reads GregTech's casings, and those are put
+     * in place by {@code GTBlocks.init()} — which GregTech itself runs from inside its
+     * {@code RegisterEvent} handler, immediately before class-loading its own machines. Anything
+     * earlier than that dies with
+     * {@code NullPointerException: null key in entry: null=gtceu:block/casings/solid/machine_casing_bronze_plated_bricks},
+     * and "anything earlier" includes both the mod constructor and {@code gtInitComplete()}.
+     *
+     * <p>So this runs on the same first dispatch GregTech uses, just afterwards, which the listener
+     * order in {@code GTTweaks} arranges: GregTech's own handler and registrate were registered
+     * while GregTech was constructing, and this mod constructs later.
+     */
+    public static void initOnce() {
+        if (built) {
+            return;
+        }
+        built = true;
+        // Touching the class is the registration; naming a field here is what forces it.
+        Objects.requireNonNull(RS_INPUT_BUS);
+    }
+}
