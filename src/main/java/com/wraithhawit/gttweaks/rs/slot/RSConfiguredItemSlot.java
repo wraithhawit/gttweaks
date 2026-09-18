@@ -27,6 +27,26 @@ public class RSConfiguredItemSlot extends RSConfiguredSlot implements IItemHandl
         super(config, stock);
     }
 
+    /**
+     * {@inheritDoc}
+     *
+     * <p>Items only. Nothing in this class can hand a fluid to a recipe — {@code getStackInSlot} and
+     * {@code extractItem} both answer empty for one — so a configuration that asks for one would sit
+     * there pulling a resource out of the network that the multiblock could never use.
+     *
+     * <p>Stock is deliberately not policed the same way. A slot that somehow ends up holding a
+     * non-item resource still returns it to the network correctly, because
+     * {@link #debitStock(long)} works in the resource's own units, so the slot empties itself rather
+     * than needing anything thrown away.
+     */
+    @Override
+    public void setConfig(@Nullable ResourceAmount config) {
+        if (config != null && !(config.resource() instanceof ItemResource)) {
+            return;
+        }
+        super.setConfig(config);
+    }
+
     @Override
     protected void addStack(ResourceAmount stack) {
         if (stock == null) {

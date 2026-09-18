@@ -63,10 +63,9 @@ public class RSInputBusPartMachine extends RSBusPartMachine {
             return;
         }
         long inserted = storage.insert(excess.resource(), excess.amount(), Action.EXECUTE, RSPartActor.INSTANCE);
-        if (inserted > 0L) {
-            // Through the slot's own extract, so the stock and the change notification stay in step.
-            slot.extractItem(0, (int) Math.min(Integer.MAX_VALUE, inserted), false);
-        }
+        // Exactly what the network took, in the resource's own units. See RSConfiguredSlot.debitStock
+        // for why this must not go through the item handler.
+        slot.debitStock(inserted);
     }
 
     private void requestConfigured(StorageNetworkComponent storage, RSConfiguredItemSlot slot) {
@@ -100,11 +99,7 @@ public class RSInputBusPartMachine extends RSBusPartMachine {
                 continue;
             }
             long inserted = storage.insert(stock.resource(), stock.amount(), Action.EXECUTE, RSPartActor.INSTANCE);
-            if (inserted >= stock.amount()) {
-                slot.setStock(null);
-            } else if (inserted > 0L) {
-                slot.extractItem(0, (int) Math.min(Integer.MAX_VALUE, inserted), false);
-            }
+            slot.debitStock(inserted);
         }
     }
 }

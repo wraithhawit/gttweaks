@@ -105,6 +105,27 @@ public abstract class RSConfiguredSlot implements INBTSerializable<CompoundTag> 
      */
     protected abstract void addStack(ResourceAmount stack);
 
+    /**
+     * Removes exactly {@code amount} from the stock, in the resource's own units.
+     *
+     * <p>The counterpart to a network insert, and the only correct way to account for one. The
+     * obvious alternative — debiting through the item handler's {@code extractItem} — is wrong twice,
+     * and the first version of the bus was wrong both ways: that API takes an {@code int}, so an
+     * insert above {@link Integer#MAX_VALUE} credited the network more than it debited the slot and
+     * <em>created</em> items; and it refuses any resource that is not an item, so a fluid that
+     * reached the slot would be inserted into the network over and over while the stock never went
+     * down. Network accounting is in {@code long}s and does not care what kind of resource it moved,
+     * so this is too.
+     */
+    public void debitStock(long amount) {
+        if (stock == null || amount <= 0L) {
+            return;
+        }
+        long left = stock.amount() - amount;
+        stock = left > 0L ? copy(stock, left) : null;
+        onContentsChanged.run();
+    }
+
     @Override
     public CompoundTag serializeNBT(HolderLookup.Provider provider) {
         CompoundTag tag = new CompoundTag();

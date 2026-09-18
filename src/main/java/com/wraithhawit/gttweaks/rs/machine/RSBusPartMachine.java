@@ -6,6 +6,7 @@ import com.gregtechceu.gtceu.api.machine.trait.notifiable.NotifiableItemStackHan
 import com.gregtechceu.gtceu.api.sync_system.annotations.SyncToClient;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.ItemBusPartMachine;
 
+import com.wraithhawit.gttweaks.rs.network.RSNetworkPart;
 import com.wraithhawit.gttweaks.rs.network.RSNodeHolder;
 
 import net.minecraft.core.Direction;
@@ -20,7 +21,7 @@ import net.minecraft.core.Direction;
  * the network coming back. This one stays subscribed whenever it is working, and asks about the
  * network inside {@link #autoIO()} instead.
  */
-public abstract class RSBusPartMachine extends ItemBusPartMachine {
+public abstract class RSBusPartMachine extends ItemBusPartMachine implements RSNetworkPart {
 
     /**
      * How often the part talks to the network, in ticks.
@@ -48,6 +49,7 @@ public abstract class RSBusPartMachine extends ItemBusPartMachine {
         super(info, BUS_TIER, io, inventory);
     }
 
+    @Override
     public RSNodeHolder getNodeHolder() {
         return nodeHolder;
     }

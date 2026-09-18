@@ -4,7 +4,7 @@ import com.gregtechceu.gtceu.api.machine.MetaMachine;
 
 import com.refinedmods.refinedstorage.neoforge.api.RefinedStorageNeoForgeApi;
 
-import com.wraithhawit.gttweaks.rs.machine.RSBusPartMachine;
+import com.wraithhawit.gttweaks.rs.network.RSNetworkPart;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
@@ -17,6 +17,10 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
  * the block entity at each neighbouring position, so a cable laid against a part that does not
  * advertise it finds an ordinary block. The node inside {@code RSNodeHolder} would exist, hold its
  * container, and never be on any network. rsmbac learned this the same way.
+ *
+ * <p>Asked of the part through {@link RSNetworkPart} rather than a cast to the item bus base: the
+ * fluid hatches will extend GregTech's fluid part class instead, and a cast would compile and then
+ * throw the first time a cable touched one.
  *
  * <p>Side-independent, unlike GregTech's AE2 parts, which expose their grid node only on the face
  * the part looks out of. Refined Storage has no equivalent notion of an exposed side on the
@@ -38,6 +42,8 @@ public final class RSCapabilities {
         event.registerBlockEntity(
                 RefinedStorageNeoForgeApi.INSTANCE.getNetworkNodeContainerProviderCapability(),
                 (BlockEntityType<MetaMachine>) type,
-                (blockEntity, direction) -> ((RSBusPartMachine) blockEntity).getNodeHolder().containerProvider());
+                (blockEntity, direction) -> blockEntity instanceof RSNetworkPart part
+                        ? part.getNodeHolder().containerProvider()
+                        : null);
     }
 }

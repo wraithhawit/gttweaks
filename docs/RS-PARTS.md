@@ -6,7 +6,7 @@ stocking variants, and the pattern buffer with its proxy.
 
 ## Status
 
-The RS Input Bus works end to end on the test server (0.30.0, md5 53c1d9ed): it registers, joins a
+The RS Input Bus works end to end on the test server (0.30.0, md5 a135f064): it registers, joins a
 network through the capability, stocks its configured slots, hands back what it should not hold,
 keeps its configuration and stock across a restart, and returns its stock when broken. It is not
 usable in normal play yet — there is no way to configure a slot without `/gttweaks rspart`, and no
@@ -16,7 +16,7 @@ recipe to craft one.
 |---|---|
 | `RSIntegration`, `GTTweaksRegistrate`, `GTTweaksGTAddon` | working |
 | `RSMachines` (RS Input Bus only), `RSCapabilities` | working |
-| `RSNodeHolder`, `RSPartActor` | working |
+| `RSNodeHolder`, `RSPartActor`, `RSNetworkPart` | working |
 | `RSConfiguredSlot`, `RSConfiguredItemSlot`, `RSConfiguredItemList` | working |
 | `RSBusPartMachine`, `RSInputBusPartMachine` | working |
 | `RSPartCommand` (`/gttweaks rspart`) | working; stands in for the UI |
@@ -102,6 +102,15 @@ Two deliberate departures from GregTech:
    stock already equals config it asks for zero and lets the network no-op. RS rejects a non-positive
    amount in the constructor, so those cases return `null` and callers treat null as "skip".
 
+**Never account for a network move through the item handler.** Debit the stock with
+`RSConfiguredSlot.debitStock(long)`, which works in the resource's own units. `extractItem` takes an
+`int`, so an insert above `Integer.MAX_VALUE` credits the network more than it debits the slot and
+*creates* items; and it refuses any resource that is not an item, so a fluid that reached a slot would
+be inserted into the network over and over while the stock never moved. Both were live in the first
+version, found by the Astra review, and both amounts are reachable — nothing bounds a configured
+amount to an `int`. The item handler stays for what the recipe logic does; the network accounting does
+not use it.
+
 ## Verified API
 
 - `storage.insert(ResourceKey, long, Action, Actor)` / `.extract(...)`, both returning `long`
@@ -143,10 +152,11 @@ nothing moves.
 
 - `ItemBusPartMachine`'s default UI rendering a 16-slot extract-only handler — nothing here has run in
   a client.
-- Whether a real multiblock draws from the slots. The recipe path is GregTech's own and the handler is
-  shaped like the ME bus's, but "reads as an input bus" has not been demonstrated against a recipe.
+- Whether a real multiblock draws from the slots, in simulation and in execution. The recipe path is
+  GregTech's own and the handler is shaped like the ME bus's, but it has not been demonstrated.
 - What happens when the network refuses the stock a broken part is handing back. It is kept and then
-  lost with the block; the fix is probably `modifyDrops`.
+  lost with the block; the fix is probably `modifyDrops`. Astra also flagged the converse: if GregTech
+  already drops a bus inventory on break, this flush would duplicate it. Untested.
 
 ## Next
 

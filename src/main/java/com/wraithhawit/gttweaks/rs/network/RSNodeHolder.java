@@ -56,6 +56,18 @@ public class RSNodeHolder extends MachineTrait {
     private boolean left;
 
     /**
+     * Whether the machine has unloaded since the join was scheduled.
+     *
+     * <p>{@link #join()} runs a tick after {@code onMachineLoad}, and the task that carries it is
+     * held by the server, not by the machine: breaking or unloading the part in that one-tick window
+     * does not cancel it. Without this, a part that is already gone would build a container, hand it
+     * to Refined Storage, and leave it on the network with nothing behind it — and because
+     * {@link #leave()} had already run and found no network to leave, nothing would ever take it off
+     * again.
+     */
+    private boolean unloaded;
+
+    /**
      * Built on demand rather than in the constructor, because the container wants a block entity
      * that already knows where it is and traits are attached while the machine is still being
      * constructed.
@@ -108,6 +120,7 @@ public class RSNodeHolder extends MachineTrait {
         if (isRemote()) {
             return;
         }
+        unloaded = false;
         // Next tick, not now, for the reason GregTech's AE2 holder defers too: a block entity that
         // is still being placed into the level is not yet something a network walk can find. Refined
         // Storage queues the join either way -- ServerListener.queue drains at the next tick's Pre --
@@ -134,11 +147,12 @@ public class RSNodeHolder extends MachineTrait {
     @Override
     public void onMachineUnload() {
         super.onMachineUnload();
+        unloaded = true;
         leave();
     }
 
     private void join() {
-        if (isRemote() || getLevel() == null) {
+        if (isRemote() || unloaded || getLevel() == null || getMachine().isRemoved()) {
             return;
         }
         refreshActive();
