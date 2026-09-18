@@ -135,14 +135,17 @@ public class RSNodeHolder extends MachineTrait {
      * unloading chunk: {@code MetaMachine.setRemoved()} is final and calls {@code onUnload()}, which
      * is what runs this.
      *
-     * <p>Leaving from {@code onMachineDestroyed} as well — the obvious second place, since that is
-     * where a broken machine cleans up — is wrong twice over, and the first version did it. It runs
-     * from the block's {@code onRemove}, by which point the level has already dropped the block
-     * entity, so Refined Storage's scan of that position finds nothing to remove; and the removal
-     * this method asked for is queued, not immediate, so {@code node.getNetwork()} is still set and
-     * does not guard against the second attempt. What comes out is
-     * {@code IllegalArgumentException: The removed container should be present in the removed
-     * entries, but isn't}, thrown out of breaking the block.
+     * <p>Also leaving from {@code onMachineDestroyed} — the obvious second place, since that is where
+     * a broken machine cleans up — throws {@code IllegalArgumentException: The removed container
+     * should be present in the removed entries, but isn't} out of breaking the block, which is what
+     * the first version did. Note the order, which is the opposite of what the names suggest:
+     * {@code MetaMachineBlock.onRemove} calls {@code onMachineDestroyed()} and only then
+     * {@code level.removeBlockEntity(pos)}, so the destroy hook is the <em>earlier</em> of the two
+     * and the failing call was the first, not a duplicate of this one. Why Refined Storage accepts
+     * the removal from here and not from there is not established — at both points the block state
+     * at that position has already been replaced — so this is an observation, not a mechanism.
+     * {@link #left} exists so that a second attempt cannot be made whatever the reason, since a
+     * queued removal leaves {@code node.getNetwork()} set for another tick.
      */
     @Override
     public void onMachineUnload() {

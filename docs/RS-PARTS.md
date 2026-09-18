@@ -79,13 +79,16 @@ accounted for here:
 - A node only does work while `setActive(true)`, which has to track network power. `refreshActive()`
   runs from the part's tick.
 - **Leave from `onMachineUnload` only.** `MetaMachine.setRemoved()` is final and calls `onUnload()`,
-  so that one hook covers a broken block as well as an unloading chunk. Leaving from
-  `onMachineDestroyed` too — which reads as the natural place — throws
+  so that one hook covers a broken block as well as an unloading chunk. Also leaving from
+  `onMachineDestroyed` — which reads as the natural place — throws
   `IllegalArgumentException: The removed container should be present in the removed entries, but
-  isn't` out of breaking the block: it runs from the block's `onRemove`, after the level has dropped
-  the block entity, so RS's scan of that position finds nothing; and the first removal is queued
-  rather than immediate, so `node.getNetwork()` is still set and does not guard the second attempt.
-  `RSNodeHolder.left` guards it instead.
+  isn't` out of breaking the block. The order is the opposite of what the names suggest:
+  `MetaMachineBlock.onRemove` calls `onMachineDestroyed()` and *then*
+  `level.removeBlockEntity(pos)`, so the destroy hook runs first and the failing call was the first
+  attempt, not a second one. Why RS accepts the removal from `onUnload` and not from
+  `onMachineDestroyed` is not established — at both points the block state is already replaced — so
+  treat this as an observation. `RSNodeHolder.left` stops a second attempt whatever the reason, since
+  a queued removal leaves `node.getNetwork()` set for another tick.
 
 ## Behaviour
 
@@ -152,11 +155,20 @@ nothing moves.
 
 - `ItemBusPartMachine`'s default UI rendering a 16-slot extract-only handler — nothing here has run in
   a client.
+
+Settled, and not a risk: GregTech does not drop a bus's contents on break. `MetaMachine.modifyDrops`
+is empty, neither `ItemBusPartMachine` nor `TieredIOPartMachine` overrides it, and
+`MetaMachineBlock.onRemove` only calls `onMachineDestroyed` and removes the block entity. So the
+flush to the network cannot double up with a drop.
 - Whether a real multiblock draws from the slots, in simulation and in execution. The recipe path is
   GregTech's own and the handler is shaped like the ME bus's, but it has not been demonstrated.
 - What happens when the network refuses the stock a broken part is handing back. It is kept and then
-  lost with the block; the fix is probably `modifyDrops`. Astra also flagged the converse: if GregTech
-  already drops a bus inventory on break, this flush would duplicate it. Untested.
+  lost with the block. **Dropping it into the world is not the fix** — a slot's amount is a `long` and
+  a bus can legitimately hold hundreds of thousands of items, which as entities would be a far worse
+  problem than the loss. Returning it to the network is the right behaviour; the gap is only the
+  offline-or-full case, and the answer there is probably to carry the stock on the dropped machine
+  item through `collectImplicitComponents`/`applyImplicitComponents`, so it comes back when the part
+  is placed again.
 
 ## Next
 
