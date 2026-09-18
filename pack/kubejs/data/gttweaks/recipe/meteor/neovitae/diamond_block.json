@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neovitae"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "allthecompressed"
+    }
+  ],
+  "type": "neovitae:meteor",
+  "explosion": 16.0,
+  "input": {
+    "item": "allthecompressed:diamond_block_1x"
+  },
+  "layers": [
+    {
+      "fill": "minecraft:diamond_block",
+      "radius": 2
+    },
+    {
+      "fill": "minecraft:stone",
+      "minWeight": 1000,
+      "radius": 8,
+      "weighted": [
+        {
+          "entry": "minecraft:diamond_ore",
+          "weight": 200
+        },
+        {
+          "entry": "minecraft:emerald_ore",
+          "weight": 200
+        },
+        {
+          "entry": "minecraft:coal_ore",
+          "weight": 400
+        }
+      ]
+    }
+  ],
+  "syphon": 1000000
+}

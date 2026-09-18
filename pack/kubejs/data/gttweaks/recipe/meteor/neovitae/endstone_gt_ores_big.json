@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neovitae"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gtceu"
+    }
+  ],
+  "type": "neovitae:meteor",
+  "explosion": 12.0,
+  "input": {
+    "item": "gtceu:uranium_rhodium_dinaquadide_block"
+  },
+  "layers": [
+    {
+      "fill": "minecraft:end_stone",
+      "minWeight": 1000,
+      "radius": 6,
+      "weighted": [
+        {
+          "entry": "gtceu:endstone_naquadah_ore",
+          "weight": 200
+        },
+        {
+          "entry": "gtceu:endstone_plutonium_239_ore",
+          "weight": 200
+        },
+        {
+          "entry": "gtceu:endstone_tungstate_ore",
+          "weight": 400
+        }
+      ]
+    }
+  ],
+  "syphon": 5000000
+}

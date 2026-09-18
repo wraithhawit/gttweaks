@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neovitae"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gtceu"
+    }
+  ],
+  "type": "neovitae:meteor",
+  "explosion": 8.0,
+  "input": {
+    "item": "gtceu:titanium_ingot"
+  },
+  "layers": [
+    {
+      "fill": "minecraft:netherrack",
+      "minWeight": 1000,
+      "radius": 4,
+      "weighted": [
+        {
+          "entry": "gtceu:netherrack_sphalerite_ore",
+          "weight": 200
+        },
+        {
+          "entry": "gtceu:netherrack_sulfur_ore",
+          "weight": 300
+        },
+        {
+          "entry": "gtceu:netherrack_tetrahedrite_ore",
+          "weight": 300
+        }
+      ]
+    }
+  ],
+  "syphon": 1250000
+}

@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neovitae"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "allthetweaks"
+    }
+  ],
+  "type": "neovitae:meteor",
+  "explosion": 24.0,
+  "input": {
+    "item": "allthetweaks:withers_compass"
+  },
+  "layers": [
+    {
+      "fill": "neovitae:dungeon_ore",
+      "radius": 4
+    },
+    {
+      "fill": "neovitae:dungeon_stone",
+      "minWeight": 1000,
+      "radius": 6,
+      "weighted": [
+        {
+          "entry": "neovitae:dungeon_ore",
+          "weight": 400
+        },
+        {
+          "entry": "neovitae:rune_2_speed",
+          "weight": 30
+        }
+      ]
+    }
+  ],
+  "syphon": 9750000
+}
