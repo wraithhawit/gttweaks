@@ -14,6 +14,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
@@ -261,19 +262,9 @@ public class RecipeMatchCommand {
      */
     private static String cost(GTRecipe recipe) {
         final StringBuilder parts = new StringBuilder();
-        final List<Content> energyInputs = new ArrayList<>(recipe.getTickInputContents(GTRecipeCapabilities.EU));
-        energyInputs.addAll(recipe.getInputContents(GTRecipeCapabilities.EU));
-        for (Content content : energyInputs) {
-            if (content.content() instanceof EnergyStack energy && !energy.isEmpty()) {
-                final long voltage = energy.voltage();
-                final byte tier = GTUtil.getTierByVoltage(voltage);
-                final String name = tier >= 0 && tier < GTValues.VN.length ? GTValues.VN[tier] : "?";
-                parts.append(voltage).append(" EU/t ").append(name);
-                if (energy.amperage() > 1) {
-                    parts.append(" x").append(energy.amperage()).append('A');
-                }
-                break;
-            }
+        appendEnergy(parts, recipe.getTickInputContents(GTRecipeCapabilities.EU), " EU/t ");
+        if (parts.length() == 0) {
+            appendEnergy(parts, recipe.getInputContents(GTRecipeCapabilities.EU), " EU ");
         }
         if (recipe.duration > 0) {
             if (parts.length() > 0) {
@@ -281,13 +272,37 @@ public class RecipeMatchCommand {
             }
             parts.append(recipe.duration).append(" ticks");
         }
-        if (recipe.data != null && recipe.data.contains("ebf_temp")) {
+        if (recipe.data != null && recipe.data.contains("ebf_temp", Tag.TAG_ANY_NUMERIC)) {
             if (parts.length() > 0) {
                 parts.append(", ");
             }
             parts.append(recipe.data.getInt("ebf_temp")).append(" K");
         }
         return parts.length() == 0 ? "" : "  [" + parts + "]";
+    }
+
+    /**
+     * Appends the first non-empty voltage in {@code contents}, with its tier name.
+     *
+     * <p>{@code unit} distinguishes the two places GregTech keeps energy: a tick input is drawn
+     * every tick and is EU/t, a plain input is drawn once. Reporting the second as EU/t would
+     * overstate it by the recipe's whole duration. Only the first entry is read; a recipe with
+     * several is not something this reports faithfully, and none is known to exist.
+     */
+    private static void appendEnergy(StringBuilder parts, List<Content> contents, String unit) {
+        for (Content content : contents) {
+            if (content.content() instanceof EnergyStack energy && !energy.isEmpty()) {
+                final long voltage = energy.voltage();
+                final byte tier = GTUtil.getTierByVoltage(voltage);
+                final String name = tier >= 0 && tier < GTValues.VN.length ? GTValues.VN[tier] : "?";
+                parts.append(voltage).append(unit).append(name);
+                if (energy.amperage() > 1) {
+                    parts.append(" x").append(energy.amperage()).append("A (").append(voltage * energy.amperage())
+                            .append(" total)");
+                }
+                return;
+            }
+        }
     }
 
     private static boolean producesItem(SizedIngredient sized, Item item) {
