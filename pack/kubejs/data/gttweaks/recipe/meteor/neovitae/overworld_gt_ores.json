@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neovitae"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gtceu"
+    }
+  ],
+  "type": "neovitae:meteor",
+  "explosion": 8.0,
+  "input": {
+    "item": "gtceu:arsenic_dust"
+  },
+  "layers": [
+    {
+      "fill": "minecraft:cobblestone",
+      "minWeight": 1000,
+      "radius": 4,
+      "weighted": [
+        {
+          "entry": "gtceu:tantalite_ore",
+          "weight": 200
+        },
+        {
+          "entry": "gtceu:vanadium_magnetite_ore",
+          "weight": 200
+        },
+        {
+          "entry": "gtceu:cobaltite_ore",
+          "weight": 400
+        }
+      ]
+    }
+  ],
+  "syphon": 625000
+}

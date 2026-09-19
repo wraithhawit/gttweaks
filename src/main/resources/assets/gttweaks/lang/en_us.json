@@ -3,5 +3,10 @@
   "gttweaks.configuration.section.gttweaks.client.toml": "Client Settings",
   "gttweaks.configuration.section.gttweaks.client.toml.title": "Client Settings",
   "gttweaks.configuration.previewZoomSpeed": "Preview Zoom Speed",
-  "gttweaks.configuration.previewZoomSpeed.tooltip": "Scroll-wheel zoom speed in multiblock previews, as a multiple of ModularUI's own step (1/12 block per notch). 1.0 is ModularUI's speed; the default is 10.0."
+  "gttweaks.configuration.previewZoomSpeed.tooltip": "Scroll-wheel zoom speed in multiblock previews, as a multiple of ModularUI's step (1/12 block per notch). 1.0 is ModularUI's speed; the default is 10.0.",
+
+  "block.gttweaks.rs_input_bus": "RS Input Bus",
+  "gttweaks.machine.rs.item_import.tooltip": "§bKeeps the configured items stocked from a Refined Storage network",
+  "gttweaks.gui.rs_network.online": "§aConnected to a Refined Storage network",
+  "gttweaks.gui.rs_network.offline": "§cNot connected to a Refined Storage network"
 }

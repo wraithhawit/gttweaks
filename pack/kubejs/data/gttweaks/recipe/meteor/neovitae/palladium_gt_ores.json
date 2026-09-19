@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neovitae"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gtceu"
+    }
+  ],
+  "type": "neovitae:meteor",
+  "explosion": 6.0,
+  "input": {
+    "item": "gtceu:palladium_ingot"
+  },
+  "layers": [
+    {
+      "fill": "minecraft:end_stone",
+      "minWeight": 1000,
+      "radius": 3,
+      "weighted": [
+        {
+          "entry": "gtceu:endstone_chromite_ore",
+          "weight": 300
+        },
+        {
+          "entry": "gtceu:endstone_bauxite_ore",
+          "weight": 300
+        },
+        {
+          "entry": "gtceu:endstone_palladium_ore",
+          "weight": 200
+        }
+      ]
+    }
+  ],
+  "syphon": 2500000
+}

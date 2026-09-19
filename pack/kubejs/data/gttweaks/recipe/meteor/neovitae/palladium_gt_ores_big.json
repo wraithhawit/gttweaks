@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neovitae"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gtceu"
+    }
+  ],
+  "type": "neovitae:meteor",
+  "explosion": 12.0,
+  "input": {
+    "item": "gtceu:rhodium_plated_palladium_block"
+  },
+  "layers": [
+    {
+      "fill": "minecraft:end_stone",
+      "minWeight": 1000,
+      "radius": 6,
+      "weighted": [
+        {
+          "entry": "gtceu:endstone_chromite_ore",
+          "weight": 300
+        },
+        {
+          "entry": "gtceu:endstone_bauxite_ore",
+          "weight": 300
+        },
+        {
+          "entry": "gtceu:endstone_palladium_ore",
+          "weight": 200
+        }
+      ]
+    }
+  ],
+  "syphon": 5000000
+}

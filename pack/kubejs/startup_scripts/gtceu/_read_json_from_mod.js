@@ -70,8 +70,14 @@ function openModPack(modId) {
 // Bytes to text is the one step Rhino cannot take here: KubeJS's class filter refuses
 // java.nio.charset.StandardCharsets, and new java.lang.String(bytes, "UTF-8") resolves to a
 // constructor wanting a byte ("Cannot convert NativeJavaArray to byte"). gttweaks does it.
+//
+// A leading byte-order mark is dropped: Gson, which the game reads data with, skips one, but
+// Rhino's JSON.parse throws "Unexpected token" on it. ATM10's own
+// kubejs/data/productivebees/productivebees/mekanism/wasted_radioactive.json starts with one, so
+// without this the game used that override and the apiary recipes silently kept the jar's copy.
 function readStream(stream) {
-    return $ScriptIO_rj.readUtf8(stream)
+    let text = String($ScriptIO_rj.readUtf8(stream))
+    return text.charCodeAt(0) == 0xFEFF ? text.substring(1) : text
 }
 
 /**
@@ -117,6 +123,41 @@ global.readJsonFolderFromMod = (type, modId, folder) => {
         })
     } finally {
         pack.close()
+    }
+    return out
+}
+
+/**
+ * Every .json under `folder` in `namespace` as the server's data packs resolve it - the same
+ * shape as readJsonFolderFromMod, but a file a later pack overrides (kubejs/data, a datapack)
+ * comes from that pack, and files only a datapack adds are included. This is what the game
+ * itself loads; readJsonFolderFromMod sees only the mod jar's copy.
+ *
+ * `resourceManager` is the one being reloaded: ServerEvents.recipes exposes it as
+ * `event.resourceManager`. Each pack is asked through PackResources.listResources, the callback
+ * form, for the TreeMap reason at the top of this file. Packs are listed lowest priority first,
+ * which is the order vanilla's FallbackResourceManager lets a later pack win in, so a later key
+ * simply replaces an earlier one. The packs belong to the manager and are not closed here.
+ *
+ * `overridden`, if given, collects "<key> <- <pack id>" for every file replaced by a later pack.
+ */
+global.readJsonFolderFromPacks = (resourceManager, type, namespace, folder, overridden) => {
+    let out = {}
+    let packType = packTypeOf(type)
+    let packs = resourceManager.listPacks().toList()
+    for (let i = 0; i < packs.size(); i++) {
+        let pack = packs.get(i)
+        pack.listResources(packType, namespace, folder, (location, supplier) => {
+            let key = location.toString()
+            if (!key.endsWith('.json')) return
+            try {
+                let parsed = JSON.parse(readStream(supplier.get()))
+                if (out[key] !== undefined && overridden) overridden.push(key + ' <- ' + pack.packId())
+                out[key] = parsed
+            } catch (e) {
+                console.warn('[readJson] could not read ' + key + ' from ' + pack.packId() + ': ' + e)
+            }
+        })
     }
     return out
 }

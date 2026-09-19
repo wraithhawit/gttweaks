@@ -118,7 +118,7 @@ tasks.register('validateKubeJS', Exec) {
     group = 'verification'
     description = 'Checks KubeJS scripts against generated ProbeJS types.'
     final inst = project.findProperty('instance')
-            ?: 'D:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
+            ?: 'F:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
     final rel = project.findProperty('scripts') ?: 'kubejs/startup_scripts/gtceu'
     commandLine 'java', file('tools/ValidateKubeJS.java').absolutePath, "${inst}/.probe", "${inst}/${rel}"
 }
@@ -131,7 +131,7 @@ def stageScripts(final String runName) {
         group = 'build setup'
         description = "Copies the instance's GregTech KubeJS scripts into the ${runName} run."
         final inst = project.findProperty('instance')
-                ?: 'D:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
+                ?: 'F:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
         from("${inst}/kubejs/startup_scripts/gtceu")
         // Needs mods the headless run does not stage (ExtendedAE registers custom_infinity_cell).
         exclude 'gt_infinity_cells.js'
@@ -151,7 +151,7 @@ def stageRecipes(final String runName) {
         group = 'build setup'
         description = "Copies the instance's GregTech KubeJS recipe scripts into the ${runName} run."
         final inst = project.findProperty('instance')
-                ?: 'D:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
+                ?: 'F:/Minecraft Instances/All the Mods 10 - ATM10(3)/minecraft'
         from("${inst}/kubejs/server_scripts/mods/gtceu")
         into layout.projectDirectory.dir("run/${runName}/kubejs/server_scripts/gtceu")
     }
@@ -172,11 +172,15 @@ tasks.register('headlessCheck') {
     group = 'verification'
     description = 'Boots a headless server, verifies patterns, recipe counts and recipe matching, then exits.'
     dependsOn 'runServer'
-    doFirst {
-        if (!project.hasProperty('exitAfterCheck')) {
-            throw new GradleException(
-                "Run it as ./gradlew headlessCheck -PexitAfterCheck=true — without that the "
-                    + "server stays up and the task never returns.")
-        }
+}
+
+// Checked once the task graph is known, not in headlessCheck's doFirst: dependencies run before
+// a task's own actions, so a doFirst guard only fired after runServer had already started a
+// server that never exits.
+gradle.taskGraph.whenReady { graph ->
+    if (graph.hasTask(':headlessCheck') && project.findProperty('exitAfterCheck') != 'true') {
+        throw new GradleException(
+            "Run it as ./gradlew headlessCheck -PexitAfterCheck=true — without that the "
+                + "server stays up and the task never returns.")
     }
 }

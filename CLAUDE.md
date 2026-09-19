@@ -24,7 +24,7 @@ Astra context.
 ## Authority
 
 With the user's go-ahead in the conversation, you may edit the live Minecraft instance
-(`D:\Minecraft Instances\All the Mods 10 - ATM10(3)`), commit, bump versions, and edit
+(`F:\Minecraft Instances\All the Mods 10 - ATM10(3)`), commit, bump versions, and edit
 changelogs. Approval covers the change it was given for; confirm again before the next
 instance edit, commit, push, publish, or release. Look at a target before overwriting it
 in the instance, and never broadly delete, move, or replace jars.

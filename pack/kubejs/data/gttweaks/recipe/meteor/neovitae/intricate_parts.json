@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "neovitae"
+    }
+  ],
+  "type": "neovitae:meteor",
+  "explosion": 12.0,
+  "input": {
+    "item": "neovitae:hellforged_parts"
+  },
+  "layers": [
+    {
+      "fill": "neovitae:dungeon_ore",
+      "radius": 1
+    },
+    {
+      "fill": "neovitae:dungeon_stone",
+      "minWeight": 1000,
+      "radius": 3,
+      "weighted": [
+        {
+          "entry": "neovitae:dungeon_ore",
+          "weight": 400
+        },
+        {
+          "entry": "neovitae:rune_2_speed",
+          "weight": 30
+        }
+      ]
+    }
+  ],
+  "syphon": 5000000
+}

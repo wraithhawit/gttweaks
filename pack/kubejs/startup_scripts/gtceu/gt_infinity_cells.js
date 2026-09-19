@@ -10,10 +10,12 @@
 // cells in ExtendedAE/InfinityCells.js. This file follows that same pattern for
 // the GregTech fluids the ATM9 recipes wanted.
 //
-// Art is reused rather than drawn: `extendedae:item/infinity_cell` is Extended
-// AE's own neutral cell texture, and every cell shares one drive model
-// (kubejs:block/drive/gt_cell) pointing at their neutral drive texture. The
-// cells are therefore correct and readable but not individually coloured.
+// Each cell has its own item texture, drive texture and drive model under
+// kubejs:item/<fluid>_cell and kubejs:block/drive/<fluid>_cell, made the way
+// ATM10 colours its own cells: ATM10's lava cell textures with lava's three
+// accent shades swapped for a ramp of the fluid's colour (mid = the colour,
+// dark = 0.6x, light = 1.5x capped). The colour is the fluid texture's average
+// multiplied by the GregTech material colour, which is how GregTech tints it.
 //
 // minecraft:lava is deliberately absent — ATM10 already registers kubejs:lava_cell.
 // The two Mekanism *chemical* cells from ATM9 (polonium, plutonium) are not here
@@ -42,8 +44,8 @@ StartupEvents.registry('item', allthemods => {
 
     gtFluidCells.forEach(fluid => {
         allthemods.create(`${fluid}_cell`, 'custom_infinity_cell')
-            .texture('extendedae:item/infinity_cell')
+            .texture(`kubejs:item/${fluid}_cell`)
             .fluidType(`gtceu:${fluid}`)
-            .cellModel('kubejs:block/drive/gt_cell')
+            .cellModel(`kubejs:block/drive/${fluid}_cell`)
     })
 })

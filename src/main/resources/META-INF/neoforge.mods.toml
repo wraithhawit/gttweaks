@@ -12,15 +12,25 @@ Java-side fixes for running GregTech CEu Modern in All the Mods 10. GregTech
 pack ships, but on a JEI-only client it cannot finish mod loading: a recipe
 viewer icon reaches for JEI's runtime during registry init. Everything else
 about GregTech here is driven from KubeJS scripts; this mod exists only for what
-a script cannot reach. Contains no blocks or items.
+a script cannot reach.
+
+With Refined Storage installed it also adds multiblock parts that feed a
+GregTech multiblock from an RS network, the way GregTech's own ME parts do from
+an AE2 one.
 '''
 
 [[mixins]]
 config="${mod_id}.modularui.mixins.json"
 requiredMods=["modularui"]
 
+# Only the JEI call wrapper needs JEI. The common GregTech fixes (recipe parsing, circuit
+# selection, energy transfer) must still apply on a server or client without it.
 [[mixins]]
 config="${mod_id}.gtceu.mixins.json"
+requiredMods=["gtceu"]
+
+[[mixins]]
+config="${mod_id}.jei.mixins.json"
 requiredMods=["gtceu","jei"]
 
 [[mixins]]
@@ -56,3 +66,12 @@ requiredMods=["emi"]
     versionRange="[3.3.1-SNAPSHOT,)"
     ordering="AFTER"
     side="CLIENT"
+
+# The Refined Storage multiblock parts register only when Refined Storage is present, and nothing
+# else here needs it. AFTER because the parts ask RS for a node container as they are built.
+[[dependencies.${mod_id}]]
+    modId="refinedstorage"
+    type="optional"
+    versionRange="[2.0.9,)"
+    ordering="AFTER"
+    side="BOTH"
