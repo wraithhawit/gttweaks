@@ -1,8 +1,11 @@
 package com.wraithhawit.gttweaks;
 
+import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.recipe.GTRecipe;
 import com.gregtechceu.gtceu.api.recipe.content.Content;
+import com.gregtechceu.gtceu.api.recipe.ingredient.EnergyStack;
 import com.gregtechceu.gtceu.common.data.GTRecipeCapabilities;
+import com.gregtechceu.gtceu.utils.GTUtil;
 
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
@@ -224,7 +227,8 @@ public class RecipeMatchCommand {
                         continue;
                     }
                     if (output ? producesItem(sized, item.get()) : sized.ingredient().test(stack)) {
-                        lines.add(type + " " + holder.id() + (output ? " -> " : " <- ") + sized.count() + "x");
+                        lines.add(type + " " + holder.id() + (output ? " -> " : " <- ") + sized.count()
+                                + "x" + cost(gt));
                         break;
                     }
                 }
@@ -243,6 +247,47 @@ public class RecipeMatchCommand {
             }
         }
         return report(source, (output ? "output " : "input ") + id.trim(), lines);
+    }
+
+    /**
+     * The recipe's running cost, as {@code [EU/t, tier, duration, coil temperature]}.
+     *
+     * <p>GregTech stores the voltage as an {@link EnergyStack} rather than a field, and as a
+     * <em>tick</em> input, since it is drawn every tick rather than once — {@code getInputContents}
+     * alone reports nothing for an electric blast furnace recipe. The required coil temperature
+     * lives in {@link GTRecipe#data} under {@code ebf_temp}. All of it is absent on most recipes,
+     * so every part is optional and the whole thing collapses to an empty string when there is
+     * none.
+     */
+    private static String cost(GTRecipe recipe) {
+        final StringBuilder parts = new StringBuilder();
+        final List<Content> energyInputs = new ArrayList<>(recipe.getTickInputContents(GTRecipeCapabilities.EU));
+        energyInputs.addAll(recipe.getInputContents(GTRecipeCapabilities.EU));
+        for (Content content : energyInputs) {
+            if (content.content() instanceof EnergyStack energy && !energy.isEmpty()) {
+                final long voltage = energy.voltage();
+                final byte tier = GTUtil.getTierByVoltage(voltage);
+                final String name = tier >= 0 && tier < GTValues.VN.length ? GTValues.VN[tier] : "?";
+                parts.append(voltage).append(" EU/t ").append(name);
+                if (energy.amperage() > 1) {
+                    parts.append(" x").append(energy.amperage()).append('A');
+                }
+                break;
+            }
+        }
+        if (recipe.duration > 0) {
+            if (parts.length() > 0) {
+                parts.append(", ");
+            }
+            parts.append(recipe.duration).append(" ticks");
+        }
+        if (recipe.data != null && recipe.data.contains("ebf_temp")) {
+            if (parts.length() > 0) {
+                parts.append(", ");
+            }
+            parts.append(recipe.data.getInt("ebf_temp")).append(" K");
+        }
+        return parts.length() == 0 ? "" : "  [" + parts + "]";
     }
 
     private static boolean producesItem(SizedIngredient sized, Item item) {
