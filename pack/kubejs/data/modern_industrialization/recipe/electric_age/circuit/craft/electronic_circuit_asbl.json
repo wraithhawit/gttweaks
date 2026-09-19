@@ -10,7 +10,7 @@
     "c": { "item": "modern_industrialization:analog_circuit" },
     "t": { "item": "modern_industrialization:transistor" },
     "b": { "item": "modern_industrialization:electronic_circuit_board" },
-    "G": { "tag": "gtceu:circuits/mv" }
+    "G": { "tag": "gtceu:circuits/hv" }
   },
   "result": {
     "id": "modern_industrialization:electronic_circuit"
