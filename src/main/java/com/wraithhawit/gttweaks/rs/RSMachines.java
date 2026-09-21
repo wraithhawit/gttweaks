@@ -10,6 +10,8 @@ import com.wraithhawit.gttweaks.rs.machine.RSInputBusPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSInputHatchPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSOutputBusPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSOutputHatchPartMachine;
+import com.wraithhawit.gttweaks.rs.machine.RSStockingBusPartMachine;
+import com.wraithhawit.gttweaks.rs.machine.RSStockingHatchPartMachine;
 
 import net.minecraft.network.chat.Component;
 
@@ -84,6 +86,32 @@ public final class RSMachines {
                     Component.translatable("gtceu.part_sharing.enabled"))
             .register();
 
+    public static final MachineDefinition RS_STOCKING_BUS = GTTweaksRegistrate.REGISTRATE
+            .machine("rs_stocking_bus", RSStockingBusPartMachine::new)
+            .langValue("RS Stocking Bus")
+            .tier(GTValues.EV)
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.IMPORT_ITEMS)
+            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_input_bus"))
+            .tooltips(
+                    Component.translatable("gtceu.machine.item_bus.import.tooltip"),
+                    Component.translatable("gttweaks.machine.rs.item_stocking.tooltip"),
+                    Component.translatable("gtceu.part_sharing.enabled"))
+            .register();
+
+    public static final MachineDefinition RS_STOCKING_HATCH = GTTweaksRegistrate.REGISTRATE
+            .machine("rs_stocking_hatch", RSStockingHatchPartMachine::new)
+            .langValue("RS Stocking Hatch")
+            .tier(GTValues.EV)
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.IMPORT_FLUIDS)
+            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_input_hatch"))
+            .tooltips(
+                    Component.translatable("gtceu.machine.fluid_hatch.import.tooltip"),
+                    Component.translatable("gttweaks.machine.rs.fluid_stocking.tooltip"),
+                    Component.translatable("gtceu.part_sharing.enabled"))
+            .register();
+
     private static boolean built;
 
     private RSMachines() {
@@ -114,5 +142,7 @@ public final class RSMachines {
         Objects.requireNonNull(RS_OUTPUT_BUS);
         Objects.requireNonNull(RS_INPUT_HATCH);
         Objects.requireNonNull(RS_OUTPUT_HATCH);
+        Objects.requireNonNull(RS_STOCKING_BUS);
+        Objects.requireNonNull(RS_STOCKING_HATCH);
     }
 }

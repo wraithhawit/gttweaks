@@ -13,6 +13,10 @@
   "gttweaks.machine.rs.item_export.tooltip": "§bSends the multiblock's item results to a Refined Storage network",
   "gttweaks.machine.rs.fluid_import.tooltip": "§bKeeps the configured fluids stocked from a Refined Storage network",
   "gttweaks.machine.rs.fluid_export.tooltip": "§bSends the multiblock's fluid results to a Refined Storage network",
+  "block.gttweaks.rs_stocking_bus": "RS Stocking Bus",
+  "block.gttweaks.rs_stocking_hatch": "RS Stocking Hatch",
+  "gttweaks.machine.rs.item_stocking.tooltip": "§bShows the network's items to the multiblock and takes them only when a recipe runs",
+  "gttweaks.machine.rs.fluid_stocking.tooltip": "§bShows the network's fluids to the multiblock and takes them only when a recipe runs",
   "gttweaks.gui.rs_network.online": "§aConnected to a Refined Storage network",
   "gttweaks.gui.rs_network.offline": "§cNot connected to a Refined Storage network"
 }

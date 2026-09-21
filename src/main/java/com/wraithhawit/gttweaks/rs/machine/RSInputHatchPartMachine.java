@@ -91,6 +91,17 @@ public class RSInputHatchPartMachine extends RSHatchPartMachine {
     @Override
     public void onMachineDestroyed() {
         super.onMachineDestroyed();
+        flushStockToNetwork();
+    }
+
+    /**
+     * Gives the network back everything the slots are holding.
+     *
+     * <p>Split out from {@link #onMachineDestroyed()} because the stocking hatch must <em>not</em>
+     * do it: its stock is a mirror of what the network already has rather than fluid this part is
+     * holding, so handing it over would create fluid.
+     */
+    protected void flushStockToNetwork() {
         StorageNetworkComponent storage = nodeHolder.storage();
         if (storage == null) {
             return;

@@ -37,6 +37,8 @@ public final class RSCapabilities {
         registerPart(event, RSMachines.RS_OUTPUT_BUS.getBlockEntityType());
         registerPart(event, RSMachines.RS_INPUT_HATCH.getBlockEntityType());
         registerPart(event, RSMachines.RS_OUTPUT_HATCH.getBlockEntityType());
+        registerPart(event, RSMachines.RS_STOCKING_BUS.getBlockEntityType());
+        registerPart(event, RSMachines.RS_STOCKING_HATCH.getBlockEntityType());
     }
 
     @SuppressWarnings("unchecked")

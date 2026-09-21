@@ -89,6 +89,18 @@ public class RSInputBusPartMachine extends RSBusPartMachine {
     @Override
     public void onMachineDestroyed() {
         super.onMachineDestroyed();
+        flushStockToNetwork();
+    }
+
+    /**
+     * Gives the network back everything the slots are holding.
+     *
+     * <p>Split out from {@link #onMachineDestroyed()} because the stocking bus must <em>not</em> do
+     * it: its stock is a mirror of what the network already has rather than material this part is
+     * holding, so handing it over would create items. That subclass overrides this to do nothing,
+     * which is the same split GregTech makes with {@code flushInventory()}.
+     */
+    protected void flushStockToNetwork() {
         StorageNetworkComponent storage = nodeHolder.storage();
         if (storage == null) {
             return;
