@@ -119,6 +119,10 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
 
     private final List<RSBufferSlotFluidHandler> slotFluidHandlers = new ArrayList<>();
 
+    private final RSBufferAggregateItemHandler aggregateItems;
+
+    private final RSBufferAggregateFluidHandler aggregateFluids;
+
     private final RSBufferRecipeHandlerList bufferHandler;
 
     private final List<RecipeHandlerList> bufferHandlers;
@@ -152,10 +156,8 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
             internalSlots[i] = new RSBufferSlot();
         }
         addSlot();
-        RSBufferAggregateItemHandler aggregateItems =
-                attachTrait(new RSBufferAggregateItemHandler(() -> slots));
-        RSBufferAggregateFluidHandler aggregateFluids =
-                attachTrait(new RSBufferAggregateFluidHandler(() -> slots));
+        aggregateItems = attachTrait(new RSBufferAggregateItemHandler(() -> slots));
+        aggregateFluids = attachTrait(new RSBufferAggregateFluidHandler(() -> slots));
         bufferHandler = new RSBufferRecipeHandlerList(
                 () -> slots, () -> slotItemHandlers, () -> slotFluidHandlers,
                 aggregateItems, aggregateFluids);
@@ -229,18 +231,19 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
         slotFluidHandlers.add(new RSBufferSlotFluidHandler(slot));
     }
 
+    /**
+     * Wakes the multiblock when a slot's contents change.
+     *
+     * <p>This is not optional and its absence does not look like a bug. A multiblock subscribes its
+     * recipe logic to the tick through {@code RecipeHandlerList.subscribe}, and that subscription is
+     * driven by the handlers' own listeners. A buffer that filled a slot without notifying would sit
+     * there holding a perfectly good set of ingredients while the controller stayed {@code IDLE},
+     * because nothing ever told it to look again — which is exactly what happened the first time this
+     * part was put in a formed structure.
+     */
     private void onSlotChanged() {
-        if (getLevel() != null && !getLevel().isClientSide()) {
-            notifyRecipeHandlerChange();
-        }
-    }
-
-    private void notifyRecipeHandlerChange() {
-        // The multiblock caches whether its parts can currently satisfy a recipe; without this a
-        // buffer that has just been filled would not be looked at until something else changed.
-        if (getControllers() != null) {
-            getControllers().forEach(controller -> controller.onPartUnload());
-        }
+        aggregateItems.notifyListeners();
+        aggregateFluids.notifyListeners();
     }
 
     /**

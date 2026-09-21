@@ -21,6 +21,8 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CraftingRecipe;
@@ -96,6 +98,10 @@ public class RecipeMatchCommand {
                                 .then(Commands.argument("item", StringArgumentType.greedyString())
                                         .executes(context -> uses(context, false,
                                                 StringArgumentType.getString(context, "item")))))
+                        .then(Commands.literal("recipe")
+                                .then(Commands.argument("id", StringArgumentType.greedyString())
+                                        .executes(context -> recipe(context,
+                                                StringArgumentType.getString(context, "id")))))
                         .then(Commands.literal("tags")
                                 .then(Commands.literal("item")
                                         .then(Commands.argument("id", StringArgumentType.greedyString())
@@ -207,6 +213,90 @@ public class RecipeMatchCommand {
     }
 
     /** Every recipe, of any type, that produces ({@code output}) or consumes the item. */
+    /**
+     * Prints one recipe in full, by id: every item and fluid it takes and gives.
+     *
+     * <p>{@code output} and {@code input} answer "what touches this item", which is the wrong
+     * question when the recipe is already known and what is wanted is its exact shape -- the counts
+     * needed to encode a matching pattern, say. GregTech generates most of its recipes at runtime,
+     * so they are in no jar to read and this is the only way to see one on a dedicated server.
+     */
+    private static int recipe(CommandContext<CommandSourceStack> context, String id) {
+        final CommandSourceStack source = context.getSource();
+        final ResourceLocation key = ResourceLocation.tryParse(id.trim());
+        if (key == null) {
+            return fail(source, "'" + id.trim() + "' is not a recipe id");
+        }
+        final MinecraftServer server = source.getServer();
+        final RecipeHolder<?> holder = server.getRecipeManager().byKey(key).orElse(null);
+        if (holder == null) {
+            return fail(source, "no recipe '" + key + "'");
+        }
+        final List<String> lines = new ArrayList<>();
+        lines.add("type " + BuiltInRegistries.RECIPE_TYPE.getKey(holder.value().getType()));
+        if (holder.value() instanceof GTRecipe gt) {
+            lines.add("cost" + (cost(gt).isEmpty() ? " none" : cost(gt)));
+            describe(lines, "item in", gt.getInputContents(GTRecipeCapabilities.ITEM));
+            describe(lines, "fluid in", gt.getInputContents(GTRecipeCapabilities.FLUID));
+            describe(lines, "item out", gt.getOutputContents(GTRecipeCapabilities.ITEM));
+            describe(lines, "fluid out", gt.getOutputContents(GTRecipeCapabilities.FLUID));
+        } else {
+            for (Ingredient ingredient : holder.value().getIngredients()) {
+                if (!ingredient.isEmpty()) {
+                    lines.add("item in  " + describeStacks(ingredient.getItems()));
+                }
+            }
+            final ItemStack result = holder.value().getResultItem(server.registryAccess());
+            if (!result.isEmpty()) {
+                lines.add("item out " + result.getCount() + "x " + itemId(result));
+            }
+        }
+        return report(source, "recipe " + key, lines);
+    }
+
+    /**
+     * Adds one line per entry of a GregTech content list, with its count.
+     *
+     * <p>An ingredient can accept several items -- a tag -- so every accepted item is listed rather
+     * than only the first, since which one a pattern should name is exactly what the caller is
+     * trying to decide.
+     */
+    private static void describe(List<String> lines, String label, List<Content> contents) {
+        for (Content content : contents) {
+            if (content.content() instanceof SizedIngredient sized) {
+                lines.add(label + " " + sized.count() + "x " + describeStacks(sized.getItems()));
+            } else if (content.content() instanceof SizedFluidIngredient fluid) {
+                lines.add(label + " " + fluid.amount() + "mB " + describeFluids(fluid.getFluids()));
+            }
+        }
+    }
+
+    private static String describeStacks(ItemStack[] stacks) {
+        if (stacks.length == 0) {
+            return "(nothing)";
+        }
+        final List<String> ids = new ArrayList<>();
+        for (ItemStack stack : stacks) {
+            ids.add(itemId(stack));
+        }
+        return ids.size() == 1 ? ids.get(0) : "any of " + ids;
+    }
+
+    private static String describeFluids(FluidStack[] stacks) {
+        if (stacks.length == 0) {
+            return "(nothing)";
+        }
+        final List<String> ids = new ArrayList<>();
+        for (FluidStack stack : stacks) {
+            ids.add(String.valueOf(BuiltInRegistries.FLUID.getKey(stack.getFluid())));
+        }
+        return ids.size() == 1 ? ids.get(0) : "any of " + ids;
+    }
+
+    private static String itemId(ItemStack stack) {
+        return String.valueOf(BuiltInRegistries.ITEM.getKey(stack.getItem()));
+    }
+
     private static int uses(CommandContext<CommandSourceStack> context, boolean output, String id) {
         final CommandSourceStack source = context.getSource();
         final Optional<Item> item = item(id.trim());

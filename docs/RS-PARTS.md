@@ -272,6 +272,38 @@ Note for anything public: these PNGs are GregTech's artwork, in a repository tha
 Rights Reserved to the author. They are fine as a private placeholder and should not outlive the
 replacement.
 
+### The multiblock rig, and one fix it produced
+
+An Implosion Compressor was built on the test server entirely from `setblock` (3x3x3
+`gtceu:solid_machine_casing` at x10-12, y100-102, z0-2; controller at 11 101 0 facing north; EV
+muffler at 11 102 1 facing up; maintenance hatch; EV energy input hatch fed by a `gtceu:creative_energy`
+placed *in front of* it, not beside it; RS Pattern Buffer as the item input and RS Output Bus as the
+item output, both reached by cables run from the existing network). Its recipe `4x gtceu:flint_dust +
+1x gtceu:industrial_tnt -> 3x minecraft:flint + 1x gtceu:dark_ash_dust` at 30 EU/t LV, 20 ticks was
+read with the new `recipematch recipe <id>`.
+
+**It formed with the RS Pattern Buffer as a part** (`isFormed: 1b`), and stayed formed with the RS
+Output Bus in it too. That much is established: GregTech accepts both as multiblock parts.
+
+**The recipe does not run**, and the cause is not these parts. Swapping the buffer for a plain
+`gtceu:ev_input_bus` holding the same 4 flint dust and 1 ITNT leaves the controller `IDLE` in exactly
+the same way, with the structure formed, 65536 EU in the hatch, `maintenanceProblems: 0b` and the
+muffler's outlet cleared. Whatever is wrong is in the rig or in driving a GT multiblock headlessly,
+not in the buffer. Unresolved.
+
+That hunt did turn up a real defect in this part, though. **A buffer must notify its aggregate
+handlers when a slot changes.** A multiblock subscribes its recipe logic to the tick through
+`RecipeHandlerList.subscribe`, and that subscription is driven by the handlers' own listeners, so a
+buffer that filled a slot silently would sit holding a perfectly good set of ingredients while the
+controller never looked again. `onSlotChanged` now calls `notifyListeners()` on both aggregate
+handlers, which is what GregTech's own buffer does. The first version called a controller method
+instead, which did nothing useful.
+
+Worth recording for the next attempt: `data merge block` into a machine's inventory does **not**
+fire the change notification either, so items placed that way will not wake a multiblock on their
+own. And a headless server gives no reason for an idle controller — the controller's own UI does, so
+this last check is better driven from a client.
+
 **Expected order of work:** generalise `RSNodeHolder` to take a node; the internal slot (item and
 fluid maps, `long` amounts, NBT) and its distinct recipe handlers, which is the bulk of it and is
 where GregTech's `InternalSlot.handleItemInternal` is the reference; then the machine that owns the
