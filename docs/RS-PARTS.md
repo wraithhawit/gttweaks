@@ -39,7 +39,7 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | `RSPatternBufferPartMachine` | registers and joins; patterns and recipe path unverified |
 | `RSPatternBufferProxyPartMachine`, `RSProxyRecipeHandlerList` | links, grows the buffer, refunds on unlink |
 | Crafting recipes | not started |
-| Own textures | not started; the models point at GregTech's AE2 overlays |
+| Textures | placeholder copies under this mod's namespace, awaiting RS-styled art |
 
 ### The fluid side
 
@@ -233,6 +233,10 @@ Requesting one netherite ingot from a Crafting Grid put **exactly 4 iron ingots 
 and the task then sat unfinished with nothing to complete it, which is the expected outcome with no
 multiblock attached. The task was cancelled from an autocrafting monitor.
 
+A later server restart showed the part still reporting `patterns held: 1` with the 4 iron ingots in
+slot 0, so the pattern inventory and the delivered ingredients both persist — picked up incidentally
+while installing the placeholder textures, not sought.
+
 That closes the two largest unknowns in one run: Refined Storage **publishes our patterns** — it
 believed it could make netherite because of one — and the **sink's `accept` delivers**, into the
 right slot, in the right amount. Everything from an autocrafting request down to a filled buffer slot
@@ -245,6 +249,28 @@ against a real recipe.
 **The pattern inventory has no UI**, which is why the command above exists. Right-clicking a buffer
 shows the bus base class's own inventory, not the 27 pattern slots, so without the command there is
 no way to get a pattern into the part at all. The command is a testing stand-in and not the widget.
+
+### Textures
+
+The eight parts have their own texture files at
+`assets/gttweaks/textures/block/overlay/rs/<machine name>.png`, and `RSMachines.overlay(...)` points
+each model at its own. They are **placeholders**: every one is a copy of the GregTech AE2 overlay for
+the part it mirrors, so an RS part currently looks like an ME part. RS-styled art is to come from
+LavaSurf.
+
+Copying the files rather than continuing to point at `gtceu:block/overlay/appeng/...` is the whole
+value of this step. Replacing one becomes dropping a new PNG on top of the same path — no code
+change, no registration change, nothing to rebuild but the resources. The stocking variants have
+their own copies for exactly that reason, even though today they are byte-identical to the input
+ones.
+
+Two of them are animated and carry a `.png.mcmeta` beside them: the pattern buffer and its proxy are
+16-frame 16x256 strips, at `frametime` 4 and 6 respectively with interpolation. A replacement for
+either has to keep the strip shape or ship its own `.mcmeta`, or it will render as one squashed frame.
+
+Note for anything public: these PNGs are GregTech's artwork, in a repository that is otherwise All
+Rights Reserved to the author. They are fine as a private placeholder and should not outlive the
+replacement.
 
 **Expected order of work:** generalise `RSNodeHolder` to take a node; the internal slot (item and
 fluid maps, `long` amounts, NBT) and its distinct recipe handlers, which is the bulk of it and is

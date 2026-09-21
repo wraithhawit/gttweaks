@@ -1,11 +1,11 @@
 package com.wraithhawit.gttweaks.rs;
 
-import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 
+import com.wraithhawit.gttweaks.GTTweaks;
 import com.wraithhawit.gttweaks.rs.machine.RSInputBusPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSInputHatchPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSOutputBusPartMachine;
@@ -16,6 +16,7 @@ import com.wraithhawit.gttweaks.rs.machine.RSStockingBusPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSStockingHatchPartMachine;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 
 import java.util.Objects;
 
@@ -42,7 +43,7 @@ public final class RSMachines {
             .tier(GTValues.EV)
             .rotationState(RotationState.ALL)
             .abilities(PartAbility.IMPORT_ITEMS)
-            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_input_bus"))
+            .colorOverlayTieredHullModel(overlay("rs_input_bus"))
             .tooltips(
                     Component.translatable("gtceu.machine.item_bus.import.tooltip"),
                     Component.translatable("gttweaks.machine.rs.item_import.tooltip"),
@@ -55,7 +56,7 @@ public final class RSMachines {
             .tier(GTValues.EV)
             .rotationState(RotationState.ALL)
             .abilities(PartAbility.EXPORT_ITEMS)
-            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_output_bus"))
+            .colorOverlayTieredHullModel(overlay("rs_output_bus"))
             .tooltips(
                     Component.translatable("gtceu.machine.item_bus.export.tooltip"),
                     Component.translatable("gttweaks.machine.rs.item_export.tooltip"),
@@ -68,7 +69,7 @@ public final class RSMachines {
             .tier(GTValues.EV)
             .rotationState(RotationState.ALL)
             .abilities(PartAbility.IMPORT_FLUIDS)
-            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_input_hatch"))
+            .colorOverlayTieredHullModel(overlay("rs_input_hatch"))
             .tooltips(
                     Component.translatable("gtceu.machine.fluid_hatch.import.tooltip"),
                     Component.translatable("gttweaks.machine.rs.fluid_import.tooltip"),
@@ -81,7 +82,7 @@ public final class RSMachines {
             .tier(GTValues.EV)
             .rotationState(RotationState.ALL)
             .abilities(PartAbility.EXPORT_FLUIDS)
-            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_output_hatch"))
+            .colorOverlayTieredHullModel(overlay("rs_output_hatch"))
             .tooltips(
                     Component.translatable("gtceu.machine.fluid_hatch.export.tooltip"),
                     Component.translatable("gttweaks.machine.rs.fluid_export.tooltip"),
@@ -94,7 +95,7 @@ public final class RSMachines {
             .tier(GTValues.EV)
             .rotationState(RotationState.ALL)
             .abilities(PartAbility.IMPORT_ITEMS)
-            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_input_bus"))
+            .colorOverlayTieredHullModel(overlay("rs_stocking_bus"))
             .tooltips(
                     Component.translatable("gtceu.machine.item_bus.import.tooltip"),
                     Component.translatable("gttweaks.machine.rs.item_stocking.tooltip"),
@@ -107,7 +108,7 @@ public final class RSMachines {
             .tier(GTValues.EV)
             .rotationState(RotationState.ALL)
             .abilities(PartAbility.IMPORT_FLUIDS)
-            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_input_hatch"))
+            .colorOverlayTieredHullModel(overlay("rs_stocking_hatch"))
             .tooltips(
                     Component.translatable("gtceu.machine.fluid_hatch.import.tooltip"),
                     Component.translatable("gttweaks.machine.rs.fluid_stocking.tooltip"),
@@ -120,7 +121,7 @@ public final class RSMachines {
             .tier(GTValues.EV)
             .rotationState(RotationState.ALL)
             .abilities(PartAbility.IMPORT_ITEMS, PartAbility.IMPORT_FLUIDS)
-            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_buffer_hatch"))
+            .colorOverlayTieredHullModel(overlay("rs_pattern_buffer"))
             .tooltips(
                     Component.translatable("gttweaks.machine.rs.pattern_buffer.tooltip.0"),
                     Component.translatable("gttweaks.machine.rs.pattern_buffer.tooltip.1"),
@@ -133,12 +134,26 @@ public final class RSMachines {
             .tier(GTValues.EV)
             .rotationState(RotationState.ALL)
             .abilities(PartAbility.IMPORT_ITEMS, PartAbility.IMPORT_FLUIDS)
-            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_buffer_hatch_proxy"))
+            .colorOverlayTieredHullModel(overlay("rs_pattern_buffer_proxy"))
             .tooltips(
                     Component.translatable("gttweaks.machine.rs.pattern_buffer_proxy.tooltip.0"),
                     Component.translatable("gttweaks.machine.rs.pattern_buffer_proxy.tooltip.1"),
                     Component.translatable("gtceu.part_sharing.enabled"))
             .register();
+
+    /**
+     * The overlay texture for one of these parts.
+     *
+     * <p>Placeholders, and knowingly so: each file is a copy of the GregTech AE2 overlay for the
+     * part this one mirrors, so the RS parts currently look like ME parts. They live under this
+     * mod's own namespace rather than pointing at GregTech's paths, which is the point — replacing
+     * one is dropping a new PNG on top of the same file, with no code change and no rebuild of
+     * anything but the resources. The stocking variants have their own copies for that reason,
+     * even though they are byte-identical to the input ones today.
+     */
+    private static ResourceLocation overlay(String name) {
+        return ResourceLocation.fromNamespaceAndPath(GTTweaks.MOD_ID, "block/overlay/rs/" + name);
+    }
 
     private static boolean built;
 
