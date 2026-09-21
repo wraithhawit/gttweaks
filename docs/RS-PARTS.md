@@ -6,23 +6,50 @@ stocking variants, and the pattern buffer with its proxy.
 
 ## Status
 
-The RS Input Bus works end to end on the test server (0.30.0, md5 a135f064): it registers, joins a
-network through the capability, stocks its configured slots, hands back what it should not hold,
-keeps its configuration and stock across a restart, and returns its stock when broken. It is not
-usable in normal play yet — there is no way to configure a slot without `/gttweaks rspart`, and no
-recipe to craft one.
+Four of the eight parts work end to end on the test server (0.30.0, md5 1aa035ec): the input and
+output buses and both fluid hatches. Each one registers, joins a network through the capability,
+moves what it should in the direction it should, keeps its configuration and stock across a server
+restart, and rejoins the network afterwards. Checked on 2026-09-20 with exact counts on both sides:
+the input bus took 32 cobblestone from a 64-stack and left 32, the output bus handed over 17
+diamonds and 5 gold ingots and emptied, the output hatch pushed 16000 mB of water, and the input
+hatch pulled back exactly its configured 5000.
+
+None of them is usable in normal play yet — the input parts cannot be configured without
+`/gttweaks rspart`, and nothing here has a crafting recipe.
 
 | Piece | State |
 |---|---|
 | `RSIntegration`, `GTTweaksRegistrate`, `GTTweaksGTAddon` | working |
-| `RSMachines` (RS Input Bus only), `RSCapabilities` | working |
+| `RSMachines`, `RSCapabilities` | working, four parts registered |
 | `RSNodeHolder`, `RSPartActor`, `RSNetworkPart` | working |
 | `RSConfiguredSlot`, `RSConfiguredItemSlot`, `RSConfiguredItemList` | working |
-| `RSBusPartMachine`, `RSInputBusPartMachine` | working |
+| `RSConfiguredFluidSlot`, `RSConfiguredFluidList`, `RSFluids` | working |
+| `RSBusPartMachine`, `RSInputBusPartMachine`, `RSOutputBusPartMachine` | working |
+| `RSHatchPartMachine`, `RSInputHatchPartMachine`, `RSOutputHatchPartMachine` | working |
 | `RSPartCommand` (`/gttweaks rspart`) | working; stands in for the UI |
-| Config UI (ModularUI widget over RS resources) | not started — the bus cannot be configured yet |
-| Output bus, hatches, stocking variants, pattern buffer | not started |
-| Own textures | not started; the model points at GregTech's AE2 overlay |
+| Config UI (ModularUI widget over RS resources) | not started — the input parts cannot be configured yet |
+| Stocking bus, stocking hatch, pattern buffer and proxy | not started |
+| Crafting recipes | not started |
+| Own textures | not started; the models point at GregTech's AE2 overlays |
+
+### The fluid side
+
+The fluid parts are the item parts' shape, with two differences worth knowing before reading them.
+
+`RSConfiguredSlot` turned out to be resource-agnostic already — it holds a `ResourceAmount` and
+never asks what kind — so the fluid slots reuse it unchanged. But `CustomFluidTank` is a *class*
+where `IItemHandlerModifiable` is an interface, so `RSConfiguredFluidSlot` cannot extend both it and
+`RSConfiguredSlot`; it holds the configured slot as a private inner class instead. That asymmetry is
+the only reason the two sides do not look identical.
+
+`CustomFluidTank` also brings its own `INBTSerializable`, which would save the superclass's
+permanently-empty tank over the real stock and wipe the part on reload. `RSConfiguredFluidSlot`
+overrides `serializeNBT`/`deserializeNBT` to write the configured slot instead. Confirmed by
+restarting the server with a stocked hatch: config and stock both came back.
+
+Refined Storage gives `ItemResource` an `ofItemStack`/`toItemStack` pair and gives `FluidResource`
+neither, so `RSFluids` is that missing pair. Going back to a `FluidStack` needs
+`BuiltInRegistries.FLUID.wrapAsHolder(...)`; `Fluid.builtInRegistryHolder()` is deprecated.
 
 ## How the two sides join
 
@@ -132,47 +159,77 @@ one place the RS package layout does not read the way you would guess.
 ## Testing without a client
 
 `/gttweaks rspart <pos>` prints what the node believes — joined, active, how many resource types the
-network holds — and the configured slots. `/gttweaks rspart <pos> config <slot> <item> <amount>` and
-`… config <slot> clear` set a slot, standing in for the UI.
+network holds — and the configured slots. `/gttweaks rspart <pos> config <slot> item <item> <amount>`,
+`… config <slot> fluid <fluid id> <amount>` and `… config <slot> clear` set a slot, standing in for
+the UI. Items and fluids are separate subcommands because there is no vanilla fluid argument to pair
+with `ItemArgument`; a fluid is named by id and looked up in the registry.
 
 A network that can be built entirely from commands, which is what the checks above used:
 
 ```
+forceload add -16 -16 32 32
 setblock 0 100 0 refinedstorage:creative_controller
 setblock 1 100 0 refinedstorage:cable
-setblock 2 100 0 gttweaks:rs_input_bus
+setblock 2 100 0 refinedstorage:cable
+setblock 3 100 0 refinedstorage:cable
 setblock 1 101 0 refinedstorage:external_storage[direction=up]
 setblock 1 102 0 minecraft:chest
+setblock 3 100 1 refinedstorage:creative_fluid_storage_block
+setblock 2 101 0 gttweaks:rs_input_bus
+setblock 3 101 0 gttweaks:rs_output_bus
+setblock 2 99 0 gttweaks:rs_input_hatch
+setblock 3 99 0 gttweaks:rs_output_hatch
 item replace block 1 102 0 container.0 with minecraft:cobblestone 64
 ```
 
 The external storage makes the chest's contents the network's contents, so a `/data get block` on the
-chest is a direct readout of what the bus took or gave back. Two gotchas: the property is `direction`
-(not `facing`), and with no players online the chunk does not tick, so `forceload add` the area or
-nothing moves.
+chest is a direct readout of what a bus took or gave back. Three gotchas: the property is `direction`
+(not `facing`); with no players online the chunk does not tick, so `forceload add` the area or
+nothing moves; and **a network with no fluid storage silently refuses every fluid insert**, which
+looks exactly like a broken output hatch. The creative fluid storage block above is what makes the
+fluid half testable at all — without it the hatch correctly holds its contents and nothing appears to
+happen.
+
+The output parts have no configuration to set, so they are driven by writing into the inventory the
+multiblock would have filled:
+
+```
+data merge block 3 101 0 {inventory:{storage:{Size:16,Items:[{Slot:0b,id:"minecraft:diamond",count:17}]}}}
+data merge block 3 99 0 {tank:{storages:[{Fluid:{id:"minecraft:water",amount:16000}},{},{},{}]}}
+```
+
+Both are read back by the live trait, not just stored as text, so `/data get block` a second later
+shows the part emptied and the chest or fluid storage holding what it had.
 
 ## Still unchecked
 
-- `ItemBusPartMachine`'s default UI rendering a 16-slot extract-only handler — nothing here has run in
-  a client.
-
-Settled, and not a risk: GregTech does not drop a bus's contents on break. `MetaMachine.modifyDrops`
-is empty, neither `ItemBusPartMachine` nor `TieredIOPartMachine` overrides it, and
-`MetaMachineBlock.onRemove` only calls `onMachineDestroyed` and removes the block entity. So the
-flush to the network cannot double up with a drop.
+- Anything in a client. Nothing here has been opened in a GUI, so `ItemBusPartMachine`'s default UI
+  rendering a 16-slot extract-only handler, and `FluidHatchPartMachine`'s rendering a tank whose
+  capacity is `Integer.MAX_VALUE`, are both unverified.
 - Whether a real multiblock draws from the slots, in simulation and in execution. The recipe path is
-  GregTech's own and the handler is shaped like the ME bus's, but it has not been demonstrated.
-- What happens when the network refuses the stock a broken part is handing back. It is kept and then
-  lost with the block. **Dropping it into the world is not the fix** — a slot's amount is a `long` and
-  a bus can legitimately hold hundreds of thousands of items, which as entities would be a far worse
-  problem than the loss. Returning it to the network is the right behaviour; the gap is only the
-  offline-or-full case, and the answer there is probably to carry the stock on the dropped machine
-  item through `collectImplicitComponents`/`applyImplicitComponents`, so it comes back when the part
-  is placed again.
+  GregTech's own and the handlers are shaped like the ME parts', but it has not been demonstrated.
+- What happens when the network refuses the stock a broken input part is handing back. It is kept and
+  then lost with the block. **Dropping it into the world is not the fix** — a slot's amount is a
+  `long` and a part can legitimately hold hundreds of thousands of items, which as entities would be
+  a far worse problem than the loss. Returning it to the network is the right behaviour; the gap is
+  only the offline-or-full case, and the answer there is probably to carry the stock on the dropped
+  machine item through `collectImplicitComponents`/`applyImplicitComponents`, so it comes back when
+  the part is placed again.
+
+Settled, and not a risk: GregTech does not drop a part's contents on break. `MetaMachine.modifyDrops`
+is empty, neither `ItemBusPartMachine` nor `FluidHatchPartMachine` nor `TieredIOPartMachine`
+overrides it, and `MetaMachineBlock.onRemove` only calls `onMachineDestroyed` and removes the block
+entity. So the flush to the network cannot double up with a drop.
 
 ## Next
 
-1. The config widget (ModularUI, over `ResourceAmount`). Until it exists the bus can only be told what
-   to stock by command, so it is not usable in play.
-2. A crafting recipe and textures of its own.
-3. Output bus, then the fluid hatches on the same slot model, then stocking, then the pattern buffer.
+1. The stocking bus and stocking hatch. These are not another copy of the input parts: GregTech's
+   stocking parts expose the network's contents to recipe *lookup* without holding them, and pull
+   only what a recipe actually consumes, which is a change to what the handler reports rather than
+   to how the sync moves things.
+2. The pattern buffer and its proxy.
+3. The config widget (ModularUI, over `ResourceAmount`). Until it exists the input parts can only be
+   told what to stock by command, so they are not usable in play. One widget serves the input bus,
+   the input hatch and both stocking parts, which is why it is worth doing after them rather than
+   between them.
+4. Crafting recipes and textures of their own.

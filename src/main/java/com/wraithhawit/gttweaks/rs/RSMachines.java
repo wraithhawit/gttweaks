@@ -7,6 +7,9 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 
 import com.wraithhawit.gttweaks.rs.machine.RSInputBusPartMachine;
+import com.wraithhawit.gttweaks.rs.machine.RSInputHatchPartMachine;
+import com.wraithhawit.gttweaks.rs.machine.RSOutputBusPartMachine;
+import com.wraithhawit.gttweaks.rs.machine.RSOutputHatchPartMachine;
 
 import net.minecraft.network.chat.Component;
 
@@ -42,6 +45,45 @@ public final class RSMachines {
                     Component.translatable("gtceu.part_sharing.enabled"))
             .register();
 
+    public static final MachineDefinition RS_OUTPUT_BUS = GTTweaksRegistrate.REGISTRATE
+            .machine("rs_output_bus", RSOutputBusPartMachine::new)
+            .langValue("RS Output Bus")
+            .tier(GTValues.EV)
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.EXPORT_ITEMS)
+            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_output_bus"))
+            .tooltips(
+                    Component.translatable("gtceu.machine.item_bus.export.tooltip"),
+                    Component.translatable("gttweaks.machine.rs.item_export.tooltip"),
+                    Component.translatable("gtceu.part_sharing.enabled"))
+            .register();
+
+    public static final MachineDefinition RS_INPUT_HATCH = GTTweaksRegistrate.REGISTRATE
+            .machine("rs_input_hatch", RSInputHatchPartMachine::new)
+            .langValue("RS Input Hatch")
+            .tier(GTValues.EV)
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.IMPORT_FLUIDS)
+            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_input_hatch"))
+            .tooltips(
+                    Component.translatable("gtceu.machine.fluid_hatch.import.tooltip"),
+                    Component.translatable("gttweaks.machine.rs.fluid_import.tooltip"),
+                    Component.translatable("gtceu.part_sharing.enabled"))
+            .register();
+
+    public static final MachineDefinition RS_OUTPUT_HATCH = GTTweaksRegistrate.REGISTRATE
+            .machine("rs_output_hatch", RSOutputHatchPartMachine::new)
+            .langValue("RS Output Hatch")
+            .tier(GTValues.EV)
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.EXPORT_FLUIDS)
+            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_output_hatch"))
+            .tooltips(
+                    Component.translatable("gtceu.machine.fluid_hatch.export.tooltip"),
+                    Component.translatable("gttweaks.machine.rs.fluid_export.tooltip"),
+                    Component.translatable("gtceu.part_sharing.enabled"))
+            .register();
+
     private static boolean built;
 
     private RSMachines() {
@@ -69,5 +111,8 @@ public final class RSMachines {
         built = true;
         // Touching the class is the registration; naming a field here is what forces it.
         Objects.requireNonNull(RS_INPUT_BUS);
+        Objects.requireNonNull(RS_OUTPUT_BUS);
+        Objects.requireNonNull(RS_INPUT_HATCH);
+        Objects.requireNonNull(RS_OUTPUT_HATCH);
     }
 }

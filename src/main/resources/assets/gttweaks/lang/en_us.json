@@ -6,7 +6,13 @@
   "gttweaks.configuration.previewZoomSpeed.tooltip": "Scroll-wheel zoom speed in multiblock previews, as a multiple of ModularUI's step (1/12 block per notch). 1.0 is ModularUI's speed; the default is 10.0.",
 
   "block.gttweaks.rs_input_bus": "RS Input Bus",
+  "block.gttweaks.rs_output_bus": "RS Output Bus",
+  "block.gttweaks.rs_input_hatch": "RS Input Hatch",
+  "block.gttweaks.rs_output_hatch": "RS Output Hatch",
   "gttweaks.machine.rs.item_import.tooltip": "§bKeeps the configured items stocked from a Refined Storage network",
+  "gttweaks.machine.rs.item_export.tooltip": "§bSends the multiblock's item results to a Refined Storage network",
+  "gttweaks.machine.rs.fluid_import.tooltip": "§bKeeps the configured fluids stocked from a Refined Storage network",
+  "gttweaks.machine.rs.fluid_export.tooltip": "§bSends the multiblock's fluid results to a Refined Storage network",
   "gttweaks.gui.rs_network.online": "§aConnected to a Refined Storage network",
   "gttweaks.gui.rs_network.offline": "§cNot connected to a Refined Storage network"
 }
