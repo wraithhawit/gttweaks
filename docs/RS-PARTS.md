@@ -124,6 +124,54 @@ was fully online with no intervention. The network takes a moment to initialise 
 world load, and a part queried inside that window looks broken when it is not — worth knowing before
 chasing it.
 
+### The pattern buffer, as designed
+
+Not built yet. This is the shape it should take, established by reading both sides; nothing below
+has been run.
+
+**What GregTech's does.** `MEPatternBufferPartMachine` is an AE2 `ICraftingProvider`: it holds 27
+encoded patterns, advertises them to the grid through `getAvailablePatterns()`, and when the grid
+decides to craft one it calls `pushPattern(details, inputHolder)`. The buffer drops those ingredients
+into one of nine `InternalSlot`s, each an item map and a fluid map keyed by stack with `long` amounts.
+Each slot is then exposed to the multiblock as a **distinct** recipe handler (`isDistinct = true`), so
+GregTech's recipe logic treats the nine as nine separate parallel input sets rather than one pooled
+inventory — that distinctness is the whole point of the part. `MEPatternBufferProxyPartMachine` holds
+no inventory of its own; it forwards to a buffer at a remembered position, which is how one buffer
+feeds several multiblock structures.
+
+**What the Refined Storage equivalent needs**, all of it public and `@API(status = STABLE)`:
+
+- `PatternProviderNetworkNode(long energyUsage, int patterns)` — concrete and constructible, extends
+  `SimpleNetworkNode`, so `RSNodeHolder` generalises to it by taking the node instead of building a
+  `SimpleNetworkNode` itself.
+- `node.setPattern(int, Pattern)` to publish each pattern, and
+  `RefinedStorageApi.INSTANCE.getPattern(ItemStack, Level)` → `Optional<Pattern>` to turn a
+  player-encoded pattern item into one. `PatternProviderItem.isValid(stack, level)` is the matching
+  guard for the pattern inventory's filter.
+- `node.setSink(PatternProviderExternalPatternSink)` — **we** supply the sink, and its
+  `accept(Collection<ResourceAmount>, Action)` is where the ingredients arrive.
+- `node.doWork()` from the part's tick, the way `refreshActive()` already runs there.
+
+**The RS side is the easier of the two.** AE2 hands over a `KeyCounter[]` and expects the callee to
+drive `pushInputsToExternalInventory`; RS hands over a `Collection<ResourceAmount>`, which is already
+the shape an internal slot wants — split items from fluids by resource type and add. The `Action`
+parameter carries the same simulate/execute distinction the stocking parts needed, and the same rule
+applies: a simulated accept must not keep anything.
+
+There is a second, quite different route worth naming so it is not rediscovered later.
+`RefinedStorageApi.INSTANCE.addPatternProviderExternalPatternSinkFactory(...)` lets a mod register a
+sink keyed by position and direction, so an ordinary RS **Autocrafter** placed against the part would
+deliver into it with no pattern inventory of our own. That is less code and more idiomatic RS, but it
+is not the same machine: the patterns would live in the autocrafter rather than in the buffer, one
+buffer could not hold 27 of them, and it would not mirror the part this is meant to mirror. Worth
+revisiting only if holding patterns ourselves turns out to be the expensive part.
+
+**Expected order of work:** generalise `RSNodeHolder` to take a node; the internal slot (item and
+fluid maps, `long` amounts, NBT) and its distinct recipe handlers, which is the bulk of it and is
+where GregTech's `InternalSlot.handleItemInternal` is the reference; then the machine that owns the
+pattern inventory, the node and the sink; then registration and the capability; then the proxy, which
+needs none of the above beyond a remembered position and a forward.
+
 ## How the two sides join
 
 **GregTech.** `@GTAddon("gttweaks")` on a class implementing `IGTAddon` is all it takes to be an

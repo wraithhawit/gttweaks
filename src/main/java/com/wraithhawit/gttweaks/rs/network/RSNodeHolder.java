@@ -40,7 +40,23 @@ public class RSNodeHolder extends MachineTrait {
      */
     private static final long ENERGY_USAGE = 0L;
 
-    private final SimpleNetworkNode node = new SimpleNetworkNode(ENERGY_USAGE);
+    private final SimpleNetworkNode node;
+
+    public RSNodeHolder() {
+        this(new SimpleNetworkNode(ENERGY_USAGE));
+    }
+
+    /**
+     * For a part whose node is more than a plain member of the network.
+     *
+     * <p>The pattern buffer's {@code PatternProviderNetworkNode} extends {@link SimpleNetworkNode}
+     * and additionally holds patterns and receives their ingredients, but everything this class does
+     * for a node — deferring the join, leaving exactly once, tracking the network's power — is the
+     * same either way. So the node is passed in rather than this class being subclassed for it.
+     */
+    public RSNodeHolder(SimpleNetworkNode node) {
+        this.node = node;
+    }
 
     @Nullable
     private NetworkNodeContainerProvider containerProvider;
