@@ -221,8 +221,30 @@ gold ingots were pushed into the proxy's slot and the proxy broken: the buffer w
 and 1 slot, and the chest's gold went 5 to **12**, so the dropped slot was refunded exactly and not
 lost. 0 `ERROR` lines after startup, no `removed entries`, no gttweaks frame.
 
-Unverified here for the same reason as the buffer: no real pattern, and no multiblock has drawn
-through a proxy, so the delegation in `handleRecipe` has never actually run.
+Unverified here: no multiblock has drawn through a proxy, so the delegation in `handleRecipe` has
+never actually run.
+
+### Confirmed in a client: the network really does craft into the buffer
+
+**2026-09-21, confirmed by the user** on the test server (0.30.0, md5 149d6093), from an ATM10(3)
+client. A processing pattern of `4 iron ingot -> 1 netherite ingot` was encoded at a Pattern Grid and
+loaded into the buffer with `/gttweaks rspart <pos> pattern 0`. The part reported `patterns held: 1`.
+Requesting one netherite ingot from a Crafting Grid put **exactly 4 iron ingots into buffer slot 0**,
+and the task then sat unfinished with nothing to complete it, which is the expected outcome with no
+multiblock attached. The task was cancelled from an autocrafting monitor.
+
+That closes the two largest unknowns in one run: Refined Storage **publishes our patterns** — it
+believed it could make netherite because of one — and the **sink's `accept` delivers**, into the
+right slot, in the right amount. Everything from an autocrafting request down to a filled buffer slot
+now has evidence behind it.
+
+What is still unproven is the last link only: **no multiblock has ever consumed from a slot.** The
+distinct matching in `RSBufferRecipeHandlerList`, and the proxy's delegation to it, have never run
+against a real recipe.
+
+**The pattern inventory has no UI**, which is why the command above exists. Right-clicking a buffer
+shows the bus base class's own inventory, not the 27 pattern slots, so without the command there is
+no way to get a pattern into the part at all. The command is a testing stand-in and not the widget.
 
 **Expected order of work:** generalise `RSNodeHolder` to take a node; the internal slot (item and
 fluid maps, `long` amounts, NBT) and its distinct recipe handlers, which is the bulk of it and is
