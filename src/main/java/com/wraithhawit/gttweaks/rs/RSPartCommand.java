@@ -1,5 +1,7 @@
 package com.wraithhawit.gttweaks.rs;
 
+import java.util.List;
+
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 
 import com.mojang.brigadier.arguments.BoolArgumentType;
@@ -15,8 +17,10 @@ import com.refinedmods.refinedstorage.common.support.resource.FluidResource;
 import com.refinedmods.refinedstorage.common.support.resource.ItemResource;
 
 import com.wraithhawit.gttweaks.rs.machine.RSInputBusPartMachine;
+import com.wraithhawit.gttweaks.rs.machine.RSPatternBufferPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSInputHatchPartMachine;
 import com.wraithhawit.gttweaks.rs.network.RSNetworkPart;
+import com.wraithhawit.gttweaks.rs.pattern.RSBufferSlot;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredFluidSlot;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredItemSlot;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredSlot;
@@ -97,10 +101,29 @@ public final class RSPartCommand {
                                                 IntegerArgumentType.getInteger(context, "slot"),
                                                 IntegerArgumentType.getInteger(context, "amount"),
                                                 BoolArgumentType.getBool(context, "simulate"))))));
+        var buffer = Commands.literal("buffer")
+                .then(Commands.argument("slot", IntegerArgumentType.integer(0))
+                        .then(Commands.literal("item")
+                                .then(Commands.argument("item", ItemArgument.item(event.getBuildContext()))
+                                        .then(Commands.argument("amount", LongArgumentType.longArg(1))
+                                                .executes(context -> bufferPush(context,
+                                                        IntegerArgumentType.getInteger(context, "slot"),
+                                                        new ResourceAmount(ItemResource.ofItemStack(
+                                                                ItemArgument.getItem(context, "item")
+                                                                        .createItemStack(1, false)),
+                                                                LongArgumentType.getLong(context, "amount")))))))
+                        .then(Commands.literal("fluid")
+                                .then(Commands.argument("fluid", ResourceLocationArgument.id())
+                                        .then(Commands.argument("amount", LongArgumentType.longArg(1))
+                                                .executes(context -> bufferPushFluid(context,
+                                                        IntegerArgumentType.getInteger(context, "slot"),
+                                                        ResourceLocationArgument.getId(context, "fluid"),
+                                                        LongArgumentType.getLong(context, "amount")))))));
         var pos = Commands.argument("pos", BlockPosArgument.blockPos())
                 .executes(RSPartCommand::info)
                 .then(Commands.literal("config").then(slot))
-                .then(extract);
+                .then(extract)
+                .then(buffer);
         event.getDispatcher().register(Commands.literal("gttweaks")
                 .requires(source -> source.hasPermission(2))
                 .then(Commands.literal("rspart").then(pos)));
@@ -121,6 +144,16 @@ public final class RSPartCommand {
                 + ", active: " + part.getNodeHolder().getNode().isActive());
         say(source, "network storage: " + (storage == null ? "unreachable"
                 : storage.getAll().size() + " resource types"));
+        if (machine instanceof RSPatternBufferPartMachine buffer) {
+            say(source, "patterns held: " + patternCount(buffer));
+            List<RSBufferSlot> bufferSlots = buffer.getSlots();
+            for (int i = 0; i < bufferSlots.size(); i++) {
+                RSBufferSlot bufferSlot = bufferSlots.get(i);
+                say(source, "  buffer slot " + i + (bufferSlot.isEmpty() ? ": empty"
+                        : ": " + bufferSlot.getItems() + " " + bufferSlot.getFluids()));
+            }
+            return 1;
+        }
         RSConfiguredSlot[] slots = configuredSlots(machine);
         if (slots == null) {
             say(source, "no configured slots on this part");
@@ -233,6 +266,56 @@ public final class RSPartCommand {
         }
         say(source, "that part has no configured slots");
         return 0;
+    }
+
+    private static int patternCount(RSPatternBufferPartMachine buffer) {
+        int held = 0;
+        for (int i = 0; i < buffer.getPatternInventory().getSlots(); i++) {
+            if (!buffer.getPatternInventory().getStackInSlot(i).isEmpty()) {
+                held++;
+            }
+        }
+        return held;
+    }
+
+    /**
+     * Puts a resource straight into a pattern buffer slot, as a pattern's delivery would.
+     *
+     * <p>Stands in for a Refined Storage autocrafting task, which cannot be raised without an
+     * encoded pattern item and a player to encode it. This reaches the same {@code RSBufferSlot} the
+     * sink fills, so what it exercises is the holding, the refund and the persistence — not the
+     * pattern publishing or the task stepping, which remain unverified.
+     */
+    private static int bufferPush(CommandContext<CommandSourceStack> context, int slot,
+            ResourceAmount amount) throws CommandSyntaxException {
+        MetaMachine machine = part(context);
+        if (machine == null) {
+            return 0;
+        }
+        CommandSourceStack source = context.getSource();
+        if (!(machine instanceof RSPatternBufferPartMachine buffer)) {
+            say(source, "that part is not a pattern buffer");
+            return 0;
+        }
+        List<RSBufferSlot> slots = buffer.getSlots();
+        if (slot >= slots.size()) {
+            say(source, "slot out of range, this part has " + slots.size());
+            return 0;
+        }
+        boolean held = slots.get(slot).add(amount);
+        say(source, held ? "pushed " + amount.amount() + " into buffer slot " + slot
+                : "buffer slot " + slot + " refused that resource");
+        return held ? 1 : 0;
+    }
+
+    private static int bufferPushFluid(CommandContext<CommandSourceStack> context, int slot,
+            ResourceLocation id, long amount) throws CommandSyntaxException {
+        Fluid found = BuiltInRegistries.FLUID.getOptional(id).orElse(null);
+        if (found == null) {
+            say(context.getSource(), "unknown fluid '" + id + "'");
+            return 0;
+        }
+        return bufferPush(context, slot, new ResourceAmount(new FluidResource(found), amount));
     }
 
     @Nullable

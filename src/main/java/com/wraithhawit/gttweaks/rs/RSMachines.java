@@ -10,6 +10,7 @@ import com.wraithhawit.gttweaks.rs.machine.RSInputBusPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSInputHatchPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSOutputBusPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSOutputHatchPartMachine;
+import com.wraithhawit.gttweaks.rs.machine.RSPatternBufferPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSStockingBusPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSStockingHatchPartMachine;
 
@@ -109,6 +110,19 @@ public final class RSMachines {
             .tooltips(
                     Component.translatable("gtceu.machine.fluid_hatch.import.tooltip"),
                     Component.translatable("gttweaks.machine.rs.fluid_stocking.tooltip"),
+                    Component.translatable("gtceu.part_sharing.enabled"))
+            .register();
+
+    public static final MachineDefinition RS_PATTERN_BUFFER = GTTweaksRegistrate.REGISTRATE
+            .machine("rs_pattern_buffer", RSPatternBufferPartMachine::new)
+            .langValue("RS Pattern Buffer")
+            .tier(GTValues.EV)
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.IMPORT_ITEMS, PartAbility.IMPORT_FLUIDS)
+            .colorOverlayTieredHullModel(GTCEu.id("block/overlay/appeng/me_buffer_hatch"))
+            .tooltips(
+                    Component.translatable("gttweaks.machine.rs.pattern_buffer.tooltip.0"),
+                    Component.translatable("gttweaks.machine.rs.pattern_buffer.tooltip.1"),
                     Component.translatable("gtceu.part_sharing.enabled"))
             .register();
 

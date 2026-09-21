@@ -25,7 +25,7 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | Piece | State |
 |---|---|
 | `RSIntegration`, `GTTweaksRegistrate`, `GTTweaksGTAddon` | working |
-| `RSMachines`, `RSCapabilities` | working, six parts registered |
+| `RSMachines`, `RSCapabilities` | working, seven parts registered |
 | `RSNodeHolder`, `RSPartActor`, `RSNetworkPart` | working |
 | `RSConfiguredSlot`, `RSConfiguredItemSlot`, `RSConfiguredItemList` | working |
 | `RSConfiguredFluidSlot`, `RSConfiguredFluidList`, `RSFluids` | working |
@@ -35,7 +35,9 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | Config UI (ModularUI widget over RS resources) | not started — the input parts cannot be configured yet |
 | `RSStockingItemSlot`, `RSStockingFluidSlot` | working |
 | `RSStockingBusPartMachine`, `RSStockingHatchPartMachine` | working |
-| Pattern buffer and proxy | not started |
+| `RSBufferSlot` and its recipe handlers | working; holds, persists and refunds |
+| `RSPatternBufferPartMachine` | registers and joins; patterns and recipe path unverified |
+| Pattern buffer proxy | not started |
 | Crafting recipes | not started |
 | Own textures | not started; the models point at GregTech's AE2 overlays |
 
@@ -124,10 +126,11 @@ was fully online with no intervention. The network takes a moment to initialise 
 world load, and a part queried inside that window looks broken when it is not — worth knowing before
 chasing it.
 
-### The pattern buffer, as designed
+### The pattern buffer
 
-Not built yet. This is the shape it should take, established by reading both sides; nothing below
-has been run.
+Built, registered, and **partly verified**. It joins a network, holds and persists a slot's contents,
+and gives them back on break; it has never received a real pattern, and no multiblock has drawn from
+it. Read the status table above for the split.
 
 **What GregTech's does.** `MEPatternBufferPartMachine` is an AE2 `ICraftingProvider`: it holds 27
 encoded patterns, advertises them to the grid through `getAvailablePatterns()`, and when the grid
@@ -165,6 +168,28 @@ deliver into it with no pattern inventory of our own. That is less code and more
 is not the same machine: the patterns would live in the autocrafter rather than in the buffer, one
 buffer could not hold 27 of them, and it would not mirror the part this is meant to mirror. Worth
 revisiting only if holding patterns ourselves turns out to be the expensive part.
+
+**What is verified**, on the test server 2026-09-21 (0.30.0, md5 555fc41c). The part registers as a
+block and item, places, joins a Refined Storage network through the capability and reports
+`active: true`. A slot took 11 diamonds and 1234 mB of water together and reported both. Those
+contents survived a full server stop and start unchanged. Breaking the part while it held them gave
+the network back exactly 11 diamonds (chest 17 → 28) and exactly 1234 mB (network water 15000 →
+16234, measured with the input hatch as a measuring cup). 0 `ERROR` lines after startup, no
+`removed entries`, no gttweaks frame.
+
+Pushing was done with a new `/gttweaks rspart <pos> buffer <slot> item|fluid …`, which reaches the
+same `RSBufferSlot` the sink fills. It stands in for an autocrafting task, which cannot be raised
+headlessly — an encoded pattern item needs a player at a Pattern Grid. So the holding, the refund and
+the persistence are demonstrated; **the pattern publishing, the sink's own `accept` and the distinct
+recipe matching are not.**
+
+**A trap worth the whole section.** `@SaveField` on a `List<RSBufferSlot>` restored as *empty*: the
+part came back from a restart with no slots and refused every delivery with "this part has 0". An
+array of `INBTSerializable` round-trips through GregTech's save system and a `List` of them silently
+does not. GregTech persists `InternalSlot[]` and derives its live workers from it, which reads like
+style and is not — it is the only shape that survives. The slots here are now a persisted
+`RSBufferSlot[]` with the live list rebuilt from it on load. Found by a restart, not by the compiler,
+and it would have looked in game like a buffer that simply ignored the network.
 
 **Expected order of work:** generalise `RSNodeHolder` to take a node; the internal slot (item and
 fluid maps, `long` amounts, NBT) and its distinct recipe handlers, which is the bulk of it and is
@@ -363,7 +388,9 @@ entity. So the flush to the network cannot double up with a drop.
 
 ## Next
 
-1. The pattern buffer and its proxy — the last two of the eight.
+1. Finish the pattern buffer: get a real encoded pattern into it and prove a task delivers
+   through the sink, then prove a multiblock draws from a slot and that two slots stay distinct.
+   Then the proxy, the last of the eight.
 2. The config widget (ModularUI, over `ResourceAmount`). Until it exists the input parts can only be
    told what to stock by command, so they are not usable in play. One widget serves the input bus,
    the input hatch and both stocking parts, which is why it is worth doing after them rather than
