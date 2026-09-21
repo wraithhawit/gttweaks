@@ -6,16 +6,18 @@ stocking variants, and the pattern buffer with its proxy.
 
 ## Status
 
-Four of the eight parts work end to end on the test server (0.30.0, md5 1aa035ec): the input and
-output buses and both fluid hatches. Each one registers, joins a network through the capability,
-moves what it should in the direction it should, keeps its configuration and stock across a server
-restart, and rejoins the network afterwards. Checked on 2026-09-20 with exact counts on both sides:
+Six of the eight parts work end to end on the test server: the input and output buses, both fluid
+hatches, and both stocking variants. Each one registers, joins a network through the capability,
+moves what it should in the direction it should, and — for the four that hold stock — keeps its
+configuration across a server restart and rejoins the network afterwards.
+
+The first four were checked on 2026-09-20 (0.30.0, md5 1aa035ec) with exact counts on both sides:
 the input bus took 32 cobblestone from a 64-stack and left 32, the output bus handed over 17
 diamonds and 5 gold ingots and emptied, the output hatch pushed 16000 mB of water, and the input
 hatch pulled back exactly its configured 5000.
 
-Two more — the stocking bus and stocking hatch — are written, compile and are registered, but have
-**not been run at all**. Treat them as unverified until the checks under "Next" have been done.
+The two stocking parts were checked on 2026-09-21 (0.30.0, md5 cfa642075b6a63619ce0ca7f01f401ee);
+see "The stocking side" below for what was proven and how.
 
 None of the six is usable in normal play yet — the input parts cannot be configured without
 `/gttweaks rspart`, and nothing here has a crafting recipe.
@@ -31,8 +33,8 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | `RSHatchPartMachine`, `RSInputHatchPartMachine`, `RSOutputHatchPartMachine` | working |
 | `RSPartCommand` (`/gttweaks rspart`) | working; `config` stands in for the UI, `extract` drives the recipe path |
 | Config UI (ModularUI widget over RS resources) | not started — the input parts cannot be configured yet |
-| `RSStockingItemSlot`, `RSStockingFluidSlot` | written, compiles, NOT yet run |
-| `RSStockingBusPartMachine`, `RSStockingHatchPartMachine` | written, compiles, NOT yet run |
+| `RSStockingItemSlot`, `RSStockingFluidSlot` | working |
+| `RSStockingBusPartMachine`, `RSStockingHatchPartMachine` | working |
 | Pattern buffer and proxy | not started |
 | Crafting recipes | not started |
 | Own textures | not started; the models point at GregTech's AE2 overlays |
@@ -75,9 +77,39 @@ Both are read off RS 2.0.9's own sources, not inferred. `RSStockingBusPartMachin
 display more than about 2.1 billion of one resource, which no caller could draw in one go anyway —
 `extractItem` and `drain` both take an `int`.
 
-This is a source-level fix to a defect that was never observed in game, because the stocking parts
-have never been run. It removes one known reason for them to read empty; it is not evidence that
-they work.
+`MIRROR_REQUEST` was written from those sources before either part had ever been run. The mirrors
+do now report true amounts with it in place, but the pre-fix build was never run against this rig,
+so the empty-mirror failure above is still a reading of RS's code and not something observed here.
+
+**Checked on 2026-09-21** (0.30.0, md5 cfa642075b6a63619ce0ca7f01f401ee). Both parts joined the
+network and went active the moment they were placed. Then, for the bus, against a 64-stack of
+cobblestone in the chest behind the external storage:
+
+| Step | Mirror reports | Chest holds |
+|---|---|---|
+| configured `1 x cobblestone` | 64 | 64 |
+| `extract 0 16 true` → gave 16 | 64 | 64 |
+| `extract 0 16 false` → gave 16 | 48 | 48 |
+| block broken while mirroring 48 | — | 48 |
+
+So the configured amount is ignored and the network's own total is reported; a simulated extract
+answers the recipe without consuming anything; a real extract debits exactly once; and breaking a
+mirror credits the network nothing, which is the duplication case that matters most here.
+
+The hatch was checked the same way, with the verified **input hatch used as a measuring cup** —
+configure it for more water than exists and it pulls the network dry, so its stock is an independent
+readout of the network total that does not run any stocking code. (RS keeps storage contents in its
+own saved data, not the block entity, so `/data get block` on a fluid storage block returns only a
+storage id and cannot be used for this.) Network water measured 16000 mB, matching what the output
+hatch pushed on 2026-09-20. The mirror read 16000 against its configured 1; a simulated drain of
+1000 reported 1000 and left it at 16000; a real drain of 1000 took it to 15000, and an independent
+re-measure returned **exactly 15000**, so the simulation took nothing and the real drain debited
+once. Draining the network out from under the mirror dropped it to empty and returning the water
+restored it to 15000, so it tracks down as well as up. Breaking it while it mirrored 15000 left the
+network at 15000.
+
+Across the whole run: 0 `ERROR` lines after startup, no `removed entries` exception, and no gttweaks
+stack frame.
 
 ## How the two sides join
 
@@ -220,12 +252,22 @@ item replace block 1 102 0 container.0 with minecraft:cobblestone 64
 ```
 
 The external storage makes the chest's contents the network's contents, so a `/data get block` on the
-chest is a direct readout of what a bus took or gave back. Three gotchas: the property is `direction`
+chest is a direct readout of what a bus took or gave back. Four gotchas: the property is `direction`
 (not `facing`); with no players online the chunk does not tick, so `forceload add` the area or
-nothing moves; and **a network with no fluid storage silently refuses every fluid insert**, which
-looks exactly like a broken output hatch. The creative fluid storage block above is what makes the
-fluid half testable at all — without it the hatch correctly holds its contents and nothing appears to
-happen.
+nothing moves; **a network with no fluid storage silently refuses every fluid insert**, which
+looks exactly like a broken output hatch — the creative fluid storage block above is what makes the
+fluid half testable at all, and without it the hatch correctly holds its contents and nothing appears
+to happen; and every slot is filled from the part's own tick, not from the command that configured
+it, so an `rspart` query issued immediately after a `config` reports `stock -` and has to be repeated.
+That empty first reading is not a failure, and reading it as one will send you looking for a bug that
+is not there.
+
+The creative fluid storage block has infinite *capacity*, not infinite contents, so the network's
+water total is finite and known — which is what makes the fluid checks possible. To read that total
+without running the code under test, configure the **input hatch** for more water than exists and let
+it pull the network dry: its stock is then the network total. RS keeps storage contents in its own
+saved data rather than the block entity, so `/data get block` on a storage block yields only a
+storage id (`sid`) and cannot serve as that readout.
 
 The output parts have no configuration to set, so they are driven by writing into the inventory the
 multiblock would have filled:
@@ -260,15 +302,18 @@ entity. So the flush to the network cannot double up with a drop.
 
 ## Next
 
-1. **Verify the two stocking parts on the test server.** They compile and are registered; nothing
-   has been run. The rig and commands are under "Testing without a client" above, and the jar that
-   carries them is already installed on the test server. What to prove, in order: a configured slot
-   mirrors the network amount without the network losing anything; a simulated extract takes
-   nothing; a real extract debits the network exactly once; breaking a stocked part gives the
-   network nothing back.
-2. The pattern buffer and its proxy.
-3. The config widget (ModularUI, over `ResourceAmount`). Until it exists the input parts can only be
+1. The pattern buffer and its proxy — the last two of the eight.
+2. The config widget (ModularUI, over `ResourceAmount`). Until it exists the input parts can only be
    told what to stock by command, so they are not usable in play. One widget serves the input bus,
    the input hatch and both stocking parts, which is why it is worth doing after them rather than
    between them.
-4. Crafting recipes and textures of their own.
+3. Crafting recipes and textures of their own.
+4. A restart check for the two stocking parts. The other four were shown to keep their configuration
+   and stock across a server restart; the stocking pair has not been restarted yet. There is less to
+   lose — a mirror holds no stock of its own, only a configured resource — but the configuration
+   itself still has to survive.
+
+Still outstanding whatever the order: nothing here has been opened in a client, and no real
+multiblock has drawn from any of these parts. The `extract` command drives the same slot methods
+GregTech's recipe logic calls, which is the closest stand-in available without a client, but it is
+not the recipe path itself.
