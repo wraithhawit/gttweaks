@@ -53,7 +53,8 @@ public class RSStockingHatchPartMachine extends RSInputHatchPartMachine {
                 continue;
             }
             long available = storage.extract(
-                    configured.resource(), Long.MAX_VALUE, Action.SIMULATE, RSPartActor.INSTANCE);
+                    configured.resource(),
+                    RSStockingBusPartMachine.MIRROR_REQUEST, Action.SIMULATE, RSPartActor.INSTANCE);
             slot.slot().setStock(available >= MIN_AVAILABLE
                     ? new ResourceAmount(configured.resource(), available)
                     : null);

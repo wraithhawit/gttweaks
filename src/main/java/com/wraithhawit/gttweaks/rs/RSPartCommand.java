@@ -2,6 +2,7 @@ package com.wraithhawit.gttweaks.rs;
 
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 
+import com.mojang.brigadier.arguments.BoolArgumentType;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.LongArgumentType;
 import com.mojang.brigadier.context.CommandContext;
@@ -33,6 +34,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -45,6 +48,12 @@ import org.jetbrains.annotations.Nullable;
  * believes rather than what the machine last cached, because the interesting failures are exactly the
  * ones where those two differ. {@code config} stands in for the slot UI that does not exist yet: with
  * it, a dedicated server can be told what a part should stock and then watched doing it.
+ *
+ * <p>{@code extract} drives the one path a multiblock would drive, and exists because the
+ * {@code simulate} flag cannot be reached any other way. GregTech runs a simulated recipe pass
+ * before a real one, and a stocking part that ignored the flag would consume the inputs of every
+ * recipe it merely considered — a bug that is invisible in game until the network drains. Nothing a
+ * player or a hopper can do asks for a simulated extraction, so the flag is exposed here instead.
  *
  * <p>Items and fluids are separate subcommands rather than one that guesses, because there is no
  * vanilla fluid argument to pair with {@link ItemArgument} — a fluid is named by id and looked up in
@@ -80,9 +89,18 @@ public final class RSPartCommand {
                 .then(clear)
                 .then(item)
                 .then(fluid);
+        var extract = Commands.literal("extract")
+                .then(Commands.argument("slot", IntegerArgumentType.integer(0))
+                        .then(Commands.argument("amount", IntegerArgumentType.integer(1))
+                                .then(Commands.argument("simulate", BoolArgumentType.bool())
+                                        .executes(context -> extract(context,
+                                                IntegerArgumentType.getInteger(context, "slot"),
+                                                IntegerArgumentType.getInteger(context, "amount"),
+                                                BoolArgumentType.getBool(context, "simulate"))))));
         var pos = Commands.argument("pos", BlockPosArgument.blockPos())
                 .executes(RSPartCommand::info)
-                .then(Commands.literal("config").then(slot));
+                .then(Commands.literal("config").then(slot))
+                .then(extract);
         event.getDispatcher().register(Commands.literal("gttweaks")
                 .requires(source -> source.hasPermission(2))
                 .then(Commands.literal("rspart").then(pos)));
@@ -171,6 +189,50 @@ public final class RSPartCommand {
         target.setConfig(null);
         say(context.getSource(), "slot " + slot + " cleared");
         return 1;
+    }
+
+    /**
+     * Takes from a slot exactly as a recipe would, so the {@code simulate} flag can be checked.
+     *
+     * <p>Goes through the slot's own {@code extractItem}/{@code drain} rather than the part, because
+     * that is the method GregTech's recipe logic calls and the one a stocking slot overrides to reach
+     * the network.
+     */
+    private static int extract(CommandContext<CommandSourceStack> context, int slot, int amount,
+            boolean simulate) throws CommandSyntaxException {
+        MetaMachine machine = part(context);
+        if (machine == null) {
+            return 0;
+        }
+        CommandSourceStack source = context.getSource();
+        String how = simulate ? "simulated" : "executed";
+        if (machine instanceof RSInputBusPartMachine bus) {
+            RSConfiguredItemSlot[] slots = bus.getItemHandler().getInventory();
+            if (slot >= slots.length) {
+                say(source, "slot out of range, this part has " + slots.length);
+                return 0;
+            }
+            ItemStack got = slots[slot].extractItem(0, amount, simulate);
+            say(source, how + " extract of " + amount + " from slot " + slot + " gave "
+                    + (got.isEmpty() ? "nothing"
+                            : got.getCount() + " x " + got.getHoverName().getString()));
+            return 1;
+        }
+        if (machine instanceof RSInputHatchPartMachine hatch) {
+            RSConfiguredFluidSlot[] slots = hatch.getFluidHandler().getInventory();
+            if (slot >= slots.length) {
+                say(source, "slot out of range, this part has " + slots.length);
+                return 0;
+            }
+            FluidStack got = slots[slot].drain(amount, simulate
+                    ? IFluidHandler.FluidAction.SIMULATE : IFluidHandler.FluidAction.EXECUTE);
+            say(source, how + " drain of " + amount + " from slot " + slot + " gave "
+                    + (got.isEmpty() ? "nothing"
+                            : got.getAmount() + " x " + BuiltInRegistries.FLUID.getKey(got.getFluid())));
+            return 1;
+        }
+        say(source, "that part has no configured slots");
+        return 0;
     }
 
     @Nullable

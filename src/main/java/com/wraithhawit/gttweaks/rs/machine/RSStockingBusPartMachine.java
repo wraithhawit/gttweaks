@@ -28,7 +28,8 @@ import com.wraithhawit.gttweaks.rs.slot.RSStockingItemSlot;
  *
  * <p>The configured <em>amount</em> is ignored here; only the resource matters. A stocking bus is a
  * window onto the network, so the amount it shows is whatever the network has, which is what
- * GregTech does too — its mirror asks for {@link Long#MAX_VALUE}.
+ * GregTech does too — its mirror asks AE2 for {@link Long#MAX_VALUE}. See
+ * {@link #MIRROR_REQUEST} for why this one cannot.
  */
 public class RSStockingBusPartMachine extends RSInputBusPartMachine {
 
@@ -40,6 +41,24 @@ public class RSStockingBusPartMachine extends RSInputBusPartMachine {
      * there.
      */
     public static final long MIN_AVAILABLE = 1L;
+
+    /**
+     * The most a mirror will ask the network for.
+     *
+     * <p>GregTech asks AE2 for {@link Long#MAX_VALUE} and gets an honest answer. Refined Storage's
+     * external storage cannot give one. {@code ItemHandlerExtractableStorage.extract} works out the
+     * amount still wanted as a {@code long} and then narrows it with {@code l2i} before calling
+     * {@code extractSlot(..., int, int)}, so {@code Long.MAX_VALUE} arrives as {@code -1} and every
+     * slot yields nothing: a chest behind an external storage mirrored as permanently empty. The
+     * fluid side truncates the same way and is no safer -- {@code VariantUtil.toFluidStack} logs
+     * "Truncating too large amount" and then casts anyway, so the drain is asked for {@code -1} mB
+     * and yields nothing too. Both sides therefore ask for the same bounded amount.
+     *
+     * <p>The cost is a mirror that cannot show more than about 2.1 billion of one resource, which
+     * nothing can draw in one call regardless: {@code extractItem} and {@code drain} both take an
+     * {@code int}.
+     */
+    public static final long MIRROR_REQUEST = Integer.MAX_VALUE;
 
     public RSStockingBusPartMachine(BlockEntityCreationInfo info) {
         super(info, new RSConfiguredItemList(RSInputBusPartMachine.CONFIG_SIZE, RSStockingItemSlot::new));
@@ -68,7 +87,7 @@ public class RSStockingBusPartMachine extends RSInputBusPartMachine {
                 continue;
             }
             long available = storage.extract(
-                    configured.resource(), Long.MAX_VALUE, Action.SIMULATE, RSPartActor.INSTANCE);
+                    configured.resource(), MIRROR_REQUEST, Action.SIMULATE, RSPartActor.INSTANCE);
             slot.setStock(available >= MIN_AVAILABLE
                     ? new ResourceAmount(configured.resource(), available)
                     : null);

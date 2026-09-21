@@ -23,13 +23,13 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | Piece | State |
 |---|---|
 | `RSIntegration`, `GTTweaksRegistrate`, `GTTweaksGTAddon` | working |
-| `RSMachines`, `RSCapabilities` | working, four parts registered |
+| `RSMachines`, `RSCapabilities` | working, six parts registered |
 | `RSNodeHolder`, `RSPartActor`, `RSNetworkPart` | working |
 | `RSConfiguredSlot`, `RSConfiguredItemSlot`, `RSConfiguredItemList` | working |
 | `RSConfiguredFluidSlot`, `RSConfiguredFluidList`, `RSFluids` | working |
 | `RSBusPartMachine`, `RSInputBusPartMachine`, `RSOutputBusPartMachine` | working |
 | `RSHatchPartMachine`, `RSInputHatchPartMachine`, `RSOutputHatchPartMachine` | working |
-| `RSPartCommand` (`/gttweaks rspart`) | working; stands in for the UI |
+| `RSPartCommand` (`/gttweaks rspart`) | working; `config` stands in for the UI, `extract` drives the recipe path |
 | Config UI (ModularUI widget over RS resources) | not started — the input parts cannot be configured yet |
 | `RSStockingItemSlot`, `RSStockingFluidSlot` | written, compiles, NOT yet run |
 | `RSStockingBusPartMachine`, `RSStockingHatchPartMachine` | written, compiles, NOT yet run |
@@ -55,6 +55,29 @@ restarting the server with a stocked hatch: config and stock both came back.
 Refined Storage gives `ItemResource` an `ofItemStack`/`toItemStack` pair and gives `FluidResource`
 neither, so `RSFluids` is that missing pair. Going back to a `FluidStack` needs
 `BuiltInRegistries.FLUID.wrapAsHolder(...)`; `Fluid.builtInRegistryHolder()` is deprecated.
+
+### The stocking side
+
+A mirror shows whatever the network has, so it asks for everything and reports the answer.
+GregTech's mirror asks AE2 for `Long.MAX_VALUE`. Against Refined Storage that request reads as
+**empty**, on both sides, and the reason is a narrowing cast in RS rather than anything here:
+
+- `ItemHandlerExtractableStorage.extract` computes the amount still wanted as a `long` and passes it
+  to `extractSlot(Action, IItemHandler, ItemStack, int, int)` as `(int) toExtract`. `Long.MAX_VALUE`
+  arrives as `-1`, `extractItem(slot, -1, …)` yields nothing, and every slot is skipped — a chest
+  behind an external storage mirrors as permanently empty.
+- `VariantUtil.toFluidStack` does **not** clamp, which is the easy thing to assume from its warning.
+  It logs `Truncating too large amount …` and then constructs the `FluidStack` with `(int) amount`
+  regardless, so the fluid side arrives at `-1` mB and drains nothing either.
+
+Both are read off RS 2.0.9's own sources, not inferred. `RSStockingBusPartMachine.MIRROR_REQUEST`
+(`Integer.MAX_VALUE`) is what both stocking parts ask for instead. The cost is a mirror that cannot
+display more than about 2.1 billion of one resource, which no caller could draw in one go anyway —
+`extractItem` and `drain` both take an `int`.
+
+This is a source-level fix to a defect that was never observed in game, because the stocking parts
+have never been run. It removes one known reason for them to read empty; it is not evidence that
+they work.
 
 ## How the two sides join
 
@@ -169,6 +192,15 @@ network holds — and the configured slots. `/gttweaks rspart <pos> config <slot
 the UI. Items and fluids are separate subcommands because there is no vanilla fluid argument to pair
 with `ItemArgument`; a fluid is named by id and looked up in the registry.
 
+`/gttweaks rspart <pos> extract <slot> <amount> <simulate>` drives the one path a multiblock drives,
+and exists because the `simulate` flag cannot be reached any other way. GregTech runs a simulated
+recipe pass before a real one, so a stocking slot that ignored the flag would consume the inputs of
+every recipe it merely *considered*, and the network would drain with nothing to show for it —
+invisible in game until the storage is gone. Nothing a player or a hopper can do asks for a
+simulated extraction, so the flag is exposed here instead. The command goes through the slot's own
+`extractItem` / `drain` rather than through the part, because that is the method GregTech's recipe
+logic calls and the one a stocking slot overrides to reach the network.
+
 A network that can be built entirely from commands, which is what the checks above used:
 
 ```
@@ -229,10 +261,11 @@ entity. So the flush to the network cannot double up with a drop.
 ## Next
 
 1. **Verify the two stocking parts on the test server.** They compile and are registered; nothing
-   has been run. The rig and commands are under "Testing without a client" above. What to prove, in
-   order: a configured slot mirrors the network amount without the network losing anything; a
-   simulated extract takes nothing; a real extract debits the network exactly once; breaking a
-   stocked part gives the network nothing back.
+   has been run. The rig and commands are under "Testing without a client" above, and the jar that
+   carries them is already installed on the test server. What to prove, in order: a configured slot
+   mirrors the network amount without the network losing anything; a simulated extract takes
+   nothing; a real extract debits the network exactly once; breaking a stocked part gives the
+   network nothing back.
 2. The pattern buffer and its proxy.
 3. The config widget (ModularUI, over `ResourceAmount`). Until it exists the input parts can only be
    told what to stock by command, so they are not usable in play. One widget serves the input bus,
