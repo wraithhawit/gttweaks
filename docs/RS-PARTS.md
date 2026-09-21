@@ -250,6 +250,25 @@ against a real recipe.
 shows the bus base class's own inventory, not the 27 pattern slots, so without the command there is
 no way to get a pattern into the part at all. The command is a testing stand-in and not the widget.
 
+### Models and textures
+
+**A machine needs a blockstate and two models, and this mod shipped none.** Registering a machine
+through a `GTRegistrate` creates the block and item but generates no client assets; GregTech's own
+machines have `assets/gtceu/blockstates/<name>.json`, `models/block/machine/<name>.json` and
+`models/item/<name>.json` because its datagen writes them, and this project has no datagen at all.
+The result was eight untextured parts, and it had nothing to do with which texture the model pointed
+at — the model did not exist. The client log says so plainly, once anyone looks:
+`Unable to load model: 'gttweaks:item/rs_pattern_buffer' ... FileNotFoundException:
+gttweaks:models/item/rs_pattern_buffer.json`.
+
+The three files per part are formulaic, so they are written directly rather than by standing up a
+datagen run: a blockstate mapping the six `facing` values to one model with the rotations GregTech
+uses (including the `gtceu:z: 180` it puts on `facing=up`), a block model using the `gtceu:machine`
+loader with `machine` set to our id and the `hatch_machine` / `hatch_machine_color_ring` templates,
+and an item model parented to the block model. Casings are `gtceu:block/casings/voltage/ev/*`,
+matching the EV tier these parts register at — a tier mismatch here shows as the wrong hull colour
+rather than as an error.
+
 ### Textures
 
 The eight parts have their own texture files at
