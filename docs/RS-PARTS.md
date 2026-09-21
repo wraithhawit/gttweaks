@@ -14,7 +14,10 @@ the input bus took 32 cobblestone from a 64-stack and left 32, the output bus ha
 diamonds and 5 gold ingots and emptied, the output hatch pushed 16000 mB of water, and the input
 hatch pulled back exactly its configured 5000.
 
-None of them is usable in normal play yet — the input parts cannot be configured without
+Two more — the stocking bus and stocking hatch — are written, compile and are registered, but have
+**not been run at all**. Treat them as unverified until the checks under "Next" have been done.
+
+None of the six is usable in normal play yet — the input parts cannot be configured without
 `/gttweaks rspart`, and nothing here has a crafting recipe.
 
 | Piece | State |
@@ -28,7 +31,9 @@ None of them is usable in normal play yet — the input parts cannot be configur
 | `RSHatchPartMachine`, `RSInputHatchPartMachine`, `RSOutputHatchPartMachine` | working |
 | `RSPartCommand` (`/gttweaks rspart`) | working; stands in for the UI |
 | Config UI (ModularUI widget over RS resources) | not started — the input parts cannot be configured yet |
-| Stocking bus, stocking hatch, pattern buffer and proxy | not started |
+| `RSStockingItemSlot`, `RSStockingFluidSlot` | written, compiles, NOT yet run |
+| `RSStockingBusPartMachine`, `RSStockingHatchPartMachine` | written, compiles, NOT yet run |
+| Pattern buffer and proxy | not started |
 | Crafting recipes | not started |
 | Own textures | not started; the models point at GregTech's AE2 overlays |
 
@@ -223,10 +228,11 @@ entity. So the flush to the network cannot double up with a drop.
 
 ## Next
 
-1. The stocking bus and stocking hatch. These are not another copy of the input parts: GregTech's
-   stocking parts expose the network's contents to recipe *lookup* without holding them, and pull
-   only what a recipe actually consumes, which is a change to what the handler reports rather than
-   to how the sync moves things.
+1. **Verify the two stocking parts on the test server.** They compile and are registered; nothing
+   has been run. The rig and commands are under "Testing without a client" above. What to prove, in
+   order: a configured slot mirrors the network amount without the network losing anything; a
+   simulated extract takes nothing; a real extract debits the network exactly once; breaking a
+   stocked part gives the network nothing back.
 2. The pattern buffer and its proxy.
 3. The config widget (ModularUI, over `ResourceAmount`). Until it exists the input parts can only be
    told what to stock by command, so they are not usable in play. One widget serves the input bus,
