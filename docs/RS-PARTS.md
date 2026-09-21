@@ -25,7 +25,7 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | Piece | State |
 |---|---|
 | `RSIntegration`, `GTTweaksRegistrate`, `GTTweaksGTAddon` | working |
-| `RSMachines`, `RSCapabilities` | working, seven parts registered |
+| `RSMachines` eight parts, `RSCapabilities` seven (the proxy has no node) |
 | `RSNodeHolder`, `RSPartActor`, `RSNetworkPart` | working |
 | `RSConfiguredSlot`, `RSConfiguredItemSlot`, `RSConfiguredItemList` | working |
 | `RSConfiguredFluidSlot`, `RSConfiguredFluidList`, `RSFluids` | working |
@@ -37,7 +37,7 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | `RSStockingBusPartMachine`, `RSStockingHatchPartMachine` | working |
 | `RSBufferSlot` and its recipe handlers | working; holds, persists and refunds |
 | `RSPatternBufferPartMachine` | registers and joins; patterns and recipe path unverified |
-| Pattern buffer proxy | not started |
+| `RSPatternBufferProxyPartMachine`, `RSProxyRecipeHandlerList` | links, grows the buffer, refunds on unlink |
 | Crafting recipes | not started |
 | Own textures | not started; the models point at GregTech's AE2 overlays |
 
@@ -190,6 +190,39 @@ does not. GregTech persists `InternalSlot[]` and derives its live workers from i
 style and is not — it is the only shape that survives. The slots here are now a persisted
 `RSBufferSlot[]` with the live list rebuilt from it on load. Found by a restart, not by the compiler,
 and it would have looked in game like a buffer that simply ignored the network.
+
+### The proxy
+
+A buffer can only belong to one structure. The proxy is a part in a *second* structure that points at
+a buffer elsewhere and passes its multiblock's recipe questions along, so one buffer and one set of
+patterns can serve several machines. It holds no patterns, no ingredients and **no network node** -
+a cable laid against a proxy sees nothing, and that is why `RSCapabilities` registers seven parts and
+not eight. GregTech's proxy has no grid node for the same reason.
+
+`RSProxyRecipeHandlerList.handleRecipe` hands the whole question to the buffer's own
+`RSBufferRecipeHandlerList` and returns its answer, rather than reimplementing it. The rule about a
+recipe coming from one slot is subtle enough that a second copy would drift. An unlinked proxy, or one
+whose buffer has been broken, returns the contents untouched - which reads to the multiblock as "this
+part supplies nothing" rather than as an error.
+
+Linking earns the buffer one more slot (`1 + proxies`, capped at the pattern count), so each
+multiblock served has somewhere of its own and they do not queue behind each other. Unlinking drops
+the last slot, and **its contents go back to the network rather than vanishing with it.**
+
+GregTech links the two with a data stick, which needs a player, so `/gttweaks rspart <pos> link <x>
+<y> <z>` reaches the same `setBuffer` for headless testing.
+
+**Checked on 2026-09-21** (0.30.0, md5 a7839084). Buffer and proxy both place. Linking took the buffer
+from 0 proxies and 1 slot to 1 proxy and 2 slots, and the proxy reported the link resolved. Both
+survived a full server stop and start unchanged - the `Set<BlockPos>` of proxies persists where the
+`List<RSBufferSlot>` did not, which fits the array-versus-list finding above rather than
+contradicting it, since these elements are codec-backed positions and not `INBTSerializable`. Then 7
+gold ingots were pushed into the proxy's slot and the proxy broken: the buffer went back to 0 proxies
+and 1 slot, and the chest's gold went 5 to **12**, so the dropped slot was refunded exactly and not
+lost. 0 `ERROR` lines after startup, no `removed entries`, no gttweaks frame.
+
+Unverified here for the same reason as the buffer: no real pattern, and no multiblock has drawn
+through a proxy, so the delegation in `handleRecipe` has never actually run.
 
 **Expected order of work:** generalise `RSNodeHolder` to take a node; the internal slot (item and
 fluid maps, `long` amounts, NBT) and its distinct recipe handlers, which is the bulk of it and is
@@ -388,9 +421,11 @@ entity. So the flush to the network cannot double up with a drop.
 
 ## Next
 
-1. Finish the pattern buffer: get a real encoded pattern into it and prove a task delivers
-   through the sink, then prove a multiblock draws from a slot and that two slots stay distinct.
-   Then the proxy, the last of the eight.
+1. **All eight parts exist.** What is left is not another part but the proof that the last two work
+   for real: a genuine encoded pattern in the buffer, a task delivering through the sink, a
+   multiblock drawing from a slot, and two slots staying distinct under a recipe that could
+   otherwise be satisfied from both. A pattern has to be encoded by a player at a Pattern Grid, so
+   this is the first thing here that cannot be done headlessly.
 2. The config widget (ModularUI, over `ResourceAmount`). Until it exists the input parts can only be
    told what to stock by command, so they are not usable in play. One widget serves the input bus,
    the input hatch and both stocking parts, which is why it is worth doing after them rather than

@@ -2,7 +2,9 @@ package com.wraithhawit.gttweaks.rs.machine;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.machine.trait.notifiable.NotifiableItemStackHandler;
@@ -34,6 +36,7 @@ import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.sync_system.annotations.SaveField;
 import com.gregtechceu.gtceu.api.sync_system.annotations.SyncToClient;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 
@@ -122,6 +125,19 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
 
     @SyncToClient
     private boolean isOnline;
+
+    /**
+     * The proxies pointing at this buffer, by position.
+     *
+     * <p>Each one earns the buffer another slot, so a buffer feeding three multiblocks through three
+     * proxies has four slots and can hold four patterns' ingredients at once. That is GregTech's
+     * rule, and without it a second multiblock would have to wait for the first to finish.
+     *
+     * <p>Positions rather than machines, because a proxy in an unloaded chunk still counts: losing
+     * its slot while it sleeps would shuffle every other proxy's slot underneath it.
+     */
+    @SaveField
+    private final Set<BlockPos> proxies = new HashSet<>();
 
     public RSPatternBufferPartMachine(BlockEntityCreationInfo info) {
         super(info, BUFFER_TIER, IO.IN,
@@ -258,7 +274,7 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
     }
 
     private void rebuildSlots() {
-        int wanted = Math.max(1, slots.size());
+        int wanted = Math.max(1, Math.min(proxies.size() + 1, internalSlots.length));
         slots.clear();
         slotItemHandlers.clear();
         slotFluidHandlers.clear();
@@ -293,6 +309,65 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
 
     public List<RSBufferSlot> getSlots() {
         return slots;
+    }
+
+    public RSBufferRecipeHandlerList getBufferHandler() {
+        return bufferHandler;
+    }
+
+    /**
+     * Registers a proxy and gives the buffer a slot for it.
+     *
+     * <p>Idempotent, because a proxy re-resolves its buffer on every load and on every relink.
+     */
+    public void addProxy(BlockPos pos) {
+        if (proxies.add(pos)) {
+            syncSlotCount();
+        }
+    }
+
+    public void removeProxy(BlockPos pos) {
+        if (proxies.remove(pos)) {
+            syncSlotCount();
+        }
+    }
+
+    public Set<BlockPos> getProxies() {
+        return proxies;
+    }
+
+    /**
+     * Brings the live slot count in line with the number of proxies.
+     *
+     * <p>One slot for the buffer itself plus one per proxy, capped at the pattern count. Slots are
+     * only ever added or dropped from the end, and a dropped slot's contents go back to the network
+     * rather than vanishing with it.
+     */
+    private void syncSlotCount() {
+        int target = Math.max(1, Math.min(proxies.size() + 1, internalSlots.length));
+        while (slots.size() < target) {
+            addSlot();
+        }
+        while (slots.size() > target) {
+            removeLastSlot();
+        }
+    }
+
+    private void removeLastSlot() {
+        int last = slots.size() - 1;
+        if (last <= 0) {
+            return;
+        }
+        RSBufferSlot slot = slots.get(last);
+        if (!slot.isEmpty()) {
+            StorageNetworkComponent storage = nodeHolder.storage();
+            if (storage != null) {
+                slot.returnToNetwork(storage);
+            }
+        }
+        slots.remove(last);
+        slotItemHandlers.remove(last);
+        slotFluidHandlers.remove(last);
     }
 
     /**

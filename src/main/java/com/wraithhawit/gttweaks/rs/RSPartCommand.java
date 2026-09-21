@@ -18,6 +18,7 @@ import com.refinedmods.refinedstorage.common.support.resource.ItemResource;
 
 import com.wraithhawit.gttweaks.rs.machine.RSInputBusPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSPatternBufferPartMachine;
+import com.wraithhawit.gttweaks.rs.machine.RSPatternBufferProxyPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSInputHatchPartMachine;
 import com.wraithhawit.gttweaks.rs.network.RSNetworkPart;
 import com.wraithhawit.gttweaks.rs.pattern.RSBufferSlot;
@@ -123,7 +124,11 @@ public final class RSPartCommand {
                 .executes(RSPartCommand::info)
                 .then(Commands.literal("config").then(slot))
                 .then(extract)
-                .then(buffer);
+                .then(buffer)
+                .then(Commands.literal("link")
+                        .then(Commands.argument("buffer", BlockPosArgument.blockPos())
+                                .executes(context -> link(context,
+                                        BlockPosArgument.getLoadedBlockPos(context, "buffer")))));
         event.getDispatcher().register(Commands.literal("gttweaks")
                 .requires(source -> source.hasPermission(2))
                 .then(Commands.literal("rspart").then(pos)));
@@ -134,8 +139,15 @@ public final class RSPartCommand {
         if (machine == null) {
             return 0;
         }
-        RSNetworkPart part = (RSNetworkPart) machine;
         CommandSourceStack source = context.getSource();
+        if (machine instanceof RSPatternBufferProxyPartMachine proxy) {
+            say(source, "part: " + machine.getDefinition().getId());
+            say(source, "buffer link: " + (proxy.getBufferPos() == null ? "none"
+                    : proxy.getBufferPos().toShortString()
+                            + (proxy.getBuffer() == null ? " (not a buffer)" : " (resolved)")));
+            return 1;
+        }
+        RSNetworkPart part = (RSNetworkPart) machine;
         Network network = part.getNodeHolder().getNode().getNetwork();
         StorageNetworkComponent storage = part.getNodeHolder().storage();
         say(source, "part: " + machine.getDefinition().getId());
@@ -145,6 +157,7 @@ public final class RSPartCommand {
         say(source, "network storage: " + (storage == null ? "unreachable"
                 : storage.getAll().size() + " resource types"));
         if (machine instanceof RSPatternBufferPartMachine buffer) {
+            say(source, "proxies linked: " + buffer.getProxies().size());
             say(source, "patterns held: " + patternCount(buffer));
             List<RSBufferSlot> bufferSlots = buffer.getSlots();
             for (int i = 0; i < bufferSlots.size(); i++) {
@@ -308,6 +321,30 @@ public final class RSPartCommand {
         return held ? 1 : 0;
     }
 
+    /**
+     * Points a proxy at a buffer, standing in for the data stick.
+     *
+     * <p>GregTech links the two by right-clicking each with a data stick, which needs a player. This
+     * reaches the same {@code setBuffer}, so it links exactly as the stick does.
+     */
+    private static int link(CommandContext<CommandSourceStack> context, BlockPos target)
+            throws CommandSyntaxException {
+        MetaMachine machine = part(context);
+        if (machine == null) {
+            return 0;
+        }
+        CommandSourceStack source = context.getSource();
+        if (!(machine instanceof RSPatternBufferProxyPartMachine proxy)) {
+            say(source, "that part is not a pattern buffer proxy");
+            return 0;
+        }
+        proxy.setBuffer(target);
+        say(source, proxy.getBuffer() == null
+                ? "nothing linked: " + target.toShortString() + " is not a pattern buffer"
+                : "linked to the buffer at " + target.toShortString());
+        return proxy.getBuffer() == null ? 0 : 1;
+    }
+
     private static int bufferPushFluid(CommandContext<CommandSourceStack> context, int slot,
             ResourceLocation id, long amount) throws CommandSyntaxException {
         Fluid found = BuiltInRegistries.FLUID.getOptional(id).orElse(null);
@@ -366,7 +403,9 @@ public final class RSPartCommand {
         BlockPos pos = BlockPosArgument.getLoadedBlockPos(context, "pos");
         ServerLevel level = context.getSource().getLevel();
         MetaMachine machine = MetaMachine.getMachine(level, pos);
-        if (!(machine instanceof RSNetworkPart)) {
+        // The proxy is deliberately not an RSNetworkPart -- it holds no node and is not on the
+        // network -- but it is still one of these parts and still has to be inspectable here.
+        if (!(machine instanceof RSNetworkPart) && !(machine instanceof RSPatternBufferProxyPartMachine)) {
             say(context.getSource(), "no Refined Storage part at " + pos.toShortString());
             return null;
         }
