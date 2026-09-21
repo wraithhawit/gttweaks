@@ -238,6 +238,14 @@ public class RSBufferSlot implements INBTSerializable<CompoundTag> {
      * simulated pass before every real one, so a slot that consumed during simulation would empty
      * itself against recipes that never ran — the same failure the stocking parts were built to rule
      * out, and the reason nothing here writes to the maps while simulating.
+     *
+     * <p><b>Match on the inner ingredient, never on the {@link SizedIngredient}.</b>
+     * {@code SizedIngredient.test} checks the stack's <em>count</em> against the required size as
+     * well as its identity, and the stack being tested here is a bare count-of-one built from the
+     * resource. Asking the sized form therefore fails every ingredient needing more than one while
+     * passing every ingredient needing exactly one — a multiblock that ran single-item recipes and
+     * silently refused the rest. The amount is this method's own business and is tracked in
+     * {@code wanted}; the ingredient is only ever asked "is this the right item".
      */
     public List<SizedIngredient> handleItemInternal(List<SizedIngredient> left, boolean simulate) {
         if (items.isEmpty()) {
@@ -265,7 +273,7 @@ public class RSBufferSlot implements INBTSerializable<CompoundTag> {
                     held.remove();
                     continue;
                 }
-                if (!ingredient.test(entry.getKey().toItemStack(1L))) {
+                if (!ingredient.ingredient().test(entry.getKey().toItemStack(1L))) {
                     continue;
                 }
                 int taken = Math.min(GTMath.saturatedCast(count), wanted);
@@ -321,7 +329,7 @@ public class RSBufferSlot implements INBTSerializable<CompoundTag> {
                     held.remove();
                     continue;
                 }
-                if (!ingredient.test(RSFluids.toStack(entry.getKey(), 1L))) {
+                if (!ingredient.ingredient().test(RSFluids.toStack(entry.getKey(), 1L))) {
                     continue;
                 }
                 int taken = Math.min(GTMath.saturatedCast(count), wanted);

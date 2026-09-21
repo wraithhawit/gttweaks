@@ -21,6 +21,7 @@ import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 
+
 /**
  * Where the buffer's slots become <em>separate</em> sets of inputs rather than one pool.
  *
