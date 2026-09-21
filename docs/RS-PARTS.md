@@ -8,8 +8,8 @@ stocking variants, and the pattern buffer with its proxy.
 
 Six of the eight parts work end to end on the test server: the input and output buses, both fluid
 hatches, and both stocking variants. Each one registers, joins a network through the capability,
-moves what it should in the direction it should, and — for the four that hold stock — keeps its
-configuration across a server restart and rejoins the network afterwards.
+moves what it should in the direction it should, keeps its configuration across a server restart,
+and rejoins the network by itself afterwards.
 
 The first four were checked on 2026-09-20 (0.30.0, md5 1aa035ec) with exact counts on both sides:
 the input bus took 32 cobblestone from a 64-stack and left 32, the output bus handed over 17
@@ -110,6 +110,19 @@ network at 15000.
 
 Across the whole run: 0 `ERROR` lines after startup, no `removed entries` exception, and no gttweaks
 stack frame.
+
+**Restart check**, same day. Both parts were configured with deliberately odd amounts — `7 x
+cobblestone` and `3 mB water`, small enough that neither could be confused with a default or with
+the amount being mirrored — and the server was stopped and started. Both came back with those
+configurations intact, rejoined the network and went active by themselves. The mirrors were then
+shown to be *live* rather than restored-stale: replacing the chest's stack with 20 cobblestone moved
+the bus's mirror from 48 to 20. 0 `ERROR` lines after startup.
+
+One transient to expect: queried about three seconds after `Done`, the bus reported `online: false`,
+`active: false` and `network storage: unreachable` while still showing `joined`. Ten seconds later it
+was fully online with no intervention. The network takes a moment to initialise and power after a
+world load, and a part queried inside that window looks broken when it is not — worth knowing before
+chasing it.
 
 ## How the two sides join
 
@@ -308,10 +321,6 @@ entity. So the flush to the network cannot double up with a drop.
    the input hatch and both stocking parts, which is why it is worth doing after them rather than
    between them.
 3. Crafting recipes and textures of their own.
-4. A restart check for the two stocking parts. The other four were shown to keep their configuration
-   and stock across a server restart; the stocking pair has not been restarted yet. There is less to
-   lose — a mirror holds no stock of its own, only a configured resource — but the configuration
-   itself still has to survive.
 
 Still outstanding whatever the order: nothing here has been opened in a client, and no real
 multiblock has drawn from any of these parts. The `extract` command drives the same slot methods
