@@ -15,6 +15,7 @@ import com.refinedmods.refinedstorage.api.network.storage.StorageNetworkComponen
 import com.refinedmods.refinedstorage.api.resource.ResourceAmount;
 import com.refinedmods.refinedstorage.common.support.resource.FluidResource;
 import com.refinedmods.refinedstorage.common.support.resource.ItemResource;
+import com.refinedmods.refinedstorage.common.api.autocrafting.PatternProviderItem;
 
 import com.wraithhawit.gttweaks.rs.machine.RSInputBusPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSPatternBufferPartMachine;
@@ -36,6 +37,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
@@ -125,6 +127,10 @@ public final class RSPartCommand {
                 .then(Commands.literal("config").then(slot))
                 .then(extract)
                 .then(buffer)
+                .then(Commands.literal("pattern")
+                        .then(Commands.argument("slot", IntegerArgumentType.integer(0))
+                                .executes(context -> loadPattern(context,
+                                        IntegerArgumentType.getInteger(context, "slot")))))
                 .then(Commands.literal("link")
                         .then(Commands.argument("buffer", BlockPosArgument.blockPos())
                                 .executes(context -> link(context,
@@ -343,6 +349,49 @@ public final class RSPartCommand {
                 ? "nothing linked: " + target.toShortString() + " is not a pattern buffer"
                 : "linked to the buffer at " + target.toShortString());
         return proxy.getBuffer() == null ? 0 : 1;
+    }
+
+    /**
+     * Puts the pattern the player is holding into a buffer's pattern slot.
+     *
+     * <p>The pattern inventory has no UI yet, so without this there is no way at all to get a
+     * pattern into the part -- right-clicking a buffer shows the bus base class's own inventory, not
+     * these slots. An encoded pattern can only be made by a player at a Pattern Grid, so this takes
+     * the one in their main hand rather than building a stack from arguments.
+     *
+     * <p>Run in game, not over RCON: it needs a player to take the item from. The stack is copied
+     * rather than consumed, so a pattern can be put into several buffers while testing.
+     */
+    private static int loadPattern(CommandContext<CommandSourceStack> context, int slot)
+            throws CommandSyntaxException {
+        MetaMachine machine = part(context);
+        if (machine == null) {
+            return 0;
+        }
+        CommandSourceStack source = context.getSource();
+        if (!(machine instanceof RSPatternBufferPartMachine buffer)) {
+            say(source, "that part is not a pattern buffer");
+            return 0;
+        }
+        ServerPlayer player = source.getPlayerOrException();
+        ItemStack held = player.getMainHandItem();
+        if (slot >= buffer.getPatternInventory().getSlots()) {
+            say(source, "slot out of range, this part has "
+                    + buffer.getPatternInventory().getSlots());
+            return 0;
+        }
+        if (held.isEmpty()) {
+            buffer.getPatternInventory().setStackInSlot(slot, ItemStack.EMPTY);
+            say(source, "pattern slot " + slot + " cleared");
+            return 1;
+        }
+        if (player.level() == null || !PatternProviderItem.isValid(held, player.level())) {
+            say(source, "that is not an encoded Refined Storage pattern");
+            return 0;
+        }
+        buffer.getPatternInventory().setStackInSlot(slot, held.copyWithCount(1));
+        say(source, "pattern slot " + slot + " set from your hand");
+        return 1;
     }
 
     private static int bufferPushFluid(CommandContext<CommandSourceStack> context, int slot,
