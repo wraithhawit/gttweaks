@@ -27,7 +27,7 @@ import java.util.function.Supplier;
  * underneath, including the delegate handler: {@code handleRecipe} wants a
  * {@link CustomItemStackHandler}, and the slots are separate objects rather than one backing array.
  */
-public class RSConfiguredItemList extends NotifiableItemStackHandler {
+public class RSConfiguredItemList extends NotifiableItemStackHandler implements RSConfigurableSlotList {
 
     @SaveField
     protected RSConfiguredItemSlot[] inventory;
@@ -52,6 +52,21 @@ public class RSConfiguredItemList extends NotifiableItemStackHandler {
 
     public RSConfiguredItemSlot[] getInventory() {
         return inventory;
+    }
+
+    @Override
+    public int getConfigurableSlotCount() {
+        return inventory.length;
+    }
+
+    @Override
+    public RSConfiguredSlot getConfigurableSlot(int index) {
+        return inventory[index];
+    }
+
+    @Override
+    public boolean isStocking() {
+        return inventory.length > 0 && inventory[0] instanceof RSStockingItemSlot;
     }
 
     public CustomItemStackHandler getHandler() {

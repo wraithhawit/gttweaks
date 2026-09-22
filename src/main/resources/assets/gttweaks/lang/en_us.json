@@ -16,6 +16,10 @@
   "block.gttweaks.rs_stocking_bus": "RS Stocking Bus",
   "block.gttweaks.rs_stocking_hatch": "RS Stocking Hatch",
   "gttweaks.machine.rs.item_stocking.tooltip": "§bShows the network's items to the multiblock and takes them only when a recipe runs",
+
+  "gttweaks.rs.part.online": "§aConnected to a network",
+  "gttweaks.rs.part.offline": "§cNot connected",
+  "gttweaks.rs.config.amount": "Amount",
   "gttweaks.machine.rs.pattern_buffer_proxy.tooltip.0": "§bLends a Pattern Buffer elsewhere to this multiblock",
   "gttweaks.machine.rs.pattern_buffer_proxy.tooltip.1": "§bLink it to a buffer with a data stick; each proxy earns the buffer another slot",
   "gttweaks.machine.rs.pattern_buffer.tooltip.0": "§bHolds Refined Storage patterns and receives their ingredients when the network crafts",

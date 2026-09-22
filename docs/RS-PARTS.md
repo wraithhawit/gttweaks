@@ -32,7 +32,7 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | `RSBusPartMachine`, `RSInputBusPartMachine`, `RSOutputBusPartMachine` | working |
 | `RSHatchPartMachine`, `RSInputHatchPartMachine`, `RSOutputHatchPartMachine` | working |
 | `RSPartCommand` (`/gttweaks rspart`) | working; `config` stands in for the UI, `extract` drives the recipe path |
-| Config UI (ModularUI widget over RS resources) | not started — the input parts cannot be configured yet |
+| `RSConfigWidget`, `RSConfigSyncHandler`, `RSConfigActions` | written; compiles and the server starts clean, never opened in a client |
 | `RSStockingItemSlot`, `RSStockingFluidSlot` | working |
 | `RSStockingBusPartMachine`, `RSStockingHatchPartMachine` | working |
 | `RSBufferSlot` and its recipe handlers | working; holds, persists and refunds |
@@ -355,6 +355,61 @@ where GregTech's `InternalSlot.handleItemInternal` is the reference; then the ma
 pattern inventory, the node and the sink; then registration and the capability; then the proxy, which
 needs none of the above beyond a remembered position and a forward.
 
+### The config widget
+
+The input bus, the input hatch and both stocking parts are configured from
+`RSConfigWidget`, which replaces the bus base class's own screen. Until it existed the only way to
+tell a part what to stock was `/gttweaks rspart <pos> config`, which is why the parts were
+unusable in play however well the network side worked.
+
+It is GregTech's `AEConfigWidget` re-expressed over `ResourceAmount`, deliberately down to the
+controls: a grid of pairs, eight to a row, the standing order on top and the stock underneath;
+left-click with something on the cursor to configure a slot from it, right-click to clear it,
+left-click an empty hand on a configured slot to open the amount editor, scroll to step the amount
+(ctrl doubles or halves it), and left-click the lower cell to take a stack of what the part holds.
+Ingredients dragged from a recipe viewer land in the slot under the cursor, or in the first empty
+one. A player who has used an ME bus has to learn nothing.
+
+**The client never writes to a slot.** Every one of those gestures sends a synced action —
+`rs_config_set`, `rs_config_clear`, `rs_config_amount`, `rs_stock_pickup`, `rs_config_set_ghost` —
+which `RSConfigActions` applies on the server, and the result comes back through
+`RSConfigSyncHandler`. The widget draws only what that handler has told it. This is not
+belt-and-braces: a slot's configuration is the part's saved data and its stock is written by the
+network sync, neither of which exists on a client, so there is nothing to draw but what was sent.
+
+`RSConfigActions` re-checks on the server everything the widget already refuses, because a client
+can be made to send anything. Two of those checks are the ones that matter. An index off the end of
+the array is refused, and **a stocking part refuses both the amount change and the stock pickup**.
+The second is an item-duplication hole rather than a tidiness rule: a stocking slot's stock is a
+reading of what the network holds, not material the part is carrying, so handing it to a player
+would create items from nothing and leave the network's own copy untouched. GregTech guards this in
+its widget and not in its action; here it is guarded in both.
+
+`isStocking()` is asked of the *list*, not of a slot, and that is forced by the fluid side.
+`RSConfiguredFluidSlot` extends `CustomFluidTank` and only holds an `RSConfiguredSlot` as an inner
+object, so a stocking fluid slot's stocking-ness lives on the outer tank where the configured slot
+cannot see it. The list can see both, so the list is where the question is answered.
+
+Three things are shared rather than rewritten, each for a reason:
+
+- **`AEGuiHelper`**, GregTech's own, supplies the amount overlay, the selection overlay, and the
+  formatting and parsing of amounts. Nothing in the methods used touches AE2 — they take longs and
+  coordinates — and sharing them is what keeps a configured 64,000 reading the same on an RS part as
+  on an ME one. `parseAmount` also evaluates expressions, so the editor accepts `64*9`, and
+  duplicating that would be duplicating an expression parser.
+- **Refined Storage's `ResourceRendering`**, fetched from `RefinedStorageClientApi` per resource
+  class, draws the icon and builds the tooltip. This is the one place the widget is *simpler* than
+  GregTech's, which branches on `isFluid` and unwraps an `AEItemKey` by hand: an item, a fluid and
+  any resource type another mod registers all go through one call.
+- **`ResourceCodecs.AMOUNT_STREAM_OPTIONAL_CODEC`** puts a slot on the wire, so a configured item
+  keeps its data components across the network exactly as it keeps them across a save.
+
+Two details worth knowing before touching this code. A scroll arrives in the screen's coordinates
+and a click arrives in the widget's, so `onMouseScrolled` subtracts `getArea()` and `onMousePressed`
+does not; GregTech's widget makes the same distinction, and getting it wrong moves the scroll target
+by the widget's offset rather than failing outright. And the amount editor's panel is cached, so
+`deleteCachedPanel()` before opening it is what stops the previous slot's number appearing in it.
+
 ## How the two sides join
 
 **GregTech.** `@GTAddon("gttweaks")` on a class implementing `IGTAddon` is all it takes to be an
@@ -526,18 +581,22 @@ shows the part emptied and the chest or fluid storage holding what it had.
 
 ## Still unchecked
 
-- Anything in a client. Nothing here has been opened in a GUI, so `ItemBusPartMachine`'s default UI
-  rendering a 16-slot extract-only handler, and `FluidHatchPartMachine`'s rendering a tank whose
-  capacity is `Integer.MAX_VALUE`, are both unverified.
-- Whether a real multiblock draws from the slots, in simulation and in execution. The recipe path is
-  GregTech's own and the handlers are shaped like the ME parts', but it has not been demonstrated.
+- **The config widget in a client.** It compiles and a headless server starts clean, but a headless
+  server never opens a GUI, so not one line of `RSConfigWidget.draw` or of the five synced actions
+  has ever run. Everything in that section is written from GregTech's widget and the two APIs it
+  sits on, not from having seen it. Until someone right-clicks a part, treat the whole of it as
+  unverified — including whether the grid is the right size for the panel it is placed in.
+- The proxy's `handleRecipe` delegation, which has never been driven by a real multiblock. The proxy
+  has only been linked and unlinked, never made part of a second structure with a recipe running
+  through it.
 - What happens when the network refuses the stock a broken input part is handing back. It is kept and
   then lost with the block. **Dropping it into the world is not the fix** — a slot's amount is a
   `long` and a part can legitimately hold hundreds of thousands of items, which as entities would be
   a far worse problem than the loss. Returning it to the network is the right behaviour; the gap is
   only the offline-or-full case, and the answer there is probably to carry the stock on the dropped
   machine item through `collectImplicitComponents`/`applyImplicitComponents`, so it comes back when
-  the part is placed again.
+  the part is placed again. **This is what has to be closed before the parts get recipes**, not
+  after: while they are uncraftable the hole is unreachable, and a recipe is what makes it reachable.
 
 Settled, and not a risk: GregTech does not drop a part's contents on break. `MetaMachine.modifyDrops`
 is empty, neither `ItemBusPartMachine` nor `FluidHatchPartMachine` nor `TieredIOPartMachine`
@@ -546,22 +605,17 @@ entity. So the flush to the network cannot double up with a drop.
 
 ## Next
 
-1. **All eight parts exist and work.** The chain is evidenced end to end: an autocrafting request
-   publishes a pattern, the sink delivers its ingredients into a slot, a multiblock runs from that
-   slot, and the products return to the network. What remains is not correctness but usability.
-2. **The pattern buffer has no UI for its pattern inventory**, so patterns can only be loaded with
-   `/gttweaks rspart <pos> pattern <slot>`. That, not the recipe path, is what keeps the buffer out
-   of normal play.
-3. The proxy's `handleRecipe` delegation has still never been driven by a real multiblock — the
-   proxy has only been linked and unlinked, never made part of a second structure with a recipe
-   running through it.
-4. The config widget (ModularUI, over `ResourceAmount`). Until it exists the input parts can only be
-   told what to stock by command, so they are not usable in play. One widget serves the input bus,
-   the input hatch and both stocking parts, which is why it is worth doing after them rather than
-   between them.
-5. Crafting recipes, and RS-styled textures to replace the placeholders.
-
-Still outstanding whatever the order: nothing here has been opened in a client, and no real
-multiblock has drawn from any of these parts. The `extract` command drives the same slot methods
-GregTech's recipe logic calls, which is the closest stand-in available without a client, but it is
-not the recipe path itself.
+1. **All eight parts exist and work, and the input parts can now be configured by hand.** The chain
+   is evidenced end to end: an autocrafting request publishes a pattern, the sink delivers its
+   ingredients into a slot, a multiblock runs from that slot, and the products return to the
+   network. What remains is not correctness but finishing.
+2. **Open the config widget in a client** and check the four parts it serves — set a resource from
+   the cursor, clear one, edit an amount both ways, drag one in from EMI, take a stack back off an
+   input bus, and confirm a stocking part refuses the last two. That is the next thing to do and
+   nothing below it is worth starting first, because everything in the section above is written
+   from GregTech's widget rather than from having seen ours run.
+3. **Close the break-loss gap** described under "Still unchecked", before any part gets a recipe.
+4. Crafting recipes, and RS-styled textures to replace the placeholders.
+5. **The pattern buffer still has no UI for its pattern inventory**, so patterns can only be loaded
+   with `/gttweaks rspart <pos> pattern <slot>`. That, not the recipe path, is what keeps the buffer
+   out of normal play, and it is the one part the config widget does not serve.

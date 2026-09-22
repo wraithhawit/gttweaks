@@ -7,10 +7,24 @@ import com.refinedmods.refinedstorage.api.core.Action;
 import com.refinedmods.refinedstorage.api.network.storage.StorageNetworkComponent;
 import com.refinedmods.refinedstorage.api.resource.ResourceAmount;
 
+import com.wraithhawit.gttweaks.rs.gui.RSConfigActions;
+import com.wraithhawit.gttweaks.rs.gui.RSConfigWidget;
 import com.wraithhawit.gttweaks.rs.network.RSPartActor;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredFluidList;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredFluidSlot;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredSlot;
+
+import brachy.modularui.api.drawable.Text;
+import brachy.modularui.api.widget.IWidget;
+import brachy.modularui.factory.PosGuiData;
+import brachy.modularui.screen.UISettings;
+import brachy.modularui.value.sync.BooleanSyncValue;
+import brachy.modularui.value.sync.PanelSyncManager;
+import brachy.modularui.widget.ParentWidget;
+import brachy.modularui.widgets.TextWidget;
+import brachy.modularui.widgets.layout.Flow;
+
+import net.minecraft.network.chat.Component;
 
 /**
  * Keeps a multiblock supplied with fluids from a Refined Storage network.
@@ -115,5 +129,34 @@ public class RSInputHatchPartMachine extends RSHatchPartMachine {
             long inserted = storage.insert(stock.resource(), stock.amount(), Action.EXECUTE, RSPartActor.INSTANCE);
             configured.debitStock(inserted);
         }
+    }
+
+    /**
+     * The configuration screen, the fluid twin of the input bus's.
+     *
+     * <p>Same widget, same five synced actions; only the resource kind differs, and that is the one
+     * flag {@link RSConfigActions#register} takes. A fluid cannot be dropped onto a slot directly,
+     * so a configured fluid comes from the container the player is holding or drags in — a water
+     * bucket configures 1000 mB of water.
+     */
+    @Override
+    public void buildMainUI(ParentWidget<?> mainPanel, PosGuiData data, PanelSyncManager syncManager,
+                            UISettings settings) {
+        BooleanSyncValue online = new BooleanSyncValue(this::isOnline);
+        syncManager.syncValue("rs_is_online", online);
+        RSConfigActions.register(syncManager, fluidHandler, true, this::updateTankSubscription);
+
+        Flow column = (Flow) Flow.col().coverChildren();
+        column.child((IWidget) ((TextWidget) Text
+                .dynamic(() -> Component.translatable(online.getBoolValue()
+                        ? "gttweaks.rs.part.online"
+                        : "gttweaks.rs.part.offline"))
+                .asWidget()
+                .marginTop(2))
+                .marginBottom(4));
+        column.child((IWidget) new RSConfigWidget(fluidHandler, CONFIG_SIZE, true)
+                .syncManager(syncManager)
+                .size(RSConfigWidget.widthFor(CONFIG_SIZE), RSConfigWidget.heightFor(CONFIG_SIZE)));
+        mainPanel.child((IWidget) column.center());
     }
 }
