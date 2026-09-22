@@ -12,6 +12,7 @@
     "KubeJSResearchRecipesMixin",
     "StructurePreferenceSkipMixin",
     "TerminalServerBuildMixin",
+    "DataItemBankCheckMixin",
     "RecipeJsonProbeMixin",
     "EnergyTransferResultCopyMixin",
     "EnergyTransferChargeKeyMixin"

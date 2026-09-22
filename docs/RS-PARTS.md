@@ -607,9 +607,13 @@ and `1x_gtceu_assembly_line` among them. In the logged JSON the output stick car
 built from the same `ResearchEntry` the assembly line's condition holds, so the two ids agree by
 construction.
 
-**Not verified:** no scanner or research station has actually run one of these, and no assembly line
-has been unlocked by the resulting item. That needs a player, or a multiblock rig this test world
-does not have. The scan still runs at `VA[HV]` where GregTech would use `VA[LuV]`, which is the
+**Verified end to end in game 2026-09-22** by the user on the test server, for the scanner half: the
+generated scanner recipe turned a data stick and a LuV emitter into a stick carrying
+`1x_gtceu_luv_emitter`, and with that stick in a data access hatch the assembly line crafted the RS
+Pattern Buffer. It first needed a second fix, `DataItemBankCheckMixin`: the 8.0 snapshot's
+`ResearchManager.isStackDataItem` has one branch flipped against 7.x, so a plain data access hatch
+ignored every data stick and orb, GregTech's own included. **Not verified:** the research station
+half, the proxy's data orb. The scan still runs at `VA[HV]` where GregTech would use `VA[LuV]`, which is the
 KubeJS overload problem above and not something this fix touches.
 
 ## How the two sides join
@@ -792,10 +796,8 @@ shows the part emptied and the chest or fluid storage holding what it had.
   four ways on the test server; reading it back has never run, because placing a block from an item
   that carries components needs a player and a headless server has not got one. See "Carrying a
   broken part's stock".
-- **Whether a generated research item actually unlocks its recipe.** The requirement is on the
-  assembly line recipes (the `ResearchCondition` is in their JSON and each carries one research
-  entry) and the research recipes now exist, but no scanner, research station or assembly line has
-  run any of it.
+- **The research station half of the research step.** The scanner half — stick made, recipe unlocked,
+  buffer crafted — is verified in game; the proxy's data orb from a research station is not.
 - The proxy's `handleRecipe` delegation, which has never been driven by a real multiblock. The proxy
   has only been linked and unlinked, never made part of a second structure with a recipe running
   through it.
@@ -819,9 +821,8 @@ what the stock carry relies on, is the `modifyDrops`-then-`saveToItem` ordering 
    back and watch its stock return to the network, which closes the one half of the stock carry a
    headless server cannot reach. Nothing below is worth starting first, because both of those
    sections are written from the APIs rather than from having seen them run.
-3. **Run a research recipe in game** — scan a LuV emitter, put the stick in an assembly line's data
-   access hatch and confirm the pattern buffer recipe unlocks. The recipes now exist (see "The fix:
-   `KubeResearchRecipes`"); nothing has used one.
+3. **Run the research station half** — the proxy's data orb. The scanner half is verified end to end
+   (see "The fix: `KubeResearchRecipes`").
 4. RS-styled textures to replace the placeholders, still to come from LavaSurf.
 5. **The pattern buffer still has no UI for its pattern inventory**, so patterns can only be loaded
    with `/gttweaks rspart <pos> pattern <slot>`. That, not the recipe path, is what keeps the buffer
