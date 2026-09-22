@@ -10,6 +10,7 @@
     "RecipeSerializerCapabilityKeyMixin",
     "KubeJSCapabilityKeyMixin",
     "KubeJSResearchRecipesMixin",
+    "StructurePreferenceSkipMixin",
     "RecipeJsonProbeMixin",
     "EnergyTransferResultCopyMixin",
     "EnergyTransferChargeKeyMixin"
