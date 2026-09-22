@@ -34,6 +34,7 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | `RSPartCommand` (`/gttweaks rspart`) | working; `config` stands in for the UI, `extract` drives the recipe path |
 | `RSConfigWidget`, `RSConfigSyncHandler`, `RSConfigActions` | written; compiles and the server starts clean, never opened in a client |
 | `RSStockComponent` (`gttweaks:rs_held_stock`) | writing verified four ways on the test server; reading it back on placement never run |
+| Recipes (`pack/kubejs/server_scripts/gttweaks/rs_part_recipes.js`) | all eight exist and resolve; the buffer and proxy's research items cannot be made |
 | `RSStockingItemSlot`, `RSStockingFluidSlot` | working |
 | `RSStockingBusPartMachine`, `RSStockingHatchPartMachine` | working |
 | `RSBufferSlot` and its recipe handlers | working; holds, persists and refunds |
@@ -470,6 +471,73 @@ calls it from `BlockItem`'s placement path and GregTech's own override is empty,
 stand in the way — but nothing has demonstrated it either. Place a carried part back on a live
 network and watch the stock return to the network on its first sync.
 
+### Recipes
+
+All eight parts are craftable as of 2026-09-22, in
+`pack/kubejs/server_scripts/gttweaks/rs_part_recipes.js`. They mirror GregTech's own ME part
+recipes, read out of `MetaTileEntityMachineRecipeLoader` (which builds them in Java rather than
+shipping JSON), ingredient for ingredient and tier for tier:
+
+| Part | Machine | Base part | Other GregTech | Refined Storage | Time / EU/t |
+|---|---|---|---|---|---|
+| input/output bus, input/output hatch | assembler | plain part, **EV** | — | 1 interface, 2 speed upgrade | 300t, VA[HV] |
+| stocking bus | assembler | input bus, **IV** | IV conveyor, IV sensor | 1 interface, 4 speed upgrade | 300t, VA[IV] |
+| stocking hatch | assembler | input hatch, **IV** | IV electric pump, IV sensor | 1 interface, 4 speed upgrade | 300t, VA[IV] |
+| pattern buffer | assembly line | dual input hatch, **LuV** | LuV emitter, 4 LuV circuits, 3x32 fine europium wire, 576 soldering alloy, 500 lubricant | 3 autocrafter, 3 interface, 4 speed upgrade, 2 stack upgrade | 600t, VA[LuV] |
+| pattern buffer proxy | assembly line | machine hull, **LuV** | 2 LuV sensors, 1 LuV circuit, 2x32 fine europium wire, 576 soldering alloy, 500 lubricant | 1 network transmitter, 2 network receiver | 600t, VA[ZPM] |
+
+**The tiers are GregTech's, not ours.** Every part registers at EV — that is what the casing texture
+and the energy tier say — so a stocking part costs an IV bus and the buffer costs a LuV dual hatch
+while looking like EV machines. The user chose this on 2026-09-22 over flattening everything to EV:
+what a part costs should track what it does, and these do what GregTech's ME parts cost that much to
+do.
+
+The five AE2 → RS swaps, all confirmed present in Refined Storage 2.0.9:
+
+| AE2 | Refined Storage | Why |
+|---|---|---|
+| ME Interface (`AEParts.INTERFACE`, `AEBlocks.INTERFACE`) | `refinedstorage:interface` | RS has one interface where AE2 has a part and a block |
+| Acceleration Card | `refinedstorage:speed_upgrade` | direct equivalent |
+| Pattern Provider | `refinedstorage:autocrafter` | RS 2.0's autocrafter is what holds patterns and offers them to the network; the Pattern Grid only *encodes* them |
+| Capacity Card | `refinedstorage:stack_upgrade` | closest equivalent |
+| Quantum Link + Quantum Ring | `network_transmitter` + `network_receiver` | RS has no quantum bridge; this pair is how it joins two points of one network, which is what a proxy does |
+
+**Verified on the test server 2026-09-22**, by `/gttweaks recipematch` after a `/reload` and again
+after a full restart, 0 KubeJS errors: all eight recipes exist, with the tiers and durations above,
+and every ingredient resolves — `#c:fine_wires/europium` to `gtceu:fine_europium_wire`,
+`#gtceu:circuits/luv` to the four LuV circuit items, and all six Refined Storage ids. The three
+separate 32-wire entries stay three separate assembly-line slots, as GregTech's do.
+
+#### The research step is not craftable, and KubeJS is why
+
+GregTech gates its pattern buffer behind a Scanner research and its proxy behind a Research Station
+research, and `enableResearch` is `true` in this pack, so ours ask for the same. **The research
+items cannot be made.** `scannerResearch`/`stationResearch` put the requirement on the assembly line
+recipe, but the companion recipe that produces the data stick or data module is never emitted
+through the KubeJS path: after a `/reload` and after a full server restart, the scanner recipe list
+is unchanged at 24 entries and the research station list at 14, with nothing for our parts under
+either namespace or either id spelling. GregTech's own research recipes are there because its
+datagen writes them into the jar.
+
+Two smaller findings from the same corner, both recorded so nobody repeats the hour:
+
+- **A scanner research recipe is named after the item being scanned**, not after what is being
+  researched: `gtceu:scanner/1_x_gtceu_luv_dual_input_hatch`. Researching our buffer from the same
+  hatch GregTech researches its ME Pattern Buffer from would put two recipes under one id. The
+  script uses the **LuV emitter** instead, which is in the recipe anyway, is the same tier, and is
+  scanned by nothing else.
+- **The scan's EU/t cannot be set from KubeJS at all.** `GTKubeRecipe` has both
+  `scannerResearch(ItemStack)` and `scannerResearch(UnaryOperator)`; Rhino picks the ItemStack
+  overload for a bare arrow function and fails to parse it, calls a real `UnaryOperator` adapter
+  ambiguous between the two, and KubeJS's class filter blocks `java.lang.Class`, so reflection
+  cannot name the builder form either. The ItemStack form applies the defaults: duration 1200, which
+  is what GregTech sets, and `VA[HV]`, where GregTech sets `VA[LuV]`.
+
+The open choice is what to do about it: drop the research requirement from the two assembly line
+recipes, hand-write the two research recipes as JSON with the `gtceu:research_item` component, or
+move those two recipes into this mod's Java where `ResearchManager.createDefaultResearchRecipe` is
+reachable — which is where GregTech puts its own, for what looks like exactly this reason.
+
 ## How the two sides join
 
 **GregTech.** `@GTAddon("gttweaks")` on a class implementing `IGTAddon` is all it takes to be an
@@ -650,6 +718,11 @@ shows the part emptied and the chest or fluid storage holding what it had.
   four ways on the test server; reading it back has never run, because placing a block from an item
   that carries components needs a player and a headless server has not got one. See "Carrying a
   broken part's stock".
+- **Whether the research requirement is actually on the two assembly line recipes.** If
+  `scannerResearch` applied the condition, the pattern buffer and its proxy are uncraftable
+  until the research question below is settled; if it silently did nothing, they are craftable
+  with no research at all, which is a smaller deviation from GregTech than it looks. Nothing
+  here can tell the two apart — `recipematch` prints ingredients and cost, not conditions.
 - The proxy's `handleRecipe` delegation, which has never been driven by a real multiblock. The proxy
   has only been linked and unlinked, never made part of a second structure with a recipe running
   through it.
@@ -673,8 +746,9 @@ what the stock carry relies on, is the `modifyDrops`-then-`saveToItem` ordering 
    back and watch its stock return to the network, which closes the one half of the stock carry a
    headless server cannot reach. Nothing below is worth starting first, because both of those
    sections are written from the APIs rather than from having seen them run.
-3. Crafting recipes, and RS-styled textures to replace the placeholders. The break-loss hole that
-   used to block this is closed on the writing side and needs only the client check above.
-4. **The pattern buffer still has no UI for its pattern inventory**, so patterns can only be loaded
+3. **Settle the research step for the pattern buffer and its proxy** — see "The research step
+   is not craftable". Everything else about the recipes is done and verified.
+4. RS-styled textures to replace the placeholders, still to come from LavaSurf.
+5. **The pattern buffer still has no UI for its pattern inventory**, so patterns can only be loaded
    with `/gttweaks rspart <pos> pattern <slot>`. That, not the recipe path, is what keeps the buffer
    out of normal play, and it is the one part the config widget does not serve.
