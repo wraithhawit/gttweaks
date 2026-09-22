@@ -11,6 +11,7 @@
     "KubeJSCapabilityKeyMixin",
     "KubeJSResearchRecipesMixin",
     "StructurePreferenceSkipMixin",
+    "TerminalServerBuildMixin",
     "RecipeJsonProbeMixin",
     "EnergyTransferResultCopyMixin",
     "EnergyTransferChargeKeyMixin"

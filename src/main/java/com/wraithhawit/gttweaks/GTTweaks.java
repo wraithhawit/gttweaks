@@ -52,6 +52,7 @@ public class GTTweaks {
         container.registerConfig(ModConfig.Type.CLIENT, GTTweaksConfig.CLIENT_SPEC);
         GTTweaksIngredients.REGISTRY.register(modBus);
         modBus.addListener(EventPriority.HIGHEST, RegisterEvent.class, GTTweaks::probeRegistryDispatch);
+        modBus.addListener(TerminalBuild::registerPayloads);
         initRefinedStorageParts(modBus);
     }
 
