@@ -610,7 +610,8 @@ construction.
 **Verified end to end in game 2026-09-22** by the user on the test server, for the scanner half: the
 generated scanner recipe turned a data stick and a LuV emitter into a stick carrying
 `1x_gtceu_luv_emitter`, and with that stick in a data access hatch the assembly line crafted the RS
-Pattern Buffer. It first needed a second fix, `DataItemBankCheckMixin`: the 8.0 snapshot's
+Pattern Buffer; with the stick out, it would not craft, so the gate is enforced rather than bypassed.
+It first needed a second fix, `DataItemBankCheckMixin`: the 8.0 snapshot's
 `ResearchManager.isStackDataItem` has one branch flipped against 7.x, so a plain data access hatch
 ignored every data stick and orb, GregTech's own included. **Not verified:** the research station
 half, the proxy's data orb. The scan still runs at `VA[HV]` where GregTech would use `VA[LuV]`, which is the
