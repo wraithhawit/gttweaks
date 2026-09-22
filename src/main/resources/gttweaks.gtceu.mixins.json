@@ -9,6 +9,7 @@
     "RecipeCapabilityKeyMixin",
     "RecipeSerializerCapabilityKeyMixin",
     "KubeJSCapabilityKeyMixin",
+    "KubeJSResearchRecipesMixin",
     "RecipeJsonProbeMixin",
     "EnergyTransferResultCopyMixin",
     "EnergyTransferChargeKeyMixin"

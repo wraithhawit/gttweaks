@@ -34,7 +34,7 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | `RSPartCommand` (`/gttweaks rspart`) | working; `config` stands in for the UI, `extract` drives the recipe path |
 | `RSConfigWidget`, `RSConfigSyncHandler`, `RSConfigActions` | written; compiles and the server starts clean, never opened in a client |
 | `RSStockComponent` (`gttweaks:rs_held_stock`) | writing verified four ways on the test server; reading it back on placement never run |
-| Recipes (`pack/kubejs/server_scripts/gttweaks/rs_part_recipes.js`) | all eight exist and resolve; the buffer and proxy's research items cannot be made |
+| Recipes (`pack/kubejs/server_scripts/gttweaks/rs_part_recipes.js`) | all eight exist and resolve; the buffer and proxy's research recipes now exist too (`KubeResearchRecipes`), never run in a scanner or research station |
 | `RSStockingItemSlot`, `RSStockingFluidSlot` | working |
 | `RSStockingBusPartMachine`, `RSStockingHatchPartMachine` | working |
 | `RSBufferSlot` and its recipe handlers | working; holds, persists and refunds |
@@ -508,11 +508,11 @@ and every ingredient resolves — `#c:fine_wires/europium` to `gtceu:fine_europi
 `#gtceu:circuits/luv` to the four LuV circuit items, and all six Refined Storage ids. The three
 separate 32-wire entries stay three separate assembly-line slots, as GregTech's do.
 
-#### The research step is not craftable, and KubeJS is why
+#### The research step was not craftable, and KubeJS was why
 
 GregTech gates its pattern buffer behind a Scanner research and its proxy behind a Research Station
-research, and `enableResearch` is `true` in this pack, so ours ask for the same. **The research
-items cannot be made.** `scannerResearch`/`stationResearch` put the requirement on the assembly line
+research, and `enableResearch` is `true` in this pack, so ours ask for the same. **Until
+`KubeResearchRecipes` (below), the research items could not be made.** `scannerResearch`/`stationResearch` put the requirement on the assembly line
 recipe, but the companion recipe that produces the data stick or data module is never emitted
 through the KubeJS path: after a `/reload` and after a full server restart, the scanner recipe list
 is unchanged at 24 entries and the research station list at 14, with nothing for our parts under
@@ -533,23 +533,22 @@ Two smaller findings from the same corner, both recorded so nobody repeats the h
   cannot name the builder form either. The ItemStack form applies the defaults: duration 1200, which
   is what GregTech sets, and `VA[HV]`, where GregTech sets `VA[LuV]`.
 
-The open choice is what to do about it: drop the research requirement from the two assembly line
-recipes, hand-write the two research recipes as JSON with the `gtceu:research_item` component, or
-move those two recipes into this mod's Java where `ResearchManager.createDefaultResearchRecipe` is
-reachable — which is where GregTech puts its own, for what looks like exactly this reason.
+The choices were to drop the requirement, hand-write the research recipes as JSON, move the two
+recipes into Java, or fix the KubeJS path itself for everyone. The last one is what was done; see
+"The fix: `KubeResearchRecipes`" below.
 
 #### This is a pack-wide bug, not ours
 
 `GTKubeRecipe.applyResearchProperty` reads `enableResearch` and, when it is on, adds a
 `ResearchCondition` to the recipe. It bails only when research is disabled. So the requirement is
 applied and the companion recipe is not, and **every KubeJS recipe in this pack that asks for
-research is uncraftable**, not just ours. Fifteen call sites across six scripts, thirteen of them
-ATM10's own:
+research is uncraftable**, not just ours. Fourteen call sites across six scripts, twelve of them
+ATM10's own (an earlier count of fifteen and thirteen took in a comment in our own script):
 
 | Script | Recipes |
 |---|---|
 | `mods/gtceu/coil_multiblock_recipes.js` | superheated pyrolyzing oven, advanced cracking unit, highly reactive molten blast smeltery |
-| `mods/gtceu/gtceu.js` | advanced large chemical reactor, advanced assembly line, large maceration tower |
+| `mods/gtceu/gtceu.js` | advanced large chemical reactor, neocube (researched from the assembly line), ore processing plant (from the large maceration tower) |
 | `mods/gtceu/mega_fusion_recipes.js` | mega fusion reactor |
 | `mods/gtceu/micro_universe_orb_recipes.js` | four recipes in the micro universe orb chain |
 | `mods/gtceu/starforge_recipes.js` | star forge |
@@ -567,9 +566,51 @@ not working around this somewhere else.
 What has *not* been done is watching a player fail to craft one of them in game. The evidence is
 that the condition-applying code path runs and the recipes it depends on do not exist.
 
-Worth knowing before choosing a fix: those thirteen call sites are in ATM-shipped scripts, which a
-pack update overwrites — see the re-apply note in the repository. A fix that lives in this mod
-survives an update; one that edits those scripts does not.
+Those twelve call sites are in ATM-shipped scripts, which a pack update overwrites — see the
+re-apply note in the repository. That is why the fix lives in this mod rather than in the scripts.
+
+#### The fix: `KubeResearchRecipes`
+
+GregTech's 1.20.1 port emitted these recipes from KubeJS's `injectRuntimeRecipes` plugin hook.
+KubeJS 2101 has no such hook, and `GregTechKubeJSPlugin` in the 8.0 snapshot overrides nothing in
+its place, so `GTKubeRecipe.researchRecipeEntries()` — where every `scannerResearch` and
+`stationResearch` call leaves its entry — is a public getter nothing reads.
+
+`KubeJSResearchRecipesMixin` injects at the tail of `RecipesKubeEvent.applyChanges`. That method
+replaces the datapack recipe map with every original and script-added recipe as JSON, and
+`RecipeManager.apply` parses that map straight after, so its tail is the last point where both the
+script-built recipes and the map are in hand. For each surviving `GTKubeRecipe` with research
+entries, `KubeResearchRecipes` calls GregTech's own
+`ResearchManager.createDefaultResearchRecipe` — the call its datagen makes — with a `RecipeOutput`
+that collects the result, encodes it with `Recipe.CODEC` over KubeJS's registry-aware JSON ops, and
+puts it into the map unless the id is already there. The recipe id derives from the research id
+alone, so an id already present is research something else already provides.
+
+- **Look the recipe type up in `BuiltInRegistries.RECIPE_TYPE`**, as GregTech's own recipe codec does.
+  `GTRegistries.RECIPE_TYPES.get(gtceu:assembly_line)` returned null at this point, and the first
+  build skipped every entry with "is not a GregTech recipe type".
+- The data stick is copied before the call, because `createDefaultResearchRecipe` writes the
+  `gtceu:research_item` component onto the stack it is given, and that stack is the one the
+  assembly line's `ResearchCondition` holds.
+- Each generated recipe's JSON is logged at DEBUG as `[gttweaks] Research recipe <id>: <json>`, and a
+  one-line INFO summary reports entries, recipes added, and how many were already present.
+
+**Verified on the test server 2026-09-22** (0.30.0, md5 395825ea): `KubeJS research: 14 entries, 14
+recipes added, 0 already present`, on a full start and again after `/reload`. Twelve research
+station recipes and two scanner recipes, one per call site. `recipematch` finds
+`gtceu:scanner/1_x_gtceu_large_chemical_reactor` and `gtceu:scanner/1_x_gtceu_luv_emitter` (480
+EU/t, 1200 ticks, data stick + scanned item → data stick) and
+`gtceu:research_station/1x_gttweaks_rs_pattern_buffer` (30720 EU/t, 128000 CWU, data orb +
+buffer → data orb); `recipematch output gtceu:data_module` lists the ATM ones, `1x_gtceu_star_forge`
+and `1x_gtceu_assembly_line` among them. In the logged JSON the output stick carries
+`gtceu:research_item {research_id: "1x_gtceu_luv_emitter", research_type: "gtceu:assembly_line"}`,
+built from the same `ResearchEntry` the assembly line's condition holds, so the two ids agree by
+construction.
+
+**Not verified:** no scanner or research station has actually run one of these, and no assembly line
+has been unlocked by the resulting item. That needs a player, or a multiblock rig this test world
+does not have. The scan still runs at `VA[HV]` where GregTech would use `VA[LuV]`, which is the
+KubeJS overload problem above and not something this fix touches.
 
 ## How the two sides join
 
@@ -751,11 +792,10 @@ shows the part emptied and the chest or fluid storage holding what it had.
   four ways on the test server; reading it back has never run, because placing a block from an item
   that carries components needs a player and a headless server has not got one. See "Carrying a
   broken part's stock".
-- **Whether the research requirement is actually on the two assembly line recipes.** If
-  `scannerResearch` applied the condition, the pattern buffer and its proxy are uncraftable
-  until the research question below is settled; if it silently did nothing, they are craftable
-  with no research at all, which is a smaller deviation from GregTech than it looks. Nothing
-  here can tell the two apart — `recipematch` prints ingredients and cost, not conditions.
+- **Whether a generated research item actually unlocks its recipe.** The requirement is on the
+  assembly line recipes (the `ResearchCondition` is in their JSON and each carries one research
+  entry) and the research recipes now exist, but no scanner, research station or assembly line has
+  run any of it.
 - The proxy's `handleRecipe` delegation, which has never been driven by a real multiblock. The proxy
   has only been linked and unlinked, never made part of a second structure with a recipe running
   through it.
@@ -779,8 +819,9 @@ what the stock carry relies on, is the `modifyDrops`-then-`saveToItem` ordering 
    back and watch its stock return to the network, which closes the one half of the stock carry a
    headless server cannot reach. Nothing below is worth starting first, because both of those
    sections are written from the APIs rather than from having seen them run.
-3. **Settle the research step for the pattern buffer and its proxy** — see "The research step
-   is not craftable". Everything else about the recipes is done and verified.
+3. **Run a research recipe in game** — scan a LuV emitter, put the stick in an assembly line's data
+   access hatch and confirm the pattern buffer recipe unlocks. The recipes now exist (see "The fix:
+   `KubeResearchRecipes`"); nothing has used one.
 4. RS-styled textures to replace the placeholders, still to come from LavaSurf.
 5. **The pattern buffer still has no UI for its pattern inventory**, so patterns can only be loaded
    with `/gttweaks rspart <pos> pattern <slot>`. That, not the recipe path, is what keeps the buffer
