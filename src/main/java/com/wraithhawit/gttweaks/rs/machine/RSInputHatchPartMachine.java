@@ -10,6 +10,7 @@ import com.refinedmods.refinedstorage.api.resource.ResourceAmount;
 import com.wraithhawit.gttweaks.rs.gui.RSConfigActions;
 import com.wraithhawit.gttweaks.rs.gui.RSConfigWidget;
 import com.wraithhawit.gttweaks.rs.network.RSPartActor;
+import com.wraithhawit.gttweaks.rs.slot.RSStockComponent;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredFluidList;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredFluidSlot;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredSlot;
@@ -25,6 +26,11 @@ import brachy.modularui.widgets.TextWidget;
 import brachy.modularui.widgets.layout.Flow;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
+
+import java.util.List;
 
 /**
  * Keeps a multiblock supplied with fluids from a Refined Storage network.
@@ -158,5 +164,41 @@ public class RSInputHatchPartMachine extends RSHatchPartMachine {
                 .syncManager(syncManager)
                 .size(RSConfigWidget.widthFor(CONFIG_SIZE), RSConfigWidget.heightFor(CONFIG_SIZE)));
         mainPanel.child((IWidget) column.center());
+    }
+
+    /**
+     * Hands the stock back to the network at the moment the part is being broken.
+     *
+     * <p>The flush in {@link #onMachineDestroyed()} is too late to help the dropped item, because
+     * GregTech builds the drops first: {@code MetaMachineBlock.getDrops} calls this and only then
+     * {@code saveToItem}, which reaches {@link #collectImplicitComponents}. Flushing here is what
+     * makes the ordering right — the network gets everything it will take, and only what it refused
+     * is left for the item to carry.
+     *
+     * <p>Harmless if {@code getDrops} is ever called without the block actually being broken: the
+     * slots are emptied into the network and the next sync pulls the same amount back.
+     */
+    @Override
+    public void modifyDrops(List<ItemStack> drops) {
+        super.modifyDrops(drops);
+        flushStockToNetwork();
+    }
+
+    /**
+     * Carries whatever the network would not take onto the dropped machine item.
+     *
+     * <p>See {@link RSStockComponent} for why it rides on the item rather than being dropped into
+     * the world or simply lost, and why a stocking part is excluded.
+     */
+    @Override
+    public void collectImplicitComponents(DataComponentMap.Builder builder) {
+        super.collectImplicitComponents(builder);
+        RSStockComponent.collectInto(builder, fluidHandler);
+    }
+
+    @Override
+    protected void applyImplicitComponents(BlockEntity.DataComponentInput input) {
+        super.applyImplicitComponents(input);
+        RSStockComponent.applyFrom(input.get(RSStockComponent.HELD_STOCK.get()), fluidHandler);
     }
 }

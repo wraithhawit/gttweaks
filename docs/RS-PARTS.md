@@ -33,6 +33,7 @@ None of the six is usable in normal play yet — the input parts cannot be confi
 | `RSHatchPartMachine`, `RSInputHatchPartMachine`, `RSOutputHatchPartMachine` | working |
 | `RSPartCommand` (`/gttweaks rspart`) | working; `config` stands in for the UI, `extract` drives the recipe path |
 | `RSConfigWidget`, `RSConfigSyncHandler`, `RSConfigActions` | written; compiles and the server starts clean, never opened in a client |
+| `RSStockComponent` (`gttweaks:rs_held_stock`) | writing verified four ways on the test server; reading it back on placement never run |
 | `RSStockingItemSlot`, `RSStockingFluidSlot` | working |
 | `RSStockingBusPartMachine`, `RSStockingHatchPartMachine` | working |
 | `RSBufferSlot` and its recipe handlers | working; holds, persists and refunds |
@@ -410,6 +411,65 @@ does not; GregTech's widget makes the same distinction, and getting it wrong mov
 by the widget's offset rather than failing outright. And the amount editor's panel is cached, so
 `deleteCachedPanel()` before opening it is what stops the previous slot's number appearing in it.
 
+### Carrying a broken part's stock
+
+An input bus or hatch hands its stock back to the network when it is broken. When the network is
+full or the part was not connected it cannot, and before this the stock was lost with the block.
+**Dropping it into the world is not the fix** — a slot's amount is a `long` and a part can
+legitimately hold hundreds of thousands of items, which as entities would be a far worse problem
+than the loss. It rides on the machine item instead, in a `gttweaks:rs_held_stock` data component,
+and goes back into the slots when the part is placed.
+
+**The ordering is the whole design, and it is the difference between a fix and a duplication bug.**
+GregTech builds the drops before it removes the block: `MetaMachineBlock.getDrops` calls
+`modifyDrops` on the machine and then, for each dropped machine item, `saveToItem`, which reaches
+`collectImplicitComponents`. The flush in `onMachineDestroyed` runs later still, from
+`MetaMachineBlock.onRemove`. So the flush was always too late to affect what the item carried, and
+writing the stock onto the item without moving the flush would have handed the player a copy of
+everything the network was about to be given. `modifyDrops` is therefore overridden to flush there,
+which leaves `collectImplicitComponents` looking at exactly the remainder the network refused.
+
+Two consequences of flushing in `modifyDrops` are worth stating. It is harmless if something ever
+calls `getDrops` without breaking the block: the slots empty into the network and the next sync
+pulls the same amount back. And the later `onMachineDestroyed` flush is now a second attempt on
+slots that hold only what the network already refused in the same tick, so it can only fail again —
+nothing can free network space between the two calls.
+
+**A stocking part is excluded**, and that exclusion is the same item-safety rule as everywhere else
+in these parts: its stock is a reading of what the network holds, not material it carries, so
+writing it onto the item would hand the player a second copy of items the network still has.
+`RSStockComponent.collectInto` asks the slot list and does nothing when it says stocking.
+
+Only the stock travels, never the configuration, and that is what makes the restored stock safe: a
+placed part holding something it is not configured for sees it as excess and pushes it into the
+network on its first sync. If the new network is full too, it keeps holding it and tries again, as
+before. Carrying the configuration as well would be a usability improvement and a separate decision;
+GregTech copies configuration with a data stick instead.
+
+**Verified on the test server 2026-09-22** (0.30.0, md5 e90c3447), four cases, 0 `ERROR` lines after
+`Done` and no gttweaks frame:
+
+- *Network online.* Bus configured 32 cobblestone against a 64-stack behind an external storage,
+  stocked 32, chest at 32. Broken: chest back to **64** and the dropped item carried **no**
+  component at all — `{count: 1, id: "gttweaks:rs_input_bus"}`. The network got everything and the
+  item got nothing, which is the case that would have duplicated.
+- *Network stranded.* Same bus holding 32, then the controller, the cable and the external storage
+  removed so it reported `online: false`, `network storage: unreachable` while still holding its
+  32. Broken: the item carried `gttweaks:rs_held_stock` with `amount: 32L` of
+  `minecraft:cobblestone` in slot 0 and fifteen empty slots after it.
+- *Stocking bus.* Configured 1 cobblestone, mirroring 64, then stranded the same way. Broken: the
+  item carried **no** component and the chest still held its **64**.
+- *Fluid hatch.* Configured 5000 mB water, stocked 5000 from 16000 mB in the network, stranded,
+  broken: the item carried `amount: 5000L` of `minecraft:water` across its eight slots. This is the
+  case that exercises `RSConfiguredFluidList.getConfigurableSlot` reaching through
+  `RSConfiguredFluidSlot.slot()`, which is the fluid side's one structural difference.
+
+**The restore half is unverified.** Placing a block from an item that carries components needs a
+player, which a headless server has not got, so `applyImplicitComponents` has never run. Vanilla
+calls it from `BlockItem`'s placement path and GregTech's own override is empty, so nothing should
+stand in the way — but nothing has demonstrated it either. Place a carried part back on a live
+network and watch the stock return to the network on its first sync.
+
 ## How the two sides join
 
 **GregTech.** `@GTAddon("gttweaks")` on a class implementing `IGTAddon` is all it takes to be an
@@ -586,36 +646,35 @@ shows the part emptied and the chest or fluid storage holding what it had.
   has ever run. Everything in that section is written from GregTech's widget and the two APIs it
   sits on, not from having seen it. Until someone right-clicks a part, treat the whole of it as
   unverified — including whether the grid is the right size for the panel it is placed in.
+- **The restore half of the stock carry.** Writing the stock onto a broken part's item is verified
+  four ways on the test server; reading it back has never run, because placing a block from an item
+  that carries components needs a player and a headless server has not got one. See "Carrying a
+  broken part's stock".
 - The proxy's `handleRecipe` delegation, which has never been driven by a real multiblock. The proxy
   has only been linked and unlinked, never made part of a second structure with a recipe running
   through it.
-- What happens when the network refuses the stock a broken input part is handing back. It is kept and
-  then lost with the block. **Dropping it into the world is not the fix** — a slot's amount is a
-  `long` and a part can legitimately hold hundreds of thousands of items, which as entities would be
-  a far worse problem than the loss. Returning it to the network is the right behaviour; the gap is
-  only the offline-or-full case, and the answer there is probably to carry the stock on the dropped
-  machine item through `collectImplicitComponents`/`applyImplicitComponents`, so it comes back when
-  the part is placed again. **This is what has to be closed before the parts get recipes**, not
-  after: while they are uncraftable the hole is unreachable, and a recipe is what makes it reachable.
 
 Settled, and not a risk: GregTech does not drop a part's contents on break. `MetaMachine.modifyDrops`
 is empty, neither `ItemBusPartMachine` nor `FluidHatchPartMachine` nor `TieredIOPartMachine`
 overrides it, and `MetaMachineBlock.onRemove` only calls `onMachineDestroyed` and removes the block
-entity. So the flush to the network cannot double up with a drop.
+entity. So the flush to the network cannot double up with a drop. What GregTech *does* provide, and
+what the stock carry relies on, is the `modifyDrops`-then-`saveToItem` ordering inside `getDrops`.
 
 ## Next
 
-1. **All eight parts exist and work, and the input parts can now be configured by hand.** The chain
-   is evidenced end to end: an autocrafting request publishes a pattern, the sink delivers its
-   ingredients into a slot, a multiblock runs from that slot, and the products return to the
-   network. What remains is not correctness but finishing.
+1. **All eight parts exist and work, the input parts can be configured by hand, and a broken part no
+   longer loses what the network would not take back.** The chain is evidenced end to end: an
+   autocrafting request publishes a pattern, the sink delivers its ingredients into a slot, a
+   multiblock runs from that slot, and the products return to the network. What remains is not
+   correctness but finishing.
 2. **Open the config widget in a client** and check the four parts it serves — set a resource from
    the cursor, clear one, edit an amount both ways, drag one in from EMI, take a stack back off an
-   input bus, and confirm a stocking part refuses the last two. That is the next thing to do and
-   nothing below it is worth starting first, because everything in the section above is written
-   from GregTech's widget rather than from having seen ours run.
-3. **Close the break-loss gap** described under "Still unchecked", before any part gets a recipe.
-4. Crafting recipes, and RS-styled textures to replace the placeholders.
-5. **The pattern buffer still has no UI for its pattern inventory**, so patterns can only be loaded
+   input bus, and confirm a stocking part refuses the last two. While in there, place a carried part
+   back and watch its stock return to the network, which closes the one half of the stock carry a
+   headless server cannot reach. Nothing below is worth starting first, because both of those
+   sections are written from the APIs rather than from having seen them run.
+3. Crafting recipes, and RS-styled textures to replace the placeholders. The break-loss hole that
+   used to block this is closed on the writing side and needs only the client check above.
+4. **The pattern buffer still has no UI for its pattern inventory**, so patterns can only be loaded
    with `/gttweaks rspart <pos> pattern <slot>`. That, not the recipe path, is what keeps the buffer
    out of normal play, and it is the one part the config widget does not serve.

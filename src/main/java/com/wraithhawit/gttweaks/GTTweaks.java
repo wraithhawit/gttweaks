@@ -7,6 +7,7 @@ import com.wraithhawit.gttweaks.rs.RSCapabilities;
 import com.wraithhawit.gttweaks.rs.RSIntegration;
 import com.wraithhawit.gttweaks.rs.RSMachines;
 import com.wraithhawit.gttweaks.rs.RSPartCommand;
+import com.wraithhawit.gttweaks.rs.slot.RSStockComponent;
 
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.EventPriority;
@@ -75,6 +76,7 @@ public class GTTweaks {
         // Before the registrate's own listeners, deliberately. Both run at normal priority, so they
         // run in the order they were added, and the parts have to exist before the registrate goes
         // looking for things to register on that same first dispatch.
+        RSStockComponent.REGISTRY.register(modBus);
         modBus.addListener(RegisterEvent.class, event -> RSMachines.initOnce());
         GTTweaksRegistrate.REGISTRATE.registerEventListeners(modBus);
         modBus.addListener(RegisterCapabilitiesEvent.class, RSCapabilities::register);
