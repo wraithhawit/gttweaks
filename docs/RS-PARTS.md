@@ -538,6 +538,39 @@ recipes, hand-write the two research recipes as JSON with the `gtceu:research_it
 move those two recipes into this mod's Java where `ResearchManager.createDefaultResearchRecipe` is
 reachable — which is where GregTech puts its own, for what looks like exactly this reason.
 
+#### This is a pack-wide bug, not ours
+
+`GTKubeRecipe.applyResearchProperty` reads `enableResearch` and, when it is on, adds a
+`ResearchCondition` to the recipe. It bails only when research is disabled. So the requirement is
+applied and the companion recipe is not, and **every KubeJS recipe in this pack that asks for
+research is uncraftable**, not just ours. Fifteen call sites across six scripts, thirteen of them
+ATM10's own:
+
+| Script | Recipes |
+|---|---|
+| `mods/gtceu/coil_multiblock_recipes.js` | superheated pyrolyzing oven, advanced cracking unit, highly reactive molten blast smeltery |
+| `mods/gtceu/gtceu.js` | advanced large chemical reactor, advanced assembly line, large maceration tower |
+| `mods/gtceu/mega_fusion_recipes.js` | mega fusion reactor |
+| `mods/gtceu/micro_universe_orb_recipes.js` | four recipes in the micro universe orb chain |
+| `mods/gtceu/starforge_recipes.js` | star forge |
+| `gttweaks/rs_part_recipes.js` | our pattern buffer and proxy |
+
+Checked on the test server 2026-09-22, two ways. Not one of the eleven research stacks those scripts
+ask for has a research station recipe, and neither of the two scanner stacks has a scanner recipe —
+the twenty-one scanner and eleven research station recipes that exist are all GregTech's own, from
+its datagen. And querying two directly by the id GregTech would give them,
+`gtceu:scanner/1_x_gtceu_large_chemical_reactor` and
+`gtceu:research_station/1x_gtceu_pyrolyse_oven`, returns nothing, while the assembly line recipes
+that require them are present. The pack ships no hand-written JSON research recipes either, so it is
+not working around this somewhere else.
+
+What has *not* been done is watching a player fail to craft one of them in game. The evidence is
+that the condition-applying code path runs and the recipes it depends on do not exist.
+
+Worth knowing before choosing a fix: those thirteen call sites are in ATM-shipped scripts, which a
+pack update overwrites — see the re-apply note in the repository. A fix that lives in this mod
+survives an update; one that edits those scripts does not.
+
 ## How the two sides join
 
 **GregTech.** `@GTAddon("gttweaks")` on a class implementing `IGTAddon` is all it takes to be an
