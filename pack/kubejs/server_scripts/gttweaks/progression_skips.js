@@ -33,4 +33,13 @@ ServerEvents.recipes(event => {
     // freezer, which is behind the electronic circuit this pack gates on gtceu:circuits/hv. Osmium
     // and iridium are the same shape but are NOT removed: the pack unifies both and Mekanism needs
     // osmium from its first machine onward. See issue #1 for that reasoning.
+
+    // Mekanism's Oredictionificator converts any item into any other sharing a tag under
+    // [oredictionificator] validItemFilters in config/Mekanism/general.toml - by default every
+    // c:dusts/, c:ingots/, c:nuggets/, c:ores/, c:raw_materials/ and c:storage_blocks/ tag, plus
+    // c:silicon. Next to GregTech that is a 1:1 bridge from any mod's version of a material to
+    // GregTech's own item for it. Removed rather than banned: a fresh world never has one placed,
+    // and the pack's banlist only runs on a dedicated server. client_scripts/gttweaks/hidden_items.js
+    // hides it from EMI.
+    event.remove({ output: 'mekanism:oredictionificator' })
 })
