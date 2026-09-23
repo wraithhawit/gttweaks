@@ -159,7 +159,10 @@ public class RSConfigWidget extends Widget<RSConfigWidget>
             ResourceAmount config = clientConfig(i);
             if (config != null) {
                 drawResource(graphics, config.resource(), x + 1, y + 1);
-                AEGuiHelper.drawAmountOverlay(graphics, config.amount(), x + 1, y + 1);
+                // A stocking slot ignores its amount, so like GregTech's ME stocking parts it shows none.
+                if (!slotList.isStocking()) {
+                    AEGuiHelper.drawAmountOverlay(graphics, config.amount(), x + 1, y + 1);
+                }
             }
             ResourceAmount stock = clientStock(i);
             if (stock != null) {
@@ -190,7 +193,9 @@ public class RSConfigWidget extends Widget<RSConfigWidget>
         }
         ResourceKey resource = amount.resource();
         List<Component> tooltip = new ArrayList<>(rendering(resource).getTooltip(resource));
-        tooltip.add(Component.literal(AEGuiHelper.formatAmountFull(amount.amount())));
+        if (!onConfigRow || !slotList.isStocking()) {
+            tooltip.add(Component.literal(AEGuiHelper.formatAmountFull(amount.amount())));
+        }
         context.getGraphics().renderComponentTooltip(Minecraft.getInstance().font, tooltip,
                 context.getAbsMouseX(), context.getAbsMouseY());
     }

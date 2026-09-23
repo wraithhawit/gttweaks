@@ -77,38 +77,52 @@ public class RSConfigSyncHandler extends SyncHandler<RSConfigSyncHandler> {
         return clientStock[index];
     }
 
+    /**
+     * Works out which slots changed, and fixes what the packet will say, before the packet exists.
+     *
+     * <p>The comparison and the cache update have to happen here, on the server thread, and not in
+     * the writer handed to {@code syncToClient}. ModularUI does not run that writer when the packet
+     * is sent: it runs it when the packet is encoded, on a network thread, and it can run it more
+     * than once for one packet — seen in single player, where every packet's writer ran twice. A
+     * writer that decided "changed" against the cache and then updated the cache wrote the change
+     * the first time and "nothing changed" the second, and the client got the second, so the screen
+     * only caught up when it was reopened and the forced full sync went out. GregTech's
+     * {@code AEConfigSyncHandler} has the same shape and the same bug; {@code AEConfigSyncHandlerMixin}
+     * fixes the ME parts the same way.
+     *
+     * <p>So the writer only replays a snapshot taken here, and running it twice writes the same
+     * bytes twice. The snapshot also keeps the network thread from reading the live slots, which
+     * the server thread is writing.
+     */
     @Override
     public void detectAndSendChanges(boolean init) {
-        boolean anyChanged = init;
-        if (!anyChanged) {
-            for (int i = 0; i < slotCount; i++) {
-                RSConfiguredSlot slot = slotList.getConfigurableSlot(i);
-                if (!areEqual(slot.getConfig(), cachedConfig[i])
-                        || !areEqual(slot.getStock(), cachedStock[i])) {
-                    anyChanged = true;
-                    break;
-                }
+        boolean[] changed = new boolean[slotCount];
+        ResourceAmount[] configs = new ResourceAmount[slotCount];
+        ResourceAmount[] stocks = new ResourceAmount[slotCount];
+        boolean anyChanged = false;
+        for (int i = 0; i < slotCount; i++) {
+            RSConfiguredSlot slot = slotList.getConfigurableSlot(i);
+            ResourceAmount config = slot.getConfig();
+            ResourceAmount stock = slot.getStock();
+            if (init || !areEqual(config, cachedConfig[i]) || !areEqual(stock, cachedStock[i])) {
+                changed[i] = true;
+                anyChanged = true;
+                configs[i] = copy(config);
+                stocks[i] = copy(stock);
+                cachedConfig[i] = copy(config);
+                cachedStock[i] = copy(stock);
             }
         }
         if (!anyChanged) {
             return;
         }
         syncToClient(SYNC_SLOTS, buffer -> {
-            for (int i = 0; i < slotCount; i++) {
-                RSConfiguredSlot slot = slotList.getConfigurableSlot(i);
-                ResourceAmount config = slot.getConfig();
-                ResourceAmount stock = slot.getStock();
-                boolean changed = init
-                        || !areEqual(config, cachedConfig[i])
-                        || !areEqual(stock, cachedStock[i]);
-                buffer.writeBoolean(changed);
-                if (!changed) {
-                    continue;
+            for (int i = 0; i < changed.length; i++) {
+                buffer.writeBoolean(changed[i]);
+                if (changed[i]) {
+                    write(buffer, configs[i]);
+                    write(buffer, stocks[i]);
                 }
-                write(buffer, config);
-                write(buffer, stock);
-                cachedConfig[i] = copy(config);
-                cachedStock[i] = copy(stock);
             }
         });
     }

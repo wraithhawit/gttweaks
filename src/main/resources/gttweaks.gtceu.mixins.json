@@ -15,7 +15,9 @@
     "DataItemBankCheckMixin",
     "RecipeJsonProbeMixin",
     "EnergyTransferResultCopyMixin",
-    "EnergyTransferChargeKeyMixin"
+    "EnergyTransferChargeKeyMixin",
+    "AEConfigSyncHandlerMixin",
+    "MEStockingDuplicateMixin"
   ],
   "client": [
     "ExpandablePreviewFillMixin",

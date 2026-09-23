@@ -5,11 +5,15 @@ import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.refinedmods.refinedstorage.api.core.Action;
 import com.refinedmods.refinedstorage.api.network.storage.StorageNetworkComponent;
 import com.refinedmods.refinedstorage.api.resource.ResourceAmount;
+import com.refinedmods.refinedstorage.api.resource.ResourceKey;
 
 import com.wraithhawit.gttweaks.rs.network.RSPartActor;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredFluidList;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredFluidSlot;
 import com.wraithhawit.gttweaks.rs.slot.RSStockingFluidSlot;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Makes a Refined Storage network's fluids visible to a multiblock without moving them into the
@@ -46,9 +50,11 @@ public class RSStockingHatchPartMachine extends RSInputHatchPartMachine {
         if (storage == null) {
             return;
         }
+        // First slot per fluid only; see RSStockingBusPartMachine.syncNetwork for why.
+        Set<ResourceKey> seen = new HashSet<>();
         for (RSConfiguredFluidSlot slot : getFluidHandler().getInventory()) {
             ResourceAmount configured = slot.slot().getConfig();
-            if (configured == null) {
+            if (configured == null || !seen.add(configured.resource())) {
                 slot.slot().setStock(null);
                 continue;
             }

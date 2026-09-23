@@ -5,11 +5,15 @@ import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.refinedmods.refinedstorage.api.core.Action;
 import com.refinedmods.refinedstorage.api.network.storage.StorageNetworkComponent;
 import com.refinedmods.refinedstorage.api.resource.ResourceAmount;
+import com.refinedmods.refinedstorage.api.resource.ResourceKey;
 
 import com.wraithhawit.gttweaks.rs.network.RSPartActor;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredItemList;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredItemSlot;
 import com.wraithhawit.gttweaks.rs.slot.RSStockingItemSlot;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Makes a Refined Storage network's items visible to a multiblock without moving them into the part.
@@ -73,6 +77,12 @@ public class RSStockingBusPartMachine extends RSInputBusPartMachine {
      * <p>A simulated extraction is how the network is asked "how much of this could I have". The
      * amount asked for is the whole of it, not the configured amount, because the mirror is meant to
      * show what is available rather than what was requested.
+     *
+     * <p>Only the first slot configured with a resource mirrors it. A later slot asking for the same
+     * one is left with no stock, which its extraction treats as nothing to take, because mirroring
+     * the whole network into both would show a multiblock twice what exists: 320 Inferium read as
+     * 640, and a recipe needing more than 320 could pass the simulated pass and fall short when it
+     * ran. GregTech's ME stocking parts had the same gap; {@code MEStockingDuplicateMixin} closes it.
      */
     @Override
     protected void syncNetwork() {
@@ -80,9 +90,10 @@ public class RSStockingBusPartMachine extends RSInputBusPartMachine {
         if (storage == null) {
             return;
         }
+        Set<ResourceKey> seen = new HashSet<>();
         for (RSConfiguredItemSlot slot : getItemHandler().getInventory()) {
             ResourceAmount configured = slot.getConfig();
-            if (configured == null) {
+            if (configured == null || !seen.add(configured.resource())) {
                 slot.setStock(null);
                 continue;
             }
