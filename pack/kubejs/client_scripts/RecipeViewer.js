@@ -25,15 +25,17 @@ RecipeViewerEvents.removeEntriesCompletely('item', allthemods => {
     // }
 
     //allthemods.remove('relics:researching_table')
-    allthemods.remove("extradisks:infinite_chemical_storage_block")
-    allthemods.remove("extradisks:infinite_chemical_storage_disk")
-    allthemods.remove("extradisks:infinite_chemical_storage_part")
-    allthemods.remove("extradisks:infinite_fluid_storage_block")
-    allthemods.remove("extradisks:infinite_fluid_storage_disk")
-    allthemods.remove("extradisks:infinite_fluid_storage_part")
-    allthemods.remove("extradisks:infinite_item_storage_block")
-    allthemods.remove("extradisks:infinite_item_storage_disk")
-    allthemods.remove("extradisks:infinite_item_storage_part")
+    // gttweaks: the infinite disks are craftable (server_scripts/mods/Extra Disks/Recipes.js), so keep
+    // them visible in EMI. Client scripts do not reload with /reload.
+    // allthemods.remove("extradisks:infinite_chemical_storage_block")
+    // allthemods.remove("extradisks:infinite_chemical_storage_disk")
+    // allthemods.remove("extradisks:infinite_chemical_storage_part")
+    // allthemods.remove("extradisks:infinite_fluid_storage_block")
+    // allthemods.remove("extradisks:infinite_fluid_storage_disk")
+    // allthemods.remove("extradisks:infinite_fluid_storage_part")
+    // allthemods.remove("extradisks:infinite_item_storage_block")
+    // allthemods.remove("extradisks:infinite_item_storage_disk")
+    // allthemods.remove("extradisks:infinite_item_storage_part")
 
     let $DyeColor = Java.loadClass("net.minecraft.world.item.DyeColor")
     for (let color of $DyeColor.values()) {
