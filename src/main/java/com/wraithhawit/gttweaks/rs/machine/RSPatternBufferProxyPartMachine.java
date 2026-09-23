@@ -5,6 +5,7 @@ import java.util.List;
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
+import com.gregtechceu.gtceu.api.machine.feature.IMuiMachine;
 import com.gregtechceu.gtceu.api.machine.multiblock.part.TieredIOPartMachine;
 import com.gregtechceu.gtceu.api.machine.trait.recipe.RecipeHandlerList;
 import com.gregtechceu.gtceu.api.sync_system.annotations.SaveField;
@@ -16,7 +17,15 @@ import com.wraithhawit.gttweaks.rs.pattern.RSBufferRecipeHandlerList;
 import com.wraithhawit.gttweaks.rs.pattern.RSBufferSlot;
 import com.wraithhawit.gttweaks.rs.pattern.RSProxyRecipeHandlerList;
 
+import brachy.modularui.factory.PosGuiData;
+import brachy.modularui.screen.UISettings;
+import brachy.modularui.value.sync.PanelSyncManager;
+import brachy.modularui.widget.ParentWidget;
+
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 
@@ -38,7 +47,7 @@ import org.jetbrains.annotations.Nullable;
  * A proxy is not on the network and must not be: it neither stores nor moves resources, and a cable
  * laid against one should see nothing. GregTech's proxy has no grid node for the same reason.
  */
-public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine {
+public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine implements IMuiMachine {
 
     private static final int PROXY_TIER = 6;
 
@@ -126,6 +135,24 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine {
             setBuffer(bufferPos);
         }
         return buffer;
+    }
+
+    /**
+     * Opens only when linked, and then shows the linked buffer's own screen — GregTech's ME proxy does
+     * both. An unlinked proxy has nothing of its own to show.
+     */
+    @Override
+    public boolean shouldOpenUI(Player player, InteractionHand hand, BlockHitResult hit) {
+        return getBuffer() != null;
+    }
+
+    @Override
+    public void buildMainUI(ParentWidget<?> mainPanel, PosGuiData data, PanelSyncManager syncManager,
+                            UISettings settings) {
+        RSPatternBufferPartMachine target = getBuffer();
+        if (target != null) {
+            target.buildMainUI(mainPanel, data, syncManager, settings);
+        }
     }
 
     @Nullable

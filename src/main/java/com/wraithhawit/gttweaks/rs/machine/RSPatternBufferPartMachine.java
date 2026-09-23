@@ -36,8 +36,25 @@ import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.sync_system.annotations.SaveField;
 import com.gregtechceu.gtceu.api.sync_system.annotations.SyncToClient;
 
+import com.gregtechceu.gtceu.common.mui.GTGuiTextures;
+
+import brachy.modularui.api.drawable.Text;
+import brachy.modularui.api.widget.IWidget;
+import brachy.modularui.factory.PosGuiData;
+import brachy.modularui.screen.UISettings;
+import brachy.modularui.value.sync.BooleanSyncValue;
+import brachy.modularui.value.sync.PanelSyncManager;
+import brachy.modularui.value.sync.SyncHandlers;
+import brachy.modularui.widget.ParentWidget;
+import brachy.modularui.widgets.TextWidget;
+import brachy.modularui.widgets.layout.Flow;
+import brachy.modularui.widgets.layout.Grid;
+import brachy.modularui.widgets.slot.ItemSlot;
+import brachy.modularui.widgets.slot.SlotGroup;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 
 import org.jetbrains.annotations.Nullable;
@@ -284,6 +301,45 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
         for (int i = 0; i < wanted; i++) {
             addSlot();
         }
+    }
+
+    /**
+     * The screen: whether the buffer is on a network, and its 27 pattern slots.
+     *
+     * <p>GregTech's item bus screen cannot be reused: it draws one slot per slot its tier would have,
+     * 49 at this tier, against the nine-slot vestigial inventory, and threw "invalid index 9" so that
+     * right-clicking opened nothing. This is GregTech's ME Pattern Buffer screen instead, the same
+     * nine-wide grid with the pattern overlay. The slots are the pattern inventory itself, whose
+     * filter admits only encoded patterns and whose change listener republishes them to the network,
+     * so placing or removing a pattern here is all the wiring a slot needs.
+     */
+    @Override
+    public void buildMainUI(ParentWidget<?> mainPanel, PosGuiData data, PanelSyncManager syncManager,
+                            UISettings settings) {
+        SlotGroup patternGroup = new SlotGroup("pattern_slots", 9, 0, true);
+        BooleanSyncValue online = new BooleanSyncValue(this::isOnline);
+        syncManager.syncValue("rs_is_online", online);
+
+        Flow column = (Flow) Flow.col().coverChildren();
+        column.child((IWidget) ((TextWidget) Text
+                .dynamic(() -> Component.translatable(online.getBoolValue()
+                        ? "gttweaks.rs.part.online"
+                        : "gttweaks.rs.part.offline"))
+                .asWidget()
+                .marginTop(2))
+                .marginBottom(4));
+        column.child((IWidget) new Grid()
+                .height(54)
+                .minElementMargin(0, 0)
+                .minColWidth(18)
+                .minRowHeight(18)
+                .leftRel(0.5f)
+                .gridOfSizeWidth(PATTERN_COUNT, 9, (x, y, index) -> new ItemSlot()
+                        .slot(SyncHandlers.itemSlot(patternInventory, index)
+                                .slotGroup(patternGroup)
+                                .accessibility(true, true))
+                        .background(GTGuiTextures.SLOT, GTGuiTextures.PATTERN_OVERLAY)));
+        mainPanel.child((IWidget) column.center());
     }
 
     /**
