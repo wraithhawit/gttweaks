@@ -1,7 +1,9 @@
 package com.wraithhawit.gttweaks.rs;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
 
 import com.mojang.brigadier.arguments.BoolArgumentType;
@@ -21,6 +23,8 @@ import com.wraithhawit.gttweaks.rs.machine.RSInputBusPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSPatternBufferPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSPatternBufferProxyPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSInputHatchPartMachine;
+import com.wraithhawit.gttweaks.rs.machine.RSOutputBusPartMachine;
+import com.wraithhawit.gttweaks.rs.slot.RSOutputBuffer;
 import com.wraithhawit.gttweaks.rs.network.RSNetworkPart;
 import com.wraithhawit.gttweaks.rs.pattern.RSBufferSlot;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredFluidSlot;
@@ -40,6 +44,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
+import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
@@ -122,10 +127,19 @@ public final class RSPartCommand {
                                                         IntegerArgumentType.getInteger(context, "slot"),
                                                         ResourceLocationArgument.getId(context, "fluid"),
                                                         LongArgumentType.getLong(context, "amount")))))));
+        var insert = Commands.literal("insert")
+                .then(Commands.argument("item", ItemArgument.item(event.getBuildContext()))
+                        .then(Commands.argument("count", IntegerArgumentType.integer(1))
+                                .then(Commands.argument("simulate", BoolArgumentType.bool())
+                                        .executes(context -> insertOutput(context,
+                                                ItemArgument.getItem(context, "item").createItemStack(1, false),
+                                                IntegerArgumentType.getInteger(context, "count"),
+                                                BoolArgumentType.getBool(context, "simulate"))))));
         var pos = Commands.argument("pos", BlockPosArgument.blockPos())
                 .executes(RSPartCommand::info)
                 .then(Commands.literal("config").then(slot))
                 .then(extract)
+                .then(insert)
                 .then(buffer)
                 .then(Commands.literal("pattern")
                         .then(Commands.argument("slot", IntegerArgumentType.integer(0))
@@ -285,6 +299,34 @@ public final class RSPartCommand {
         }
         say(source, "that part has no configured slots");
         return 0;
+    }
+
+    /**
+     * Hands an RS Output Bus a recipe output, through the same GregTech handler call a multiblock's
+     * recipe logic makes ({@code handleRecipeInner} with {@code IO.OUT}), and reports what it refused.
+     *
+     * <p>The count is not limited to a stack, because recipe outputs are not: a greenhouse recipe
+     * produced 163,840 of one item, which the bus's old sixteen slots could never accept.
+     */
+    private static int insertOutput(CommandContext<CommandSourceStack> context, ItemStack item, int count,
+            boolean simulate) throws CommandSyntaxException {
+        MetaMachine machine = part(context);
+        if (machine == null) {
+            return 0;
+        }
+        CommandSourceStack source = context.getSource();
+        if (!(machine instanceof RSOutputBusPartMachine bus)) {
+            say(source, "that part is not an RS Output Bus");
+            return 0;
+        }
+        List<SizedIngredient> left = bus.getInventory().handleRecipeInner(IO.OUT, null,
+                new ArrayList<>(List.of(SizedIngredient.of(item.getItem(), count))), simulate);
+        long refused = left == null ? 0L : left.stream().mapToLong(SizedIngredient::count).sum();
+        long buffered = ((RSOutputBuffer) bus.getInventory().storage).snapshot().stream()
+                .mapToLong(ResourceAmount::amount).sum();
+        say(source, (simulate ? "simulated" : "executed") + " output of " + count + " x "
+                + item.getHoverName().getString() + ": refused " + refused + ", buffer now holds " + buffered);
+        return 1;
     }
 
     private static int patternCount(RSPatternBufferPartMachine buffer) {

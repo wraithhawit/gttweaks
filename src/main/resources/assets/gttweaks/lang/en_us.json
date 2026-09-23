@@ -20,6 +20,7 @@
   "gttweaks.rs.part.online": "§aConnected to a network",
   "gttweaks.rs.part.offline": "§cNot connected",
   "gttweaks.rs.config.amount": "Amount",
+  "gttweaks.rs.output.queue": "Sending Queue:",
   "block.gttweaks.rs_pattern_buffer": "RS Pattern Buffer",
   "block.gttweaks.rs_pattern_buffer_proxy": "RS Pattern Buffer Proxy",
   "gttweaks.machine.rs.pattern_buffer_proxy.tooltip.0": "§bLends a Pattern Buffer elsewhere to this multiblock",
