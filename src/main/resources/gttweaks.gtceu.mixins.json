@@ -23,7 +23,8 @@
     "ExpandablePreviewFillMixin",
     "RecipeTypeLayoutAccessor",
     "ResearchInfoRowMixin",
-    "RecipeViewerTextCapabilitiesMixin"
+    "RecipeViewerTextCapabilitiesMixin",
+    "AEConfigWidgetStockingAmountMixin"
   ],
   "server": [],
   "injectors": {
