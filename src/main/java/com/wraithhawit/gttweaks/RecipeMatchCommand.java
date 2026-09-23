@@ -55,6 +55,8 @@ import java.util.Optional;
  * <li>{@code smelting <item>} / {@code blasting <item>} — every furnace recipe that takes the item.</li>
  * <li>{@code output <item>} / {@code input <item>} — every recipe of any type, GregTech machines
  * included, that produces or consumes the item.</li>
+ * <li>{@code skips} — every non-GregTech recipe that makes a GregTech material, fluids and chemicals
+ * included, against GregTech's cheapest recipe for it; see {@link ForeignProducerScan}.</li>
  * </ul>
  *
  * <p>The recipe probe only says whether an id loaded; this runs after KubeJS, AlmostUnified and
@@ -110,7 +112,10 @@ public class RecipeMatchCommand {
                                 .then(Commands.literal("fluid")
                                         .then(Commands.argument("id", StringArgumentType.greedyString())
                                                 .executes(context -> tags(context, true,
-                                                        StringArgumentType.getString(context, "id"))))))));
+                                                        StringArgumentType.getString(context, "id"))))))
+                        .then(Commands.literal("skips")
+                                .executes(context -> report(context.getSource(), "skips",
+                                        ForeignProducerScan.run(context.getSource().getServer()))))));
     }
 
     /** {@code tags <item|fluid> <id>}: the tags an item or fluid is in right now, runtime tags included. */
