@@ -9,15 +9,22 @@
     "RecipeCapabilityKeyMixin",
     "RecipeSerializerCapabilityKeyMixin",
     "KubeJSCapabilityKeyMixin",
+    "KubeJSResearchRecipesMixin",
+    "StructurePreferenceSkipMixin",
+    "TerminalServerBuildMixin",
+    "DataItemBankCheckMixin",
     "RecipeJsonProbeMixin",
     "EnergyTransferResultCopyMixin",
-    "EnergyTransferChargeKeyMixin"
+    "EnergyTransferChargeKeyMixin",
+    "AEConfigSyncHandlerMixin",
+    "MEStockingDuplicateMixin"
   ],
   "client": [
     "ExpandablePreviewFillMixin",
     "RecipeTypeLayoutAccessor",
     "ResearchInfoRowMixin",
-    "RecipeViewerTextCapabilitiesMixin"
+    "RecipeViewerTextCapabilitiesMixin",
+    "AEConfigWidgetStockingAmountMixin"
   ],
   "server": [],
   "injectors": {

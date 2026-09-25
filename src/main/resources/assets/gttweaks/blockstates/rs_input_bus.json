@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "gttweaks:block/machine/rs_input_bus",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "gttweaks:block/machine/rs_input_bus",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "gttweaks:block/machine/rs_input_bus"
+    },
+    "facing=south": {
+      "model": "gttweaks:block/machine/rs_input_bus",
+      "y": 180
+    },
+    "facing=up": {
+      "gtceu:z": 180,
+      "model": "gttweaks:block/machine/rs_input_bus",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "gttweaks:block/machine/rs_input_bus",
+      "y": 270
+    }
+  }
+}

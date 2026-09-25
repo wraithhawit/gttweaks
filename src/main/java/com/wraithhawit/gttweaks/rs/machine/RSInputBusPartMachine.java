@@ -3,13 +3,33 @@ package com.wraithhawit.gttweaks.rs.machine;
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 
+import com.refinedmods.refinedstorage.api.core.Action;
 import com.refinedmods.refinedstorage.api.network.storage.StorageNetworkComponent;
 import com.refinedmods.refinedstorage.api.resource.ResourceAmount;
-import com.refinedmods.refinedstorage.api.core.Action;
 
+import com.wraithhawit.gttweaks.rs.gui.RSConfigActions;
+import com.wraithhawit.gttweaks.rs.gui.RSConfigWidget;
 import com.wraithhawit.gttweaks.rs.network.RSPartActor;
+import com.wraithhawit.gttweaks.rs.slot.RSStockComponent;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredItemList;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredItemSlot;
+
+import brachy.modularui.api.drawable.Text;
+import brachy.modularui.api.widget.IWidget;
+import brachy.modularui.factory.PosGuiData;
+import brachy.modularui.screen.UISettings;
+import brachy.modularui.value.sync.BooleanSyncValue;
+import brachy.modularui.value.sync.PanelSyncManager;
+import brachy.modularui.widget.ParentWidget;
+import brachy.modularui.widgets.TextWidget;
+import brachy.modularui.widgets.layout.Flow;
+
+import net.minecraft.network.chat.Component;
+import net.minecraft.core.component.DataComponentMap;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.entity.BlockEntity;
+
+import java.util.List;
 
 /**
  * Keeps a multiblock supplied with items from a Refined Storage network.
@@ -89,6 +109,18 @@ public class RSInputBusPartMachine extends RSBusPartMachine {
     @Override
     public void onMachineDestroyed() {
         super.onMachineDestroyed();
+        flushStockToNetwork();
+    }
+
+    /**
+     * Gives the network back everything the slots are holding.
+     *
+     * <p>Split out from {@link #onMachineDestroyed()} because the stocking bus must <em>not</em> do
+     * it: its stock is a mirror of what the network already has rather than material this part is
+     * holding, so handing it over would create items. That subclass overrides this to do nothing,
+     * which is the same split GregTech makes with {@code flushInventory()}.
+     */
+    protected void flushStockToNetwork() {
         StorageNetworkComponent storage = nodeHolder.storage();
         if (storage == null) {
             return;
@@ -101,5 +133,74 @@ public class RSInputBusPartMachine extends RSBusPartMachine {
             long inserted = storage.insert(stock.resource(), stock.amount(), Action.EXECUTE, RSPartActor.INSTANCE);
             slot.debitStock(inserted);
         }
+    }
+
+    /**
+     * The configuration screen: the slot grid, and whether the part is on the network at all.
+     *
+     * <p>{@link RSConfigWidget} is the whole of it. Everything the player can do to a slot is
+     * registered here as a synced action and applied on the server by {@link RSConfigActions}, so
+     * the widget never writes to the slots it draws.
+     *
+     * <p>The online line is worth the two rows it costs. A part that has not joined a network looks
+     * exactly like one whose slots are simply empty, and before this there was no way to tell them
+     * apart without a command.
+     */
+    @Override
+    public void buildMainUI(ParentWidget<?> mainPanel, PosGuiData data, PanelSyncManager syncManager,
+                            UISettings settings) {
+        BooleanSyncValue online = new BooleanSyncValue(this::isOnline);
+        syncManager.syncValue("rs_is_online", online);
+        RSConfigActions.register(syncManager, itemHandler, false, this::updateInventorySubscription,
+                resource -> this instanceof RSStockingPart stocking && stocking.configuredInOtherPart(resource));
+
+        Flow column = (Flow) Flow.col().coverChildren();
+        column.child((IWidget) ((TextWidget) Text
+                .dynamic(() -> Component.translatable(online.getBoolValue()
+                        ? "gttweaks.rs.part.online"
+                        : "gttweaks.rs.part.offline"))
+                .asWidget()
+                .marginTop(2))
+                .marginBottom(4));
+        column.child((IWidget) new RSConfigWidget(itemHandler, CONFIG_SIZE, false)
+                .syncManager(syncManager)
+                .size(RSConfigWidget.widthFor(CONFIG_SIZE), RSConfigWidget.heightFor(CONFIG_SIZE)));
+        mainPanel.child((IWidget) column.center());
+    }
+
+    /**
+     * Hands the stock back to the network at the moment the part is being broken.
+     *
+     * <p>The flush in {@link #onMachineDestroyed()} is too late to help the dropped item, because
+     * GregTech builds the drops first: {@code MetaMachineBlock.getDrops} calls this and only then
+     * {@code saveToItem}, which reaches {@link #collectImplicitComponents}. Flushing here is what
+     * makes the ordering right — the network gets everything it will take, and only what it refused
+     * is left for the item to carry.
+     *
+     * <p>Harmless if {@code getDrops} is ever called without the block actually being broken: the
+     * slots are emptied into the network and the next sync pulls the same amount back.
+     */
+    @Override
+    public void modifyDrops(List<ItemStack> drops) {
+        super.modifyDrops(drops);
+        flushStockToNetwork();
+    }
+
+    /**
+     * Carries whatever the network would not take onto the dropped machine item.
+     *
+     * <p>See {@link RSStockComponent} for why it rides on the item rather than being dropped into
+     * the world or simply lost, and why a stocking part is excluded.
+     */
+    @Override
+    public void collectImplicitComponents(DataComponentMap.Builder builder) {
+        super.collectImplicitComponents(builder);
+        RSStockComponent.collectInto(builder, itemHandler);
+    }
+
+    @Override
+    protected void applyImplicitComponents(BlockEntity.DataComponentInput input) {
+        super.applyImplicitComponents(input);
+        RSStockComponent.applyFrom(input.get(RSStockComponent.HELD_STOCK.get()), itemHandler);
     }
 }
