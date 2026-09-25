@@ -78,6 +78,15 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine
      */
     private boolean resolved;
 
+    /**
+     * The {@link #bufferPos} that {@link #buffer} was resolved from. On the client {@code bufferPos}
+     * arrives by sync, after the first lookup has already answered "not linked"; without this the
+     * client kept that answer, built an empty screen while the server built the buffer's, and the
+     * mismatch disconnected the player ("36 slots, but expected 63", 2026-09-25).
+     */
+    @Nullable
+    private BlockPos resolvedPos;
+
     private final RSProxyRecipeHandlerList proxyHandler;
 
     private final List<RecipeHandlerList> proxyHandlers;
@@ -120,6 +129,7 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine
      */
     public void setBuffer(@Nullable BlockPos pos) {
         resolved = true;
+        resolvedPos = pos;
         Level level = getLevel();
         if (level == null || pos == null) {
             buffer = null;
@@ -127,9 +137,18 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine
         }
         MetaMachine found = MetaMachine.getMachine((BlockGetter) level, pos);
         if (found instanceof RSPatternBufferPartMachine target) {
-            bufferPos = pos;
+            if (!pos.equals(bufferPos)) {
+                bufferPos = pos;
+                if (!isRemote()) {
+                    syncDataHolder.markClientSyncFieldDirty("bufferPos");
+                }
+            }
             buffer = target;
-            target.addProxy(getBlockPos());
+            // Only the server's buffer counts proxies; the client's copy would grow a slot the
+            // server never sent it.
+            if (!isRemote()) {
+                target.addProxy(getBlockPos());
+            }
         } else {
             buffer = null;
         }
@@ -137,7 +156,7 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine
 
     @Nullable
     public RSPatternBufferPartMachine getBuffer() {
-        if (!resolved) {
+        if (!resolved || !java.util.Objects.equals(resolvedPos, bufferPos)) {
             setBuffer(bufferPos);
         }
         return buffer;
