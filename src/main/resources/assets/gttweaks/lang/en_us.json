@@ -23,7 +23,6 @@
   "gttweaks.rs.output.queue": "Sending Queue:",
   "gttweaks.rs.buffer.copied": "Pattern buffer position saved to the data stick",
   "gttweaks.rs.proxy.linked": "Linked to the pattern buffer at %s, %s, %s",
-  "gttweaks.rs.proxy.too_far": "§eThe linked pattern buffer is too far away to open from here",
   "gttweaks.rs.proxy.no_buffer":"§cThe data stick does not point at an RS Pattern Buffer",
   "block.gttweaks.rs_pattern_buffer": "RS Pattern Buffer",
   "block.gttweaks.rs_pattern_buffer_proxy": "RS Pattern Buffer Proxy",

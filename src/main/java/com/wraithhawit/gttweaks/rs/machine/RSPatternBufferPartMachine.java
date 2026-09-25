@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.BooleanSupplier;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
@@ -344,8 +345,22 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
     @Override
     public void buildMainUI(ParentWidget<?> mainPanel, PosGuiData data, PanelSyncManager syncManager,
                             UISettings settings) {
+        buildPatternScreen(mainPanel, syncManager, patternInventory, this::isOnline);
+    }
+
+    /**
+     * The buffer's screen, built against whatever inventory and online flag the caller has.
+     *
+     * <p>Static so a proxy can build the very same layout when its side of the connection has no
+     * buffer object to hand -- a client that has not loaded the buffer's chunk. Client and server must
+     * register the same sync handlers in the same order or the player is disconnected, so the proxy
+     * builds this against an empty stand-in inventory, which the server's slot sync then fills; the
+     * layout never depends on whether the buffer is present.
+     */
+    public static void buildPatternScreen(ParentWidget<?> mainPanel, PanelSyncManager syncManager,
+                                          CustomItemStackHandler patterns, BooleanSupplier isOnline) {
         SlotGroup patternGroup = new SlotGroup("pattern_slots", 9, 0, true);
-        BooleanSyncValue online = new BooleanSyncValue(this::isOnline);
+        BooleanSyncValue online = new BooleanSyncValue(isOnline);
         syncManager.syncValue("rs_is_online", online);
 
         Flow column = (Flow) Flow.col().coverChildren();
@@ -363,7 +378,7 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
                 .minRowHeight(18)
                 .leftRel(0.5f)
                 .gridOfSizeWidth(PATTERN_COUNT, 9, (x, y, index) -> new ItemSlot()
-                        .slot(SyncHandlers.itemSlot(patternInventory, index)
+                        .slot(SyncHandlers.itemSlot(patterns, index)
                                 .slotGroup(patternGroup)
                                 .accessibility(true, true))
                         .background(GTGuiTextures.SLOT, RS_PATTERN_OVERLAY)));

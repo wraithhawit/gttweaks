@@ -11,6 +11,7 @@ import com.gregtechceu.gtceu.api.machine.multiblock.part.TieredIOPartMachine;
 import com.gregtechceu.gtceu.api.machine.trait.recipe.RecipeHandlerList;
 import com.gregtechceu.gtceu.api.sync_system.annotations.SaveField;
 import com.gregtechceu.gtceu.api.sync_system.annotations.SyncToClient;
+import com.gregtechceu.gtceu.api.transfer.item.CustomItemStackHandler;
 import com.gregtechceu.gtceu.common.data.item.GTDataComponents;
 
 import com.wraithhawit.gttweaks.rs.pattern.RSBufferAggregateFluidHandler;
@@ -28,9 +29,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.BlockGetter;
@@ -208,49 +207,45 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine
     }
 
     /**
-     * Whether a buffer object may still be drawn from: not removed, and its chunk loaded. Both,
-     * because the removed flag alone lagged: on the test server a buffer whose chunk the level
-     * already reported as not loaded was still not marked removed three minutes later, and the
-     * proxy kept using it.
+     * Whether a buffer object may still be drawn from: not removed, its chunk loaded, and still the
+     * machine at its position. The removed flag alone lagged -- on the test server a buffer whose
+     * chunk the level already reported as not loaded was still not marked removed three minutes
+     * later -- and a chunk that unloads and reloads between two lookups leaves the old object looking
+     * neither removed nor unloaded, so the identity check is what catches that (Astra). The lookup
+     * comes after {@code isLoaded} so it can never load a chunk.
      */
     private boolean isAvailable(RSPatternBufferPartMachine target) {
         Level level = getLevel();
-        return !target.isRemoved() && level != null && level.isLoaded(target.getBlockPos());
+        return !target.isRemoved() && level != null && level.isLoaded(target.getBlockPos())
+                && MetaMachine.getMachine((BlockGetter) level, target.getBlockPos()) == target;
     }
 
     /**
-     * Opens only when linked, and then shows the linked buffer's own screen — GregTech's ME proxy does
-     * both. An unlinked proxy has nothing of its own to show.
+     * Opens only when linked, and then shows the linked buffer's screen -- GregTech's ME proxy does
+     * both. The server needs the buffer itself; the client only needs to know it is linked, because
+     * {@link #buildMainUI} does not depend on the client having the buffer.
      */
     @Override
     public boolean shouldOpenUI(Player player, InteractionHand hand, BlockHitResult hit) {
-        RSPatternBufferPartMachine target = getBuffer();
-        if (target == null) {
-            return false;
-        }
-        // The screen is the buffer's, built on both sides from each side's own copy of it. A client
-        // that has not loaded the buffer's chunk would build an empty one against the server's full
-        // one, and that mismatch disconnects the player -- so the server refuses rather than risk it.
-        if (player instanceof ServerPlayer serverPlayer && !clientHasChunk(serverPlayer, target.getBlockPos())) {
-            player.displayClientMessage(Component.translatable("gttweaks.rs.proxy.too_far"), true);
-            return false;
-        }
-        return true;
+        return isRemote() ? bufferPos != null : getBuffer() != null;
     }
 
-    private static boolean clientHasChunk(ServerPlayer player, BlockPos pos) {
-        int range = Math.min(player.server.getPlayerList().getViewDistance(), player.requestedViewDistance());
-        ChunkPos at = player.chunkPosition();
-        ChunkPos chunk = new ChunkPos(pos);
-        return Math.max(Math.abs(at.x - chunk.x), Math.abs(at.z - chunk.z)) <= range;
-    }
-
+    /**
+     * The buffer's screen, whether or not this side has the buffer. The server always does (it will
+     * not open otherwise), but the client may not have loaded the buffer's chunk -- the player can be
+     * far from it, or have just teleported. Building nothing there disconnected the player on the
+     * mismatch, so the client builds the identical layout against an empty stand-in, and the server's
+     * slot and online syncs fill it in.
+     */
     @Override
     public void buildMainUI(ParentWidget<?> mainPanel, PosGuiData data, PanelSyncManager syncManager,
                             UISettings settings) {
         RSPatternBufferPartMachine target = getBuffer();
         if (target != null) {
             target.buildMainUI(mainPanel, data, syncManager, settings);
+        } else {
+            RSPatternBufferPartMachine.buildPatternScreen(mainPanel, syncManager,
+                    new CustomItemStackHandler(RSPatternBufferPartMachine.PATTERN_COUNT), () -> false);
         }
     }
 
