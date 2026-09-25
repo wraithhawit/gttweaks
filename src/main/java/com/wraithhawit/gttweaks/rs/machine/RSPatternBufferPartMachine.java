@@ -41,6 +41,8 @@ import com.gregtechceu.gtceu.api.sync_system.annotations.SyncToClient;
 import com.gregtechceu.gtceu.common.mui.GTGuiTextures;
 
 import brachy.modularui.api.drawable.Text;
+import brachy.modularui.drawable.ColorType;
+import brachy.modularui.drawable.UITexture;
 import brachy.modularui.api.widget.IWidget;
 import brachy.modularui.factory.PosGuiData;
 import brachy.modularui.screen.UISettings;
@@ -57,6 +59,7 @@ import brachy.modularui.widgets.slot.SlotGroup;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -342,9 +345,18 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
                         .slot(SyncHandlers.itemSlot(patternInventory, index)
                                 .slotGroup(patternGroup)
                                 .accessibility(true, true))
-                        .background(GTGuiTextures.SLOT, GTGuiTextures.PATTERN_OVERLAY)));
+                        .background(GTGuiTextures.SLOT, RS_PATTERN_OVERLAY)));
         mainPanel.child((IWidget) column.center());
     }
+
+    /**
+     * The empty-slot silhouette: Refined Storage's blank pattern, recoloured into the grey range of
+     * GregTech's own slot overlays. GregTech's {@code PATTERN_OVERLAY} is AE2's pattern, which on an
+     * RS part points the player at the wrong item.
+     */
+    private static final UITexture RS_PATTERN_OVERLAY = UITexture.fullImage(
+            ResourceLocation.fromNamespaceAndPath("gttweaks", "textures/gui/widget/rs_pattern_overlay.png"),
+            ColorType.DEFAULT);
 
     /**
      * {@inheritDoc}
