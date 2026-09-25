@@ -91,19 +91,36 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine
 
     private final List<RecipeHandlerList> proxyHandlers;
 
+    private final RSBufferAggregateItemHandler aggregateItems;
+
+    private final RSBufferAggregateFluidHandler aggregateFluids;
+
     public RSPatternBufferProxyPartMachine(BlockEntityCreationInfo info) {
         super(info, PROXY_TIER, IO.IN);
-        RSBufferAggregateItemHandler aggregateItems =
-                attachTrait(new RSBufferAggregateItemHandler(this::bufferSlots));
-        RSBufferAggregateFluidHandler aggregateFluids =
-                attachTrait(new RSBufferAggregateFluidHandler(this::bufferSlots));
+        aggregateItems = attachTrait(new RSBufferAggregateItemHandler(this::bufferSlots, this::bufferCircuit));
+        aggregateFluids = attachTrait(new RSBufferAggregateFluidHandler(this::bufferSlots));
         proxyHandler = new RSProxyRecipeHandlerList(this::bufferHandler, aggregateItems, aggregateFluids);
         proxyHandlers = List.of(proxyHandler);
+    }
+
+    /**
+     * Wakes this proxy's multiblock: called by the buffer whenever a slot or its circuit changes,
+     * since the multiblock listens to this part's handlers and not to the buffer's.
+     */
+    public void onBufferChanged() {
+        aggregateItems.notifyListeners();
+        aggregateFluids.notifyListeners();
     }
 
     private List<RSBufferSlot> bufferSlots() {
         RSPatternBufferPartMachine target = getBuffer();
         return target == null ? List.of() : target.getSlots();
+    }
+
+    /** The buffer's programmed circuit, which the buffer offers to its proxies' recipes too. */
+    private List<Object> bufferCircuit() {
+        RSPatternBufferPartMachine target = getBuffer();
+        return target == null ? List.of() : target.getCircuitSlot().getContents();
     }
 
     @Nullable

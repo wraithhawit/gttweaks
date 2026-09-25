@@ -30,8 +30,20 @@ public class RSBufferAggregateItemHandler extends NotifiableRecipeHandlerTrait<S
 
     private final Supplier<List<RSBufferSlot>> slots;
 
+    /**
+     * What else the buffer offers every slot: its programmed circuit. Reported here because GregTech
+     * finds candidate recipes from the handlers' contents, so a circuit no handler reports would
+     * leave every circuit recipe unfindable, however it was consumed.
+     */
+    private final Supplier<List<Object>> shared;
+
     public RSBufferAggregateItemHandler(Supplier<List<RSBufferSlot>> slots) {
+        this(slots, List::of);
+    }
+
+    public RSBufferAggregateItemHandler(Supplier<List<RSBufferSlot>> slots, Supplier<List<Object>> shared) {
         this.slots = slots;
+        this.shared = shared;
     }
 
     @Override
@@ -46,6 +58,7 @@ public class RSBufferAggregateItemHandler extends NotifiableRecipeHandlerTrait<S
         for (RSBufferSlot slot : slots.get()) {
             contents.addAll(slot.getItems());
         }
+        contents.addAll(shared.get());
         return contents;
     }
 

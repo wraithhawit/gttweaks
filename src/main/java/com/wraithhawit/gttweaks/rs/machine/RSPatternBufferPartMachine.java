@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
+import com.gregtechceu.gtceu.api.machine.MetaMachine;
 import com.gregtechceu.gtceu.api.machine.feature.IDataStickInteractable;
 import com.gregtechceu.gtceu.api.machine.trait.notifiable.NotifiableItemStackHandler;
 import com.gregtechceu.gtceu.common.data.item.GTDataComponents;
@@ -63,6 +64,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -180,12 +183,15 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
             internalSlots[i] = new RSBufferSlot();
         }
         addSlot();
-        aggregateItems = attachTrait(new RSBufferAggregateItemHandler(() -> slots));
+        // circuitSlot is GregTech's programmed circuit trait, inherited from ItemBusPartMachine along
+        // with its screen button; until it was offered here it was set-able and ignored.
+        aggregateItems = attachTrait(new RSBufferAggregateItemHandler(() -> slots, circuitSlot::getContents));
         aggregateFluids = attachTrait(new RSBufferAggregateFluidHandler(() -> slots));
         bufferHandler = new RSBufferRecipeHandlerList(
                 () -> slots, () -> slotItemHandlers, () -> slotFluidHandlers,
-                aggregateItems, aggregateFluids);
+                circuitSlot, aggregateItems, aggregateFluids);
         bufferHandlers = List.of(bufferHandler);
+        circuitSlot.addChangedListener(this::onSlotChanged);
         patternNode.setSink(sink());
     }
 
@@ -264,10 +270,24 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
      * there holding a perfectly good set of ingredients while the controller stayed {@code IDLE},
      * because nothing ever told it to look again — which is exactly what happened the first time this
      * part was put in a formed structure.
+     *
+     * <p>The proxies' multiblocks are woken too. They draw from these same slots but listen to their
+     * own proxy's handlers, so without this a proxied multiblock only noticed a delivery when
+     * something else happened to wake it.
      */
     private void onSlotChanged() {
         aggregateItems.notifyListeners();
         aggregateFluids.notifyListeners();
+        Level level = getLevel();
+        if (level == null || level.isClientSide()) {
+            return;
+        }
+        for (BlockPos pos : proxies) {
+            if (level.isLoaded(pos) && MetaMachine.getMachine((BlockGetter) level, pos)
+                    instanceof RSPatternBufferProxyPartMachine proxy) {
+                proxy.onBufferChanged();
+            }
+        }
     }
 
     /**

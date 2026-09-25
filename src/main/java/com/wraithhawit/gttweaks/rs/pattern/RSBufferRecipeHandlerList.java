@@ -47,15 +47,20 @@ public class RSBufferRecipeHandlerList extends RecipeHandlerList {
     private final Supplier<List<RSBufferSlotItemHandler>> itemHandlers;
     private final Supplier<List<RSBufferSlotFluidHandler>> fluidHandlers;
 
+    /** The buffer's programmed circuit, offered to every slot. Never consumed. */
+    private final IRecipeHandler<?> circuit;
+
     public RSBufferRecipeHandlerList(Supplier<List<RSBufferSlot>> slots,
             Supplier<List<RSBufferSlotItemHandler>> itemHandlers,
             Supplier<List<RSBufferSlotFluidHandler>> fluidHandlers,
+            IRecipeHandler<?> circuit,
             RSBufferAggregateItemHandler aggregateItems,
             RSBufferAggregateFluidHandler aggregateFluids) {
         super(IO.IN);
         this.slots = slots;
         this.itemHandlers = itemHandlers;
         this.fluidHandlers = fluidHandlers;
+        this.circuit = circuit;
         addHandlers(aggregateItems, aggregateFluids);
         setGroup(RecipeHandlerGroupDistinctness.BUS_DISTINCT);
     }
@@ -123,16 +128,15 @@ public class RSBufferRecipeHandlerList extends RecipeHandlerList {
     /**
      * The handlers that may answer for one capability on behalf of one slot.
      *
-     * <p>Only that slot's own handler, which is what keeps the slots apart. GregTech additionally
-     * offers its circuit slot and a shared inventory and tank here, so a programmed circuit or a
-     * commonly-needed input does not have to be duplicated into every pattern. Neither exists on this
-     * part yet, and a GregTech recipe that needs a circuit therefore cannot be run from this buffer —
-     * recorded in the design doc as the first thing to add.
+     * <p>That slot's own handler, which is what keeps the slots apart, and for items the buffer's
+     * programmed circuit after it, as GregTech offers its circuit slot to every slot. The circuit is
+     * never consumed, so sharing it cannot pool one slot's inputs with another's. GregTech also offers
+     * a shared inventory and tank here; this part has neither yet.
      */
     private List<IRecipeHandler<?>> handlersFor(RecipeCapability<?> capability, int index) {
         if (capability == ItemRecipeCapability.CAP) {
             List<RSBufferSlotItemHandler> handlers = itemHandlers.get();
-            return index < handlers.size() ? List.of(handlers.get(index)) : List.of();
+            return index < handlers.size() ? List.of(handlers.get(index), circuit) : List.of();
         }
         if (capability == FluidRecipeCapability.CAP) {
             List<RSBufferSlotFluidHandler> handlers = fluidHandlers.get();

@@ -282,7 +282,11 @@ public class RecipeMatchCommand {
         }
         final List<String> ids = new ArrayList<>();
         for (ItemStack stack : stacks) {
-            ids.add(itemId(stack));
+            // Components matter for items like the programmed circuit, whose configuration is the
+            // whole of what a recipe asks for and is otherwise invisible here.
+            ids.add(stack.getComponentsPatch().isEmpty()
+                    ? itemId(stack)
+                    : itemId(stack) + stack.getComponentsPatch());
         }
         return ids.size() == 1 ? ids.get(0) : "any of " + ids;
     }
