@@ -284,7 +284,8 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
         }
         for (BlockPos pos : proxies) {
             if (level.isLoaded(pos) && MetaMachine.getMachine((BlockGetter) level, pos)
-                    instanceof RSPatternBufferProxyPartMachine proxy) {
+                    instanceof RSPatternBufferProxyPartMachine proxy
+                    && getBlockPos().equals(proxy.getBufferPos())) {
                 proxy.onBufferChanged();
             }
         }

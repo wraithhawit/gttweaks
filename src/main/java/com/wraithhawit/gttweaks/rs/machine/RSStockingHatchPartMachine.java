@@ -1,6 +1,7 @@
 package com.wraithhawit.gttweaks.rs.machine;
 
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
+import com.gregtechceu.gtceu.api.machine.multiblock.MultiblockControllerMachine;
 import com.gregtechceu.gtceu.api.machine.multiblock.part.MultiblockPartMachine;
 
 import com.refinedmods.refinedstorage.api.core.Action;
@@ -49,6 +50,10 @@ public class RSStockingHatchPartMachine extends RSInputHatchPartMachine implemen
      */
     @Override
     protected void syncNetwork() {
+        if (!isFormed()) {
+            clearAllMirrors();
+            return;
+        }
         StorageNetworkComponent storage = nodeHolder.storage();
         if (storage == null) {
             return;
@@ -79,6 +84,24 @@ public class RSStockingHatchPartMachine extends RSInputHatchPartMachine implemen
      */
     @Override
     protected void flushStockToNetwork() {
+    }
+
+    /** See {@link RSStockingBusPartMachine#onLoad}. */
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        if (!isRemote()) {
+            clearAllMirrors();
+        }
+    }
+
+    /** See {@link RSStockingBusPartMachine#addedToController}. */
+    @Override
+    public void addedToController(MultiblockControllerMachine controller, String name) {
+        super.addedToController(controller, name);
+        if (!isRemote()) {
+            clearAllMirrors();
+        }
     }
 
     @Override

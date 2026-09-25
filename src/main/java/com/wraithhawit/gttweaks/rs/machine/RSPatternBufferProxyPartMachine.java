@@ -28,7 +28,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.BlockGetter;
@@ -145,15 +147,27 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine
      * at a hole should simply stop supplying.
      */
     public void setBuffer(@Nullable BlockPos pos) {
+        RSPatternBufferPartMachine before = buffer;
+        resolve(pos);
+        if (before != buffer) {
+            // The effective target changed -- linked, unlinked, or the buffer was replaced -- so the
+            // multiblock's view of what this part offers has changed with it.
+            onBufferChanged();
+        }
+    }
+
+    private void resolve(@Nullable BlockPos pos) {
         resolved = true;
         resolvedPos = pos;
         Level level = getLevel();
-        if (level == null || pos == null) {
+        // Never load the buffer's chunk to answer: an unloaded buffer is simply not available, and
+        // getBuffer asks again once it is.
+        if (level == null || pos == null || !level.isLoaded(pos)) {
             buffer = null;
             return;
         }
         MetaMachine found = MetaMachine.getMachine((BlockGetter) level, pos);
-        if (found instanceof RSPatternBufferPartMachine target) {
+        if (found instanceof RSPatternBufferPartMachine target && !target.isRemoved()) {
             if (!pos.equals(bufferPos)) {
                 bufferPos = pos;
                 if (!isRemote()) {
@@ -171,12 +185,37 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine
         }
     }
 
+    /**
+     * The linked buffer, if it is here and alive right now.
+     *
+     * <p>Checked on every call rather than trusted from the last lookup. A cached buffer that has
+     * since been broken, replaced, or unloaded with its chunk is dropped and looked up again (see
+     * {@link #isAvailable}), and a failed lookup is retried, so a proxy loaded before its buffer
+     * recovers by itself. Keeping a removed buffer would be worse than stale: after its chunk is saved
+     * and unloaded, a multiblock drawing from that object would consume ingredients the saved buffer
+     * still holds -- a duplication path (Astra, 2026-09-25). Reproduced in its mild form the same day:
+     * a buffer broken and placed again left the proxy on the old object and the new buffer with no
+     * proxies.
+     */
     @Nullable
     public RSPatternBufferPartMachine getBuffer() {
-        if (!resolved || !java.util.Objects.equals(resolvedPos, bufferPos)) {
+        if (!resolved || !java.util.Objects.equals(resolvedPos, bufferPos)
+                || (buffer != null && !isAvailable(buffer))
+                || (buffer == null && bufferPos != null)) {
             setBuffer(bufferPos);
         }
         return buffer;
+    }
+
+    /**
+     * Whether a buffer object may still be drawn from: not removed, and its chunk loaded. Both,
+     * because the removed flag alone lagged: on the test server a buffer whose chunk the level
+     * already reported as not loaded was still not marked removed three minutes later, and the
+     * proxy kept using it.
+     */
+    private boolean isAvailable(RSPatternBufferPartMachine target) {
+        Level level = getLevel();
+        return !target.isRemoved() && level != null && level.isLoaded(target.getBlockPos());
     }
 
     /**
@@ -185,7 +224,25 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine
      */
     @Override
     public boolean shouldOpenUI(Player player, InteractionHand hand, BlockHitResult hit) {
-        return getBuffer() != null;
+        RSPatternBufferPartMachine target = getBuffer();
+        if (target == null) {
+            return false;
+        }
+        // The screen is the buffer's, built on both sides from each side's own copy of it. A client
+        // that has not loaded the buffer's chunk would build an empty one against the server's full
+        // one, and that mismatch disconnects the player -- so the server refuses rather than risk it.
+        if (player instanceof ServerPlayer serverPlayer && !clientHasChunk(serverPlayer, target.getBlockPos())) {
+            player.displayClientMessage(Component.translatable("gttweaks.rs.proxy.too_far"), true);
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean clientHasChunk(ServerPlayer player, BlockPos pos) {
+        int range = Math.min(player.server.getPlayerList().getViewDistance(), player.requestedViewDistance());
+        ChunkPos at = player.chunkPosition();
+        ChunkPos chunk = new ChunkPos(pos);
+        return Math.max(Math.abs(at.x - chunk.x), Math.abs(at.z - chunk.z)) <= range;
     }
 
     @Override
