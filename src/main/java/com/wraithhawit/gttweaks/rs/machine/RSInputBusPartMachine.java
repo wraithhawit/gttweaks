@@ -151,7 +151,8 @@ public class RSInputBusPartMachine extends RSBusPartMachine {
                             UISettings settings) {
         BooleanSyncValue online = new BooleanSyncValue(this::isOnline);
         syncManager.syncValue("rs_is_online", online);
-        RSConfigActions.register(syncManager, itemHandler, false, this::updateInventorySubscription);
+        RSConfigActions.register(syncManager, itemHandler, false, this::updateInventorySubscription,
+                resource -> this instanceof RSStockingPart stocking && stocking.configuredInOtherPart(resource));
 
         Flow column = (Flow) Flow.col().coverChildren();
         column.child((IWidget) ((TextWidget) Text

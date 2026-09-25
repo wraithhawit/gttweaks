@@ -64,6 +64,20 @@ neither, so `RSFluids` is that missing pair. Going back to a `FluidStack` needs
 
 ### The stocking side
 
+**One mirror per resource per multiblock** (2026-09-25, `RSStockingPart`). Two mirrors of the same
+resource on one multiblock show it twice what exists, and a recipe that passes its simulated pass on
+that phantom stock comes up short when it runs — which consumed real inputs and produced nothing on
+the test server. Within a part the first slot wins; across parts the part at the lowest position
+wins and empties the others' mirrors in the same sync, so there is no tick in which both report it.
+**Distinct buses are included**, unlike GregTech's `testConfiguredInOtherPart`: a distinct bus's
+stock is still combined with the shared parts' when a recipe is matched, and the exemption is exactly
+what reproduced the loss. The Implosion Compressor rig for this is at x30–32, y150–152, z0–2, with its
+own network (creative controller at `31 151 3`, chest at `31 153 3`) and the two stocking buses at
+`30 151 2` and `32 151 2`; its creative energy is at `32 150 -1`, in front of the north-facing hatch,
+and has to be switched on with `data merge block 32 150 -1 {workingEnabled:1b,voltage:2048L,amps:1,setTier:4}`.
+A placed `gtceu:creative_energy` starts off, and a machine with no power is idle for the same reason
+a guarded one is, so check `energyContainer` before reading an idle controller as a pass.
+
 A mirror shows whatever the network has, so it asks for everything and reports the answer.
 GregTech's mirror asks AE2 for `Long.MAX_VALUE`. Against Refined Storage that request reads as
 **empty**, on both sides, and the reason is a narrowing cast in RS rather than anything here:

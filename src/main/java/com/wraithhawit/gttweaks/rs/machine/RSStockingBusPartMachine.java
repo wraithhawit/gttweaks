@@ -1,6 +1,7 @@
 package com.wraithhawit.gttweaks.rs.machine;
 
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
+import com.gregtechceu.gtceu.api.machine.multiblock.part.MultiblockPartMachine;
 
 import com.refinedmods.refinedstorage.api.core.Action;
 import com.refinedmods.refinedstorage.api.network.storage.StorageNetworkComponent;
@@ -8,11 +9,13 @@ import com.refinedmods.refinedstorage.api.resource.ResourceAmount;
 import com.refinedmods.refinedstorage.api.resource.ResourceKey;
 
 import com.wraithhawit.gttweaks.rs.network.RSPartActor;
+import com.wraithhawit.gttweaks.rs.slot.RSConfigurableSlotList;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredItemList;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredItemSlot;
 import com.wraithhawit.gttweaks.rs.slot.RSStockingItemSlot;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -35,7 +38,7 @@ import java.util.Set;
  * GregTech does too — its mirror asks AE2 for {@link Long#MAX_VALUE}. See
  * {@link #MIRROR_REQUEST} for why this one cannot.
  */
-public class RSStockingBusPartMachine extends RSInputBusPartMachine {
+public class RSStockingBusPartMachine extends RSInputBusPartMachine implements RSStockingPart {
 
     /**
      * The least the network must hold before a slot reports anything at all.
@@ -83,6 +86,7 @@ public class RSStockingBusPartMachine extends RSInputBusPartMachine {
      * the whole network into both would show a multiblock twice what exists: 320 Inferium read as
      * 640, and a recipe needing more than 320 could pass the simulated pass and fall short when it
      * ran. GregTech's ME stocking parts had the same gap; {@code MEStockingDuplicateMixin} closes it.
+     * The same holds between parts, which {@link RSStockingPart#claimMirror} settles.
      */
     @Override
     protected void syncNetwork() {
@@ -90,10 +94,12 @@ public class RSStockingBusPartMachine extends RSInputBusPartMachine {
         if (storage == null) {
             return;
         }
+        List<RSStockingPart> partners = RSStockingPart.poolPartners(this);
         Set<ResourceKey> seen = new HashSet<>();
         for (RSConfiguredItemSlot slot : getItemHandler().getInventory()) {
             ResourceAmount configured = slot.getConfig();
-            if (configured == null || !seen.add(configured.resource())) {
+            if (configured == null || !seen.add(configured.resource())
+                    || !RSStockingPart.claimMirror(this, partners, configured.resource())) {
                 slot.setStock(null);
                 continue;
             }
@@ -111,5 +117,15 @@ public class RSStockingBusPartMachine extends RSInputBusPartMachine {
      */
     @Override
     protected void flushStockToNetwork() {
+    }
+
+    @Override
+    public MultiblockPartMachine part() {
+        return this;
+    }
+
+    @Override
+    public RSConfigurableSlotList stockingSlots() {
+        return getItemHandler();
     }
 }

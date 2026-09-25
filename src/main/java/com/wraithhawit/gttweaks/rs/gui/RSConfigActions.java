@@ -18,6 +18,8 @@ import net.neoforged.neoforge.fluids.FluidUtil;
 
 import org.jetbrains.annotations.Nullable;
 
+import java.util.function.Predicate;
+
 /**
  * The server half of {@link RSConfigWidget}: everything a click on the grid is allowed to do.
  *
@@ -43,9 +45,13 @@ public final class RSConfigActions {
      * @param onChanged what to run after a slot is edited, so the machine re-reads its own
      *                  inventory — {@code updateInventorySubscription} on a bus,
      *                  {@code updateTankSubscription} on a hatch.
+     * @param configuredElsewhere whether another stocking part on the same multiblock already asks
+     *                  for a resource; always false for a part that is not stocking. See
+     *                  {@code RSStockingPart}.
      */
     public static void register(PanelSyncManager syncManager, RSConfigurableSlotList slotList,
-                                boolean isFluid, Runnable onChanged) {
+                                boolean isFluid, Runnable onChanged,
+                                Predicate<ResourceKey> configuredElsewhere) {
         syncManager.registerServerSyncedAction(RSConfigWidget.ACTION_CONFIG_SET, buffer -> {
             RSConfiguredSlot slot = slotAt(slotList, buffer);
             if (slot == null) {
@@ -55,7 +61,7 @@ public final class RSConfigActions {
             if (carried.isEmpty()) {
                 return;
             }
-            setConfig(slotList, slot, carried, isFluid);
+            setConfig(slotList, slot, carried, isFluid, configuredElsewhere);
             onChanged.run();
         });
 
@@ -98,13 +104,15 @@ public final class RSConfigActions {
                 if (slot == null || fluid.isEmpty()) {
                     return;
                 }
-                setConfig(slotList, slot, RSFluids.toResource(fluid), Math.max(fluid.getAmount(), 1));
+                setConfig(slotList, slot, RSFluids.toResource(fluid), Math.max(fluid.getAmount(), 1),
+                        configuredElsewhere);
             } else {
                 ItemStack stack = ItemStack.OPTIONAL_STREAM_CODEC.decode(buffer);
                 if (slot == null || stack.isEmpty()) {
                     return;
                 }
-                setConfig(slotList, slot, ItemResource.ofItemStack(stack), Math.max(stack.getCount(), 1));
+                setConfig(slotList, slot, ItemResource.ofItemStack(stack), Math.max(stack.getCount(), 1),
+                        configuredElsewhere);
             }
             onChanged.run();
         });
@@ -134,31 +142,38 @@ public final class RSConfigActions {
      * rather than configuring the bucket itself, which would be unfillable.
      */
     private static void setConfig(RSConfigurableSlotList slotList, RSConfiguredSlot slot, ItemStack carried,
-                                  boolean isFluid) {
+                                  boolean isFluid, Predicate<ResourceKey> configuredElsewhere) {
         if (isFluid) {
             FluidUtil.getFluidContained(carried)
                     .filter(fluid -> !fluid.isEmpty())
                     .ifPresent(fluid -> setConfig(slotList, slot, RSFluids.toResource(fluid),
-                            Math.max(fluid.getAmount(), 1)));
+                            Math.max(fluid.getAmount(), 1), configuredElsewhere));
             return;
         }
-        setConfig(slotList, slot, ItemResource.ofItemStack(carried), Math.max(carried.getCount(), 1));
+        setConfig(slotList, slot, ItemResource.ofItemStack(carried), Math.max(carried.getCount(), 1),
+                configuredElsewhere);
     }
 
     /**
      * Configures a slot, with two rules for a stocking part.
      *
-     * <p>A resource another slot of the same part already asks for is refused. The part's sync
-     * would give the duplicate no stock anyway (see {@code RSStockingBusPartMachine.syncNetwork}),
-     * so accepting it would only leave a slot that looks configured and does nothing.
+     * <p>A resource another slot of the same part already asks for is refused, and so is one another
+     * stocking part on the same multiblock asks for, as GregTech's {@code testConfiguredInOtherPart}
+     * refuses it (without its exemption for a distinct bus; see {@code RSStockingPart}). The sync would give either duplicate no stock anyway (see
+     * {@code RSStockingBusPartMachine.syncNetwork} and {@code RSStockingPart}), so accepting it would
+     * only leave a slot that looks configured and does nothing.
      *
      * <p>The amount is always one. A stocking slot mirrors whatever the network holds and never
      * reads its configured amount, so keeping the size of the stack that happened to be on the
      * cursor would show a number that means nothing — the widget draws none for a stocking part.
      */
     private static void setConfig(RSConfigurableSlotList slotList, RSConfiguredSlot slot,
-                                  ResourceKey resource, long amount) {
+                                  ResourceKey resource, long amount,
+                                  Predicate<ResourceKey> configuredElsewhere) {
         if (slotList.isStocking()) {
+            if (configuredElsewhere.test(resource)) {
+                return;
+            }
             for (int i = 0; i < slotList.getConfigurableSlotCount(); i++) {
                 RSConfiguredSlot other = slotList.getConfigurableSlot(i);
                 ResourceAmount otherConfig = other.getConfig();

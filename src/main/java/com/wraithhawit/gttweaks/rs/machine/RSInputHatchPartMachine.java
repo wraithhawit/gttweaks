@@ -150,7 +150,8 @@ public class RSInputHatchPartMachine extends RSHatchPartMachine {
                             UISettings settings) {
         BooleanSyncValue online = new BooleanSyncValue(this::isOnline);
         syncManager.syncValue("rs_is_online", online);
-        RSConfigActions.register(syncManager, fluidHandler, true, this::updateTankSubscription);
+        RSConfigActions.register(syncManager, fluidHandler, true, this::updateTankSubscription,
+                resource -> this instanceof RSStockingPart stocking && stocking.configuredInOtherPart(resource));
 
         Flow column = (Flow) Flow.col().coverChildren();
         column.child((IWidget) ((TextWidget) Text

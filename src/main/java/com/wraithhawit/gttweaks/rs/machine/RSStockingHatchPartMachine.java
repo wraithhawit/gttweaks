@@ -1,6 +1,7 @@
 package com.wraithhawit.gttweaks.rs.machine;
 
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
+import com.gregtechceu.gtceu.api.machine.multiblock.part.MultiblockPartMachine;
 
 import com.refinedmods.refinedstorage.api.core.Action;
 import com.refinedmods.refinedstorage.api.network.storage.StorageNetworkComponent;
@@ -8,11 +9,13 @@ import com.refinedmods.refinedstorage.api.resource.ResourceAmount;
 import com.refinedmods.refinedstorage.api.resource.ResourceKey;
 
 import com.wraithhawit.gttweaks.rs.network.RSPartActor;
+import com.wraithhawit.gttweaks.rs.slot.RSConfigurableSlotList;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredFluidList;
 import com.wraithhawit.gttweaks.rs.slot.RSConfiguredFluidSlot;
 import com.wraithhawit.gttweaks.rs.slot.RSStockingFluidSlot;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -24,7 +27,7 @@ import java.util.Set;
  * "excess" back, because there is nothing to hand back, and {@link #flushStockToNetwork()} does
  * nothing when the part is broken.
  */
-public class RSStockingHatchPartMachine extends RSInputHatchPartMachine {
+public class RSStockingHatchPartMachine extends RSInputHatchPartMachine implements RSStockingPart {
 
     /**
      * The least the network must hold before a slot reports anything. One until there is a UI to
@@ -50,11 +53,14 @@ public class RSStockingHatchPartMachine extends RSInputHatchPartMachine {
         if (storage == null) {
             return;
         }
-        // First slot per fluid only; see RSStockingBusPartMachine.syncNetwork for why.
+        // First slot per fluid, and first part per fluid in a pool; see
+        // RSStockingBusPartMachine.syncNetwork for why.
+        List<RSStockingPart> partners = RSStockingPart.poolPartners(this);
         Set<ResourceKey> seen = new HashSet<>();
         for (RSConfiguredFluidSlot slot : getFluidHandler().getInventory()) {
             ResourceAmount configured = slot.slot().getConfig();
-            if (configured == null || !seen.add(configured.resource())) {
+            if (configured == null || !seen.add(configured.resource())
+                    || !RSStockingPart.claimMirror(this, partners, configured.resource())) {
                 slot.slot().setStock(null);
                 continue;
             }
@@ -73,5 +79,15 @@ public class RSStockingHatchPartMachine extends RSInputHatchPartMachine {
      */
     @Override
     protected void flushStockToNetwork() {
+    }
+
+    @Override
+    public MultiblockPartMachine part() {
+        return this;
+    }
+
+    @Override
+    public RSConfigurableSlotList stockingSlots() {
+        return getFluidHandler();
     }
 }
