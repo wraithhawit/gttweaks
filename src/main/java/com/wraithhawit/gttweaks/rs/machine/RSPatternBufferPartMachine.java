@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Set;
 
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
+import com.gregtechceu.gtceu.api.machine.feature.IDataStickInteractable;
 import com.gregtechceu.gtceu.api.machine.trait.notifiable.NotifiableItemStackHandler;
+import com.gregtechceu.gtceu.common.data.item.GTDataComponents;
 import com.gregtechceu.gtceu.api.machine.trait.recipe.RecipeHandlerList;
 import com.gregtechceu.gtceu.common.machine.multiblock.part.ItemBusPartMachine;
 import com.gregtechceu.gtceu.api.transfer.item.CustomItemStackHandler;
@@ -55,6 +57,8 @@ import brachy.modularui.widgets.slot.SlotGroup;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
 import org.jetbrains.annotations.Nullable;
@@ -78,7 +82,7 @@ import org.jetbrains.annotations.Nullable;
  * {@link PatternProviderExternalPatternSink#accept}. This part owns the holding, and GregTech owns
  * the consuming. Nothing here schedules or plans a craft.
  */
-public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RSNetworkPart {
+public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RSNetworkPart, IDataStickInteractable {
 
     /**
      * How many encoded patterns the part can hold, matching GregTech's ME pattern buffer.
@@ -379,6 +383,19 @@ public class RSPatternBufferPartMachine extends ItemBusPartMachine implements RS
      *
      * <p>Idempotent, because a proxy re-resolves its buffer on every load and on every relink.
      */
+    /**
+     * Writes this buffer's position onto a data stick, for linking proxies with it -- GregTech's ME
+     * pattern buffer does the same on a shift-use.
+     */
+    @Override
+    public InteractionResult onDataStickShiftUse(Player player, ItemStack dataStick) {
+        if (!isRemote()) {
+            dataStick.set(GTDataComponents.DATA_COPY_POS.get(), getBlockPos());
+            player.displayClientMessage(Component.translatable("gttweaks.rs.buffer.copied"), true);
+        }
+        return InteractionResult.SUCCESS;
+    }
+
     public void addProxy(BlockPos pos) {
         if (proxies.add(pos)) {
             syncSlotCount();

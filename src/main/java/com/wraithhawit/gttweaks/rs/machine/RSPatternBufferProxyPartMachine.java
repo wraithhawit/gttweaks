@@ -5,11 +5,13 @@ import java.util.List;
 import com.gregtechceu.gtceu.api.blockentity.BlockEntityCreationInfo;
 import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.machine.MetaMachine;
+import com.gregtechceu.gtceu.api.machine.feature.IDataStickInteractable;
 import com.gregtechceu.gtceu.api.machine.feature.IMuiMachine;
 import com.gregtechceu.gtceu.api.machine.multiblock.part.TieredIOPartMachine;
 import com.gregtechceu.gtceu.api.machine.trait.recipe.RecipeHandlerList;
 import com.gregtechceu.gtceu.api.sync_system.annotations.SaveField;
 import com.gregtechceu.gtceu.api.sync_system.annotations.SyncToClient;
+import com.gregtechceu.gtceu.common.data.item.GTDataComponents;
 
 import com.wraithhawit.gttweaks.rs.pattern.RSBufferAggregateFluidHandler;
 import com.wraithhawit.gttweaks.rs.pattern.RSBufferAggregateItemHandler;
@@ -23,8 +25,11 @@ import brachy.modularui.value.sync.PanelSyncManager;
 import brachy.modularui.widget.ParentWidget;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -47,7 +52,8 @@ import org.jetbrains.annotations.Nullable;
  * A proxy is not on the network and must not be: it neither stores nor moves resources, and a cable
  * laid against one should see nothing. GregTech's proxy has no grid node for the same reason.
  */
-public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine implements IMuiMachine {
+public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine
+        implements IMuiMachine, IDataStickInteractable {
 
     private static final int PROXY_TIER = 6;
 
@@ -158,6 +164,37 @@ public class RSPatternBufferProxyPartMachine extends TieredIOPartMachine impleme
     @Nullable
     public BlockPos getBufferPos() {
         return bufferPos;
+    }
+
+    /**
+     * Links this proxy to the buffer whose position the data stick carries -- the stick is written by
+     * shift-using it on a buffer, as with GregTech's ME pattern buffer and proxy.
+     *
+     * <p>Unlike GregTech's, re-linking to a different buffer first gives the old one its slot back,
+     * which {@link #setBuffer} alone would not; and a stick pointing at anything but a pattern buffer
+     * changes nothing, so a stale stick cannot unlink a working proxy.
+     */
+    @Override
+    public InteractionResult onDataStickUse(Player player, ItemStack dataStick) {
+        BlockPos pos = dataStick.get(GTDataComponents.DATA_COPY_POS.get());
+        if (pos == null) {
+            return InteractionResult.PASS;
+        }
+        if (isRemote()) {
+            return InteractionResult.SUCCESS;
+        }
+        if (!(MetaMachine.getMachine((BlockGetter) getLevel(), pos) instanceof RSPatternBufferPartMachine)) {
+            player.displayClientMessage(Component.translatable("gttweaks.rs.proxy.no_buffer"), true);
+            return InteractionResult.SUCCESS;
+        }
+        RSPatternBufferPartMachine old = getBuffer();
+        if (old != null && !pos.equals(bufferPos)) {
+            old.removeProxy(getBlockPos());
+        }
+        setBuffer(pos);
+        player.displayClientMessage(Component.translatable("gttweaks.rs.proxy.linked",
+                pos.getX(), pos.getY(), pos.getZ()), true);
+        return InteractionResult.SUCCESS;
     }
 
     @Override
