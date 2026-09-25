@@ -24,6 +24,7 @@ import com.wraithhawit.gttweaks.rs.machine.RSPatternBufferPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSPatternBufferProxyPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSInputHatchPartMachine;
 import com.wraithhawit.gttweaks.rs.machine.RSOutputBusPartMachine;
+import com.wraithhawit.gttweaks.rs.machine.RSOutputHatchPartMachine;
 import com.wraithhawit.gttweaks.rs.slot.RSOutputBuffer;
 import com.wraithhawit.gttweaks.rs.network.RSNetworkPart;
 import com.wraithhawit.gttweaks.rs.pattern.RSBufferSlot;
@@ -47,6 +48,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.common.crafting.SizedIngredient;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 
 import org.jetbrains.annotations.Nullable;
@@ -135,11 +137,20 @@ public final class RSPartCommand {
                                                 ItemArgument.getItem(context, "item").createItemStack(1, false),
                                                 IntegerArgumentType.getInteger(context, "count"),
                                                 BoolArgumentType.getBool(context, "simulate"))))));
+        var insertFluid = Commands.literal("insertfluid")
+                .then(Commands.argument("fluid", ResourceLocationArgument.id())
+                        .then(Commands.argument("amount", IntegerArgumentType.integer(1))
+                                .then(Commands.argument("simulate", BoolArgumentType.bool())
+                                        .executes(context -> insertFluidOutput(context,
+                                                ResourceLocationArgument.getId(context, "fluid"),
+                                                IntegerArgumentType.getInteger(context, "amount"),
+                                                BoolArgumentType.getBool(context, "simulate"))))));
         var pos = Commands.argument("pos", BlockPosArgument.blockPos())
                 .executes(RSPartCommand::info)
                 .then(Commands.literal("config").then(slot))
                 .then(extract)
                 .then(insert)
+                .then(insertFluid)
                 .then(buffer)
                 .then(Commands.literal("pattern")
                         .then(Commands.argument("slot", IntegerArgumentType.integer(0))
@@ -326,6 +337,35 @@ public final class RSPartCommand {
                 .mapToLong(ResourceAmount::amount).sum();
         say(source, (simulate ? "simulated" : "executed") + " output of " + count + " x "
                 + item.getHoverName().getString() + ": refused " + refused + ", buffer now holds " + buffered);
+        return 1;
+    }
+
+    /**
+     * The fluid twin of {@link #insertOutput}: hands an RS Output Hatch a recipe output through
+     * {@code handleRecipeInner} with {@code IO.OUT}. The amount can exceed a tank, which is the point.
+     */
+    private static int insertFluidOutput(CommandContext<CommandSourceStack> context, ResourceLocation id,
+            int amount, boolean simulate) throws CommandSyntaxException {
+        MetaMachine machine = part(context);
+        if (machine == null) {
+            return 0;
+        }
+        CommandSourceStack source = context.getSource();
+        if (!(machine instanceof RSOutputHatchPartMachine hatch)) {
+            say(source, "that part is not an RS Output Hatch");
+            return 0;
+        }
+        Fluid found = BuiltInRegistries.FLUID.getOptional(id).orElse(null);
+        if (found == null) {
+            say(source, "unknown fluid '" + id + "'");
+            return 0;
+        }
+        List<SizedFluidIngredient> left = hatch.tank.handleRecipeInner(IO.OUT, null,
+                new ArrayList<>(List.of(SizedFluidIngredient.of(found, amount))), simulate);
+        long refused = left == null ? 0L : left.stream().mapToLong(SizedFluidIngredient::amount).sum();
+        long buffered = hatch.buffer().snapshot().stream().mapToLong(ResourceAmount::amount).sum();
+        say(source, (simulate ? "simulated" : "executed") + " output of " + amount + " mB " + id
+                + ": refused " + refused + ", buffer now holds " + buffered);
         return 1;
     }
 

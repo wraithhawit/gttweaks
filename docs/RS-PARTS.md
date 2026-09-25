@@ -802,6 +802,11 @@ shows the part emptied and the chest or fluid storage holding what it had.
 
 ## Still unchecked
 
+- **The output parts lose what the network refuses when broken.** Both output buffers are unbounded
+  (the hatch's since 2026-09-25, `RSOutputFluidBuffer`, same design as the bus's `RSOutputBuffer`),
+  and neither carries its buffer on the dropped item the way the input parts carry their stock. The
+  hatch's screen is still GregTech's four-tank one and shows nothing of the buffer.
+
 - **The config widget in a client.** It compiles and a headless server starts clean, but a headless
   server never opens a GUI, so not one line of `RSConfigWidget.draw` or of the five synced actions
   has ever run. Everything in that section is written from GregTech's widget and the two APIs it
