@@ -2,6 +2,11 @@
 
 This repository begins with the existing 0.25.0 source snapshot. Earlier development happened locally; the entries below summarize the immediately preceding changes and do not imply reconstructed Git history.
 
+## Unreleased (pack)
+
+- Pack data: `pack/kubejs/data/minecraft/loot_table/empty.json` neutralises the GregTech-gated `minecraft:empty` loot table that bibliowoods 1.6.2 ships. With GTCEu installed it is registered as a second `minecraft:empty` and world loading crashes with `IllegalStateException: Adding duplicate key 'ResourceKey[minecraft:loot_table / minecraft:empty]' to registry` (stock ATM10 8.3 + GT, ATM10(5), 2026-10-19). The file CurseForge now serves as file 7577860 contains the table (md5 5fa82265); the copy ATM10(3) downloaded in August under the same file id does not (03ded77d), which is why only fresh installs and the server pack hit it. KubeJS data overrides the jar's resource, and the `neoforge:false` condition skips it. Test server with the bibliowoods jar that has the table, plus this file: reaches Done with no duplicate-key error. Not yet seen in a client.
+- `tools/install_gt_quests.py` installs the quest group onto a stock instance (88bd530); 19 GregStar/Star Forge assets the instance had are now mirrored in pack/ (4aaa057).
+
 ## 0.30.0
 
 First Refined Storage multiblock parts. GregTech's ME parts let an AE2 network feed a multiblock; this is the same idea against a Refined Storage network, and the intent is all eight parts. All eight are written, registered and evidenced end to end: an autocrafting request publishes a pattern, the sink delivers its ingredients into a buffer slot, a multiblock runs from that slot, and the products return to the network. The four parts that need configuring now have a screen to do it in, which is what turns them from working into usable; it has since been used in a client, with the gaps listed at the end of this entry. The output bus, pattern buffer and proxy got screens of their own on 2026-09-23. See [docs/RS-PARTS.md](docs/RS-PARTS.md) for the design and what is still missing.
