@@ -37,6 +37,11 @@ requiredMods=["gtceu","jei"]
 config="${mod_id}.emi.mixins.json"
 requiredMods=["emi"]
 
+# GregTech's JourneyMap layer options; JourneyMap 6.0.9's client never binds them.
+[[mixins]]
+config="${mod_id}.journeymap.mixins.json"
+requiredMods=["gtceu","journeymap"]
+
 [[dependencies.${mod_id}]]
     modId="neoforge"
     type="required"
