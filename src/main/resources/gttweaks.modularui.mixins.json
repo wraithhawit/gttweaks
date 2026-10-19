@@ -10,6 +10,7 @@
     "SchemaFitToStructureMixin",
     "SchemaSingleEyeOffsetMixin",
     "SchemaScrollZoomSpeedMixin",
+    "SchemaChunkOffsetResetMixin",
     "EmbedTransformAllPanelsMixin",
     "MenuCloseInvalidWidgetMixin",
     "MenuPanelStateMixin",
