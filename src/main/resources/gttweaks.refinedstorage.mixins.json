@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "com.wraithhawit.gttweaks.mixin.rs",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "PatternGridCircuitMixin",
+    "PatternItemCircuitMixin",
+    "PatternProviderCircuitMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

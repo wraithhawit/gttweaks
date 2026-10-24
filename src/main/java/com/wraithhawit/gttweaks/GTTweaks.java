@@ -7,6 +7,8 @@ import com.wraithhawit.gttweaks.rs.RSCapabilities;
 import com.wraithhawit.gttweaks.rs.RSIntegration;
 import com.wraithhawit.gttweaks.rs.RSMachines;
 import com.wraithhawit.gttweaks.rs.RSPartCommand;
+import com.wraithhawit.gttweaks.rs.circuit.PatternCircuit;
+import com.wraithhawit.gttweaks.rs.circuit.PatternCircuitTestCommand;
 import com.wraithhawit.gttweaks.rs.slot.RSStockComponent;
 
 import com.mojang.logging.LogUtils;
@@ -15,9 +17,11 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
 
 import org.slf4j.Logger;
@@ -78,6 +82,11 @@ public class GTTweaks {
         // run in the order they were added, and the parts have to exist before the registrate goes
         // looking for things to register on that same first dispatch.
         RSStockComponent.REGISTRY.register(modBus);
+        PatternCircuit.REGISTRY.register(modBus);
+        modBus.addListener(FMLCommonSetupEvent.class, event -> event.enqueueWork(PatternCircuit::registerSinkFactory));
+        NeoForge.EVENT_BUS.addListener(ItemTooltipEvent.class, PatternCircuit::onTooltip);
+        NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class,
+                event -> PatternCircuitTestCommand.register(event.getDispatcher()));
         modBus.addListener(RegisterEvent.class, event -> RSMachines.initOnce());
         GTTweaksRegistrate.REGISTRATE.registerEventListeners(modBus);
         modBus.addListener(RegisterCapabilitiesEvent.class, RSCapabilities::register);

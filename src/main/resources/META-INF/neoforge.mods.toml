@@ -37,6 +37,11 @@ requiredMods=["gtceu","jei"]
 config="${mod_id}.emi.mixins.json"
 requiredMods=["emi"]
 
+# GregTech programmed circuits on Refined Storage processing patterns (stored at encode, set on push).
+[[mixins]]
+config="${mod_id}.refinedstorage.mixins.json"
+requiredMods=["gtceu","refinedstorage"]
+
 # GregTech's JourneyMap layer options; JourneyMap 6.0.9's client never binds them.
 [[mixins]]
 config="${mod_id}.journeymap.mixins.json"

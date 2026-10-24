@@ -32,5 +32,6 @@
   "gttweaks.machine.rs.pattern_buffer.tooltip.1": "§bEach pattern fills its own slot, and a recipe is satisfied from one slot alone",
   "gttweaks.machine.rs.fluid_stocking.tooltip": "§bShows the network's fluids to the multiblock and takes them only when a recipe runs",
   "gttweaks.gui.rs_network.online": "§aConnected to a Refined Storage network",
-  "gttweaks.gui.rs_network.offline": "§cNot connected to a Refined Storage network"
+  "gttweaks.gui.rs_network.offline": "§cNot connected to a Refined Storage network",
+  "gttweaks.rs.pattern_circuit": "Programmed Circuit: %s"
 }
