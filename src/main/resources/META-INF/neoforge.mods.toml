@@ -85,3 +85,11 @@ requiredMods=["gtceu","journeymap"]
     versionRange="[2.0.9,)"
     ordering="AFTER"
     side="BOTH"
+
+# rsapg (Advanced Pattern Grid): gttweaks tells its EMI recipe-tree dump about GregTech machines.
+[[dependencies.${mod_id}]]
+    modId="rsapg"
+    type="optional"
+    versionRange="[0.1.9,)"
+    ordering="NONE"
+    side="BOTH"

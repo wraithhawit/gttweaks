@@ -15,6 +15,7 @@ import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -84,6 +85,13 @@ public class GTTweaks {
         RSStockComponent.REGISTRY.register(modBus);
         PatternCircuit.REGISTRY.register(modBus);
         modBus.addListener(FMLCommonSetupEvent.class, event -> event.enqueueWork(PatternCircuit::registerSinkFactory));
+        if (ModList.get().isLoaded("rsapg")) {
+            // rsapg's EMI recipe-tree dump learns GregTech tiers, multiblocks and RS Pattern Buffers.
+            modBus.addListener(FMLCommonSetupEvent.class,
+                    event -> event.enqueueWork(com.wraithhawit.gttweaks.rs.treedump.GTTreeDump::register));
+            NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class, event ->
+                    com.wraithhawit.gttweaks.rs.treedump.GTTreeDumpTestCommand.register(event.getDispatcher()));
+        }
         NeoForge.EVENT_BUS.addListener(ItemTooltipEvent.class, PatternCircuit::onTooltip);
         NeoForge.EVENT_BUS.addListener(RegisterCommandsEvent.class,
                 event -> PatternCircuitTestCommand.register(event.getDispatcher()));
